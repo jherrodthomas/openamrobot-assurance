@@ -23,7 +23,7 @@
 | Open risks (WP-M-07) | | [WP-M-07](../../../01-management/WP-M-07-risk-management.md) |
 | Confirmation measures assigned to this gate (WP-M-06) and their results | 0 of 6 performed: CR-02, CR-03@G1, CR-04, FSA-I1, CS-I1, ML-R1 | [WP-M-06](../../../01-management/WP-M-06-confirmation-measures-plan.md) |
 | QA findings (WP-M-05) | | [WP-M-05](../../../01-management/WP-M-05-quality-assurance-plan.md) |
-| Open items of the phase's work products | 35 open-item rows not marked closed, any due gate (table below) | |
+| Open items of the phase's work products | 34 open-item rows not marked closed, any due gate (table below) | |
 
 ### Work products of this gate
 
@@ -41,7 +41,7 @@
 | [WP-C-09](../../../02-concept/WP-C-09-ml-component-definition-and-safety-requirements.md) ML component definition and safety requirements (learned policy, perception models) | CON-10 | Skeleton | 1 | |
 | [WP-V-07](../../../06-validation/WP-V-07-test-operations.md) Test operations and safety procedures for on-ground testing (hold point) | CON-11 | Draft | 4 | |
 | [WP-T-01](../../../trace/README.md) Requirements and traceability data (machine-readable), consistency evidence | CON-12 | Skeleton | 1 | |
-| [WP-K-01](../../../10-safety-case/WP-K-01-safety-case.md) Safety case (claims, arguments, evidence, defeaters) | CON-12 | Draft | 11 | |
+| [WP-K-01](../../../10-safety-case/WP-K-01-safety-case.md) Safety case (claims, arguments, evidence, defeaters) | CON-12 | Draft | 10 | |
 
 ### Confirmation measures
 
