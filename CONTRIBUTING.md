@@ -40,6 +40,7 @@ python3 assurance/process/tools/process_model.py --check
 python3 assurance/process/tools/process_figures.py --check
 python3 assurance/02-concept/figures/fig_c01.py --check
 python3 assurance/02-concept/figures/fig_c02.py --check
+python3 assurance/02-concept/figures/fig_c06.py --check
 python3 docs/assets/openamrobot/make_assets.py --check
 python3 assurance/tools/check_links.py
 python3 assurance/tools/check_tables.py

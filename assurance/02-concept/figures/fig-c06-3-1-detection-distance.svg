@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="560" viewBox="0 0 1180 560" role="img" aria-labelledby="dst-t dst-d">
+<title id="dst-t">Figure 3-1: minimum detection distance against the time to standstill</title>
+<desc id="dst-d">A line chart with the time to standstill after power removal from zero to two seconds across and the minimum detection distance from zero to four and a half metres up: a teal line for the navigation speed and an amber line for the crawl speed, almost parallel because the walking person dominates; a hatched band above the teal line for the intrusion allowance; a thin dashed grey line for the robot's own travel; a red dashed line at one metre for the starting field, which the navigation line crosses at about four tenths of a second.</desc>
+<defs>
+  <marker id="dst-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#122026"/></marker>
+  <pattern id="dst-grid" patternUnits="userSpaceOnUse" width="36" height="36">
+    <path d="M36,0 L0,0 L0,36" fill="none" stroke="#D3DDE2" stroke-width="0.7"/></pattern>
+  <pattern id="dst-hatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="8" stroke="#B86F0C" stroke-width="1"/></pattern>
+</defs>
+<rect x="0" y="0" width="1180" height="560" fill="#FFFFFF"/>
+<text x="32.0" y="34.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#122026" text-anchor="start">Figure 3-1  Minimum detection distance L against the time to standstill after power removal</text>
+<text x="32.0" y="52.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="start">L = v·t_r + d_b + K·(t_r + t_b) + Z + C, with K = 1.6 m/s, t_r = 0.17 s, Z = 0.1 m, d_b = v·t_b/2 (constant deceleration). C drawn as 0 (lines) and as 0.85 m (band top).</text>
+<rect x="90.0" y="104.0" width="760.0" height="380.0" rx="0" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<line x1="90" y1="484.0" x2="850" y2="484.0" stroke="#D3DDE2" stroke-width="1"/>
+<text x="80.0" y="488.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="end">0 m</text>
+<line x1="90" y1="399.6" x2="850" y2="399.6" stroke="#D3DDE2" stroke-width="1"/>
+<text x="80.0" y="403.6" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="end">1 m</text>
+<line x1="90" y1="315.1" x2="850" y2="315.1" stroke="#D3DDE2" stroke-width="1"/>
+<text x="80.0" y="319.1" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="end">2 m</text>
+<line x1="90" y1="230.7" x2="850" y2="230.7" stroke="#D3DDE2" stroke-width="1"/>
+<text x="80.0" y="234.7" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="end">3 m</text>
+<line x1="90" y1="146.2" x2="850" y2="146.2" stroke="#D3DDE2" stroke-width="1"/>
+<text x="80.0" y="150.2" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="end">4 m</text>
+<text x="90.0" y="502.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="middle">0 s</text>
+<text x="280.0" y="502.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="middle">0.5 s</text>
+<text x="470.0" y="502.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="middle">1 s</text>
+<text x="660.0" y="502.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="middle">1.5 s</text>
+<text x="850.0" y="502.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="middle">2 s</text>
+<text x="470.0" y="524.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="middle">t_b: time from power removal to standstill (coasting on the Gate A unit; braked on 2.0)</text>
+<text x="30.0" y="90.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="start">L, minimum detection distance ahead of the robot</text>
+<path d="M90.0,377.9 L109.0,370.8 L128.0,363.6 L147.0,356.4 L166.0,349.2 L185.0,342.0 L204.0,334.9 L223.0,327.7 L242.0,320.5 L261.0,313.3 L280.0,306.2 L299.0,299.0 L318.0,291.8 L337.0,284.6 L356.0,277.4 L375.0,270.3 L394.0,263.1 L413.0,255.9 L432.0,248.7 L451.0,241.6 L470.0,234.4 L489.0,227.2 L508.0,220.0 L527.0,212.8 L546.0,205.7 L565.0,198.5 L584.0,191.3 L603.0,184.1 L622.0,177.0 L641.0,169.8 L660.0,162.6 L679.0,155.4 L698.0,148.2 L717.0,141.1 L736.0,133.9 L755.0,126.7 L774.0,119.5 L793.0,112.4 L812.0,105.2 L831.0,104.0 L850.0,104.0 L850.0,162.6 L831.0,169.8 L812.0,177.0 L793.0,184.1 L774.0,191.3 L755.0,198.5 L736.0,205.7 L717.0,212.8 L698.0,220.0 L679.0,227.2 L660.0,234.4 L641.0,241.6 L622.0,248.7 L603.0,255.9 L584.0,263.1 L565.0,270.3 L546.0,277.4 L527.0,284.6 L508.0,291.8 L489.0,299.0 L470.0,306.2 L451.0,313.3 L432.0,320.5 L413.0,327.7 L394.0,334.9 L375.0,342.0 L356.0,349.2 L337.0,356.4 L318.0,363.6 L299.0,370.8 L280.0,377.9 L261.0,385.1 L242.0,392.3 L223.0,399.5 L204.0,406.6 L185.0,413.8 L166.0,421.0 L147.0,428.2 L128.0,435.4 L109.0,442.5 L90.0,449.7 z" fill="url(#dst-hatch)" fill-opacity="0.35" stroke="none"/>
+<path d="M90.0,481.1 L109.0,480.7 L128.0,480.3 L147.0,479.9 L166.0,479.4 L185.0,479.0 L204.0,478.6 L223.0,478.2 L242.0,477.8 L261.0,477.3 L280.0,476.9 L299.0,476.5 L318.0,476.1 L337.0,475.6 L356.0,475.2 L375.0,474.8 L394.0,474.4 L413.0,474.0 L432.0,473.5 L451.0,473.1 L470.0,472.7 L489.0,472.3 L508.0,471.8 L527.0,471.4 L546.0,471.0 L565.0,470.6 L584.0,470.2 L603.0,469.7 L622.0,469.3 L641.0,468.9 L660.0,468.5 L679.0,468.0 L698.0,467.6 L717.0,467.2 L736.0,466.8 L755.0,466.4 L774.0,465.9 L793.0,465.5 L812.0,465.1 L831.0,464.7 L850.0,464.2" fill="none" stroke="#7E949B" stroke-width="1.2" stroke-dasharray="4,3"/>
+<path d="M90.0,449.7 L109.0,442.5 L128.0,435.4 L147.0,428.2 L166.0,421.0 L185.0,413.8 L204.0,406.6 L223.0,399.5 L242.0,392.3 L261.0,385.1 L280.0,377.9 L299.0,370.8 L318.0,363.6 L337.0,356.4 L356.0,349.2 L375.0,342.0 L394.0,334.9 L413.0,327.7 L432.0,320.5 L451.0,313.3 L470.0,306.2 L489.0,299.0 L508.0,291.8 L527.0,284.6 L546.0,277.4 L565.0,270.3 L584.0,263.1 L603.0,255.9 L622.0,248.7 L641.0,241.6 L660.0,234.4 L679.0,227.2 L698.0,220.0 L717.0,212.8 L736.0,205.7 L755.0,198.5 L774.0,191.3 L793.0,184.1 L812.0,177.0 L831.0,169.8 L850.0,162.6" fill="none" stroke="#00938B" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="850.0" cy="162.6" r="4" fill="#00938B" stroke="#FFFFFF" stroke-width="2"/>
+<path d="M90.0,451.9 L109.0,445.0 L128.0,438.1 L147.0,431.3 L166.0,424.4 L185.0,417.6 L204.0,410.7 L223.0,403.8 L242.0,397.0 L261.0,390.1 L280.0,383.3 L299.0,376.4 L318.0,369.5 L337.0,362.7 L356.0,355.8 L375.0,349.0 L394.0,342.1 L413.0,335.2 L432.0,328.4 L451.0,321.5 L470.0,314.6 L489.0,307.8 L508.0,300.9 L527.0,294.1 L546.0,287.2 L565.0,280.3 L584.0,273.5 L603.0,266.6 L622.0,259.8 L641.0,252.9 L660.0,246.0 L679.0,239.2 L698.0,232.3 L717.0,225.5 L736.0,218.6 L755.0,211.7 L774.0,204.9 L793.0,198.0 L812.0,191.1 L831.0,184.3 L850.0,177.4" fill="none" stroke="#B86F0C" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="850.0" cy="177.4" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="2"/>
+<rect x="860" y="156.6" width="10" height="10" rx="2" fill="#00938B"/>
+<text x="876.0" y="166.6" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#122026" text-anchor="start">0.20 m/s</text>
+<rect x="860" y="171.4" width="10" height="10" rx="2" fill="#B86F0C"/>
+<text x="876.0" y="181.4" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#122026" text-anchor="start">0.05 m/s</text>
+<line x1="90" y1="399.6" x2="850" y2="399.6" stroke="#D64535" stroke-width="1.4" stroke-dasharray="6,4"/>
+<text x="98.0" y="393.6" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#D64535" text-anchor="start">1.0 m starting field (WP-H-02 §3.3)</text>
+<line x1="223.0" y1="399.6" x2="223.0" y2="484" stroke="#D64535" stroke-width="1" stroke-dasharray="2,3"/>
+<text x="229.0" y="476.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#D64535" text-anchor="start">t_b ≈ 0.35 s</text>
+<text x="860.0" y="254.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#122026" text-anchor="start" letter-spacing="1">KEY</text>
+<line x1="860" y1="272" x2="884" y2="272" stroke="#00938B" stroke-width="2"/>
+<text x="890.0" y="276.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">L with C = 0</text>
+<rect x="860" y="302" width="24" height="12" fill="url(#dst-hatch)" fill-opacity="0.5"/>
+<text x="890.0" y="312.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">L with C = 0.85 m (band)</text>
+<line x1="860" y1="344" x2="884" y2="344" stroke="#7E949B" stroke-width="2" stroke-dasharray="4,3"/>
+<text x="890.0" y="348.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">robot's own travel at 0.20 m/s</text>
+<line x1="860" y1="380" x2="884" y2="380" stroke="#D64535" stroke-width="2" stroke-dasharray="6,4"/>
+<text x="890.0" y="384.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">1.0 m start value</text>
+<text x="1148.0" y="544.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#7E949B" text-anchor="end">Generated by figures/fig_c06.py from the WP-C-06 §3 parameter table</text>
+</svg>
