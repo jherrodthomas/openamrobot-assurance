@@ -36,7 +36,7 @@ claim and the ISO 13849-1 §7 lifecycle (WP-W-02…WP-W-08); its hardening is th
 The chain has no network input: every element that can stop the robot is wired, so no input of the safety chain is reachable from the network; the cybersecurity architecture ([WP-S-07](WP-S-07-cybersecurity-architecture.md)) keeps it a zone of its own. The
 firmware channel of SF-03, SF-04, SF-06 and SF-09 does take its command from the network; a corrupted or
 malicious command is bounded by the firmware's validation and caught by the hardware channel, and WP-S-07 treats
-the firmware's command input as an input to a safety-related part (WP-C-08, DQ-013).
+the firmware's command input as an input to a safety-related part (WP-C-08 §2; DQ-013 A: SL 2 for integrity and for restricted data flow).
 
 ## 2. Allocation of safety functions to elements
 
@@ -169,9 +169,9 @@ because the paths do not exist. The key switch position is reported in `/firmwar
 - **SF-10 base inhibit while an arm is unstowed:** a "stowed or carry pose" signal per arm (a safe output of the
   arm controller, or a mechanical pose switch per arm, dual channel) is a condition of the traction enable in the
   safety controller; channel 1 cross-checks it against the joint states. No pose signal, no traction.
-- **SF-11 arm safe stop:** the mode is DQ-021. In every mode an external safety controller (the PNOZmulti or
-  Flexi-class device WP-H-02 proposes as option 2) takes the station's detection device (a scanner field around
-  the station, or a safety mat) and, for power-and-force limiting, the arm's measured force or torque, and cuts
+- **SF-11 arm safe stop:** the mode is the safety-rated monitored stop (DQ-021 A, 2026-10-20). An external safety
+  controller (the PNOZmulti or Flexi-class device WP-H-02 proposes as option 2) takes the station's detection
+  device (a scanner field around the station, or a safety mat) and cuts
   the arms' actuator power through the chain (the K1/K2 path of `ESTOP-SCOPE` covers the arms) or asserts the
   arms' safe torque off if the OpenArm 2.0 controllers provide one, which is not published.
 - **SF-12 lift and gripper holding, lift interlock:** holding is by design (DM-07: a brake or self-locking lift

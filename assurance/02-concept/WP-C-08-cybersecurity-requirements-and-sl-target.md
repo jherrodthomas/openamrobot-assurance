@@ -22,7 +22,20 @@ Cybersecurity requirements for the robot as one IEC 62443-4-2 component: the sec
 
 ## 2. Security level target
 
-SL-T per FR 1–7, decided in DQ-013 (recommendation: SL 2 for FR 1, 3, 5 and 7; SL 1 otherwise). Rationale from WP-C-07.
+Decided by the lead on 2026-10-20 (DQ-013 A). The realistic threat is a person on the same Wi-Fi with public
+tools, so the foundational requirements that stop such a person moving the robot or changing what it does get
+SL 2; the rest get SL 1. The safety chain is designed to need neither: no attack on the software can hold a
+contactor closed (WP-S-03 §1). Rationale per threat scenario in WP-C-07.
+
+| FR | Foundational requirement | SL-T | Why |
+|---|---|---|---|
+| FR 1 | Identification and authentication control | **2** | Who may publish `/cmd_vel`, call lifecycle services or log into the operator UI |
+| FR 2 | Use control | 1 | No personal data; roles are operator and maintainer only |
+| FR 3 | System integrity | **2** | Signed images, protected safety parameters, a reproducible firmware build |
+| FR 4 | Data confidentiality | 1 | Nothing confidential on the robot |
+| FR 5 | Restricted data flow | **2** | Zones and conduits: the safety chain has no conduit from the ROS 2 network |
+| FR 6 | Timely response to events | 1 | Logging and the field-monitoring route of WP-O-04 |
+| FR 7 | Resource availability | **2** | The stop path does not depend on the network; denial of service must not block a stop |
 
 ## 3. Component requirements
 

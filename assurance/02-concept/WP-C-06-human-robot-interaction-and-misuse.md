@@ -4,7 +4,7 @@
 |---|---|
 | Work product | WP-C-06 Human-robot interaction, collaborative operation and reasonably foreseeable misuse analysis |
 | Standard reference | Machinery: 10218-2 §5; TS 15066 §5; 12100 §5.3; 3691-4 §4 (personnel detection); Other: ISO 13855 §5–§6 |
-| Version | 0.2 (2026-10-20): DQ-004 B and DQ-020 A applied: the arms and lift are in the item on CFG-002, so §4 is a collaborative-operation analysis with requirements CA-01…CA-07, scenarios IS-13…IS-15, misuses MU-15 and MU-16, requirements HR-11 and HR-12; DQ-021 queued. 0.1: interaction scenarios IS-01…IS-12, safety-distance derivation, collaborative-operation interface assumptions, misuse MU-01…MU-14, operator interface and modes; Figures 2-1, 3-1, 5-1. 0.0: skeleton |
+| Version | 0.3 (2026-10-20): DQ-017 A, DQ-018 A and DQ-021 A applied: monitored stop at the station, reverse at crawl. 0.2 ( 2026-10-20): DQ-004 B and DQ-020 A applied: the arms and lift are in the item on CFG-002, so §4 is a collaborative-operation analysis with requirements CA-01…CA-07, scenarios IS-13…IS-15, misuses MU-15 and MU-16, requirements HR-11 and HR-12; DQ-021 queued. 0.1: interaction scenarios IS-01…IS-12, safety-distance derivation, collaborative-operation interface assumptions, misuse MU-01…MU-14, operator interface and modes; Figures 2-1, 3-1, 5-1. 0.0: skeleton |
 | Status | Draft |
 | PL / scope | PL d target (DQ-005); CFG-001 Gate A unit (bench only) and CFG-002 2.0 mobile manipulator (unverified); the base with the arms and lift (DQ-004 B); the arm and lift rows rest on upstream's plan set until its design is public |
 | Author | Assurance team (AI-assisted draft, I0) |
@@ -113,18 +113,19 @@ to be checked). It rests on what upstream has published about the OpenArm 2.0 an
 moves) is the measure.
 
 Four collaborative modes exist (ISO 10218-2 §5.10, to be checked): safety-rated monitored stop, hand guiding,
-speed-and-separation monitoring, power-and-force limiting. Which of them the arms operate in at a station is a
-behaviour default for the lead (DQ-021, queued); the requirements below hold for every choice, and the rows that
-depend on the choice say so.
+speed-and-separation monitoring, power-and-force limiting. The lead chose the
+safety-rated monitored stop on 2026-10-20 (DQ-021 A): the arm stops whenever anyone enters the marked workspace
+and hand-over happens only with the arm stopped; speed-and-separation monitoring and power-and-force limiting
+are not claimed on CFG-002. The rows that depended on the choice now read for the monitored stop.
 
 | ID | Requirement | Why | Depends on DQ-021 |
 |---|---|---|---|
 | CA-01 | The base does not move while an arm is outside its stowed or carry pose; a base motion command is refused by the safety chain while the "stowed or carry" signal is absent (SF-10) | the arms' reach adds to the footprint; SF-02's field is sized for the base, not for a raised arm | no |
-| CA-02 | An arm moves with a person within its reach only in a collaborative mode whose limits are measured: power-and-force limiting against the ISO/TS 15066 body-region limits (hand and fingers, forearm, head excluded) verified by a force gauge, or speed-and-separation monitoring with a protective field that covers the arm's reach; otherwise a safety-rated monitored stop (SF-11) whenever a person enters the station's marked workspace | the arm is the one actuator people are meant to be near | yes: which mode |
+| CA-02 | An arm does not move with a person inside the station's marked workspace: entry triggers a safety-rated monitored stop (SF-11) and the arm resumes only on a deliberate operator action with the workspace clear. No power-and-force limiting and no speed-and-separation monitoring is claimed (DQ-021 A); the workspace boundary is set with a margin over the arm's reach, which is **(TBC)** (WP-C-01 OI-6) | the arm is the one actuator people are meant to be near | applied: monitored stop |
 | CA-03 | The emergency stop (SF-01) removes power from the arms and the lift as well as from traction, and the lift and the gripper hold their load on power loss (upstream `ESTOP-SCOPE`; the DOLD holding evidence is a release gate) | one stop device for the whole machine; a dropped load is H-14 | no |
 | CA-04 | The lift moves only in the stowed or carry pose with the base stopped, and never while a person's hand or foot can be under the carriage or between the column and the arm profile (SF-12; upstream `LIFT` motion rules) | crushing and shearing at the column (H-15); stability (H-15) | no |
 | CA-05 | The mass and centre-of-gravity limits of WP-H-08 include the arms, the lift and the payload in every pose, including both arms forward with payload, one arm sideways and a 150 N pull (upstream's F2S cases) | tipping margins are a base property; the F2S rerun is pending | no |
-| CA-06 | Hand-over of an item happens only with the arm stopped and in a collaborative mode of CA-02; the gripper opens only on a deliberate operator action or a verified grasp by the person | IS-13: a hand between the gripper and the item | yes: hand-over only in PFL or SSM |
+| CA-06 | Hand-over of an item happens only with the arm stopped under the monitored stop of CA-02; the gripper opens only on a deliberate operator action | IS-13: a hand between the gripper and the item | applied: monitored stop |
 | CA-07 | Carrying (T-11) happens only in the carry pose with the load inside the gripper's rated hold and below the payload limit; the carry speed limit (0.3 m/s upstream, TBC) is a safety parameter of SF-03 and the SF-02 field is sized for the carry footprint and the sweep of a turn (IS-15) | the raised load and the wider footprint | no |
 
 The arm's own power-and-force limiting, if claimed, is a function of the OpenArm controllers and is outside every
@@ -178,7 +179,7 @@ or with untrained people), **L** (needs effort or bad luck). Consequence uses th
 |---|---|---|
 | HR-01 | SF-02's protective field in the direction of travel shall be at least L of §3 with the measured d_b, t_b and the confirmed C, per zone speed | WP-S-02 SR-02.02 |
 | HR-02 | SF-02 shall detect a person down to **(TBC: 0.3 m)** above the floor (IS-09) | SR-02.03 |
-| HR-03 | Reverse motion shall be limited to the crawl speed and covered by rear detection (IS-04) | SR-02.04, DQ-018 |
+| HR-03 | Reverse motion shall be limited to the crawl speed (0.05 m/s) and covered by rear detection; the Nav2 back-up recovery is removed (IS-04; DQ-018 A) | SR-02.04 |
 | HR-04 | Teleoperation shall require a held control (deadman) and shall cap speed near a person (IS-06, MU-02) | WP-C-04 SF-09 (enabling control for teleoperation); WP-S-02 SR-09.x (pending, WP-S-02 OI-6) |
 | HR-05 | The on-screen stop shall not be presented as an emergency stop (MU-01) | SR-01.09; WP-O-03 |
 | HR-06 | Motion after a protective slow-down, stop or wait shall be preceded by an audible and visual warning (IS-10) | WP-C-04 SF-08 (warning before motion); WP-S-02 SR-08.x (pending); WP-H-02 (stack light, sounder) |
@@ -186,7 +187,7 @@ or with untrained people), **L** (needs effort or bad luck). Consequence uses th
 | HR-08 | A payload limit, a height limit and restraint points shall be marked on the top plate (MU-05, MU-06) | WP-H-08; WP-O-03 §4 |
 | HR-09 | Blind corners and one-way rules for people in Z2 shall be site measures recorded in the site survey (IS-02) | WP-O-03; WP-C-02 OI-5 |
 | HR-10 | The base shall refuse motion while an arm is outside its stowed or carry pose (CA-01) | WP-C-04 SF-10; WP-S-02 SR-10.x (pending) |
-| HR-11 | An arm shall not move with a person within its reach except in a measured collaborative mode of CA-02, and shall stop on a safety-rated monitored stop otherwise (IS-13, MU-15) | WP-C-04 SF-11; DQ-021 |
+| HR-11 | An arm shall not move with a person inside the station's marked workspace and shall stop on a safety-rated monitored stop when one enters it; no measured collaborative mode is claimed (IS-13, MU-15; DQ-021 A) | WP-C-04 SF-11 |
 | HR-12 | The lift and the gripper shall hold their load on an emergency stop and on power loss, and the lift shall move only with the base stopped and the arms in the stowed or carry pose (CA-03, CA-04; IS-14) | WP-C-04 SF-12; WP-V-05 |
 
 ## 8. Open items
@@ -194,10 +195,10 @@ or with untrained people), **L** (needs effort or bad luck). Consequence uses th
 | ID | Item | Owner | Due |
 |---|---|---|---|
 | OI-1 | Measure d_b and t_b (WP-V-02) and confirm C and Z against licensed ISO 13855 and the scanner datasheet; then set L per zone | Safety manager | G2 |
-| OI-2 | Lead decisions DQ-017 (speed near a person) and DQ-018 (reverse) | Project lead | G1 |
+| OI-2 | ~~Lead decisions DQ-017 and DQ-018~~ answered A on 2026-10-20; applied in WP-C-02 v0.3 and HR-03 | closed | — |
 | OI-3 | Observe people around the Gate A unit in Z1 for one session and correct the likelihood ratings of §5 | Reviewer | G1 |
 | OI-4 | Confirm the push-force figure of IS-12 by measurement against a force gauge; compare with ISO/TS 15066 Annex A limits for the hand | Hardware lead | G2 |
 | OI-5 | Specify the teleop device with a deadman (HR-04) and the sounder and stack light (HR-06, HR-07) in WP-H-02 | Hardware lead | G2 |
 | OI-6 | ~~DQ-004 answered B: §4 becomes a collaborative-operation analysis~~ done in v0.2 (CA-01…CA-07, IS-13…IS-15); the arm's reach and force limits stay TBC (WP-C-01 OI-6) | closed | — |
-| OI-7 | Lead decision DQ-021: the collaborative mode of the arms at a station (monitored stop, speed-and-separation, power-and-force limiting) | Project lead | G1 |
+| OI-7 | ~~Lead decision DQ-021~~ decided 2026-10-20 (A): safety-rated monitored stop; applied in §4 CA-02, CA-06 and HR-11 | closed | — |
 | OI-8 | Measure the arm's contact forces against ISO/TS 15066 Annex A body-region limits with a force gauge once an arm exists (WP-V-03); until then AOU-10 | Hardware lead | G3 |
