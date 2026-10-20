@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420" role="img" aria-labelledby="life-t life-d">
   <title id="life-t">OpenAMRobot assurance lifecycle areas</title>
-  <desc id="life-d">Safety Management: In Progress (2 evidence items, 2 drafted, 0 missing, 0 accepted); Hazard Analysis: In Progress (3 evidence items, 2 drafted, 1 missing, 0 accepted); Safety Concepts: In Progress (3 evidence items, 2 drafted, 1 missing, 0 accepted); Technical Implementation: In Progress (2 evidence items, 1 drafted, 1 missing, 0 accepted); Verification and Validation: Not Started (4 evidence items, 0 drafted, 4 missing, 0 accepted); Safety Case and Review: In Progress (1 evidence items, 1 drafted, 0 missing, 0 accepted)</desc>
+  <desc id="life-d">Safety Management: In Progress (2 evidence items, 2 drafted, 0 missing, 0 accepted); Hazard Analysis: In Progress (3 evidence items, 2 drafted, 1 missing, 0 accepted); Safety Concepts: In Progress (3 evidence items, 2 drafted, 1 missing, 0 accepted); Technical Implementation: In Progress (3 evidence items, 2 drafted, 1 missing, 0 accepted); Verification and Validation: Not Started (4 evidence items, 0 drafted, 4 missing, 0 accepted); Safety Case and Review: In Progress (1 evidence items, 1 drafted, 0 missing, 0 accepted)</desc>
   <defs>
     <linearGradient id="life-bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0E1A31"/><stop offset="1" stop-color="#070D1A"/>
@@ -61,11 +61,11 @@
     <defs><clipPath id="bar62364"><rect x="62" y="364" width="252" height="8" rx="4.0"/></clipPath></defs>
     <g clip-path="url(#bar62364)">
     <rect x="62" y="364" width="252" height="8" rx="4.0" fill="#070D1A" stroke="#24345A"/>
-    <rect x="62.0" y="364" width="126.0" height="8" fill="#4EA8FF"/>
-    <rect x="188.0" y="364" width="126.0" height="8" fill="#5F6E8C"/>
+    <rect x="62.0" y="364" width="168.0" height="8" fill="#4EA8FF"/>
+    <rect x="230.0" y="364" width="84.0" height="8" fill="#5F6E8C"/>
     </g>
-    <text x="62" y="390" font-size="13" font-weight="400" fill="#93A1BC" text-anchor="start">1 drafted · 1 missing</text>
-    <text x="314" y="390" font-size="13" font-weight="400" fill="#93A1BC" text-anchor="end">0 of 2 accepted</text>
+    <text x="62" y="390" font-size="13" font-weight="400" fill="#93A1BC" text-anchor="start">2 drafted · 1 missing</text>
+    <text x="314" y="390" font-size="13" font-weight="400" fill="#93A1BC" text-anchor="end">0 of 3 accepted</text>
     <rect x="352" y="270" width="296" height="130" rx="14" fill="#111E37" stroke="#24345A"/>
     <text x="374" y="306" font-size="15" font-weight="700" fill="#E2B85C" text-anchor="start" letter-spacing="1">05</text>
     <text x="408" y="306" font-size="18" font-weight="600" fill="#F4F6FA" text-anchor="start">Verification and Validation</text>

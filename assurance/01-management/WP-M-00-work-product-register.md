@@ -109,7 +109,7 @@ Regulation (EU) 2023/1230 (Machinery Regulation), Regulation (EU) 2024/1689 (AI 
 | ID | Work product | Machinery | SRP/CS | IEC 62443 | Other | ASPICE | Gate | Status |
 |---|---|---|---|---|---|---|---|---|
 | [WP-H-01](../04-hardware/WP-H-01-hardware-safety-requirements.md) | Hardware safety requirements (safety chain, braking, detection hardware) | 3691-4 §4 | 13849-1 §5, §6 | | 60204-1 §9.2 | HWE.1 | G3 | S |
-| [WP-H-02](../04-hardware/WP-H-02-electrical-and-safety-chain-design.md) | Electrical and safety-chain design (schematics, wiring, enclosure) | | 13849-1 §6 | 62443-4-2 CR 2.13 (physical) | 60204-1 §5–§13 | HWE.2 | G3 | S |
+| [WP-H-02](../04-hardware/WP-H-02-electrical-and-safety-chain-design.md) | Electrical and safety-chain design (schematics, wiring, enclosure) | | 13849-1 §6 | 62443-4-2 CR 2.13 (physical) | 60204-1 §5–§13 | HWE.2 | G3 | D |
 | [WP-H-03](../04-hardware/WP-H-03-hardware-failure-analysis.md) | Hardware failure analysis (FMEA, fault lists, fault exclusions) | | 13849-1 §6; 13849-2 Annex A–D | | IEC 60812 | HWE.2 | G3 | S |
 | [WP-H-04](../04-hardware/WP-H-04-reliability-data-and-pl-calculation.md) | Reliability data and PL calculation (MTTFD, DCavg, CCF, SISTEMA) | | 13849-1 §6, Annex C–F, Annex K | | | — | G3 | S |
 | [WP-H-05](../04-hardware/WP-H-05-electrical-safety.md) | Electrical safety: supply disconnection, overcurrent protection, bonding, battery and charger | | | | 60204-1 §5–§8, §18; IEC 62619 (informative) | — | G3 | S |

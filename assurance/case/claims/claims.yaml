@@ -55,7 +55,7 @@
   related_hazards: [H-01, H-02, H-04, H-05, H-10]
   related_requirements: [SF-01]
   related_assumptions: []
-  evidence_refs: [Sn-08]
+  evidence_refs: [Sn-08, Sn-16]
   defeaters: [DF-01, DF-02, DF-19, DF-28]
   review_state: not-reviewed
   reviewer: null
@@ -76,7 +76,7 @@
   related_hazards: [H-01, H-11]
   related_requirements: [SF-02]
   related_assumptions: []
-  evidence_refs: [Sn-11, Sn-07]
+  evidence_refs: [Sn-11, Sn-07, Sn-16]
   defeaters: [DF-14, DF-15, DF-16, DF-22, DF-35]
   review_state: not-reviewed
   reviewer: null
@@ -97,7 +97,7 @@
   related_hazards: [H-01, H-03, H-12]
   related_requirements: [SF-03]
   related_assumptions: []
-  evidence_refs: [Sn-11]
+  evidence_refs: [Sn-11, Sn-16]
   defeaters: [DF-13, DF-36]
   review_state: not-reviewed
   reviewer: null
@@ -223,7 +223,7 @@
   related_hazards: [H-07, H-08, H-09]
   related_requirements: []
   related_assumptions: []
-  evidence_refs: [Sn-12]
+  evidence_refs: [Sn-12, Sn-16]
   defeaters: [DF-19, DF-20, DF-21, DF-24]
   review_state: not-reviewed
   reviewer: null

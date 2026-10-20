@@ -4,7 +4,7 @@
 |---|---|
 | Work product | WP-K-01 Safety case for the Gate A unit (UL 4600 structure: claims, arguments, evidence, defeaters) |
 | Standard reference | ISO 13849-1:2023 §4.7, §10 (information); ISO 12100 §7 (documentation); Regulation (EU) 2023/1230 Annex IV Part A (technical documentation); UL 4600 §5, §6 |
-| Version | 0.1 (2026-10-20): initial structure, every claim draft, every defeater open |
+| Version | 0.2 (2026-10-20): Sn-16 (WP-H-02) added; OI-7 closed. 0.1: initial structure, every claim draft, every defeater open |
 | Status | Draft |
 | PL / scope | PL d target; Gate A unit (CFG-001); mobile base only |
 | Author | Assurance team (AI-assisted draft, I0) |
@@ -37,15 +37,15 @@ The cybersecurity branch of the argument is WP-K-03 ([cybersecurity case](WP-K-0
 |---|---|---|---|---|---|
 | G0 | The Gate A unit poses no unreasonable risk | — | draft | Sn-01, Sn-02, Sn-03 | 4 |
 | G1 | The safety functions SF-01 to SF-07 reach their required Performance Level | G0 | draft | Sn-04, Sn-05 | 0 |
-| G1.1 | SF-01 emergency stop is implemented at PL d | G1 | draft | Sn-08 | 4 |
-| G1.2 | SF-02 protective stop on personnel detection is implemented at PL d | G1 | draft | Sn-11, Sn-07 | 5 |
-| G1.3 | SF-03 safely-limited speed is implemented at PL d | G1 | draft | Sn-11 | 2 |
+| G1.1 | SF-01 emergency stop is implemented at PL d | G1 | draft | Sn-08, Sn-16 | 4 |
+| G1.2 | SF-02 protective stop on personnel detection is implemented at PL d | G1 | draft | Sn-11, Sn-07, Sn-16 | 5 |
+| G1.3 | SF-03 safely-limited speed is implemented at PL d | G1 | draft | Sn-11, Sn-16 | 2 |
 | G1.4 | SF-04 stop on loss of command, communication or control is implemented at PL c | G1 | draft | Sn-06, Sn-10 | 3 |
 | G1.5 | SF-05 prevention of unexpected start-up is implemented at PL c | G1 | draft | Sn-08 | 2 |
 | G1.6 | SF-06 stop on drive fault is implemented at PL c | G1 | draft | Sn-06, Sn-10 | 4 |
 | G1.7 | SF-07 powered-debug inhibit is implemented at PL b | G1 | draft | Sn-06, Sn-10 | 2 |
 | G2 | The complementary electrical and mechanical measures are implemented | G0 | draft | — | 0 |
-| G2.1 | The 24 V bus and the mains side are protected | G2 | draft | Sn-12 | 4 |
+| G2.1 | The 24 V bus and the mains side are protected | G2 | draft | Sn-12, Sn-16 | 4 |
 | G2.2 | Mass, payload and stability are within limits | G2 | draft | Sn-09, Sn-07 | 1 |
 | G3 | The command path cannot defeat the safety functions | G0 | draft | — | 0 |
 | G3.1 | Motion and parameter interfaces are authenticated and bounded | G3 | draft | Sn-13 | 4 |
@@ -68,7 +68,7 @@ SF-01, SF-02, SF-03 at PLr d; SF-04, SF-05, SF-06 at PLr c; SF-07 at PLr b (WP-C
 Status rule: Available = performed and approved at a named baseline; Partial = drafted analysis or
 specification, not reviewed; Missing = not yet performed.
 
-**Available 0, Partial 8, Missing 7** (15 evidence items)
+**Available 0, Partial 9, Missing 7** (16 evidence items)
 
 | ID | Evidence | Location | Status | Supports |
 |---|---|---|---|---|
@@ -87,6 +87,7 @@ specification, not reviewed; Missing = not yet performed.
 | Sn-13 | Network and command-path security concept and test | `assurance/06-validation/README.md` | Missing | G3.1 |
 | Sn-14 | Baseline record BL-001 | `assurance/case/baselines/baselines.yaml` | Partial | G4.1 |
 | Sn-15 | Safety case WP-K-01 | `assurance/10-safety-case/WP-K-01-safety-case.md` | Partial | G4.3 |
+| Sn-16 | Safety-chain design for the Gate A bench build: parts, wiring, I/O, estimated PL | `assurance/04-hardware/WP-H-02-electrical-and-safety-chain-design.md` | Partial | G1.1, G1.2, G1.3, G2.1 |
 
 ## 7. Defeaters
 
@@ -155,7 +156,7 @@ robot is within this case (WP-C-03 §8).
 | OI-4 | Resolve what the panel E-stop button switches on the as-built unit | G1 | G1.1 |
 | OI-5 | Decide the regulatory frame (DQ-003) and the item scope (DQ-004) | G1 | G0 |
 | OI-6 | Reviewer with Gate A operating experience confirms every rating in WP-C-03 | G1 | G4.2 |
-| OI-7 | Choose the detection device and the speed monitor for the bench build; budget decision | G2 | G1.2, G1.3 |
+| OI-7 | Choose the detection device and the speed monitor for the bench build; budget decision (closed 2026-10-20: DQ-007, WP-H-02) | G2 | G1.2, G1.3 |
 | OI-8 | Read the ZBLD.C20 manual for BRK/DI5, SPD/DO2 and ERR/DO1 semantics | G2 | G1.1, G1.6 |
 | OI-9 | Compile and bench-test the firmware hardening change | G2 | G1.4, G1.6, G1.7, G4.3 |
 | OI-10 | Push the BL-001 tags to the forks and pin the reusable CI workflow to a SHA | G1 | G4.1 |

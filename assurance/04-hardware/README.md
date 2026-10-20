@@ -11,7 +11,7 @@ Standard clauses: ISO 13849-1 §6 and Annexes C–F, ISO 13849-2 Annexes A–D, 
 | ID | Work product | Gate | Status |
 |---|---|---|---|
 | [WP-H-01](WP-H-01-hardware-safety-requirements.md) | Hardware safety requirements (safety chain, braking, detection hardware) | G3 | Skeleton |
-| [WP-H-02](WP-H-02-electrical-and-safety-chain-design.md) | Electrical and safety-chain design (schematics, wiring, enclosure) | G3 | Skeleton |
+| [WP-H-02](WP-H-02-electrical-and-safety-chain-design.md) | Electrical and safety-chain design (schematics, wiring, enclosure) | G3 | Draft |
 | [WP-H-03](WP-H-03-hardware-failure-analysis.md) | Hardware failure analysis (FMEA, fault lists, fault exclusions) | G3 | Skeleton |
 | [WP-H-04](WP-H-04-reliability-data-and-pl-calculation.md) | Reliability data and PL calculation (MTTFD, DCavg, CCF, SISTEMA) | G3 | Skeleton |
 | [WP-H-05](WP-H-05-electrical-safety.md) | Electrical safety: supply disconnection, overcurrent protection, bonding, battery and charger | G3 | Skeleton |

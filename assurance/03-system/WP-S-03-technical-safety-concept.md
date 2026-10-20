@@ -4,7 +4,7 @@
 |---|---|
 | Work product | WP-S-03 Technical safety concept: architecture of the safety-related parts of the control system that implement SF-01…SF-07 |
 | Standard reference | ISO 13849-1:2023 §6 (designated architectures, categories), §6.1.3 (Category 2), §6.1.4 (Category 3), Annex I (examples); ISO 13849-2:2012 Annex D; EN 60204-1:2018 §9.2, §9.4; ISO 3691-4:2023 §4; IEC 60947-5-5 |
-| Version | 0.1 (2026-10-20): initial draft |
+| Version | 0.2 (2026-10-20): DQ-007 applied in §3.4. 0.1: initial draft |
 | Status | Draft |
 | PL / scope | PL d; Gate A unit (CFG-001) bench build, with the mapping to upstream's OpenAMRobot 2.0 safety chain |
 | Author | Assurance team (AI-assisted draft, I0) |
@@ -99,12 +99,12 @@ cannot clear it.
 
 ### 3.4 Personnel detection (SR-02.01…SR-02.08): Category 3
 
-- Preferred device: a safety laser scanner (type 3, IEC 61496-3) with two OSSD outputs into a K0 input pair, mounted
-  low at the front with its plane at ≤ 0.2 m and field sets switched by speed (through safe inputs tied to the speed
-  monitor or to zone selection). Upstream's RPLIDAR S3 stays the navigation sensor; it is not a safety device.
-- Alternative for the bench build: safety-rated bumpers (pressure-sensitive edges with a monitoring unit, PL d)
-  on the front and rear, which cover the low-object gap (SR-02.03) and the reverse case (SR-02.04) at the cost of
-  contact before stop; acceptable only with the crawl speed limit in the zones where they are the sole detection.
+- **Decided (DQ-007, 2026-10-20):** a safety laser scanner (type 3, IEC 61496-3) with two OSSD outputs into a K0
+  input pair, mounted low at the front with its plane at ≤ 0.2 m and field sets switched by speed (through safe
+  inputs tied to the speed monitor or to zone selection), **plus a safety-rated bumper at the rear** (pressure-sensitive
+  edge with a monitoring unit, PL d) for the reverse case (SR-02.04). Upstream's RPLIDAR S3 stays the navigation
+  sensor; it is not a safety device. Parts, wiring and budget: [WP-H-02](../04-hardware/WP-H-02-electrical-and-safety-chain-design.md).
+- Reverse is limited to the crawl speed where the bumper is the only detection (contact before stop).
 - Field sizing: `L_field ≥ v_max × (t_scanner + t_K0 + t_contactor) + d_stop(v_max) + margin`, with `d_stop` the
   measured category 0 coasting distance (or braked distance on 2.0). At 0.20 m/s and an assumed coast of
   **(TBC)** this gives **(TBC)**; nothing is claimed until measured.
@@ -182,7 +182,7 @@ register; they are the first thing to raise with upstream.
 | ID | Item | Blocks |
 |---|---|---|
 | OI-1 | Read the ZBLD.C20 manual: semantics of `BRK/DI5` (brake vs inhibit), `SPD/DO2` pulse specification, `ERR/DO1` polarity | §3.2, §3.5 |
-| OI-2 | Choose E5 for the bench build (scanner vs bumpers) and E6 (speed relay vs safety PLC); budget decision for the lead | §3.4, §3.5 |
+| OI-2 | ~~Choose E5~~ decided 2026-10-20 (DQ-007: scanner plus rear bumper). E6 (speed relay vs safety PLC) is proposed in WP-H-02 §3 | §3.5 |
 | OI-3 | Measure category 0 coasting distance at 0.20 m/s, loaded and unloaded | §3.4 field sizing |
 | OI-4 | Reliability data (MTTFd, B10d) for K0, K1/K2, E-stop devices, scanner; DCavg and CCF scoring | WP-H-03 |
 | OI-5 | Confirm K0 output count and current for three paths (K1 coil, K2 coil, BRK/DI5 of two drivers) | §3.2 |
