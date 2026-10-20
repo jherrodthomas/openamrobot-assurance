@@ -17,6 +17,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: install PyYAML (decision register checker)
+        run: python3 -m pip install --quiet pyyaml
       - name: Living Safety Case records are valid
         run: python3 assurance/case/tools/validate.py
       - name: validator self-tests
