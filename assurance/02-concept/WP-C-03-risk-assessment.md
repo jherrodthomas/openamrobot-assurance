@@ -4,9 +4,9 @@
 |---|---|
 | Work product | WP-C-03 Risk assessment (ISO 12100) and determination of the required Performance Level per safety function (ISO 13849-1) |
 | Standard reference | ISO 12100:2010 §5.4–§5.6, Annex B; ISO 13849-1:2023 §5, Annex A (risk graph); ISO 3691-4:2023 §4, Annex A; ISO 13850:2015; EN 60204-1:2018 §9.2.2 (stop categories); Regulation (EU) 2023/1230 Annex III §1.1.2 |
-| Version | 0.3 (2026-10-20): situations reworked against the zones and tasks of WP-C-02 and the scenarios and misuses of WP-C-06 (OS-13…OS-15 added); risk estimated per zone; the risk-graph readings of v0.2 corrected (§5.2); SF-08 and SF-09 identified; the specification of each function moved to WP-C-04; Figures 3-1, 5-1, 6-1. 0.2: DQ-005 applied, PLr d confirmed as the target. 0.1: initial draft |
+| Version | 0.4 (2026-10-20): DQ-004 B and DQ-020 A applied: the arms and lift on CFG-002 join the assessment as OS-16…OS-18, H-13…H-15, five rated rows, DM-07, IFU-04 and SF-10…SF-12; the configuration each row belongs to is stated. 0.3: situations reworked against the zones and tasks of WP-C-02 and the scenarios and misuses of WP-C-06 (OS-13…OS-15 added); risk estimated per zone; the risk-graph readings of v0.2 corrected (§5.2); SF-08 and SF-09 identified; the specification of each function moved to WP-C-04; Figures 3-1, 5-1, 6-1. 0.2: DQ-005 applied, PLr d confirmed as the target. 0.1: initial draft |
 | Status | Draft |
-| PL / scope | Highest PLr: **d** (SF-01, SF-02, SF-03, SF-05), decided by the lead 2026-10-20 (DQ-005 option A: people share the space); one situation rates **e** and is excluded from the operating environment (Z5, §5); reference configuration Gate A unit (DQ-002); mobile base only |
+| PL / scope | Highest PLr: **d** (SF-01, SF-02, SF-03, SF-05, SF-10, SF-11, SF-12), decided by the lead 2026-10-20 (DQ-005 option A: people share the space); one situation rates **e** and is excluded from the operating environment (Z5, §5); the base with the arms and lift (DQ-004 B) on CFG-001 (Gate A unit, bench only) and CFG-002 (2.0 mobile manipulator, unverified) |
 | Author | Assurance team (AI-assisted draft, I0) |
 | Reviewer(s) | TBD (I1); the ratings need a reviewer who has operated the robot |
 | Approver | Project lead |
@@ -21,7 +21,10 @@
 
 ## 1. Scope and inputs
 
-- **Item:** the Gate A mobile base of WP-C-01, in modes M1–M6, within the limits of WP-C-01 §4.
+- **Item:** the mobile manipulator of WP-C-01 v0.4 on its two configurations: CFG-001, the Gate A base, in modes
+  M1–M6 within the limits of WP-C-01 §4 (bench only since DQ-011 C); CFG-002, the 2.0 base with the lift and the
+  two arms, in modes M1–M9 within the quoted limits of WP-C-01 §4.5. Rows that exist only on CFG-002 say so; their
+  ratings rest on upstream's plan set and are to be re-rated when the design is public.
 - **Inputs:** WP-C-01 (item, functions, modes, assumptions of use); [WP-C-02](WP-C-02-operating-environment-and-tasks.md)
   (zones Z0–Z5 with their people classes and speed limits, tasks T-01–T-08, exclusions);
   [WP-C-06](WP-C-06-human-robot-interaction-and-misuse.md) (interaction scenarios IS-01…IS-12, misuse MU-01…MU-14,
@@ -110,8 +113,11 @@ including children). Scenarios and misuses are those of WP-C-06 §2 and §5.
 | OS-13 | The robot waits on a person standing in its path, then the person steps aside and the robot resumes | Z2 | T-01, T-02 | briefed | M3 | IS-10 | MU-14 |
 | OS-14 | A person touches the moving or stopped robot: pushes it, leans or sits on it, or tries to stop it by hand | Z2, Z5 | T-01, T-02 | anyone | M3, M6 | IS-08, IS-12 | MU-05 |
 | OS-15 | Shared public floor: children, animals, a person lying or crouching below the detection plane, visitors who do not know the robot | Z5 (excluded) | T-01 | public | M3 | IS-09 | MU-07 |
+| OS-16 | Manipulation at a station (CFG-002): an arm picks, places, pulls a drawer or door or hands an item over, with the base stopped and staff at the station | Z2 | T-09 | briefed | M7 | IS-13 | MU-15, MU-16 |
+| OS-17 | Lift motion at a station (CFG-002): the carriage with the arms and their load moves between the calibrated stops, base stopped | Z2 | T-10 | briefed | M8 | IS-14 | MU-16 |
+| OS-18 | Carrying (CFG-002): a transport leg with a load held in the arms in the carry pose, people in the aisle | Z2 | T-11 | briefed | M9 | IS-15 | MU-06, MU-16 |
 
-![Figure 3-1: situation-by-zone matrix: situations OS-01 to OS-15 down the side, the test area, aisle, dock lane, charging bay, public floor and bench across, each cell filled where the situation occurs in that zone and coloured by the people class of the zone, with the task IDs written in the cell and the WP-C-06 scenarios listed at the right](figures/fig-c03-3-1-situations-zones.svg)
+![Figure 3-1: situation-by-zone matrix: situations OS-01 to OS-18 down the side, the test area, aisle, dock lane, charging bay, public floor and bench across, each cell filled where the situation occurs in that zone and coloured by the people class of the zone, with the task IDs written in the cell and the WP-C-06 scenarios listed at the right](figures/fig-c03-3-1-situations-zones.svg)
 
 *Figure 3-1.* Where each situation occurs and who is exposed there. The colour is the people class of WP-C-02 (none, briefed, public); the public column is hatched because Z5 is excluded at BL-001. Generated by [`figures/fig_c03.py`](figures/fig_c03.py) from the §3 table; CI fails if it is stale.
 
@@ -131,6 +137,9 @@ including children). Scenarios and misuses are those of WP-C-06 §2 and §5.
 | H-10 | Ergonomic / information: mode confusion | The on-screen E-STOP is believed to be an emergency stop; the map on screen is not the room the robot is in; the operator watches the screen; a stopped robot is taken for an idle one | wherever the operator is | OS-04, OS-01, OS-09 |
 | H-11 | Combination: loss of sensing not acted upon | The navigation LiDAR stops publishing (known fault), the scan is stale for up to 1 s, the agent is lost: the software keeps the last plan or coasts | path of travel | OS-11 |
 | H-12 | Cybersecurity-induced: unauthorised command | Any DDS participant on domain 0 publishes `/cmd_vel`, retunes the PID, loads a wrong encoder table or deactivates the collision monitor | path of travel | OS-12 |
+| H-13 | Mechanical: impact, clamping by an arm (CFG-002) | An arm moving at a station strikes a person or clamps a hand, forearm or head against a shelf, the item, the column or the other arm; or the base moves with an arm outside the stowed or carry pose and the sweep reaches beyond the base's protective field | the arm's reach around the station; head height beside a carrying robot | OS-16, OS-18 |
+| H-14 | Mechanical: falling or thrown load (CFG-002) | The gripper or the lift releases its load on power loss, an emergency stop, an over-payload or a grip fault; an item is swept off a shelf; the load leaves the gripper in a turn at the carry speed | under and beside the arms | OS-16, OS-17, OS-18 |
+| H-15 | Mechanical: crushing, shearing at the lift; tipping with an arm extended (CFG-002) | The lift lowers the carriage onto a hand or foot or raises an arm into a person; a hand is drawn between the column and the arm profile; the robot tips with an arm extended with payload, during a 150 N pull or when braking while carrying | the lift column and the space under the arms; around the robot | OS-16, OS-17, OS-18 |
 
 ## 5. Risk estimation
 
@@ -161,6 +170,11 @@ the function addressing the row must reach; it is the risk-graph value unless th
 | H-10 · mode confusion (OS-04, OS-09: IS-06, IS-11; MU-01) | Z1, Z2 | S2 | F2 | P1 | Enables H-01 and H-02; it is the operator's own error, so a trained operator can avoid it; frequent because the UI invites it | d | **d** as a contributor to SF-01 | SF-01 (physical, reachable, marked), HR-05, IFU-01 |
 | H-11 · loss of sensing (OS-11) | Z2 | S2 | F1 | P1 | Known LiDAR dropouts; the software coasts on stale data; the path stays covered by the safety scanner, which is independent of the navigation sensor. **Depends on** SF-02 (independent of the navigation LiDAR) | c | **c** | SF-04, SF-02 (SR-02.06) |
 | H-12 · unauthorised command (OS-12) | any | S2 | F1 | P1 | Depends on the network; a malicious or mistaken publisher is credible on a shared Wi-Fi; the speed and the stop stay with the chain. **Depends on** SF-03 (d) and SF-01 | c | **c** (security target of DQ-013) | Cybersecurity requirements of [WP-C-08](WP-C-08-cybersecurity-requirements-and-sl-target.md) (threat scenario in WP-C-07); SF-03, SF-07 |
+| H-13 · arm contact at a station (OS-16: IS-13; CFG-002) | Z2 | S2 | F2 | P1 | Staff work at the station through the task; a 6 kg payload arm that can pull 150 N can fracture a hand against a shelf; a briefed person sees the arm and keeps clear, and hand-over invites them not to. **Depends on** the collaborative mode of DQ-021 | d | **d** | SF-11, SF-01; AOU-10 until the force limits are measured |
+| H-13 · base moves with an arm extended (OS-16, OS-18: IS-15; CFG-002) | Z2 | S2 | F1 | P2 | Occasional (a command arrives mid-task, or the carry pose is wrong); the sweep is outside the field the base's detection is sized for and at head height, so a person beside the robot cannot avoid it | d | **d** | SF-10, SF-02 field for the carry footprint |
+| H-14 · load drops from the gripper or the lift (OS-16…OS-18: IS-14, IS-15; CFG-002) | Z2 | S2 | F1 | P2 | A power loss or an emergency stop is occasional; a 6 kg load from shoulder height onto a foot or a head gives no warning | d | **d** | SF-12, DM-07, IFU-04 |
+| H-15 · crushing or shearing at the lift (OS-17: IS-14; CFG-002) | Z2 | S2 | F1 | P1 | The lift moves at 18 mm/s with 800 N; a hand under the carriage is crushed slowly enough to withdraw, a foot under it is not; lift motion is occasional and with the base stopped | c | **c** | SF-12 (interlock), IFU-04 |
+| H-15 · tipping with an arm extended or while carrying (OS-16, OS-18; CFG-002) | Z2 | S2 | F1 | P1 | Upstream's F2S model analyses the arm-forward, one-arm-sideways and 150 N cases but its rerun is pending; the 0.3 m/s carry limit and the carry pose are the margins | c | **c** (design measures, no control function) | DM-03 (F2S rerun), OL-02 carry limit, CA-05, CA-07 |
 
 ![Figure 5-1: the ISO 13849-1 risk graph drawn as a tree from the starting point through severity, frequency and avoidance to the five required Performance Levels a to e, each leaf coloured by level, with the hazard rows of the table written at the leaf their path reaches; the single row at PL e is marked excluded](figures/fig-c03-5-1-risk-graph.svg)
 
@@ -168,11 +182,12 @@ the function addressing the row must reach; it is the risk-graph value unless th
 
 ### 5.1 Counts
 
-12 hazards rated in 20 rows across the zones. Highest PLr adopted: **d** (eight rows: H-01 in Z2 and Z3,
-H-02, H-05 both cases, H-10 as a contributor; H-07 reaches d on the graph as a complementary measure). One row
-rates **e** (H-01 on the public floor) and is excluded from the operating environment. Seven rows at c, one at b,
-three at a. Nine safety functions (SF-01…SF-09, §7); six design or complementary measures (DM-01…DM-06); two
-operating-environment limits (OL-01, OL-02); three information-for-use items (IFU-01…IFU-03).
+15 hazards rated in 25 rows across the zones and the two configurations. Highest PLr adopted: **d** (eleven rows:
+H-01 in Z2 and Z3, H-02, H-05 both cases, H-10 as a contributor, H-07 as a complementary measure, and on CFG-002
+both H-13 cases and the H-14 load drop). One row rates **e** (H-01 on the public floor) and is excluded from the
+operating environment. Nine rows at c, one at b, three at a. Twelve safety functions (SF-01…SF-12, §7); seven
+design or complementary measures (DM-01…DM-07); two operating-environment limits (OL-01, OL-02); four
+information-for-use items (IFU-01…IFU-04). The five CFG-002 rows rest on upstream's plan set.
 
 ### 5.2 Corrections from version 0.2
 
@@ -205,6 +220,7 @@ ISO 12100 §6 order. None of the measures exists on the Gate A unit; the table s
 | DM-04 fuse on the battery positive, lockable disconnect | complementary (EN 60204-1 §5.3, §7.2) | H-07, H-04, H-08 | none fitted (GAP-19) |
 | DM-05 mains side per EN 60204-1: identified converter, RCD, earth, enclosure, inlet | complementary | H-08 | unknown converter (GAP-20) |
 | DM-06 one source at a time (selector or charge interlock), battery voltage monitoring | complementary | H-09, H-03 | parallel sources, no monitor |
+| DM-07 gripper and lift hold their load on power loss by design (spring-closed or self-locking gripper, brake or self-locking lift drive); payload limit of the gripper marked (CFG-002) | inherently safe design | H-14, H-15 | upstream `LIFT` release gate "written DOLD holding on E-stop and power loss" not passed; gripper behaviour not published |
 | OL-01 zone exclusions of WP-C-02 §5: no public floor (Z5), no Z0, no ramps, edges, glass, crowds | operating-environment limit | H-01, H-06 | map limits only; no geofence (WP-C-02 OI-3) |
 | OL-02 speed limit per zone and the crawl limit for the dock lane and reverse (WP-C-02 §2; DQ-017, DQ-018) | operating-environment limit, enforced by SF-03 | H-01, H-03 | Nav2 limit only; docking unbounded |
 | SF-01 emergency stop | safeguarding, control function | H-01, H-02, H-04, H-05, H-10 | none |
@@ -216,9 +232,13 @@ ISO 12100 §6 order. None of the measures exists on the Gate A unit; the table s
 | SF-07 powered-debug inhibit | safeguarding, control function | H-04, H-02, H-12 | compile-time define only |
 | SF-08 warning before motion | safeguarding, complementary (warning device) | H-05, H-10 | none |
 | SF-09 enabling control for teleoperation | safeguarding, control function | H-01, H-10 | none (keyboard teleop floods `/cmd_vel`) |
+| SF-10 base motion inhibit while an arm is outside the stowed or carry pose (CFG-002) | safeguarding, control function | H-13, H-15 | none: an upstream motion rule, no interlock |
+| SF-11 arm safe stop and collaborative force limiting (CFG-002) | safeguarding, control function | H-13 | none: no arm safety function named upstream |
+| SF-12 lift and gripper holding on stop and power loss; lift interlock (CFG-002) | safeguarding, control function | H-14, H-15 | none: holding evidence is a release gate |
 | IFU-01 operator training; the on-screen stop is not an emergency stop; markings; the rule that a stopped robot is not an idle one | information for use | H-10, H-01, H-04, H-05 | upstream user page exists |
 | IFU-02 site measures: blind corners, one-way rules for people, lane marking, recorded in the site survey (HR-09) | information for use | H-01 | none |
 | IFU-03 payload, height and restraint markings on the top plate (HR-08) | information for use | H-06 | none |
+| IFU-04 station marking, the hand-over rule and the lift keep-clear zone (CFG-002; CA-02, CA-06) | information for use | H-13, H-14, H-15 | none |
 
 ![Figure 6-1: hazard-to-measure matrix: the twelve hazards down the side and the measures across, grouped as design measures, operating-environment limits, safety functions and information for use, with a dot where the measure reduces the hazard and the adopted required Performance Level of each hazard written beside its row](figures/fig-c03-6-1-hazard-measures.svg)
 
@@ -241,6 +261,9 @@ PLr is the highest adopted in §5 among the rows the function addresses.
 | SF-07 | Powered-debug inhibit | b | H-04 on the ground | H-04, H-02, H-12 | MU-08 | compile-time define, on in the deployed build (GAP-07, GAP-08) |
 | SF-08 | Warning before motion | b | H-05 resume (residual with SF-02) | H-05, H-10 | IS-10, MU-14 | nothing: no sounder or stack light |
 | SF-09 | Enabling control for teleoperation | c | H-01 teleoperation | H-01, H-10 | IS-06, MU-02 | nothing: no deadman; teleop bypasses the smoother and the monitor |
+| SF-10 | Base motion inhibit while an arm is outside the stowed or carry pose (CFG-002) | d | H-13 base moves with an arm extended | H-13, H-15 | IS-15, MU-16 | nothing: upstream `LIFT` motion rule, no interlock in any repository |
+| SF-11 | Arm safe stop and collaborative force limiting (CFG-002) | d | H-13 arm contact | H-13 | IS-13, MU-15 | nothing: no arm safety function named upstream; the OpenArm limits are not published |
+| SF-12 | Lift and gripper holding on stop and power loss; lift interlock (CFG-002) | d | H-14 load drop; H-15 lift crushing | H-14, H-15 | IS-14, MU-16 | nothing: the DOLD holding evidence is an upstream release gate not yet passed |
 
 Notes:
 
@@ -250,6 +273,9 @@ Notes:
 - SF-05 rises from c (v0.2) to d: the restart case rates S2 F1 P2. The monitored manual reset of the safety relay
   (WP-H-02 E2, PL e capable) is the implementation either way, so the change costs nothing on the bench build but
   moves the claim G1.5 and the requirements SR-05.x to d.
+- SF-10, SF-11 and SF-12 are new in v0.4 and exist only on CFG-002; they come from WP-C-06 CA-01…CA-07 and
+  HR-10…HR-12. Their PLr d values follow the graph; the type-C values of ISO 10218-2 for collaborative functions
+  (to be checked) are expected to agree.
 - SF-08 and SF-09 are new in v0.3, from WP-C-06 HR-06 and HR-04. SF-08 is a warning device, not a stop; its PLr b
   is the residual after SF-02. SF-09 is the hold-to-run control teleoperation lacks; WP-S-02 needs SR-08.x and
   SR-09.x for them (WP-S-02 OI-6).
@@ -268,7 +294,9 @@ means to cut 24 V (AOU-01) and nobody else is within reach of the robot (AOU-02)
 operation around people (Z2) is outside the assessment whatever the software envelope does. Docking and
 undocking (Z3) are outside the assessment until GAP-15 and GAP-35 are closed. The public floor (Z5) is outside
 the operating environment at every baseline of the Gate A unit: its rating is e and no bench-build function is
-designed for it (DQ-019). Teleoperation near people is outside the assessment until SF-09 exists.
+designed for it (DQ-019). Teleoperation near people is outside the assessment until SF-09 exists. On CFG-001 no
+on-ground operation at all is inside the assessment since DQ-011 C; everything on CFG-002 is outside it until its
+design is public and the arm's force limits are measured (AOU-10).
 
 ## 9. Hazard log cross-references
 
@@ -286,6 +314,9 @@ designed for it (DQ-019). Teleoperation near people is outside the assessment un
 | H-10 | GAP-28, GAP-12, GAP-38 | IS-06, IS-11, MU-01, MU-02, MU-14 | HR-05, HR-07 | |
 | H-11 | GAP-03, GAP-16, GAP-37 | — | — | |
 | H-12 | GAP-27, GAP-29 | MU-09, MU-10 | — | DQ-003, DQ-013 |
+| H-13 | gap assessment §8 (no arm safety function) | IS-13, IS-15, MU-15, MU-16 | HR-10, HR-11 | DQ-004, DQ-020, DQ-021 |
+| H-14 | gap assessment §8 (`LIFT` release gates) | IS-14, IS-15, MU-16 | HR-12 | DQ-004, DQ-020 |
+| H-15 | GAP-23; gap assessment §8 (F2S rerun pending) | IS-14, IS-15, MU-16 | HR-12 | DQ-004, DQ-020 |
 
 Cyber-induced hazards are analysed in WP-C-07 ([threat and risk assessment](WP-C-07-cybersecurity-threat-and-risk-assessment.md)); H-12 is the hazard its scenarios map back to, and the security level target behind the PLr c rating is decision DQ-013.
 
@@ -300,4 +331,5 @@ Cyber-induced hazards are analysed in WP-C-07 ([threat and risk assessment](WP-C
 | OI-5 | Reviewer with Gate A operating experience to confirm or change every rating, including the re-ratings of §5.2 | approval |
 | OI-6 | Lead decision DQ-019: keep the public floor (Z5) excluded for the Gate A unit, or open a PL e / force-limited argument for it | scope of SF-02 |
 | OI-7 | Confirm the ISO 3691-4 PLr table against a licensed copy and record the type-C values in WP-C-04 §4; **unscheduled** (DQ-016 option C, 2026-10-20: no standards until an assessor is engaged) | WP-C-04 §4 |
-| OI-8 | Apply DQ-004 B (2026-10-20): the arms and lift join the item; their hazards (reach, crushing, lift load, stability) and the interface assumptions CA-01…CA-05 of WP-C-06 §4 become rows of §4 and §5, after DQ-020 settles the hardware they describe | §3–§7, v0.4 |
+| OI-8 | ~~Apply DQ-004 B~~ done in v0.4 (OS-16…OS-18, H-13…H-15, SF-10…SF-12); the CFG-002 rows are re-rated when the design is public and the arm limits are measured (WP-C-01 OI-6, OI-7) | v0.5 |
+| OI-9 | Lead decision DQ-021 (collaborative mode of the arms) settles the P rating of the arm-contact row and the mode SF-11 implements | SF-11 |

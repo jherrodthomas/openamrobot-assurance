@@ -6,7 +6,7 @@
 | Standard reference | ISO 13849-1:2023 §5 (safety functions, SRS), §4.5 (PLr), §6 (categories), §7 (software); ISO 13850:2015 §4; EN 60204-1:2018 §9.2.2, §9.2.3.4, §9.4; ISO 3691-4:2023 §4, Annex A; IEC 62443-4-2 (CR 1, CR 3) |
 | Version | 0.2 (2026-10-20): SF-05 raised to PLr d per WP-C-03 v0.3 and WP-C-04; SF-08 and SF-09 noted as pending (OI-6). 0.1: initial draft from WP-C-03 v0.2 |
 | Status | Draft |
-| PL / scope | PL d (SF-01, SF-02, SF-03, SF-05), PL c (SF-04, SF-06), PL b (SF-07); SF-08 and SF-09 of WP-C-04 not yet broken into requirements (OI-6); Gate A unit (CFG-001); mobile base only |
+| PL / scope | PL d (SF-01, SF-02, SF-03, SF-05), PL c (SF-04, SF-06), PL b (SF-07); SF-08…SF-12 of WP-C-04 v0.2 not yet broken into requirements (OI-6); since DQ-014 B the "Implemented by" of SR-03, SR-04 and SR-06 is the firmware channel plus the hardwired monitor (WP-S-03 §3.5); Gate A unit (CFG-001); mobile base only |
 | Author | Assurance team (AI-assisted draft, I0) |
 | Reviewer(s) | TBD (I1) |
 | Approver | Project lead |
@@ -142,4 +142,4 @@
 | OI-3 | ~~Choice of detection device~~ decided 2026-10-20 (DQ-007): front safety scanner plus rear bumper on the Gate A bench build; see WP-H-02 | closed |
 | OI-4 | Safety controller for SF-02/SF-03 (safety relay with speed monitoring, or a small safety PLC) on the Gate A bench build; upstream 2.0 names a Pilz PNOZ s3 only | WP-S-03 |
 | OI-5 | ~~DQ-006 (firmware ceiling values)~~ decided 2026-10-20: 0.25 m/s and 0.6 rad/s, applied in the fork firmware | closed |
-| OI-6 | Add SR-08.x (SF-08 warning before motion) and SR-09.x (SF-09 enabling control for teleoperation) from WP-C-04 §3.8 and §3.9; SR-05.x now carries PLr d, the Category 3 argument is WP-S-03 §3.3 | G1.8, G1.9 claims |
+| OI-6 | Add SR-08.x…SR-12.x (warning before motion, enabling control, base inhibit while an arm is unstowed, arm safe stop, lift and gripper holding) from WP-C-04 §3.8…§3.12; SR-05.x now carries PLr d; rewrite the "Implemented by" of SR-03, SR-04 and SR-06 for the firmware channel (DQ-014 B) | G1.8…G1.12 claims |

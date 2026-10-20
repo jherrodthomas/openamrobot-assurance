@@ -4,7 +4,7 @@
 - id: Sn-01
   kind: evidence
   title: "Item definition and limits of the machinery"
-  description: "Draft v0.2; unknowns marked"
+  description: "Draft v0.4; two configurations, CFG-002 quoted from upstream and unverified; unknowns marked"
   evidence_status: partial
   lifecycle_area: hazard-analysis
   location: "assurance/02-concept/WP-C-01-item-definition.md"
@@ -21,7 +21,7 @@
 - id: Sn-02
   kind: evidence
   title: "Risk assessment and PLr determination"
-  description: "Draft v0.3; rated per zone against WP-C-02 and WP-C-06, v0.2 graph readings corrected; ratings need a reviewer with operating experience"
+  description: "Draft v0.4; rated per zone and configuration against WP-C-02 and WP-C-06, arm and lift hazards on CFG-002; ratings need a reviewer with operating experience"
   evidence_status: partial
   lifecycle_area: hazard-analysis
   location: "assurance/02-concept/WP-C-03-risk-assessment.md"
@@ -274,12 +274,12 @@
 
 - id: Sn-17
   kind: evidence
-  title: "Safety functions specification SF-01 to SF-09: demand, safe state, response, stop category, PLr, allocation"
-  description: "Draft v0.1; concept-level specification; response budget from candidate parts, stopping distances unmeasured"
+  title: "Safety functions specification SF-01 to SF-12: demand, safe state, response, stop category, PLr, allocation"
+  description: "Draft v0.2; concept-level specification; firmware as channel 1 of the speed and loss-of-control functions (DQ-014 B); SF-10 to SF-12 on CFG-002 unverified; response budget from candidate parts, stopping distances unmeasured"
   evidence_status: partial
   lifecycle_area: hazard-analysis
   location: "assurance/02-concept/WP-C-04-safety-functions-and-plr.md"
-  related_claims: [G1, G1.8, G1.9]
+  related_claims: [G1, G1.8, G1.9, G1.10, G1.11, G1.12]
   baseline: BL-001
   configuration: CFG-001
   review_state: not-reviewed

@@ -111,9 +111,10 @@
       title: "Whole mobile manipulator from the start"
       detail: "One item, one risk assessment. Cost: most of it would be assumptions about hardware and software we cannot read, and the case cannot close until 2.0 ships."
   sources: ["openAMRobot/.github decisions.yaml LIFT, ARM-MOUNT", "openamr-platform-hw product-architecture.md"]
-  status: answered
+  status: applied
   answer: {choice: B, via: inbox, at: 2026-10-20}
-  note: "Not the recommendation. Applying it widens the item to the base with the arms and lift: WP-C-01 v0.4, the hazards and functions of WP-C-03, WP-C-04 and WP-C-06 §4, and WP-M-01 T-14. Sequenced after DQ-020, which asks which hardware the widened item describes."
+  applied: {ref: "openamrobot-assurance main", record: "WP-C-01 v0.4 (item on CFG-001 and CFG-002); WP-C-02 v0.2 T-09…T-11; WP-C-03 v0.4 H-13…H-15; WP-C-04 v0.2 SF-10…SF-12; WP-C-06 v0.2 §4; WP-M-01 T-14", at: 2026-10-20}
+  note: "Not the recommendation. Applied after DQ-020 A: the arms and lift are in the item on CFG-002, the 2.0 mobile manipulator, every value quoted from upstream and unverified until its design is public."
 
 - id: DQ-005
   ref: GAP-00
@@ -324,9 +325,10 @@
       title: "No on-ground tests until the 2.0 base with its chain exists"
       detail: "Nothing spent. Cost: no stopping-distance, stability or detection data for at least two months; the concept phase proceeds on estimates."
   sources: ["assurance/06-validation/WP-V-07-test-operations.md §2", "assurance/00-assessment/gap-assessment.md GAP-01, GAP-02, GAP-04, GAP-19, §10 action 4", "openAMRobot/.github decisions.yaml SAFETY-PROCUREMENT"]
-  status: answered
+  status: applied
   answer: {choice: C, via: inbox, at: 2026-10-20}
-  note: "Not the recommendation. No on-ground test on the Gate A unit: WP-V-07's hold point is not expected to open on it, WP-H-02 becomes the first draft of the 2.0 chain rather than a purchase, and the stopping-distance measurement (WP-C-01 OI-2) waits for 2.0. Recorded in those work products; DQ-020 asks what the reference configuration becomes."
+  applied: {ref: "openamrobot-assurance main", record: "WP-V-07 §2 (hold point not expected to open on the Gate A unit); WP-H-02 warning (first draft of the 2.0 chain, not an order); WP-C-02 v0.2 Z1 and Figure 3-1 (bench only on CFG-001); WP-C-01 v0.4 §1 (CFG-001 bench only)", at: 2026-10-20}
+  note: "Not the recommendation. No on-ground test on the Gate A unit until the 2.0 base with its chain exists; the stopping-distance measurement (WP-C-01 OI-2) waits for 2.0."
 
 - id: DQ-012
   ref: WP-M-02
@@ -415,9 +417,10 @@
       title: "Defer until the firmware has a verification history, then promote it if the evidence supports it"
       detail: "Keeps the door open. Cost: the architecture is designed twice if the answer is later B."
   sources: ["assurance/01-management/WP-M-01-assurance-strategy.md §5 T-03, T-04, §6", "assurance/00-assessment/gap-assessment.md GAP-03, GAP-11", "openAMRobot/.github decisions.yaml TELEMETRY-NOT-SAFETY-EVIDENCE, ESTOP-SCOPE"]
-  status: answered
+  status: applied
   answer: {choice: B, via: inbox, at: 2026-10-20}
-  note: "Not the recommendation. The firmware joins the safety-related control system for the speed and loss-of-control functions (SF-03, SF-04, SF-06): WP-S-03 is redesigned, WP-M-01 T-03 and T-04 are rewritten, the software work products WP-W-02 to WP-W-08 widen to an ISO 13849-1 §7 lifecycle at PL d, and WP-C-04 §5 is superseded. Recorded in those work products; the rework is the next piece of design work."
+  applied: {ref: "openamrobot-assurance main", record: "WP-C-04 v0.2 §5 (firmware as channel 1 of SF-03, SF-04, SF-06, SF-09); WP-S-03 v0.3 §2 and §3.5 (two-channel architecture); WP-M-01 T-03 and T-04; the software work products widen under WP-S-03 OI-6", at: 2026-10-20}
+  note: "Not the recommendation. The firmware is channel 1 of the speed and loss-of-control functions and carries a PL claim with the ISO 13849-1 §7 lifecycle; the hardwired monitor is channel 2."
 
 - id: DQ-015
   ref: WP-C-04
@@ -593,4 +596,37 @@
       title: "Keep Gate A as the only reference; DQ-004 and DQ-011 take effect when 2.0 is public"
       detail: "Cheapest. Cost: your two answers change nothing until 2.0, and the record keeps describing a bench build you have decided not to buy."
   sources: ["assurance/01-management/decisions/register.yaml DQ-002, DQ-004, DQ-011", "assurance/02-concept/WP-C-01-item-definition.md §1.1, §9", "assurance/00-assessment/gap-assessment.md §8"]
+  status: applied
+  answer: {choice: A, via: chat, at: 2026-10-20}
+  applied: {ref: "openamrobot-assurance main", record: "case/configurations CFG-002; WP-C-01 v0.4 §1 (two configurations); WP-C-03 v0.4 and WP-C-04 v0.2 (configuration stated per row); WP-S-03 v0.3 §7", at: 2026-10-20}
+
+- id: DQ-021
+  ref: WP-C-06
+  question: "How do the arms work when a person is at the station: stop whenever someone enters the workspace, slow down as they approach, or keep moving under measured force limits?"
+  context: >-
+    With the arms in the item (DQ-004) and people at the station by design (hand-over, helping with a jam), the
+    collaborative mode fixes what the arm safe stop (SF-11) must detect and how much the station can do. A
+    safety-rated monitored stop is the simplest and needs only a station field or mat. Speed-and-separation
+    monitoring keeps the arm moving while people are far enough away and needs the arm's stopping distance.
+    Power-and-force limiting lets a person touch a moving arm and needs the OpenArm 2.0 contact forces measured
+    against the ISO/TS 15066 body-region limits, which nobody has published or measured. The arm's reach, torques
+    and force limits are not in upstream's record (WP-C-01 OI-6).
+  reversibility: revisit
+  decider: lead
+  blocks: "The demand and the P rating of SF-11 (WP-C-04 §3.11, WP-C-03 H-13); the station detection device of WP-S-03 §3.8; the validation of WP-V-03 (force gauge or field tests)"
+  gate: G1
+  asked: 2026-10-20
+  batch: 2
+  options:
+    - key: A
+      recommended: true
+      title: "Safety-rated monitored stop: the arm stops when anyone enters the marked workspace; hand-over only with the arm stopped"
+      detail: "Simplest to build and prove with a station field or mat; no force measurement needed. Cost: no helping hand while the arm moves, and throughput falls at a busy station."
+    - key: B
+      title: "Speed-and-separation monitoring: the arm slows as a person approaches and stops at the protective distance"
+      detail: "The arm keeps working with people nearby. Cost: a scanner field around the station and the arm's measured stopping distance to size it; still no contact allowed."
+    - key: C
+      title: "Power-and-force limiting: a person may touch the moving arm within measured body-region limits"
+      detail: "The collaborative use upstream's hand-over scenario implies. Cost: the OpenArm 2.0 forces must be measured per body region and the arm must limit them by design, which is not published; the head stays excluded in every case."
+  sources: ["assurance/02-concept/WP-C-06-human-robot-interaction-and-misuse.md §4 CA-02, CA-06", "assurance/02-concept/WP-C-04-safety-functions-and-plr.md §3.11", "ISO 10218-2 §5.10, ISO/TS 15066 §5 (to be checked)"]
   status: open

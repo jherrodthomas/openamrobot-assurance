@@ -6,7 +6,7 @@
 - id: CFG-001
   kind: configuration
   title: "Gate A unit: OpenAMRobot v0.0.1 differential-drive base (Raspberry Pi 5, Teensy 4.0, ZBLD drivers, RPLIDAR A1, 2 x 12 V lead-acid), the reference configuration"
-  description: "The robot upstream has wired, flashed and driven, as defined in WP-C-01 §1.1. No safety function exists on it at BL-001. OpenAMRobot 2.0 is a separate configuration to be added when its design is public (DQ-002)."
+  description: "The robot upstream has wired, flashed and driven, as defined in WP-C-01 §1.1. No safety function exists on it at BL-001. From DQ-020 (2026-10-20, option A) it is the software and firmware reference of the widened item, driven on the bench only with the wheels off the ground (DQ-011 C); the hardware reference is CFG-002."
   classification: fork-evaluated
   evaluation_state: in-progress
   platform: "openamr-platform-{sw,hw,fw} at BL-001"

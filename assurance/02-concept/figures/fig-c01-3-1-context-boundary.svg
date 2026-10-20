@@ -10,6 +10,8 @@
     <path d="M0,0 L10,5 L0,10 z" fill="#D64535"/></marker>
   <marker id="ctx-diamond" viewBox="0 0 12 8" refX="0" refY="4" markerWidth="12" markerHeight="8" orient="auto">
     <path d="M0,4 L6,0 L12,4 L6,8 z" fill="#122026"/></marker>
+  <pattern id="ctx-hatch" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(45)">
+    <rect width="10" height="10" fill="#EDF2F4"/><line x1="0" y1="0" x2="0" y2="10" stroke="#D3DDE2" stroke-width="1.2"/></pattern>
 </defs>
 <rect x="0" y="0" width="1180" height="660" fill="#FFFFFF"/>
 <text x="32.0" y="34.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#122026" text-anchor="start">Figure 3-1  Context and item boundary of the Gate A unit</text>
@@ -103,7 +105,7 @@
 <rect x="910.0" y="316.0" width="230.0" height="76.0" rx="6" fill="#F1F5F9" stroke="#D3DDE2" stroke-width="1"/>
 <text x="1025.0" y="332.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#122026" text-anchor="middle">2.0 upper body</text>
 <text x="918.0" y="347.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">OpenArm 2.0 arms and the lift</text>
-<text x="918.0" y="360.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">not this item (DQ-004)</text>
+<text x="918.0" y="360.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">CFG-002 only (Figure 3-4)</text>
 <rect x="910.0" y="426.0" width="230.0" height="76.0" rx="6" fill="#F1F5F9" stroke="#D3DDE2" stroke-width="1"/>
 <text x="1025.0" y="442.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#122026" text-anchor="middle">Fleet server</text>
 <text x="918.0" y="457.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">cloud fleet management</text>

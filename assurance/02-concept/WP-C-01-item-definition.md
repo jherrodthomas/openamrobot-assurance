@@ -4,9 +4,9 @@
 |---|---|
 | Work product | WP-C-01 Item definition and limits of the machinery |
 | Standard reference | ISO 12100:2010 §5.3 (determination of the limits of the machinery), §5.4 (hazard identification inputs); ISO 3691-4:2023 §3, §4 (terms, operating zones); ISO 13849-1:2023 §4.5; Regulation (EU) 2023/1230 Annex III §1.1.2, Annex IV Part A (technical documentation) |
-| Version | 0.3 (2026-10-20): element and interface IDs; Figures 3-1 (context and boundary), 3-2 (bdd), 3-3 (ibd), 5-1 (modes). 0.2: DQ-002 and DQ-005 applied. 0.1: initial draft |
+| Version | 0.4 (2026-10-20): DQ-004 B and DQ-020 A applied: the item is the base with the arms and lift on two configurations, CFG-001 (Gate A unit, software and firmware reference, bench only per DQ-011 C) and CFG-002 (2.0 mobile manipulator, hardware reference, unverified); §1.2, §2.2 F-12…F-16, §3.1a E-11…E-20, §3.3a IF-09…IF-15, §4.5, §5.1, AOU-08…AOU-10; Figure 3-4. 0.3: element and interface IDs; Figures 3-1 (context and boundary), 3-2 (bdd), 3-3 (ibd), 5-1 (modes). 0.2: DQ-002 and DQ-005 applied. 0.1: initial draft |
 | Status | Draft |
-| PL / scope | PL d target for the stop functions (DQ-005, decided 2026-10-20); reference configuration Gate A unit (DQ-002, decided 2026-10-20); mobile base only at v0.3; DQ-004 answered B on 2026-10-20 (the base with the arms and lift), to be applied in v0.4 after DQ-020 |
+| PL / scope | PL d target for the stop functions (DQ-005); the base with the arms and lift (DQ-004 B, 2026-10-20) on two configurations (DQ-020 A): CFG-001 Gate A unit, the software and firmware reference, bench only (DQ-011 C); CFG-002 the 2.0 mobile manipulator, the hardware reference, every value quoted from upstream and unverified |
 | Author | Assurance team (AI-assisted draft, I0) |
 | Reviewer(s) | TBD (I1) |
 | Approver | Project lead |
@@ -15,19 +15,21 @@
 > [!WARNING]
 > Draft prepared for engineering review. Values marked **(unknown)** are not stated anywhere in the upstream
 > record and must be measured or decided before the risk assessment (WP-C-03) can be rated. Nothing here has
-> been verified on the robot.
+> been verified on the robot. Everything said about CFG-002 (§1.2, §3.1a, §3.3a, §4.5, §5.1) is quoted from
+> upstream's decision register and 2.0 reference pages; no repository holds that design, so each row is a claim
+> to verify when it does, never evidence (gap assessment §8).
 
 ## 1. Item identification
 
 | Field | Value |
 |---|---|
-| Item | OpenAMRobot mobile base, Gate A unit: the differential-drive platform that upstream has wired, flashed and driven, with its onboard ROS 2 Jazzy stack and Teensy 4.0 motion firmware |
+| Item | OpenAMRobot mobile manipulator: the differential-drive base with its lift column and two OpenArm 2.0 arms, on two configurations. **CFG-001**, the Gate A unit (§1.1): the base upstream has wired, flashed and driven, with its ROS 2 Jazzy stack and Teensy 4.0 motion firmware; the software and firmware reference, driven on the bench only with the wheels off the ground (DQ-011 C). **CFG-002**, the OpenAMRobot 2.0 mobile manipulator (§1.2): the hardware the safety case is about, decided upstream, not yet in any repository |
 | Fork | `jherrodthomas/openamr-platform-{sw,hw,fw}` from `openAMRobot/*` at BL-001 |
-| Product class | Driverless industrial truck, automated guided, without load-handling device (ISO 3691-4 scope), intended to become a mobile manipulator (OpenAMRobot 2.0, out of scope for this item, see §9) |
-| Upstream designation | "Gate A unit (existing robot, v0.0.1)"; the 2.0 design (Jetson, STM32H723, hub motors, safety chain) is "Gate B" and later |
+| Product class | Mobile manipulator: a driverless industrial truck (ISO 3691-4 scope, with a load-handling device on CFG-002) carrying an industrial robot system of two arms (ISO 10218-2; collaborative application per ISO/TS 15066 only where WP-C-06 §4 proves it) and a lifting column for the arms and their load, not for persons (ISO 12100; Regulation (EU) 2023/1230 Annex III §4, to be checked). CFG-001 carries no arm or lift |
+| Upstream designation | CFG-001: "Gate A unit (existing robot, v0.0.1)". CFG-002: "OpenAMRobot 2.0", Gate B base controller, due as v2.0.0-rc.1 on 20 November 2026 and v2.0.0 on 18 December 2026 (`RELEASE-MILESTONES`) |
 | Manufacturer of record | Botshare LTD, Limassol, Cyprus, for upstream; the fork assigns no manufacturer and places no product on the market |
 
-### 1.1 Reference configuration
+### 1.1 Reference configuration CFG-001, the Gate A unit
 
 | Element | Value | Source |
 |---|---|---|
@@ -43,13 +45,37 @@
 | Software | `openamrobot_bringup`, `_drivers`, `_perception`, `_nav2` (Nav2: AMCL, smac planner, DWB + RotationShim, velocity_smoother, collision_monitor), `_docking` (AprilTag sequencer), `_description`, `_gazebo`; `openamrobot_control` is a placeholder | `sw: ros2/src/` |
 | Operator interface | Browser UI (`openamrobot-ui`, separate repository) over rosbridge; keyboard teleop; the on-screen E-STOP is a software request | `sw: docs/real_robot/06_operator_ui.md` |
 
+### 1.2 Reference configuration CFG-002, the 2.0 mobile manipulator (unverified)
+
+Every row quotes upstream's register (`openAMRobot/.github/decisions.yaml`, entry in the source column) or its 2.0
+reference pages (`openamrobot-docs/docs/reference/openamrobot-2/`); upstream's own rule is that nothing in them is
+production readiness, a validated payload or safety certification.
+
+| Element | Value (as decided upstream) | Source |
+|---|---|---|
+| Chassis | The existing 780 × 582 mm steel chassis with a 294 mm deck; complete robot at most 1700 mm high at full lift extension; mass to be weighed (F2S mass budget from CAD) | `ARM-MOUNT`; `mass-and-stability.md` |
+| Drive | Two ZLTECH ZLLG80ASM250-L-B hub motors with brakes, 200 mm wheels, one ZLAC8015D V4.2 driver on CAN1 (CANopen); brake ratings and fail-safe behaviour pending supplier evidence; drive pair rated for 120 kg drivable mass | `DRIVETRAIN`; `mass-and-stability.md` |
+| Base controller | STM32H723ZG (Gate B); go/no-go 6 November 2026, fallback the Teensy build of CFG-001; IMU ICM-42688-P | `BASE-CONTROLLER-GATES` |
+| Compute | NVIDIA Jetson Orin NX 16 GB on a reComputer J401 carrier; the Raspberry Pi is legacy | `COMPUTE` |
+| Sensors | RPLIDAR S3 (beam 222 mm above the floor, functional sensing, not a safety device); Orbbec Gemini 336L base camera; four MaxBotix MB7060 ultrasonic sensors (front and rear, 91 mm above the floor); two Benewake TF-Luna cliff sensors; ZED Mini head camera on the lift carriage; one camera per gripper. No safety-rated personnel detection is named | `hardware-architecture.md`; gap assessment §8 |
+| Power | 8S1P EVE LF105 LiFePO4 pack with a Daly BMS on CAN2; F0 110 A Class T fuse and a lockable battery disconnect; the STM32 stops motion and locks on a BMS fault | `BATTERY-PLACEMENT`, `BMS-FAULTS`, `MAIN-PROTECTION` |
+| Safety chain | Exactly two E-stops (base front Schneider XB4BS8445 with ZBE-102; chest button from the OpenArm kit), dual channel into a Pilz PNOZ s3 with monitored manual reset; K1, K2 Gigavac GX11CAC in series with linked NC auxiliaries in the reset loop; an E-stop cuts actuator power only (traction, both arms, lift) and engages the brakes; the Jetson and logic rails stay up | `SAFETY-PROCUREMENT`, `ESTOP-SCOPE` |
+| Lift | DOLD Hexalift V4, 350 mm stroke, 800 N push, 18 mm/s, column 530 mm retracted and 880 mm extended, on a two-position base plate (centre, +50 mm); shoulder height 1000 to 1350 mm; lift motion only in the stowed or carry pose with the base stopped; written DOLD holding on E-stop and power loss is a release gate not yet passed | `LIFT` |
+| Arms | Two OpenArm 2.0 arms with pinch grippers on CAN-FD, mounted on the lift carriage 180 mm ahead of the column axis at y ±31 mm (J1_A at x +0.240 or +0.290 m); payload 4.1 kg nominal, 6.0 kg peak including the end effector; drawer and door pulls up to 150 N at working height; reach, joint torques and force limits **(TBC: official OpenArm 2.0 description)** | `ARM-MOUNT`; `dark-store-simulation.md`; `mass-and-stability.md` |
+| Speed | 1.5 m/s command ceiling, an analytical limit; the operating speed follows from the stability model and the stopping tests; obstacle detection must reach at least 0.9 m ahead at that speed; hold-and-move limits 0.05 m/s (drawer reversal) and 0.3 m/s (carrying) | `SPEED-CEILING`, `LIFT`; `mass-and-stability.md` |
+| Software | The CFG-001 stack ported to the Jetson; `openamrobot-manipulation` (manipulation server, OpenArm 2.0 device package); `openamr-upperbody-{sw,fw,hw}` repositories that "establish component boundaries" only; an embodied-AI policy runtime (WP-C-09) | `upper-body.md`; gap assessment §8 |
+| Operator interface | Getac ZX10 detachable tablet, "non-authoritative; no actuation path" | `hardware-architecture.md` |
+
 ## 2. Intended use and functions
 
 ### 2.1 Intended use (ISO 12100 §5.3.2)
 
 - **Use:** indoor transport of a payload on the top mounting plate between operator-defined goal poses in a mapped
   area, with autonomous navigation, obstacle avoidance and automatic docking to a charging/parking dock. Upstream
-  positions the platform for "logistics and warehouse robotics" at SMEs and for research.
+  positions the platform for "logistics and warehouse robotics" at SMEs and for research. On CFG-002 the robot
+  also picks, places and carries items with its two arms at stations (dark-store shelving in upstream's
+  simulation), pulls drawers and doors up to 150 N, and raises its arms between shoulder heights of 1000 and
+  1350 mm with the lift; carrying is done in a carry pose at up to 0.3 m/s (upstream `LIFT` hold-and-move limits).
 - **Users:** builders (assemble and wire from the open-source record), integrators (commission on a site),
   operators (send goals, monitor, stop), bystanders (share the floor). Upstream's own user page addresses "anyone
   who works near the robot, whether or not they operate it".
@@ -73,11 +99,18 @@
 | F-09 | Dock to and undock from an AprilTag dock | `dock_trigger` sequencer publishing `/cmd_vel` directly | Bypasses F-06 and F-07; undock is a blind reverse |
 | F-10 | Accept goals, teleoperation and a stop request from the operator UI | rosbridge, Flask UI | Unauthenticated |
 | F-11 | Build a map | slam_toolbox | |
+| F-12 | Plan and execute arm motion to pick, place, pull and hand over (CFG-002) | `openamrobot-manipulation` server, OpenArm 2.0 device package, CAN-FD to the arms | not in any platform repository; arm reach and force limits TBC |
+| F-13 | Grip and release (CFG-002) | OpenArm pinch gripper; one wrist camera per gripper | load drop on gripper or power loss is a hazard input (H-14) |
+| F-14 | Raise and lower the arms and their load between calibrated stops (CFG-002) | DOLD Hexalift V4 on the CAN3 lift interface, STM32 base controller | upstream rule: only in the stowed or carry pose with the base stopped |
+| F-15 | Perceive the workspace for manipulation (CFG-002) | ZED Mini head camera, wrist cameras, Gemini 336L | functional sensing; nothing safety-rated |
+| F-16 | Learned policy for manipulation and navigation (CFG-002, "embodied-AI runtime") | Jetson Orin NX | a learned component; no safety function is allocated to it (WP-C-09, IX-03) |
 
 ### 2.3 Functions the item does not provide (and the record says so)
 
 Emergency stop, protective stop on personnel detection, safely-limited speed monitored independently of the
-command path, holding brake, battery protection, authenticated command path. See the gap assessment.
+command path, holding brake, battery protection, authenticated command path. See the gap assessment. On CFG-002
+the chain of §1.2 is decided but not built, and nothing upstream names a personnel-detection device, a speed
+monitor, an arm safe stop, power-and-force limiting for the arms, or the lift's holding evidence.
 
 ## 3. Item boundary
 
@@ -108,11 +141,31 @@ command path, holding brake, battery protection, authenticated command path. See
 
 *Figure 3-3.* The internal block diagram (SysML ibd): parts, ports and item flows, every connector labelled with its §3.3 interface. The grey dashed connectors are driver pins that exist and are not wired (`ERR/DO1`, `SPD/DO2`, `BRK/DI5`; GAP-04); the red dashed one is the E-stop button (GAP-01). Generated by [`figures/fig_c01.py`](figures/fig_c01.py); CI fails if it is stale.
 
+### 3.1a Elements of CFG-002 (unverified)
+
+| Element | Name and content | Role |
+|---|---|---|
+| E-11 | 2.0 base chassis and drive: the 780 × 582 mm chassis, two ZLTECH hub motors with brakes, ZLAC8015D driver on CAN1 | mechanical, actuation, braking |
+| E-12 | Base controller: STM32H723ZG with its firmware (Gate B), ICM-42688-P IMU, near-field sensor UARTs | last stage before the drive, lift and brakes |
+| E-13 | Compute: NVIDIA Jetson Orin NX with the ROS 2 stack, the manipulation server and the policy runtime | navigation, manipulation, operator endpoint |
+| E-14 | Navigation and near-field sensing: RPLIDAR S3, Orbbec Gemini 336L, four MB7060 ultrasonic, two TF-Luna cliff sensors | functional sensing, not safety devices |
+| E-15 | Power: 8S LiFePO4 pack, Daly BMS on CAN2, F0 110 A fuse, lockable disconnect, regulated 24 V and 5 V rails | traction, actuator and logic supply |
+| E-16 | Safety chain: two E-stops, Pilz PNOZ s3, K1 and K2 Gigavac GX11CAC, reset button with lamp; actuator-power removal for traction, arms and lift | the only hardwired stop |
+| E-17 | Lift: DOLD Hexalift V4 350 mm column on the two-position base plate, CAN3 interface | raises the arms and their load |
+| E-18 | Arms: two OpenArm 2.0 with pinch grippers and wrist cameras, CAN-FD | manipulation |
+| E-19 | Head camera: ZED Mini on the lift carriage | manipulation perception |
+| E-20 | Operator panel: Getac ZX10 tablet, no actuation path; the dock | operator and site fixtures |
+
+![Figure 3-4: context and boundary of the 2.0 mobile manipulator CFG-002: the ten elements E-11 to E-20 inside a dashed boundary drawn with a hatched fill because nothing in it is verified, the operator tablet, bystanders, the network and the mains on the left, the site, the payload and items at a station, and the fleet server on the right, and a red note that no repository holds the design](figures/fig-c01-3-4-cfg-002-context.svg)
+
+*Figure 3-4.* CFG-002 as upstream has decided it. The hatched boundary says what the table says: every element is a plan-set claim, not a part that exists. The arms and the lift bring the external actors "items at a station" and "a person within arm reach" that CFG-001 never had. Generated by [`figures/fig_c01.py`](figures/fig_c01.py) from §3.1a; CI fails if it is stale.
+
 ### 3.2 Outside the item
 
-The site (floor, slopes, doors, lighting, people, other vehicles), the Wi-Fi network and the operator's computer or
-phone, the browser UI (assessed only at its interface), the mains supply and charger installation, the payload
-and its restraint, the OpenAMRobot 2.0 upper body (arms, lift), the fleet server.
+The site (floor, slopes, doors, lighting, people, other vehicles), the Wi-Fi network and the operator's computer,
+tablet or phone, the browser UI (assessed only at its interface), the mains supply and charger installation, the
+payload and its restraint, the items, shelves, drawers and doors the arms act on at a station, the fleet server.
+The OpenArm body (`openarm_body_link0`) is not part of the robot (upstream `ARM-MOUNT`).
 
 ### 3.3 Interfaces
 
@@ -126,6 +179,18 @@ and its restraint, the OpenAMRobot 2.0 upper body (arms, lift), the fleet server
 | IF-06 | Teensy PWM / FWD / REV → ZBLD drivers | out | 3 kHz PWM speed setpoint, direction | Driver BRK and ERR pins unwired |
 | IF-07 | 24 V bus | power | battery ∥ mains to drivers and buck | No fuse, no disconnect |
 | IF-08 | USB 5 V (Pi → Teensy) | power | logic supply for the firmware | Pi brown-out removes the controller while drivers stay live |
+
+### 3.3a Interfaces of CFG-002 (unverified)
+
+| ID | Interface | Direction | Content | Integrity as decided |
+|---|---|---|---|---|
+| IF-09 | CAN1: base controller ↔ ZLAC8015D driver | out/in | CANopen velocity, brake release, driver status | STO input of the driver unknown (gap assessment §8) |
+| IF-10 | CAN2: BMS ↔ base controller | in | cell voltages, faults; "stops motion and locks" on a hard fault | functional (upstream `BMS-FAULTS`) |
+| IF-11 | CAN3: lift ↔ base controller | out/in | position between calibrated stops, holding | holding on E-stop and power loss is a release gate, unverified |
+| IF-12 | CAN-FD: Jetson ↔ arms | out/in | joint commands, gripper, joint states | no force limit, no safe-torque-off named |
+| IF-13 | Safety chain I/O: PNOZ s3 outputs → K1, K2 (traction, arms, lift actuator power); E-stop spare NO and RESET NC as diagnostic inputs through an ISO1212 into the STM32 | out, diag. in | actuator power removal; chain state for reporting | hardwired; diagnostics informative only (`SAFETY-CHAIN-IO`) |
+| IF-14 | Jetson ↔ STM32 link | out/in | velocity commands, lift commands, odometry, near-field sensor data | the 2.0 counterpart of IF-01 and IF-03; protocol not public |
+| IF-15 | Operator tablet (Getac ZX10) | in/out | goals, monitoring | "no actuation path" per upstream; to be verified |
 
 ## 4. Limits of the machinery (ISO 12100 §5.3)
 
@@ -175,6 +240,21 @@ and its restraint, the OpenAMRobot 2.0 upper body (arms, lift), the fleet server
 Indoor use only (IP rating unknown, motors IP20). Temperature range **(unknown)**; the Pi throttles at ~83 °C
 without a cooler. Lighting: AprilTag docking needs the tags visible to the camera. Noise and EMC: not assessed.
 
+### 4.5 Limits of CFG-002 (quoted, unverified)
+
+| Limit | Value as decided upstream | Source |
+|---|---|---|
+| Command ceiling | 1.5 m/s in software, an analytical limit; the accepted operating speed waits for the stability model and the stopping tests | `SPEED-CEILING` |
+| Carrying and hold-and-move | 0.3 m/s carrying in the carry pose; 0.05 m/s drawer reversal | `LIFT` |
+| Obstacle detection | must reach at least 0.9 m ahead at the ceiling speed (functional sensing) | `mass-and-stability.md` |
+| Footprint and height | 780 × 582 mm chassis; at most 1700 mm high at full lift extension; arm mount points at x +0.240 or +0.290 m from `base_link`, y ±31 mm | `ARM-MOUNT`; 2.0 index page |
+| Mass | to be weighed; drive pair rated for 120 kg drivable mass; the F2S model is "static and quasi-static on flat floors" and "makes no safety claim" | `mass-and-stability.md` |
+| Arm payload and pulls | 4.1 kg nominal, 6.0 kg peak including the end effector; drawer and door pulls up to 150 N at working height with the hands close to the body | `dark-store-simulation.md`; `mass-and-stability.md` |
+| Arm reach, joint torque, contact force | **(TBC: official OpenArm 2.0 description; not quoted upstream)** | — |
+| Lift | 350 mm stroke, 800 N push, 18 mm/s; shoulder 1000 to 1350 mm; motion only in the stowed or carry pose with the base stopped | `LIFT` |
+| Floor and thresholds | flat indoor floors; thresholds and cable covers at crawl speed; the 35 mm castors stop on small steps | `mass-and-stability.md` |
+| Stopping distance, tipping margins | from the stopping tests and the F2S rerun, both pending | `mass-and-stability.md` |
+
 ## 5. Operating modes and states
 
 | Mode | Who commands motion | Protective layers active | Notes |
@@ -193,17 +273,31 @@ Transitions between M2, M3 and M4 are not arbitrated: whoever publishes last win
 
 *Figure 5-1.* The modes of the table as one state machine. Transitions come from the upstream launch files and the docking sequencer as read in the gap assessment; none is arbitrated. M6 is red because it is entered by silence or loss, never by a demand, and is left without a reset (SF-05 absent). Generated by [`figures/fig_c01.py`](figures/fig_c01.py); CI fails if it is stale.
 
+### 5.1 Additional modes on CFG-002 (planned, unverified)
+
+| Mode | Who commands motion | Protective layers planned | Notes |
+|---|---|---|---|
+| M7 Manipulation | the manipulation server or the policy runtime moves an arm; the base is stopped | the chain removes arm power on an E-stop; nothing else named | people within arm reach are the collaborative-operation question of WP-C-06 §4 |
+| M8 Lift motion | the base controller moves the lift between calibrated stops; arms in the stowed or carry pose; base stopped | lift holding on E-stop and power loss (release gate) | crushing and shearing at the column and under the arms |
+| M9 Carrying | Nav2 drives the base at up to 0.3 m/s with the arms in the carry pose holding a load | the chain; the speed and stability limits of §4.5 | the arms raise the centre of gravity and widen the footprint |
+
+Transitions between M7, M8 and M9 and the base modes M2–M4 are rules upstream has written (lift only with the base
+stopped; carrying only in the carry pose), not interlocks any repository implements. WP-C-04 SF-10 is the function
+that makes them so.
+
 ## 6. Legal requirements and standards
 
 | Instrument | Applies because | Status in the record |
 |---|---|---|
 | Regulation (EU) 2023/1230 (Machinery), from 20 January 2027; Directive 2006/42/EC until then | a self-propelled machine placed on the EU market (upstream sells kits from Cyprus) | no conformity file, no declaration; the fork places nothing on the market |
 | ISO 3691-4:2023 | driverless industrial truck in zones shared with people | not cited anywhere upstream |
+| ISO 10218-2:2025, ISO/TS 15066:2016 | the arms as an industrial robot system; collaborative operation (power-and-force limiting, speed-and-separation monitoring) on CFG-002 | not cited; the OpenArm 2.0 limits are not quoted upstream |
+| ISO 12100 §6, Regulation (EU) 2023/1230 Annex III §4 (lifting operations, to be checked) | the lift carries the arms and their load, never persons | not cited |
 | ISO 13849-1:2023 / -2:2012 | safety-related parts of the control system | not cited; no PL claimed |
 | EN 60204-1:2018, ISO 13850:2015 | electrical equipment, emergency stop | E-stop parts cited to IEC 60947-5-5 only |
 | ISO 12100:2010 | risk assessment | upstream asks the user to do it |
 | IEC 62443-4-1/-4-2 | networked industrial control | not cited |
-| Regulation (EU) 2024/1689 (AI Act) Annex I | when the learned policy (2.0 embodied-AI runtime) becomes a safety component | out of scope for this item |
+| Regulation (EU) 2024/1689 (AI Act) Annex I | when the learned policy (2.0 embodied-AI runtime) becomes a safety component | no safety function is allocated to it (WP-C-09); the AI Act record is WP-K-07 |
 | ANSI/A3 R15.08-1 | if deployed in the US (DQ-003) | not cited |
 
 ## 7. Known hazards and experience from similar items
@@ -215,6 +309,11 @@ Transitions between M2, M3 and M4 are not arbitrated: whoever publishes last win
 - Industry experience for AMRs of this class (ISO 3691-4 Annex A hazards): collision with a person in the path or
   reversing, crushing against fixed structures, tipping on ramps or with a high payload, run-away on loss of
   control, unexpected start-up after a stop, electrical fire from an unfused traction battery.
+- Industry experience for mobile manipulators and collaborative arms (ISO 10218-2 Annex A, ISO/TS 15066): impact
+  and clamping by an arm at head and hand height, a dropped or thrown load, an arm sweep that widens the footprint
+  the base's detection was sized for, crushing and shearing at a lift column, tipping with an arm extended, and
+  the base moving while an arm is outside its stowed pose. Upstream's F2S model already analyses the arm-forward
+  and one-arm-sideways poses and a 150 N pull for tipping.
 
 ## 8. Assumptions of use and external measures
 
@@ -227,13 +326,15 @@ Transitions between M2, M3 and M4 are not arbitrated: whoever publishes last win
 | AOU-05 | The Wi-Fi network carrying DDS is private and reaches only trusted hosts | not stated; a guest SSID is named in the docs | H-05 |
 | AOU-06 | The floor is flat, dry, indoor, free of steps above the castor limit | assumed | H-06 |
 | AOU-07 | The payload is restrained and within a mass and height limit **(to be set)** | no limit stated | H-06 |
+| AOU-08 | The base does not move while an arm is outside its stowed or carry pose (CFG-002; WP-C-06 CA-01) | planned upstream (`LIFT` motion rules); no interlock in any repository | H-01, H-13, H-15 |
+| AOU-09 | The lift moves only in the stowed or carry pose with the base stopped, and holds its load on an E-stop and on power loss (CFG-002) | planned upstream; the DOLD holding evidence is a release gate not yet passed | H-14, H-15 |
+| AOU-10 | Nobody is within reach of an arm while it moves, until its power-and-force limiting is measured against ISO/TS 15066 (CFG-002) | procedural only; no arm exists on CFG-001 | H-13 |
 
 ## 9. Out of scope for this item
 
-OpenAMRobot 2.0 (Jetson, STM32H723 base controller, ZLTECH hub motors with brakes, ZLAC8015D driver, Pilz PNOZ s3
-safety chain, LiFePO4 pack with BMS, Orbbec camera, ultrasonic and cliff sensors), the OpenArm 2.0 dual arms, the
-lift, the embodied-AI policy runtime and the fleet server. Decisions about them are tracked in the gap assessment
-§8; they become a second item when their design is public (DQ-002, DQ-004).
+The fleet server; the OpenArm body and any OpenArm configuration other than the two arms on the lift carriage;
+the learned policy as a safety function (it is inside the item as F-16 and outside every safety function, WP-C-09);
+OpenAMRobot 3.0. Until v0.3 the whole 2.0 design was out of scope; from v0.4 it is CFG-002 (DQ-004 B, DQ-020 A).
 
 ## 10. Open items
 
@@ -243,4 +344,6 @@ lift, the embodied-AI policy runtime and the fleet server. Decisions about them 
 | OI-2 | Measure stopping distance from 0.20 m/s on the watchdog coast and on a commanded −2.5 m/s² stop, loaded and unloaded | WP-C-03, SF-02 field sizing |
 | OI-3 | Set a payload limit and a payload height limit | AOU-07 |
 | OI-4 | Resolve what the panel E-stop button switches on the as-built unit | GAP-01, SF-01 |
-| OI-5 | ~~Decide the regulatory frame (DQ-003) and the item scope (DQ-004)~~ both decided 2026-10-20: EU frame; the base with the arms and lift (B). Widen this item in v0.4 once DQ-020 settles which hardware it describes | header fields, §1–§3, §9 |
+| OI-5 | ~~Decide the regulatory frame (DQ-003) and the item scope (DQ-004)~~ both decided 2026-10-20 and applied in v0.4 (EU frame; the base with the arms and lift on CFG-001 and CFG-002, DQ-020 A) | closed |
+| OI-6 | Obtain the OpenArm 2.0 reach, joint torques and contact-force limits from the official description and record them in §4.5 | WP-C-03 H-13, WP-C-06 §4 |
+| OI-7 | Replace every CFG-002 row by a verified value as the 2.0 repositories and drawings become public (v2.0.0-rc.1, 20 November 2026) | every CFG-002 claim |

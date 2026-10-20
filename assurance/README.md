@@ -36,7 +36,7 @@ below. CI fails if any of them is stale. The document form of the same argument 
 |---|---|
 | Assurance state | Development |
 | Engineering baseline | `BL-001` at `8a7a5b1` (under development) |
-| Registered safety claims | 20 |
+| Registered safety claims | 23 |
 | Claims with accepted supporting evidence | 0 |
 | Registered evidence items | 17 (0 available, 10 drafted, 7 not yet performed) |
 | Evidence requiring review | 10 |
@@ -44,7 +44,7 @@ below. CI fails if any of them is stale. The document form of the same argument 
 | Open defeaters (known counter-evidence) | 40 |
 | Evaluated configurations | 1 |
 | Assurance-supported configurations | 0 |
-| Records digest | `1a4ecd52713c` |
+| Records digest | `8ed7d1f3977d` |
 
 | Lifecycle area | Status | Evidence (drafted / missing / accepted) |
 |---|---|---|

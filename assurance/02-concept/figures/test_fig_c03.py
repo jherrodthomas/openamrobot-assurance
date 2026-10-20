@@ -15,9 +15,9 @@ class TestFigC03(unittest.TestCase):
 
   def test_source_tables(self):
     self.assertEqual(len(self.src["graph"]), 8)
-    self.assertEqual(len(self.src["situations"]), 15)
-    self.assertEqual(len(self.src["hazards"]), 12)
-    self.assertEqual(len(self.src["rated"]), 20)
+    self.assertEqual(len(self.src["situations"]), 18)
+    self.assertEqual(len(self.src["hazards"]), 15)
+    self.assertEqual(len(self.src["rated"]), 25)
     self.assertEqual(fig_c03.check_source(self.src), [])
 
   def test_risk_graph_is_the_published_mapping(self):

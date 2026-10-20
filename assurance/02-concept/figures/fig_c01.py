@@ -55,9 +55,10 @@ def _table(text: str, heading: str) -> list[list[str]]:
 def load_source() -> dict:
   text = SOURCE.read_text(encoding="utf-8")
   elements = {r[0]: r[1] for r in _table(text, "### 3.1 Inside the item")}
+  elements2 = {r[0]: r[1] for r in _table(text, "### 3.1a Elements of CFG-002")}
   interfaces = {r[0]: (r[1], r[2]) for r in _table(text, "### 3.3 Interfaces")}
   modes = [(r[0], r[1], r[2]) for r in _table(text, "## 5. Operating modes and states")]
-  return {"elements": elements, "interfaces": interfaces, "modes": modes}
+  return {"elements": elements, "elements2": elements2, "interfaces": interfaces, "modes": modes}
 
 
 # Structural facts: which element talks to which, over which interface of §3.3. Checked against the source IDs.
@@ -144,6 +145,8 @@ def svg(w, h, uid, title, desc, body):
     <path d="M0,0 L10,5 L0,10 z" fill="{C['red']}"/></marker>
   <marker id="{uid}-diamond" viewBox="0 0 12 8" refX="0" refY="4" markerWidth="12" markerHeight="8" orient="auto">
     <path d="M0,4 L6,0 L12,4 L6,8 z" fill="{C['ink']}"/></marker>
+  <pattern id="{uid}-hatch" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(45)">
+    <rect width="10" height="10" fill="{C['panel2']}"/><line x1="0" y1="0" x2="0" y2="10" stroke="{C['stroke']}" stroke-width="1.2"/></pattern>
 </defs>"""
   return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" '
           f'aria-labelledby="{uid}-t {uid}-d">\n<title id="{uid}-t">{escape(title)}</title>\n<desc id="{uid}-d">{escape(desc)}</desc>\n'
@@ -215,6 +218,9 @@ EXTERNALS = {
   "EXT-MAINS": ("Mains and charger", "230 V converter, unknown model"),
   "EXT-PAY": ("Payload", "on the top plate; no limit set"),
   "EXT-20": ("2.0 upper body", "OpenArm 2.0 arms and the lift"),
+  "EXT-TAB": ("Operator tablet", "Getac ZX10, no actuation path"),
+  "EXT-STATION": ("Station", "shelves, drawers, doors, items the arms act on"),
+  "EXT-REACH": ("Person within arm reach", "a collaborative-operation question"),
   "EXT-FLEET": ("Fleet server", "cloud fleet management"),
 }
 
@@ -240,7 +246,7 @@ def fig_context(src: dict) -> str:
     "EXT-OP": (40, 96, "crosses: IF-01, IF-05"), "EXT-NET": (40, 206, "crosses: IF-01, IF-02, IF-05"),
     "EXT-BY": (40, 316, "no interface, no detection"), "EXT-MAINS": (40, 426, "crosses: IF-07 (∥ battery)"),
     "EXT-SITE": (W - 40 - ex_w, 96, "contact: floor, obstacles"), "EXT-PAY": (W - 40 - ex_w, 206, "contact: mass on the plate"),
-    "EXT-20": (W - 40 - ex_w, 316, "not this item (DQ-004)"), "EXT-FLEET": (W - 40 - ex_w, 426, "not this item"),
+    "EXT-20": (W - 40 - ex_w, 316, "CFG-002 only (Figure 3-4)"), "EXT-FLEET": (W - 40 - ex_w, 426, "not this item"),
   }
   for k, (x, y, third) in actors.items():
     tt, d = EXTERNALS[k]
@@ -261,6 +267,53 @@ def fig_context(src: dict) -> str:
   return svg(W, H, "ctx", "Figure 3-1: context and item boundary of the Gate A unit",
              "The ten elements of the item in a grid inside a dashed boundary; the operator, the Wi-Fi network, bystanders and the mains on the left, each naming the interface IDs that cross the boundary to it; the site, the payload, the 2.0 upper body and the fleet server on the right; a red note that the E-stop button's wiring is undocumented.",
              head + edges + nodes + labels + note + foot)
+
+
+# ---------------------------------------------------------------- Figure 3-4 CFG-002 context (unverified)
+
+
+def fig_context2(src: dict) -> str:
+  W, H = 1180, 750
+  el = src["elements2"]
+  head = [text(32, 34, "Figure 3-4  Context and boundary of CFG-002, the 2.0 mobile manipulator, as decided upstream", 15, C["ink"], 700),
+          text(32, 52, "The ten elements E-11…E-20 of §3.1a inside the boundary; hatched because no repository holds this design: every box is a plan-set claim to verify, not a part that exists.", 11, C["muted"])]
+  bx, by, bw, bh = 320, 84, 540, 550
+  nodes = [rect(bx, by, bw, bh, f"url(#ctx2-hatch)", C["ink"], 10, 1.4, "8,5"),
+           text(bx + 14, by + 22, "ITEM  OpenAMRobot 2.0 mobile manipulator (CFG-002, unverified)", 11, C["ink"], 700, extra=' letter-spacing="1"')]
+  ew, eh = 246, 84
+  order = ["E-13", "E-12", "E-11", "E-15", "E-16", "E-18", "E-17", "E-19", "E-14", "E-20"]
+  for i, eid in enumerate(order):
+    col, row = divmod(i, 5)
+    x = bx + 18 + col * (ew + 12)
+    y = by + 40 + row * (eh + 14)
+    short, _, detail = el[eid].partition(":")
+    nodes += box(x, y, ew, eh, short.strip(), wrap(detail.strip(), ew - 16, 10.5)[:4], C["white"], C["stroke"], mono_id=eid)
+  ex_w, ex_h = 230, 76
+  actors = {
+    "EXT-TAB": (40, 96, "crosses: IF-15 (no actuation)"), "EXT-NET": (40, 206, "crosses: IF-14 counterpart of IF-01"),
+    "EXT-BY": (40, 316, "no safety-rated detection named"), "EXT-MAINS": (40, 426, "charger; chain opens (planned)"),
+    "EXT-SITE": (W - 40 - ex_w, 96, "contact: floor, obstacles"), "EXT-STATION": (W - 40 - ex_w, 206, "contact: the arms, 150 N pulls"),
+    "EXT-REACH": (W - 40 - ex_w, 316, "contact: arm, load, lift (H-13…H-15)"), "EXT-FLEET": (W - 40 - ex_w, 426, "not this item"),
+  }
+  for k, (x, y, third) in actors.items():
+    tt, d = EXTERNALS[k]
+    nodes += box(x, y, ex_w, ex_h, tt, wrap(d, ex_w - 16, 10.5)[:2] + [third], C["grey_bg"], C["stroke"])
+  lx, rx = 40 + ex_w, W - 40 - ex_w
+  edges = []
+  for k, kind in (("EXT-TAB", "data"), ("EXT-NET", "data"), ("EXT-BY", "contact"), ("EXT-MAINS", "power")):
+    y = actors[k][1] + ex_h / 2
+    ln, _ = route([(lx, y), (bx, y)], kind, "ctx2")
+    edges += ln
+  for k in ("EXT-SITE", "EXT-STATION", "EXT-REACH"):
+    y = actors[k][1] + ex_h / 2
+    ln, _ = route([(rx, y), (bx + bw, y)], "contact", "ctx2")
+    edges += ln
+  note = [pill(bx + bw / 2, by + bh + 22, "No repository holds this design (v2.0.0-rc.1 due 20 November 2026); nothing here is verified", C["red"])]
+  foot = legend(32, H - 24, [("data", C["line"], ""), ("power", C["amber"], ""), ("physical contact, no interface", C["dim"], "2,3")])
+  foot.append(text(W - 32, H - 20, "Generated by figures/fig_c01.py from WP-C-01 §3.1a and §3.3a", 9.5, C["dim"], anchor="end"))
+  return svg(W, H, "ctx2", "Figure 3-4: context and boundary of CFG-002, the 2.0 mobile manipulator",
+             "The ten decided elements of the 2.0 mobile manipulator in a grid inside a hatched dashed boundary; the operator tablet, the network, bystanders and the mains on the left; the site, a station with shelves and drawers, a person within arm reach and the fleet server on the right; a red note that no repository holds the design.",
+             head + edges + nodes + note + foot)
 
 
 # ---------------------------------------------------------------- Figure 3-2 block definition diagram
@@ -431,6 +484,7 @@ OUTPUTS = {
   "fig-c01-3-1-context-boundary.svg": fig_context,
   "fig-c01-3-2-bdd.svg": fig_bdd,
   "fig-c01-3-3-ibd.svg": fig_ibd,
+  "fig-c01-3-4-cfg-002-context.svg": fig_context2,
   "fig-c01-5-1-modes.svg": fig_modes,
 }
 
@@ -440,6 +494,9 @@ def check_source(src: dict) -> list[str]:
   for eid in [f"E-{i:02d}" for i in range(1, 11)]:
     if eid not in src["elements"]:
       errs.append(f"WP-C-01 §3.1 has no row for {eid}")
+  for eid in [f"E-{i:02d}" for i in range(11, 21)]:
+    if eid not in src["elements2"]:
+      errs.append(f"WP-C-01 §3.1a has no row for {eid}")
   for iid in [f"IF-{i:02d}" for i in range(1, 9)]:
     if iid not in src["interfaces"]:
       errs.append(f"WP-C-01 §3.3 has no row for {iid}")

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Draw the WP-C-06 human-robot-interaction figures.
 
-  fig-c06-2-1-interaction-scenes.svg   Figure 2-1  scene cards IS-01…IS-12 (top-down pictograms, 1 m grid)
+  fig-c06-2-1-interaction-scenes.svg   Figure 2-1  scene cards IS-01…IS-15 (top-down pictograms, 1 m grid)
   fig-c06-3-1-detection-distance.svg   Figure 3-1  minimum detection distance L against the coasting time to standstill
   fig-c06-5-1-misuse-matrix.svg        Figure 5-1  misuse matrix, likelihood × consequence, MU IDs in the cells
 
@@ -73,6 +73,9 @@ SCENES = {
   "IS-10": dict(robot=(1.0, 2.0, 1, 0), persons=[(2.8, 2.0, 0, 0, False)], caption="stands in the path; robot waits, then resumes silently"),
   "IS-11": dict(robot=(1.2, 2.0, 1, 0), persons=[(4.0, 0.8, 0, 0, False)], screen=True, field=False, caption="presses the on-screen E-STOP; nothing stops"),
   "IS-12": dict(robot=(1.0, 2.0, 1, 0), persons=[(3.0, 2.0, -1, 0, False)], caption="tries to stop the robot with a hand"),
+  "IS-13": dict(robot=(1.6, 2.0, 0, 0), persons=[(3.3, 1.5, -1, 0, False)], racks=[(3.8, 0.4, 0.9, 3.2)], arm=(1, 0), lift=True, field=False, caption="reaches into the arm's workspace at a station (CFG-002)"),
+  "IS-14": dict(robot=(1.6, 2.0, 0, 0), persons=[(2.5, 2.6, 0, -1, True)], arm=(1, 0), lift=True, field=False, caption="hand or foot under the lowering lift carriage (CFG-002)"),
+  "IS-15": dict(robot=(1.2, 2.0, 1, 0), persons=[(2.6, 1.0, 0, 0, False)], arm=(1, -1), lift=True, caption="carrying at 0.3 m/s; the arm sweeps at head height (CFG-002)"),
 }
 
 MISUSE_CELLS = {("L", "S1"), ("M", "S1"), ("H", "S1"), ("L", "S2"), ("M", "S2"), ("H", "S2")}
@@ -172,6 +175,18 @@ def _card(x0, y0, cw, chh, sid, sc, spec, uid):
     out += _person(x, y, low)
     if hdx or hdy:
       out.append(f'<line x1="{x + hdx * 0.3 * M:.1f}" y1="{y + hdy * 0.3 * M:.1f}" x2="{x + hdx * 0.75 * M:.1f}" y2="{y + hdy * 0.75 * M:.1f}" stroke="{C["ink"]}" stroke-width="1.4" marker-end="url(#{uid}-arrow)"/>')
+  if spec.get("lift"):
+    # the lift column, 330 mm behind the chassis front edge, drawn as a square on the deck
+    lx_, ly_ = cx + rl / 2 - 0.33 * M, cy
+    out.append(rect(lx_ - 0.12 * M, ly_ - 0.12 * M, 0.24 * M, 0.24 * M, C["amber_bg"], C["amber"], 2))
+  if spec.get("arm"):
+    adx, ady = spec["arm"]
+    # the arm mount 180 mm ahead of the column axis; a 0.7 m reach placeholder (WP-C-01 OI-6)
+    ax0, ay0 = cx + rl / 2 - 0.15 * M, cy - 0.31 * M
+    ax1, ay1 = ax0 + adx * 0.7 * M, ay0 + ady * 0.7 * M
+    out.append(f'<line x1="{ax0:.1f}" y1="{ay0:.1f}" x2="{ax1:.1f}" y2="{ay1:.1f}" stroke="{C["amber"]}" stroke-width="3" stroke-linecap="round"/>')
+    out.append(f'<circle cx="{ax1:.1f}" cy="{ay1:.1f}" r="{0.08 * M:.1f}" fill="{C["white"]}" stroke="{C["amber"]}" stroke-width="2"/>')
+    out.append(f'<circle cx="{ax0:.1f}" cy="{ay0:.1f}" r="{0.7 * M:.1f}" fill="{C["amber"]}" fill-opacity="0.08" stroke="{C["amber"]}" stroke-width="1" stroke-dasharray="3,3"/>')
   if spec.get("screen"):
     x, y = P(4.2, 0.4)
     out.append(rect(x, y, 0.6 * M, 0.4 * M, C["amber_bg"], C["amber"], 2))
@@ -193,9 +208,9 @@ def fig_scenes(src: dict) -> str:
   cw, chh, gap = 236, 258, 14
   cols = 4
   W = 32 * 2 + cols * cw + (cols - 1) * gap
-  rows = 3
+  rows = -(-len(SCENES) // cols)
   H = 94 + rows * chh + (rows - 1) * gap + 50
-  body = [text(32, 34, "Figure 2-1  Interaction scenarios IS-01…IS-12 as scene cards (top-down, 1 m grid)", 15, C["ink"], 700),
+  body = [text(32, 34, f"Figure 2-1  Interaction scenarios IS-01…IS-{len(SCENES):02d} as scene cards (top-down, 1 m grid)", 15, C["ink"], 700),
           text(32, 52, "Robot with its direction of travel, its 1.0 m starting field (teal) and the rear bumper (red); people as head-and-shoulders, dashed when below the scan plane.", 11, C["muted"]),
           text(32, 66, "Caption: what happens; below it, the measure the §2 table names.", 11, C["muted"])]
   for i, (sid, spec) in enumerate(SCENES.items()):

@@ -4,9 +4,9 @@
 |---|---|
 | Work product | WP-K-01 Safety case for the Gate A unit (UL 4600 structure: claims, arguments, evidence, defeaters) |
 | Standard reference | ISO 13849-1:2023 §4.7, §10 (information); ISO 12100 §7 (documentation); Regulation (EU) 2023/1230 Annex IV Part A (technical documentation); UL 4600 §5, §6 |
-| Version | 0.3 (2026-10-20): G1 widened to SF-01…SF-09; G1.5 at PL d; G1.8, G1.9 and Sn-17 (WP-C-04) added; OI-6 widened to the re-ratings of WP-C-03 v0.3. 0.2: Sn-16 (WP-H-02) added; OI-7 closed. 0.1: initial structure, every claim draft, every defeater open |
+| Version | 0.4 (2026-10-20): CFG-002 added; G1 widened to SF-01…SF-12 with G1.10…G1.12 on CFG-002; DF-22, DF-23, DF-36 bear on them. 0.3: G1 widened to SF-01…SF-09; G1.5 at PL d; G1.8, G1.9 and Sn-17 (WP-C-04) added; OI-6 widened to the re-ratings of WP-C-03 v0.3. 0.2: Sn-16 (WP-H-02) added; OI-7 closed. 0.1: initial structure, every claim draft, every defeater open |
 | Status | Draft |
-| PL / scope | PL d target; Gate A unit (CFG-001); mobile base only |
+| PL / scope | PL d target; CFG-001 Gate A unit (software and firmware reference, bench only) and CFG-002 2.0 mobile manipulator (hardware reference, unverified); the base with the arms and lift |
 | Author | Assurance team (AI-assisted draft, I0) |
 | Reviewer(s) | TBD (I2 for the safety case) |
 | Approver | Project lead |
@@ -19,8 +19,9 @@
 
 ## 1. Purpose and scope
 
-This document argues, for the reference configuration CFG-001 (the Gate A unit of WP-C-01), that the robot poses
-no unreasonable risk when operated within its limits. At BL-001 the argument is a structure with open defeaters:
+This document argues, for the two configurations of WP-C-01 v0.4 (CFG-001, the Gate A unit, the software and
+firmware reference, bench only; CFG-002, the 2.0 mobile manipulator, the hardware reference, unverified), that the
+robot poses no unreasonable risk when operated within its limits. At BL-001 the argument is a structure with open defeaters:
 it records what would have to be true, what evidence would show it, and what is known to contradict it today.
 
 ## 2. Argument structure
@@ -36,7 +37,7 @@ The cybersecurity branch of the argument is WP-K-03 ([cybersecurity case](WP-K-0
 | ID | Claim | Parent | Status | Evidence | Open defeaters |
 |---|---|---|---|---|---|
 | G0 | The Gate A unit poses no unreasonable risk | — | draft | Sn-01, Sn-02, Sn-03 | 4 |
-| G1 | The safety functions SF-01 to SF-09 reach their required Performance Level | G0 | draft | Sn-04, Sn-05, Sn-17 | 0 |
+| G1 | The safety functions SF-01 to SF-12 reach their required Performance Level | G0 | draft | Sn-04, Sn-05, Sn-17 | 0 |
 | G1.1 | SF-01 emergency stop is implemented at PL d | G1 | draft | Sn-08, Sn-16 | 4 |
 | G1.2 | SF-02 protective stop on personnel detection is implemented at PL d | G1 | draft | Sn-11, Sn-07, Sn-16 | 5 |
 | G1.3 | SF-03 safely-limited speed is implemented at PL d | G1 | draft | Sn-11, Sn-16 | 2 |
@@ -46,6 +47,9 @@ The cybersecurity branch of the argument is WP-K-03 ([cybersecurity case](WP-K-0
 | G1.7 | SF-07 powered-debug inhibit is implemented at PL b | G1 | draft | Sn-06, Sn-10 | 2 |
 | G1.8 | SF-08 warning before motion is implemented at PL b | G1 | draft | Sn-17 | 1 |
 | G1.9 | SF-09 enabling control for teleoperation is implemented at PL c | G1 | draft | Sn-17 | 1 |
+| G1.10 | SF-10 base motion inhibit while an arm is unstowed is implemented at PL d (CFG-002) | G1 | draft | Sn-17 | 1 |
+| G1.11 | SF-11 arm safe stop and collaborative force limiting is implemented at PL d (CFG-002) | G1 | draft | Sn-17 | 1 |
+| G1.12 | SF-12 lift and gripper holding on stop and power loss, with the lift interlock, is implemented at PL d (CFG-002) | G1 | draft | Sn-17 | 1 |
 | G2 | The complementary electrical and mechanical measures are implemented | G0 | draft | — | 0 |
 | G2.1 | The 24 V bus and the mains side are protected | G2 | draft | Sn-12, Sn-16 | 4 |
 | G2.2 | Mass, payload and stability are within limits | G2 | draft | Sn-09, Sn-07 | 1 |
@@ -62,9 +66,11 @@ AOU-01 to AOU-07 of WP-C-01 §8 apply to every claim. At BL-001 each holds only 
 
 ## 5. Safety functions and Performance Levels
 
-SF-01, SF-02, SF-03, SF-05 at PLr d; SF-04, SF-06, SF-09 at PLr c; SF-07, SF-08 at PLr b (WP-C-03 v0.3 §7,
-specified in WP-C-04; DQ-005 decided 2026-10-20). SF-05 rose from c to d and SF-08, SF-09 were added when the
-risk assessment was re-rated per zone (WP-C-03 §5.2). None reaches any PL at BL-001.
+SF-01, SF-02, SF-03, SF-05, SF-10, SF-11, SF-12 at PLr d; SF-04, SF-06, SF-09 at PLr c; SF-07, SF-08 at PLr b
+(WP-C-03 v0.4 §7, specified in WP-C-04 v0.2; DQ-005 decided 2026-10-20). SF-05 rose from c to d and SF-08, SF-09
+were added when the risk assessment was re-rated per zone (WP-C-03 §5.2); SF-10…SF-12 are the arm and lift
+functions of CFG-002 (DQ-004 B). Since DQ-014 B the firmware is channel 1 of SF-03, SF-04, SF-06 and SF-09. None
+reaches any PL at BL-001.
 
 ## 6. Evidence
 
@@ -91,7 +97,7 @@ specification, not reviewed; Missing = not yet performed.
 | Sn-14 | Baseline record BL-001 | `assurance/case/baselines/baselines.yaml` | Partial | G4.1 |
 | Sn-15 | Safety case WP-K-01 | `assurance/10-safety-case/WP-K-01-safety-case.md` | Partial | G4.3 |
 | Sn-16 | Safety-chain design for the Gate A bench build: parts, wiring, I/O, estimated PL | `assurance/04-hardware/WP-H-02-electrical-and-safety-chain-design.md` | Partial | G1.1, G1.2, G1.3, G2.1 |
-| Sn-17 | Safety functions specification SF-01 to SF-09: demand, safe state, response, stop category, PLr, allocation | `assurance/02-concept/WP-C-04-safety-functions-and-plr.md` | Partial | G1, G1.8, G1.9 |
+| Sn-17 | Safety functions specification SF-01 to SF-12: demand, safe state, response, stop category, PLr, allocation | `assurance/02-concept/WP-C-04-safety-functions-and-plr.md` | Partial | G1, G1.8, G1.9, G1.10, G1.11, G1.12 |
 
 ## 7. Defeaters
 
@@ -121,8 +127,8 @@ evidence closing it.
 | DF-19 | No battery fuse and no battery disconnect | GAP-19 | G1.1, G2.1 | open |
 | DF-20 | Battery and mains in parallel with no source selector; mains side undocumented | GAP-20 | G2.1 | open |
 | DF-21 | Logic power not independent of compute (Teensy on Pi USB) | GAP-21 | G2.1 | open |
-| DF-22 | No safety-rated detection of persons | GAP-22 | G1.2 | open |
-| DF-23 | No mechanical safety data (mass, CoG, tipping, stopping distance) | GAP-23 | G2.2, G4.2 | open |
+| DF-22 | No safety-rated detection of persons | GAP-22 | G1.2, G1.11 | open |
+| DF-23 | No mechanical safety data (mass, CoG, tipping, stopping distance) | GAP-23 | G2.2, G4.2, G1.12 | open |
 | DF-24 | No regenerative-braking path | GAP-24 | G1.6, G2.1 | open |
 | DF-25 | The BOM does not describe the robot | GAP-25 | G0 | open |
 | DF-26 | Licence statements conflict | GAP-26 | G0 | open |
@@ -135,7 +141,7 @@ evidence closing it.
 | DF-33 | Safety-relevant design decisions are not in any repository | GAP-33 | G4.1 | open |
 | DF-34 | Process capability at CL0 for engineering processes | GAP-34 | G4.3 | open |
 | DF-35 | Undock is a blind 0.7 m reverse; rear sector masked; backup enabled | GAP-35 | G1.2 | open |
-| DF-36 | No command arbitration; unbounded docking speeds | GAP-36 | G1.3, G1.9, G3.1 | open |
+| DF-36 | No command arbitration; unbounded docking speeds | GAP-36 | G1.3, G1.9, G1.10, G3.1 | open |
 | DF-37 | Failure handling is report-only | GAP-37 | G1.4, G1.8 | open |
 | DF-38 | Safety documentation diverges from the configuration | GAP-38 | G4.3 | open |
 | DF-39 | The motion-critical code has no tests | GAP-39 | G4.3 | open |

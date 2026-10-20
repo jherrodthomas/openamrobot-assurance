@@ -4,9 +4,9 @@
 |---|---|
 | Work product | WP-C-04 Safety functions specification with required Performance Level, stop category and response time |
 | Standard reference | Machinery: 3691-4 §4; 13850 §4; SRP/CS: 13849-1 §5, Annex A (PLr); Other: 60204-1 §9.2 (stop categories); ASPICE: SYS.2 |
-| Version | 0.1 (2026-10-20): SF-01…SF-09 specified (demand, safe state, response, stop category, modes and tasks); PLr derived from WP-C-03 v0.3 with the type-C check; allocation; response-time budget; task applicability; Figures 2-1, 7-1, 8-1. 0.0: skeleton |
+| Version | 0.2 (2026-10-20): DQ-004 B, DQ-014 B and DQ-020 A applied: SF-10…SF-12 (arms and lift, CFG-002) specified; §5 allocation rewritten with the firmware as a channel of the SRP/CS for SF-03, SF-04 and SF-06; configuration stated per function; §8 tasks T-09…T-11. 0.1: SF-01…SF-09 specified (demand, safe state, response, stop category, modes and tasks); PLr derived from WP-C-03 v0.3 with the type-C check; allocation; response-time budget; task applicability; Figures 2-1, 7-1, 8-1. 0.0: skeleton |
 | Status | Draft |
-| PL / scope | PL d (SF-01, SF-02, SF-03, SF-05), PL c (SF-04, SF-06, SF-09), PL b (SF-07, SF-08); Gate A unit (CFG-001); mobile base only |
+| PL / scope | PL d (SF-01, SF-02, SF-03, SF-05, SF-10, SF-11, SF-12), PL c (SF-04, SF-06, SF-09), PL b (SF-07, SF-08); CFG-001 Gate A unit (bench only) and CFG-002 2.0 mobile manipulator (unverified); SF-10…SF-12 exist only on CFG-002 |
 | Author | Assurance team (AI-assisted draft, I0) |
 | Reviewer(s) | TBD (I1) |
 | Approver | Safety manager |
@@ -17,9 +17,10 @@
 > scenarios of WP-C-06. The response-time figures are the budget of WP-H-02 §3.2 for the candidate parts, not
 > measurements; every stopping distance is **(TBC)** until WP-V-02 measures it. The ISO 3691-4 Performance Levels
 > quoted in §4 are from memory of the standard and are marked to be checked against a licensed copy (DQ-016,
-> answered C: unscheduled). After this version was written the lead answered DQ-014 with B (the firmware joins the
-> safety-related control system for SF-03, SF-04 and SF-06; §5 is superseded, OI-9) and DQ-004 with B (the arms and
-> lift join the item; OI-10). The stop category of SF-01 (DQ-015) is open; the planning assumption is marked.
+> answered C: unscheduled). Version 0.2 applies the lead's answers of 2026-10-20: the firmware is a channel of the
+> safety-related control system for SF-03, SF-04 and SF-06 (DQ-014 B, §5) and the arms and lift are in the item on
+> CFG-002 (DQ-004 B, DQ-020 A; SF-10…SF-12). Every CFG-002 row rests on upstream's plan set. The stop category of
+> SF-01 (DQ-015) and the collaborative mode of the arms (DQ-021) are open; the planning assumptions are marked.
 
 ## 1. Purpose
 
@@ -50,10 +51,13 @@ the Gate A drive, which has no brake); category 1 is a controlled stop with powe
 | SF-07 | Powered-debug inhibit | A raw-PWM, gain or calibration command arrives on the reference image, or on a bench image without the physical arming input | The command is refused; the motors neither move nor retune; the image reports which it is | b | 1 | — | — (inhibit, not a stop) | H-04, H-02, H-12 |
 | SF-08 | Warning before motion | Motion is about to start or resume: after a reset, after a protective stop or slow-down, after a wait on a person, before an undock reverse | An audible and visual warning for **(TBC: 2 s)** before the wheels turn, and a visible state on every side while slowed or stopped | b | 1 | — | warning ≥ **(TBC: 2 s)** before motion | H-05, H-10 |
 | SF-09 | Enabling control for teleoperation | The hold-to-run control of the teleoperation device is released, or a teleoperation command arrives without it held | Drives at zero; no teleoperation motion without the control held; speed capped at the zone limit, lower within 2 m of a person (DQ-017) | c | 2 | 0 | ≤ 200 ms from release | H-01, H-10 |
+| SF-10 | Base motion inhibit while an arm is unstowed (CFG-002) | A base motion command, or motion, while either arm is outside its stowed or carry pose, or while the "stowed or carry" signal is absent or invalid | Traction power not enabled, or removed within the response time; latched until the arms are back in pose and a reset where power was removed | d | 3 | 0 | ≤ 200 ms to power removal | H-13, H-15 |
+| SF-11 | Arm safe stop and collaborative force limiting (CFG-002) | A person enters the station's marked workspace (monitored stop or speed-and-separation), or the arm's measured contact force or speed exceeds the ISO/TS 15066 body-region limit in use (power-and-force limiting), or an E-stop; the mode is DQ-021 | The arm stops as a safety-rated monitored stop (safe torque off or safe stop with holding), the gripper holds; the arm resumes only on a deliberate action with the workspace clear | d | 3 | 1 then 0 (arm) | ≤ 200 ms to the start of the stop **(TBC)** | H-13 |
+| SF-12 | Lift and gripper holding on stop and power loss; lift interlock (CFG-002) | Any stop that removes actuator power, a power loss, an over-payload; or a lift motion command while the base moves, while an arm is outside the stowed or carry pose, or while the keep-clear zone under the carriage is occupied | The lift holds its position and the gripper holds its load without power; a lift command is refused unless the interlock conditions hold | d | 3 (holding: by design, DM-07) | — (holding) | holding from the instant of power removal; no drift beyond **(TBC: 5 mm)** | H-14, H-15 |
 
-![Figure 2-1: nine safety-function cards in three rows, stop functions, limiting and monitoring functions, and restart, warning and inhibit functions; each card names the function, shows its demand leading to its safe state, and carries badges for its required Performance Level, category, stop category and response target; the card header is coloured by Performance Level](figures/fig-c04-2-1-safety-functions.svg)
+![Figure 2-1: twelve safety-function cards in four rows, stop functions, limiting and monitoring functions, restart, warning and inhibit functions, and the arm and lift functions of CFG-002; each card names the function, shows its demand leading to its safe state, and carries badges for its required Performance Level, category, stop category and response target; the card header is coloured by Performance Level](figures/fig-c04-2-1-safety-functions.svg)
 
-*Figure 2-1.* The nine functions of the table as cards: demand on the left, safe state on the right, the four attributes a safety-requirements specification needs as badges. Generated by [`figures/fig_c04.py`](figures/fig_c04.py) from the §2 table; CI fails if it is stale.
+*Figure 2-1.* The twelve functions of the table as cards: demand on the left, safe state on the right, the four attributes a safety-requirements specification needs as badges. Generated by [`figures/fig_c04.py`](figures/fig_c04.py) from the §2 table; CI fails if it is stale.
 
 ## 3. Specification per function
 
@@ -232,6 +236,63 @@ requirements SR-nn.mm of WP-S-02 are the testable form. "Today" is the Gate A un
 | Verification | Release during motion, link loss, speed cap near a test piece |
 | Today | Nothing: keyboard teleop floods `/cmd_vel` with no deadman, bypassing the smoother and the monitor (GAP-36; WP-C-02 T-06) |
 
+### 3.10 SF-10 Base motion inhibit while an arm is unstowed (CFG-002)
+
+| Item | Specification |
+|---|---|
+| Demand | A base velocity command, or measured base motion, while either OpenArm 2.0 arm is outside its stowed or carry pose; absence or invalidity of the "stowed or carry" signal counts as unstowed |
+| Safe state | Traction power not enabled (the chain's traction enable needs the signal); if motion is already under way, power removed within the response time and the brakes engaged; latched until the arms are back in pose and, where power was removed, after the reset of SF-05 |
+| Response time | ≤ 200 ms to power removal (the chain budget of SF-01) |
+| Stop category | 0 |
+| PLr | d (§4): H-13 base moves with an arm extended rates S2 F1 P2 |
+| Category, DC | 3: the pose signal from each arm as a dual-channel safe input into the safety controller (safe inputs of the arm controllers or a mechanical stowed-pose switch per arm), cross-monitored with the arm's joint states read by the firmware |
+| Modes and tasks | Every base task on CFG-002 (§8); it is what turns upstream's "lift only in the stowed or carry pose with the base stopped" rule into an interlock |
+| Priority | A condition of the traction enable; cannot be overridden by any command; the carry pose is a defined pose with the load inside the gripper's hold (CA-07) |
+| Reset | Automatic once the arms are back in pose if power was not removed; manual (SF-05) otherwise |
+| Demand rate | Low: normally the task sequence stows the arms before every move |
+| Fault reaction | Loss of either pose signal inhibits traction |
+| Interfaces | Inputs: stowed-or-carry signal per arm; base motion request; outputs: traction enable condition into the chain, status |
+| Verification | Command the base with an arm raised; break a pose signal during a move; validate the carry pose geometry against the SF-02 field |
+| Today | Nothing: an upstream motion rule in `LIFT`; no interlock in any repository; no arm exists on CFG-001 |
+
+### 3.11 SF-11 Arm safe stop and collaborative force limiting (CFG-002)
+
+| Item | Specification |
+|---|---|
+| Demand | Depends on the collaborative mode of DQ-021. Safety-rated monitored stop: a person enters the station's marked workspace (a safety scanner field around the station or a safety mat). Speed-and-separation monitoring: the separation distance falls below the protective distance for the arm's speed. Power-and-force limiting: the arm's measured contact force, pressure or speed exceeds the ISO/TS 15066 body-region limit in use (hands and fingers for hand-over; the head always excluded). In every mode: an emergency stop (SF-01) |
+| Safe state | The arm stops as a safety-rated monitored stop (safe torque off, or a safe stop with the joint brakes holding); the gripper holds its load; motion resumes only on a deliberate operator action with the workspace clear (monitored stop) or automatically when the separation is restored (speed-and-separation), never while a limit is exceeded |
+| Response time | ≤ 200 ms from the demand to the start of the stop **(TBC)**; the stopping distance of the arm at its working speed is a measured input the protective distance of speed-and-separation monitoring depends on |
+| Stop category | 1 then 0 for the arm (controlled stop, then power removed with the brakes holding) |
+| PLr | d (§4): H-13 arm contact at a station rates S2 F2 P1; ISO 10218-2 (to be checked) expects PL d, category 3 for collaborative functions |
+| Category, DC | 3: the detection device or the force measurement as a safety-rated input, the arm's safe torque off as the output; the OpenArm 2.0 controllers' safety functions are not published, so the fork assumes an external safety controller cuts the arm actuator power (the chain of CA-03) and measures the force limits itself (WP-V-03) |
+| Modes and tasks | T-09 manipulation (§8); the arm is stopped in every other task (SF-10) |
+| Priority | Above every manipulation command and the policy runtime (F-16), which stays outside the function (IX-03) |
+| Reset | Deliberate, at the station or on the pendant; never from the UI alone |
+| Demand rate | High at a busy station: every entry into the workspace |
+| Fault reaction | Loss of the detection device or the force measurement is a stop; a stuck pose signal is detected by SF-10's cross-monitoring |
+| Interfaces | Inputs: station field or mat, force or torque measurement, mode selection (a safety parameter); outputs: arm safe torque off, gripper hold, status |
+| Verification | Force gauge measurements against ISO/TS 15066 Annex A per body region (WP-V-03); entry into the workspace at the arm's working speed; stop time and distance |
+| Today | Nothing: no arm safety function is named upstream; the OpenArm 2.0 limits are not published (WP-C-01 OI-6); AOU-10 is the measure until then |
+
+### 3.12 SF-12 Lift and gripper holding on stop and power loss; lift interlock (CFG-002)
+
+| Item | Specification |
+|---|---|
+| Demand | Holding: any stop that removes actuator power (SF-01, SF-10, SF-11), a power loss, a gripper over-payload. Interlock: a lift motion command while the base moves, while an arm is outside the stowed or carry pose, or while the keep-clear zone under the carriage and beside the column is occupied |
+| Safe state | The lift holds its position and the gripper holds its load without power (a brake or self-locking drive on the lift, a spring-closed or self-locking gripper: DM-07); a lift command is refused unless the base is stopped, the arms are in pose and the keep-clear zone is clear |
+| Response time | Holding from the instant of power removal, with no drift beyond **(TBC: 5 mm)** under the peak load; the interlock refuses before motion starts |
+| Stop category | — (a holding function and an interlock; the lift's stop itself is the actuator-power removal of SF-01) |
+| PLr | d (§4): H-14 load drop rates S2 F1 P2; the crushing row of H-15 rates c and the interlock inherits d from the holding function it shares hardware with |
+| Category, DC | Holding: by design, with the holding evidence (upstream's DOLD release gate, the gripper's behaviour) as the proof; interlock: 3 through the safety controller's safe inputs (base standstill from SF-03's monitor, arm pose from SF-10, keep-clear zone from a safety mat or scanner field) |
+| Modes and tasks | T-10 lift motion (interlock); holding in every task with a load in the gripper or the lift raised (§8), including charging |
+| Priority | Holding is passive and cannot be overridden; the interlock is a condition of the lift enable |
+| Reset | Interlock clears when its conditions hold; holding needs no reset |
+| Demand rate | Holding: every stop; interlock: every lift command |
+| Fault reaction | A holding failure is a load drop (H-14) and is the reason the proof is by test (WP-V-05: power loss under peak load, repeated) |
+| Interfaces | Inputs: standstill, arm pose, keep-clear zone, gripper load; outputs: lift enable condition, status |
+| Verification | Power loss and E-stop under the peak load at full extension; lift command with the base moving, an arm raised, a test piece in the keep-clear zone; drift measurement over **(TBC: 1 h)** |
+| Today | Nothing: upstream's `LIFT` release gate "written DOLD holding on E-stop and power loss" is not passed; the gripper's behaviour on power loss is not published |
+
 ## 4. Required Performance Level
 
 PLr per function from the rows of WP-C-03 §5 it addresses, with the type-C check of WP-C-03 §2 step 4. The
@@ -250,33 +311,45 @@ driverless industrial truck, written from memory of the standard and **to be che
 | SF-07 | H-04 bench image on the ground | S1 F1 P2 | b | — | **b** | the graph governs |
 | SF-08 | H-05 resume after a wait, residual with SF-02 | S1 F2 P1 | b | — (warning device required, no PL) | **b** | the graph governs for the residual; the d of the full row is carried by SF-02 |
 | SF-09 | H-01 teleoperation and mapping | S2 F1 P1 | c | — (enabling device required for manual modes, PL per the stop it conditions) | **c** | the graph governs |
+| SF-10 | H-13 base moves with an arm extended (CFG-002) | S2 F1 P2 | d | — (the base's safety functions apply; 3691-4 expects the load-handling device to be in its travel position, to be checked) | **d** | the graph governs; the chain condition costs nothing beyond the pose signals |
+| SF-11 | H-13 arm contact at a station (CFG-002) | S2 F2 P1 | d | d, category 3 for collaborative functions (ISO 10218-2, to be checked) | **d** | agree; the P rating depends on DQ-021 |
+| SF-12 | H-14 load drop; H-15 lift crushing (CFG-002) | S2 F1 P2; S2 F1 P1 | d; c | — (lifting: holding on power loss is a requirement, PL not listed) | **d** | the graph governs for the load drop; the interlock shares the hardware |
 
-Where this table and WP-S-02 disagree at BL-001 (SF-05 at c in WP-S-02 §7; SF-08 and SF-09 absent), WP-S-02 is
+Where this table and WP-S-02 disagree at BL-001 (SF-05 at c in WP-S-02 §7; SF-08…SF-12 absent), WP-S-02 is
 updated in its next version (WP-S-02 OI-6).
 
 ## 5. Allocation
 
-Every safety function is allocated to the hardwired safety chain (WP-M-01 T-03; the planning assumption of this
-version was DQ-014 option A; **the lead answered B on 2026-10-20**, after this version was written: SF-03, SF-04 and
-SF-06 move partly into the firmware, which then carries a PL claim and the ISO 13849-1 §7 lifecycle; the table below
-is the chain-only allocation and is superseded by the next version of WP-S-03, OI-9): the devices, the safety relay, the speed monitor, the contactors and the driver inhibit inputs of
-WP-S-03 §2 and WP-H-02. The firmware and the ROS 2 stack are functional layers: they may **demand** a stop
-through the chain (SF-04, SF-06, SF-07 raise demands; SF-08 and SF-09 are conditioned by it) but their failure
-cannot prevent one; learned components are outside every safety function. If DQ-014 is answered B, SF-03 and
-SF-06 move partly into the firmware and the software work products WP-W-02…WP-W-08 widen to a PL d lifecycle.
+The lead decided the allocation on 2026-10-20 (DQ-014, option B): the hardwired safety chain alone carries the
+stops and interlocks that remove actuator power (SF-01, SF-02, SF-05, SF-10, SF-12); the speed and loss-of-control
+functions (SF-03, SF-04, SF-06, and SF-09 with them) are carried by a two-channel safety-related control system in
+which **channel 1 is the base-controller firmware** (the Teensy on CFG-001, the STM32H723 on CFG-002) and **channel 2
+is the hardwired monitor** (speed monitor, driver fault inputs, hardware watchdog) of WP-S-03 §3.5, cross-monitored
+through the firmware's demand line and the chain's feedback. The firmware therefore carries a PL claim at the PLr of
+those functions and the ISO 13849-1 §7 lifecycle for safety-related embedded software (WP-W-02…WP-W-08 at PL d,
+WP-M-01 T-03 and T-04). The ROS 2 stack stays a functional layer: it may demand a stop but its failure cannot
+prevent one; learned components are outside every safety function. The arm functions (SF-11) rest on an external
+safety controller and the arms' safe torque off until the OpenArm 2.0 safety functions are published.
 
-| SF | Carried by (WP-S-03 element) | Firmware and stack (functional, no PL claim) |
-|---|---|---|
-| SF-01 | E1 devices → E2 safety relay → E3 contactors, E4 driver inhibit | read the chain state for status (E8) |
-| SF-02 | E5 scanner and bumper → E6 → E2 → E3, E4 | costmap and collision monitor slow the robot earlier; never deactivate the chain |
-| SF-03 | E6 speed monitor on the driver pulse outputs → E2 → E3, E4 | command ceiling at the input (SR-03.04); zone limit in Nav2 as a functional copy |
-| SF-04 | E2 demand input from the firmware's watchdog line; E6 heartbeat | the firmware's 200 ms watchdog, command validation, hardware watchdog; the smoother timeout |
-| SF-05 | E7 reset → E2 monitored reset with E3 feedback | reset cause and "reset required" in the status topic and on the UI |
-| SF-06 | driver `ERR/DO1` and E10 undervoltage into E6 → E2 | stall and following-error detectors raise the demand line |
-| SF-07 | — (no chain element) | reference image without the paths; bench image bounded and armed through an E8 input |
-| SF-08 | E7 stack light and sounder driven from the chain and the motion request | the stack publishes the warning request; the UI mirrors the state |
-| SF-09 | enabling signal into E6 or E2 as a condition in teleoperation mode | teleoperation node refuses commands without the signal; speed cap near a person |
+| SF | Carried by, CFG-001 (Gate A bench build; bench only since DQ-011 C) | Carried by, CFG-002 (2.0 mobile manipulator; unverified) | ROS 2 stack (functional, no PL claim) |
+|---|---|---|---|
+| SF-01 | E1 devices → E2 safety relay → E3 contactors, E4 driver inhibit (chain only) | two E-stops → PNOZ s3 → K1, K2 on the actuator power of traction, arms and lift (`SAFETY-PROCUREMENT`, `ESTOP-SCOPE`) | reads the chain state for status |
+| SF-02 | E5 scanner and bumper → E6 → E2 → E3, E4 (chain only) | no device named upstream: the fork's scanner and bumper design of WP-H-02 carried over to the 2.0 chain | costmap and collision monitor slow the robot earlier |
+| SF-03 | channel 1: Teensy firmware (encoder speed, command ceiling, zone limit as a safety parameter); channel 2: E6 speed monitor on the driver pulse outputs → E2 | channel 1: STM32 firmware on the ZLAC8015D CAN speed; channel 2: a speed monitor on the hub-motor encoders → PNOZ; the carry limit of CA-07 as a safety parameter | Nav2 limits as a functional copy below the safety limits |
+| SF-04 | channel 1: firmware watchdog and command validation; channel 2: hardware watchdog and the heartbeat into E6 → E2 | the same on the STM32 (hardware watchdog, Jetson link heartbeat) | smoother timeout; no republishing of stale commands |
+| SF-05 | E7 reset → E2 monitored reset with E3 feedback (chain only) | RESET button XB4BW36B5 → PNOZ s3 monitored reset (`RESET-BUTTON`) | reset cause and "reset required" shown |
+| SF-06 | channel 1: firmware stall, following-error and encoder plausibility; channel 2: driver `ERR/DO1` and E10 undervoltage into E6 → E2 | channel 1: STM32 on the ZLAC8015D status and the BMS; channel 2: driver fault and BMS hard-fault contacts into the PNOZ | — |
+| SF-07 | firmware (reference image without the paths; bench image armed through an E8 input); no chain element | the same on the STM32 | — |
+| SF-08 | E7 stack light and sounder driven from the chain state and the motion request | the same | publishes the warning request; the UI mirrors the state |
+| SF-09 | channel 1: firmware refuses commands without the enabling signal; channel 2: the enabling signal as a condition of E2's enable in teleoperation mode | the same on the STM32 with the tablet's pendant (the tablet itself has no actuation path) | teleoperation node refuses commands without the signal |
+| SF-10 | — (no arm on CFG-001) | arm pose signals as safe inputs → PNOZ condition on the traction enable (chain only) | sequences stow before move as a functional copy |
+| SF-11 | — | station field or mat and force measurement → an external safety controller → the arms' safe torque off; the mode per DQ-021 | manipulation server and policy runtime outside the function |
+| SF-12 | — | holding by design (DM-07: lift brake, gripper spring or self-locking); interlock through the PNOZ or the safety PLC on standstill, arm pose and the keep-clear zone | lift sequencing as a functional copy |
 
+What DQ-014 B costs is written in WP-M-01 T-03 and T-04: a reproducible firmware build, static analysis, unit
+and integration tests with coverage, a software safety analysis and an independent review of all of it, for the
+Teensy overlay now and the STM32 firmware when it exists; the cybersecurity architecture (WP-S-07) must then treat
+the firmware's command input as an input to a safety-related part (WP-C-08, DQ-013).
 ## 6. Detection means for SF-02
 
 The detection means of SF-02 is settled in WP-C-10 and by decision DQ-007 (2026-10-20, option A): a front safety
@@ -300,14 +373,17 @@ unmeasured on the Gate A unit (coasting; the figure draws it as a hatched bar).
 | SF-04 | 0 | 200 | 2 | 50 | 252 | 250 | coast, **(TBC)** |
 | SF-06 | 0 | 0 | 50 | 20 | 70 | 100 | coast, **(TBC)** |
 | SF-09 | 0 | 0 | 50 | 20 | 70 | 200 | coast, **(TBC)** |
+| SF-10 | 0 | 0 | 50 | 20 | 70 | 200 | brakes (CFG-002), **(TBC)** |
+| SF-11 | 1 then 0 (arm) | 0 | 50 | 20 | 70 | 200 | arm stopping distance **(TBC)**; the protective distance of CA-02 depends on it |
 
-SF-05, SF-07 and SF-08 are not timed stops: SF-05 gates the reset, SF-07 refuses a command, SF-08 leads motion by
-the warning time. SF-04's command window (200 ms) is the functional watchdog; its budget exceeds the 250 ms target
+SF-05, SF-07, SF-08 and SF-12 are not timed stops: SF-05 gates the reset, SF-07 refuses a command, SF-08 leads
+motion by the warning time, SF-12 holds from the instant of power removal. SF-10 and SF-11 are CFG-002 rows with
+the chain budget assumed for the 2.0 parts, unverified. SF-04's command window (200 ms) is the functional watchdog; its budget exceeds the 250 ms target
 by the relay time only when the demand goes through the chain, which happens for a fault, not for a plain timeout
 (the firmware sets PWM 0 inside 202 ms); WP-S-04 settles whether the target is 200 ms at the firmware or 250 ms
 at the contactor.
 
-![Figure 7-1: horizontal timeline per stop function, each bar made of three segments for the detecting device or input window, the logic and the power removal in milliseconds, a target marker at the function's response target, and a hatched bar to the right for the unmeasured stopping time](figures/fig-c04-7-1-response-budget.svg)
+![Figure 7-1: horizontal timeline per stop function (eight, the two CFG-002 ones marked), each bar made of three segments for the detecting device or input window, the logic and the power removal in milliseconds, a target marker at the function's response target, and a hatched bar to the right for the unmeasured stopping time](figures/fig-c04-7-1-response-budget.svg)
 
 *Figure 7-1.* The §7 budget drawn to one time axis. Every function is inside its target except SF-04 by the relay time, which the note above explains; what the chart cannot draw is the standstill, which is the dominant term for SF-02 and is unmeasured. Generated by [`figures/fig_c04.py`](figures/fig_c04.py) from the §7 table; CI fails if it is stale.
 
@@ -318,21 +394,24 @@ that task; **active, not claimed**: present and working, but the task's protecti
 operator with the pendant in Z1); **inhibits**: the function's job in that task is to refuse; **arming**: the
 function admits the bench paths under the arming input; **—**: not applicable.
 
-| SF | T-01 transport (M3) | T-02 wait (M3) | T-03 dock (M4) | T-04 undock (M4) | T-05 charge (M0) | T-06 teleop (M2) | T-07 mapping (M5) | T-08 bench (M1) |
-|---|---|---|---|---|---|---|---|---|
-| SF-01 | active | active | active | active | active (chain open by the interlock) | active (pendant) | active (pendant) | active |
-| SF-02 | active | active | active (dock-lane field set) | active (rear bumper) | — | active, not claimed | active, not claimed | — |
-| SF-03 | active (navigation limit) | active (zero) | active (crawl) | active (crawl, reverse) | — | active (zone limit; lower near a person) | active (zone limit) | active, not claimed |
-| SF-04 | active | active | active | active | — | active | active | active |
-| SF-05 | active | active | active | active | active (reset after charging) | active | active | active |
-| SF-06 | active | active | active | active | — | active | active | active |
-| SF-07 | inhibits | inhibits | inhibits | inhibits | inhibits | inhibits | inhibits | arming |
-| SF-08 | active | active | active | active (before the reverse) | — | active | active | — |
-| SF-09 | — | — | — | — | — | active | active | — |
+| SF | T-01 transport (M3) | T-02 wait (M3) | T-03 dock (M4) | T-04 undock (M4) | T-05 charge (M0) | T-06 teleop (M2) | T-07 mapping (M5) | T-08 bench (M1) | T-09 manipulation (M7) | T-10 lift (M8) | T-11 carrying (M9) |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| SF-01 | active | active | active | active | active (chain open by the interlock) | active (pendant) | active (pendant) | active | active (arms, lift) | active (lift) | active |
+| SF-02 | active | active | active (dock-lane field set) | active (rear bumper) | — | active, not claimed | active, not claimed | — | active, not claimed (base stopped) | active, not claimed | active (carry footprint field) |
+| SF-03 | active (navigation limit) | active (zero) | active (crawl) | active (crawl, reverse) | — | active (zone limit; lower near a person) | active (zone limit) | active, not claimed | active (zero) | active (zero) | active (carry limit 0.3 m/s) |
+| SF-04 | active | active | active | active | — | active | active | active | active | active | active |
+| SF-05 | active | active | active | active | active (reset after charging) | active | active | active | active | active | active |
+| SF-06 | active | active | active | active | — | active | active | active | active | active | active |
+| SF-07 | inhibits | inhibits | inhibits | inhibits | inhibits | inhibits | inhibits | arming | inhibits | inhibits | inhibits |
+| SF-08 | active | active | active | active (before the reverse) | — | active | active | — | active (before an arm moves) | active (before the lift moves) | active |
+| SF-09 | — | — | — | — | — | active | active | — | — | — | — |
+| SF-10 | active (CFG-002: arms in pose) | active (CFG-002) | active (CFG-002) | active (CFG-002) | — | active (CFG-002) | active (CFG-002) | — | active (base inhibited) | active (base inhibited) | active (carry pose) |
+| SF-11 | — | — | — | — | — | — | — | — | active (mode per DQ-021) | active (arms stopped) | — |
+| SF-12 | active (holding, CFG-002) | active (holding) | — | — | active (holding) | — | — | — | active (holding) | active (interlock, holding) | active (holding) |
 
-![Figure 8-1: matrix of the nine safety functions down the side and the eight tasks across, each cell coloured as active, active but not claimed, inhibiting, arming or not applicable, with the qualifier written in the cell](figures/fig-c04-8-1-task-matrix.svg)
+![Figure 8-1: matrix of the twelve safety functions down the side and the eleven tasks across, each cell coloured as active, active but not claimed, inhibiting, arming or not applicable, with the qualifier written in the cell](figures/fig-c04-8-1-task-matrix.svg)
 
-*Figure 8-1.* Which function does what in each task. The test area (T-01 and T-02 run only there at BL-001) relies on the operator, so SF-02 is drawn as present but not claimed in the teleoperation tasks and claimed in the aisle tasks. Generated by [`figures/fig_c04.py`](figures/fig_c04.py) from the §8 table; CI fails if it is stale.
+*Figure 8-1.* Which function does what in each task. SF-02 is drawn as present but not claimed in the teleoperation and station tasks and claimed in the aisle tasks; SF-10 to SF-12 and the tasks T-09 to T-11 exist only on CFG-002. Generated by [`figures/fig_c04.py`](figures/fig_c04.py) from the §8 table; CI fails if it is stale.
 
 ## 9. Traceability
 
@@ -347,6 +426,9 @@ function admits the bench paths under the arming input; **—**: not applicable.
 | SF-07 | H-04, H-02, H-12 | MU-08 | — | SR-07.01…SR-07.04 | G1.7 |
 | SF-08 | H-05, H-10 | IS-10, MU-14 | HR-06, HR-07 | SR-08.x (to be written) | G1.8 |
 | SF-09 | H-01, H-10 | IS-06, MU-02 | HR-04 | SR-09.x (to be written) | G1.9 |
+| SF-10 | H-13, H-15 | IS-15, MU-16 | HR-10 | SR-10.x (to be written) | G1.10 |
+| SF-11 | H-13 | IS-13, MU-15 | HR-11 | SR-11.x (to be written) | G1.11 |
+| SF-12 | H-14, H-15 | IS-14, MU-16 | HR-12 | SR-12.x (to be written) | G1.12 |
 
 ## 10. Open items
 
@@ -356,9 +438,11 @@ function admits the bench paths under the arming input; **—**: not applicable.
 | OI-2 | Set the stop category of SF-01 (decision DQ-015, now open in batch 2; planning assumption category 0) | Project lead | G1 |
 | OI-3 | ~~Allocation decision DQ-014~~ answered B on 2026-10-20 (firmware inside the SRP/CS for the speed and loss-of-control functions); applying it is OI-9 | closed | — |
 | OI-4 | Check the ISO 3691-4 Performance Levels of §4 against a licensed copy; **unscheduled** (DQ-016 option C, 2026-10-20) | Safety manager | G1 |
-| OI-5 | WP-S-02: raise SR-05.x to PLr d; add SR-08.x (warning before motion) and SR-09.x (enabling control) | Safety manager | G1 |
+| OI-5 | WP-S-02: raise SR-05.x to PLr d; add SR-08.x (warning before motion) and SR-09.x (enabling control); the SR-03, SR-04 and SR-06 "Implemented by" columns now name the firmware channel | Safety manager | G1 |
 | OI-6 | Every **(TBC)** value: field length and detection height (WP-V-02, WP-C-06 OI-1), crawl limit, stall thresholds (DQ-008), warning time, teleoperation speed near a person (DQ-017), arming time-out | Safety manager | G2 |
 | OI-7 | WP-S-04: confirm the §7 budget with datasheets and settle the SF-04 target | Hardware lead | G2 |
 | OI-8 | Specify the teleoperation device with its enabling control and the sounder and stack light (WP-C-06 OI-5) in WP-H-02 | Hardware lead | G2 |
-| OI-9 | Apply DQ-014 B (2026-10-20): redesign the allocation of SF-03, SF-04 and SF-06 with WP-S-03 so the firmware is a channel of the SRP/CS at PLr d, c, c; the §4 PLr values stand | Safety manager | G2 |
-| OI-10 | Apply DQ-004 B (2026-10-20): add the safety functions of the arms and lift (from WP-C-06 §4 CA-01…CA-05 and the second item's risk assessment) once WP-C-01 v0.4 widens the item, after DQ-020 | Safety manager | G1 |
+| OI-9 | ~~Apply DQ-014 B~~ done in v0.2 §5; WP-S-03 v0.3 carries the architecture; the software work products widen (WP-M-01 OI-4) | closed | — |
+| OI-10 | ~~Apply DQ-004 B~~ done in v0.2 (SF-10…SF-12); re-specify when the 2.0 design and the OpenArm safety functions are public | closed | — |
+| OI-11 | Lead decision DQ-021 (collaborative mode of the arms) fixes the demand of SF-11 and the P rating behind it | Project lead | G1 |
+| OI-12 | WP-S-02: SR-10.x, SR-11.x, SR-12.x for the arm and lift functions (with OI-5) | Safety manager | G1 |

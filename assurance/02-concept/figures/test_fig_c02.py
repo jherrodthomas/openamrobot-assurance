@@ -14,7 +14,7 @@ class TestFigC02(unittest.TestCase):
 
   def test_source_tables(self):
     self.assertEqual(sorted(self.src["zones"]), ["Z0", "Z1", "Z2", "Z3", "Z4", "Z5"])
-    self.assertEqual(len(self.src["tasks"]), 8)
+    self.assertEqual(len(self.src["tasks"]), 11)
 
   def test_matrix_covers_tasks_and_zones(self):
     self.assertEqual(fig_c02.check_source(self.src), [])

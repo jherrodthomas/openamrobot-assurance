@@ -9,7 +9,7 @@
   },
   "claims": {
     "accepted": 0,
-    "registered": 20,
+    "registered": 23,
     "undeveloped": 0,
     "with_accepted_evidence": 0
   },
@@ -91,6 +91,6 @@
       "title": "Safety Case and Review"
     }
   ],
-  "records_digest": "1a4ecd52713c",
+  "records_digest": "8ed7d1f3977d",
   "reviews": 0
 }

@@ -4,7 +4,7 @@
 |---|---|
 | Work product | WP-S-03 Technical safety concept: architecture of the safety-related parts of the control system that implement SF-01…SF-07 |
 | Standard reference | ISO 13849-1:2023 §6 (designated architectures, categories), §6.1.3 (Category 2), §6.1.4 (Category 3), Annex I (examples); ISO 13849-2:2012 Annex D; EN 60204-1:2018 §9.2, §9.4; ISO 3691-4:2023 §4; IEC 60947-5-5 |
-| Version | 0.2 (2026-10-20): DQ-007 applied in §3.4. 0.1: initial draft |
+| Version | 0.3 (2026-10-20): DQ-014 B applied: the base-controller firmware is channel 1 of SF-03, SF-04, SF-06 and SF-09, the hardwired monitor channel 2 (§2, §3.5); CFG-002 is the hardware reference (DQ-020 A) and §7 lists its chain elements and the arm and lift functions SF-10…SF-12 (§3.8). Previous: 0.2 (2026-10-20): DQ-007 applied in §3.4. 0.1: initial draft |
 | Status | Draft |
 | PL / scope | PL d; Gate A unit (CFG-001) bench build, with the mapping to upstream's OpenAMRobot 2.0 safety chain |
 | Author | Assurance team (AI-assisted draft, I0) |
@@ -26,10 +26,17 @@ driver brake inputs) that removes traction power on an emergency stop, a protect
 or a drive fault, and that must be reset deliberately. The microcontroller keeps its functional watchdog and gains
 a hardware watchdog, command validation and a fault detector, which are functional measures that reduce demands on
 the chain; they carry no PL claim on their own. Personnel detection and speed monitoring are done by safety-rated
-devices wired into the chain, never by the ROS 2 stack. This is the doer/checker split of the assurance strategy (WP-M-01 §6), with
-the checker in copper rather than in a second processor.
+devices wired into the chain, never by the ROS 2 stack. This was the doer/checker split of the assurance strategy (WP-M-01 §6) with
+the checker in copper. On 2026-10-20 the lead decided (DQ-014, option B) that the firmware is **inside** the
+safety-related control system for the speed and loss-of-control functions: SF-03, SF-04, SF-06 and SF-09 are
+two-channel functions whose channel 1 is the base-controller firmware and whose channel 2 is the hardwired monitor
+(§3.5), while SF-01, SF-02, SF-05, SF-10 and SF-12 stay on the chain alone. The firmware therefore carries a PL
+claim and the ISO 13849-1 §7 lifecycle (WP-W-02…WP-W-08); its hardening is the first increment of that evidence.
 
-The chain has no network input: every element that can stop the robot is wired, so no input of the safety chain is reachable from the network; the cybersecurity architecture ([WP-S-07](WP-S-07-cybersecurity-architecture.md)) keeps it a zone of its own.
+The chain has no network input: every element that can stop the robot is wired, so no input of the safety chain is reachable from the network; the cybersecurity architecture ([WP-S-07](WP-S-07-cybersecurity-architecture.md)) keeps it a zone of its own. The
+firmware channel of SF-03, SF-04, SF-06 and SF-09 does take its command from the network; a corrupted or
+malicious command is bounded by the firmware's validation and caught by the hardware channel, and WP-S-07 treats
+the firmware's command input as an input to a safety-related part (WP-C-08, DQ-013).
 
 ## 2. Allocation of safety functions to elements
 
@@ -42,13 +49,20 @@ The chain has no network input: every element that can stop the robot is wired, 
 | E5 Safety-rated personnel detection (safety laser scanner with OSSD pair, or safety bumpers) | input | | ● | | | | | |
 | E6 Speed monitor (safety speed-monitoring relay or safety PLC reading the driver `SPD/DO2` pulse outputs or a second encoder channel) | logic | | | ● | | | ● | |
 | E7 Reset button and stop/reset lamp | input/indication | ● | ● | ● | | ● | | |
-| E8 Teensy firmware (functional, QM) | functional | diag. input | | ceiling only | ● (watchdog, validation) | reset cause | ● (stall, fault input) | ● |
+| E8 Base-controller firmware (Teensy on CFG-001, STM32H723 on CFG-002): channel 1 of the two-channel functions, SRESW at PL d | channel 1 | diag. input | | ● (encoder speed, ceiling, zone limit) | ● (watchdog, validation) | reset cause | ● (stall, following error, fault input) | ● |
 | E9 Pi 5 / ROS 2 stack (functional, QM) | functional | none | none | none | ● (smoother timeout) | indication | | |
 | E10 Battery monitor (voltage into E6 or E8) | input | | | | | | ● | |
 | E11 Fuse F0 and lockable disconnect | complementary (DM-04) | | | | | | | |
 
-Rule: E8 and E9 are never in the stop path. They may **demand** a stop through K0 (a watchdog output, a fault
-output), but their failure cannot prevent one.
+Rule (DQ-014 B): E9 is never in the stop path; it may **demand** a stop through K0 but its failure cannot prevent
+one. E8 is channel 1 of SF-03, SF-04, SF-06 and SF-09 and never their only channel: channel 2 (E6, the driver fault
+inputs, the hardware watchdog and the enabling signal into K0) detects the failure of E8 and stops the robot without
+it. SF-01, SF-02, SF-05, SF-10 and SF-12 do not depend on E8 at all.
+
+The functions SF-08…SF-12 of WP-C-04 v0.2 are allocated as follows: SF-08 (warning) to E7 driven by the chain
+state and the motion request; SF-09 (enabling control) to E8 as channel 1 and the enabling signal into K0 as
+channel 2; SF-10 (base inhibit while an arm is unstowed), SF-11 (arm safe stop) and SF-12 (lift and gripper holding,
+lift interlock) to the CFG-002 elements of §3.8 and §7.
 
 ## 3. Architecture
 
@@ -114,18 +128,30 @@ cannot clear it.
 - Reverse: without rear detection, reverse is inhibited above the crawl limit by the speed monitor's direction
   input, and the back-up recovery is disabled in the Nav2 configuration (GAP-35).
 
-### 3.5 Speed monitoring and drive faults (SR-03.01…SR-03.05, SR-06.01…SR-06.04): Category 2 or 3
+### 3.5 Speed monitoring, loss of control and drive faults (SR-03.01…SR-03.05, SR-04.01…SR-04.06, SR-06.01…SR-06.05): Category 3, two channels
 
-- The ZBLD drivers provide a speed pulse output (`SPD/DO2`) per wheel that is independent of the Teensy's encoder
-  reading. A safety speed-monitoring relay or a small safety PLC reads both pulse trains (and the direction from
-  the driver's `FWD/REV` lines), compares against the active limit, and holds a K0 input enabled while in range.
-  Over-speed for > 100 ms drops the input: K0 trips. Category 2 is reached with the test performed by the monitor
-  itself (pulse-train plausibility); Category 3 if two independent speed sources are compared (driver pulse plus
-  encoder channel through the Teensy's diagnostic output).
-- The driver fault outputs (`ERR/DO1`, both drivers) go to the monitor (or to K0 directly): a latched driver fault
-  trips the chain (SR-06.01). The Teensy additionally reads them for reporting.
-- The Teensy's stall detector and watchdog outputs (fork change) can be wired as an additional demand into K0
-  through a transistor output; they remain functional measures.
+Decided architecture (DQ-014 B): a two-channel structure in the sense of ISO 13849-1 Category 3, with diverse
+channels.
+
+- **Channel 1, the base-controller firmware (E8):** reads the wheel encoders, compares the measured speed with the
+  active zone limit (a safety parameter, SR-00.05), validates and ceilings every command (SR-03.04, SR-04.02),
+  runs the command watchdog (SR-04.01), the stall, following-error and encoder-plausibility detectors (SR-06.02…
+  SR-06.04) and the enabling-signal check (SF-09); on any demand it sets PWM 0 and asserts the demand line into K0
+  (E8 output through a 24 V relay). It is safety-related embedded software at PL d (ISO 13849-1 §7): reproducible
+  build, coding rules, static analysis, unit and integration tests with coverage, a software safety analysis and
+  independent review (WP-W-01…WP-W-08).
+- **Channel 2, the hardwired monitor (E6 and the chain):** the speed monitor reads the driver pulse outputs
+  (`SPD/DO2` on CFG-001, the hub-motor encoders on CFG-002), independent of channel 1's encoders, and holds a K0
+  input enabled while in range and in the permitted direction; the driver fault outputs (`ERR/DO1`), the
+  undervoltage relay (E10) and the enabling signal go to the monitor or to K0 directly; a hardware watchdog window
+  of channel 1's heartbeat is a K0 condition. Over-speed, a fault or a lost heartbeat drops the input: K0 trips.
+- **Cross-monitoring:** channel 2 compares its speed with the speed channel 1 reports on its diagnostic output and
+  trips on a disagreement beyond the following-error limit (SR-03.05); channel 1 reads the chain state and reports
+  a channel 2 trip it did not itself demand. Diagnostic coverage is claimed from this comparison and from the
+  hardware watchdog (WP-H-03, WP-W-04).
+- **Diversity:** different sensors (wheel encoders versus driver pulse outputs or motor encoders), different
+  technology (software versus a certified relay), different suppliers; common-cause scoring in WP-H-04.
+- The ROS 2 stack stays functional: the smoother timeout and the Nav2 limits are copies below the safety limits.
 
 ### 3.6 Battery monitoring (SR-06.05)
 
@@ -137,6 +163,24 @@ this role (upstream `BMS-FAULTS`).
 
 A key switch read by the Teensy as the arming input for bench images; on the reference image the input is ignored
 because the paths do not exist. The key switch position is reported in `/firmware/status`.
+
+### 3.8 Arms and lift (CFG-002; SF-10, SF-11, SF-12)
+
+- **SF-10 base inhibit while an arm is unstowed:** a "stowed or carry pose" signal per arm (a safe output of the
+  arm controller, or a mechanical pose switch per arm, dual channel) is a condition of the traction enable in the
+  safety controller; channel 1 cross-checks it against the joint states. No pose signal, no traction.
+- **SF-11 arm safe stop:** the mode is DQ-021. In every mode an external safety controller (the PNOZmulti or
+  Flexi-class device WP-H-02 proposes as option 2) takes the station's detection device (a scanner field around
+  the station, or a safety mat) and, for power-and-force limiting, the arm's measured force or torque, and cuts
+  the arms' actuator power through the chain (the K1/K2 path of `ESTOP-SCOPE` covers the arms) or asserts the
+  arms' safe torque off if the OpenArm 2.0 controllers provide one, which is not published.
+- **SF-12 lift and gripper holding, lift interlock:** holding is by design (DM-07: a brake or self-locking lift
+  drive, a spring-closed or self-locking gripper) and proven by test (WP-V-05); the interlock is a condition of the
+  lift enable in the safety controller on base standstill (channel 2 of SF-03), the arm pose signals (SF-10) and
+  the keep-clear zone (a mat or a scanner field).
+
+None of this exists in any repository; the OpenArm 2.0 safety functions and the DOLD holding evidence are the two
+interface questions to put to upstream first.
 
 ## 4. Command arbitration (SR-00.02)
 
@@ -160,7 +204,7 @@ Lamp at the reset button (reset required / running), a stack light or LED bar vi
 running, fault), K0 auxiliary contacts and the reset state into Teensy digital inputs, all published in
 `/firmware/status` and shown in the UI. The UI shows state; it never changes it.
 
-## 7. Mapping to OpenAMRobot 2.0
+## 7. CFG-002 elements (the 2.0 mobile manipulator, the hardware reference since DQ-020 A)
 
 | Element | 2.0 per upstream register | Verified? |
 |---|---|---|
@@ -173,9 +217,15 @@ running, fault), K0 auxiliary contacts and the reset state into Teensy digital i
 | E7 | one RESET button XB4BW36B5 with lamp (`RESET-BUTTON`) | no |
 | E10 | Daly BMS on CAN2, hard-fault disconnect (`BMS-FAULTS`) | no |
 | E11 | F0 110 A Class T, lockable disconnect (`MAIN-PROTECTION`) | no |
+| E8 (channel 1) | STM32H723ZG base controller firmware (Gate B), go/no-go 6 November 2026; the Teensy build is the fallback | no (not public) |
+| E12 arm pose signals (SF-10) | **none named** | gap |
+| E13 arm safety controller and safe torque off (SF-11) | **none named**; the OpenArm 2.0 safety functions are not published | gap |
+| E14 lift holding and interlock (SF-12) | DOLD Hexalift V4; "written DOLD holding on E-stop and power loss" is a release gate (`LIFT`) | no |
+| E15 station detection for the arms (SF-11) | **none named** | gap |
 
-The 2.0 chain as decided covers SF-01 and part of SF-05 and SF-06. SF-02 and SF-03 have no element in the 2.0
-register; they are the first thing to raise with upstream.
+The 2.0 chain as decided covers SF-01 and part of SF-05 and SF-06. SF-02, SF-03, SF-10, SF-11 and SF-12 have no
+element in the 2.0 register; they are the first things to raise with upstream, with the OpenArm 2.0 safety
+functions and the lift holding evidence.
 
 ## 8. Open items
 
@@ -186,3 +236,5 @@ register; they are the first thing to raise with upstream.
 | OI-3 | Measure category 0 coasting distance at 0.20 m/s, loaded and unloaded | §3.4 field sizing |
 | OI-4 | Reliability data (MTTFd, B10d) for K0, K1/K2, E-stop devices, scanner; DCavg and CCF scoring | WP-H-03 |
 | OI-5 | Confirm K0 output count and current for three paths (K1 coil, K2 coil, BRK/DI5 of two drivers) | §3.2 |
+| OI-6 | The firmware channel (DQ-014 B): define the diagnostic output channel 2 compares against, the heartbeat window and the demand relay; start the ISO 13849-1 §7 lifecycle in WP-W-01…WP-W-08 | §3.5, WP-M-01 OI-4 |
+| OI-7 | Put to upstream: the OpenArm 2.0 safety functions (safe torque off, force limiting, pose outputs) and the DOLD holding evidence | §3.8, §7 |

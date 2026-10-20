@@ -1,0 +1,21 @@
+# Robot configuration records. One file per configuration.
+# classification: upstream-compatible | fork-evaluated | assurance-supported (see README.md §5).
+
+- id: CFG-002
+  kind: configuration
+  title: "OpenAMRobot 2.0 mobile manipulator: ZLTECH hub-motor base with brakes, STM32H723 base controller, Jetson Orin NX, DOLD Hexalift V4 lift, two OpenArm 2.0 arms, Pilz PNOZ s3 chain; the hardware reference, design not public"
+  description: "The design upstream has decided in its plan set (openAMRobot/.github/decisions.yaml) and describes on its 2.0 reference pages, due as v2.0.0-rc.1 on 20 November 2026. No repository holds its code or drawings at BL-001, so every statement about it in the record is an unverified claim quoted from upstream (WP-C-01 §1.2). Added by DQ-020 (option A, 2026-10-20): the Gate A unit CFG-001 stays the software and firmware reference, bench only (DQ-011 C), and CFG-002 is the hardware the widened item (DQ-004 B: base with arms and lift) is about."
+  classification: upstream-compatible
+  evaluation_state: not-started
+  platform: "openAMRobot plan set P-03 (private) as quoted in .github/decisions.yaml 9109d3e and openamrobot-docs 95c6140; no platform repository carries it"
+  brand_safety_mode: "none yet (chain decided upstream, not built; no personnel detection or speed monitor named)"
+  item_definition: WP-C-01
+  related_assumptions: [AOU-01, AOU-02, AOU-05, AOU-06, AOU-07, AOU-08, AOU-09, AOU-10]
+  related_claims: [G0]
+  baseline: BL-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-C-01
+  source_revision: "8a7a5b1"

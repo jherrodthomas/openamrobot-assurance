@@ -51,7 +51,7 @@ own: it only confirms that the records say what the dashboard shows.
 | `tools/` | `validate.py`, `caselib.py`, `generate_dashboard.py`, `test_case.py`, `subsetyaml.py` (the YAML-subset parser shared with the trace data); a GSN diagram generator and a snapshot builder are still to come |
 
 Trace items the validator resolves against live in [`../trace/items/`](../trace/items/): `hazards.yaml`
-(H-01…H-12 and SF-01…SF-07 from WP-C-03) and `aou.yaml` (AOU-01…AOU-07 from WP-C-01).
+(H-01…H-15 from WP-C-03 and SF-01…SF-12 from WP-C-03 and WP-C-04) and `aou.yaml` (AOU-01…AOU-07 from WP-C-01).
 
 ```sh
 python3 assurance/case/tools/validate.py

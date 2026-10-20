@@ -10,6 +10,8 @@
     <path d="M0,0 L10,5 L0,10 z" fill="#D64535"/></marker>
   <marker id="bdd-diamond" viewBox="0 0 12 8" refX="0" refY="4" markerWidth="12" markerHeight="8" orient="auto">
     <path d="M0,4 L6,0 L12,4 L6,8 z" fill="#122026"/></marker>
+  <pattern id="bdd-hatch" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(45)">
+    <rect width="10" height="10" fill="#EDF2F4"/><line x1="0" y1="0" x2="0" y2="10" stroke="#D3DDE2" stroke-width="1.2"/></pattern>
 </defs>
 <rect x="0" y="0" width="1180" height="560" fill="#FFFFFF"/>
 <text x="32.0" y="34.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#122026" text-anchor="start">Figure 3-2  Block definition diagram (SysML bdd): the Gate A unit and its parts</text>

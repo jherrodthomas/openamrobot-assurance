@@ -14,6 +14,7 @@ class TestFigC01(unittest.TestCase):
 
   def test_source_tables(self):
     self.assertEqual(len(self.src["elements"]), 10)
+    self.assertEqual(len(self.src["elements2"]), 10)
     self.assertEqual(len(self.src["interfaces"]), 8)
     self.assertEqual(len(self.src["modes"]), 7)
 

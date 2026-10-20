@@ -4,9 +4,9 @@
 |---|---|
 | Work product | WP-C-02 Operating environment and task specification (zones, floors, people, lighting) |
 | Standard reference | Machinery: 3691-4 §4, §6; 12100 §5.3; Other: ISO 21448 §5 (informative method); ASPICE: SYS.1 |
-| Version | 0.1 (2026-10-20): zones Z0–Z5, tasks T-01–T-08, environmental limits, exclusions, the development test area; Figures 2-1 and 3-1. 0.0: skeleton |
+| Version | 0.2 (2026-10-20): DQ-004 B and DQ-020 A applied: tasks T-09…T-11 of the arms and lift on CFG-002; T-06 names SF-09; the status column distinguishes the configurations. 0.1: zones Z0–Z5, tasks T-01–T-08, environmental limits, exclusions, the development test area; Figures 2-1 and 3-1. 0.0: skeleton |
 | Status | Draft |
-| PL / scope | PL d target (DQ-005); Gate A unit (CFG-001); mobile base only |
+| PL / scope | PL d target (DQ-005); CFG-001 Gate A unit (bench only, DQ-011 C) and CFG-002 2.0 mobile manipulator (unverified); the base with the arms and lift (DQ-004 B) |
 | Author | Assurance team (AI-assisted draft, I0) |
 | Reviewer(s) | TBD (I1; someone who has operated the robot on a real floor) |
 | Approver | Safety manager |
@@ -44,7 +44,7 @@ prevented), **briefed** (trained staff who know the robot, its stop devices and 
 | Zone | Name | Floor and slope | Obstacles, steps, drops | Lighting and reflectivity | People | Speed limit | Detection needed | Status at BL-001 |
 |---|---|---|---|---|---|---|---|---|
 | Z0 | Excluded | anything in §5 | | | | 0 | | robot must not enter; no geofence exists today (map limits only) |
-| Z1 | Development test area (§6) | level, dry, sealed concrete, epoxy or vinyl; slope ≤ 1 % **(TBC)**; no threshold | marked boundary; no fixed obstacles inside except test props; no steps, drops or edges within 2 m of the boundary | ≥ 200 lx diffuse **(TBC)**; no glass or mirror walls inside the LiDAR range; matte test props | none: operator with the stop pendant and one observer, both outside the robot's path (WP-V-07) | 0.20 m/s forward, 0.05 m/s reverse, 0.5 rad/s | none claimed; the operator is the protective measure | the only zone the robot may run in |
+| Z1 | Development test area (§6) | level, dry, sealed concrete, epoxy or vinyl; slope ≤ 1 % **(TBC)**; no threshold | marked boundary; no fixed obstacles inside except test props; no steps, drops or edges within 2 m of the boundary | ≥ 200 lx diffuse **(TBC)**; no glass or mirror walls inside the LiDAR range; matte test props | none: operator with the stop pendant and one observer, both outside the robot's path (WP-V-07) | 0.20 m/s forward, 0.05 m/s reverse, 0.5 rad/s | none claimed; the operator is the protective measure | the only zone; after DQ-011 C (2026-10-20) no on-ground run on CFG-001, so bench work only until the 2.0 base with its chain exists |
 | Z2 | Transport aisle | level indoor floor; slope ≤ 2 % **(TBC)**; thresholds and cable covers ≤ 10 mm **(TBC)**, crossed at the crawl limit | fixed racks, pallets, parked carts; no loading-dock edges, no stairs or pits without a barrier; aisle width ≥ footprint + 2 × 0.5 m **(TBC)** | ≥ 100 lx **(TBC)**; no glass partitions or mirrors facing the aisle at LiDAR height; no direct low sun on the dock tags | briefed; public only when SF-02 is validated for public contact | 0.20 m/s navigation; DQ-017 sets the limit when a person is inside the protective field's warning zone | SF-02 (front scanner) and SF-03 at PL d | **not permitted**: no protective stop exists (GAP-14, GAP-22) |
 | Z3 | Dock lane | as Z2, plus the dock's approach surface level to ± 5 mm over the last 1 m **(TBC)** | the dock itself; nothing else within the lane; lane marked on the floor (length of the pre-dock approach, 2 m, plus the robot's length) | tags well lit, no glare, matte print (upstream `04_apriltag.md`) | none while a dock or undock runs; entry aborts the manoeuvre | crawl: 0.05 m/s **(TBC)**; reverse only here | SF-02 dock-lane field set; rear bumper for undock | not permitted with people in the lane: docking bypasses every reactive layer (GAP-15, GAP-35) |
 | Z4 | Charging and parking bay | as Z2 | the charger and its cable; the mains inlet | — | briefed technician only during connection | 0: the robot is stopped and, when charging, the safety chain is open (upstream 2.0 charge interlock) | none (robot stopped); electrical safety DM-04, DM-05 | mains and battery are paralleled today (GAP-20); charging is a manual bench procedure |
@@ -65,11 +65,14 @@ prevented), **briefed** (trained staff who know the robot, its stop devices and 
 | T-05 | Charging: stopped in the bay, connected to the charger | Z4 | M0 | 0 | briefed technician | safety chain open while charging (interlock) | manual; battery and mains paralleled (GAP-20) |
 | T-06 | Manual recovery and teleoperation: an operator drives the robot out of a stuck state or to a safe place | Z1, Z2 | M2 | 0.20 m/s; **(TBC)** 0.10 m/s when a person is within 2 m | briefed; the operator watches the robot, not the screen | SF-01 within reach, SF-03, SF-09 (enabling control, WP-C-04 §3.9) | no deadman; teleop bypasses the smoother and the monitor |
 | T-07 | Mapping: teleoperation while SLAM runs | Z1, Z2 (empty) | M5 | as T-06 | none or briefed | as T-06 | as T-06 |
-| T-08 | Bench, calibration and powered debug: wheels off the ground | bench (not a zone) | M1 | n/a | technician | SF-07 arming, AOU-03 | the per-boot calibration needs the powered path |
+| T-08 | Bench, calibration and powered debug: wheels off the ground | bench (not a zone) | M1 | n/a | technician | SF-07 arming, AOU-03 | the per-boot calibration needs the powered path; on CFG-001 the only permitted powered activity (DQ-011 C) |
+| T-09 | Manipulation at a station: an arm picks, places, pulls a drawer or door (≤ 150 N) or hands over an item, with the base stopped (CFG-002) | Z2 (at a marked station) | M7 | base 0; arm speed **(TBC)** | briefed; outside arm reach until power-and-force limiting is proven (AOU-10) | SF-10 (base inhibited while an arm is unstowed), SF-11 (arm safe stop and force limit), SF-01 | CFG-002 only: no arm exists on CFG-001; nothing upstream names an arm safety function |
+| T-10 | Lift raising or lowering the arms and their load between the calibrated stops, arms in the stowed or carry pose, base stopped (CFG-002) | Z2 (at a station) | M8 | 18 mm/s | briefed; clear of the column and of the space under the arms | SF-12 (lift holding and interlock), SF-01 | CFG-002 only: the DOLD holding evidence is an upstream release gate not yet passed |
+| T-11 | Carrying: a transport leg with a load held in the arms in the carry pose (CFG-002) | Z2 | M9 | ≤ 0.3 m/s (upstream hold-and-move limit) **(TBC)** | briefed | SF-02, SF-03 with the carry limit, SF-10 | CFG-002 only: the raised centre of gravity and the wider footprint wait on the F2S rerun |
 
 ![Figure 3-1: task-by-zone matrix: tasks T-01 to T-08 down the side, zones Z1 to Z5 across, each cell coloured by whether the task is permitted in that zone at BL-001, permitted once the named safety functions exist, or excluded, with the speed limit written in the cell](figures/fig-c02-3-1-task-zone-matrix.svg)
 
-*Figure 3-1.* Where each task may run, now and once the safety functions exist. Green cells are the only combinations inside the case at BL-001 (every one of them in the test area under WP-V-07); amber cells open when the named safety function is validated; grey cells are excluded. Generated by [`figures/fig_c02.py`](figures/fig_c02.py) from the §3 table; CI fails if it is stale.
+*Figure 3-1.* Where each task may run, now and once the safety functions exist. The one green cell, bench work with the wheels off the ground, is all that is inside the case at BL-001: since DQ-011 C no drive task runs on CFG-001, so every other test-area cell waits for the 2.0 base with its chain. Amber cells open when the named safety function is validated; grey cells are excluded. T-09 to T-11 exist only on CFG-002. Generated by [`figures/fig_c02.py`](figures/fig_c02.py) from the §3 table; CI fails if it is stale.
 
 ## 4. Environmental limits
 
@@ -127,7 +130,7 @@ Until the safety chain of WP-H-02 is fitted and validated, Z1 is the whole opera
 | This document | Used by |
 |---|---|
 | Zones Z0–Z5, people classes | WP-C-03 situations OS-01 (Z2, Z5), OS-02 (Z1), OS-03 (Z3), OS-07 (Z4); WP-C-06 misuse per people class; WP-O-03 §3 limits and §4 markings |
-| Tasks T-01–T-08 | WP-C-03 situations OS-01…OS-12; WP-C-04 safety functions per task; WP-V-01 validation scenarios |
+| Tasks T-01–T-11 | WP-C-03 situations OS-01…OS-18; WP-C-04 safety functions per task; WP-V-01 validation scenarios |
 | Environmental limits §4 | WP-C-01 §4.4 (other limits, replaces its placeholders); WP-H-05 (electrical), WP-H-08 (stability); WP-V-02 test conditions |
 | Exclusions §5 | WP-O-03 §3; AOU-02, AOU-05, AOU-06 of WP-C-01 §8 |
 | Test area §6 | WP-V-07 C-7; `06-validation/test-sites/` site records |

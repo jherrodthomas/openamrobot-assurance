@@ -49,3 +49,24 @@
   aou_status: "No limit stated"
   status: proposed
   source: WP-C-01
+
+- id: AOU-08
+  kind: aou
+  text: "The base does not move while an arm is outside its stowed or carry pose (CFG-002; WP-C-06 CA-01)"
+  aou_status: "Planned upstream (LIFT motion rules); no interlock in any repository"
+  status: proposed
+  source: WP-C-01
+
+- id: AOU-09
+  kind: aou
+  text: "The lift moves only in the stowed or carry pose with the base stopped, and holds its load on an E-stop and on power loss (CFG-002; upstream LIFT release gates)"
+  aou_status: "Planned upstream; the DOLD holding evidence is a release gate not yet passed"
+  status: proposed
+  source: WP-C-01
+
+- id: AOU-10
+  kind: aou
+  text: "Nobody is within reach of an arm while it moves, until its power-and-force limiting is measured against ISO/TS 15066 (CFG-002)"
+  aou_status: "Procedural only; no arm exists on CFG-001"
+  status: proposed
+  source: WP-C-01

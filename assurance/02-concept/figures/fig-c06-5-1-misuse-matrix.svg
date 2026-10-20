@@ -27,11 +27,13 @@
 <text x="512.0" y="170.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">MU-09 Re-feeding the watchdog with a script that…</text>
 <text x="512.0" y="184.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">MU-10 Deactivating the collision monitor or…</text>
 <text x="512.0" y="198.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">MU-13 Driving on a ramp, over a threshold at…</text>
+<text x="512.0" y="212.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">MU-16 Hanging on, pushing down or sitting on an…</text>
 <rect x="803.0" y="93.0" width="294.0" height="124.0" rx="6" fill="#FDEDEB" stroke="#D64535" stroke-width="1.4"/>
 <text x="812.0" y="114.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="start">MU-01 Pressing the on-screen E-STOP as if it were…</text>
 <text x="812.0" y="128.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="start">MU-02 Teleoperating while watching the screen,…</text>
 <text x="812.0" y="142.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="start">MU-03 Walking or standing behind a reversing…</text>
 <text x="812.0" y="156.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="start">MU-06 Loading above the payload or height limit,…</text>
+<text x="812.0" y="170.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="start">MU-15 Reaching into the arm's workspace to help,…</text>
 <rect x="203.0" y="223.0" width="294.0" height="124.0" rx="6" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
 <text x="350.0" y="289.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
 <rect x="503.0" y="223.0" width="294.0" height="124.0" rx="6" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>

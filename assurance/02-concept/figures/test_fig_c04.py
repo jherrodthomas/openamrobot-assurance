@@ -14,13 +14,15 @@ class TestFigC04(unittest.TestCase):
     self.src = fig_c04.load_source()
 
   def test_source_tables(self):
-    self.assertEqual(len(self.src["functions"]), 9)
-    self.assertEqual(len(self.src["budget"]), 6)
-    self.assertEqual(len(self.src["matrix"]), 9)
+    self.assertEqual(len(self.src["functions"]), 12)
+    self.assertEqual(len(self.src["budget"]), 8)
+    self.assertEqual(len(self.src["matrix"]), 12)
     self.assertEqual(fig_c04.check_source(self.src), [])
 
   def test_plr_matches_wp_c03(self):
     plr = {k: v["plr"][:1] for k, v in self.src["functions"].items()}
+    self.assertEqual(plr["SF-10"], "d")
+    self.assertEqual(plr["SF-11"], "d")
     self.assertEqual(plr["SF-01"], "d")
     self.assertEqual(plr["SF-02"], "d")
     self.assertEqual(plr["SF-03"], "d")

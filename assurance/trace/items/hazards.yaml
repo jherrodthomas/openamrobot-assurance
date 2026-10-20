@@ -73,6 +73,24 @@
   status: proposed
   source: WP-C-03
 
+- id: H-13
+  kind: hazard
+  title: "Impact or clamping by an arm; the base moving with an arm extended (CFG-002)"
+  status: proposed
+  source: WP-C-03
+
+- id: H-14
+  kind: hazard
+  title: "Falling or thrown load from the gripper or the lift (CFG-002)"
+  status: proposed
+  source: WP-C-03
+
+- id: H-15
+  kind: hazard
+  title: "Crushing or shearing at the lift column; tipping with an arm extended (CFG-002)"
+  status: proposed
+  source: WP-C-03
+
 - id: SF-01
   kind: safety-function
   title: "Emergency stop"
@@ -133,5 +151,26 @@
   kind: safety-function
   title: "Enabling control for teleoperation"
   plr: c
+  status: proposed
+  source: WP-C-04
+
+- id: SF-10
+  kind: safety-function
+  title: "Base motion inhibit while an arm is outside the stowed or carry pose (CFG-002)"
+  plr: d
+  status: proposed
+  source: WP-C-04
+
+- id: SF-11
+  kind: safety-function
+  title: "Arm safe stop and collaborative force limiting (CFG-002)"
+  plr: d
+  status: proposed
+  source: WP-C-04
+
+- id: SF-12
+  kind: safety-function
+  title: "Lift and gripper holding on stop and power loss; lift interlock (CFG-002)"
+  plr: d
   status: proposed
   source: WP-C-04

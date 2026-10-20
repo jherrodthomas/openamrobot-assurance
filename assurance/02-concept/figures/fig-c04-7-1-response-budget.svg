@@ -1,28 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="556" viewBox="0 0 1180 556" role="img" aria-labelledby="rb-t rb-d">
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="668" viewBox="0 0 1180 668" role="img" aria-labelledby="rb-t rb-d">
 <title id="rb-t">Figure 7-1: response budget per stop function</title>
-<desc id="rb-d">Six horizontal bars on one time axis from zero to three hundred milliseconds, one per stop function, each made of a grey input segment, a teal logic segment and an amber power-removal segment with the milliseconds written in, a red target tick per bar, and a hatched tail for the unmeasured standstill; every bar ends before its tick except the loss-of-command function, which overshoots by the relay time.</desc>
+<desc id="rb-d">Eight horizontal bars on one time axis from zero to three hundred milliseconds, one per stop function, each made of a grey input segment, a teal logic segment and an amber power-removal segment with the milliseconds written in, a red target tick per bar, and a hatched tail for the unmeasured standstill; every bar ends before its tick except the loss-of-command function, which overshoots by the relay time.</desc>
 <defs>
   <marker id="rb-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
     <path d="M0,0 L10,5 L0,10 z" fill="#122026"/></marker>
   <pattern id="rb-hatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
     <line x1="0" y1="0" x2="0" y2="8" stroke="#7E949B" stroke-width="1"/></pattern>
 </defs>
-<rect x="0" y="0" width="1180" height="556" fill="#FFFFFF"/>
+<rect x="0" y="0" width="1180" height="668" fill="#FFFFFF"/>
 <text x="32.0" y="34.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#122026" text-anchor="start">Figure 7-1  Demand-to-power-removal budget per stop function, against its target</text>
 <text x="32.0" y="52.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="start">Three segments per function: the detecting device or input window, the logic (speed monitor and safety relay), the power removal (contactors). The red tick is the target of §7. The hatched bar is the standstill, unmeasured.</text>
-<line x1="250.0" y1="100" x2="250.0" y2="446" stroke="#D3DDE2" stroke-width="1"/>
+<line x1="250.0" y1="100" x2="250.0" y2="558" stroke="#D3DDE2" stroke-width="1"/>
 <text x="250.0" y="94.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">0 ms</text>
-<line x1="356.7" y1="100" x2="356.7" y2="446" stroke="#D3DDE2" stroke-width="1"/>
+<line x1="356.7" y1="100" x2="356.7" y2="558" stroke="#D3DDE2" stroke-width="1"/>
 <text x="356.7" y="94.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">50 ms</text>
-<line x1="463.3" y1="100" x2="463.3" y2="446" stroke="#D3DDE2" stroke-width="1"/>
+<line x1="463.3" y1="100" x2="463.3" y2="558" stroke="#D3DDE2" stroke-width="1"/>
 <text x="463.3" y="94.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">100 ms</text>
-<line x1="570.0" y1="100" x2="570.0" y2="446" stroke="#D3DDE2" stroke-width="1"/>
+<line x1="570.0" y1="100" x2="570.0" y2="558" stroke="#D3DDE2" stroke-width="1"/>
 <text x="570.0" y="94.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">150 ms</text>
-<line x1="676.7" y1="100" x2="676.7" y2="446" stroke="#D3DDE2" stroke-width="1"/>
+<line x1="676.7" y1="100" x2="676.7" y2="558" stroke="#D3DDE2" stroke-width="1"/>
 <text x="676.7" y="94.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">200 ms</text>
-<line x1="783.3" y1="100" x2="783.3" y2="446" stroke="#D3DDE2" stroke-width="1"/>
+<line x1="783.3" y1="100" x2="783.3" y2="558" stroke="#D3DDE2" stroke-width="1"/>
 <text x="783.3" y="94.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">250 ms</text>
-<line x1="890.0" y1="100" x2="890.0" y2="446" stroke="#D3DDE2" stroke-width="1"/>
+<line x1="890.0" y1="100" x2="890.0" y2="558" stroke="#D3DDE2" stroke-width="1"/>
 <text x="890.0" y="94.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">300 ms</text>
 <rect x="28.0" y="110.0" width="1124.0" height="56.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
 <text x="32.0" y="134.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">SF-01</text>
@@ -101,14 +101,39 @@
 <text x="407.3" y="440.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start">total 70 ms</text>
 <line x1="676.7" y1="398" x2="676.7" y2="432" stroke="#D64535" stroke-width="2"/>
 <text x="681.7" y="398.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="start">target 200</text>
-<rect x="32.0" y="472.0" width="18.0" height="12.0" rx="2" fill="#7E949B" stroke="#7E949B" stroke-width="1"/>
-<text x="56.0" y="482.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">device or input window</text>
-<rect x="252.0" y="472.0" width="18.0" height="12.0" rx="2" fill="#00938B" stroke="#00938B" stroke-width="1"/>
-<text x="276.0" y="482.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">logic</text>
-<rect x="472.0" y="472.0" width="18.0" height="12.0" rx="2" fill="#B86F0C" stroke="#B86F0C" stroke-width="1"/>
-<text x="496.0" y="482.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">power removal</text>
-<rect x="692.0" y="472.0" width="18.0" height="12.0" rx="2" fill="url(#rb-hatch)" stroke="#D3DDE2" stroke-width="1"/>
-<text x="716.0" y="482.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">standstill after power removal (TBC, WP-V-02)</text>
-<text x="32.0" y="506.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Budget from WP-H-02 §3.2 for the candidate parts; SF-05, SF-07 and SF-08 are not timed stops and are not drawn.</text>
-<text x="1148.0" y="544.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#7E949B" text-anchor="end">Generated by figures/fig_c04.py from WP-C-04 §7</text>
+<rect x="28.0" y="446.0" width="1124.0" height="56.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
+<text x="32.0" y="470.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">SF-10</text>
+<text x="32.0" y="486.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Base motion inhibit while an arm</text>
+<text x="32.0" y="498.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">is unstowed (CFG-002)</text>
+<text x="242.0" y="470.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="end">stop cat. 0</text>
+<rect x="250.0" y="460" width="104.7" height="22" fill="#00938B"/>
+<text x="303.3" y="475.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">50</text>
+<rect x="356.7" y="460" width="40.7" height="22" fill="#B86F0C"/>
+<text x="378.0" y="475.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">20</text>
+<rect x="401.3" y="460" width="126.0" height="22" fill="url(#rb-hatch)" fill-opacity="0.6" stroke="none"/>
+<text x="407.3" y="496.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start">total 70 ms</text>
+<line x1="676.7" y1="454" x2="676.7" y2="488" stroke="#D64535" stroke-width="2"/>
+<text x="681.7" y="454.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="start">target 200</text>
+<text x="32.0" y="526.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">SF-11</text>
+<text x="32.0" y="542.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Arm safe stop and collaborative</text>
+<text x="32.0" y="554.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">force limiting (CFG-002)</text>
+<text x="242.0" y="526.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="end">stop cat. 1 then 0 (arm)</text>
+<rect x="250.0" y="516" width="104.7" height="22" fill="#00938B"/>
+<text x="303.3" y="531.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">50</text>
+<rect x="356.7" y="516" width="40.7" height="22" fill="#B86F0C"/>
+<text x="378.0" y="531.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">20</text>
+<rect x="401.3" y="516" width="126.0" height="22" fill="url(#rb-hatch)" fill-opacity="0.6" stroke="none"/>
+<text x="407.3" y="552.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start">total 70 ms</text>
+<line x1="676.7" y1="510" x2="676.7" y2="544" stroke="#D64535" stroke-width="2"/>
+<text x="681.7" y="510.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="start">target 200</text>
+<rect x="32.0" y="584.0" width="18.0" height="12.0" rx="2" fill="#7E949B" stroke="#7E949B" stroke-width="1"/>
+<text x="56.0" y="594.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">device or input window</text>
+<rect x="252.0" y="584.0" width="18.0" height="12.0" rx="2" fill="#00938B" stroke="#00938B" stroke-width="1"/>
+<text x="276.0" y="594.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">logic</text>
+<rect x="472.0" y="584.0" width="18.0" height="12.0" rx="2" fill="#B86F0C" stroke="#B86F0C" stroke-width="1"/>
+<text x="496.0" y="594.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">power removal</text>
+<rect x="692.0" y="584.0" width="18.0" height="12.0" rx="2" fill="url(#rb-hatch)" stroke="#D3DDE2" stroke-width="1"/>
+<text x="716.0" y="594.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">standstill after power removal (TBC, WP-V-02)</text>
+<text x="32.0" y="618.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Budget from WP-H-02 §3.2 for the candidate parts; SF-05, SF-07, SF-08 and SF-12 are not timed stops and are not drawn; SF-10 and SF-11 assume the chain budget on the 2.0 parts, unverified.</text>
+<text x="1148.0" y="656.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#7E949B" text-anchor="end">Generated by figures/fig_c04.py from WP-C-04 §7</text>
 </svg>

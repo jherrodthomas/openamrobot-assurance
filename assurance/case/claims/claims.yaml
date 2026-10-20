@@ -24,7 +24,7 @@
 
 - id: G1
   kind: claim
-  title: "The safety functions SF-01 to SF-09 reach their required Performance Level"
+  title: "The safety functions SF-01 to SF-12 reach their required Performance Level"
   description: "Each safety function of WP-C-03 §7, specified in WP-C-04, is broken into requirements (WP-S-02), implemented by a safety-related part of the control system at its PLr (WP-S-03, WP-H-03) and validated per ISO 13849-2."
   parent: G0
   argument: S0
@@ -32,7 +32,7 @@
   baseline: BL-001
   configuration: CFG-001
   related_hazards: [H-01, H-02, H-03, H-04, H-05, H-11]
-  related_requirements: [SF-01, SF-02, SF-03, SF-04, SF-05, SF-06, SF-07, SF-08, SF-09]
+  related_requirements: [SF-01, SF-02, SF-03, SF-04, SF-05, SF-06, SF-07, SF-08, SF-09, SF-10, SF-11, SF-12]
   related_assumptions: []
   evidence_refs: [Sn-04, Sn-05, Sn-17]
   defeaters: []
@@ -225,6 +225,69 @@
   related_assumptions: [AOU-01]
   evidence_refs: [Sn-17]
   defeaters: [DF-36]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G1.10
+  kind: claim
+  title: "SF-10 base motion inhibit while an arm is unstowed is implemented at PL d (CFG-002)"
+  description: "Traction is enabled only while both arms report the stowed or carry pose on a safety-rated signal (WP-C-04 §3.10; WP-C-06 CA-01). Exists only on CFG-002, whose design is not public."
+  parent: G1
+  argument: S1
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-002
+  related_hazards: [H-13, H-15]
+  related_requirements: [SF-10]
+  related_assumptions: [AOU-08]
+  evidence_refs: [Sn-17]
+  defeaters: [DF-36]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G1.11
+  kind: claim
+  title: "SF-11 arm safe stop and collaborative force limiting is implemented at PL d (CFG-002)"
+  description: "An arm stops as a safety-rated monitored stop when a person enters its workspace or a force limit is exceeded, in the collaborative mode of DQ-021, with the limits measured against ISO/TS 15066 (WP-C-04 §3.11; WP-C-06 §4). Exists only on CFG-002."
+  parent: G1
+  argument: S1
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-002
+  related_hazards: [H-13]
+  related_requirements: [SF-11]
+  related_assumptions: [AOU-10]
+  evidence_refs: [Sn-17]
+  defeaters: [DF-22]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G1.12
+  kind: claim
+  title: "SF-12 lift and gripper holding on stop and power loss, with the lift interlock, is implemented at PL d (CFG-002)"
+  description: "The lift and the gripper hold their load without power, proven by test, and the lift moves only with the base stopped, the arms in pose and the keep-clear zone clear (WP-C-04 §3.12; WP-C-06 CA-03, CA-04). Exists only on CFG-002."
+  parent: G1
+  argument: S1
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-002
+  related_hazards: [H-14, H-15]
+  related_requirements: [SF-12]
+  related_assumptions: [AOU-09]
+  evidence_refs: [Sn-17]
+  defeaters: [DF-23]
   review_state: not-reviewed
   reviewer: null
   review_date: null

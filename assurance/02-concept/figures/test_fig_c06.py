@@ -13,8 +13,8 @@ class TestFigC06(unittest.TestCase):
     self.src = fig_c06.load_source()
 
   def test_source_tables(self):
-    self.assertEqual(len(self.src["scenes"]), 12)
-    self.assertEqual(len(self.src["misuse"]), 14)
+    self.assertEqual(len(self.src["scenes"]), 15)
+    self.assertEqual(len(self.src["misuse"]), 16)
     self.assertEqual(fig_c06.check_source(self.src), [])
 
   def test_parameters_have_numbers(self):
