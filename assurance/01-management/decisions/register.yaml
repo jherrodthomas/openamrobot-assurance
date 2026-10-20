@@ -12,6 +12,7 @@
     Botshare, and their release gates and two-approval rule on safety paths. **You answered this in chat on
     2026-10-20: fork.** Recorded here so the register is complete.
   reversibility: easy
+  decider: lead
   blocks: "Where the forked platform repositories and this record live"
   gate: G0
   asked: 2026-10-20
@@ -38,6 +39,7 @@
     20 November 2026, but its design is not in any repository yet. A safety case can only be built on what can
     be read and tested.
   reversibility: revisit
+  decider: lead
   blocks: "The reference configuration named in every work product; the scope of the risk assessment"
   gate: G0
   asked: 2026-10-20
@@ -64,6 +66,7 @@
     20 January 2027 and ISO 3691-4 plus ISO 13849-1 are the harmonised route. The US market uses ANSI/A3 R15.08
     instead. The choice fixes which standards every requirement cites and which conformity file we build.
   reversibility: hard
+  decider: lead
   blocks: "Standard references in every work product; the structure of 10-safety-case"
   gate: G0
   asked: 2026-10-20
@@ -90,6 +93,7 @@
     collaborative-robot and lifting hazards under ISO 10218 and ISO/TS 15066, each with its own risk assessment,
     force limits and stop functions. Upstream has no arm or lift code in the platform repositories today.
   reversibility: revisit
+  decider: lead
   blocks: "Machine limits in the item definition; the hazard list; the number of safety functions"
   gate: G1
   asked: 2026-10-20
@@ -114,6 +118,7 @@
     200 ms software watchdog that cuts motor PWM and lets the wheels coast. A lower target is only defensible if
     the robot operates in a separated area with no people, which is an operating-environment limit you accept.
   reversibility: hard
+  decider: lead
   blocks: "The required PL of every safety function (SF-01 onward); the hardware safety chain the fork must add"
   gate: G1
   asked: 2026-10-20
@@ -131,3 +136,287 @@
       detail: "Methodologically clean (the PLr comes from the risk graph). Cost: the risk graph for an AMR around people lands on PL d anyway, so the hardware gap stays open a month longer."
   sources: ["ISO 3691-4:2023 §5.3 (safety-related parts), Annex A", "ISO 13849-1:2023 Annex A (PLr)", "openamr-platform-fw docs/safety/motion-safety.md", "openAMRobot/.github decisions.yaml SAFETY-PROCUREMENT"]
   status: open
+
+- id: DQ-006
+  ref: WP-M-13
+  question: "Which route to conformity do we plan for under the Machinery Regulation: self-declaration against the harmonised standards, or a notified body's type-examination?"
+  context: >-
+    Regulation (EU) 2023/1230 applies from 20 January 2027. An AMR that is not in its Annex I high-risk list may be
+    self-declared (Module A, internal control) if the harmonised standards covering every essential requirement are
+    applied in full; otherwise a notified body examines the type (Modules B and C) or certifies a quality system
+    (Module H). Our strategy keeps every learned component outside the safety functions, so the Annex I Part A
+    trigger (self-evolving safety behaviour) does not apply. The route decides whether a notified body is a planned
+    cost and who checks the technical file.
+  reversibility: revisit
+  decider: lead
+  blocks: "The confirmation measure NB-1 in WP-M-06; the budget line for a notified body; the shape of the technical documentation index WP-K-02"
+  gate: G0
+  asked: 2026-10-20
+  batch: 1
+  options:
+    - key: A
+      recommended: true
+      title: "Plan for self-declaration (Module A) with ISO 3691-4, ISO 13849-1, EN 60204-1 and ISO 13850 applied in full"
+      detail: "No notified-body fee; one technical file. Cost: the standards must be bought and applied without deviation, and the presumption of conformity only holds once the Commission cites them under the new Regulation. Any later external examination is voluntary."
+    - key: B
+      title: "Plan for a voluntary EU type-examination (Modules B and C) from the start"
+      detail: "An independent body reads the technical file, which the project otherwise lacks. Cost: a fee in the four to five figures and scheduling around the body; could be the same party as the assessor of DQ-007."
+    - key: C
+      title: "Decide at G2, once the architecture and the detection means are fixed"
+      detail: "Nothing is committed now. Cost: WP-M-13 and WP-M-06 carry a placeholder for a notified body for two gates, and the budget cannot be planned."
+  sources: ["Regulation (EU) 2023/1230 Art. 25, Annex I, Annexes VI–X", "assurance/01-management/WP-M-13-regulatory-conformity-strategy.md §3", "assurance/01-management/WP-M-06-confirmation-measures-plan.md §8"]
+  status: open
+
+- id: DQ-007
+  ref: WP-M-06
+  question: "When do we engage an independent functional safety assessor: now, at the concept gate, or not for now?"
+  context: >-
+    Every confirmation review and the functional safety assessment need someone independent of the author, and the
+    project has one person. Two measures are already due at G0 (the impact analysis and the safety plan) and six at
+    G1, including the review of the risk assessment that G1 cannot pass without. LionDriver answered the same
+    question with "not for now" and carries every I3 measure as unscheduled. An assessor with ISO 13849-1 and
+    ISO 3691-4 experience costs money and time to brief; without one, no work product can ever leave draft.
+  reversibility: revisit
+  decider: lead
+  blocks: "Every confirmation measure in WP-M-06 §9; the G0 exit criterion 'plans approved'; the WP-M-02 role 'External functional safety assessor'"
+  gate: G0
+  asked: 2026-10-20
+  batch: 1
+  options:
+    - key: A
+      recommended: true
+      title: "Identify and brief an assessor now; first paid measure at G1 (the risk assessment review)"
+      detail: "The concept phase gets an outside eye when it matters most, and the tailoring is confirmed before it shapes two more gates. Cost: a fee per measure from G1, and a few hours of the lead's time to find and brief someone."
+    - key: B
+      title: "Engage at G2, after the risk assessment and the safety functions exist"
+      detail: "More to show, fewer billable hours. Cost: G1 passes with its confirmation reviews deferred, and a rejected risk assessment at G2 re-opens the whole concept."
+    - key: C
+      title: "Not for now; record every I2 and I3 measure as unscheduled"
+      detail: "No cost. Cost: nothing leaves draft, no gate can pass on its own terms, and the record stays a self-assessment until this changes."
+  sources: ["assurance/01-management/WP-M-06-confirmation-measures-plan.md §4, §6, OI-3, OI-5", "assurance/01-management/WP-M-02-safety-plan.md §3.1", "LionDriver decision register DQ-009"]
+  status: open
+
+- id: DQ-008
+  ref: GAP-14
+  question: "How does the robot detect people: a safety laser scanner, bumpers with a low speed limit, or a separated area with nobody in it?"
+  context: >-
+    Nothing on the Gate A unit is safety-rated for detecting a person: the LiDAR plane is at about 180 mm, nothing
+    below it is seen, the rear is masked out of the scan, and the collision monitor is software that upstream calls
+    best-effort. The protective stop SF-02 has a required PL but no implementation until this is decided, and the
+    stopping budget, the protective fields and the detection tests all wait on it. This is the open interface IX-02
+    that blocks the concept gate.
+  reversibility: hard
+  decider: lead
+  blocks: "SF-02 in WP-C-04; the stopping and safety-distance budget WP-S-04; WP-V-03; whether anyone may share the area with the robot"
+  gate: G1
+  after: [DQ-005]
+  options:
+    - key: A
+      recommended: true
+      title: "A type 3 safety laser scanner at a low plane, OSSDs wired into the safety relay"
+      detail: "The only option that gives SF-02 a PL d path and lets people share the space. Cost: roughly €2,000 to €4,000 for the scanner, a mounting low on the front, field sets per zone, and the rear still needs a second sensor or a rule."
+    - key: B
+      title: "Mechanical bumpers on all sides and a speed limit low enough to stop within the bumper travel"
+      detail: "Cheap and simple to argue. Cost: speed falls to a walking-pace fraction, contact happens before the stop, and the arms (later) are not covered."
+    - key: C
+      title: "No detection; a separated area with nobody inside while the robot moves"
+      detail: "No hardware. Cost: the operating environment shrinks to a test cell with a gate; any demonstration around people is outside the case for good."
+  sources: ["assurance/00-assessment/gap-assessment.md GAP-14, GAP-22, GAP-35", "assurance/02-concept/WP-C-10-functional-insufficiency-analysis.md §4", "assurance/process/model/interfaces.yaml IX-02", "ISO 3691-4:2023 §4 (personnel detection), ISO 13855:2024"]
+  status: queued
+
+- id: DQ-009
+  ref: GAP-01
+  question: "Do we buy and fit the bench safety hardware before any on-ground test: a battery fuse and disconnect, a dual-channel E-stop through a safety relay, and driver fault read-back?"
+  context: >-
+    As inherited, the Gate A unit's only stop is a software watchdog on the same core that drives the motors; the
+    24 V bus has no fuse and no switch. The hold point WP-V-07 says no robot is driven under the fork's control
+    until a pendant E-stop drops the driver supply through a safety relay, the battery is fused and switchable, and
+    both drivers' fault outputs stop the motors. The parts are bench equipment, not the product design, but the
+    safety relay can be the one upstream's 2.0 chain already names. Measuring the stopping distance, the number the
+    whole concept hangs on, is the first test behind this hold point.
+  reversibility: easy
+  decider: lead
+  blocks: "Every on-ground test (WP-V-07 conditions C-1 to C-3); the first stopping-distance measurement (WP-V-02); the first change record under 07-supporting/impact/"
+  gate: G1
+  asked: 2026-10-20
+  batch: 1
+  proceed_after: 2026-11-03
+  options:
+    - key: A
+      recommended: true
+      title: "Buy it now: a certified safety relay, two NC E-stop contacts on a pendant, a fused and switched battery lead, and the ERR/DO1 wiring"
+      detail: "Roughly €300 to €600 with a Pilz PNOZ s3 or equivalent; a weekend to fit and test. Cost: money spent on a unit the 2.0 design will replace, though the relay and the pendant carry over."
+    - key: B
+      title: "Buy the cheapest workable set: a fused lead, a single-channel E-stop contactor, no relay"
+      detail: "Under €150. Cost: single channel is Category B at best and the design is thrown away; the pre-session check still works."
+    - key: C
+      title: "No on-ground tests until the 2.0 base with its chain exists"
+      detail: "Nothing spent. Cost: no stopping-distance, stability or detection data for at least two months; the concept phase proceeds on estimates."
+  sources: ["assurance/06-validation/WP-V-07-test-operations.md §2", "assurance/00-assessment/gap-assessment.md GAP-01, GAP-02, GAP-04, GAP-19, §10 action 4", "openAMRobot/.github decisions.yaml SAFETY-PROCUREMENT"]
+  status: open
+
+- id: DQ-010
+  ref: WP-M-02
+  question: "While the project has one person, who approves the work products the safety manager writes, and do you accept self-approval as a recorded interim limitation?"
+  context: >-
+    The safety plan gives the safety manager approval of safety work products, and the same person writes them. A
+    verification review needs someone other than the author (I1); nobody holds that role. LionDriver recorded
+    self-approval as an accepted interim limitation with the gap stated in every header, and treats every review as
+    I0 until a second person joins. The alternative is to find a volunteer reviewer now, or to let the assessor of
+    DQ-007 take the reviewer role for the few documents that matter.
+  reversibility: easy
+  decider: lead
+  blocks: "The WP-M-02 roles 'Verification reviewer(s)' and 'Quality assurance'; whether any work product can move from Draft to Approved; the G0 exit criterion 'roles assigned'"
+  gate: G0
+  asked: 2026-10-20
+  batch: 1
+  options:
+    - key: A
+      recommended: true
+      title: "Self-approval as a recorded interim limitation, stated in every header, with every review logged as I0"
+      detail: "Honest and cheap; the record says what it is. Cost: nothing leaves Draft and every claim stays unaccepted until a reviewer exists."
+    - key: B
+      title: "Find a volunteer reviewer with machinery safety experience before G0"
+      detail: "Gives I1 reviews and lets drafts be approved. Cost: finding and keeping a volunteer; their time is the project's critical path."
+    - key: C
+      title: "Give the assessor of DQ-007 the verification reviewer role for the plans and the risk assessment"
+      detail: "One engagement covers both. Cost: more billable hours, and the assessor then cannot confirm what they reviewed (independence)."
+  sources: ["assurance/01-management/WP-M-02-safety-plan.md §3.1, OI-1, OI-2", "assurance/01-management/WP-M-01-assurance-strategy.md T-09", "LionDriver WP-M-02 OI-2"]
+  status: open
+
+- id: DQ-011
+  ref: GAP-27
+  question: "What security level do we target for the robot under IEC 62443-4-2: SL 1 (casual misuse) or SL 2 (an intentional attacker with simple means)?"
+  context: >-
+    Today anyone on the ROS 2 domain can move the robot, trigger docking, switch off the collision monitor or change
+    the control gains, and the on-screen E-stop is a network request. The security level target fixes how much
+    authentication, integrity and segmentation the fork must build and verify. SL 1 is reachable with SROS2 and a
+    login on the operator UI; SL 2 adds signed images, protected parameters and penetration testing. The safety
+    chain is designed to need neither: no attack on the software can hold a contactor closed.
+  reversibility: revisit
+  decider: lead
+  blocks: "The component requirements CR 1–7 in WP-C-08; the scope of WP-W-11 and WP-V-06; the cost of penetration testing"
+  gate: G1
+  options:
+    - key: A
+      recommended: true
+      title: "SL 2 for identification, integrity, segmentation and availability (FR 1, 3, 5, 7); SL 1 for the rest"
+      detail: "Covers a person on the same Wi-Fi with public tools, which is the realistic threat in a workshop. Cost: signed images, protected parameters and a penetration test before release."
+    - key: B
+      title: "SL 1 throughout"
+      detail: "SROS2, a login and pinned builds. Cost: an intentional attacker on the network is out of scope, which the operating-environment limits must then say."
+    - key: C
+      title: "SL 2 throughout"
+      detail: "Simplest to state. Cost: SL 2 on use control and data confidentiality buys little for a robot with no personal data and adds verification effort."
+  sources: ["assurance/00-assessment/gap-assessment.md GAP-27, GAP-28, GAP-29", "assurance/02-concept/WP-C-08-cybersecurity-requirements-and-sl-target.md §2", "IEC 62443-4-2:2019 §4 (security levels)"]
+  status: queued
+
+- id: DQ-012
+  ref: GAP-03
+  question: "Where do the safety functions live: on a hardwired safety chain alone, with the firmware as a functional layer, or with the Teensy firmware inside the safety-related control system?"
+  context: >-
+    The strategy allocates every safety function to a hardwired chain (E-stops and scanner outputs into a safety
+    relay that drops two contactors and engages the brakes) and treats the firmware and the ROS 2 stack as
+    functional layers that are hardened but carry no Performance Level. Upstream's own principle says the same.
+    The alternative, making the firmware part of the SRP/CS, would let software contribute to the stop, but it
+    means a PL d software lifecycle on code that has no tests today and a second channel for a single Teensy.
+  reversibility: hard
+  decider: lead
+  blocks: "The SRP/CS architecture WP-S-03; the scope of the software work products WP-W-02 to WP-W-08; the tailoring decisions T-03 and T-04"
+  gate: G2
+  asked: 2026-10-20
+  batch: 1
+  options:
+    - key: A
+      recommended: true
+      title: "Hardwired chain only; the firmware is hardened as defence in depth with no PL claim"
+      detail: "The PL d argument stays inside certified components with known reliability data, and matches upstream's 'telemetry is not safety evidence'. Cost: every safety function needs a hardware path, including safe speed, which means a scanner with field switching or a speed monitor."
+    - key: B
+      title: "Firmware inside the SRP/CS for the speed and loss-of-control functions; the chain for the E-stop and protective stop"
+      detail: "Lets software do what hardware does badly (speed limits per zone). Cost: ISO 13849-1 §7 software lifecycle at PL d on the firmware, a reproducible build, tests, static analysis and a second channel or diverse monitor."
+    - key: C
+      title: "Defer until the firmware has a verification history, then promote it if the evidence supports it"
+      detail: "Keeps the door open. Cost: the architecture is designed twice if the answer is later B."
+  sources: ["assurance/01-management/WP-M-01-assurance-strategy.md §5 T-03, T-04, §6", "assurance/00-assessment/gap-assessment.md GAP-03, GAP-11", "openAMRobot/.github decisions.yaml TELEMETRY-NOT-SAFETY-EVIDENCE, ESTOP-SCOPE"]
+  status: open
+
+- id: DQ-013
+  ref: WP-C-04
+  question: "What does the emergency stop do: remove actuator power at once and let the brakes stop the robot (stop category 0), or brake under control first and then remove power (category 1)?"
+  context: >-
+    EN 60204-1 lets an E-stop be category 0 (immediate removal of power) or category 1 (controlled stop, then
+    power removed). Category 0 is simplest and needs no software, but on the Gate A unit there are no brakes, so a
+    category 0 stop is a coast; on the 2.0 base the hub motors have brakes that engage when power is lost. Category 1
+    stops shorter on a loaded robot but puts the firmware in the stop path for the first second, which conflicts
+    with the allocation of DQ-012.
+  reversibility: revisit
+  decider: lead
+  blocks: "SF-01 in WP-C-04; the stopping-distance budget WP-S-04; the contactor and brake design in WP-H-02"
+  gate: G1
+  after: [DQ-012]
+  options:
+    - key: A
+      recommended: true
+      title: "Category 0: the relay drops the contactors and the brakes engage on power loss; a mechanical brake is a condition of any configuration that carries payload"
+      detail: "No software in the stop path; validated by a measured stopping distance. Cost: the Gate A unit coasts until it has brakes, so its speed limit and payload stay low."
+    - key: B
+      title: "Category 1: the firmware brakes under control, then the relay removes power after a fixed delay"
+      detail: "Shorter stops, less load on the mechanics. Cost: a delayed-drop safety relay, and the firmware's braking becomes part of the safety function (DQ-012 option B)."
+  sources: ["EN 60204-1:2018 §9.2 (stop categories), ISO 13850:2015 §4", "assurance/02-concept/WP-C-04-safety-functions-and-plr.md §2", "openAMRobot/.github decisions.yaml ESTOP-SCOPE, DRIVETRAIN"]
+  status: queued
+
+- id: DQ-014
+  ref: WP-M-06
+  question: "Do we buy the standards now (ISO 12100, ISO 3691-4, ISO 13849-1 and -2, EN 60204-1, ISO 13850, about €1,000 to €1,500), or only when an assessor is engaged?"
+  context: >-
+    Every clause reference in the record is written from memory and marked to be checked against a licensed copy.
+    ISO 13849-1:2023 renumbered its clauses, ISO 3691-4:2023 is new, and the Machinery Regulation's harmonised list
+    is still being built. An assessor will check against the real text; writing two more gates of documents against
+    the wrong clause numbers costs more to fix than the standards cost to buy.
+  reversibility: easy
+  decider: lead
+  blocks: "WP-M-06 OI-1 (clause check); the credibility of every clause column in WP-M-00"
+  gate: G0
+  asked: 2026-10-20
+  batch: 1
+  proceed_after: 2026-11-03
+  options:
+    - key: A
+      recommended: true
+      title: "Buy ISO 13849-1:2023, ISO 3691-4:2023 and EN 60204-1:2018 now; the rest when their work products start"
+      detail: "The three that every work product cites, roughly €600. Cost: the money, and the clause check becomes a task for the next session."
+    - key: B
+      title: "Buy the full set now"
+      detail: "Everything checked at once. Cost: roughly €1,500, some of it for standards (ISO 10218, ISO/TS 15066) the base does not need yet."
+    - key: C
+      title: "Buy nothing until an assessor is engaged"
+      detail: "No cost now. Cost: every clause reference stays unverified through G1 and G2, and the assessor's first finding is predictable."
+  sources: ["assurance/01-management/WP-M-06-confirmation-measures-plan.md OI-1", "assurance/01-management/WP-M-00-work-product-register.md (note on clause numbers)", "LionDriver decision register DQ-014"]
+  status: open
+
+- id: DQ-015
+  ref: WP-C-02
+  question: "What is the default speed limit when a person is in the robot's zone: walking pace, a fraction of it, or zero (the robot waits)?"
+  context: >-
+    ISO 3691-4 ties the permitted speed in shared zones to the detection means and the stopping distance. Until
+    the detection means (DQ-008) and the stopping distance (WP-V-02) are known, the fork needs a default for the
+    operating-environment limits and for the test procedure. The Nav2 limit as committed is 0.20 m/s; upstream's
+    2.0 ceiling is 1.5 m/s as an analytical limit.
+  reversibility: easy
+  decider: lead
+  blocks: "The zone limits in WP-C-02; the development limits in WP-V-07 §3; the safely-limited-speed function SF-03"
+  gate: G1
+  after: [DQ-008]
+  options:
+    - key: A
+      recommended: true
+      title: "0.3 m/s with a safety-rated detection means in the zone; 0 m/s (wait) without one"
+      detail: "A person can step out of the way of 0.3 m/s and the measured stopping distance will be short. Cost: slow transport in shared zones; the robot waits whenever detection is unavailable."
+    - key: B
+      title: "0.5 m/s with detection; 0.1 m/s without"
+      detail: "More useful throughput. Cost: a longer stopping distance and larger protective fields; 0.1 m/s without detection is still motion toward a person nothing sees."
+    - key: C
+      title: "Zero in any zone with a person until the arms question is settled, since the base will carry them"
+      detail: "The most conservative. Cost: no shared-space operation at all in the first configuration."
+  sources: ["ISO 3691-4:2023 §4 (speed in shared zones)", "assurance/00-assessment/gap-assessment.md §4.1", "openAMRobot/.github decisions.yaml SPEED-CEILING"]
+  status: queued
