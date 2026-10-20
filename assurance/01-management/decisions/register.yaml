@@ -163,3 +163,56 @@
       detail: "Flexible per zone. Cost: another unauthenticated input that changes a safety limit, which is what the hardening removed."
   sources: ["change-2026-10-20-fw-hardening.md §1 item 3", "WP-C-03 SF-03", "sw: nav2_params.yaml:116-120", "gap assessment GAP-06, GAP-36"]
   status: open
+
+- id: DQ-007
+  ref: WP-S-03 OI-2
+  question: "What detects people on the Gate A bench build: a safety laser scanner, safety bumpers, or neither (fenced operation only)?"
+  context: >-
+    You set PL d with people sharing the space, so the protective stop (SF-02) needs a safety-rated device wired
+    into the stop chain; the LiDAR cannot do it. A scanner sees ahead and can switch fields by speed; bumpers
+    are cheap and cover the low-object gap but stop by contact. This is a purchase, and it decides whether the
+    Gate A unit can ever be tested around people or stays fenced until 2.0.
+  reversibility: revisit
+  blocks: "WP-S-03 §3.4 design; SF-02 validation; the bench-build bill of materials"
+  gate: G2
+  asked: 2026-10-20
+  batch: 1
+  options:
+    - key: A
+      recommended: true
+      title: "Safety laser scanner (type 3, OSSD) at the front, plus a rear bumper"
+      detail: "Full SF-02 at PL d including reverse. Cost: roughly €2,000 to €4,000 for a small scanner (e.g. SICK nanoScan3 or TiM-S class) plus a bumper and monitoring unit; mounting below the chassis lip."
+    - key: B
+      title: "Safety bumpers front and rear only"
+      detail: "Under €500. Cost: contact before stop, so the speed limit drops to the crawl limit wherever bumpers are the only detection; no field switching for docking."
+    - key: C
+      title: "No device on Gate A; fenced operation until 2.0"
+      detail: "No purchase. Cost: nothing on Gate A can be demonstrated around people; SF-02 evidence waits for a 2.0 design that today names no detection device either."
+  sources: ["WP-C-03 §7 SF-02", "WP-S-02 SR-02.01…SR-02.07", "WP-S-03 §3.4, §7", "gap assessment GAP-14, GAP-22"]
+  status: open
+
+- id: DQ-008
+  ref: change-2026-10-20-fw-hardening §4
+  question: "Stall-detector thresholds in the firmware: 60 % PWM, below 2 rpm, for 1 s, cleared after 1 s of zero command"
+  context: >-
+    The fork firmware latches a motion fault when a wheel is driven hard but does not turn. The thresholds are
+    engineering estimates from the measured stick-slip floor (4 rpm) and the PWM the drive needs at that floor.
+    They are reversible constants that the bench test will tune.
+  reversibility: easy
+  blocks: "nothing; recorded so the bench test knows what to check"
+  gate: G2
+  asked: 2026-10-20
+  batch: 1
+  decider: claude
+  proceed_after: 2026-10-20
+  options:
+    - key: A
+      recommended: true
+      title: "Keep 60 % / 2 rpm / 1 s / 1 s until the bench test"
+      detail: "Trips on a blocked wheel or a dead encoder within a second; a heavy ramp start could trip it, which the bench test will show. Cost: possible nuisance trips during commissioning."
+    - key: B
+      title: "Looser: 80 % / 1 rpm / 2 s"
+      detail: "Fewer nuisance trips. Cost: a pivoting robot runs two seconds longer on one wheel."
+  sources: ["change-2026-10-20-fw-hardening.md §1 item 7, §3", "fw: docs/safety/motion-safety.md (velocity floors)"]
+  status: assumed
+  answer: {choice: A, via: assumed, at: 2026-10-20}
