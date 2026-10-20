@@ -1,0 +1,56 @@
+# Safety-relevant file list (WP-P-01 §3) — authoritative, machine-readable copy.
+#
+# Format: <class> <glob>   (comment after '#')
+#   SR-A  safety-related parts of the control system: safety-chain design files, the firmware safety layer,
+#         safety parameter sets. Two human approvals; impact analysis; verification evidence.
+#   SR-Q  functional layers that feed hazards or configure limits: Nav2 chain, docking, drivers, scan filters,
+#         operator UI, firmware tuning. Impact analysis.
+#   SR-T  build, test, CI, toolchain or dependency configuration that changes evidence or binaries.
+# Anything not matched is NSR (standard change route).
+#
+# Globs are relative to the fork workspace: the forked platform repositories sit beside this record as
+# openamr-platform-fw/, openamr-platform-hw/ and openamr-platform-sw/. '**' matches any number of path
+# segments, '*' matches within one segment. When several patterns match, the longest wins.
+# Change this file only through a change request (WP-P-02).
+
+# SR-A: the safety chain and the firmware safety layer
+SR-A openamr-platform-hw/electrical/safety/**              # safety-chain schematics and wiring (to be created)
+SR-A openamr-platform-hw/electrical/power_distribution/**  # fuse, disconnect, contactors
+SR-A openamr-platform-hw/electrical/wiring/**
+SR-A openamr-platform-fw/src/firmware.ino                  # watchdog, command validation, clamps, fault inputs
+SR-A openamr-platform-fw/config/lino_base_config.h         # limits, pins, watchdog, debug gate
+SR-A openamr-platform-fw/boards/**
+SR-A openamr-platform-fw/platformio.ini
+SR-A openamr-platform-sw/ros2/src/openamrobot_nav2/config/nav2_params.yaml   # speed, acceleration, monitor fields
+SR-A openamr-platform-sw/ros2/src/openamrobot_bringup/config/twist_mux.yaml  # command arbitration (to be created)
+SR-A assurance/05-software/parameters/**                   # WP-W-09 parameter sets
+
+# SR-Q: functional layers that feed hazards or configure limits
+SR-Q openamr-platform-sw/ros2/src/openamrobot_docking/**
+SR-Q openamr-platform-sw/ros2/src/openamrobot_nav2/**
+SR-Q openamr-platform-sw/ros2/src/openamrobot_perception/**
+SR-Q openamr-platform-sw/ros2/src/openamrobot_drivers/**
+SR-Q openamr-platform-sw/ros2/src/openamrobot_bringup/**
+SR-Q openamr-platform-sw/ros2/src/openamrobot_description/**
+SR-Q openamr-platform-sw/tools/diagnostics/**
+SR-Q openamr-platform-sw/ui/**                             # operator UI (Flask, rosbridge, video)
+SR-Q openamr-platform-fw/tools/encoder-calibration/**
+SR-Q openamr-platform-fw/docs/safety/**
+SR-Q openamr-platform-hw/electrical/motor_control/**
+SR-Q openamr-platform-hw/electrical/sensors/**
+SR-Q openamr-platform-hw/manufacturing/bom/**
+
+# SR-T: build, CI, toolchain, pins
+SR-T openamr-platform-fw/.github/**
+SR-T openamr-platform-sw/.github/**
+SR-T openamr-platform-hw/.github/**
+SR-T openamr-platform-sw/Dockerfile
+SR-T openamr-platform-sw/docker-compose.yml
+SR-T openamr-platform-sw/ros2/src/**/package.xml
+SR-T openamr-platform-sw/ros2/src/**/CMakeLists.txt
+SR-T openamr-platform-sw/ros2/src/**/setup.py
+SR-T .github/**
+SR-T assurance/tools/**
+SR-T assurance/process/tools/**
+SR-T assurance/01-management/decisions/*.py
+SR-T tools/**
