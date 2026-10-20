@@ -4,7 +4,7 @@
 |---|---|
 | Work product | WP-C-04 Safety functions specification with required Performance Level, stop category and response time |
 | Standard reference | Machinery: 3691-4 §4; 13850 §4; SRP/CS: 13849-1 §5, Annex A (PLr); Other: 60204-1 §9.2 (stop categories); ASPICE: SYS.2 |
-| Version | 0.2 (2026-10-20): DQ-004 B, DQ-014 B and DQ-020 A applied: SF-10…SF-12 (arms and lift, CFG-002) specified; §5 allocation rewritten with the firmware as a channel of the SRP/CS for SF-03, SF-04 and SF-06; configuration stated per function; §8 tasks T-09…T-11. 0.1: SF-01…SF-09 specified (demand, safe state, response, stop category, modes and tasks); PLr derived from WP-C-03 v0.3 with the type-C check; allocation; response-time budget; task applicability; Figures 2-1, 7-1, 8-1. 0.0: skeleton |
+| Version | 0.3 (2026-10-20): DQ-008 A, DQ-015 A, DQ-017 A and DQ-021 A applied: SF-01 category 0, SF-03 person-in-zone ceiling, SF-06 stall thresholds, SF-11 as a safety-rated monitored stop. 0.2 (2026-10-20): DQ-004 B, DQ-014 B and DQ-020 A applied: SF-10…SF-12 (arms and lift, CFG-002) specified; §5 allocation rewritten with the firmware as a channel of the SRP/CS for SF-03, SF-04 and SF-06; configuration stated per function; §8 tasks T-09…T-11. 0.1: SF-01…SF-09 specified (demand, safe state, response, stop category, modes and tasks); PLr derived from WP-C-03 v0.3 with the type-C check; allocation; response-time budget; task applicability; Figures 2-1, 7-1, 8-1. 0.0: skeleton |
 | Status | Draft |
 | PL / scope | PL d (SF-01, SF-02, SF-03, SF-05, SF-10, SF-11, SF-12), PL c (SF-04, SF-06, SF-09), PL b (SF-07, SF-08); CFG-001 Gate A unit (bench only) and CFG-002 2.0 mobile manipulator (unverified); SF-10…SF-12 exist only on CFG-002 |
 | Author | Assurance team (AI-assisted draft, I0) |
@@ -19,9 +19,10 @@
 > quoted in §4 are from memory of the standard and are marked to be checked against a licensed copy (DQ-016,
 > answered C: unscheduled). Version 0.2 applies the lead's answers of 2026-10-20: the firmware is a channel of the
 > safety-related control system for SF-03, SF-04 and SF-06 (DQ-014 B, §5) and the arms and lift are in the item on
-> CFG-002 (DQ-004 B, DQ-020 A; SF-10…SF-12). Every CFG-002 row rests on upstream's plan set. The stop category of
-> SF-01 (DQ-015) is open; the planning assumption is marked. The collaborative mode of the arms is decided (DQ-021 A): a
-> safety-rated monitored stop, no contact claimed.
+> CFG-002 (DQ-004 B, DQ-020 A; SF-10…SF-12). Every CFG-002 row rests on upstream's plan set. Version 0.3 applies the
+> answers of 2026-10-20: the stop category of SF-01 (DQ-015 A: category 0, §3.1), the collaborative mode of the arms
+> (DQ-021 A: a safety-rated monitored stop, no contact claimed, §3.11), the speed with a person in the zone (DQ-017 A,
+> §3.3) and the stall thresholds (DQ-008 A, §3.6).
 
 ## 1. Purpose
 
@@ -72,7 +73,7 @@ requirements SR-nn.mm of WP-S-02 are the testable form. "Today" is the Gate A un
 | Demand | A person actuates any emergency-stop device: the two devices on the robot (front panel; rear or top plate) or the pendant in the operator's hand during teleoperation and testing (ISO 13850 device: red mushroom on yellow, positive-opening contacts, latching) |
 | Safe state | Traction power removed from both drivers by two independent paths (series contactors K1, K2 and the drivers' brake/inhibit input); the state latched until a deliberate reset at the robot (SF-05) |
 | Response time | ≤ 200 ms to power removal (SR-01.03); the budget of WP-H-02 §3.2 is ≤ 50 ms |
-| Stop category | **0** (planning assumption, DQ-015 queued): the robot coasts on the Gate A drive, so the stopping distance under category 0 is a measured input (WP-V-02); category 1 would put the firmware in the stop path, which DQ-014 argues against |
+| Stop category | **0** (DQ-015 A, 2026-10-20): the relay drops the contactors and the brakes engage on power loss; no software in the stop path. The stopping distance under category 0 is a measured input (WP-V-02). A mechanical brake is a condition of any configuration that carries payload: the Gate A drive coasts, so CFG-001 stays bench only (DQ-011 C) with its speed and payload limits low |
 | PLr | d (§4) |
 | Category, DC | 3, medium or better (dual channel, cross-monitored, contactor feedback in the reset loop) |
 | Modes and tasks | Every mode M0–M6; every task (§8), including charging, where the chain is open anyway |
@@ -108,7 +109,7 @@ requirements SR-nn.mm of WP-S-02 are the testable form. "Today" is the Gate A un
 
 | Item | Specification |
 |---|---|
-| Demand | The wheel speed, monitored independently of the command path, exceeds the limit of the active zone for more than 100 ms: 0.20 m/s linear and 0.5 rad/s in the navigation zone (DQ-017 may change the limit near a person), the crawl limit **(TBC: 0.05 m/s)** in the dock lane and in reverse; or the robot reverses above the crawl limit (direction check) |
+| Demand | The wheel speed, monitored independently of the command path, exceeds the limit of the active zone for more than 100 ms: 0.20 m/s linear and 0.5 rad/s in the navigation zone; with a person in the zone the ceiling is 0.3 m/s when a safety-rated detection means is active and 0 m/s (standstill) when it is not (DQ-017 A, 2026-10-20); the crawl limit **(TBC: 0.05 m/s)** in the dock lane and in reverse; or the robot reverses above the crawl limit (direction check) |
 | Safe state | Controlled stop (stop category 1), power removed if standstill is not reached within **(TBC: 1 s)**; latched until reset (SR-03.03) |
 | Response time | Detection within 100 ms of the limit being exceeded; ≤ 170 ms from detection to the start of the stop |
 | Stop category | 1, then 0 |
@@ -165,7 +166,7 @@ requirements SR-nn.mm of WP-S-02 are the testable form. "Today" is the Gate A un
 
 | Item | Specification |
 |---|---|
-| Demand | The fault output of either motor driver (`ERR/DO1`); a wheel commanded above **(TBC: 60 %)** PWM whose measured speed stays below **(TBC: 2 rpm)** for **(TBC: 1 s)** (stall or dead encoder, DQ-008); a following error per SF-03; battery voltage below **(TBC: 23 V)** at rest or **(TBC: 22 V)** under load |
+| Demand | The fault output of either motor driver (`ERR/DO1`); a wheel commanded above 60 % PWM whose measured speed stays below 2 rpm for 1 s (stall or dead encoder; DQ-008 A, to be tuned by the bench test); a following error per SF-03; battery voltage below **(TBC: 23 V)** at rest or **(TBC: 22 V)** under load |
 | Safe state | Both drives stopped, power removed through the chain, latched until reset |
 | Response time | ≤ 100 ms from a driver fault output; ≤ 1 s for a stall or following error; the under-voltage threshold with hysteresis |
 | Stop category | 0 |
@@ -350,7 +351,7 @@ safety controller and the arms' safe torque off until the OpenArm 2.0 safety fun
 What DQ-014 B costs is written in WP-M-01 T-03 and T-04: a reproducible firmware build, static analysis, unit
 and integration tests with coverage, a software safety analysis and an independent review of all of it, for the
 Teensy overlay now and the STM32 firmware when it exists; the cybersecurity architecture (WP-S-07) must then treat
-the firmware's command input as an input to a safety-related part (WP-C-08, DQ-013).
+the firmware's command input as an input to a safety-related part (WP-C-08 §2; DQ-013 A: SL 2 for integrity and for restricted data flow).
 ## 6. Detection means for SF-02
 
 The detection means of SF-02 is settled in WP-C-10 and by decision DQ-007 (2026-10-20, option A): a front safety
@@ -436,11 +437,11 @@ function admits the bench paths under the arming input; **—**: not applicable.
 | ID | Item | Owner | Due |
 |---|---|---|---|
 | OI-1 | ~~Write the content~~ v0.1 written; a reviewer with operating experience confirms the specifications with WP-C-03 OI-5 | Reviewer | G1 |
-| OI-2 | Set the stop category of SF-01 (decision DQ-015, now open in batch 2; planning assumption category 0) | Project lead | G1 |
+| OI-2 | ~~Set the stop category of SF-01~~ decided 2026-10-20 (DQ-015 A): category 0, applied in §3.1 | closed | — |
 | OI-3 | ~~Allocation decision DQ-014~~ answered B on 2026-10-20 (firmware inside the SRP/CS for the speed and loss-of-control functions); applying it is OI-9 | closed | — |
 | OI-4 | Check the ISO 3691-4 Performance Levels of §4 against a licensed copy; **unscheduled** (DQ-016 option C, 2026-10-20) | Safety manager | G1 |
 | OI-5 | ~~WP-S-02: raise SR-05.x to PLr d; add SR-08.x and SR-09.x; name the firmware channel in SR-03, SR-04 and SR-06~~ done in WP-S-02 v0.3 | closed | — |
-| OI-6 | Every **(TBC)** value: field length and detection height (WP-V-02, WP-C-06 OI-1), crawl limit, stall thresholds (DQ-008), warning time, teleoperation speed near a person (DQ-017), arming time-out | Safety manager | G2 |
+| OI-6 | Every **(TBC)** value: field length and detection height (WP-V-02, WP-C-06 OI-1), crawl limit, warning time, arming time-out; the stall thresholds (DQ-008 A) and the speed near a person (DQ-017 A) are decided | Safety manager | G2 |
 | OI-7 | WP-S-04: confirm the §7 budget with datasheets and settle the SF-04 target | Hardware lead | G2 |
 | OI-8 | Specify the teleoperation device with its enabling control and the sounder and stack light (WP-C-06 OI-5) in WP-H-02 | Hardware lead | G2 |
 | OI-9 | ~~Apply DQ-014 B~~ done in v0.2 §5; WP-S-03 v0.3 carries the architecture; the software work products widen (WP-M-01 OI-4) | closed | — |

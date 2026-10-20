@@ -230,8 +230,10 @@
       title: "Looser: 80 % / 1 rpm / 2 s"
       detail: "Fewer nuisance trips. Cost: a pivoting robot runs two seconds longer on one wheel."
   sources: ["change-2026-10-20-fw-hardening.md §1 item 7, §3", "fw: docs/safety/motion-safety.md (velocity floors)"]
-  status: assumed
-  answer: {choice: A, via: assumed, at: 2026-10-20}
+  status: applied
+  answer: {choice: A, via: inbox, at: 2026-10-20}
+  applied: {ref: "openamr-platform-fw claude/wonderful-einstein-kr3bsf", record: "change-2026-10-20-fw-hardening.md §1 item 7 and §3; WP-C-04 §3.6 SF-06 demand; WP-S-02 v0.3 SR-06.02", at: 2026-10-20}
+  note: "Was assumed on the recommended option; the lead confirmed A on the inbox page."
 
 - id: DQ-009
   ref: WP-M-13
@@ -388,7 +390,9 @@
       title: "SL 2 throughout"
       detail: "Simplest to state. Cost: SL 2 on use control and data confidentiality buys little for a robot with no personal data and adds verification effort."
   sources: ["assurance/00-assessment/gap-assessment.md GAP-27, GAP-28, GAP-29", "assurance/02-concept/WP-C-08-cybersecurity-requirements-and-sl-target.md §2", "IEC 62443-4-2:2019 §4 (security levels)"]
-  status: open
+  status: applied
+  answer: {choice: A, via: inbox, at: 2026-10-20}
+  applied: {ref: "openamrobot-assurance main", record: "WP-C-08 §2 (SL-T per FR); WP-M-08 §1; WP-M-01 T-11, D-11; WP-S-03 §1; WP-C-04 §5; WP-S-02 v0.3 SR-90.04", at: 2026-10-20}
 
 - id: DQ-014
   ref: GAP-03
@@ -449,7 +453,9 @@
       title: "Category 1: the firmware brakes under control, then the relay removes power after a fixed delay"
       detail: "Shorter stops, less load on the mechanics. Cost: a delayed-drop safety relay, and the firmware's braking becomes part of the safety function (DQ-014 option B)."
   sources: ["EN 60204-1:2018 §9.2 (stop categories), ISO 13850:2015 §4", "assurance/02-concept/WP-C-04-safety-functions-and-plr.md §2, §3.1, §7", "openAMRobot/.github decisions.yaml ESTOP-SCOPE, DRIVETRAIN"]
-  status: open
+  status: applied
+  answer: {choice: A, via: inbox, at: 2026-10-20}
+  applied: {ref: "openamrobot-assurance main", record: "WP-C-04 v0.3 §3.1 (stop category 0), OI-2; WP-M-01 D-13; WP-S-02 v0.3 SR-01.03", at: 2026-10-20}
 
 - id: DQ-016
   ref: WP-M-06
@@ -509,7 +515,9 @@
       title: "Zero in any zone with a person until the arms question is settled, since the base will carry them"
       detail: "The most conservative. Cost: no shared-space operation at all in the first configuration."
   sources: ["ISO 3691-4:2023 §4 (speed in shared zones)", "assurance/00-assessment/gap-assessment.md §4.1", "openAMRobot/.github decisions.yaml SPEED-CEILING"]
-  status: open
+  status: applied
+  answer: {choice: A, via: inbox, at: 2026-10-20}
+  applied: {ref: "openamrobot-assurance main", record: "WP-C-02 v0.3 §2 Z2 and Z5, §3 T-06, OI-2; WP-C-04 v0.3 §3.3 SF-03 demand, OI-6; WP-C-03 v0.5 OL-02, OI-4; WP-C-06 v0.3 OI-2; WP-S-02 v0.3 SR-03.02, SR-09.03, OI-9", at: 2026-10-20}
 
 - id: DQ-018
   ref: GAP-35
@@ -537,7 +545,9 @@
       title: "Leave the configuration as upstream has it"
       detail: "No behaviour change. Cost: reverse at 0.10 m/s with no detection stays outside the safety case."
   sources: ["gap assessment GAP-35", "WP-S-02 SR-02.04", "WP-H-02 §3.4", "sw: nav2_params.yaml:303-307", "sw: dock_trigger.yaml:22-23"]
-  status: open
+  status: answered
+  answer: {choice: A, via: inbox, at: 2026-10-20}
+  note: "Record side done (WP-C-02 v0.3 T-04; WP-S-02 SR-02.04; WP-C-06 v0.3 HR-03). Applied when the fork change lands on openamr-platform-sw: back-up removed from the Nav2 recovery list (nav2_params.yaml), undock at 0.05 m/s (dock_trigger.yaml), with its impact record under 07-supporting/impact/."
 
 - id: DQ-019
   ref: WP-C-03
@@ -553,6 +563,8 @@
   decider: lead
   blocks: "Zone Z5 in WP-C-02; the scope of SF-02 in WP-C-04; the exclusions carried to the information for use (WP-O-03)"
   gate: G1
+  asked: 2026-10-20
+  batch: 3
   after: [DQ-017]
   options:
     - key: A
@@ -566,7 +578,7 @@
       title: "Allow public floors with a chaperone and the robot at crawl speed, as a procedural measure"
       detail: "Cheap. Cost: a procedure is not a control for a hazard that can kill; the gap assessment's own principle, and the rating stays e."
   sources: ["assurance/02-concept/WP-C-03-risk-assessment.md §5 (H-01 public floor), §5.2", "assurance/02-concept/WP-C-02-operating-environment-and-tasks.md Z5", "assurance/02-concept/WP-C-06-human-robot-interaction-and-misuse.md IS-09, MU-07"]
-  status: queued
+  status: open
 
 - id: DQ-020
   ref: DQ-004
@@ -632,3 +644,93 @@
   status: applied
   answer: {choice: A, via: chat, at: 2026-10-20}
   applied: {ref: "openamrobot-assurance main", record: "WP-C-04 §3.11 (SF-11 demand: safety-rated monitored stop on entry to the station workspace); WP-C-06 §4 CA-02, CA-06; WP-C-03 §5 H-13 row; WP-S-03 §3.8", at: 2026-10-20}
+
+- id: DQ-022
+  ref: WP-M-06 OI-5
+  question: "Do we hold the governance gate G0 now, with its two confirmation reviews recorded as not performed, or wait until a reviewer other than the author exists?"
+  context: >-
+    G0 closes the plans, roles and configuration control. Its exit criterion also lists two confirmation reviews
+    (CR-01, impact analysis of the modified machinery; CR-03, the plans) at independence I3, and you decided not to
+    engage an assessor for now (DQ-010 C) while one person holds every role (DQ-012 A). Held now, G0 passes with
+    those two measures open as a recorded limitation that the later assessor reviews retroactively; waited for, the
+    concept work continues under a gate that is formally open, which is the state it is in today.
+  reversibility: revisit
+  decider: lead
+  blocks: "The G0 gate record in 10-safety-case/gates/; the status of the management work products (Draft until the gate); the phase shown on the README"
+  gate: G0
+  asked: 2026-10-20
+  batch: 3
+  options:
+    - key: A
+      recommended: true
+      title: "Hold G0 now as a pass with limitations: CR-01 and CR-03 recorded as not performed, to be done by the first assessor engaged"
+      detail: "The plans become the baseline the concept phase works against and the limitation is visible on every page. Cost: an assessor may later ask for changes to plans the concept work already relies on."
+    - key: B
+      title: "Hold G0 as a conditional pass only once a second person has reviewed the plans at I1"
+      detail: "Some independence before the baseline. Cost: waits for a reviewer who does not exist yet; the concept phase runs against unbaselined plans in the meantime."
+    - key: C
+      title: "Do not hold G0 until an assessor performs CR-01 and CR-03"
+      detail: "The gate means what the plan says. Cost: no gate passes for months and the record shows P0 throughout the concept work."
+  sources: ["assurance/01-management/WP-M-06-confirmation-measures-plan.md §9, OI-5", "assurance/01-management/WP-M-02-safety-plan.md §10", "assurance/01-management/decisions/register.yaml DQ-010, DQ-012"]
+  status: open
+
+- id: DQ-023
+  ref: WP-C-06 OI-5
+  question: "For the bench build, do we buy a wired teleoperation pendant with an enabling switch and an emergency stop, and a sounder with a stack light, or allow teleoperation only from the operator screen?"
+  context: >-
+    Today teleoperation is a web page: no hold-to-run control, no stop within reach, and the on-screen stop is a
+    network request (GAP-28). The concept gives teleoperation an enabling control (SF-09), an emergency stop within
+    reach (SF-01) and a warning device before motion (SF-08). Those are hardware: a pendant in the operator's hand
+    and a sounder and light on the robot, roughly a few hundred euros together, wired into the safety chain of
+    WP-H-02. Without them, manual recovery and every test drive happen from a screen with nothing the operator can
+    grab.
+  reversibility: easy
+  decider: lead
+  blocks: "SF-08 and SF-09 in WP-C-04; the bill of materials of WP-H-02 (E7 and a pendant line); the teleoperation task T-06 in WP-C-02; WP-O-03 information for use"
+  gate: G2
+  asked: 2026-10-20
+  batch: 3
+  proceed_after: 2026-11-03
+  options:
+    - key: A
+      recommended: true
+      title: "Both: a wired pendant with enabling switch and E-stop, and a sounder with a stack light, on the bench build"
+      detail: "Teleoperation and every test drive get a stop in the hand and a warning before motion. Cost: roughly 200 to 400 euros of parts and two inputs on the safety controller; a cable the operator must manage."
+    - key: B
+      title: "Pendant only; the warning device waits for 2.0"
+      detail: "The stop in the hand is what the tests need first. Cost: motion starts without a warning in the test area, which the briefing must cover."
+    - key: C
+      title: "Neither on the bench build: teleoperation from the screen only, in the empty test area, with the robot's own E-stops"
+      detail: "No purchase. Cost: no enabling control, so SF-09 is not implemented on CFG-001 and manual recovery near a person stays outside the case."
+  sources: ["assurance/02-concept/WP-C-06-human-robot-interaction-and-misuse.md HR-04, HR-06, HR-07, OI-5", "assurance/02-concept/WP-C-04-safety-functions-and-plr.md §3.8, §3.9, OI-8", "assurance/04-hardware/WP-H-02-electrical-and-safety-chain-design.md E7", "gap assessment GAP-28"]
+  status: open
+
+- id: DQ-024
+  ref: WP-C-01 OI-3
+  question: "What payload limit do we state for the item: none on the Gate A unit, and upstream's arm figures on the 2.0 mobile manipulator until the stability rerun, or a provisional base payload now?"
+  context: >-
+    The assumption of use AOU-07 says the payload is restrained and within a mass and height limit, and no limit
+    exists. The limit sets the tipping and stopping-distance analyses (WP-H-08, WP-S-04) and what the information
+    for use may promise. The Gate A unit is bench only (DQ-011 C), so it carries nothing. For the 2.0 mobile
+    manipulator upstream publishes the arm payload (4.1 kg nominal, 6.0 kg peak including the end effector) and pulls
+    up to 150 N, but no top-plate payload and no verified stability margin; its F2S stability rerun is pending.
+  reversibility: easy
+  decider: lead
+  blocks: "AOU-07 and WP-C-01 §4; the stability analysis WP-H-08; the carry task T-11 and the carry speed of CA-07; WP-O-03"
+  gate: G1
+  asked: 2026-10-20
+  batch: 3
+  proceed_after: 2026-11-03
+  options:
+    - key: A
+      recommended: true
+      title: "Gate A unit: no payload. 2.0 mobile manipulator: upstream's arm payload and pull figures as the limit, no top-plate payload, until the stability rerun is public"
+      detail: "States only what upstream has published and what the bench build does. Cost: no transport task with a plate load is inside the case for now."
+    - key: B
+      title: "Set a provisional top-plate payload for 2.0 now, to be confirmed by the stability rerun"
+      detail: "Lets the transport task be specified. Cost: a number nobody has verified sits in the item definition and in the information for use."
+    - key: C
+      title: "Leave the payload limit open until the robot is weighed and the stability rerun exists"
+      detail: "No unverified number. Cost: AOU-07 stays unmet and H-06 (tipping) cannot be rated with confidence."
+  sources: ["assurance/02-concept/WP-C-01-item-definition.md §4 (arm payload and pulls), AOU-07, OI-3", "assurance/02-concept/WP-C-06-human-robot-interaction-and-misuse.md CA-05, CA-07", "assurance/02-concept/WP-C-03-risk-assessment.md H-06"]
+  status: open

@@ -23,7 +23,7 @@
 | Open risks (WP-M-07) | | [WP-M-07](../../../01-management/WP-M-07-risk-management.md) |
 | Confirmation measures assigned to this gate (WP-M-06) and their results | 0 of 4 performed: CR-05, CR-06@G2, FSA-I2, AUD-1 | [WP-M-06](../../../01-management/WP-M-06-confirmation-measures-plan.md) |
 | QA findings (WP-M-05) | | [WP-M-05](../../../01-management/WP-M-05-quality-assurance-plan.md) |
-| Open items of the phase's work products | 35 open-item rows not marked closed, any due gate (table below) | |
+| Open items of the phase's work products | 34 open-item rows not marked closed, any due gate (table below) | |
 
 ### Work products of this gate
 
@@ -31,7 +31,7 @@
 |---|---|---|---|---|
 | [WP-S-01](../../../03-system/WP-S-01-system-requirements.md) System requirements specification (functional, non-safety) | DES-01 | Skeleton | 1 | |
 | [WP-H-08](../../../04-hardware/WP-H-08-mechanical-and-stability-analysis.md) Mechanical and stability analysis (mass, centre of gravity, tip-over, slope, pinch and crush points) | DES-02 | Skeleton | 1 | |
-| [WP-S-02](../../../03-system/WP-S-02-safety-requirements.md) Safety requirements specification for the SRP/CS | DES-03 | Draft | 6 | |
+| [WP-S-02](../../../03-system/WP-S-02-safety-requirements.md) Safety requirements specification for the SRP/CS | DES-03 | Draft | 5 | |
 | [WP-S-04](../../../03-system/WP-S-04-response-time-and-stopping-budget.md) Response time, stopping performance and safety distance budget | DES-04 | Skeleton | 1 | |
 | [WP-S-03](../../../03-system/WP-S-03-technical-safety-concept.md) Technical safety concept: safety-related control system architecture (designated architectures, categories, channels, diagnostics, allocation of SF-01…SF-07) | DES-05 | Draft | 7 | |
 | [WP-S-05](../../../03-system/WP-S-05-safety-chain-io-interface.md) Hardware-software interface of the safety chain (I/O map, signal semantics) | DES-06 | Skeleton | 1 | |

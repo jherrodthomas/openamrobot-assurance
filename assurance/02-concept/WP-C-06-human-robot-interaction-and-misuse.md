@@ -4,7 +4,7 @@
 |---|---|
 | Work product | WP-C-06 Human-robot interaction, collaborative operation and reasonably foreseeable misuse analysis |
 | Standard reference | Machinery: 10218-2 §5; TS 15066 §5; 12100 §5.3; 3691-4 §4 (personnel detection); Other: ISO 13855 §5–§6 |
-| Version | 0.2 (2026-10-20): DQ-004 B and DQ-020 A applied: the arms and lift are in the item on CFG-002, so §4 is a collaborative-operation analysis with requirements CA-01…CA-07, scenarios IS-13…IS-15, misuses MU-15 and MU-16, requirements HR-11 and HR-12; DQ-021 queued. 0.1: interaction scenarios IS-01…IS-12, safety-distance derivation, collaborative-operation interface assumptions, misuse MU-01…MU-14, operator interface and modes; Figures 2-1, 3-1, 5-1. 0.0: skeleton |
+| Version | 0.3 (2026-10-20): DQ-017 A, DQ-018 A and DQ-021 A applied: monitored stop at the station, reverse at crawl. 0.2 (2026-10-20): DQ-004 B and DQ-020 A applied: the arms and lift are in the item on CFG-002, so §4 is a collaborative-operation analysis with requirements CA-01…CA-07, scenarios IS-13…IS-15, misuses MU-15 and MU-16, requirements HR-11 and HR-12; DQ-021 queued. 0.1: interaction scenarios IS-01…IS-12, safety-distance derivation, collaborative-operation interface assumptions, misuse MU-01…MU-14, operator interface and modes; Figures 2-1, 3-1, 5-1. 0.0: skeleton |
 | Status | Draft |
 | PL / scope | PL d target (DQ-005); CFG-001 Gate A unit (bench only) and CFG-002 2.0 mobile manipulator (unverified); the base with the arms and lift (DQ-004 B); the arm and lift rows rest on upstream's plan set until its design is public |
 | Author | Assurance team (AI-assisted draft, I0) |
@@ -180,7 +180,7 @@ or with untrained people), **L** (needs effort or bad luck). Consequence uses th
 |---|---|---|
 | HR-01 | SF-02's protective field in the direction of travel shall be at least L of §3 with the measured d_b, t_b and the confirmed C, per zone speed | WP-S-02 SR-02.02 |
 | HR-02 | SF-02 shall detect a person down to **(TBC: 0.3 m)** above the floor (IS-09) | SR-02.03 |
-| HR-03 | Reverse motion shall be limited to the crawl speed and covered by rear detection (IS-04) | SR-02.04, DQ-018 |
+| HR-03 | Reverse motion shall be limited to the crawl speed (0.05 m/s) and covered by rear detection; the Nav2 back-up recovery is removed (IS-04; DQ-018 A) | SR-02.04 |
 | HR-04 | Teleoperation shall require a held control (deadman) and shall cap speed near a person (IS-06, MU-02) | WP-C-04 SF-09 (enabling control for teleoperation); WP-S-02 SR-09.x (pending, WP-S-02 OI-6) |
 | HR-05 | The on-screen stop shall not be presented as an emergency stop (MU-01) | SR-01.09; WP-O-03 |
 | HR-06 | Motion after a protective slow-down, stop or wait shall be preceded by an audible and visual warning (IS-10) | WP-C-04 SF-08 (warning before motion); WP-S-02 SR-08.x (pending); WP-H-02 (stack light, sounder) |
@@ -196,7 +196,7 @@ or with untrained people), **L** (needs effort or bad luck). Consequence uses th
 | ID | Item | Owner | Due |
 |---|---|---|---|
 | OI-1 | Measure d_b and t_b (WP-V-02) and confirm C and Z against licensed ISO 13855 and the scanner datasheet; then set L per zone | Safety manager | G2 |
-| OI-2 | Lead decisions DQ-017 (speed near a person) and DQ-018 (reverse) | Project lead | G1 |
+| OI-2 | ~~Lead decisions DQ-017 and DQ-018~~ answered A on 2026-10-20; applied in WP-C-02 v0.3 and HR-03 | closed | — |
 | OI-3 | Observe people around the Gate A unit in Z1 for one session and correct the likelihood ratings of §5 | Reviewer | G1 |
 | OI-4 | Confirm the push-force figure of IS-12 by measurement against a force gauge; compare with ISO/TS 15066 Annex A limits for the hand | Hardware lead | G2 |
 | OI-5 | Specify the teleop device with a deadman (HR-04) and the sounder and stack light (HR-06, HR-07) in WP-H-02 | Hardware lead | G2 |

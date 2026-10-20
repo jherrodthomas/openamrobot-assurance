@@ -36,7 +36,7 @@ claim and the ISO 13849-1 §7 lifecycle (WP-W-02…WP-W-08); its hardening is th
 The chain has no network input: every element that can stop the robot is wired, so no input of the safety chain is reachable from the network; the cybersecurity architecture ([WP-S-07](WP-S-07-cybersecurity-architecture.md)) keeps it a zone of its own. The
 firmware channel of SF-03, SF-04, SF-06 and SF-09 does take its command from the network; a corrupted or
 malicious command is bounded by the firmware's validation and caught by the hardware channel, and WP-S-07 treats
-the firmware's command input as an input to a safety-related part (WP-C-08, DQ-013).
+the firmware's command input as an input to a safety-related part (WP-C-08 §2; DQ-013 A: SL 2 for integrity and for restricted data flow).
 
 ## 2. Allocation of safety functions to elements
 

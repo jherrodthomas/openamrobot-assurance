@@ -23,17 +23,17 @@
 | Open risks (WP-M-07) | | [WP-M-07](../../../01-management/WP-M-07-risk-management.md) |
 | Confirmation measures assigned to this gate (WP-M-06) and their results | 0 of 6 performed: CR-02, CR-03@G1, CR-04, FSA-I1, CS-I1, ML-R1 | [WP-M-06](../../../01-management/WP-M-06-confirmation-measures-plan.md) |
 | QA findings (WP-M-05) | | [WP-M-05](../../../01-management/WP-M-05-quality-assurance-plan.md) |
-| Open items of the phase's work products | 51 open-item rows not marked closed, any due gate (table below) | |
+| Open items of the phase's work products | 48 open-item rows not marked closed, any due gate (table below) | |
 
 ### Work products of this gate
 
 | Work product | Activity | Status in WP-M-00 | Open items | Verification review (WP-P-05) |
 |---|---|---|---|---|
 | [WP-C-01](../../../02-concept/WP-C-01-item-definition.md) Item definition and limits of the machinery (intended use, foreseeable misuse, use, space and time limits) | CON-01 | Draft | 6 | |
-| [WP-C-02](../../../02-concept/WP-C-02-operating-environment-and-tasks.md) Operating environment and task specification (zones, floors, people, lighting) | CON-02 | Draft | 6 | |
-| [WP-C-06](../../../02-concept/WP-C-06-human-robot-interaction-and-misuse.md) Human-robot interaction, collaborative operation and reasonably foreseeable misuse analysis | CON-03 | Draft | 6 | |
+| [WP-C-02](../../../02-concept/WP-C-02-operating-environment-and-tasks.md) Operating environment and task specification (zones, floors, people, lighting) | CON-02 | Draft | 5 | |
+| [WP-C-06](../../../02-concept/WP-C-06-human-robot-interaction-and-misuse.md) Human-robot interaction, collaborative operation and reasonably foreseeable misuse analysis | CON-03 | Draft | 5 | |
 | [WP-C-03](../../../02-concept/WP-C-03-risk-assessment.md) Hazard identification and risk assessment (hazard list, risk estimation and evaluation) | CON-04 | Draft | 7 | |
-| [WP-C-04](../../../02-concept/WP-C-04-safety-functions-and-plr.md) Safety functions specification with required Performance Level, stop category and response time | CON-05 | Draft | 6 | |
+| [WP-C-04](../../../02-concept/WP-C-04-safety-functions-and-plr.md) Safety functions specification with required Performance Level, stop category and response time | CON-05 | Draft | 5 | |
 | [WP-C-10](../../../02-concept/WP-C-10-functional-insufficiency-analysis.md) Functional insufficiency analysis of sensing and navigation (performance limits, triggering conditions) | CON-06 | Skeleton | 2 | |
 | [WP-C-05](../../../02-concept/WP-C-05-risk-reduction-concept.md) Risk reduction concept (three-step method: inherently safe design, safeguarding, information for use) | CON-07 | Skeleton | 1 | |
 | [WP-C-07](../../../02-concept/WP-C-07-cybersecurity-threat-and-risk-assessment.md) Cybersecurity threat and risk assessment | CON-08 | Skeleton | 1 | |

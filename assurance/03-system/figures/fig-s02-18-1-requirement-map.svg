@@ -3,7 +3,7 @@
 <desc id="s02-18-1-d">One row per safety function plus the common and security blocks; each requirement is a chip coloured by its type; dashed chips apply only to the 2.0 configuration; dotted chips carry a value to be confirmed.</desc>
 <rect x="0" y="0" width="1040" height="702" fill="#FFFFFF"/>
 <text x="24.0" y="28.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#122026" text-anchor="start">Figure 18-1  Requirement map: 82 requirements, SR-00 to SR-90</text>
-<text x="24.0" y="46.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="start">One chip per requirement, coloured by type; a dashed border marks the 20 CFG-002-only requirements, a dot the 18 with a value to be confirmed</text>
+<text x="24.0" y="46.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="start">One chip per requirement, coloured by type; a dashed border marks the 20 CFG-002-only requirements, a dot the 16 with a value to be confirmed</text>
 <rect x="16.0" y="64.0" width="1008.0" height="40.0" rx="4" fill="#F7FAFB" stroke="none" stroke-width="1"/>
 <text x="24.0" y="82.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="start">common</text>
 <text x="24.0" y="97.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Common to every function</text>
@@ -135,7 +135,6 @@
 <text x="371.0" y="328.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-06.01</text>
 <rect x="405.0" y="312.0" width="58.0" height="24.0" rx="5" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1.4"/>
 <text x="434.0" y="328.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#2C9A58" text-anchor="middle">SR-06.02</text>
-<circle cx="459.0" cy="316.0" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="1.5"/>
 <rect x="468.0" y="312.0" width="58.0" height="24.0" rx="5" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1.4"/>
 <text x="497.0" y="328.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#2C9A58" text-anchor="middle">SR-06.03</text>
 <rect x="531.0" y="312.0" width="58.0" height="24.0" rx="5" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1.4"/>
@@ -181,7 +180,6 @@
 <text x="434.0" y="448.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="middle">SR-09.02</text>
 <rect x="468.0" y="432.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
 <text x="497.0" y="448.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-09.03</text>
-<circle cx="522.0" cy="436.0" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="1.5"/>
 <rect x="531.0" y="432.0" width="58.0" height="24.0" rx="5" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1.4"/>
 <text x="560.0" y="448.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#2C9A58" text-anchor="middle">SR-09.04</text>
 <rect x="594.0" y="432.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>

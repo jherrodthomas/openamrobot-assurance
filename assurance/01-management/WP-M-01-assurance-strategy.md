@@ -132,7 +132,7 @@ needs confirmation review by an independent assessor.
 | T-08 | Upstream | Botshare is treated as an upstream supplier with no development interface agreement; the supplier-side activities fall to the fork ([WP-M-10](WP-M-10-upstream-and-supplier-management.md)). Upstream's `decisions.yaml` is quoted, never restated | Upstream is under no contract |
 | T-09 | Independence | Verification reviews may be done by project members (I0/I1), never by the author. With one maintainer, I1 review needs an external reviewer and self-review is recorded as I0. Confirmation reviews of the risk assessment, the safety plan and the safety case, and the functional safety assessment, need an **external** assessor (I2/I3) ([WP-M-06](WP-M-06-confirmation-measures-plan.md)) | One maintainer today |
 | T-10 | Performance limits of perception | ISO 21448 is used as a method, not a standard to comply with, inside WP-C-10 and WP-V-08 | No machinery standard covers it and the gap assessment's worst findings (GAP-14, GAP-22, GAP-35) are performance limits, not faults |
-| T-11 | Cybersecurity scope | IEC 62443-4-1 practices are applied to the three platform repositories; IEC 62443-4-2 component requirements to the robot as one component with a security level target decided by the lead (DQ-013). The site network is an external zone | The fork controls the robot's software and configuration, not the network it is deployed on |
+| T-11 | Cybersecurity scope | IEC 62443-4-1 practices are applied to the three platform repositories; IEC 62443-4-2 component requirements to the robot as one component with the security level target the lead set (DQ-013 A: SL 2 for FR 1, 3, 5 and 7, SL 1 otherwise; WP-C-08 §2). The site network is an external zone | The fork controls the robot's software and configuration, not the network it is deployed on |
 | T-12 | Process capability | ASPICE 4.0 is used for a self-assessment of process capability ([WP-M-12](WP-M-12-process-capability-baseline.md)), target CL2 for management, support, system and software processes, CL1 for hardware and ML. No ASPICE assessment is claimed | Continues the gap assessment's GAP-34 rating; gives the fork a process model the robotics standards lack |
 | T-13 | Regulatory | EU frame recommended (DQ-003): Machinery Regulation and the harmonised route through ISO 3691-4 and ISO 13849-1. The conformity module is decision DQ-009. The AI Act applies only if a learned component becomes a safety component, which T-03 avoids | Where the robot is made and sold; one technical file |
 | T-14 | Arms and lift | **In the item** on CFG-002, the 2.0 mobile manipulator, which is the hardware reference beside the Gate A unit as the software and firmware reference (DQ-004 B and DQ-020 A, 2026-10-20). The arms are an industrial robot system under ISO 10218-2 under a safety-rated monitored stop at the station, no contact with a moving arm claimed (DQ-021 A); the lift carries loads, never persons. Every CFG-002 value is quoted from upstream's plan set and unverified until its design is public | No arm or lift code is public; the base case must not have to be rewritten when they arrive |
@@ -223,10 +223,18 @@ index, the register entry is the question.
 | D-08 | Personnel detection means: scanner, bumpers or separated area | DQ-007 | Applied: A, scanner plus rear bumper (2026-10-20) |
 | D-09 | Bench safety hardware for the Gate A unit before further tests | DQ-011 | Applied: C, no on-ground tests until the 2.0 base with its chain exists; the Gate A unit is bench only (2026-10-20) |
 | D-10 | Roles and self-approval while the project has one person | DQ-012 | Applied: A, self-approval as a recorded interim limitation (2026-10-20) |
-| D-11 | Cybersecurity security level target | DQ-013 | Open, batch 2 |
+| D-11 | Cybersecurity security level target | DQ-013 | Applied: A, SL 2 for FR 1, 3, 5 and 7, SL 1 otherwise (2026-10-20; WP-C-08 §2) |
 | D-12 | Safety function allocation: hardwired chain only, or firmware inside the SRP/CS | DQ-014 | Applied: B, firmware as channel 1 of the speed and loss-of-control functions (2026-10-20; T-03, T-04, WP-S-03 §3.5) |
-| D-13 | Stop category for the emergency stop | DQ-015 | Open, batch 2 |
+| D-13 | Stop category for the emergency stop | DQ-015 | Applied: A, category 0 (2026-10-20; WP-C-04 §3.1) |
 | D-14 | Buying the standards | DQ-016 | Applied: C, not until an assessor is engaged (2026-10-20) |
+| D-15 | Speed limit with a person in the zone | DQ-017 | Applied: A, 0.3 m/s with a safety-rated detection means, 0 m/s without (2026-10-20; WP-C-02 §2) |
+| D-16 | Reverse motion: no blind back-up, undock at crawl | DQ-018 | Answered: A (2026-10-20); applied when the fork change lands |
+| D-17 | Public floors excluded for the Gate A unit | DQ-019 | Open, batch 3 |
+| D-18 | Reference configurations: Gate A unit beside the 2.0 mobile manipulator | DQ-020 | Applied: A (2026-10-20; T-14) |
+| D-19 | Collaborative mode of the arms at a station | DQ-021 | Applied: A, safety-rated monitored stop (2026-10-20; WP-C-04 §3.11) |
+| D-20 | Hold G0 with its confirmation reviews unperformed | DQ-022 | Open, batch 3 |
+| D-21 | Teleoperation pendant and warning devices on the bench build | DQ-023 | Open, batch 3 |
+| D-22 | Payload limit stated for the item | DQ-024 | Open, batch 3 |
 
 ## 9. Top risks to the assurance path
 
