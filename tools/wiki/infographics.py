@@ -41,10 +41,10 @@ NAMES = ("decision-register.svg", "change-path.svg", "register-status.svg")
 FONT = "'Source Sans 3', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
 MONO = "'IBM Plex Mono', 'SFMono-Regular', Menlo, Consolas, monospace"
 C = {
-  "bg": "#FCFCFB", "navy": "#10262B", "navy2": "#1E4752", "mid": "#5F8F99", "light": "#B9CFD4",
+  "bg": "#FFFFFF", "navy": "#E8F0F2", "navy2": "#1E4752", "mid": "#5F8F99", "light": "#B9CFD4",
   "gold": "#F2A33A", "gold_text": "#8A5A0B", "cream": "#FBF3E3", "grey": "#E3E0D8", "panel": "#F4F3EF",
-  "ink": "#1A1F2B", "muted": "#4A5160", "line": "#D9D6CE", "white": "#FFFFFF", "on_navy": "#F4F3EF",
-  "on_navy_muted": "#B8C9CE", "gold_hi": "#FFD38A", "cyan": "#3FD3C6",
+  "ink": "#122026", "muted": "#4E6A73", "line": "#D3DDE2", "white": "#FFFFFF", "on_navy": "#122026",
+  "on_navy_muted": "#4E6A73", "gold_hi": "#F2A33A", "cyan": "#0E8C83",
 }
 W = 1280
 H_REGISTER, H_CHANGE, H_STATUS = 640, 780, 520

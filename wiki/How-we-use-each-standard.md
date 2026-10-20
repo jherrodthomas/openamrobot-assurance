@@ -10,6 +10,8 @@ environment has no licensed copy; every clause reference is marked to be checked
 
 ![Standards-informed engineering framework, one question per standard.](../docs/assets/openamrobot/standards.svg)
 
+*Which gate needs the work products that cite each standard is the [standards map](Standards-at-a-glance.md#where-each-standard-lands-in-the-lifecycle).*
+
 ## ISO 12100:2010, risk assessment and risk reduction
 
 - **What we take:** the whole method. Machine limits (use, space, time), hazard identification per life phase,

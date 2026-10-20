@@ -47,10 +47,12 @@ jobs:
         mkdir -p build && python3 assurance/01-management/decisions/build_inbox.py --out build/inbox.html
     - name: Folder indexes match the work product register (and every registered file exists)
       run: python3 assurance/tools/folder_index.py --check
-    - name: Integrated process model, maps and gate skeletons (WP-P-11)
+    - name: Integrated process model, maps, gate skeletons and swimlane figures (WP-P-11)
       run: |
         python3 assurance/process/tools/process_model.py --check
         python3 assurance/process/tools/test_process_model.py
+        python3 assurance/process/tools/process_figures.py --check
+        python3 assurance/process/tools/test_process_figures.py
     - name: README figures match their generator
       run: |
         python3 docs/assets/openamrobot/make_assets.py --check

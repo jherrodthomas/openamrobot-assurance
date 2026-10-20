@@ -37,6 +37,7 @@ Only Python 3 is needed (PyYAML for the decision register):
 python3 assurance/01-management/decisions/check_decisions.py
 python3 assurance/tools/folder_index.py --check
 python3 assurance/process/tools/process_model.py --check
+python3 assurance/process/tools/process_figures.py --check
 python3 docs/assets/openamrobot/make_assets.py --check
 python3 assurance/tools/check_links.py
 python3 assurance/tools/check_tables.py
@@ -55,7 +56,7 @@ CI runs the same checks on every pull request and fails if a generated file is o
   accepts.
 - An AI-generated review is not a substitute for the required independent confirmation. AI-drafted work is the
   committer's work at independence level I0 ([WP-M-02 §3.3](assurance/01-management/WP-M-02-safety-plan.md#33-ai-assisted-authoring)).
-- Never edit generated files (process maps, gate skeletons, folder READMEs, README figures) by hand. Change the
+- Never edit generated files (process maps, swimlane figures, gate skeletons, folder READMEs, README figures, the dashboard) by hand. Change the
   source and regenerate.
 
 ## Working with Claude sessions
