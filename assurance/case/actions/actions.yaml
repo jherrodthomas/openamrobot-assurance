@@ -76,7 +76,7 @@
   kind: action
   title: "Choose the detection device and the speed monitor for the bench build; budget decision"
   description: "Choose the detection device and the speed monitor for the bench build; budget decision; source WP-S-03 OI-2"
-  lifecycle_status: open
+  lifecycle_status: closed
   needed_by: G2
   related_claims: [G1.2, G1.3]
   baseline: BL-001

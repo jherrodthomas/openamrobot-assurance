@@ -139,6 +139,6 @@
 |---|---|---|
 | OI-1 | Every **(TBC)** value above: stopping distance, field sizes, crawl limit, stall thresholds, voltage limits | SR-02.02, SR-02.05, SR-03.02, SR-06.02, SR-06.05 |
 | OI-2 | Interface change for SR-04.03 (stamped or sequenced command) | SF-04 Category 2 claim |
-| OI-3 | Choice of detection device for SF-02 (safety scanner vs bumpers vs both) and whether the Gate A bench build gets one or operates fenced until 2.0 | SR-02.01, SR-02.03 |
+| OI-3 | ~~Choice of detection device~~ decided 2026-10-20 (DQ-007): front safety scanner plus rear bumper on the Gate A bench build; see WP-H-02 | closed |
 | OI-4 | Safety controller for SF-02/SF-03 (safety relay with speed monitoring, or a small safety PLC) on the Gate A bench build; upstream 2.0 names a Pilz PNOZ s3 only | WP-S-03 |
 | OI-5 | DQ-006 (firmware ceiling values) | SR-03.04 |

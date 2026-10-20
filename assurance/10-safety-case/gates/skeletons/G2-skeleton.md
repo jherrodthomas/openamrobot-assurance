@@ -23,7 +23,7 @@
 | Open risks (WP-M-07) | | [WP-M-07](../../../01-management/WP-M-07-risk-management.md) |
 | Confirmation measures assigned to this gate (WP-M-06) and their results | 0 of 4 performed: CR-05, CR-06@G2, FSA-I2, AUD-1 | [WP-M-06](../../../01-management/WP-M-06-confirmation-measures-plan.md) |
 | QA findings (WP-M-05) | | [WP-M-05](../../../01-management/WP-M-05-quality-assurance-plan.md) |
-| Open items of the phase's work products | 33 open-item rows not marked closed, any due gate (table below) | |
+| Open items of the phase's work products | 31 open-item rows not marked closed, any due gate (table below) | |
 
 ### Work products of this gate
 
@@ -31,7 +31,7 @@
 |---|---|---|---|---|
 | [WP-S-01](../../../03-system/WP-S-01-system-requirements.md) System requirements specification (functional, non-safety) | DES-01 | Skeleton | 1 | |
 | [WP-H-08](../../../04-hardware/WP-H-08-mechanical-and-stability-analysis.md) Mechanical and stability analysis (mass, centre of gravity, tip-over, slope, pinch and crush points) | DES-02 | Skeleton | 1 | |
-| [WP-S-02](../../../03-system/WP-S-02-safety-requirements.md) Safety requirements specification for the SRP/CS | DES-03 | Draft | 5 | |
+| [WP-S-02](../../../03-system/WP-S-02-safety-requirements.md) Safety requirements specification for the SRP/CS | DES-03 | Draft | 4 | |
 | [WP-S-04](../../../03-system/WP-S-04-response-time-and-stopping-budget.md) Response time, stopping performance and safety distance budget | DES-04 | Skeleton | 1 | |
 | [WP-S-03](../../../03-system/WP-S-03-technical-safety-concept.md) Technical safety concept: safety-related control system architecture (designated architectures, categories, channels, diagnostics, allocation of SF-01…SF-07) | DES-05 | Draft | 5 | |
 | [WP-S-05](../../../03-system/WP-S-05-safety-chain-io-interface.md) Hardware-software interface of the safety chain (I/O map, signal semantics) | DES-06 | Skeleton | 1 | |
@@ -43,7 +43,7 @@
 | [WP-A-04](../../../08-analyses/WP-A-04-stpa.md) System-theoretic process analysis (STPA) of the motion control chain | DES-12 | Skeleton | 1 | |
 | [WP-A-05](../../../08-analyses/WP-A-05-independence-of-the-safety-chain.md) Independence of the safety chain from the functional stack (freedom from interference) | DES-13 | Skeleton | 1 | |
 | [WP-T-01](../../../trace/README.md) Requirements and traceability data (machine-readable), consistency evidence (update) | DES-14 | Skeleton | 1 | |
-| [WP-K-01](../../../10-safety-case/WP-K-01-safety-case.md) Safety case (claims, arguments, evidence, defeaters) (update) | DES-14 | Draft | 11 | |
+| [WP-K-01](../../../10-safety-case/WP-K-01-safety-case.md) Safety case (claims, arguments, evidence, defeaters) (update) | DES-14 | Draft | 10 | |
 
 ### Confirmation measures
 

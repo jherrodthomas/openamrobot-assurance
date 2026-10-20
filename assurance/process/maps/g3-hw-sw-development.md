@@ -111,7 +111,7 @@ Clause references and status are read from the [register (WP-M-00)](../../01-man
 | DEV-01 Software development environment and guidelines | Software (ISO 13849-1 §7, IEC 61508-3) | [WP-W-01](../../05-software/WP-W-01-software-development-environment-guidelines.md) | WP-M-02, WP-P-01 |  | 13849-1 §7; 61508-3 §7.4.4 | 62443-4-1 SI-1, SI-2 | MISRA C:2012 (firmware) | SWE.3 | Skeleton |
 | DEV-02 Tool classification and qualification | Joint (all disciplines) | [WP-P-07](../../07-supporting/WP-P-07-tool-classification-qualification.md) | WP-W-01, WP-M-02 |  | 61508-3 §7.4.4 (T1–T3); 13849-1 §7 | 62443-4-1 SM-7 |  |  | Skeleton |
 | DEV-03 Hardware safety requirements | Electrical and mechanical (EN 60204-1) | [WP-H-01](../../04-hardware/WP-H-01-hardware-safety-requirements.md) | WP-S-02, WP-S-03, WP-S-05 | 3691-4 §4 | 13849-1 §5, §6 |  | 60204-1 §9.2 | HWE.1 | Skeleton |
-| DEV-04 Electrical and safety-chain design | Electrical and mechanical (EN 60204-1) | [WP-H-02](../../04-hardware/WP-H-02-electrical-and-safety-chain-design.md) | WP-H-01, WP-S-04 |  | 13849-1 §6 | 62443-4-2 CR 2.13 (physical) | 60204-1 §5–§13 | HWE.2 | Skeleton |
+| DEV-04 Electrical and safety-chain design | Electrical and mechanical (EN 60204-1) | [WP-H-02](../../04-hardware/WP-H-02-electrical-and-safety-chain-design.md) | WP-H-01, WP-S-04 |  | 13849-1 §6 | 62443-4-2 CR 2.13 (physical) | 60204-1 §5–§13 | HWE.2 | Draft |
 | DEV-05 Electrical safety | Electrical and mechanical (EN 60204-1) | [WP-H-05](../../04-hardware/WP-H-05-electrical-safety.md) | WP-H-02 |  |  |  | 60204-1 §5–§8, §18; IEC 62619 (informative) |  | Skeleton |
 | DEV-06 Qualification of safety components | Electrical and mechanical (EN 60204-1) | [WP-H-07](../../04-hardware/WP-H-07-safety-component-qualification.md) | WP-H-01, WP-H-02, WP-M-10 |  | 13849-1 §6 (well-tried components); 13849-2 Annex A–D; 62061 §7 (subsystems) |  | IEC 61496-1/-3 (ESPE) |  | Skeleton |
 | DEV-07 Hardware failure analysis and fault lists | Safety-related control system (ISO 13849-1) | [WP-H-03](../../04-hardware/WP-H-03-hardware-failure-analysis.md) | WP-H-02, WP-A-01 |  | 13849-1 §6; 13849-2 Annex A–D |  | IEC 60812 | HWE.2 | Skeleton |
@@ -151,7 +151,7 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Exit criterion (WP-M-00 §2):** Safety-chain hardware and PL calculation, software requirements, architecture, units and unit verification approved for every safety-related part
 
-**Work products:** 1 Draft, 19 Skeleton of 20. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
+**Work products:** 2 Draft, 18 Skeleton of 20. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
 
 **Roles the lanes need (WP-M-02 §3.1):**
 

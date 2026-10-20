@@ -1,5 +1,5 @@
 {
-  "actions_open": 11,
+  "actions_open": 10,
   "assurance_state": "Development",
   "baseline": {
     "id": "BL-001",
@@ -21,10 +21,10 @@
   "evidence": {
     "accepted": 0,
     "available": 0,
-    "awaiting_review": 8,
+    "awaiting_review": 9,
     "missing": 7,
-    "partial": 8,
-    "registered": 15
+    "partial": 9,
+    "registered": 16
   },
   "gates": {
     "records": []
@@ -63,10 +63,10 @@
     {
       "accepted": 0,
       "available": 0,
-      "evidence": 2,
+      "evidence": 3,
       "id": "technical-implementation",
       "missing": 1,
-      "partial": 1,
+      "partial": 2,
       "status": "In Progress",
       "title": "Technical Implementation"
     },
@@ -91,6 +91,6 @@
       "title": "Safety Case and Review"
     }
   ],
-  "records_digest": "a2a85b67ff52",
+  "records_digest": "ac14faa4fe9a",
   "reviews": 0
 }
