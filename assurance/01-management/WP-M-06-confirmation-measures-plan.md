@@ -19,7 +19,7 @@ and at what independence, when the functional safety audits and assessments take
 the independent cybersecurity and ML reviews and the regulatory conformity assessment fit in, and where the records
 go.
 
-No confirmation measure has been performed at baseline `726046e`. No assessor is engaged (DQ-008).
+No confirmation measure has been performed at baseline `726046e`. No assessor is engaged (DQ-010).
 
 The machinery standards do not define a confirmation review. ISO 13849-1 asks for verification (§8) and validation
 (§10) and recommends that validation is done by persons independent of the design; IEC 61508-1 §8 defines the
@@ -42,7 +42,7 @@ standards and are adequate for the safety argument.
   I2 and I3 are performed by an external party because the project has one maintainer.
 - **Scope.** Confirmation measures apply to the reference configuration ([WP-M-01 §3.1](WP-M-01-assurance-strategy.md#31-reference-configuration-the-only-scope-claims-apply-to)).
 - **Conformity assessment.** Whether a notified body examines the technical documentation depends on the module
-  chosen in DQ-007 and on whether any safety component uses machine learning (Machinery Regulation Annex I Part A).
+  chosen in DQ-009 and on whether any safety component uses machine learning (Machinery Regulation Annex I Part A).
   NB-1 below is planned as a placeholder and removed if Module A (internal control) is chosen.
 
 ## 3. Independence levels
@@ -66,7 +66,7 @@ Summary in the project's own words, mapped onto IEC 61508-1 §8. The licensed st
 | CR-02 | Risk assessment, including the hazard list and risk evaluation | [WP-C-03](../02-concept/WP-C-03-risk-assessment.md) (with [WP-C-01](../02-concept/WP-C-01-item-definition.md), [WP-C-06](../02-concept/WP-C-06-human-robot-interaction-and-misuse.md) as inputs) | The foundation of every claim; ISO 12100 §7 documentation is what a notified body reads first | I3 | External FS assessor | G1 |
 | CR-03 | Safety plan (incl. tailoring rationale) | [WP-M-02](WP-M-02-safety-plan.md), [WP-M-01 §5](WP-M-01-assurance-strategy.md#5-tailoring), this plan | Tailoring away from the manufacturer model needs an outside eye | I3 | External FS assessor | G0 (re-confirm at G1 after the risk assessment) |
 | CR-04 | Safety functions with required PL, and the risk reduction concept | [WP-C-04](../02-concept/WP-C-04-safety-functions-and-plr.md), [WP-C-05](../02-concept/WP-C-05-risk-reduction-concept.md) | The PLr from the risk graph fixes the whole hardware budget | I3 | External FS assessor | G1 |
-| CR-05 | Safety requirements specification and SRP/CS architecture | [WP-S-02](../03-system/WP-S-02-safety-requirements-specification.md), [WP-S-03](../03-system/WP-S-03-srpcs-architecture.md), [WP-S-04](../03-system/WP-S-04-response-time-and-stopping-budget.md), [WP-S-05](../03-system/WP-S-05-safety-chain-io-interface.md) | Category and designated architecture decided here | I3 | External FS assessor | G2 |
+| CR-05 | Safety requirements specification and SRP/CS architecture | [WP-S-02](../03-system/WP-S-02-safety-requirements.md), [WP-S-03](../03-system/WP-S-03-technical-safety-concept.md), [WP-S-04](../03-system/WP-S-04-response-time-and-stopping-budget.md), [WP-S-05](../03-system/WP-S-05-safety-chain-io-interface.md) | Category and designated architecture decided here | I3 | External FS assessor | G2 |
 | CR-06 | Safety analyses (system, hardware, software) | [WP-A-01](../08-analyses/WP-A-01-system-fmea.md)…[WP-A-05](../08-analyses/WP-A-05-independence-of-the-safety-chain.md), [WP-H-08](../04-hardware/WP-H-08-mechanical-and-stability-analysis.md) at G2; [WP-H-03](../04-hardware/WP-H-03-hardware-failure-analysis.md), [WP-W-04](../05-software/WP-W-04-software-safety-analysis.md) at G3 | Fault exclusions and the independence argument are where optimism hides | I3 | External FS assessor | G2 (system), G3 (HW, SW) |
 | CR-07 | PL calculation: MTTFD, DCavg, CCF scoring, SISTEMA project | [WP-H-04](../04-hardware/WP-H-04-reliability-data-and-pl-calculation.md) | The arithmetic the PL claim rests on | I3 | External FS assessor | G3 |
 | CR-08 | Qualification of safety components | [WP-H-07](../04-hardware/WP-H-07-safety-component-qualification.md) | Certificates, well-tried arguments and fault exclusions per component | I3 | External FS assessor | G3 |
@@ -134,7 +134,7 @@ ISO 3691-4, EN 60204-1 experience, with evidence); declared in writing in each r
 
 | Measure | When | Scope | Who |
 |---|---|---|---|
-| NB-1 | G5 | EU type-examination of the technical documentation ([WP-K-02](../10-safety-case/WP-K-02-technical-documentation-index.md)) and the declaration of conformity draft ([WP-K-06](../10-safety-case/WP-K-06-release-record.md)), if DQ-007 selects Module B or H or Annex I Part A applies | Notified body |
+| NB-1 | G5 | EU type-examination of the technical documentation ([WP-K-02](../10-safety-case/WP-K-02-technical-documentation-index.md)) and the declaration of conformity draft ([WP-K-06](../10-safety-case/WP-K-06-release-record.md)), if DQ-009 selects Module B or H or Annex I Part A applies | Notified body |
 
 If Module A (internal control) is selected, NB-1 is withdrawn and the manufacturer's own assessment of the technical
 documentation is covered by FSA-F and CR-12. [WP-M-13](WP-M-13-regulatory-conformity-strategy.md) owns the route.
@@ -162,9 +162,9 @@ declaration; date; method; findings with IDs; outcome. Findings are tracked as G
 
 | ID | Open item | Owner | Due |
 |---|---|---|---|
-| OI-1 | Check every clause reference in this plan and in WP-M-00 against licensed copies of ISO 13849-1:2023, ISO 13849-2:2012, IEC 61508-1:2010, ISO 3691-4:2023 and ISO 12100:2010 (decision DQ-015 on buying them) | SM | G0 |
+| OI-1 | Check every clause reference in this plan and in WP-M-00 against licensed copies of ISO 13849-1:2023, ISO 13849-2:2012, IEC 61508-1:2010, ISO 3691-4:2023 and ISO 12100:2010 (decision DQ-016 on buying them) | SM | G0 |
 | OI-2 | Re-plan independence after WP-C-04 is approved; record the rationale for any reduction from the PL d assumption | SM | G1 |
-| OI-3 | Engage the external FS assessor (DQ-008) and agree whether the ML reviews (§7) are in their scope | PM | G0 |
+| OI-3 | Engage the external FS assessor (DQ-010) and agree whether the ML reviews (§7) are in their scope | PM | G0 |
 | OI-4 | Identify a cybersecurity assessor and a penetration tester; agree the independence statement | CSM | G1 |
-| OI-5 | CR-01 and CR-03 are due at G0 but no assessor is engaged; decide whether G0 can pass with them scheduled rather than performed (ties to DQ-008) | SM | G0 |
-| OI-6 | Confirm or withdraw NB-1 once DQ-007 is answered | SM | G0 |
+| OI-5 | CR-01 and CR-03 are due at G0 but no assessor is engaged; decide whether G0 can pass with them scheduled rather than performed (ties to DQ-010) | SM | G0 |
+| OI-6 | Confirm or withdraw NB-1 once DQ-009 is answered | SM | G0 |

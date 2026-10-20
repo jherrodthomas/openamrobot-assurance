@@ -126,7 +126,7 @@ Clause references and status are read from the [register (WP-M-00)](../../01-man
 | DEV-16 Cybersecurity implementation and verification | Cybersecurity (IEC 62443) | [WP-W-11](../../05-software/WP-W-11-cybersecurity-implementation-verification.md) | WP-C-08, WP-S-07, WP-W-09, WP-W-05 |  |  | 62443-4-1 SI-1, SI-2, SVV-1…SVV-4; 62443-4-2 CR |  | SEC.2, SEC.3 | Skeleton |
 | DEV-17 Qualification of software components | Joint (all disciplines) | [WP-P-08](../../07-supporting/WP-P-08-software-component-qualification.md) | WP-W-03, WP-M-10 |  | 61508-3 §7.4.2.12 | 62443-4-1 SM-9, SM-10 |  |  | Skeleton |
 | DEV-18 Proven-in-use evaluation | Joint (all disciplines) | [WP-P-09](../../07-supporting/WP-P-09-proven-in-use.md) | WP-M-10, WP-P-08 |  | 61508-2 §7.4.10; 61508-3 §7.4.2.12 |  |  |  | Skeleton |
-| DEV-19 Update the hazard log and the safety case | Joint (all disciplines) | [WP-T-01](../../trace/README.md) *update*, [WP-K-01](../../10-safety-case/WP-K-01-safety-case.md) *update* | WP-H-04, WP-W-06, WP-W-11 |  | 13849-1 §5; 61508-3 §7.2; 61508-1 §8 (assessment input) | 62443-4-1 SR-5 | UL 4600; Machinery Reg. Annex IV | consistency evidence (SYS.2–5, SWE.1–6) | Skeleton |
+| DEV-19 Update the hazard log and the safety case | Joint (all disciplines) | [WP-T-01](../../trace/README.md) *update*, [WP-K-01](../../10-safety-case/WP-K-01-safety-case.md) *update* | WP-H-04, WP-W-06, WP-W-11 |  | 13849-1 §5; 61508-3 §7.2; 61508-1 §8 (assessment input) | 62443-4-1 SR-5 | UL 4600; Machinery Reg. Annex IV | consistency evidence (SYS.2–5, SWE.1–6) | Draft, Skeleton |
 
 ## 3. Cross-domain interfaces
 
@@ -151,7 +151,7 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Exit criterion (WP-M-00 §2):** Safety-chain hardware and PL calculation, software requirements, architecture, units and unit verification approved for every safety-related part
 
-**Work products:** 20 Skeleton of 20. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
+**Work products:** 1 Draft, 19 Skeleton of 20. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
 
 **Roles the lanes need (WP-M-02 §3.1):**
 
@@ -163,7 +163,7 @@ Which activity answers each clause reference listed in the register. One activit
 | Software (ISO 13849-1 §7, IEC 61508-3) | Firmware and software engineer(s) | Jherrod Thomas; additional contributors TBD | G2 |
 | Cybersecurity (IEC 62443) | Cybersecurity manager | Jherrod Thomas (acting); permanent holder TBD | G1 |
 | Machine learning (ISO/IEC TR 5469) | ML safety lead | Jherrod Thomas (acting); permanent holder TBD | G1 |
-| Independent confirmation | External functional safety assessor | TBD (DQ-008) | G1 |
+| Independent confirmation | External functional safety assessor | TBD (DQ-010) | G1 |
 
 **Other roles WP-M-02 §3.1 needs by G3:** Verification reviewer(s) (TBD (at least one person other than the author); needed by G0, still unassigned); Quality assurance (TBD (independent of the author); needed by G0, still unassigned); Test bench owner (TBD); Test operator(s) (TBD (trained per WP-M-04); needed by G1, still unassigned).
 
@@ -180,4 +180,4 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Work products with no confirmation measure at this gate** (verification review only): WP-W-01, WP-H-01, WP-H-02, WP-H-05, WP-W-02, WP-W-03, WP-W-09, WP-W-05, WP-W-06, WP-W-11, WP-P-09, WP-T-01, WP-K-01.
 
-**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (WP-C-10 OI-2 and decision DQ-009: choose the detection means (safety scanner, bumpers or a separated area)).
+**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (WP-C-10 OI-2 and decision DQ-007: choose the detection means (safety scanner, bumpers or a separated area)).

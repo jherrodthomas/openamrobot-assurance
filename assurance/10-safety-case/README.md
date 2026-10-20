@@ -10,7 +10,7 @@ Standard clauses: UL 4600, IEC 61508-1 §8, Machinery Regulation Art. 21 and Ann
 
 | ID | Work product | Gate | Status |
 |---|---|---|---|
-| [WP-K-01](WP-K-01-safety-case.md) | Safety case (claims, arguments, evidence, defeaters) | G1→G5 (living) | Skeleton |
+| [WP-K-01](WP-K-01-safety-case.md) | Safety case (claims, arguments, evidence, defeaters) | G1→G5 (living) | Draft |
 | [WP-K-02](WP-K-02-technical-documentation-index.md) | Technical documentation index (the technical file) | G5 | Skeleton |
 | [WP-K-03](WP-K-03-cybersecurity-case.md) | Cybersecurity case | G5 | Skeleton |
 | [WP-K-04](WP-K-04-functional-safety-assessment.md) | Functional safety assessment report (performed independently) | G5 | Skeleton |

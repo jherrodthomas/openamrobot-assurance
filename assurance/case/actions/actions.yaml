@@ -1,0 +1,133 @@
+# Source: WP-K-01 Safety Case (§10, open items). Machine-readable copy; WP-K-01 remains the reviewed document.
+
+- id: ACT-001
+  kind: action
+  title: "Weigh the Gate A unit, record height, castors and centre of gravity"
+  description: "Weigh the Gate A unit, record height, castors and centre of gravity; source WP-C-01 OI-1"
+  lifecycle_status: open
+  needed_by: G1
+  related_claims: [G2.2, G4.2]
+  baseline: BL-001
+  source: WP-K-01
+  source_ref: OI-1
+  source_revision: "8a7a5b1"
+
+- id: ACT-002
+  kind: action
+  title: "Measure stopping distance from 0.20 m/s, coast and commanded, loaded and unloaded"
+  description: "Measure stopping distance from 0.20 m/s, coast and commanded, loaded and unloaded; source WP-C-01 OI-2"
+  lifecycle_status: open
+  needed_by: G1
+  related_claims: [G2.2, G1.2]
+  baseline: BL-001
+  source: WP-K-01
+  source_ref: OI-2
+  source_revision: "8a7a5b1"
+
+- id: ACT-003
+  kind: action
+  title: "Set a payload limit and a payload height limit"
+  description: "Set a payload limit and a payload height limit; source WP-C-01 OI-3"
+  lifecycle_status: open
+  needed_by: G1
+  related_claims: [G2.2]
+  baseline: BL-001
+  source: WP-K-01
+  source_ref: OI-3
+  source_revision: "8a7a5b1"
+
+- id: ACT-004
+  kind: action
+  title: "Resolve what the panel E-stop button switches on the as-built unit"
+  description: "Resolve what the panel E-stop button switches on the as-built unit; source WP-C-01 OI-4"
+  lifecycle_status: open
+  needed_by: G1
+  related_claims: [G1.1]
+  baseline: BL-001
+  source: WP-K-01
+  source_ref: OI-4
+  source_revision: "8a7a5b1"
+
+- id: ACT-005
+  kind: action
+  title: "Decide the regulatory frame (DQ-003) and the item scope (DQ-004)"
+  description: "Decide the regulatory frame (DQ-003) and the item scope (DQ-004); source WP-C-01 OI-5"
+  lifecycle_status: open
+  needed_by: G1
+  related_claims: [G0]
+  baseline: BL-001
+  source: WP-K-01
+  source_ref: OI-5
+  source_revision: "8a7a5b1"
+
+- id: ACT-006
+  kind: action
+  title: "Reviewer with Gate A operating experience confirms every rating in WP-C-03"
+  description: "Reviewer with Gate A operating experience confirms every rating in WP-C-03; source WP-C-03 OI-5"
+  lifecycle_status: open
+  needed_by: G1
+  related_claims: [G4.2]
+  baseline: BL-001
+  source: WP-K-01
+  source_ref: OI-6
+  source_revision: "8a7a5b1"
+
+- id: ACT-007
+  kind: action
+  title: "Choose the detection device and the speed monitor for the bench build; budget decision"
+  description: "Choose the detection device and the speed monitor for the bench build; budget decision; source WP-S-03 OI-2"
+  lifecycle_status: open
+  needed_by: G2
+  related_claims: [G1.2, G1.3]
+  baseline: BL-001
+  source: WP-K-01
+  source_ref: OI-7
+  source_revision: "8a7a5b1"
+
+- id: ACT-008
+  kind: action
+  title: "Read the ZBLD.C20 manual for BRK/DI5, SPD/DO2 and ERR/DO1 semantics"
+  description: "Read the ZBLD.C20 manual for BRK/DI5, SPD/DO2 and ERR/DO1 semantics; source WP-S-03 OI-1"
+  lifecycle_status: open
+  needed_by: G2
+  related_claims: [G1.1, G1.6]
+  baseline: BL-001
+  source: WP-K-01
+  source_ref: OI-8
+  source_revision: "8a7a5b1"
+
+- id: ACT-009
+  kind: action
+  title: "Compile and bench-test the firmware hardening change"
+  description: "Compile and bench-test the firmware hardening change; source change-2026-10-20 §5"
+  lifecycle_status: open
+  needed_by: G2
+  related_claims: [G1.4, G1.6, G1.7, G4.3]
+  baseline: BL-001
+  source: WP-K-01
+  source_ref: OI-9
+  source_revision: "8a7a5b1"
+
+- id: ACT-010
+  kind: action
+  title: "Push the BL-001 tags to the forks and pin the reusable CI workflow to a SHA"
+  description: "Push the BL-001 tags to the forks and pin the reusable CI workflow to a SHA; source gap assessment §10 action 9"
+  lifecycle_status: open
+  needed_by: G1
+  related_claims: [G4.1]
+  baseline: BL-001
+  source: WP-K-01
+  source_ref: OI-10
+  source_revision: "8a7a5b1"
+
+- id: ACT-011
+  kind: action
+  title: "Interface change for stamped or sequenced velocity commands (SR-04.03)"
+  description: "Interface change for stamped or sequenced velocity commands (SR-04.03); source WP-S-02 OI-2"
+  lifecycle_status: open
+  needed_by: G2
+  related_claims: [G1.4]
+  baseline: BL-001
+  source: WP-K-01
+  source_ref: OI-11
+  source_revision: "8a7a5b1"

@@ -11,19 +11,19 @@
 | Date | YYYY-MM-DD |
 | Baseline | <commit SHA or tag> |
 | Chair | Safety manager (Jherrod Thomas (acting)) |
-| Participants | Safety manager (Jherrod Thomas (acting)); Safety-related control system engineer (Jherrod Thomas (acting); additional contributors TBD); Cybersecurity manager (Jherrod Thomas (acting); permanent holder TBD); ML safety lead (Jherrod Thomas (acting); permanent holder TBD); External functional safety assessor (TBD (DQ-008)) |
+| Participants | Safety manager (Jherrod Thomas (acting)); Safety-related control system engineer (Jherrod Thomas (acting); additional contributors TBD); Cybersecurity manager (Jherrod Thomas (acting); permanent holder TBD); ML safety lead (Jherrod Thomas (acting); permanent holder TBD); External functional safety assessor (TBD (DQ-010)) |
 | Assessor informed | Yes / No (name) |
 
 ## Inputs (WP-M-02 §10)
 
 | Input | Status at this baseline | Link |
 |---|---|---|
-| WP-M-00 status of the gate's work products | 15 Skeleton of 15 (table below) | [WP-M-00](../../../01-management/WP-M-00-work-product-register.md) |
+| WP-M-00 status of the gate's work products | 1 Draft, 14 Skeleton of 15 (table below) | [WP-M-00](../../../01-management/WP-M-00-work-product-register.md) |
 | Open anomalies (`safety-anomaly`) | | GitHub issues labelled `safety-anomaly` |
 | Open risks (WP-M-07) | | [WP-M-07](../../../01-management/WP-M-07-risk-management.md) |
 | Confirmation measures assigned to this gate (WP-M-06) and their results | 0 of 5 performed: CR-12, FSA-F, CS-A1, ML-R3, NB-1 | [WP-M-06](../../../01-management/WP-M-06-confirmation-measures-plan.md) |
 | QA findings (WP-M-05) | | [WP-M-05](../../../01-management/WP-M-05-quality-assurance-plan.md) |
-| Open items of the phase's work products | 15 open-item rows not marked closed, any due gate (table below) | |
+| Open items of the phase's work products | 25 open-item rows not marked closed, any due gate (table below) | |
 
 ### Work products of this gate
 
@@ -39,7 +39,7 @@
 | [WP-P-10](../../../07-supporting/WP-P-10-release-management.md) Release management and baseline procedure | REL-08 | Skeleton | 1 | |
 | [WP-K-02](../../../10-safety-case/WP-K-02-technical-documentation-index.md) Technical documentation index (the technical file) | REL-09 | Skeleton | 1 | |
 | [WP-K-07](../../../10-safety-case/WP-K-07-ai-act-conformity-record.md) AI Act conformity record (learned component as a machinery safety component) | REL-10 | Skeleton | 1 | |
-| [WP-K-01](../../../10-safety-case/WP-K-01-safety-case.md) Safety case (claims, arguments, evidence, defeaters) (update) | REL-11 | Skeleton | 1 | |
+| [WP-K-01](../../../10-safety-case/WP-K-01-safety-case.md) Safety case (claims, arguments, evidence, defeaters) (update) | REL-11 | Draft | 11 | |
 | [WP-T-01](../../../trace/README.md) Requirements and traceability data (machine-readable), consistency evidence (update) | REL-11 | Skeleton | 1 | |
 | [WP-K-04](../../../10-safety-case/WP-K-04-functional-safety-assessment.md) Functional safety assessment report (performed independently) | REL-12 | Skeleton | 1 | |
 | [WP-K-05](../../../10-safety-case/WP-K-05-cybersecurity-assessment.md) Cybersecurity assessment report (performed independently) | REL-13 | Skeleton | 1 | |
@@ -63,7 +63,7 @@ From the [process model](../../../process/README.md). Each one is a condition on
 
 | Interface | Topic | Open item | Due | Closed? |
 |---|---|---|---|---|
-| IX-02 | The protective stop SF-02 has a PLr but no implementation until the detection means is decided; what the LiDAR cannot see bounds the claim | WP-C-10 OI-2 and decision DQ-009: choose the detection means (safety scanner, bumpers or a separated area) | G1 | |
+| IX-02 | The protective stop SF-02 has a PLr but no implementation until the detection means is decided; what the LiDAR cannot see bounds the claim | WP-C-10 OI-2 and decision DQ-007: choose the detection means (safety scanner, bumpers or a separated area) | G1 | |
 
 ### Roles WP-M-02 §3.1 needs by this gate that are not assigned
 
@@ -74,9 +74,9 @@ From the [process model](../../../process/README.md). Each one is a condition on
 | Quality assurance | TBD (independent of the author) | G0 |
 | Test bench owner | TBD | G3 |
 | Test operator(s) | TBD (trained per WP-M-04) | G1 |
-| External functional safety assessor | TBD (DQ-008) | G1 |
+| External functional safety assessor | TBD (DQ-010) | G1 |
 | External cybersecurity assessor | TBD | G5 |
-| Notified body | TBD (DQ-007) | G5 |
+| Notified body | TBD (DQ-009) | G5 |
 
 ## Exit criteria (WP-M-00 §2)
 

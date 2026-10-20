@@ -54,7 +54,7 @@
   operators (send goals, monitor, stop), bystanders (share the floor). Upstream's own user page addresses "anyone
   who works near the robot, whether or not they operate it".
 - **Level of training:** none assumed by upstream beyond its documentation; the fork assumes a trained operator
-  present during every run until WP-C-03 says otherwise (AoU-01).
+  present during every run until WP-C-03 says otherwise (AOU-01).
 - **Modes of use foreseen by the record:** manual bench test (wheels off the ground), keyboard teleoperation,
   autonomous navigation to a goal, autonomous docking and undocking, mapping (SLAM), simulation.
 
@@ -194,13 +194,13 @@ Transitions between M2, M3 and M4 are not arbitrated: whoever publishes last win
 
 | ID | Assumption | Holds today? | Where it is used |
 |---|---|---|---|
-| AoU-01 | A trained operator is present, watching the robot (not the screen), with the means to cut 24 V by hand, for every powered run | partly: upstream instructs it; no hardware disconnect exists | every hazard in WP-C-03 until SF-01 exists |
-| AoU-02 | The operating area is clear of people during autonomous navigation, docking and undocking | procedural only | H-01, H-02 |
-| AoU-03 | Wheels are off the ground whenever a powered debug path or calibration runs | procedural only; no interlock | H-04 |
-| AoU-04 | The battery is ≥ 25 V at rest before a run | procedural only; no measurement | H-03 |
-| AoU-05 | The Wi-Fi network carrying DDS is private and reaches only trusted hosts | not stated; a guest SSID is named in the docs | H-05 |
-| AoU-06 | The floor is flat, dry, indoor, free of steps above the castor limit | assumed | H-06 |
-| AoU-07 | The payload is restrained and within a mass and height limit **(to be set)** | no limit stated | H-06 |
+| AOU-01 | A trained operator is present, watching the robot (not the screen), with the means to cut 24 V by hand, for every powered run | partly: upstream instructs it; no hardware disconnect exists | every hazard in WP-C-03 until SF-01 exists |
+| AOU-02 | The operating area is clear of people during autonomous navigation, docking and undocking | procedural only | H-01, H-02 |
+| AOU-03 | Wheels are off the ground whenever a powered debug path or calibration runs | procedural only; no interlock | H-04 |
+| AOU-04 | The battery is ≥ 25 V at rest before a run | procedural only; no measurement | H-03 |
+| AOU-05 | The Wi-Fi network carrying DDS is private and reaches only trusted hosts | not stated; a guest SSID is named in the docs | H-05 |
+| AOU-06 | The floor is flat, dry, indoor, free of steps above the castor limit | assumed | H-06 |
+| AOU-07 | The payload is restrained and within a mass and height limit **(to be set)** | no limit stated | H-06 |
 
 ## 9. Out of scope for this item
 
@@ -215,6 +215,6 @@ lift, the embodied-AI policy runtime and the fleet server. Decisions about them 
 |---|---|---|
 | OI-1 | Weigh the Gate A unit; measure height; record castor count and positions | WP-C-03 risk estimation (tipping, crushing) |
 | OI-2 | Measure stopping distance from 0.20 m/s on the watchdog coast and on a commanded −2.5 m/s² stop, loaded and unloaded | WP-C-03, SF-02 field sizing |
-| OI-3 | Set a payload limit and a payload height limit | AoU-07 |
+| OI-3 | Set a payload limit and a payload height limit | AOU-07 |
 | OI-4 | Resolve what the panel E-stop button switches on the as-built unit | GAP-01, SF-01 |
 | OI-5 | Decide the regulatory frame (DQ-003) and the item scope (DQ-004); DQ-002 (Gate A unit) and DQ-005 (PL d) were decided 2026-10-20 | header fields of this document |

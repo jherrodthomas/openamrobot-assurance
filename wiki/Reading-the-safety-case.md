@@ -21,13 +21,13 @@ claim structure of [WP-M-01 §3.2](../assurance/01-management/WP-M-01-assurance-
 No claim has evidence. No evidence is accepted. The known counter-evidence is GAP-01…GAP-40 in the
 [gap assessment](../assurance/00-assessment/gap-assessment.md), which become the first defeaters.
 
-## What the dashboard will show
+## What the dashboard shows
 
-[`assurance/case/`](../assurance/case/README.md) will hold claims, evidence items, defeaters, assumptions,
+[`assurance/case/`](../assurance/case/README.md) holds claims, evidence items, defeaters, assumptions,
 configurations, baselines and reviews as machine-readable records, a validator, and a generator that draws the
 README dashboard and a one-line headline: the lifecycle stage, the baseline, the number of claims and how many have
 accepted evidence, the evidence items and how many are accepted, the open defeaters, and a digest of every record.
-When it lands, these rules apply:
+These rules apply:
 
 - A claim counts as accepted only when a recorded review accepts it, every piece of evidence it cites is available
   and accepted, and no defeater against it is open. The validator refuses anything else.

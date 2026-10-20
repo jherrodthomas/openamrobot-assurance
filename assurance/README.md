@@ -14,14 +14,54 @@ Regulation (EU) 2023/1230. Safety-case structure follows UL 4600 principles.
 
 ## Living Safety Case
 
-The machine-readable records, the validator and the dashboard generator are planned; see
-[`case/README.md`](case/README.md). Until then the safety case is the document [WP-K-01](10-safety-case/WP-K-01-safety-case.md),
-every figure on the README is generated from this repository's own data (register, process model, decision
-register), and no figure is a safety claim.
+<p align="center">
+  <img src="../docs/assets/assurance/dashboard.svg" width="100%" alt="Living Safety Case dashboard generated from the assurance records: assurance state, baseline, claims with accepted evidence, evidence items accepted, open defeaters, records digest.">
+</p>
+<p align="center">
+  <img src="../docs/assets/assurance/lifecycle.svg" width="100%" alt="Status of the six lifecycle areas, derived from the evidence records.">
+</p>
 
-What the dashboard will guarantee: a claim counts as accepted only when a recorded review accepts
-it, every piece of evidence it cites is available and accepted, and no defeater against it is open. A passing CI run
-never accepts a claim on its own.
+The records (claims, arguments, evidence, defeaters, actions, configurations, baselines, reviews) live in
+[`case/`](case/README.md); [`case/tools/validate.py`](case/tools/validate.py) checks them and
+[`case/tools/generate_dashboard.py`](case/tools/generate_dashboard.py) draws the figures above and fills the table
+below. CI fails if any of them is stale. The document form of the same argument is
+[WP-K-01](10-safety-case/WP-K-01-safety-case.md); check X3 keeps its tables equal to the records.
+
+<details>
+<summary><b>Recorded values as text</b></summary>
+
+<!-- BEGIN GENERATED: assurance-summary (assurance/case/tools/generate_dashboard.py) -->
+
+| Indicator | Recorded value |
+|---|---|
+| Assurance state | Development |
+| Engineering baseline | `BL-001` at `8a7a5b1` (under development) |
+| Registered safety claims | 18 |
+| Claims with accepted supporting evidence | 0 |
+| Registered evidence items | 15 (0 available, 8 drafted, 7 not yet performed) |
+| Evidence requiring review | 8 |
+| Open assurance actions | 11 |
+| Open defeaters (known counter-evidence) | 40 |
+| Evaluated configurations | 1 |
+| Assurance-supported configurations | 0 |
+| Records digest | `a2a85b67ff52` |
+
+| Lifecycle area | Status | Evidence (drafted / missing / accepted) |
+|---|---|---|
+| Safety Management | In Progress | 2 (2 / 0 / 0) |
+| Hazard Analysis | In Progress | 3 (2 / 1 / 0) |
+| Safety Concepts | In Progress | 3 (2 / 1 / 0) |
+| Technical Implementation | In Progress | 2 (1 / 1 / 0) |
+| Verification and Validation | Not Started | 4 (0 / 4 / 0) |
+| Safety Case and Review | In Progress | 1 (1 / 0 / 0) |
+
+<!-- END GENERATED: assurance-summary -->
+
+</details>
+
+**What the dashboard guarantees:** a claim counts as accepted only when a recorded review accepts it, every piece
+of evidence it cites is available and accepted, and no defeater against it is open. A passing CI run never accepts
+a claim on its own, and no figure here is a safety claim.
 
 ## Start here
 
@@ -56,8 +96,8 @@ never accepts a claim on its own.
 | [`09-production-operation/`](09-production-operation/README.md) | Assembly and commissioning, operation, information for use, field monitoring, incident response | ISO 12100 §6.4, ISO 3691-4 §6, Machinery Reg. Art. 10 |
 | [`10-safety-case/`](10-safety-case/README.md) | Safety case, technical documentation index, cybersecurity case, assessment reports, release record and declaration draft; gate and confirmation records | UL 4600, IEC 61508-1 §8, Machinery Reg. Annexes IV–V |
 | [`process/`](process/README.md) | Integrated process model: activities, lanes, cross-domain interfaces and gates as data; generated maps and gate skeletons | ISO 13849-1 §4, IEC 61508-1 §6, MAN.3 |
-| [`trace/`](trace/README.md) | Machine-readable hazards, safety functions, requirements and trace data (tooling to be ported) | ISO 13849-1 §5 |
-| [`case/`](case/README.md) | Living Safety Case records, validator and generators (planned) | UL 4600 |
+| [`trace/`](trace/README.md) | Machine-readable hazards, safety functions and assumptions of use (`items/`), later requirements and trace matrices | ISO 13849-1 §5 |
+| [`case/`](case/README.md) | Living Safety Case records (claims, evidence, defeaters, actions, configurations, baselines, reviews), validator and dashboard generator | UL 4600 |
 | [`tools/`](tools/) | Folder index generator, link and table checkers | WP-P-04 |
 
 ## Conventions

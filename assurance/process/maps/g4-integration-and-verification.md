@@ -80,7 +80,7 @@ Clause references and status are read from the [register (WP-M-00)](../../01-man
 | INT-07 Personnel detection and protective field validation | Safety-related control system (ISO 13849-1) | [WP-V-03](../../06-validation/WP-V-03-personnel-detection-validation.md) | WP-V-02, WP-W-09, WP-V-07 | 3691-4 §4, §5 | 13849-1 §10 |  | ISO 13855 §6; IEC 61496-3 | VAL.1 | Skeleton |
 | INT-08 Fault injection and fault-list validation | Safety-related control system (ISO 13849-1) | [WP-V-05](../../06-validation/WP-V-05-fault-injection.md) | WP-H-03, WP-W-04, WP-S-08 |  | 13849-2 §5, Annex A–D |  |  | SYS.4, SWE.6 | Skeleton |
 | INT-09 System verification: PL verification and fault behaviour | Safety-related control system (ISO 13849-1) | [WP-S-09](../../03-system/WP-S-09-system-verification.md) | WP-H-04, WP-V-05, WP-V-04 |  | 13849-1 §8; 13849-2 §4–§5 |  | 60204-1 §18 | SYS.5 | Skeleton |
-| INT-10 Update the hazard log and the safety case | Joint (all disciplines) | [WP-T-01](../../trace/README.md) *update*, [WP-K-01](../../10-safety-case/WP-K-01-safety-case.md) *update* | WP-S-09, WP-V-02, WP-V-03 |  | 13849-1 §5; 61508-3 §7.2; 61508-1 §8 (assessment input) | 62443-4-1 SR-5 | UL 4600; Machinery Reg. Annex IV | consistency evidence (SYS.2–5, SWE.1–6) | Skeleton |
+| INT-10 Update the hazard log and the safety case | Joint (all disciplines) | [WP-T-01](../../trace/README.md) *update*, [WP-K-01](../../10-safety-case/WP-K-01-safety-case.md) *update* | WP-S-09, WP-V-02, WP-V-03 |  | 13849-1 §5; 61508-3 §7.2; 61508-1 §8 (assessment input) | 62443-4-1 SR-5 | UL 4600; Machinery Reg. Annex IV | consistency evidence (SYS.2–5, SWE.1–6) | Draft, Skeleton |
 
 ## 3. Cross-domain interfaces
 
@@ -104,7 +104,7 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Exit criterion (WP-M-00 §2):** Hardware, software and system integration and PL verification complete; stopping, detection and E-stop tests passed; fault-injection campaign closed
 
-**Work products:** 11 Skeleton of 11. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
+**Work products:** 1 Draft, 10 Skeleton of 11. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
 
 **Roles the lanes need (WP-M-02 §3.1):**
 
@@ -114,7 +114,7 @@ Which activity answers each clause reference listed in the register. One activit
 | Safety-related control system (ISO 13849-1) | Safety-related control system engineer | Jherrod Thomas (acting); additional contributors TBD | G2 |
 | Electrical and mechanical (EN 60204-1) | Electrical and mechanical engineer | TBD (likely external) | G2 |
 | Software (ISO 13849-1 §7, IEC 61508-3) | Firmware and software engineer(s) | Jherrod Thomas; additional contributors TBD | G2 |
-| Independent confirmation | External functional safety assessor | TBD (DQ-008) | G1 |
+| Independent confirmation | External functional safety assessor | TBD (DQ-010) | G1 |
 
 **Other roles WP-M-02 §3.1 needs by G4:** Verification reviewer(s) (TBD (at least one person other than the author); needed by G0, still unassigned); Quality assurance (TBD (independent of the author); needed by G0, still unassigned); Test bench owner (TBD; needed by G3, still unassigned); Test operator(s) (TBD (trained per WP-M-04); needed by G1, still unassigned).
 
@@ -126,4 +126,4 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Work products with no confirmation measure at this gate** (verification review only): WP-H-06, WP-W-07, WP-S-08, WP-V-02, WP-V-04, WP-V-03, WP-V-05, WP-S-09, WP-T-01, WP-K-01.
 
-**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (WP-C-10 OI-2 and decision DQ-009: choose the detection means (safety scanner, bumpers or a separated area)).
+**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (WP-C-10 OI-2 and decision DQ-007: choose the detection means (safety scanner, bumpers or a separated area)).

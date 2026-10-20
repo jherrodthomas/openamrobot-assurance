@@ -22,7 +22,7 @@ Machine-readable requirement and trace data: hazards, safety functions, requirem
 
 ## 2. Data files
 
-`items/*.yaml` per identifier family; `maps/` for the generated matrices.
+`items/*.yaml` per identifier family: [`items/hazards.yaml`](items/hazards.yaml) (H-01…H-12 and SF-01…SF-07 from WP-C-03) and [`items/aou.yaml`](items/aou.yaml) (AOU-01…AOU-07 from WP-C-01) exist and are what the safety-case validator resolves references against; requirements and tests follow with WP-S-02; `maps/` for the generated matrices.
 
 ## 3. Checks
 

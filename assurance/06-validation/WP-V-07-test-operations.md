@@ -38,7 +38,7 @@ It applies to every on-ground test, from the first stopping-distance measurement
 | C-8 | The operator has read this procedure and run the pre-session checks of §4 | Signed line in the test log | WP-M-04 competence |
 
 Conditions C-1 to C-3 are the bench safety hardware of [WP-M-02 §4.1](../01-management/WP-M-02-safety-plan.md#41-early-implementation-of-at-risk-work);
-buying it is decision DQ-010.
+buying it is decision DQ-011.
 
 ## 3. Limits during development testing
 
@@ -80,7 +80,7 @@ writing after the cause is understood.
 
 | ID | Item | Owner | Due |
 |---|---|---|---|
-| OI-1 | Buy and fit the bench safety hardware (DQ-010); write the change record | PM | Before the first on-ground test |
+| OI-1 | Buy and fit the bench safety hardware (DQ-011); write the change record | PM | Before the first on-ground test |
 | OI-2 | Name and train the test operator(s) (WP-M-02 §3.1) | PM | Before the first on-ground test |
 | OI-3 | Replace the §3 speed limits with the budget of WP-S-04 once the stopping distance is measured (WP-V-02) | SRP | G2 |
 | OI-4 | Define the test area in WP-C-02 and reference it here | SM | G1 |

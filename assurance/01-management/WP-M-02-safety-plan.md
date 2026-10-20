@@ -68,9 +68,9 @@ measures, QA audits). Roles marked TBD must be filled before the gate shown.
 | Quality assurance | Process and work product audits per [WP-M-05](WP-M-05-quality-assurance-plan.md) | TBD (independent of the author) | G0 |
 | Test bench owner | Builds and maintains the firmware bench and the hardware-in-the-loop rig (WP-W-08) | TBD | G3 |
 | Test operator(s) | On-ground tests under [WP-V-07](../06-validation/WP-V-07-test-operations.md), hand on the bench E-stop | TBD (trained per WP-M-04) | G1 (before any on-ground test) |
-| External functional safety assessor | Confirmation reviews at I3, functional safety audits, functional safety assessment | TBD (DQ-008) | G1 |
+| External functional safety assessor | Confirmation reviews at I3, functional safety audits, functional safety assessment | TBD (DQ-010) | G1 |
 | External cybersecurity assessor | Cybersecurity assessment ([WP-K-05](../10-safety-case/WP-K-05-cybersecurity-assessment.md)) | TBD | G5 (interim earlier, see WP-M-06) |
-| Notified body | Conformity assessment of the technical documentation if the route of DQ-007 needs one (Module B or H) | TBD (DQ-007) | G5 |
+| Notified body | Conformity assessment of the technical documentation if the route of DQ-009 needs one (Module B or H) | TBD (DQ-009) | G5 |
 
 Competence requirements and evidence for each role are in [WP-M-04](WP-M-04-organization-competence-safety-culture.md).
 
@@ -124,8 +124,8 @@ Phases and gates are defined in [WP-M-01 §7](WP-M-01-assurance-strategy.md#7-ph
 
 | Phase | Safety activities | Responsible | Key outputs | Gate entry criteria |
 |---|---|---|---|---|
-| P0 Governance | Approve plans; assign roles; take configuration control of the three platform repositories (fork, pin the reusable workflow and the linorobot2 base, GAP-29, GAP-32); set up review rules, CODEOWNERS, branch protection; impact analysis of the inherited baseline; decide the frame (DQ-002, DQ-003) and the conformity route (DQ-007); engage an assessor (DQ-008) | SM, PM | WP-M-00…M-13, WP-P-01…P-06, WP-P-11 | — |
-| P1 Concept | Machine definition and limits (weigh the robot, GAP-23); operating environment; risk assessment with the ISO 3691-4 hazard list; safety functions SF-01…SF-nn with PLr, stop category and response time; risk reduction concept; human-robot interaction and misuse; detection concept (DQ-009); insufficiency analysis of the LiDAR and Nav2 chain; test operations hold point; initial safety case argument and hazard log | SM (risk assessment, safety functions), SRP (PLr), CSM, ML | WP-C-01…C-10, WP-V-07, WP-K-01 v1, WP-T-01 | G0 passed |
+| P0 Governance | Approve plans; assign roles; take configuration control of the three platform repositories (fork, pin the reusable workflow and the linorobot2 base, GAP-29, GAP-32); set up review rules, CODEOWNERS, branch protection; impact analysis of the inherited baseline; decide the frame (DQ-002, DQ-003) and the conformity route (DQ-009); engage an assessor (DQ-010) | SM, PM | WP-M-00…M-13, WP-P-01…P-06, WP-P-11 | — |
+| P1 Concept | Machine definition and limits (weigh the robot, GAP-23); operating environment; risk assessment with the ISO 3691-4 hazard list; safety functions SF-01…SF-nn with PLr, stop category and response time; risk reduction concept; human-robot interaction and misuse; detection concept (DQ-007); insufficiency analysis of the LiDAR and Nav2 chain; test operations hold point; initial safety case argument and hazard log | SM (risk assessment, safety functions), SRP (PLr), CSM, ML | WP-C-01…C-10, WP-V-07, WP-K-01 v1, WP-T-01 | G0 passed |
 | P2 System design | SRS for the SRP/CS; chain architecture with designated architecture, category, DC and channels; response-time, stopping-distance and safety-distance budget; I/O map; requirements for installation and operation; cybersecurity architecture; mechanical and stability analysis; system FMEA, FTA, CCF, STPA, independence of the chain | SRP, EM, SM | WP-S-01…S-07, WP-H-08, WP-A-01…A-05 | G1 passed incl. confirmation review of the risk assessment |
 | P3 HW/SW development | Chain hardware design and electrical safety; hardware failure analysis and fault lists; MTTFD, DCavg, CCF and PL calculation; qualification of safety components; software environment, requirements, architecture, safety analysis, unit design and verification; firmware hardening (watchdog, `/cmd_vel` validation, plausibility, debug paths, version and reset cause: GAP-03, GAP-05…GAP-10); ROS 2 hardening (twist_mux, bounded parameters, docking inside the envelope: GAP-15, GAP-35, GAP-36); safety parameters; ML engineering; tool and component qualification | SRP, EM, SW | WP-H-01…H-07, WP-W-01…W-06, W-09…W-11, WP-P-07…P-09 | G2 passed |
 | P4 Integration and verification | Build the bench; hardware, software and system integration; PL verification; stopping-distance, braking and stability tests; protective field validation; E-stop and chain validation; fault injection against the 13849-2 fault lists | SRP, SW, test bench owner | WP-S-08, S-09, WP-H-06, WP-W-07, W-08, WP-V-02…V-05 | G3 passed; bench available |
@@ -147,7 +147,7 @@ under this rule:
 3. Its design is carried forward, not thrown away: the bench chain becomes the first draft of WP-H-02 and the
    purchase of a certified safety relay is made with the 2.0 chain in mind (upstream `SAFETY-PROCUREMENT`).
 
-The purchase itself is decision DQ-010 for the lead.
+The purchase itself is decision DQ-011 for the lead.
 
 ## 5. Tailoring of the standards
 
@@ -217,7 +217,7 @@ performed, unless the safety manager and the assessor agree a documented deferra
 | ID | Item | Owner | Gate |
 |---|---|---|---|
 | OI-1 | Fill the verification reviewer and QA roles; until then every review is I0 and no work product can leave Draft | PM | G0 |
-| OI-2 | Decide who approves work products the safety manager authors (self-approval interim; decision DQ-011) | PM | G0 |
-| OI-3 | Engage the external assessor or record the decision not to for now (DQ-008) | PM | G1 |
+| OI-2 | Decide who approves work products the safety manager authors (self-approval interim; decision DQ-012) | PM | G0 |
+| OI-3 | Engage the external assessor or record the decision not to for now (DQ-010) | PM | G1 |
 | OI-4 | Classify the AI assistant and the other drafting tools in WP-P-07 | SM | G3 |
 | OI-5 | Replace §4 with a generated lifecycle figure pinned to this table | SM | G1 |

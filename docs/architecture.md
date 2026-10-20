@@ -18,7 +18,7 @@ chain that removes actuator power and engages the brakes without any software in
 The argument is a doer-and-checker argument with one more step: the ROS 2 stack proposes, the firmware
 checks, and the chain is the checker of last resort that nothing in software can override. The full strategy is
 [WP-M-01 §6](../assurance/01-management/WP-M-01-assurance-strategy.md#6-safety-architecture-argument-the-central-strategy);
-the architecture work products are [WP-S-03](../assurance/03-system/WP-S-03-srpcs-architecture.md) (the chain),
+the architecture work products are [WP-S-03](../assurance/03-system/WP-S-03-technical-safety-concept.md) (the chain),
 [WP-W-03](../assurance/05-software/WP-W-03-software-architecture.md) (the software) and
 [WP-A-05](../assurance/08-analyses/WP-A-05-independence-of-the-safety-chain.md) (why the chain is independent of the
 stack).

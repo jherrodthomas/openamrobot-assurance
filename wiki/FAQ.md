@@ -45,9 +45,9 @@ never restated ([WP-M-10](../assurance/01-management/WP-M-10-upstream-and-suppli
 
 ## Where is the Living Safety Case dashboard?
 
-Not yet generated. The records, validator and dashboard generator are planned
-([`case/`](../assurance/case/README.md)). Until then, no number on the README is a safety claim; the figures that do
-exist (lifecycle, register status) are generated from this repository's own data.
+On the README, generated from the records in [`case/`](../assurance/case/README.md) by CI. No number on it is a
+safety claim: a claim counts as accepted only when a recorded review accepts it, its evidence is available and
+accepted, and no defeater against it is open. Today nothing is accepted and every defeater is open.
 
 ## Who decides what?
 

@@ -95,8 +95,8 @@ Regulation (EU) 2023/1230 (Machinery Regulation), Regulation (EU) 2024/1689 (AI 
 | ID | Work product | Machinery | SRP/CS | IEC 62443 | Other | ASPICE | Gate | Status |
 |---|---|---|---|---|---|---|---|---|
 | [WP-S-01](../03-system/WP-S-01-system-requirements.md) | System requirements specification (functional, non-safety) | | | | | SYS.2 | G2 | S |
-| [WP-S-02](../03-system/WP-S-02-safety-requirements-specification.md) | Safety requirements specification for the SRP/CS | 3691-4 §4 | 13849-1 §5; 62061 §6 | | 60204-1 §9 | SYS.2 | G2 | S |
-| [WP-S-03](../03-system/WP-S-03-srpcs-architecture.md) | Safety-related control system architecture (designated architectures, categories, channels, diagnostics) | | 13849-1 §6 | | 60204-1 §9.4 | SYS.3 | G2 | S |
+| [WP-S-02](../03-system/WP-S-02-safety-requirements.md) | Safety requirements specification for the SRP/CS | 3691-4 §4 | 13849-1 §5; 62061 §6 | | 60204-1 §9 | SYS.2 | G2 | D |
+| [WP-S-03](../03-system/WP-S-03-technical-safety-concept.md) | Technical safety concept: safety-related control system architecture (designated architectures, categories, channels, diagnostics, allocation of SF-01…SF-07) | | 13849-1 §6 | | 60204-1 §9.4 | SYS.3 | G2 | D |
 | [WP-S-04](../03-system/WP-S-04-response-time-and-stopping-budget.md) | Response time, stopping performance and safety distance budget | 3691-4 §4 (braking, speed) | 13849-1 §5 (response time) | | ISO 13855 §6 | SYS.3 | G2 | S |
 | [WP-S-05](../03-system/WP-S-05-safety-chain-io-interface.md) | Hardware-software interface of the safety chain (I/O map, signal semantics) | | 13849-1 §6, §7 | | | SYS.3 | G2 | S |
 | [WP-S-06](../03-system/WP-S-06-requirements-installation-operation.md) | Requirements for installation, operation, maintenance and decommissioning | 12100 §6.4; 3691-4 §6 | 13849-1 §11 | 62443-4-1 SG-1…SG-7 | | SYS.2 | G2 | S |
@@ -186,7 +186,7 @@ Regulation (EU) 2023/1230 (Machinery Regulation), Regulation (EU) 2024/1689 (AI 
 
 | ID | Work product | Machinery | SRP/CS | IEC 62443 | Other | ASPICE | Gate | Status |
 |---|---|---|---|---|---|---|---|---|
-| [WP-K-01](../10-safety-case/WP-K-01-safety-case.md) | Safety case (claims, arguments, evidence, defeaters) | | 61508-1 §8 (assessment input) | | UL 4600; Machinery Reg. Annex IV | — | G1→G5 (living) | S |
+| [WP-K-01](../10-safety-case/WP-K-01-safety-case.md) | Safety case (claims, arguments, evidence, defeaters) | | 61508-1 §8 (assessment input) | | UL 4600; Machinery Reg. Annex IV | — | G1→G5 (living) | D |
 | [WP-K-02](../10-safety-case/WP-K-02-technical-documentation-index.md) | Technical documentation index (the technical file) | 12100 §7 | 13849-1 §12 | | Machinery Reg. Annex IV | — | G5 | S |
 | [WP-K-03](../10-safety-case/WP-K-03-cybersecurity-case.md) | Cybersecurity case | | | 62443-4-1 (practice evidence); 62443-4-2 (CR evidence) | | — | G5 | S |
 | [WP-K-04](../10-safety-case/WP-K-04-functional-safety-assessment.md) | Functional safety assessment report (performed independently) | | 61508-1 §8 | | | — | G5 | S |
@@ -205,7 +205,7 @@ Regulation (EU) 2023/1230 (Machinery Regulation), Regulation (EU) 2024/1689 (AI 
 | Standard work product | Where it is covered |
 |---|---|
 | Documentation of the risk assessment (ISO 12100 §7) | [WP-C-01](../02-concept/WP-C-01-item-definition.md), [WP-C-03](../02-concept/WP-C-03-risk-assessment.md), [WP-C-05](../02-concept/WP-C-05-risk-reduction-concept.md), indexed by [WP-K-02](../10-safety-case/WP-K-02-technical-documentation-index.md) |
-| Safety requirements specification (ISO 13849-1 §5) | [WP-C-04](../02-concept/WP-C-04-safety-functions-and-plr.md) at concept level, [WP-S-02](../03-system/WP-S-02-safety-requirements-specification.md) for the SRP/CS |
+| Safety requirements specification (ISO 13849-1 §5) | [WP-C-04](../02-concept/WP-C-04-safety-functions-and-plr.md) at concept level, [WP-S-02](../03-system/WP-S-02-safety-requirements.md) for the SRP/CS |
 | Validation plan and report (ISO 13849-1 §10, ISO 13849-2) | [WP-V-01](../06-validation/WP-V-01-safety-validation.md), with the test work products [WP-V-02](../06-validation/WP-V-02-stopping-braking-stability-tests.md)…[WP-V-05](../06-validation/WP-V-05-fault-injection.md) |
 | Technical documentation (ISO 13849-1 §12; Machinery Reg. Annex IV) | [WP-K-02](../10-safety-case/WP-K-02-technical-documentation-index.md) indexes this register |
 | Information for use (ISO 12100 §6.4; ISO 13849-1 §13) | [WP-O-01](../09-production-operation/WP-O-01-assembly-installation-commissioning.md)…[WP-O-03](../09-production-operation/WP-O-03-information-for-use.md) |

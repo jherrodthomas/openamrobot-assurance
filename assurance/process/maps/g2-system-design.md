@@ -90,9 +90,9 @@ Clause references and status are read from the [register (WP-M-00)](../../01-man
 |---|---|---|---|---|---|---|---|---|---|
 | DES-01 System requirements | Joint (all disciplines) | [WP-S-01](../../03-system/WP-S-01-system-requirements.md) | WP-C-01, WP-C-02 |  |  |  |  | SYS.2 | Skeleton |
 | DES-02 Mechanical and stability analysis | Electrical and mechanical (EN 60204-1) | [WP-H-08](../../04-hardware/WP-H-08-mechanical-and-stability-analysis.md) | WP-C-01, WP-C-03 | 12100 §5.3, §6.2; 3691-4 §4 (stability, braking) |  |  | Machinery Reg. Annex III §1.3 |  | Skeleton |
-| DES-03 Safety requirements specification | Safety-related control system (ISO 13849-1) | [WP-S-02](../../03-system/WP-S-02-safety-requirements-specification.md) | WP-C-04, WP-C-05, WP-S-01 | 3691-4 §4 | 13849-1 §5; 62061 §6 |  | 60204-1 §9 | SYS.2 | Skeleton |
+| DES-03 Safety requirements specification | Safety-related control system (ISO 13849-1) | [WP-S-02](../../03-system/WP-S-02-safety-requirements.md) | WP-C-04, WP-C-05, WP-S-01 | 3691-4 §4 | 13849-1 §5; 62061 §6 |  | 60204-1 §9 | SYS.2 | Draft |
 | DES-04 Response time, stopping and safety distance budget | Safety-related control system (ISO 13849-1) | [WP-S-04](../../03-system/WP-S-04-response-time-and-stopping-budget.md) | WP-C-04, WP-C-06, WP-H-08 | 3691-4 §4 (braking, speed) | 13849-1 §5 (response time) |  | ISO 13855 §6 | SYS.3 | Skeleton |
-| DES-05 Safety-related control system architecture | Safety-related control system (ISO 13849-1) | [WP-S-03](../../03-system/WP-S-03-srpcs-architecture.md) | WP-S-02, WP-S-04 |  | 13849-1 §6 |  | 60204-1 §9.4 | SYS.3 | Skeleton |
+| DES-05 Safety-related control system architecture | Safety-related control system (ISO 13849-1) | [WP-S-03](../../03-system/WP-S-03-technical-safety-concept.md) | WP-S-02, WP-S-04 |  | 13849-1 §6 |  | 60204-1 §9.4 | SYS.3 | Draft |
 | DES-06 Safety chain I/O interface | Safety-related control system (ISO 13849-1) | [WP-S-05](../../03-system/WP-S-05-safety-chain-io-interface.md) | WP-S-03 |  | 13849-1 §6, §7 |  |  | SYS.3 | Skeleton |
 | DES-07 Requirements for installation, operation and maintenance | Joint (all disciplines) | [WP-S-06](../../03-system/WP-S-06-requirements-installation-operation.md) | WP-C-05, WP-S-02 | 12100 §6.4; 3691-4 §6 | 13849-1 §11 | 62443-4-1 SG-1…SG-7 |  | SYS.2 | Skeleton |
 | DES-08 Cybersecurity architecture | Cybersecurity (IEC 62443) | [WP-S-07](../../03-system/WP-S-07-cybersecurity-architecture.md) | WP-C-08, WP-S-03 |  |  | 62443-4-1 SD-1…SD-4; 62443-3-3 §5 |  | SEC.1, SYS.3 | Skeleton |
@@ -101,7 +101,7 @@ Clause references and status are read from the [register (WP-M-00)](../../01-man
 | DES-11 Common cause failure analysis | Safety-related control system (ISO 13849-1) | [WP-A-03](../../08-analyses/WP-A-03-common-cause-failure-analysis.md) | WP-S-03, WP-A-01 |  | 13849-1 §6, Annex F |  |  |  | Skeleton |
 | DES-12 STPA of the motion control chain | Joint (all disciplines) | [WP-A-04](../../08-analyses/WP-A-04-stpa.md) | WP-S-03, WP-S-05, WP-C-10 | 12100 §5.4 |  |  | STPA Handbook 2018 |  | Skeleton |
 | DES-13 Independence of the safety chain from the functional stack | Safety-related control system (ISO 13849-1) | [WP-A-05](../../08-analyses/WP-A-05-independence-of-the-safety-chain.md) | WP-S-03, WP-S-07, WP-A-04 |  | 13849-1 §6, §7; 61508-3 Annex F | 62443-3-3 §5 (zoning) |  |  | Skeleton |
-| DES-14 Update the hazard log and the safety case | Joint (all disciplines) | [WP-T-01](../../trace/README.md) *update*, [WP-K-01](../../10-safety-case/WP-K-01-safety-case.md) *update* | WP-S-02, WP-A-01, WP-A-05 |  | 13849-1 §5; 61508-3 §7.2; 61508-1 §8 (assessment input) | 62443-4-1 SR-5 | UL 4600; Machinery Reg. Annex IV | consistency evidence (SYS.2–5, SWE.1–6) | Skeleton |
+| DES-14 Update the hazard log and the safety case | Joint (all disciplines) | [WP-T-01](../../trace/README.md) *update*, [WP-K-01](../../10-safety-case/WP-K-01-safety-case.md) *update* | WP-S-02, WP-A-01, WP-A-05 |  | 13849-1 §5; 61508-3 §7.2; 61508-1 §8 (assessment input) | 62443-4-1 SR-5 | UL 4600; Machinery Reg. Annex IV | consistency evidence (SYS.2–5, SWE.1–6) | Draft, Skeleton |
 
 ## 3. Cross-domain interfaces
 
@@ -109,7 +109,7 @@ Each interface is anchored to text in the work products; the checker fails if an
 
 | ID | Pattern | Between | Topic | Status | Open item | Due |
 |---|---|---|---|---|---|---|
-| IX-05 | Safety-Security | [WP-S-03](../../03-system/WP-S-03-srpcs-architecture.md), [WP-S-07](../../03-system/WP-S-07-cybersecurity-architecture.md) (Safety-related control system / Cybersecurity) | The safety chain is a zone with no conduit from the ROS 2 network; no chain input is reachable from software or the network | Documented | — | G2 |
+| IX-05 | Safety-Security | [WP-S-03](../../03-system/WP-S-03-technical-safety-concept.md), [WP-S-07](../../03-system/WP-S-07-cybersecurity-architecture.md) (Safety-related control system / Cybersecurity) | The safety chain is a zone with no conduit from the ROS 2 network; no chain input is reachable from software or the network | Documented | — | G2 |
 | IX-06 | Control-Mechanical | [WP-S-04](../../03-system/WP-S-04-response-time-and-stopping-budget.md), [WP-H-08](../../04-hardware/WP-H-08-mechanical-and-stability-analysis.md) (Safety-related control system / Electrical and mechanical) | The deceleration the stopping budget assumes must stay inside the tip-over margin | Documented | — | G2 |
 
 ## 4. Clause coverage by standard
@@ -126,7 +126,7 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Exit criterion (WP-M-00 §2):** Safety requirements specification, SRP/CS architecture with categories and diagnostics, response-time budget, mechanical and stability analysis and system-level analyses approved
 
-**Work products:** 15 Skeleton of 15. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
+**Work products:** 3 Draft, 12 Skeleton of 15. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
 
 **Roles the lanes need (WP-M-02 §3.1):**
 
@@ -136,7 +136,7 @@ Which activity answers each clause reference listed in the register. One activit
 | Safety-related control system (ISO 13849-1) | Safety-related control system engineer | Jherrod Thomas (acting); additional contributors TBD | G2 |
 | Electrical and mechanical (EN 60204-1) | Electrical and mechanical engineer | TBD (likely external) | G2 |
 | Cybersecurity (IEC 62443) | Cybersecurity manager | Jherrod Thomas (acting); permanent holder TBD | G1 |
-| Independent confirmation | External functional safety assessor | TBD (DQ-008) | G1 |
+| Independent confirmation | External functional safety assessor | TBD (DQ-010) | G1 |
 
 **Other roles WP-M-02 §3.1 needs by G2:** Firmware and software engineer(s) (Jherrod Thomas; additional contributors TBD); Verification reviewer(s) (TBD (at least one person other than the author); needed by G0, still unassigned); Quality assurance (TBD (independent of the author); needed by G0, still unassigned); Test operator(s) (TBD (trained per WP-M-04); needed by G1, still unassigned).
 
@@ -151,4 +151,4 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Work products with no confirmation measure at this gate** (verification review only): WP-S-01, WP-S-06, WP-S-07, WP-T-01, WP-K-01.
 
-**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (WP-C-10 OI-2 and decision DQ-009: choose the detection means (safety scanner, bumpers or a separated area)).
+**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (WP-C-10 OI-2 and decision DQ-007: choose the detection means (safety scanner, bumpers or a separated area)).

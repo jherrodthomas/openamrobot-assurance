@@ -102,7 +102,7 @@ that hold only procedurally. The PLr is the level the safety function that addre
 | H-03 loss of control | S2 | F1 | P2 | Driver fault latches and the known wheel dropout are occasional, but the resulting swerve is unannounced | **c** (d if F2 is confirmed by field data) | SF-06, SF-03 |
 | H-04 bench entanglement | S1 | F1 | P1 | 60 W motors through a 1:25 gearbox can trap a finger or cable; wheels in the air; a technician is at the robot and can cut 24 V | **a** (b with wheels on the ground) | SF-01, SF-07, information for use |
 | H-05 unexpected start-up | S2 | F1 | P2 | Rare but the robot restarts with no reset and no indication | **c** | SF-05, SF-01 |
-| H-06 tipping, payload | S2 | F1 | P1 | Unknown margins; a heavy payload is foreseeable; crew can keep clear if trained | **c** | design measures (DM-01…DM-03), AoU-06, AoU-07 |
+| H-06 tipping, payload | S2 | F1 | P1 | Unknown margins; a heavy payload is foreseeable; crew can keep clear if trained | **c** | design measures (DM-01…DM-03), AOU-06, AOU-07 |
 | H-07 electrical fire | S2 | F1 | P2 | A short is rare; its consequence is uncontrolled | n/a (not a control function) | DM-04 fuse and disconnect |
 | H-08 electric shock | S2 | F1 | P1 | Mains present only when charging; competent person | n/a | DM-05 mains installation per EN 60204-1 |
 | H-09 battery | S1 | F1 | P1 | AGM is sealed; gassing and back-feed are slow events | n/a | DM-06 source selection, battery monitoring |
@@ -167,7 +167,7 @@ Notes:
 ## 8. Residual risk and conditions
 
 Until SF-01 exists, no operation with wheels on the ground is inside this assessment unless an operator holds a
-means to cut 24 V (AoU-01) and nobody else is within reach of the robot (AoU-02). Until SF-02 exists, autonomous
+means to cut 24 V (AOU-01) and nobody else is within reach of the robot (AOU-02). Until SF-02 exists, autonomous
 operation around people is outside the assessment whatever the software envelope does. Docking and undocking are
 outside the assessment until GAP-15 and GAP-35 are closed.
 
@@ -186,9 +186,9 @@ outside the assessment until GAP-15 and GAP-35 are closed.
 | H-09 | GAP-20, GAP-21 | |
 | H-10 | GAP-28, GAP-12, GAP-38 | |
 | H-11 | GAP-03, GAP-16, GAP-37 | |
-| H-12 | GAP-27, GAP-29 | DQ-003, DQ-012 |
+| H-12 | GAP-27, GAP-29 | DQ-003, DQ-013 |
 
-Cyber-induced hazards are analysed in WP-C-07 ([threat and risk assessment](WP-C-07-cybersecurity-threat-and-risk-assessment.md)); H-12 is the hazard its scenarios map back to, and the security level target behind the PLr c rating is decision DQ-012.
+Cyber-induced hazards are analysed in WP-C-07 ([threat and risk assessment](WP-C-07-cybersecurity-threat-and-risk-assessment.md)); H-12 is the hazard its scenarios map back to, and the security level target behind the PLr c rating is decision DQ-013.
 
 ## 10. Open items
 

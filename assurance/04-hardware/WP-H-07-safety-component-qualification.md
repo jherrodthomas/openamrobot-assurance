@@ -22,7 +22,7 @@ Qualification of the safety components the chain uses: certificates and declarat
 
 ## 2. Certified components
 
-Safety relay (upstream names a Pilz PNOZ s3), E-stop devices (Schneider XB4BS8445 with ZBE-102), contactors (Gigavac GX11CAC), safety scanner (type 3 per IEC 61496-3, to be selected in DQ-009), brakes.
+Safety relay (upstream names a Pilz PNOZ s3), E-stop devices (Schneider XB4BS8445 with ZBE-102), contactors (Gigavac GX11CAC), safety scanner (type 3 per IEC 61496-3, to be selected in DQ-007), brakes.
 
 ## 3. Well-tried components
 

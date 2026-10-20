@@ -124,7 +124,7 @@ needs confirmation review by an independent assessor.
 |---|---|---|---|
 | T-01 | Lifecycle entry | Treat the fork as a **modification of existing machinery**: impact analysis ([WP-M-11](WP-M-11-impact-analysis.md)), then a full concept phase. Nothing is reused from upstream as a safety work product, because none exists | Upstream has no risk assessment, safety functions or validation; the "deliberate and tracked" gaps are strengths of process, not evidence |
 | T-02 | Machine boundary | The machine is the mobile base as delivered plus the safety hardware the fork adds. The docking station, the Wi-Fi network and the operator's computer are outside the machine, with interface assumptions | The fork controls the robot; it does not control the site network or the operator's laptop |
-| T-03 | Safety function allocation | **Safety functions are implemented by a hardwired safety chain** (E-stop, safety relay, contactors, brakes, safety scanner OSSDs). The Teensy firmware and the ROS 2 stack are functional layers that are hardened but carry no PL claim. Recommended in decision DQ-013; open | Matches upstream's own principle (`TELEMETRY-NOT-SAFETY-EVIDENCE`); keeps the PL d argument inside components with certificates and known reliability data; avoids a PL d software lifecycle on 2,765 lines of untested Python |
+| T-03 | Safety function allocation | **Safety functions are implemented by a hardwired safety chain** (E-stop, safety relay, contactors, brakes, safety scanner OSSDs). The Teensy firmware and the ROS 2 stack are functional layers that are hardened but carry no PL claim. Recommended in decision DQ-014; open | Matches upstream's own principle (`TELEMETRY-NOT-SAFETY-EVIDENCE`); keeps the PL d argument inside components with certificates and known reliability data; avoids a PL d software lifecycle on 2,765 lines of untested Python |
 | T-04 | Firmware hardening | The firmware is hardened (watchdog, `/cmd_vel` validation, plausibility checks, debug paths removed), **as defence in depth**, and recorded with impact analyses. It is verified to ISO 13849-1 §7 SRESW practices at the level of "could be claimed later", not claimed now | The hardening is cheap and reduces demand on the chain; a later decision can promote the firmware to part of the SRP/CS once it has a verification history |
 | T-05 | Hardware | Safety components are bought with certificates (safety relay, contactors with mirror contacts, type 3 scanner, brakes) and qualified under ISO 13849-1 as well-tried or certified components; the remaining hardware (drivers, motors, encoders) is treated as not safety-related | No supplier evidence exists for the inherited drivers or motors; the chain removes power upstream of them |
 | T-06 | Proven in use | **Not claimed** for any element. Upstream's run history is supporting evidence only ([WP-P-09](../07-supporting/WP-P-09-proven-in-use.md)) | No controlled configuration or field-problem history that would meet IEC 61508 |
@@ -132,9 +132,9 @@ needs confirmation review by an independent assessor.
 | T-08 | Upstream | Botshare is treated as an upstream supplier with no development interface agreement; the supplier-side activities fall to the fork ([WP-M-10](WP-M-10-upstream-and-supplier-management.md)). Upstream's `decisions.yaml` is quoted, never restated | Upstream is under no contract |
 | T-09 | Independence | Verification reviews may be done by project members (I0/I1), never by the author. With one maintainer, I1 review needs an external reviewer and self-review is recorded as I0. Confirmation reviews of the risk assessment, the safety plan and the safety case, and the functional safety assessment, need an **external** assessor (I2/I3) ([WP-M-06](WP-M-06-confirmation-measures-plan.md)) | One maintainer today |
 | T-10 | Performance limits of perception | ISO 21448 is used as a method, not a standard to comply with, inside WP-C-10 and WP-V-08 | No machinery standard covers it and the gap assessment's worst findings (GAP-14, GAP-22, GAP-35) are performance limits, not faults |
-| T-11 | Cybersecurity scope | IEC 62443-4-1 practices are applied to the three platform repositories; IEC 62443-4-2 component requirements to the robot as one component with a security level target decided by the lead (DQ-012). The site network is an external zone | The fork controls the robot's software and configuration, not the network it is deployed on |
+| T-11 | Cybersecurity scope | IEC 62443-4-1 practices are applied to the three platform repositories; IEC 62443-4-2 component requirements to the robot as one component with a security level target decided by the lead (DQ-013). The site network is an external zone | The fork controls the robot's software and configuration, not the network it is deployed on |
 | T-12 | Process capability | ASPICE 4.0 is used for a self-assessment of process capability ([WP-M-12](WP-M-12-process-capability-baseline.md)), target CL2 for management, support, system and software processes, CL1 for hardware and ML. No ASPICE assessment is claimed | Continues the gap assessment's GAP-34 rating; gives the fork a process model the robotics standards lack |
-| T-13 | Regulatory | EU frame recommended (DQ-003): Machinery Regulation and the harmonised route through ISO 3691-4 and ISO 13849-1. The conformity module is decision DQ-007. The AI Act applies only if a learned component becomes a safety component, which T-03 avoids | Where the robot is made and sold; one technical file |
+| T-13 | Regulatory | EU frame recommended (DQ-003): Machinery Regulation and the harmonised route through ISO 3691-4 and ISO 13849-1. The conformity module is decision DQ-009. The AI Act applies only if a learned component becomes a safety component, which T-03 avoids | Where the robot is made and sold; one technical file |
 | T-14 | Arms and lift | Out of the first machine definition (DQ-004, recommended A). Interface assumptions the arms will need (stop chain, payload, centre of gravity) are stated in WP-C-01 now | No arm or lift code is public; the base case must not have to be rewritten when they arrive |
 
 ## 6. Safety architecture argument (the central strategy)
@@ -173,10 +173,10 @@ needs confirmation review by an independent assessor.
 
 1. **The hardware does not exist yet.** The Gate A unit has no chain at all. The first engineering act of the fork
    is bench safety hardware (fuse, disconnect, dual-channel E-stop through a safety relay, driver fault read-back)
-   before any further on-ground test ([WP-V-07](../06-validation/WP-V-07-test-operations.md), gap assessment §10 action 4, decision DQ-010).
+   before any further on-ground test ([WP-V-07](../06-validation/WP-V-07-test-operations.md), gap assessment §10 action 4, decision DQ-011).
 2. **Personnel detection decides the operating environment.** Without a safety-rated scanner or bumpers, nothing
    below the LiDAR plane is seen and no protective stop exists (GAP-14, GAP-22). Either the fork fits a type 3
-   scanner, or the operating area excludes people (DQ-005, DQ-009). Until decided, no operation around people is
+   scanner, or the operating area excludes people (DQ-005, DQ-007). Until decided, no operation around people is
    inside the case.
 3. **Stopping distance is the number everything hangs on.** Protective field dimensions (ISO 13855), the speed
    limit and the stop category all derive from a measured stopping distance that nobody has measured (GAP-02,
@@ -198,7 +198,7 @@ and the integrated maps in the [process model (WP-P-11)](../process/README.md).
 
 | Phase | Gate | What it settles | Hold points |
 |---|---|---|---|
-| P0 Governance | G0 | Plans, roles, configuration control, the frame (DQ-002, DQ-003), the conformity route (DQ-007) | None; the fork drives nothing |
+| P0 Governance | G0 | Plans, roles, configuration control, the frame (DQ-002, DQ-003), the conformity route (DQ-009) | None; the fork drives nothing |
 | P1 Concept | G1 | Machine limits, risk assessment, safety functions with PLr, risk reduction concept, detection concept, cybersecurity and ML concepts, test operations | **Hold point:** no on-ground test without the bench safety hardware and WP-V-07 approved |
 | P2 System design | G2 | SRS, chain architecture and category, response-time and stopping budget, I/O map, mechanical and stability analysis, system analyses | |
 | P3 HW/SW development | G3 | Chain hardware and PL calculation, firmware hardening, software verification, qualification of components and tools | |
@@ -218,15 +218,15 @@ index, the register entry is the question.
 | D-03 | Regulatory frame: EU machinery | DQ-003 | Open, recommended A |
 | D-04 | First machine: base only | DQ-004 | Open, recommended A |
 | D-05 | Required PL for the stop functions: PL d, people share the space | DQ-005 | Open, recommended A |
-| D-06 | Conformity assessment route and module | DQ-007 | Open |
-| D-07 | Independent assessor: when | DQ-008 | Open |
-| D-08 | Personnel detection means: scanner, bumpers or separated area | DQ-009 | Queued, after DQ-005 |
-| D-09 | Bench safety hardware for the Gate A unit before further tests | DQ-010 | Open |
-| D-10 | Roles and self-approval while the project has one person | DQ-011 | Open |
-| D-11 | Cybersecurity security level target | DQ-012 | Queued |
-| D-12 | Safety function allocation: hardwired chain only, or firmware inside the SRP/CS | DQ-013 | Open |
-| D-13 | Stop category for the emergency stop | DQ-014 | Queued |
-| D-14 | Buying the standards | DQ-015 | Open |
+| D-06 | Conformity assessment route and module | DQ-009 | Open |
+| D-07 | Independent assessor: when | DQ-010 | Open |
+| D-08 | Personnel detection means: scanner, bumpers or separated area | DQ-007 | Queued, after DQ-005 |
+| D-09 | Bench safety hardware for the Gate A unit before further tests | DQ-011 | Open |
+| D-10 | Roles and self-approval while the project has one person | DQ-012 | Open |
+| D-11 | Cybersecurity security level target | DQ-013 | Queued |
+| D-12 | Safety function allocation: hardwired chain only, or firmware inside the SRP/CS | DQ-014 | Open |
+| D-13 | Stop category for the emergency stop | DQ-015 | Queued |
+| D-14 | Buying the standards | DQ-016 | Open |
 
 ## 9. Top risks to the assurance path
 
@@ -235,9 +235,9 @@ Project risks are managed in [WP-M-07](WP-M-07-risk-management.md). The ones tha
 | Risk | Effect | Response |
 |---|---|---|
 | The lead cannot fund a safety scanner, a safety relay and brakes | No protective stop; the operating environment must exclude people and the case shrinks to a test cell | DQ-005 option B is a defensible fallback; the chain is still needed for the E-stop |
-| One person holds every role | No I1 review, no confirmation measure, self-approval everywhere | T-09; DQ-008, DQ-011; verification reviews by any second contributor count |
+| One person holds every role | No I1 review, no confirmation measure, self-approval everywhere | T-09; DQ-010, DQ-012; verification reviews by any second contributor count |
 | Upstream 2.0 lands and moves the hardware under the assessment | Hardware findings on Gate A overtaken; re-statement of WP-C-01, WP-H-* | DQ-002 option A accepts this; the ROS 2 and firmware findings carry over |
-| The standards are not available to the authors | Clause numbers wrong; tailoring argued against memory | DQ-015; every clause reference marked to check; WP-M-06 OI-1 |
+| The standards are not available to the authors | Clause numbers wrong; tailoring argued against memory | DQ-016; every clause reference marked to check; WP-M-06 OI-1 |
 | The Machinery Regulation's AI provisions pull a learned component into Annex I Part A | Mandatory third-party conformity assessment and an AI Act file | T-03 keeps learned components outside every safety function; WP-M-13 tracks the threshold |
 
 ## 10. Open items
@@ -246,5 +246,5 @@ Project risks are managed in [WP-M-07](WP-M-07-risk-management.md). The ones tha
 |---|---|---|---|
 | OI-1 | Record CFG-001 as a configuration record once the Living Safety Case records exist | Safety manager | G1 |
 | OI-2 | Replace the text diagram of §6.1 with a generated figure pinned to §6.1 and §6.2 so CI detects when it may be stale | Safety manager | G1 |
-| OI-3 | Confirm the tailoring table with the assessor once engaged (DQ-008) | Safety manager | G1 |
+| OI-3 | Confirm the tailoring table with the assessor once engaged (DQ-010) | Safety manager | G1 |
 | OI-4 | Obtain upstream's plan-set documents P-03, E-01 and B-02 or record their content as the fork's own design (GAP-33) | Project maintainer | G1 |

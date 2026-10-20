@@ -100,7 +100,7 @@ Clause references and status are read from the [register (WP-M-00)](../../01-man
 | REL-08 Release management and baseline procedure | Joint (all disciplines) | [WP-P-10](../../07-supporting/WP-P-10-release-management.md) | WP-P-01, WP-P-02 |  | 61508-1 §6.2.3 | 62443-4-1 SUM-1…SUM-5 | Machinery Reg. Annex V | SUP.8 | Skeleton |
 | REL-09 Technical documentation index | Joint (all disciplines) | [WP-K-02](../../10-safety-case/WP-K-02-technical-documentation-index.md) | WP-M-13, WP-P-04, WP-V-01, WP-O-03 | 12100 §7 | 13849-1 §12 |  | Machinery Reg. Annex IV |  | Skeleton |
 | REL-10 AI Act conformity record | Machine learning (ISO/IEC TR 5469) | [WP-K-07](../../10-safety-case/WP-K-07-ai-act-conformity-record.md) | WP-C-09, WP-W-10, WP-K-02 |  |  |  | AI Act Art. 6, Art. 43, Annex IV |  | Skeleton |
-| REL-11 Complete the safety case | Joint (all disciplines) | [WP-K-01](../../10-safety-case/WP-K-01-safety-case.md) *update*, [WP-T-01](../../trace/README.md) *update* | WP-V-01, WP-V-08, WP-K-03, WP-K-02 |  | 61508-1 §8 (assessment input); 13849-1 §5; 61508-3 §7.2 | 62443-4-1 SR-5 | UL 4600; Machinery Reg. Annex IV | consistency evidence (SYS.2–5, SWE.1–6) | Skeleton |
+| REL-11 Complete the safety case | Joint (all disciplines) | [WP-K-01](../../10-safety-case/WP-K-01-safety-case.md) *update*, [WP-T-01](../../trace/README.md) *update* | WP-V-01, WP-V-08, WP-K-03, WP-K-02 |  | 61508-1 §8 (assessment input); 13849-1 §5; 61508-3 §7.2 | 62443-4-1 SR-5 | UL 4600; Machinery Reg. Annex IV | consistency evidence (SYS.2–5, SWE.1–6) | Draft, Skeleton |
 | REL-12 Functional safety assessment | Independent confirmation | [WP-K-04](../../10-safety-case/WP-K-04-functional-safety-assessment.md) | WP-K-01, WP-V-01, WP-S-09 |  | 61508-1 §8 |  |  |  | Skeleton |
 | REL-13 Cybersecurity assessment | Independent confirmation | [WP-K-05](../../10-safety-case/WP-K-05-cybersecurity-assessment.md) | WP-K-03, WP-V-06 |  |  | 62443-4-1 §4.3 (conformance) |  |  | Skeleton |
 | REL-14 Release record and declaration of conformity draft | Joint (all disciplines) | [WP-K-06](../../10-safety-case/WP-K-06-release-record.md) | WP-K-02, WP-K-04, WP-K-05, WP-P-10 |  |  |  | Machinery Reg. Art. 21, Annex V | SUP.8 | Skeleton |
@@ -128,7 +128,7 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Exit criterion (WP-M-00 §2):** Safety validation on the robot, cybersecurity validation, safety case, functional safety assessment and technical documentation complete; release record signed
 
-**Work products:** 15 Skeleton of 15. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
+**Work products:** 1 Draft, 14 Skeleton of 15. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
 
 **Roles the lanes need (WP-M-02 §3.1):**
 
@@ -139,9 +139,9 @@ Which activity answers each clause reference listed in the register. One activit
 | Safety-related control system (ISO 13849-1) | Safety-related control system engineer | Jherrod Thomas (acting); additional contributors TBD | G2 |
 | Cybersecurity (IEC 62443) | Cybersecurity manager | Jherrod Thomas (acting); permanent holder TBD | G1 |
 | Machine learning (ISO/IEC TR 5469) | ML safety lead | Jherrod Thomas (acting); permanent holder TBD | G1 |
-| Independent confirmation | External functional safety assessor | TBD (DQ-008) | G1 |
+| Independent confirmation | External functional safety assessor | TBD (DQ-010) | G1 |
 
-**Other roles WP-M-02 §3.1 needs by G5:** Electrical and mechanical engineer (TBD (likely external); needed by G2, still unassigned); Verification reviewer(s) (TBD (at least one person other than the author); needed by G0, still unassigned); Quality assurance (TBD (independent of the author); needed by G0, still unassigned); Test bench owner (TBD; needed by G3, still unassigned); Test operator(s) (TBD (trained per WP-M-04); needed by G1, still unassigned); External cybersecurity assessor (TBD); Notified body (TBD (DQ-007)).
+**Other roles WP-M-02 §3.1 needs by G5:** Electrical and mechanical engineer (TBD (likely external); needed by G2, still unassigned); Verification reviewer(s) (TBD (at least one person other than the author); needed by G0, still unassigned); Quality assurance (TBD (independent of the author); needed by G0, still unassigned); Test bench owner (TBD; needed by G3, still unassigned); Test operator(s) (TBD (trained per WP-M-04); needed by G1, still unassigned); External cybersecurity assessor (TBD); Notified body (TBD (DQ-009)).
 
 **Confirmation measures (WP-M-06 §9):**
 
@@ -155,4 +155,4 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Work products with no confirmation measure at this gate** (verification review only): WP-O-01, WP-O-02, WP-O-03, WP-V-08, WP-P-10, WP-T-01.
 
-**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (WP-C-10 OI-2 and decision DQ-009: choose the detection means (safety scanner, bumpers or a separated area)).
+**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (WP-C-10 OI-2 and decision DQ-007: choose the detection means (safety scanner, bumpers or a separated area)).

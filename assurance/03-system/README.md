@@ -11,8 +11,8 @@ Standard clauses: ISO 13849-1 §5–§6 and §8, IEC 62061 §6, EN 60204-1 §9, 
 | ID | Work product | Gate | Status |
 |---|---|---|---|
 | [WP-S-01](WP-S-01-system-requirements.md) | System requirements specification (functional, non-safety) | G2 | Skeleton |
-| [WP-S-02](WP-S-02-safety-requirements-specification.md) | Safety requirements specification for the SRP/CS | G2 | Skeleton |
-| [WP-S-03](WP-S-03-srpcs-architecture.md) | Safety-related control system architecture (designated architectures, categories, channels, diagnostics) | G2 | Skeleton |
+| [WP-S-02](WP-S-02-safety-requirements.md) | Safety requirements specification for the SRP/CS | G2 | Draft |
+| [WP-S-03](WP-S-03-technical-safety-concept.md) | Technical safety concept: safety-related control system architecture (designated architectures, categories, channels, diagnostics, allocation of SF-01…SF-07) | G2 | Draft |
 | [WP-S-04](WP-S-04-response-time-and-stopping-budget.md) | Response time, stopping performance and safety distance budget | G2 | Skeleton |
 | [WP-S-05](WP-S-05-safety-chain-io-interface.md) | Hardware-software interface of the safety chain (I/O map, signal semantics) | G2 | Skeleton |
 | [WP-S-06](WP-S-06-requirements-installation-operation.md) | Requirements for installation, operation, maintenance and decommissioning | G2 | Skeleton |

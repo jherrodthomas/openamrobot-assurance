@@ -133,21 +133,21 @@ skeleton. They are observations for the safety manager, not decisions.
 2. **One person holds almost every role.** Safety manager, maintainer, configuration manager, cybersecurity
    manager, ML safety lead, SRP/CS engineer and software engineer. The electrical and mechanical engineer is TBD and
    needed by G2. Independent checking rests entirely on the two G0 confirmation measures and the assessor, who is
-   not engaged (DQ-008).
+   not engaged (DQ-010).
 3. **Two decisions shape everything below G0 and are still open:** the frame (DQ-003) and the conformity route
-   (DQ-007). The regulatory strategy (WP-M-13) is drafted on the recommended answers.
+   (DQ-009). The regulatory strategy (WP-M-13) is drafted on the recommended answers.
 4. **The process model is itself a G0 work product.** GOV-21 produces WP-P-11 from the register, the safety plan
    and the confirmation plan, so this model can only be as current as those three documents.
 
 ### 6.1 Concept phase ([G1 map](maps/g1-concept.md))
 
 1. **One interface blocks G1: IX-02.** The protective stop SF-02 has a required PL but no detection means until
-   DQ-009 is answered. Everything that follows (the stopping budget, the protective fields, WP-V-03) depends on
+   DQ-007 is answered. Everything that follows (the stopping budget, the protective fields, WP-V-03) depends on
    it.
 2. **The risk lane carries most of the phase.** Five of the twelve activities (CON-02, CON-03, CON-04, CON-06,
    CON-07) sit in the machinery risk assessment lane, all held by the safety manager.
 3. **The test operations hold point (CON-11) is a G1 work product,** but its conditions (bench safety hardware,
-   DQ-010) are needed before the first stopping-distance measurement, which the concept itself depends on (mass,
+   DQ-011) are needed before the first stopping-distance measurement, which the concept itself depends on (mass,
    stopping distance, GAP-23). Expect the first on-ground test inside P1, under the at-risk rule of WP-M-02 §4.1.
 4. **Four G1 work products have no confirmation measure at G1:** WP-C-02, WP-V-07, WP-T-01, WP-K-01. They are
    reviewed only through verification review (WP-P-05), and the verification reviewer role is unassigned.
@@ -166,7 +166,7 @@ skeleton. They are observations for the safety manager, not decisions.
 ### 6.3 Hardware and software development phase ([G3 map](maps/g3-hw-sw-development.md))
 
 1. **The PL calculation waits on three lanes.** DEV-08 needs the fault lists (SRP/CS), the component certificates
-   (hardware and supplier management) and the CCF score (from G2). Buying certified components (DQ-010, upstream
+   (hardware and supplier management) and the CCF score (from G2). Buying certified components (DQ-011, upstream
    `SAFETY-PROCUREMENT`) is the long-lead item.
 2. **Firmware hardening starts from no verification.** DEV-01 (environment and a reproducible build) precedes every
    software activity; the inherited firmware has no build in CI, no tests and no static analysis (GAP-11).
@@ -187,7 +187,7 @@ skeleton. They are observations for the safety manager, not decisions.
 ### 6.5 Validation and release phase ([G5 map](maps/g5-validation-and-release.md))
 
 1. **Release depends on parties nobody has engaged.** The final functional safety assessment (REL-12, WP-K-04),
-   the cybersecurity assessment (REL-13, WP-K-05), the penetration tester (REL-06) and, if DQ-007 selects a module
+   the cybersecurity assessment (REL-13, WP-K-05), the penetration tester (REL-06) and, if DQ-009 selects a module
    with third-party involvement, a notified body (NB-1).
 2. **The three arguments meet once,** in REL-11 where the safety case is completed with the cybersecurity case
    (IX-10) and the technical documentation; the assessment and the release record then depend on that single step.

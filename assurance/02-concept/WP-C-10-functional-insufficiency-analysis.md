@@ -30,7 +30,7 @@ TC-nn per insufficiency: a child or a seated person, a pallet foot, a doorway, s
 
 ## 4. Detection means and the claim SF-02 can make
 
-Blind zones below the scan plane bound the claim SF-02 can make with the LiDAR alone; the options (type 3 safety scanner at a low plane, bumpers, a separated area) are decision DQ-009.
+Blind zones below the scan plane bound the claim SF-02 can make with the LiDAR alone; the options (type 3 safety scanner at a low plane, bumpers, a separated area) are decision DQ-007.
 
 ## 5. Known and unknown scenarios
 
@@ -45,4 +45,4 @@ FI/TC → safety function, operating-environment limit, or open defeater DF-nn.
 | ID | Item | Owner | Due |
 |---|---|---|---|
 | OI-1 | Write the content; the sections above are the clause map and the seed from the gap assessment | Safety manager | G1 |
-| OI-2 | Decide the detection means (decision DQ-009); until then IX-02 stays open and SF-02 has no implementation | SM | G1 |
+| OI-2 | Decide the detection means (decision DQ-007); until then IX-02 stays open and SF-02 has no implementation | SM | G1 |

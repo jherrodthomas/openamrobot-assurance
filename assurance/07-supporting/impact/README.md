@@ -6,7 +6,7 @@ re-opens, the verification done and the residual open items. Required by [WP-P-0
 for every change on a path of class SR-A, SR-Q or SR-T in [`safety-relevant-paths.txt`](../safety-relevant-paths.txt).
 
 The next record will be the bench safety hardware of [WP-V-07 §2](../../06-validation/WP-V-07-test-operations.md#2-conditions-before-any-on-ground-test)
-(decision DQ-010).
+(decision DQ-011).
 
 | Record | Change | Status |
 |---|---|---|

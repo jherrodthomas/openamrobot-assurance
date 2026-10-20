@@ -1,0 +1,257 @@
+# Source: WP-K-01 Safety Case (§6, evidence status). Machine-readable copy; WP-K-01 remains the reviewed document.
+# evidence_status: available = performed and approved at a named baseline; partial = drafted; missing = not yet performed.
+
+- id: Sn-01
+  kind: evidence
+  title: "Item definition and limits of the machinery"
+  description: "Draft v0.2; unknowns marked"
+  evidence_status: partial
+  lifecycle_area: hazard-analysis
+  location: "assurance/02-concept/WP-C-01-item-definition.md"
+  related_claims: [G0, G4.2]
+  baseline: BL-001
+  configuration: CFG-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: Sn-02
+  kind: evidence
+  title: "Risk assessment and PLr determination"
+  description: "Draft v0.2; ratings need a reviewer with operating experience"
+  evidence_status: partial
+  lifecycle_area: hazard-analysis
+  location: "assurance/02-concept/WP-C-03-risk-assessment.md"
+  related_claims: [G0, G4.2]
+  baseline: BL-001
+  configuration: CFG-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: Sn-03
+  kind: evidence
+  title: "Baseline gap assessment GAP-01 to GAP-40"
+  description: "Draft v0.1; 18 findings re-checked in source"
+  evidence_status: partial
+  lifecycle_area: safety-management
+  location: "assurance/00-assessment/gap-assessment.md"
+  related_claims: [G0]
+  baseline: BL-001
+  configuration: CFG-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: Sn-04
+  kind: evidence
+  title: "Safety requirements specification SR-00.01 to SR-10.03"
+  description: "Draft v0.1; TBC values open"
+  evidence_status: partial
+  lifecycle_area: safety-concepts
+  location: "assurance/03-system/WP-S-02-safety-requirements.md"
+  related_claims: [G1]
+  baseline: BL-001
+  configuration: CFG-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: Sn-05
+  kind: evidence
+  title: "Technical safety concept: stop chain and SRP/CS architecture"
+  description: "Draft v0.1; nothing built"
+  evidence_status: partial
+  lifecycle_area: safety-concepts
+  location: "assurance/03-system/WP-S-03-technical-safety-concept.md"
+  related_claims: [G1]
+  baseline: BL-001
+  configuration: CFG-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: Sn-06
+  kind: evidence
+  title: "Firmware hardening change record and impact analysis"
+  description: "Draft; not compiled on target, not bench-tested"
+  evidence_status: partial
+  lifecycle_area: technical-implementation
+  location: "assurance/07-supporting/impact/change-2026-10-20-fw-hardening.md"
+  related_claims: [G1.4, G1.6, G1.7]
+  baseline: BL-001
+  configuration: CFG-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: Sn-07
+  kind: evidence
+  title: "Stopping-distance and deceleration measurement (category 0 coast and commanded stop)"
+  description: "Not performed"
+  evidence_status: missing
+  lifecycle_area: verification-validation
+  location: "assurance/06-validation/README.md"
+  related_claims: [G1.2, G2.2]
+  baseline: BL-001
+  configuration: CFG-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: Sn-08
+  kind: evidence
+  title: "Emergency-stop chain test record (each device, each channel, welded contact, reset held)"
+  description: "Not performed; no chain exists"
+  evidence_status: missing
+  lifecycle_area: verification-validation
+  location: "assurance/06-validation/README.md"
+  related_claims: [G1.1, G1.5]
+  baseline: BL-001
+  configuration: CFG-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: Sn-09
+  kind: evidence
+  title: "Mass, centre of gravity and tipping record"
+  description: "Not performed"
+  evidence_status: missing
+  lifecycle_area: hazard-analysis
+  location: "assurance/06-validation/README.md"
+  related_claims: [G2.2]
+  baseline: BL-001
+  configuration: CFG-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: Sn-10
+  kind: evidence
+  title: "Firmware compile and bench test of the hardening change"
+  description: "Not performed"
+  evidence_status: missing
+  lifecycle_area: verification-validation
+  location: "assurance/06-validation/README.md"
+  related_claims: [G1.4, G1.6, G1.7, G4.3]
+  baseline: BL-001
+  configuration: CFG-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: Sn-11
+  kind: evidence
+  title: "Protective field and speed-limit validation (ISO 13849-2)"
+  description: "Not performed; no device selected"
+  evidence_status: missing
+  lifecycle_area: verification-validation
+  location: "assurance/06-validation/README.md"
+  related_claims: [G1.2, G1.3]
+  baseline: BL-001
+  configuration: CFG-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: Sn-12
+  kind: evidence
+  title: "Electrical protection inspection (fuse, disconnect, mains, source selection)"
+  description: "Not performed"
+  evidence_status: missing
+  lifecycle_area: technical-implementation
+  location: "assurance/06-validation/README.md"
+  related_claims: [G2.1]
+  baseline: BL-001
+  configuration: CFG-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: Sn-13
+  kind: evidence
+  title: "Network and command-path security concept and test"
+  description: "Not written"
+  evidence_status: missing
+  lifecycle_area: safety-concepts
+  location: "assurance/06-validation/README.md"
+  related_claims: [G3.1]
+  baseline: BL-001
+  configuration: CFG-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: Sn-14
+  kind: evidence
+  title: "Baseline record BL-001"
+  description: "Recorded; commit hashes; tags local only"
+  evidence_status: partial
+  lifecycle_area: safety-management
+  location: "assurance/case/baselines/baselines.yaml"
+  related_claims: [G4.1]
+  baseline: BL-001
+  configuration: CFG-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: Sn-15
+  kind: evidence
+  title: "Safety case WP-K-01"
+  description: "Draft v0.1"
+  evidence_status: partial
+  lifecycle_area: safety-case-review
+  location: "assurance/10-safety-case/WP-K-01-safety-case.md"
+  related_claims: [G4.3]
+  baseline: BL-001
+  configuration: CFG-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"

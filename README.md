@@ -24,6 +24,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/github/license/jherrodthomas/openamrobot-assurance?color=0f6e63" alt="MIT license"></a>
   <a href="assurance/01-management/decisions/README.md"><img src="https://img.shields.io/badge/decisions-register-F2A33A" alt="decision register"></a>
   <a href="assurance/00-assessment/gap-assessment.md"><img src="https://img.shields.io/badge/gaps-published-FF6B5C" alt="gap assessment published"></a>
+  <a href="assurance/case/README.md"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjherrodthomas%2Fopenamrobot-assurance%2Fmain%2Fassurance%2Fcase%2Fbadge.json" alt="Living Safety Case state, from the records"></a>
 </p>
 
 > [!IMPORTANT]
@@ -54,7 +55,7 @@ Nothing is marked complete before its review, and every number below is computed
 
 <!-- BEGIN GENERATED: record-headline (docs/assets/openamrobot/make_assets.py) -->
 
-**P0 Governance** · no gate passed · 89 work products (9 draft, 80 skeleton, 0 approved) · 40 gap findings (22 high) · 9 decisions open · 1 of 11 cross-domain interfaces open · 0 of 22 confirmation measures performed · records digest `2dac649e5449`
+**P0 Governance** · no gate passed · 89 work products (12 draft, 77 skeleton, 0 approved) · 40 gap findings (22 high) · 10 decisions open · 1 of 11 cross-domain interfaces open · 0 of 22 confirmation measures performed · records digest `d5cc139459b7`
 
 <!-- END GENERATED: record-headline -->
 
@@ -66,8 +67,21 @@ Nothing is marked complete before its review, and every number below is computed
 |---|---|
 | A gate counts as passed | only when its record in [`10-safety-case/gates/`](assurance/10-safety-case/gates/README.md) says Pass; a skeleton generated from the process model is not a record |
 | A work product counts as approved | only after a verification review by someone other than its author ([WP-P-05](assurance/07-supporting/WP-P-05-verification-review-procedure.md)); a confirmation measure counts only by its record under [`confirmation/`](assurance/10-safety-case/confirmation/README.md) |
-| The Living Safety Case dashboard | is [planned](assurance/case/README.md): claims, evidence with review state and defeaters as records, with a validator that refuses an accepted claim whose evidence is not accepted. Until it exists, no claim is made anywhere on this page |
+| The Living Safety Case dashboard | is generated from the records in [`assurance/case/`](assurance/case/README.md): claims, evidence with review state, defeaters, actions, configurations and reviews, with a validator that refuses an accepted claim whose evidence is not available and accepted or whose defeater is open |
 | The records digest | identifies the exact state of the register, the gap assessment, the decision register, the process model and the gate and confirmation records these figures describe, so two readers can confirm they saw the same state |
+
+The second generated layer is the Living Safety Case itself: the same claims, evidence and defeaters as records,
+validated and drawn by [`generate_dashboard.py`](assurance/case/tools/generate_dashboard.py).
+
+<p align="center">
+  <img src="docs/assets/assurance/dashboard.svg" width="100%" alt="Living Safety Case dashboard generated from the assurance records: assurance state, baseline, claims with accepted evidence, evidence items accepted, open defeaters, records digest.">
+</p>
+
+<!-- BEGIN GENERATED: assurance-headline (assurance/case/tools/generate_dashboard.py) -->
+
+**Development** · baseline `BL-001` at `8a7a5b1` · 18 claims (0 with accepted evidence) · 15 evidence items (0 accepted) · 40 open defeaters · records digest `a2a85b67ff52`
+
+<!-- END GENERATED: assurance-headline -->
 
 **Start here:** [assurance strategy (WP-M-01)](assurance/01-management/WP-M-01-assurance-strategy.md) · [safety plan (WP-M-02)](assurance/01-management/WP-M-02-safety-plan.md) · [process model and maps (WP-P-11)](assurance/process/README.md) · [test operations hold point (WP-V-07)](assurance/06-validation/WP-V-07-test-operations.md) · [decision register](assurance/01-management/decisions/README.md)
 
@@ -88,7 +102,7 @@ demanded, and recorded as defence in depth.
 |---|---|---|
 | ROS 2 functional stack | Navigation, docking, teleoperation, operator UI; in future a learned policy | Inherited; hardening proposed (command arbiter, docking inside the envelope, SROS2, pinned builds) |
 | Teensy firmware | Validates, times out and clamps every command; reads driver faults; drives the brakes | Inherited; hardening proposed |
-| Hardwired safety chain | Emergency stop, protective stop, brakes, power removal | **Does not exist yet.** Bench version first ([WP-V-07](assurance/06-validation/WP-V-07-test-operations.md)), product version in the [SRP/CS architecture](assurance/03-system/WP-S-03-srpcs-architecture.md) |
+| Hardwired safety chain | Emergency stop, protective stop, brakes, power removal | **Does not exist yet.** Bench version first ([WP-V-07](assurance/06-validation/WP-V-07-test-operations.md)), product version in the [SRP/CS architecture](assurance/03-system/WP-S-03-technical-safety-concept.md) |
 | Safety and assurance | Risk assessment, safety functions and PLr, PL calculation, validation, cybersecurity, safety case | Draft and skeleton work products, not yet reviewed |
 
 More in the [architecture overview](docs/architecture.md) and [WP-M-01 §6](assurance/01-management/WP-M-01-assurance-strategy.md#6-safety-architecture-argument-the-central-strategy).
@@ -112,7 +126,7 @@ the plain-language version.
 | Risk assessment and reduction | ISO 12100:2010 | [Item definition](assurance/02-concept/WP-C-01-item-definition.md) · [Risk assessment](assurance/02-concept/WP-C-03-risk-assessment.md) · [Risk reduction concept](assurance/02-concept/WP-C-05-risk-reduction-concept.md) |
 | Driverless industrial trucks, including AMRs | ISO 3691-4:2023 | [Safety functions and required PL](assurance/02-concept/WP-C-04-safety-functions-and-plr.md) |
 | Industrial robots and collaborative operation (arms, later) | ISO 10218-1/-2:2025, ISO/TS 15066:2016 | [Human-robot interaction](assurance/02-concept/WP-C-06-human-robot-interaction-and-misuse.md) |
-| Safety-related parts of control systems | ISO 13849-1:2023, ISO 13849-2:2012 | [SRP/CS architecture](assurance/03-system/WP-S-03-srpcs-architecture.md) · [PL calculation](assurance/04-hardware/WP-H-04-reliability-data-and-pl-calculation.md) · [Safety validation](assurance/06-validation/WP-V-01-safety-validation.md) |
+| Safety-related parts of control systems | ISO 13849-1:2023, ISO 13849-2:2012 | [SRP/CS architecture](assurance/03-system/WP-S-03-technical-safety-concept.md) · [PL calculation](assurance/04-hardware/WP-H-04-reliability-data-and-pl-calculation.md) · [Safety validation](assurance/06-validation/WP-V-01-safety-validation.md) |
 | Where ISO 13849 runs out | IEC 62061:2021, IEC 61508:2010 | [Software safety requirements](assurance/05-software/WP-W-02-software-safety-requirements.md) · [Confirmation measures](assurance/01-management/WP-M-06-confirmation-measures-plan.md) |
 | Electrical equipment, emergency stop, safeguard positioning | EN 60204-1:2018, ISO 13850:2015, ISO 13855:2024 | [Electrical safety](assurance/04-hardware/WP-H-05-electrical-safety.md) · [Stopping budget](assurance/03-system/WP-S-04-response-time-and-stopping-budget.md) |
 | Cybersecurity | IEC 62443-4-1:2018, IEC 62443-4-2:2019 | [Threat and risk assessment](assurance/02-concept/WP-C-07-cybersecurity-threat-and-risk-assessment.md) · [Cybersecurity plan](assurance/01-management/WP-M-08-cybersecurity-plan.md) |
@@ -143,11 +157,11 @@ structure and clause map exist and the content is still to be written.
 | **1 · Foundation** | [Assurance strategy](assurance/01-management/WP-M-01-assurance-strategy.md), [safety plan](assurance/01-management/WP-M-02-safety-plan.md), [confirmation measures](assurance/01-management/WP-M-06-confirmation-measures-plan.md), [regulatory strategy](assurance/01-management/WP-M-13-regulatory-conformity-strategy.md) | Draft |
 | | [Baseline gap assessment](assurance/00-assessment/gap-assessment.md) | Draft |
 | | [Work product register](assurance/01-management/WP-M-00-work-product-register.md), [process model and maps](assurance/process/README.md), [decision register](assurance/01-management/decisions/README.md) | Draft; checked by CI |
-| | Living Safety Case records and dashboard | [Planned](assurance/case/README.md) |
+| | [Living Safety Case records and dashboard](assurance/case/README.md) | Draft: records at BL-001, validated and drawn by CI |
 | **2 · Safety engineering** | [Item definition](assurance/02-concept/WP-C-01-item-definition.md), [operating environment](assurance/02-concept/WP-C-02-operating-environment-and-tasks.md), [risk assessment](assurance/02-concept/WP-C-03-risk-assessment.md), [safety functions and PLr](assurance/02-concept/WP-C-04-safety-functions-and-plr.md) | Skeleton |
 | | [Insufficiency analysis](assurance/02-concept/WP-C-10-functional-insufficiency-analysis.md), [cybersecurity threat assessment](assurance/02-concept/WP-C-07-cybersecurity-threat-and-risk-assessment.md), [ML component definition](assurance/02-concept/WP-C-09-ml-component-definition-and-safety-requirements.md) | Skeleton |
-| | [Test operations hold point](assurance/06-validation/WP-V-07-test-operations.md) | Draft; bench safety hardware waits on the lead (DQ-010) |
-| **3 · Build and verify** | Bench safety hardware, firmware hardening, [chain architecture](assurance/03-system/WP-S-03-srpcs-architecture.md) and [PL calculation](assurance/04-hardware/WP-H-04-reliability-data-and-pl-calculation.md), [stopping tests](assurance/06-validation/WP-V-02-stopping-braking-stability-tests.md), [fault injection](assurance/06-validation/WP-V-05-fault-injection.md) | Planned |
+| | [Test operations hold point](assurance/06-validation/WP-V-07-test-operations.md) | Draft; bench safety hardware waits on the lead (DQ-013) |
+| **3 · Build and verify** | Bench safety hardware, firmware hardening, [chain architecture](assurance/03-system/WP-S-03-technical-safety-concept.md) and [PL calculation](assurance/04-hardware/WP-H-04-reliability-data-and-pl-calculation.md), [stopping tests](assurance/06-validation/WP-V-02-stopping-braking-stability-tests.md), [fault injection](assurance/06-validation/WP-V-05-fault-injection.md) | Planned |
 | **4 · Validate and release** | [Safety validation](assurance/06-validation/WP-V-01-safety-validation.md), [assessment](assurance/10-safety-case/WP-K-04-functional-safety-assessment.md), [technical documentation](assurance/10-safety-case/WP-K-02-technical-documentation-index.md), [release record](assurance/10-safety-case/WP-K-06-release-record.md), [field monitoring](assurance/09-production-operation/WP-O-04-field-monitoring.md) | Planned |
 
 ## Known gaps
@@ -158,9 +172,9 @@ upstream already states about itself. The findings that shape everything:
 
 | | Finding | Closes through |
 |---|---|---|
-| GAP-01 | No emergency-stop function exists in the documented design | Bench safety hardware before any test ([WP-V-07](assurance/06-validation/WP-V-07-test-operations.md)); the hardwired chain ([WP-S-03](assurance/03-system/WP-S-03-srpcs-architecture.md)) |
+| GAP-01 | No emergency-stop function exists in the documented design | Bench safety hardware before any test ([WP-V-07](assurance/06-validation/WP-V-07-test-operations.md)); the hardwired chain ([WP-S-03](assurance/03-system/WP-S-03-technical-safety-concept.md)) |
 | GAP-02 | The only stop is a coast: the watchdog zeroes PWM and the wheels free-run | Brakes engaged on power loss; a measured stopping distance ([WP-V-02](assurance/06-validation/WP-V-02-stopping-braking-stability-tests.md)) |
-| GAP-14, GAP-22 | Nothing below the LiDAR plane is seen and no detection is safety-rated | The detection means decision (DQ-009) and the protective-field validation ([WP-V-03](assurance/06-validation/WP-V-03-personnel-detection-validation.md)) |
+| GAP-14, GAP-22 | Nothing below the LiDAR plane is seen and no detection is safety-rated | The detection means decision (DQ-007) and the protective-field validation ([WP-V-03](assurance/06-validation/WP-V-03-personnel-detection-validation.md)) |
 | GAP-15, GAP-35, GAP-36 | Docking switches protection off, undock reverses blind, nothing arbitrates commands | Docking inside the envelope and a command arbiter ([WP-W-02](assurance/05-software/WP-W-02-software-safety-requirements.md)) |
 | GAP-19, GAP-20 | No battery fuse, no disconnect, battery and mains in parallel | Electrical safety ([WP-H-05](assurance/04-hardware/WP-H-05-electrical-safety.md)) |
 | GAP-27, GAP-28 | Anyone on the ROS 2 domain can move the robot; the on-screen E-stop is a network request | Cybersecurity requirements and architecture ([WP-C-08](assurance/02-concept/WP-C-08-cybersecurity-requirements-and-sl-target.md), [WP-S-07](assurance/03-system/WP-S-07-cybersecurity-architecture.md)) |

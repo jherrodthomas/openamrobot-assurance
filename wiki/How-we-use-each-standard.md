@@ -49,15 +49,15 @@ environment has no licensed copy; every clause reference is marked to be checked
   the designated architectures (categories B to 4), MTTFD, DCavg and CCF, the software requirements of §7, the
   verification of §8, validation with the fault lists of 13849-2, and the documentation and information-for-use
   requirements.
-- **How:** [WP-S-02](../assurance/03-system/WP-S-02-safety-requirements-specification.md) (SRS),
-  [WP-S-03](../assurance/03-system/WP-S-03-srpcs-architecture.md) (architecture and categories),
+- **How:** [WP-S-02](../assurance/03-system/WP-S-02-safety-requirements.md) (SRS),
+  [WP-S-03](../assurance/03-system/WP-S-03-technical-safety-concept.md) (architecture and categories),
   [WP-H-04](../assurance/04-hardware/WP-H-04-reliability-data-and-pl-calculation.md) (the PL calculation, with a
   SISTEMA project as the record), [WP-H-07](../assurance/04-hardware/WP-H-07-safety-component-qualification.md)
   (certified and well-tried components), [WP-V-01](../assurance/06-validation/WP-V-01-safety-validation.md) and
   [WP-V-05](../assurance/06-validation/WP-V-05-fault-injection.md) (validation and fault lists).
 - **Position taken:** the safety functions are allocated to a **hardwired safety chain** (E-stop, safety relay,
   contactors, brakes, safety scanner outputs). The Teensy firmware and the ROS 2 stack are functional layers that
-  are hardened but carry no PL claim in the first safety case (decision DQ-013). That keeps the PL d argument inside
+  are hardened but carry no PL claim in the first safety case (decision DQ-014). That keeps the PL d argument inside
   components with certificates and known reliability data, and matches upstream's own principle that watchdogs and
   telemetry are never safety evidence.
 
@@ -81,7 +81,7 @@ environment has no licensed copy; every clause reference is marked to be checked
   [WP-V-04](../assurance/06-validation/WP-V-04-emergency-stop-and-safety-chain-validation.md).
 - **Position taken:** the first engineering act of the fork is a fuse, a disconnect and a dual-channel E-stop
   through a safety relay on any unit it tests with, as bench equipment before it is a product design
-  ([WP-V-07](../assurance/06-validation/WP-V-07-test-operations.md), decision DQ-010).
+  ([WP-V-07](../assurance/06-validation/WP-V-07-test-operations.md), decision DQ-011).
 
 ## ISO 13855:2024 and IEC 61496, safeguard positioning and protective equipment
 
@@ -91,7 +91,7 @@ environment has no licensed copy; every clause reference is marked to be checked
   [WP-V-02](../assurance/06-validation/WP-V-02-stopping-braking-stability-tests.md) measures the stopping distance,
   [WP-V-03](../assurance/06-validation/WP-V-03-personnel-detection-validation.md) validates the fields.
 - **Position taken:** the detection means (a type 3 scanner at a low plane, bumpers, or a separated area with no
-  people) is a decision for the lead (DQ-009). Until it is made, no operation around people is inside the case.
+  people) is a decision for the lead (DQ-007). Until it is made, no operation around people is inside the case.
 
 ## IEC 62443-4-1:2018 and IEC 62443-4-2:2019, cybersecurity
 
@@ -134,8 +134,8 @@ environment has no licensed copy; every clause reference is marked to be checked
 - **What we take:** the structure: claims, arguments, evidence with review state, defeaters published rather than
   hidden, assumptions stated, feedback from the field.
 - **How:** [WP-K-01](../assurance/10-safety-case/WP-K-01-safety-case.md) now; the machine-readable records, validator
-  and dashboard [planned](../assurance/case/README.md). GAP-01…GAP-40 become the first
-  defeaters.
+  and dashboard in [`case/`](../assurance/case/README.md). GAP-01…GAP-40 are the first
+  defeaters, all open.
 - **Position taken:** no UL 4600 conformance claim; guidance only.
 
 ## Regulation (EU) 2023/1230, the Machinery Regulation, and Regulation (EU) 2024/1689, the AI Act
@@ -148,7 +148,7 @@ environment has no licensed copy; every clause reference is marked to be checked
   [WP-K-06](../assurance/10-safety-case/WP-K-06-release-record.md) holds the unsigned declaration draft.
 - **Position taken:** EU frame recommended (DQ-003); internal control (Module A) with the harmonised standards
   applied in full recommended for the base, with a voluntary EU type-examination worth considering once the robot
-  leaves the test cell (DQ-007). The US frame (ANSI/A3 R15.08) is deferred and would be a cross-reference, not a
+  leaves the test cell (DQ-009). The US frame (ANSI/A3 R15.08) is deferred and would be a cross-reference, not a
   second file.
 
 ## Automotive SPICE, process capability

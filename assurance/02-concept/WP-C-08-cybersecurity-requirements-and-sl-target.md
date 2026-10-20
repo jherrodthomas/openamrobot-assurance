@@ -22,7 +22,7 @@ Cybersecurity requirements for the robot as one IEC 62443-4-2 component: the sec
 
 ## 2. Security level target
 
-SL-T per FR 1–7, decided in DQ-012 (recommendation: SL 2 for FR 1, 3, 5 and 7; SL 1 otherwise). Rationale from WP-C-07.
+SL-T per FR 1–7, decided in DQ-013 (recommendation: SL 2 for FR 1, 3, 5 and 7; SL 1 otherwise). Rationale from WP-C-07.
 
 ## 3. Component requirements
 

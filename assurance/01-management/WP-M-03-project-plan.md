@@ -34,7 +34,7 @@ Hours per element against the roles of WP-M-02 §3.1; the lead's available hours
 
 ## 5. Schedule and gate roadmap
 
-Gate dates once the hours are known; the long-lead items are the bench safety hardware (DQ-010), the safety scanner (DQ-009) and the assessor (DQ-008). Upstream's v2.0.0 milestones (20 November and 18 December 2026) are external dates the plan tracks, not depends on.
+Gate dates once the hours are known; the long-lead items are the bench safety hardware (DQ-011), the safety scanner (DQ-007) and the assessor (DQ-010). Upstream's v2.0.0 milestones (20 November and 18 December 2026) are external dates the plan tracks, not depends on.
 
 ## 6. Interfaces
 

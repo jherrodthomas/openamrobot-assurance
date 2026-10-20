@@ -28,7 +28,7 @@ one with its clauses, gate and status.
 |---|---|---|
 | `H-` | Hazard | [Risk assessment, WP-C-03](../assurance/02-concept/WP-C-03-risk-assessment.md) |
 | `SF-` | Safety function, with its required Performance Level `PLr` | [WP-C-04](../assurance/02-concept/WP-C-04-safety-functions-and-plr.md) |
-| `SR-` | Safety requirement of the SRP/CS | [WP-S-02](../assurance/03-system/WP-S-02-safety-requirements-specification.md) |
+| `SR-` | Safety requirement of the SRP/CS | [WP-S-02](../assurance/03-system/WP-S-02-safety-requirements.md) |
 | `HWSR-`, `SWSR-` | Hardware and software safety requirement | [WP-H-01](../assurance/04-hardware/WP-H-01-hardware-safety-requirements.md), [WP-W-02](../assurance/05-software/WP-W-02-software-safety-requirements.md) |
 | `CSR-`, `TS-` | Cybersecurity requirement, threat scenario | [WP-C-08](../assurance/02-concept/WP-C-08-cybersecurity-requirements-and-sl-target.md), [WP-C-07](../assurance/02-concept/WP-C-07-cybersecurity-threat-and-risk-assessment.md) |
 | `AIR-` | Requirement on a learned component | [WP-C-09](../assurance/02-concept/WP-C-09-ml-component-definition-and-safety-requirements.md) |

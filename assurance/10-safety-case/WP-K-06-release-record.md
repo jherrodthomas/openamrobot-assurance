@@ -26,7 +26,7 @@ Baseline, configuration, gate G5 decision, assessment reports, open conditions, 
 
 ## 3. Draft declaration of conformity
 
-Annex V items filled from the technical documentation; marked draft, unsigned; the module per DQ-007.
+Annex V items filled from the technical documentation; marked draft, unsigned; the module per DQ-009.
 
 ## 4. Open items
 

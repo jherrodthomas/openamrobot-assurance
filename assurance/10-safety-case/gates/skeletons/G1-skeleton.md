@@ -11,19 +11,19 @@
 | Date | YYYY-MM-DD |
 | Baseline | <commit SHA or tag> |
 | Chair | Safety manager (Jherrod Thomas (acting)) |
-| Participants | Safety manager (Jherrod Thomas (acting)); Safety-related control system engineer (Jherrod Thomas (acting); additional contributors TBD); Cybersecurity manager (Jherrod Thomas (acting); permanent holder TBD); ML safety lead (Jherrod Thomas (acting); permanent holder TBD); External functional safety assessor (TBD (DQ-008)) |
+| Participants | Safety manager (Jherrod Thomas (acting)); Safety-related control system engineer (Jherrod Thomas (acting); additional contributors TBD); Cybersecurity manager (Jherrod Thomas (acting); permanent holder TBD); ML safety lead (Jherrod Thomas (acting); permanent holder TBD); External functional safety assessor (TBD (DQ-010)) |
 | Assessor informed | Yes / No (name) |
 
 ## Inputs (WP-M-02 §10)
 
 | Input | Status at this baseline | Link |
 |---|---|---|
-| WP-M-00 status of the gate's work products | 3 Draft, 10 Skeleton of 13 (table below) | [WP-M-00](../../../01-management/WP-M-00-work-product-register.md) |
+| WP-M-00 status of the gate's work products | 4 Draft, 9 Skeleton of 13 (table below) | [WP-M-00](../../../01-management/WP-M-00-work-product-register.md) |
 | Open anomalies (`safety-anomaly`) | | GitHub issues labelled `safety-anomaly` |
 | Open risks (WP-M-07) | | [WP-M-07](../../../01-management/WP-M-07-risk-management.md) |
 | Confirmation measures assigned to this gate (WP-M-06) and their results | 0 of 6 performed: CR-02, CR-03@G1, CR-04, FSA-I1, CS-I1, ML-R1 | [WP-M-06](../../../01-management/WP-M-06-confirmation-measures-plan.md) |
 | QA findings (WP-M-05) | | [WP-M-05](../../../01-management/WP-M-05-quality-assurance-plan.md) |
-| Open items of the phase's work products | 25 open-item rows not marked closed, any due gate (table below) | |
+| Open items of the phase's work products | 35 open-item rows not marked closed, any due gate (table below) | |
 
 ### Work products of this gate
 
@@ -41,7 +41,7 @@
 | [WP-C-09](../../../02-concept/WP-C-09-ml-component-definition-and-safety-requirements.md) ML component definition and safety requirements (learned policy, perception models) | CON-10 | Skeleton | 1 | |
 | [WP-V-07](../../../06-validation/WP-V-07-test-operations.md) Test operations and safety procedures for on-ground testing (hold point) | CON-11 | Draft | 4 | |
 | [WP-T-01](../../../trace/README.md) Requirements and traceability data (machine-readable), consistency evidence | CON-12 | Skeleton | 1 | |
-| [WP-K-01](../../../10-safety-case/WP-K-01-safety-case.md) Safety case (claims, arguments, evidence, defeaters) | CON-12 | Skeleton | 1 | |
+| [WP-K-01](../../../10-safety-case/WP-K-01-safety-case.md) Safety case (claims, arguments, evidence, defeaters) | CON-12 | Draft | 11 | |
 
 ### Confirmation measures
 
@@ -62,7 +62,7 @@ From the [process model](../../../process/README.md). Each one is a condition on
 
 | Interface | Topic | Open item | Due | Closed? |
 |---|---|---|---|---|
-| IX-02 | The protective stop SF-02 has a PLr but no implementation until the detection means is decided; what the LiDAR cannot see bounds the claim | WP-C-10 OI-2 and decision DQ-009: choose the detection means (safety scanner, bumpers or a separated area) | G1 | |
+| IX-02 | The protective stop SF-02 has a PLr but no implementation until the detection means is decided; what the LiDAR cannot see bounds the claim | WP-C-10 OI-2 and decision DQ-007: choose the detection means (safety scanner, bumpers or a separated area) | G1 | |
 
 ### Roles WP-M-02 §3.1 needs by this gate that are not assigned
 
@@ -71,7 +71,7 @@ From the [process model](../../../process/README.md). Each one is a condition on
 | Verification reviewer(s) | TBD (at least one person other than the author) | G0 |
 | Quality assurance | TBD (independent of the author) | G0 |
 | Test operator(s) | TBD (trained per WP-M-04) | G1 |
-| External functional safety assessor | TBD (DQ-008) | G1 |
+| External functional safety assessor | TBD (DQ-010) | G1 |
 
 ## Exit criteria (WP-M-00 §2)
 

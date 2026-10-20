@@ -38,7 +38,7 @@ From the [process model](../../../process/README.md). Each one is a condition on
 
 | Interface | Topic | Open item | Due | Closed? |
 |---|---|---|---|---|
-| IX-02 | The protective stop SF-02 has a PLr but no implementation until the detection means is decided; what the LiDAR cannot see bounds the claim | WP-C-10 OI-2 and decision DQ-009: choose the detection means (safety scanner, bumpers or a separated area) | G1 | |
+| IX-02 | The protective stop SF-02 has a PLr but no implementation until the detection means is decided; what the LiDAR cannot see bounds the claim | WP-C-10 OI-2 and decision DQ-007: choose the detection means (safety scanner, bumpers or a separated area) | G1 | |
 
 ### Roles WP-M-02 §3.1 needs by this gate that are not assigned
 
@@ -49,9 +49,9 @@ From the [process model](../../../process/README.md). Each one is a condition on
 | Quality assurance | TBD (independent of the author) | G0 |
 | Test bench owner | TBD | G3 |
 | Test operator(s) | TBD (trained per WP-M-04) | G1 |
-| External functional safety assessor | TBD (DQ-008) | G1 |
+| External functional safety assessor | TBD (DQ-010) | G1 |
 | External cybersecurity assessor | TBD | G5 |
-| Notified body | TBD (DQ-007) | G5 |
+| Notified body | TBD (DQ-009) | G5 |
 
 ## Exit criteria (WP-M-00 §2)
 

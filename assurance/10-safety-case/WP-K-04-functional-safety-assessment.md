@@ -18,7 +18,7 @@
 
 ## 1. Purpose
 
-The functional safety assessment report (IEC 61508-1 §8), written by the independent assessor: scope, baseline, independence declaration, method, findings, judgement on whether each safety function achieves its PLr and whether the residual risk is acceptable. Template until an assessor is engaged (DQ-008).
+The functional safety assessment report (IEC 61508-1 §8), written by the independent assessor: scope, baseline, independence declaration, method, findings, judgement on whether each safety function achieves its PLr and whether the residual risk is acceptable. Template until an assessor is engaged (DQ-010).
 
 ## 2. Assessor and independence
 

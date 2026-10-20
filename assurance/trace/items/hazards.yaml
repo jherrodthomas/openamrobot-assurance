@@ -1,0 +1,123 @@
+# Hazards (H-) from WP-C-03 §4 (risk assessment) and safety functions (SF-) from WP-C-03 §7. Ratings are WP-C-03
+# proposals, not approved. Source of truth is WP-C-03. Format: case/tools/subsetyaml.py (restricted YAML subset).
+
+- id: H-01
+  kind: hazard
+  title: "Impact or crushing: the robot drives into a person or pins a person"
+  status: proposed
+  source: WP-C-03
+
+- id: H-02
+  kind: hazard
+  title: "Uncommanded motion, or motion continuing after a stop request"
+  status: proposed
+  source: WP-C-03
+
+- id: H-03
+  kind: hazard
+  title: "Loss of control: one wheel stops or runs away, swerve or run-away"
+  status: proposed
+  source: WP-C-03
+
+- id: H-04
+  kind: hazard
+  title: "Bench entanglement or crushing under powered debug or calibration"
+  status: proposed
+  source: WP-C-03
+
+- id: H-05
+  kind: hazard
+  title: "Unexpected start-up after a stop"
+  status: proposed
+  source: WP-C-03
+
+- id: H-06
+  kind: hazard
+  title: "Instability or tipping from payload, ramp, threshold or hard stop"
+  status: proposed
+  source: WP-C-03
+
+- id: H-07
+  kind: hazard
+  title: "Electrical short circuit or fire on the unfused 24 V bus"
+  status: proposed
+  source: WP-C-03
+
+- id: H-08
+  kind: hazard
+  title: "Electric shock from the 230 V mains side"
+  status: proposed
+  source: WP-C-03
+
+- id: H-09
+  kind: hazard
+  title: "Battery hazards: over-discharge, back-feed, gassing, no BMS"
+  status: proposed
+  source: WP-C-03
+
+- id: H-10
+  kind: hazard
+  title: "Mode confusion: on-screen stop taken for an emergency stop; screen not the room"
+  status: proposed
+  source: WP-C-03
+
+- id: H-11
+  kind: hazard
+  title: "Loss of sensing not acted upon (LiDAR dropout, stale scan, agent lost)"
+  status: proposed
+  source: WP-C-03
+
+- id: H-12
+  kind: hazard
+  title: "Unauthorised command from any participant on the network"
+  status: proposed
+  source: WP-C-03
+
+- id: SF-01
+  kind: safety-function
+  title: "Emergency stop"
+  plr: d
+  status: proposed
+  source: WP-C-03
+
+- id: SF-02
+  kind: safety-function
+  title: "Protective stop on personnel detection"
+  plr: d
+  status: proposed
+  source: WP-C-03
+
+- id: SF-03
+  kind: safety-function
+  title: "Safely-limited speed"
+  plr: d
+  status: proposed
+  source: WP-C-03
+
+- id: SF-04
+  kind: safety-function
+  title: "Stop on loss of command, communication or control"
+  plr: c
+  status: proposed
+  source: WP-C-03
+
+- id: SF-05
+  kind: safety-function
+  title: "Prevention of unexpected start-up"
+  plr: c
+  status: proposed
+  source: WP-C-03
+
+- id: SF-06
+  kind: safety-function
+  title: "Stop on drive fault"
+  plr: c
+  status: proposed
+  source: WP-C-03
+
+- id: SF-07
+  kind: safety-function
+  title: "Powered-debug inhibit"
+  plr: b
+  status: proposed
+  source: WP-C-03

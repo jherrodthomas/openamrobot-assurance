@@ -104,7 +104,7 @@ Clause references and status are read from the [register (WP-M-00)](../../01-man
 | CON-09 Cybersecurity requirements and security level target | Cybersecurity (IEC 62443) | [WP-C-08](../../02-concept/WP-C-08-cybersecurity-requirements-and-sl-target.md) | WP-C-04, WP-C-07 |  |  | 62443-4-1 SR-3…SR-5; 62443-4-2 CR 1–7, SL-T |  | SEC.1 | Skeleton |
 | CON-10 Define the ML components and their safety requirements | Machine learning (ISO/IEC TR 5469) | [WP-C-09](../../02-concept/WP-C-09-ml-component-definition-and-safety-requirements.md) | WP-C-04, WP-C-10 |  |  |  | TR 5469 §6–§8 (classes, usage levels, properties); AI Act Annex IV | MLE.1 | Skeleton |
 | CON-11 Test operations hold point | Joint (all disciplines) | [WP-V-07](../../06-validation/WP-V-07-test-operations.md) | WP-C-01, WP-C-02, WP-C-03 | 12100 §6.4; 3691-4 §6 |  |  |  | VAL.1 | Draft |
-| CON-12 Record the hazard log and the argument structure | Joint (all disciplines) | [WP-T-01](../../trace/README.md), [WP-K-01](../../10-safety-case/WP-K-01-safety-case.md) | WP-C-03, WP-C-04, WP-C-05, WP-C-08, WP-C-09 |  | 13849-1 §5; 61508-3 §7.2; 61508-1 §8 (assessment input) | 62443-4-1 SR-5 | UL 4600; Machinery Reg. Annex IV | consistency evidence (SYS.2–5, SWE.1–6) | Skeleton |
+| CON-12 Record the hazard log and the argument structure | Joint (all disciplines) | [WP-T-01](../../trace/README.md), [WP-K-01](../../10-safety-case/WP-K-01-safety-case.md) | WP-C-03, WP-C-04, WP-C-05, WP-C-08, WP-C-09 |  | 13849-1 §5; 61508-3 §7.2; 61508-1 §8 (assessment input) | 62443-4-1 SR-5 | UL 4600; Machinery Reg. Annex IV | consistency evidence (SYS.2–5, SWE.1–6) | Draft, Skeleton |
 
 ## 3. Cross-domain interfaces
 
@@ -113,7 +113,7 @@ Each interface is anchored to text in the work products; the checker fails if an
 | ID | Pattern | Between | Topic | Status | Open item | Due |
 |---|---|---|---|---|---|---|
 | IX-01 | Safety-Security | [WP-C-03](../../02-concept/WP-C-03-risk-assessment.md), [WP-C-07](../../02-concept/WP-C-07-cybersecurity-threat-and-risk-assessment.md) (Machinery risk assessment / Cybersecurity) | Threat scenarios that can cause a hazard are rated against the hazard list; cyber-induced hazards appear in the risk assessment | Documented | — | G1 |
-| IX-02 | Safety-Performance limits | [WP-C-04](../../02-concept/WP-C-04-safety-functions-and-plr.md), [WP-C-10](../../02-concept/WP-C-10-functional-insufficiency-analysis.md) (Safety-related control system / Machinery risk assessment) | The protective stop SF-02 has a PLr but no implementation until the detection means is decided; what the LiDAR cannot see bounds the claim | Open | WP-C-10 OI-2 and decision DQ-009: choose the detection means (safety scanner, bumpers or a separated area) | G1 |
+| IX-02 | Safety-Performance limits | [WP-C-04](../../02-concept/WP-C-04-safety-functions-and-plr.md), [WP-C-10](../../02-concept/WP-C-10-functional-insufficiency-analysis.md) (Safety-related control system / Machinery risk assessment) | The protective stop SF-02 has a PLr but no implementation until the detection means is decided; what the LiDAR cannot see bounds the claim | Open | WP-C-10 OI-2 and decision DQ-007: choose the detection means (safety scanner, bumpers or a separated area) | G1 |
 | IX-03 | Safety-ML | [WP-C-04](../../02-concept/WP-C-04-safety-functions-and-plr.md), [WP-C-09](../../02-concept/WP-C-09-ml-component-definition-and-safety-requirements.md) (Safety-related control system / Machine learning) | No safety function is allocated to a learned component; the chain is the independent safeguard | Documented | — | G1 |
 | IX-04 | Environment-Interaction | [WP-C-02](../../02-concept/WP-C-02-operating-environment-and-tasks.md), [WP-C-06](../../02-concept/WP-C-06-human-robot-interaction-and-misuse.md) (Machinery risk assessment / Machinery risk assessment) | People presence per zone drives the interaction and misuse scenarios and the approach-speed calculation | Documented | — | G1 |
 
@@ -131,7 +131,7 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Exit criterion (WP-M-00 §2):** Machine limits, risk assessment, safety functions with their required PL, risk reduction concept, cybersecurity and ML concepts approved; confirmation review of the risk assessment passed
 
-**Work products:** 3 Draft, 10 Skeleton of 13. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
+**Work products:** 4 Draft, 9 Skeleton of 13. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
 
 **Roles the lanes need (WP-M-02 §3.1):**
 
@@ -142,7 +142,7 @@ Which activity answers each clause reference listed in the register. One activit
 | Safety-related control system (ISO 13849-1) | Safety-related control system engineer | Jherrod Thomas (acting); additional contributors TBD | G2 |
 | Cybersecurity (IEC 62443) | Cybersecurity manager | Jherrod Thomas (acting); permanent holder TBD | G1 |
 | Machine learning (ISO/IEC TR 5469) | ML safety lead | Jherrod Thomas (acting); permanent holder TBD | G1 |
-| Independent confirmation | External functional safety assessor | TBD (DQ-008) | G1 |
+| Independent confirmation | External functional safety assessor | TBD (DQ-010) | G1 |
 
 **Other roles WP-M-02 §3.1 needs by G1:** Verification reviewer(s) (TBD (at least one person other than the author); needed by G0, still unassigned); Quality assurance (TBD (independent of the author); needed by G0, still unassigned); Test operator(s) (TBD (trained per WP-M-04)).
 
@@ -159,4 +159,4 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Work products with no confirmation measure at this gate** (verification review only): WP-C-02, WP-V-07, WP-T-01, WP-K-01.
 
-**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (WP-C-10 OI-2 and decision DQ-009: choose the detection means (safety scanner, bumpers or a separated area)).
+**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (WP-C-10 OI-2 and decision DQ-007: choose the detection means (safety scanner, bumpers or a separated area)).
