@@ -54,7 +54,9 @@
       title: "Assess both as two configurations from the start"
       detail: "Most complete. Cost: doubles every work product while 2.0 is still moving (the register changed five times in October)."
   sources: ["openAMRobot/.github decisions.yaml BASE-CONTROLLER-GATES, RELEASE-MILESTONES, SAFETY-PROCUREMENT", "openamr-platform-hw product-architecture.md"]
-  status: open
+  status: applied
+  answer: {choice: A, via: chat, at: 2026-10-20}
+  applied: {ref: "openamrobot-assurance main", record: "WP-C-01 §1 and header (reference configuration: Gate A unit); WP-C-03 header", at: 2026-10-20}
 
 - id: DQ-003
   ref: GAP-00
@@ -130,7 +132,9 @@
       title: "Defer: set the PL after the risk assessment"
       detail: "Methodologically clean (the PLr comes from the risk graph). Cost: the risk graph for an AMR around people lands on PL d anyway, so the hardware gap stays open a month longer."
   sources: ["ISO 3691-4:2023 §5.3 (safety-related parts), Annex A", "ISO 13849-1:2023 Annex A (PLr)", "openamr-platform-fw docs/safety/motion-safety.md", "openAMRobot/.github decisions.yaml SAFETY-PROCUREMENT"]
-  status: open
+  status: applied
+  answer: {choice: A, via: chat, at: 2026-10-20}
+  applied: {ref: "openamrobot-assurance main", record: "WP-C-03 header and §7 (PLr d for SF-01, SF-02, SF-03); WP-S-02", at: 2026-10-20}
 
 - id: DQ-006
   ref: GAP-06

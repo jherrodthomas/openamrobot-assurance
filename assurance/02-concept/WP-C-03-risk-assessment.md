@@ -4,9 +4,9 @@
 |---|---|
 | Work product | WP-C-03 Risk assessment (ISO 12100) and determination of the required Performance Level per safety function (ISO 13849-1) |
 | Standard reference | ISO 12100:2010 §5.4–§5.6, Annex B; ISO 13849-1:2023 §5, Annex A (risk graph); ISO 3691-4:2023 §4, Annex A; ISO 13850:2015; EN 60204-1:2018 §9.2.2 (stop categories); Regulation (EU) 2023/1230 Annex III §1.1.2 |
-| Version | 0.1 (2026-10-20): initial draft |
+| Version | 0.2 (2026-10-20): DQ-005 applied, PLr d confirmed as the target. 0.1: initial draft |
 | Status | Draft |
-| PL / scope | Highest proposed PLr: **d** (SF-01, SF-02, SF-03), pending DQ-005; mobile base only |
+| PL / scope | Highest PLr: **d** (SF-01, SF-02, SF-03), decided by the lead 2026-10-20 (DQ-005 option A: people share the space); reference configuration Gate A unit (DQ-002); mobile base only |
 | Author | Assurance team (AI-assisted draft, I0) |
 | Reviewer(s) | TBD (I1); the ratings need a reviewer who has operated the robot |
 | Approver | Project lead |
@@ -14,9 +14,9 @@
 
 > [!WARNING]
 > Draft. Severity and probability ratings below are engineering judgement from the record, not from measurement:
-> the robot's mass, stopping distance and payload are unknown (WP-C-01 §10). Every PLr is **proposed** until the
-> lead decides DQ-005 and a reviewer who has driven the Gate A unit confirms the ratings. Nothing here lowers a
-> rating to fit the existing hardware.
+> the robot's mass, stopping distance and payload are unknown (WP-C-01 §10). The lead has set PL d as the target
+> for the stop functions (DQ-005, 2026-10-20); the ratings still need a reviewer who has driven the Gate A unit.
+> Nothing here lowers a rating to fit the existing hardware.
 
 ## 1. Scope and inputs
 
@@ -193,7 +193,7 @@ outside the assessment until GAP-15 and GAP-35 are closed.
 | ID | Item | Blocks |
 |---|---|---|
 | OI-1 | Measure mass, stopping distance and payload limit (WP-C-01 OI-1…OI-3) and re-rate S for H-01, H-06 | §5 confirmation |
-| OI-2 | Lead decision DQ-005 (PL d with people, or PL c/b in a separated area) | SF-02 existence, SF-01 category |
+| OI-2 | ~~Lead decision DQ-005~~ decided 2026-10-20: PL d, people share the space; SF-02 is required | closed |
 | OI-3 | Field data on wheel dropout frequency (upstream issue) to settle F for H-03 | SF-06 PLr |
 | OI-4 | Decide the dock-lane speed limit and whether docking is allowed with people in the lane | SF-02, SF-03 field sizes |
 | OI-5 | Reviewer with Gate A operating experience to confirm or change every rating | approval |
