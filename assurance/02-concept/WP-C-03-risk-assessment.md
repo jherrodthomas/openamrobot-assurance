@@ -4,7 +4,7 @@
 |---|---|
 | Work product | WP-C-03 Risk assessment (ISO 12100) and determination of the required Performance Level per safety function (ISO 13849-1) |
 | Standard reference | ISO 12100:2010 §5.4–§5.6, Annex B; ISO 13849-1:2023 §5, Annex A (risk graph); ISO 3691-4:2023 §4, Annex A; ISO 13850:2015; EN 60204-1:2018 §9.2.2 (stop categories); Regulation (EU) 2023/1230 Annex III §1.1.2 |
-| Version | 0.4 (2026-10-20): DQ-004 B and DQ-020 A applied: the arms and lift on CFG-002 join the assessment as OS-16…OS-18, H-13…H-15, five rated rows, DM-07, IFU-04 and SF-10…SF-12; the configuration each row belongs to is stated. 0.3: situations reworked against the zones and tasks of WP-C-02 and the scenarios and misuses of WP-C-06 (OS-13…OS-15 added); risk estimated per zone; the risk-graph readings of v0.2 corrected (§5.2); SF-08 and SF-09 identified; the specification of each function moved to WP-C-04; Figures 3-1, 5-1, 6-1. 0.2: DQ-005 applied, PLr d confirmed as the target. 0.1: initial draft |
+| Version | 0.5 (2026-10-20): DQ-017 A, DQ-018 A and DQ-021 A applied in OL-02 and H-13. 0.4 (2026-10-20): DQ-004 B and DQ-020 A applied: the arms and lift on CFG-002 join the assessment as OS-16…OS-18, H-13…H-15, five rated rows, DM-07, IFU-04 and SF-10…SF-12; the configuration each row belongs to is stated. 0.3: situations reworked against the zones and tasks of WP-C-02 and the scenarios and misuses of WP-C-06 (OS-13…OS-15 added); risk estimated per zone; the risk-graph readings of v0.2 corrected (§5.2); SF-08 and SF-09 identified; the specification of each function moved to WP-C-04; Figures 3-1, 5-1, 6-1. 0.2: DQ-005 applied, PLr d confirmed as the target. 0.1: initial draft |
 | Status | Draft |
 | PL / scope | Highest PLr: **d** (SF-01, SF-02, SF-03, SF-05, SF-10, SF-11, SF-12), decided by the lead 2026-10-20 (DQ-005 option A: people share the space); one situation rates **e** and is excluded from the operating environment (Z5, §5); the base with the arms and lift (DQ-004 B) on CFG-001 (Gate A unit, bench only) and CFG-002 (2.0 mobile manipulator, unverified) |
 | Author | Assurance team (AI-assisted draft, I0) |
@@ -222,7 +222,7 @@ ISO 12100 §6 order. None of the measures exists on the Gate A unit; the table s
 | DM-06 one source at a time (selector or charge interlock), battery voltage monitoring | complementary | H-09, H-03 | parallel sources, no monitor |
 | DM-07 gripper and lift hold their load on power loss by design (spring-closed or self-locking gripper, brake or self-locking lift drive); payload limit of the gripper marked (CFG-002) | inherently safe design | H-14, H-15 | upstream `LIFT` release gate "written DOLD holding on E-stop and power loss" not passed; gripper behaviour not published |
 | OL-01 zone exclusions of WP-C-02 §5: no public floor (Z5), no Z0, no ramps, edges, glass, crowds | operating-environment limit | H-01, H-06 | map limits only; no geofence (WP-C-02 OI-3) |
-| OL-02 speed limit per zone and the crawl limit for the dock lane and reverse (WP-C-02 §2; DQ-017, DQ-018) | operating-environment limit, enforced by SF-03 | H-01, H-03 | Nav2 limit only; docking unbounded |
+| OL-02 speed limit per zone and the crawl limit for the dock lane and reverse (WP-C-02 §2; DQ-017 A: 0.3 m/s with detection, 0 without; DQ-018 A: no blind back-up, undock at 0.05 m/s) | operating-environment limit, enforced by SF-03 | H-01, H-03 | Nav2 limit only; docking unbounded |
 | SF-01 emergency stop | safeguarding, control function | H-01, H-02, H-04, H-05, H-10 | none |
 | SF-02 protective stop on personnel detection | safeguarding, control function | H-01, H-05, H-11 | none |
 | SF-03 safely-limited speed | safeguarding, control function | H-01, H-03, H-12 | none |
@@ -327,7 +327,7 @@ Cyber-induced hazards are analysed in WP-C-07 ([threat and risk assessment](WP-C
 | OI-1 | Measure mass, stopping distance and payload limit (WP-C-01 OI-1…OI-3) and re-rate S for H-01, H-06 | §5 confirmation |
 | OI-2 | ~~Lead decision DQ-005~~ decided 2026-10-20: PL d, people share the space; SF-02 is required | closed |
 | OI-3 | Field data on wheel dropout frequency (upstream issue) to settle F for H-03 | SF-06 PLr |
-| OI-4 | ~~Dock-lane speed and people in the lane~~ now DQ-017 (speed near a person) and DQ-018 (reverse); the lane is a people-class *none* zone in WP-C-02 | SF-02, SF-03 field sizes |
+| OI-4 | ~~Dock-lane speed and people in the lane~~ DQ-017 and DQ-018 answered A on 2026-10-20 (applied in WP-C-02 v0.3); the lane is a people-class *none* zone in WP-C-02 | SF-02, SF-03 field sizes |
 | OI-5 | Reviewer with Gate A operating experience to confirm or change every rating, including the re-ratings of §5.2 | approval |
 | OI-6 | Lead decision DQ-019: keep the public floor (Z5) excluded for the Gate A unit, or open a PL e / force-limited argument for it | scope of SF-02 |
 | OI-7 | Confirm the ISO 3691-4 PLr table against a licensed copy and record the type-C values in WP-C-04 §4; **unscheduled** (DQ-016 option C, 2026-10-20: no standards until an assessor is engaged) | WP-C-04 §4 |

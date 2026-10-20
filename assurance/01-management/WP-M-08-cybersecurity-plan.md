@@ -18,7 +18,7 @@
 
 ## 1. Purpose
 
-How cybersecurity is managed for the fork under IEC 62443-4-1 (secure product development lifecycle) and 62443-4-2 (component requirements), and how it interfaces with safety. The robot is treated as one component with a security level target decided by the lead (DQ-013).
+How cybersecurity is managed for the fork under IEC 62443-4-1 (secure product development lifecycle) and 62443-4-2 (component requirements), and how it interfaces with safety. The robot is treated as one component with the security level target the lead set on 2026-10-20 (DQ-013 A): SL 2 for FR 1, 3, 5 and 7, SL 1 for FR 2, 4 and 6 ([WP-C-08 §2](../02-concept/WP-C-08-cybersecurity-requirements-and-sl-target.md#2-security-level-target)).
 
 ## 2. Scope and security context
 
