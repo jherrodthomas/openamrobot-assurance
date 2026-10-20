@@ -21,4 +21,10 @@ Standard clauses: ISO 12100 §5–§6, ISO 3691-4 §4 and Annex A, ISO 10218-2, 
 | [WP-C-09](WP-C-09-ml-component-definition-and-safety-requirements.md) | ML component definition and safety requirements (learned policy, perception models) | G1 | Skeleton |
 | [WP-C-10](WP-C-10-functional-insufficiency-analysis.md) | Functional insufficiency analysis of sensing and navigation (performance limits, triggering conditions) | G1 | Skeleton |
 
+## Subfolders
+
+| Folder | What it holds |
+|---|---|
+| [`figures/`](figures/) | Figure kit (figkit.py) and generated figures |
+
 Drawn from [WP-M-00 §3](../01-management/WP-M-00-work-product-register.md#3-register), which also has the clauses of each work product. Each work product states its own status in its document-control header; this table repeats the register's status column.

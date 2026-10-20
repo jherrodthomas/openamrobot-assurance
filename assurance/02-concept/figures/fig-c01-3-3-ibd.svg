@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="640" viewBox="0 0 1240 640" role="img" aria-labelledby="ibd-t ibd-d">
+<title id="ibd-t">Figure 3-3: internal block diagram of the Gate A unit</title>
+<desc id="ibd-d">A SysML internal block diagram: the command chain operator, compute, low-level controller, motor drivers and chassis along the top; LiDAR, camera, IMU and encoders below their consumers; power at the bottom; port squares on every part and item flows labelled with the interface IDs; the driver fault, speed and brake pins drawn grey dashed as unwired and the E-stop button red dashed as undocumented.</desc>
+<defs>
+  <marker id="ibd-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#7E949B"/></marker>
+  <marker id="ibd-arrow-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#D4821A"/></marker>
+  <marker id="ibd-arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#D64535"/></marker>
+  <marker id="ibd-diamond" viewBox="0 0 12 8" refX="0" refY="4" markerWidth="12" markerHeight="8" orient="auto">
+    <path d="M0,4 L6,0 L12,4 L6,8 z" fill="#122026"/></marker>
+</defs>
+<rect x="0" y="0" width="1240" height="640" fill="#FFFFFF"/>
+<text x="32.0" y="34.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#122026" text-anchor="start">Figure 3-3  Internal block diagram (SysML ibd): parts, ports and item flows</text>
+<text x="32.0" y="52.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="start">Connectors carry the §3.3 interface IDs (full content in the table). Grey dashed: driver pins that exist and are not wired. Red dashed: the E-stop button, which switches nothing documented.</text>
+<rect x="32.0" y="72.0" width="1176.0" height="500.0" rx="8" fill="#EDF2F4" stroke="#122026" stroke-width="1.2"/>
+<text x="42.0" y="90.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">ibd [block] Gate A unit</text>
+<path d="M230.0,121.0 L330.0,121.0" fill="none" stroke="#7E949B" stroke-width="1.4" marker-end="url(#ibd-arrow)"/>
+<path d="M230.0,146.2 L330.0,146.2" fill="none" stroke="#7E949B" stroke-width="1.4" marker-end="url(#ibd-arrow)"/>
+<path d="M520.0,116.8 L660.0,116.8" fill="none" stroke="#7E949B" stroke-width="1.4" marker-end="url(#ibd-arrow)"/>
+<path d="M660.0,137.8 L520.0,137.8" fill="none" stroke="#7E949B" stroke-width="1.4" marker-end="url(#ibd-arrow)"/>
+<path d="M520.0,158.8 L660.0,158.8" fill="none" stroke="#D4821A" stroke-width="1.4" marker-end="url(#ibd-arrow-amber)"/>
+<path d="M850.0,125.2 L990.0,125.2" fill="none" stroke="#7E949B" stroke-width="1.4" marker-end="url(#ibd-arrow)"/>
+<path d="M990.0,158.8 L850.0,158.8" fill="none" stroke="#7E949B" stroke-width="1.4" stroke-dasharray="3,4"/>
+<path d="M230.0,282.0 L270.0,282.0 L270.0,222.0 L640.0,222.0 L640.0,176.0 L660.0,175.6" fill="none" stroke="#7E949B" stroke-width="1.4" marker-end="url(#ibd-arrow)"/>
+<path d="M365.0,250.0 L368.0,184.0" fill="none" stroke="#7E949B" stroke-width="1.4" marker-end="url(#ibd-arrow)"/>
+<path d="M505.0,250.0 L501.0,184.0" fill="none" stroke="#7E949B" stroke-width="1.4" marker-end="url(#ibd-arrow)"/>
+<path d="M695.0,250.0 L698.0,184.0" fill="none" stroke="#7E949B" stroke-width="1.4" marker-end="url(#ibd-arrow)"/>
+<path d="M835.0,250.0 L831.0,184.0" fill="none" stroke="#7E949B" stroke-width="1.4" marker-end="url(#ibd-arrow)"/>
+<path d="M1085.0,184.0 L1085.0,250.0" fill="none" stroke="#7E949B" stroke-width="1.4" marker-end="url(#ibd-arrow)"/>
+<path d="M230.0,432.0 L330.0,432.0" fill="none" stroke="#D4821A" stroke-width="1.4" marker-end="url(#ibd-arrow-amber)"/>
+<path d="M330.0,412.8 L285.0,413.0 L285.0,171.0 L330.0,171.4" fill="none" stroke="#D4821A" stroke-width="1.4" marker-end="url(#ibd-arrow-amber)"/>
+<path d="M520.0,419.2 L960.0,419.0 L960.0,176.0 L990.0,175.6" fill="none" stroke="#D4821A" stroke-width="1.4" marker-end="url(#ibd-arrow-amber)"/>
+<path d="M630.0,432.0 L520.0,444.8" fill="none" stroke="#D64535" stroke-width="1.4" stroke-dasharray="6,4" marker-end="url(#ibd-arrow-red)"/>
+<rect x="40.0" y="100.0" width="190.0" height="84.0" rx="6" fill="#F1F5F9" stroke="#D3DDE2" stroke-width="1"/>
+<text x="135.0" y="116.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#122026" text-anchor="middle">Operator</text>
+<text x="48.0" y="131.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">browser UI, keyboard teleop,</text>
+<text x="48.0" y="144.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">phone</text>
+<rect x="330.0" y="100.0" width="190.0" height="84.0" rx="6" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="338.0" y="116.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">E-04</text>
+<text x="366.4" y="116.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#122026" text-anchor="start">Compute</text>
+<rect x="660.0" y="100.0" width="190.0" height="84.0" rx="6" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="668.0" y="116.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">E-03</text>
+<text x="696.4" y="116.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#122026" text-anchor="start">Low-level controller</text>
+<rect x="990.0" y="100.0" width="190.0" height="84.0" rx="6" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="998.0" y="116.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">E-02</text>
+<text x="1026.4" y="116.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#122026" text-anchor="start">Motor drivers</text>
+<rect x="40.0" y="250.0" width="190.0" height="64.0" rx="6" fill="#F1F5F9" stroke="#D3DDE2" stroke-width="1"/>
+<text x="135.0" y="266.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#122026" text-anchor="middle">Wi-Fi network</text>
+<text x="48.0" y="281.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">DDS domain 0, multicast; any</text>
+<text x="48.0" y="294.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">participant</text>
+<rect x="300.0" y="250.0" width="130.0" height="64.0" rx="6" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="308.0" y="266.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">E-05</text>
+<text x="336.4" y="266.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#122026" text-anchor="start">LiDAR</text>
+<rect x="440.0" y="250.0" width="130.0" height="64.0" rx="6" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="448.0" y="266.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">E-06</text>
+<text x="476.4" y="266.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#122026" text-anchor="start">Camera</text>
+<rect x="630.0" y="250.0" width="130.0" height="64.0" rx="6" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="638.0" y="266.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">E-07</text>
+<text x="666.4" y="266.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#122026" text-anchor="start">IMU</text>
+<rect x="770.0" y="250.0" width="130.0" height="64.0" rx="6" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="778.0" y="266.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">E-08</text>
+<text x="806.4" y="266.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#122026" text-anchor="start">Wheel encoders</text>
+<rect x="990.0" y="250.0" width="190.0" height="64.0" rx="6" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="998.0" y="266.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">E-01</text>
+<text x="1026.4" y="266.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#122026" text-anchor="start">Chassis and drive train</text>
+<rect x="40.0" y="400.0" width="190.0" height="64.0" rx="6" fill="#F1F5F9" stroke="#D3DDE2" stroke-width="1"/>
+<text x="135.0" y="416.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#122026" text-anchor="middle">Mains and charger</text>
+<text x="48.0" y="431.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">230 V converter, unknown</text>
+<text x="48.0" y="444.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">model</text>
+<rect x="330.0" y="400.0" width="190.0" height="64.0" rx="6" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="338.0" y="416.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">E-09</text>
+<text x="366.4" y="416.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#122026" text-anchor="start">Power</text>
+<rect x="630.0" y="400.0" width="190.0" height="64.0" rx="6" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="638.0" y="416.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">E-10</text>
+<text x="666.4" y="416.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#122026" text-anchor="start">HMI and dock</text>
+<rect x="226.0" y="117.0" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="326.0" y="117.0" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="226.0" y="142.2" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="326.0" y="142.2" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="516.0" y="112.8" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="656.0" y="112.8" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="656.0" y="133.8" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="516.0" y="133.8" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="516.0" y="154.8" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="656.0" y="154.8" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="846.0" y="121.2" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="986.0" y="121.2" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="986.0" y="154.8" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="846.0" y="154.8" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="226.0" y="278.0" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="656.0" y="171.6" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="361.0" y="246.0" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="364.0" y="180.0" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="501.0" y="246.0" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="497.0" y="180.0" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="691.0" y="246.0" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="694.0" y="180.0" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="831.0" y="246.0" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="827.0" y="180.0" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="1081.0" y="180.0" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="1081.0" y="246.0" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="226.0" y="428.0" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="326.0" y="428.0" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="326.0" y="408.8" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="326.0" y="167.4" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="516.0" y="415.2" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="986.0" y="171.6" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="626.0" y="428.0" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="516.0" y="440.8" width="8" height="8" fill="#FFFFFF" stroke="#122026" stroke-width="1"/>
+<rect x="261.7" y="105.5" width="36.6" height="15.5" rx="4" fill="#FFFFFF" fill-opacity="0.92"/><text x="280.0" y="116.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#7E949B" text-anchor="middle">IF-05</text>
+<rect x="261.7" y="152.5" width="36.6" height="15.5" rx="4" fill="#FFFFFF" fill-opacity="0.92"/><text x="280.0" y="163.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#7E949B" text-anchor="middle">IF-01</text>
+<rect x="553.1" y="101.3" width="73.8" height="15.5" rx="4" fill="#FFFFFF" fill-opacity="0.92"/><text x="590.0" y="111.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#7E949B" text-anchor="middle">IF-01 serial</text>
+<rect x="571.7" y="140.5" width="36.6" height="15.5" rx="4" fill="#FFFFFF" fill-opacity="0.92"/><text x="590.0" y="151.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#7E949B" text-anchor="middle">IF-03</text>
+<rect x="550.4" y="161.5" width="79.2" height="15.5" rx="4" fill="#FFFFFF" fill-opacity="0.92"/><text x="590.0" y="172.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#D4821A" text-anchor="middle">IF-08 USB 5 V</text>
+<rect x="864.5" y="109.7" width="111.1" height="15.5" rx="4" fill="#FFFFFF" fill-opacity="0.92"/><text x="920.0" y="120.2" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#7E949B" text-anchor="middle">IF-06 PWM, FWD, REV</text>
+<rect x="859.1" y="162.5" width="121.7" height="15.5" rx="4" fill="#FFFFFF" fill-opacity="0.92"/><text x="920.0" y="173.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#7E949B" text-anchor="middle">ERR, SPD, BRK unwired</text>
+<rect x="557.8" y="206.5" width="84.5" height="15.5" rx="4" fill="#FFFFFF" fill-opacity="0.92"/><text x="600.0" y="217.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#7E949B" text-anchor="middle">IF-02 /debug/*</text>
+<rect x="354.0" y="226.5" width="36.6" height="15.5" rx="4" fill="#FFFFFF" fill-opacity="0.92"/><text x="354.0" y="237.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#7E949B" text-anchor="start">IF-04</text>
+<rect x="509.0" y="226.5" width="26.0" height="15.5" rx="4" fill="#FFFFFF" fill-opacity="0.92"/><text x="509.0" y="237.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#7E949B" text-anchor="start">CSI</text>
+<rect x="700.0" y="226.5" width="26.0" height="15.5" rx="4" fill="#FFFFFF" fill-opacity="0.92"/><text x="700.0" y="237.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#7E949B" text-anchor="start">I2C</text>
+<rect x="840.0" y="226.5" width="41.9" height="15.5" rx="4" fill="#FFFFFF" fill-opacity="0.92"/><text x="840.0" y="237.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#7E949B" text-anchor="start">A/B ×2</text>
+<rect x="1092.0" y="214.5" width="84.5" height="15.5" rx="4" fill="#FFFFFF" fill-opacity="0.92"/><text x="1092.0" y="225.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#7E949B" text-anchor="start">U/V/W, Hall ×2</text>
+<rect x="256.4" y="416.5" width="47.2" height="15.5" rx="4" fill="#FFFFFF" fill-opacity="0.92"/><text x="280.0" y="427.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#D4821A" text-anchor="middle">IF-07 ∥</text>
+<rect x="225.8" y="370.5" width="84.5" height="15.5" rx="4" fill="#FFFFFF" fill-opacity="0.92"/><text x="268.0" y="381.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#D4821A" text-anchor="middle">IF-08 5 V buck</text>
+<rect x="844.5" y="345.5" width="111.1" height="15.5" rx="4" fill="#FFFFFF" fill-opacity="0.92"/><text x="900.0" y="356.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#D4821A" text-anchor="middle">IF-07 24 V, no fuse</text>
+<rect x="538.1" y="416.5" width="73.8" height="15.5" rx="4" fill="#FFFFFF" fill-opacity="0.92"/><text x="575.0" y="427.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="middle">undocumented</text>
+<line x1="32.0" y1="604.0" x2="60.0" y2="604.0" stroke="#7E949B" stroke-width="2"/>
+<text x="66.0" y="608.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">item flow (data)</text>
+<line x1="182.1" y1="604.0" x2="210.1" y2="604.0" stroke="#D4821A" stroke-width="2"/>
+<text x="216.1" y="608.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">power</text>
+<line x1="267.5" y1="604.0" x2="295.5" y2="604.0" stroke="#7E949B" stroke-width="2" stroke-dasharray="3,4"/>
+<text x="301.5" y="608.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">pin exists, not wired</text>
+<line x1="447.0" y1="604.0" x2="475.0" y2="604.0" stroke="#D64535" stroke-width="2" stroke-dasharray="6,4"/>
+<text x="481.0" y="608.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">undocumented</text>
+<text x="1208.0" y="620.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#7E949B" text-anchor="end">Generated by figures/fig_c01.py from WP-C-01 §3.1, §3.3</text>
+</svg>
