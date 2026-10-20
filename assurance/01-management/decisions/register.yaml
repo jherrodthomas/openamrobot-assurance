@@ -1,0 +1,133 @@
+# Decision register: questions that wait on the project lead.
+# Format and lifecycle: README.md in this folder. Checked by check_decisions.py.
+# The decision inbox page is generated from this file (build_inbox.py); answers saved on the page
+# are copied back here, applied, and then recorded where the project keeps the decision.
+
+- id: DQ-001
+  ref: GAP-00
+  question: "Do we fork OpenAMRobot, as with openpilot, or contribute the assurance work upstream?"
+  context: >-
+    Upstream (Botshare LTD) publishes under MIT, CERN-OHL-P-2.0 and CC BY 4.0, so a fork is allowed. Contributing
+    upstream instead means their contributor agreement, which transfers economic rights in contributions to
+    Botshare, and their release gates and two-approval rule on safety paths. **You answered this in chat on
+    2026-10-20: fork.** Recorded here so the register is complete.
+  reversibility: easy
+  blocks: "Where the forked platform repositories and this record live"
+  gate: G0
+  asked: 2026-10-20
+  batch: 1
+  options:
+    - key: A
+      recommended: true
+      title: "Fork the three platform repositories and keep this record separate"
+      detail: "Same shape as LionDriver. Cost: our fixes reach upstream only through pull requests we choose to open, and the fork must not imply Botshare's endorsement."
+    - key: B
+      title: "Contribute upstream only"
+      detail: "No fork to maintain. Cost: the contributor agreement, upstream's review cadence, and no control over what the record claims."
+  sources: ["openAMRobot/.github GOVERNANCE.md (Releases and official status)", "openAMRobot/.github INDIVIDUAL_CONTRIBUTOR_AGREEMENT.md", "chat 2026-10-20"]
+  status: answered
+  answer: {choice: A, via: chat, at: 2026-10-20}
+
+- id: DQ-002
+  ref: GAP-00
+  question: "Which robot do we assess first: the Gate A unit that exists, or the 2.0 design?"
+  context: >-
+    The public repositories hold the **Gate A unit** (v0.0.1: Raspberry Pi 5, Teensy 4.0, ZBLD drivers, no E-stop,
+    no brakes). OpenAMRobot 2.0 (Jetson, STM32 base controller, hub motors with brakes, a Pilz PNOZ s3 safety
+    relay, two E-stops, arms and a lift) is decided in upstream's private plan set and due as v2.0.0-rc.1 on
+    20 November 2026, but its design is not in any repository yet. A safety case can only be built on what can
+    be read and tested.
+  reversibility: revisit
+  blocks: "The reference configuration named in every work product; the scope of the risk assessment"
+  gate: G0
+  asked: 2026-10-20
+  batch: 1
+  options:
+    - key: A
+      recommended: true
+      title: "Assess the Gate A unit now; track 2.0 decisions and switch when its code and drawings are public"
+      detail: "Findings are verifiable today and most carry over (the ROS 2 stack and firmware pattern stay). Cost: hardware findings on Gate A (no E-stop, no brakes, no fuse) will be overtaken by 2.0 and must be re-stated then."
+    - key: B
+      title: "Wait for the 2.0 release candidate and assess that"
+      detail: "One assessment of the robot that will ship. Cost: nothing to do for a month, and 2.0's safety chain exists only in Botshare's documents, which we cannot verify."
+    - key: C
+      title: "Assess both as two configurations from the start"
+      detail: "Most complete. Cost: doubles every work product while 2.0 is still moving (the register changed five times in October)."
+  sources: ["openAMRobot/.github decisions.yaml BASE-CONTROLLER-GATES, RELEASE-MILESTONES, SAFETY-PROCUREMENT", "openamr-platform-hw product-architecture.md"]
+  status: open
+
+- id: DQ-003
+  ref: GAP-00
+  question: "Which regulatory frame do we build the safety case for: EU machinery, US industrial mobile robots, or both?"
+  context: >-
+    Botshare is in Cyprus and the robot is sold in Europe, so the Machinery Regulation (EU) 2023/1230 applies from
+    20 January 2027 and ISO 3691-4 plus ISO 13849-1 are the harmonised route. The US market uses ANSI/A3 R15.08
+    instead. The choice fixes which standards every requirement cites and which conformity file we build.
+  reversibility: hard
+  blocks: "Standard references in every work product; the structure of 10-safety-case"
+  gate: G0
+  asked: 2026-10-20
+  batch: 1
+  options:
+    - key: A
+      recommended: true
+      title: "EU frame: Machinery Regulation, ISO 12100, ISO 3691-4, ISO 10218, ISO 13849-1"
+      detail: "Matches where the robot is made and sold and gives one conformity file. Cost: a US deployment later needs an R15.08 mapping, mostly a cross-reference."
+    - key: B
+      title: "US frame: ANSI/A3 R15.08 with ISO 13849-1 for the control system"
+      detail: "Right if the first deployment is in the US. Cost: no CE route; EU sale needs the whole file redone."
+    - key: C
+      title: "Both from the start"
+      detail: "Covers either market. Cost: two sets of clause references in every document and two conformity files to keep aligned."
+  sources: ["Regulation (EU) 2023/1230 Art. 54 (application date)", "ISO 3691-4:2023 scope", "ANSI/A3 R15.08-1:2020 scope"]
+  status: open
+
+- id: DQ-004
+  ref: GAP-00
+  question: "Is the first safety case for the mobile base only, or for the base with the arms and lift?"
+  context: >-
+    The base is a driverless industrial truck under ISO 3691-4. The dual arms (OpenArm 2.0) and the lift are
+    collaborative-robot and lifting hazards under ISO 10218 and ISO/TS 15066, each with its own risk assessment,
+    force limits and stop functions. Upstream has no arm or lift code in the platform repositories today.
+  reversibility: revisit
+  blocks: "Machine limits in the item definition; the hazard list; the number of safety functions"
+  gate: G1
+  asked: 2026-10-20
+  batch: 1
+  options:
+    - key: A
+      recommended: true
+      title: "Base only first; arms and lift as a second item when their code is public"
+      detail: "A complete, verifiable case for what exists, then extend. Cost: the base case must already state the interface assumptions the arms will need (stop chain, payload, centre of gravity)."
+    - key: B
+      title: "Whole mobile manipulator from the start"
+      detail: "One item, one risk assessment. Cost: most of it would be assumptions about hardware and software we cannot read, and the case cannot close until 2.0 ships."
+  sources: ["openAMRobot/.github decisions.yaml LIFT, ARM-MOUNT", "openamr-platform-hw product-architecture.md"]
+  status: open
+
+- id: DQ-005
+  ref: GAP-00
+  question: "What Performance Level do we set as the target for the stop functions: PL d, or PL c with a restricted operating area?"
+  context: >-
+    ISO 3691-4 expects the emergency stop and the personnel-detection stop of an AMR that shares space with people
+    to reach **PL d** (ISO 13849-1), typically Category 3. The Gate A unit reaches no PL at all: its stop is a
+    200 ms software watchdog that cuts motor PWM and lets the wheels coast. A lower target is only defensible if
+    the robot operates in a separated area with no people, which is an operating-environment limit you accept.
+  reversibility: hard
+  blocks: "The required PL of every safety function (SF-01 onward); the hardware safety chain the fork must add"
+  gate: G1
+  asked: 2026-10-20
+  batch: 1
+  options:
+    - key: A
+      recommended: true
+      title: "PL d for emergency stop and protective stop; people share the space"
+      detail: "Matches ISO 3691-4 for collaborative zones and upstream's own 2.0 safety-chain procurement (Pilz PNOZ s3, dual-channel E-stops, contactors). Cost: a safety-rated scanner or bumpers, a safety relay and motor brakes must be added to any Gate A unit we test with."
+    - key: B
+      title: "PL c, operation only in a fenced or marked area with no people"
+      detail: "Cheaper hardware. Cost: the operating environment shrinks to a separated test cell; any demonstration around people is outside the case."
+    - key: C
+      title: "Defer: set the PL after the risk assessment"
+      detail: "Methodologically clean (the PLr comes from the risk graph). Cost: the risk graph for an AMR around people lands on PL d anyway, so the hardware gap stays open a month longer."
+  sources: ["ISO 3691-4:2023 §5.3 (safety-related parts), Annex A", "ISO 13849-1:2023 Annex A (PLr)", "openamr-platform-fw docs/safety/motion-safety.md", "openAMRobot/.github decisions.yaml SAFETY-PROCUREMENT"]
+  status: open
