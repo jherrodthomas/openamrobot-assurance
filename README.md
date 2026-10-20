@@ -79,7 +79,7 @@ validated and drawn by [`generate_dashboard.py`](assurance/case/tools/generate_d
 
 <!-- BEGIN GENERATED: assurance-headline (assurance/case/tools/generate_dashboard.py) -->
 
-**Development** · baseline `BL-001` at `8a7a5b1` · 23 claims (0 with accepted evidence) · 17 evidence items (0 accepted) · 40 open defeaters · records digest `8ed7d1f3977d`
+**Development** · baseline `BL-001` at `8a7a5b1` · 23 claims (0 with accepted evidence) · 17 evidence items (0 accepted) · 40 open defeaters · records digest `fb18a8fd52a5`
 
 <!-- END GENERATED: assurance-headline -->
 

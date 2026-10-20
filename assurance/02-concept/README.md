@@ -25,6 +25,6 @@ Standard clauses: ISO 12100 §5–§6, ISO 3691-4 §4 and Annex A, ISO 10218-2, 
 
 | Folder | What it holds |
 |---|---|
-| [`figures/`](figures/) | Figure kit (figkit.py) and generated figures |
+| [`figures/`](figures/) | Figure generators (fig_*.py, with --check) and their generated SVGs |
 
 Drawn from [WP-M-00 §3](../01-management/WP-M-00-work-product-register.md#3-register), which also has the clauses of each work product. Each work product states its own status in its document-control header; this table repeats the register's status column.

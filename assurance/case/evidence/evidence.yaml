@@ -54,8 +54,8 @@
 
 - id: Sn-04
   kind: evidence
-  title: "Safety requirements specification SR-00.01 to SR-10.03"
-  description: "Draft v0.1; TBC values open"
+  title: "Safety requirements specification SR-00.01 to SR-90.04"
+  description: "Draft v0.3: SF-01 to SF-12 on both configurations, two-channel allocation per DQ-014 B; TBC values open"
   evidence_status: partial
   lifecycle_area: safety-concepts
   location: "assurance/03-system/WP-S-02-safety-requirements.md"

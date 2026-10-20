@@ -44,7 +44,7 @@ below. CI fails if any of them is stale. The document form of the same argument 
 | Open defeaters (known counter-evidence) | 40 |
 | Evaluated configurations | 1 |
 | Assurance-supported configurations | 0 |
-| Records digest | `8ed7d1f3977d` |
+| Records digest | `fb18a8fd52a5` |
 
 | Lifecycle area | Status | Evidence (drafted / missing / accepted) |
 |---|---|---|

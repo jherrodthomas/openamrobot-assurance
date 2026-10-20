@@ -1,0 +1,287 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="702" viewBox="0 0 1040 702" role="img" aria-labelledby="s02-18-1-t s02-18-1-d">
+<title id="s02-18-1-t">Requirement map of WP-S-02</title>
+<desc id="s02-18-1-d">One row per safety function plus the common and security blocks; each requirement is a chip coloured by its type; dashed chips apply only to the 2.0 configuration; dotted chips carry a value to be confirmed.</desc>
+<rect x="0" y="0" width="1040" height="702" fill="#FFFFFF"/>
+<text x="24.0" y="28.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#122026" text-anchor="start">Figure 18-1  Requirement map: 82 requirements, SR-00 to SR-90</text>
+<text x="24.0" y="46.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="start">One chip per requirement, coloured by type; a dashed border marks the 20 CFG-002-only requirements, a dot the 18 with a value to be confirmed</text>
+<rect x="16.0" y="64.0" width="1008.0" height="40.0" rx="4" fill="#F7FAFB" stroke="none" stroke-width="1"/>
+<text x="24.0" y="82.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="start">common</text>
+<text x="24.0" y="97.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Common to every function</text>
+<rect x="302.0" y="72.0" width="24.0" height="24.0" rx="5" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
+<text x="314.0" y="88.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">d</text>
+<rect x="342.0" y="72.0" width="58.0" height="24.0" rx="5" fill="#EDF2F4" stroke="#4E6A73" stroke-width="1.4"/>
+<text x="371.0" y="88.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="middle">SR-00.01</text>
+<rect x="405.0" y="72.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="434.0" y="88.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-00.02</text>
+<rect x="468.0" y="72.0" width="58.0" height="24.0" rx="5" fill="#EDF2F4" stroke="#4E6A73" stroke-width="1.4"/>
+<text x="497.0" y="88.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="middle">SR-00.03</text>
+<rect x="531.0" y="72.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="560.0" y="88.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-00.04</text>
+<rect x="594.0" y="72.0" width="58.0" height="24.0" rx="5" fill="#FDEDEB" stroke="#D64535" stroke-width="1.4"/>
+<text x="623.0" y="88.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#D64535" text-anchor="middle">SR-00.05</text>
+<rect x="657.0" y="72.0" width="58.0" height="24.0" rx="5" fill="#EDF2F4" stroke="#4E6A73" stroke-width="1.4"/>
+<text x="686.0" y="88.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="middle">SR-00.06</text>
+<rect x="720.0" y="72.0" width="58.0" height="24.0" rx="5" fill="#EDF2F4" stroke="#4E6A73" stroke-width="1.4"/>
+<text x="749.0" y="88.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="middle">SR-00.07</text>
+<rect x="783.0" y="72.0" width="58.0" height="24.0" rx="5" fill="#EDF2F4" stroke="#4E6A73" stroke-width="1.4"/>
+<text x="812.0" y="88.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="middle">SR-00.08</text>
+<text x="24.0" y="122.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="start">SF-01</text>
+<text x="24.0" y="137.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Emergency stop</text>
+<rect x="302.0" y="112.0" width="24.0" height="24.0" rx="5" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
+<text x="314.0" y="128.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">d</text>
+<rect x="342.0" y="112.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="371.0" y="128.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-01.01</text>
+<rect x="405.0" y="112.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="434.0" y="128.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-01.02</text>
+<rect x="468.0" y="112.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="497.0" y="128.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-01.03</text>
+<rect x="531.0" y="112.0" width="58.0" height="24.0" rx="5" fill="#EDF2F4" stroke="#4E6A73" stroke-width="1.4"/>
+<text x="560.0" y="128.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="middle">SR-01.04</text>
+<rect x="594.0" y="112.0" width="58.0" height="24.0" rx="5" fill="#EDF2F4" stroke="#4E6A73" stroke-width="1.4"/>
+<text x="623.0" y="128.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="middle">SR-01.05</text>
+<rect x="657.0" y="112.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="686.0" y="128.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-01.06</text>
+<rect x="720.0" y="112.0" width="58.0" height="24.0" rx="5" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1.4"/>
+<text x="749.0" y="128.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#2C9A58" text-anchor="middle">SR-01.07</text>
+<rect x="783.0" y="112.0" width="58.0" height="24.0" rx="5" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1.4"/>
+<text x="812.0" y="128.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#2C9A58" text-anchor="middle">SR-01.08</text>
+<rect x="846.0" y="112.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="875.0" y="128.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-01.09</text>
+<rect x="909.0" y="112.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="938.0" y="128.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-01.10</text>
+<rect x="16.0" y="144.0" width="1008.0" height="40.0" rx="4" fill="#F7FAFB" stroke="none" stroke-width="1"/>
+<text x="24.0" y="162.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="start">SF-02</text>
+<text x="24.0" y="177.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Protective stop on personnel detection</text>
+<rect x="302.0" y="152.0" width="24.0" height="24.0" rx="5" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
+<text x="314.0" y="168.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">d</text>
+<rect x="342.0" y="152.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="371.0" y="168.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-02.01</text>
+<rect x="405.0" y="152.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="434.0" y="168.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-02.02</text>
+<rect x="468.0" y="152.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="497.0" y="168.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-02.03</text>
+<circle cx="522.0" cy="156.0" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="1.5"/>
+<rect x="531.0" y="152.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="560.0" y="168.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-02.04</text>
+<rect x="594.0" y="152.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="623.0" y="168.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-02.05</text>
+<circle cx="648.0" cy="156.0" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="1.5"/>
+<rect x="657.0" y="152.0" width="58.0" height="24.0" rx="5" fill="#EDF2F4" stroke="#4E6A73" stroke-width="1.4"/>
+<text x="686.0" y="168.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="middle">SR-02.06</text>
+<rect x="720.0" y="152.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="749.0" y="168.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-02.07</text>
+<rect x="783.0" y="152.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="812.0" y="168.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-02.08</text>
+<rect x="846.0" y="152.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="875.0" y="168.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-02.09</text>
+<circle cx="900.0" cy="156.0" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="1.5"/>
+<rect x="909.0" y="152.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="938.0" y="168.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-02.10</text>
+<text x="24.0" y="202.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="start">SF-03</text>
+<text x="24.0" y="217.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Safely-limited speed</text>
+<rect x="302.0" y="192.0" width="24.0" height="24.0" rx="5" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
+<text x="314.0" y="208.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">d</text>
+<rect x="342.0" y="192.0" width="58.0" height="24.0" rx="5" fill="#EDF2F4" stroke="#4E6A73" stroke-width="1.4"/>
+<text x="371.0" y="208.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="middle">SR-03.01</text>
+<rect x="405.0" y="192.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="434.0" y="208.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-03.02</text>
+<circle cx="459.0" cy="196.0" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="1.5"/>
+<rect x="468.0" y="192.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="497.0" y="208.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-03.03</text>
+<circle cx="522.0" cy="196.0" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="1.5"/>
+<rect x="531.0" y="192.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="560.0" y="208.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-03.04</text>
+<rect x="594.0" y="192.0" width="58.0" height="24.0" rx="5" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1.4"/>
+<text x="623.0" y="208.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#2C9A58" text-anchor="middle">SR-03.05</text>
+<circle cx="648.0" cy="196.0" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="1.5"/>
+<rect x="657.0" y="192.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="686.0" y="208.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-03.06</text>
+<circle cx="711.0" cy="196.0" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="1.5"/>
+<rect x="16.0" y="224.0" width="1008.0" height="40.0" rx="4" fill="#F7FAFB" stroke="none" stroke-width="1"/>
+<text x="24.0" y="242.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="start">SF-04</text>
+<text x="24.0" y="257.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Stop on loss of command, communication or co…</text>
+<rect x="302.0" y="232.0" width="24.0" height="24.0" rx="5" fill="#8FD3CC" stroke="#8FD3CC" stroke-width="1"/>
+<text x="314.0" y="248.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">c</text>
+<rect x="342.0" y="232.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="371.0" y="248.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-04.01</text>
+<rect x="405.0" y="232.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="434.0" y="248.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-04.02</text>
+<rect x="468.0" y="232.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="497.0" y="248.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-04.03</text>
+<rect x="531.0" y="232.0" width="58.0" height="24.0" rx="5" fill="#EDF2F4" stroke="#4E6A73" stroke-width="1.4"/>
+<text x="560.0" y="248.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="middle">SR-04.04</text>
+<rect x="594.0" y="232.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="623.0" y="248.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-04.05</text>
+<rect x="657.0" y="232.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="686.0" y="248.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-04.06</text>
+<text x="24.0" y="282.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="start">SF-05</text>
+<text x="24.0" y="297.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Prevention of unexpected start-up</text>
+<rect x="302.0" y="272.0" width="24.0" height="24.0" rx="5" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
+<text x="314.0" y="288.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">d</text>
+<rect x="342.0" y="272.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="371.0" y="288.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-05.01</text>
+<rect x="405.0" y="272.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="434.0" y="288.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-05.02</text>
+<rect x="468.0" y="272.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="497.0" y="288.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-05.03</text>
+<rect x="531.0" y="272.0" width="58.0" height="24.0" rx="5" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1.4"/>
+<text x="560.0" y="288.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#2C9A58" text-anchor="middle">SR-05.04</text>
+<rect x="16.0" y="304.0" width="1008.0" height="40.0" rx="4" fill="#F7FAFB" stroke="none" stroke-width="1"/>
+<text x="24.0" y="322.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="start">SF-06</text>
+<text x="24.0" y="337.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Stop on drive fault</text>
+<rect x="302.0" y="312.0" width="24.0" height="24.0" rx="5" fill="#8FD3CC" stroke="#8FD3CC" stroke-width="1"/>
+<text x="314.0" y="328.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">c</text>
+<rect x="342.0" y="312.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="371.0" y="328.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-06.01</text>
+<rect x="405.0" y="312.0" width="58.0" height="24.0" rx="5" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1.4"/>
+<text x="434.0" y="328.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#2C9A58" text-anchor="middle">SR-06.02</text>
+<circle cx="459.0" cy="316.0" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="1.5"/>
+<rect x="468.0" y="312.0" width="58.0" height="24.0" rx="5" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1.4"/>
+<text x="497.0" y="328.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#2C9A58" text-anchor="middle">SR-06.03</text>
+<rect x="531.0" y="312.0" width="58.0" height="24.0" rx="5" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1.4"/>
+<text x="560.0" y="328.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#2C9A58" text-anchor="middle">SR-06.04</text>
+<rect x="594.0" y="312.0" width="58.0" height="24.0" rx="5" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1.4"/>
+<text x="623.0" y="328.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#2C9A58" text-anchor="middle">SR-06.05</text>
+<circle cx="648.0" cy="316.0" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="1.5"/>
+<text x="24.0" y="362.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="start">SF-07</text>
+<text x="24.0" y="377.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Powered-debug inhibit</text>
+<rect x="302.0" y="352.0" width="24.0" height="24.0" rx="5" fill="#C9ECE8" stroke="#C9ECE8" stroke-width="1"/>
+<text x="314.0" y="368.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">b</text>
+<rect x="342.0" y="352.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="371.0" y="368.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-07.01</text>
+<rect x="405.0" y="352.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="434.0" y="368.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-07.02</text>
+<rect x="468.0" y="352.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="497.0" y="368.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-07.03</text>
+<circle cx="522.0" cy="356.0" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="1.5"/>
+<rect x="531.0" y="352.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="560.0" y="368.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-07.04</text>
+<circle cx="585.0" cy="356.0" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="1.5"/>
+<rect x="16.0" y="384.0" width="1008.0" height="40.0" rx="4" fill="#F7FAFB" stroke="none" stroke-width="1"/>
+<text x="24.0" y="402.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="start">SF-08</text>
+<text x="24.0" y="417.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Warning before motion</text>
+<rect x="302.0" y="392.0" width="24.0" height="24.0" rx="5" fill="#C9ECE8" stroke="#C9ECE8" stroke-width="1"/>
+<text x="314.0" y="408.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">b</text>
+<rect x="342.0" y="392.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="371.0" y="408.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-08.01</text>
+<circle cx="396.0" cy="396.0" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="1.5"/>
+<rect x="405.0" y="392.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="434.0" y="408.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-08.02</text>
+<rect x="468.0" y="392.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="497.0" y="408.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-08.03</text>
+<rect x="531.0" y="392.0" width="58.0" height="24.0" rx="5" fill="#EDF2F4" stroke="#4E6A73" stroke-width="1.4"/>
+<text x="560.0" y="408.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="middle">SR-08.04</text>
+<text x="24.0" y="442.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="start">SF-09</text>
+<text x="24.0" y="457.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Enabling control for teleoperation</text>
+<rect x="302.0" y="432.0" width="24.0" height="24.0" rx="5" fill="#8FD3CC" stroke="#8FD3CC" stroke-width="1"/>
+<text x="314.0" y="448.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">c</text>
+<rect x="342.0" y="432.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="371.0" y="448.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-09.01</text>
+<rect x="405.0" y="432.0" width="58.0" height="24.0" rx="5" fill="#EDF2F4" stroke="#4E6A73" stroke-width="1.4"/>
+<text x="434.0" y="448.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="middle">SR-09.02</text>
+<rect x="468.0" y="432.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="497.0" y="448.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-09.03</text>
+<circle cx="522.0" cy="436.0" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="1.5"/>
+<rect x="531.0" y="432.0" width="58.0" height="24.0" rx="5" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1.4"/>
+<text x="560.0" y="448.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#2C9A58" text-anchor="middle">SR-09.04</text>
+<rect x="594.0" y="432.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="623.0" y="448.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-09.05</text>
+<rect x="16.0" y="464.0" width="1008.0" height="40.0" rx="4" fill="#F7FAFB" stroke="none" stroke-width="1"/>
+<text x="24.0" y="482.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="start">SF-10</text>
+<text x="65.6" y="482.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#B86F0C" text-anchor="start">CFG-002 only</text>
+<text x="24.0" y="497.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Base motion inhibit while an arm is unstowed</text>
+<rect x="302.0" y="472.0" width="24.0" height="24.0" rx="5" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
+<text x="314.0" y="488.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">d</text>
+<rect x="342.0" y="472.0" width="58.0" height="24.0" rx="5" fill="#EDF2F4" stroke="#4E6A73" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="371.0" y="488.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="middle">SR-10.01</text>
+<rect x="405.0" y="472.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="434.0" y="488.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-10.02</text>
+<rect x="468.0" y="472.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="497.0" y="488.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-10.03</text>
+<rect x="531.0" y="472.0" width="58.0" height="24.0" rx="5" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="560.0" y="488.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#2C9A58" text-anchor="middle">SR-10.04</text>
+<text x="24.0" y="522.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="start">SF-11</text>
+<text x="65.6" y="522.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#B86F0C" text-anchor="start">CFG-002 only</text>
+<text x="24.0" y="537.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Arm safe stop on entry to the station worksp…</text>
+<rect x="302.0" y="512.0" width="24.0" height="24.0" rx="5" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
+<text x="314.0" y="528.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">d</text>
+<rect x="342.0" y="512.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="371.0" y="528.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-11.01</text>
+<rect x="405.0" y="512.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="434.0" y="528.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-11.02</text>
+<circle cx="459.0" cy="516.0" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="1.5"/>
+<rect x="468.0" y="512.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="497.0" y="528.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-11.03</text>
+<circle cx="522.0" cy="516.0" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="1.5"/>
+<rect x="531.0" y="512.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="560.0" y="528.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-11.04</text>
+<rect x="594.0" y="512.0" width="58.0" height="24.0" rx="5" fill="#EDF2F4" stroke="#4E6A73" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="623.0" y="528.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="middle">SR-11.05</text>
+<rect x="657.0" y="512.0" width="58.0" height="24.0" rx="5" fill="#EDF2F4" stroke="#4E6A73" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="686.0" y="528.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="middle">SR-11.06</text>
+<rect x="16.0" y="544.0" width="1008.0" height="40.0" rx="4" fill="#F7FAFB" stroke="none" stroke-width="1"/>
+<text x="24.0" y="562.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="start">SF-12</text>
+<text x="65.6" y="562.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#B86F0C" text-anchor="start">CFG-002 only</text>
+<text x="24.0" y="577.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Lift and gripper holding on stop and power l…</text>
+<rect x="302.0" y="552.0" width="24.0" height="24.0" rx="5" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
+<text x="314.0" y="568.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">d</text>
+<rect x="342.0" y="552.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="371.0" y="568.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-12.01</text>
+<circle cx="396.0" cy="556.0" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="1.5"/>
+<rect x="405.0" y="552.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="434.0" y="568.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-12.02</text>
+<rect x="468.0" y="552.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="497.0" y="568.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-12.03</text>
+<rect x="531.0" y="552.0" width="58.0" height="24.0" rx="5" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="560.0" y="568.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#00938B" text-anchor="middle">SR-12.04</text>
+<circle cx="585.0" cy="556.0" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="1.5"/>
+<rect x="594.0" y="552.0" width="58.0" height="24.0" rx="5" fill="#EDF2F4" stroke="#4E6A73" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="623.0" y="568.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="middle">SR-12.05</text>
+<circle cx="648.0" cy="556.0" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="1.5"/>
+<rect x="657.0" y="552.0" width="58.0" height="24.0" rx="5" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="686.0" y="568.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#2C9A58" text-anchor="middle">SR-12.06</text>
+<text x="24.0" y="602.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="start">security</text>
+<text x="24.0" y="617.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Security supporting the functions</text>
+<rect x="302.0" y="592.0" width="24.0" height="24.0" rx="5" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="314.0" y="608.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="342.0" y="592.0" width="58.0" height="24.0" rx="5" fill="#FDEDEB" stroke="#D64535" stroke-width="1.4"/>
+<text x="371.0" y="608.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#D64535" text-anchor="middle">SR-90.01</text>
+<rect x="405.0" y="592.0" width="58.0" height="24.0" rx="5" fill="#FDEDEB" stroke="#D64535" stroke-width="1.4"/>
+<text x="434.0" y="608.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#D64535" text-anchor="middle">SR-90.02</text>
+<rect x="468.0" y="592.0" width="58.0" height="24.0" rx="5" fill="#FDEDEB" stroke="#D64535" stroke-width="1.4"/>
+<text x="497.0" y="608.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#D64535" text-anchor="middle">SR-90.03</text>
+<rect x="531.0" y="592.0" width="58.0" height="24.0" rx="5" fill="#FDEDEB" stroke="#D64535" stroke-width="1.4"/>
+<text x="560.0" y="608.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#D64535" text-anchor="middle">SR-90.04</text>
+<text x="24.0" y="656.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#4E6A73" text-anchor="start">Type</text>
+<rect x="60.0" y="646.0" width="22.0" height="14.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="71.0" y="656.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9" font-weight="700" fill="#00938B" text-anchor="middle">F</text>
+<text x="88.0" y="656.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">functional</text>
+<rect x="172.8" y="646.0" width="22.0" height="14.0" rx="4" fill="#EDF2F4" stroke="#4E6A73" stroke-width="1.4"/>
+<text x="183.8" y="656.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9" font-weight="700" fill="#4E6A73" text-anchor="middle">I</text>
+<text x="200.8" y="656.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">integrity</text>
+<rect x="279.7" y="646.0" width="22.0" height="14.0" rx="4" fill="#FFF6E8" stroke="#B86F0C" stroke-width="1.4"/>
+<text x="290.7" y="656.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9" font-weight="700" fill="#B86F0C" text-anchor="middle">T</text>
+<text x="307.7" y="656.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">timing</text>
+<rect x="369.0" y="646.0" width="22.0" height="14.0" rx="4" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1.4"/>
+<text x="380.0" y="656.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9" font-weight="700" fill="#2C9A58" text-anchor="middle">D</text>
+<text x="397.0" y="656.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">diagnostic</text>
+<rect x="481.8" y="646.0" width="22.0" height="14.0" rx="4" fill="#FDEDEB" stroke="#D64535" stroke-width="1.4"/>
+<text x="492.8" y="656.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9" font-weight="700" fill="#D64535" text-anchor="middle">S</text>
+<text x="509.8" y="656.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">security</text>
+<rect x="592.8" y="646.0" width="22.0" height="14.0" rx="4" fill="#FFFFFF" stroke="#122026" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="620.8" y="656.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">CFG-002 only (2.0 manipulator, unverified)</text>
+<circle cx="891.8" cy="653.0" r="4" fill="#B86F0C" stroke="#FFFFFF" stroke-width="1.5"/>
+<text x="903.8" y="656.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">value (TBC)</text>
+<text x="24.0" y="688.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#4E6A73" text-anchor="start">PLr</text>
+<rect x="60.0" y="677.0" width="16.0" height="16.0" rx="5" fill="#EAF6F5" stroke="#EAF6F5" stroke-width="1"/>
+<text x="68.0" y="688.2" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">a</text>
+<rect x="82.0" y="677.0" width="16.0" height="16.0" rx="5" fill="#C9ECE8" stroke="#C9ECE8" stroke-width="1"/>
+<text x="90.0" y="688.2" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">b</text>
+<rect x="104.0" y="677.0" width="16.0" height="16.0" rx="5" fill="#8FD3CC" stroke="#8FD3CC" stroke-width="1"/>
+<text x="112.0" y="688.2" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">c</text>
+<rect x="126.0" y="677.0" width="16.0" height="16.0" rx="5" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
+<text x="134.0" y="688.2" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">d</text>
+<rect x="148.0" y="677.0" width="16.0" height="16.0" rx="5" fill="#D64535" stroke="#D64535" stroke-width="1"/>
+<text x="156.0" y="688.2" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">e</text>
+<text x="176.0" y="688.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">required Performance Level of the function (WP-C-04 §2); the common block carries the highest of its rows</text>
+</svg>

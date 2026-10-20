@@ -316,8 +316,8 @@ driverless industrial truck, written from memory of the standard and **to be che
 | SF-11 | H-13 arm contact at a station (CFG-002) | S2 F2 P1 | d | d, category 3 for a safety-rated monitored stop (ISO 10218-2, to be checked) | **d** | agree; DQ-021 A: the monitored stop makes contact possible only when the stop fails |
 | SF-12 | H-14 load drop; H-15 lift crushing (CFG-002) | S2 F1 P2; S2 F1 P1 | d; c | — (lifting: holding on power loss is a requirement, PL not listed) | **d** | the graph governs for the load drop; the interlock shares the hardware |
 
-Where this table and WP-S-02 disagree at BL-001 (SF-05 at c in WP-S-02 §7; SF-08…SF-12 absent), WP-S-02 is
-updated in its next version (WP-S-02 OI-6).
+WP-S-02 v0.3 carries this table: SF-05 at d (SR-05), SF-08…SF-12 specified (SR-08…SR-12), the security block
+renumbered to SR-90 so that SR-10 is SF-10.
 
 ## 5. Allocation
 
@@ -422,14 +422,14 @@ function admits the bench paths under the arming input; **—**: not applicable.
 | SF-02 | H-01, H-05, H-11 | IS-01…IS-05, IS-09, IS-10, MU-03, MU-04, MU-07 | HR-01, HR-02, HR-03 | SR-02.01…SR-02.08 | G1.2 |
 | SF-03 | H-01, H-03, H-12 | IS-01, IS-02, IS-04, IS-05, MU-10 | HR-03 | SR-03.01…SR-03.05 | G1.3 |
 | SF-04 | H-02, H-11 | MU-09 | — | SR-04.01…SR-04.06 | G1.4 |
-| SF-05 | H-05, H-02 | IS-10, MU-11, MU-14 | HR-07 | SR-05.01…SR-05.04 (PLr to be raised to d) | G1.5 |
+| SF-05 | H-05, H-02 | IS-10, MU-11, MU-14 | HR-07 | SR-05.01…SR-05.04 | G1.5 |
 | SF-06 | H-03, H-01 | IS-08, IS-12 | — | SR-06.01…SR-06.05 | G1.6 |
 | SF-07 | H-04, H-02, H-12 | MU-08 | — | SR-07.01…SR-07.04 | G1.7 |
-| SF-08 | H-05, H-10 | IS-10, MU-14 | HR-06, HR-07 | SR-08.x (to be written) | G1.8 |
-| SF-09 | H-01, H-10 | IS-06, MU-02 | HR-04 | SR-09.x (to be written) | G1.9 |
-| SF-10 | H-13, H-15 | IS-15, MU-16 | HR-10 | SR-10.x (to be written) | G1.10 |
-| SF-11 | H-13 | IS-13, MU-15 | HR-11 | SR-11.x (to be written) | G1.11 |
-| SF-12 | H-14, H-15 | IS-14, MU-16 | HR-12 | SR-12.x (to be written) | G1.12 |
+| SF-08 | H-05, H-10 | IS-10, MU-14 | HR-06, HR-07 | SR-08.01…SR-08.04 | G1.8 |
+| SF-09 | H-01, H-10 | IS-06, MU-02 | HR-04 | SR-09.01…SR-09.05 | G1.9 |
+| SF-10 | H-13, H-15 | IS-15, MU-16 | HR-10 | SR-10.01…SR-10.04 | G1.10 |
+| SF-11 | H-13 | IS-13, MU-15 | HR-11 | SR-11.01…SR-11.06 | G1.11 |
+| SF-12 | H-14, H-15 | IS-14, MU-16 | HR-12 | SR-12.01…SR-12.06 | G1.12 |
 
 ## 10. Open items
 
@@ -439,11 +439,11 @@ function admits the bench paths under the arming input; **—**: not applicable.
 | OI-2 | Set the stop category of SF-01 (decision DQ-015, now open in batch 2; planning assumption category 0) | Project lead | G1 |
 | OI-3 | ~~Allocation decision DQ-014~~ answered B on 2026-10-20 (firmware inside the SRP/CS for the speed and loss-of-control functions); applying it is OI-9 | closed | — |
 | OI-4 | Check the ISO 3691-4 Performance Levels of §4 against a licensed copy; **unscheduled** (DQ-016 option C, 2026-10-20) | Safety manager | G1 |
-| OI-5 | WP-S-02: raise SR-05.x to PLr d; add SR-08.x (warning before motion) and SR-09.x (enabling control); the SR-03, SR-04 and SR-06 "Implemented by" columns now name the firmware channel | Safety manager | G1 |
+| OI-5 | ~~WP-S-02: raise SR-05.x to PLr d; add SR-08.x and SR-09.x; name the firmware channel in SR-03, SR-04 and SR-06~~ done in WP-S-02 v0.3 | closed | — |
 | OI-6 | Every **(TBC)** value: field length and detection height (WP-V-02, WP-C-06 OI-1), crawl limit, stall thresholds (DQ-008), warning time, teleoperation speed near a person (DQ-017), arming time-out | Safety manager | G2 |
 | OI-7 | WP-S-04: confirm the §7 budget with datasheets and settle the SF-04 target | Hardware lead | G2 |
 | OI-8 | Specify the teleoperation device with its enabling control and the sounder and stack light (WP-C-06 OI-5) in WP-H-02 | Hardware lead | G2 |
 | OI-9 | ~~Apply DQ-014 B~~ done in v0.2 §5; WP-S-03 v0.3 carries the architecture; the software work products widen (WP-M-01 OI-4) | closed | — |
 | OI-10 | ~~Apply DQ-004 B~~ done in v0.2 (SF-10…SF-12); re-specify when the 2.0 design and the OpenArm safety functions are public | closed | — |
 | OI-11 | ~~Lead decision DQ-021~~ decided 2026-10-20 (option A): safety-rated monitored stop; §3.11 written to it | closed | — |
-| OI-12 | WP-S-02: SR-10.x, SR-11.x, SR-12.x for the arm and lift functions (with OI-5) | Safety manager | G1 |
+| OI-12 | ~~WP-S-02: SR-10.x, SR-11.x, SR-12.x for the arm and lift functions~~ done in WP-S-02 v0.3 (SR-10.01…SR-12.06, all CFG-002) | closed | — |

@@ -30,6 +30,6 @@ Standard clauses: ISO 13849-1 §4, IEC 62061 §5, IEC 61508-1 §6 and §8, IEC 6
 | Folder | What it holds |
 |---|---|
 | [`decisions/`](decisions/README.md) | Decision register |
-| [`figures/`](figures/) | Figure kit (figkit.py) and generated figures |
+| [`figures/`](figures/) | Figure generators (fig_*.py, with --check) and their generated SVGs |
 
 Drawn from [WP-M-00 §3](../01-management/WP-M-00-work-product-register.md#3-register), which also has the clauses of each work product. Each work product states its own status in its document-control header; this table repeats the register's status column.

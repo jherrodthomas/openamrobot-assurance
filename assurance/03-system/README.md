@@ -20,4 +20,10 @@ Standard clauses: ISO 13849-1 §5–§6 and §8, IEC 62061 §6, EN 60204-1 §9, 
 | [WP-S-08](WP-S-08-system-integration-test.md) | System integration and test strategy, specification and report | G4 | Skeleton |
 | [WP-S-09](WP-S-09-system-verification.md) | System verification: PL verification and fault behaviour | G4 | Skeleton |
 
+## Subfolders
+
+| Folder | What it holds |
+|---|---|
+| [`figures/`](figures/) | Figure generators (fig_*.py, with --check) and their generated SVGs |
+
 Drawn from [WP-M-00 §3](../01-management/WP-M-00-work-product-register.md#3-register), which also has the clauses of each work product. Each work product states its own status in its document-control header; this table repeats the register's status column.

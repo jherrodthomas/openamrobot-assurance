@@ -41,7 +41,7 @@ FOLDERS = {
                      "UL 4600, IEC 61508-1 §8, Machinery Regulation Art. 21 and Annexes IV–V, AI Act Art. 6 and 43, IEC 62443-4-1 §4.3."),
 }
 SUBFOLDER_NOTES = {
-  "decisions": "Decision register", "figures": "Figure kit (figkit.py) and generated figures", "reviews": "Verification review records",
+  "decisions": "Decision register", "figures": "Figure generators (fig_*.py, with --check) and their generated SVGs", "reviews": "Verification review records",
   "impact": "Change impact analysis records", "confirmation": "Confirmation measure records", "gates": "Gate review records and generated skeletons",
   "test-sites": "Test areas and session logs", "parameters": "Safety parameter sets (WP-W-09)",
 }

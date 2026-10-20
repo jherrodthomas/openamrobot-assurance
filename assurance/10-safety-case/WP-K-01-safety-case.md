@@ -84,7 +84,7 @@ specification, not reviewed; Missing = not yet performed.
 | Sn-01 | Item definition and limits of the machinery | `assurance/02-concept/WP-C-01-item-definition.md` | Partial | G0, G4.2 |
 | Sn-02 | Risk assessment and PLr determination | `assurance/02-concept/WP-C-03-risk-assessment.md` | Partial | G0, G4.2 |
 | Sn-03 | Baseline gap assessment GAP-01 to GAP-40 | `assurance/00-assessment/gap-assessment.md` | Partial | G0 |
-| Sn-04 | Safety requirements specification SR-00.01 to SR-10.03 | `assurance/03-system/WP-S-02-safety-requirements.md` | Partial | G1 |
+| Sn-04 | Safety requirements specification SR-00.01 to SR-90.04 | `assurance/03-system/WP-S-02-safety-requirements.md` | Partial | G1 |
 | Sn-05 | Technical safety concept: stop chain and SRP/CS architecture | `assurance/03-system/WP-S-03-technical-safety-concept.md` | Partial | G1 |
 | Sn-06 | Firmware hardening change record and impact analysis | `assurance/07-supporting/impact/change-2026-10-20-fw-hardening.md` | Partial | G1.4, G1.6, G1.7 |
 | Sn-07 | Stopping-distance and deceleration measurement (category 0 coast and commanded stop) | `assurance/06-validation/README.md` | Missing | G1.2, G2.2 |
