@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="520" viewBox="0 0 1280 520" role="img" aria-labelledby="hero-t hero-d">
+  <title id="hero-t">OpenAMRobot assurance: Open mobile manipulation. Engineered for safety.</title>
+  <desc id="hero-d">OpenAMRobot assurance banner: a geometric mobile manipulator in amber with a cyan LiDAR, a red emergency stop and a dashed protective field on a perspective floor grid, beside the project name and the tagline Open mobile manipulation. Engineered for safety. Chips name the standards: ISO 12100, ISO 3691-4, ISO 13849-1, EN 60204-1, IEC 62443, Machinery Reg. (EU) 2023/1230.</desc>
+  <defs>
+<radialGradient id="hero-bg" cx="0.72" cy="0.45" r="0.95"><stop offset="0" stop-color="#153238"/><stop offset="0.55" stop-color="#10262B"/><stop offset="1" stop-color="#07151A"/></radialGradient>
+<linearGradient id="hero-body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD38A"/><stop offset="1" stop-color="#B8731C"/></linearGradient>
+<linearGradient id="hero-amber" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#B8731C"/><stop offset="0.5" stop-color="#FFD38A"/><stop offset="1" stop-color="#B8731C"/></linearGradient>
+<linearGradient id="hero-fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3FD3C6" stop-opacity="0"/><stop offset="1" stop-color="#3FD3C6" stop-opacity="0.3"/></linearGradient>
+<clipPath id="hero-frame"><rect width="1280" height="520" rx="24"/></clipPath>
+  </defs>
+<g clip-path="url(#hero-frame)">
+<rect width="1280" height="520" fill="url(#hero-bg)"/>
+<line x1="980" y1="300" x2="-550" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="980" y1="300" x2="-380" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="980" y1="300" x2="-210" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="980" y1="300" x2="-40" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="980" y1="300" x2="130" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="980" y1="300" x2="300" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="980" y1="300" x2="470" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="980" y1="300" x2="640" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="980" y1="300" x2="810" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="980" y1="300" x2="980" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="980" y1="300" x2="1150" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="980" y1="300" x2="1320" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="980" y1="300" x2="1490" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="980" y1="300" x2="1660" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="980" y1="300" x2="1830" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="980" y1="300" x2="2000" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="980" y1="300" x2="2170" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="980" y1="300" x2="2340" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="980" y1="300" x2="2510" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="980" y1="300" x2="2680" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="980" y1="300" x2="2850" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="980" y1="300" x2="3020" y2="520" stroke="url(#hero-fade)" stroke-width="1"/>
+<line x1="948.26" y1="304.232" x2="1011.74" y2="304.232" stroke="#3FD3C6" stroke-opacity="0.08" stroke-width="1"/>
+<line x1="861.54" y1="315.795" x2="1098.46" y2="315.795" stroke="#3FD3C6" stroke-opacity="0.11" stroke-width="1"/>
+<line x1="724.057" y1="334.126" x2="1235.94" y2="334.126" stroke="#3FD3C6" stroke-opacity="0.14" stroke-width="1"/>
+<line x1="537.893" y1="358.948" x2="1422.11" y2="358.948" stroke="#3FD3C6" stroke-opacity="0.17" stroke-width="1"/>
+<line x1="304.452" y1="390.073" x2="1655.55" y2="390.073" stroke="#3FD3C6" stroke-opacity="0.20" stroke-width="1"/>
+<line x1="24.7867" y1="427.362" x2="1935.21" y2="427.362" stroke="#3FD3C6" stroke-opacity="0.23" stroke-width="1"/>
+<line x1="-300.263" y1="470.702" x2="2260.26" y2="470.702" stroke="#3FD3C6" stroke-opacity="0.26" stroke-width="1"/>
+<line x1="-670" y1="520" x2="2630" y2="520" stroke="#3FD3C6" stroke-opacity="0.29" stroke-width="1"/>
+<line x1="0" y1="300" x2="1280" y2="300" stroke="#3FD3C6" stroke-opacity="0.25"/>
+<ellipse cx="1010" cy="378" rx="210" ry="46" fill="#3FD3C6" fill-opacity="0.06" stroke="#3FD3C6" stroke-opacity="0.55" stroke-width="1.6" stroke-dasharray="8 6"/>
+<ellipse cx="1010" cy="378" rx="130" ry="28" fill="#3FD3C6" fill-opacity="0.08" stroke="#3FD3C6" stroke-opacity="0.8" stroke-width="1.6"/>
+<rect x="890" y="336" width="44" height="30" rx="10" fill="#243C44" stroke="#1F4752"/>
+<rect x="900" y="346" width="24" height="10" rx="4" fill="#3FD3C6" fill-opacity="0.55"/>
+<rect x="1046" y="336" width="44" height="30" rx="10" fill="#243C44" stroke="#1F4752"/>
+<rect x="1056" y="346" width="24" height="10" rx="4" fill="#3FD3C6" fill-opacity="0.55"/>
+<rect x="870" y="280" width="240" height="64" rx="18" fill="url(#hero-body)" stroke="#B8731C" stroke-width="1.5"/>
+<rect x="890" y="298" width="200" height="6" rx="3" fill="#07151A" fill-opacity="0.45"/>
+<circle cx="1082" cy="312" r="9" fill="#FF6B5C" stroke="#7A2A22" stroke-width="2"/>
+<circle cx="1082" cy="312" r="14" fill="none" stroke="#FFD38A" stroke-width="1.2"/>
+<rect x="878" y="308" width="44" height="24" rx="8" fill="#1C3942" stroke="#1E8F86"/>
+<circle cx="900" cy="320" r="6" fill="#3FD3C6"/>
+<path d="M900,320 m-65.8,-23.8 a70,70 0 0 1 0,47.6" fill="none" stroke="#3FD3C6" stroke-opacity="0.5" stroke-width="1.5"/>
+<path d="M900,320 m-112.8,-40.8 a120,120 0 0 1 0,81.6" fill="none" stroke="#3FD3C6" stroke-opacity="0.3" stroke-width="1.5"/>
+<path d="M900,320 m-159.8,-57.8 a170,170 0 0 1 0,115.6" fill="none" stroke="#3FD3C6" stroke-opacity="0.16" stroke-width="1.5"/>
+<rect x="956" y="158" width="68" height="126" rx="16" fill="url(#hero-body)" stroke="#B8731C" stroke-width="1.5"/>
+<rect x="970" y="180" width="40" height="8" rx="4" fill="#07151A" fill-opacity="0.4"/>
+<rect x="970" y="196" width="40" height="8" rx="4" fill="#07151A" fill-opacity="0.4"/>
+<rect x="960" y="116" width="60" height="36" rx="12" fill="#1C3942" stroke="#1E8F86"/>
+<rect x="972" y="126" width="36" height="14" rx="7" fill="#3FD3C6" fill-opacity="0.9"/>
+<path d="M956,178 L896,204 L884,248" fill="none" stroke="#A9C4CB" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M956,178 L896,204 L884,248" fill="none" stroke="#12303A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="896" cy="204" r="7" fill="#F2A33A"/>
+<rect x="875" y="244" width="18" height="22" rx="4" fill="#A9C4CB"/>
+<path d="M1024,178 L1084,204 L1096,248" fill="none" stroke="#A9C4CB" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1024,178 L1084,204 L1096,248" fill="none" stroke="#12303A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1084" cy="204" r="7" fill="#F2A33A"/>
+<rect x="1087" y="244" width="18" height="22" rx="4" fill="#A9C4CB"/>
+<text x="72" y="150" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#F2A33A" text-anchor="start" letter-spacing="6">OPENAMROBOT ASSURANCE</text>
+<text x="72" y="218" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="52" font-weight="800" fill="#F2F6F7" text-anchor="start" letter-spacing="-1">Open mobile manipulation.</text>
+<text x="72" y="278" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="52" font-weight="800" fill="#FFD38A" text-anchor="start" letter-spacing="-1">Engineered for safety.</text>
+<text x="72" y="320" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" fill="#93AEB5" text-anchor="start">The engineering assurance record for a safety-assured fork of</text>
+<text x="72" y="345" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" fill="#93AEB5" text-anchor="start">the OpenAMRobot platform: machinery risk assessment, a</text>
+<text x="72" y="370" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" fill="#93AEB5" text-anchor="start">hardwired safety chain with a Performance Level target, and a</text>
+<text x="72" y="395" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" fill="#93AEB5" text-anchor="start">safety case published as it is built.</text>
+<rect x="72" y="404" width="84.8" height="30" rx="15" fill="#12303A" stroke="#1F4752" stroke-width="1"/>
+<text x="114.4" y="424" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="13" font-weight="600" fill="#F2F6F7" text-anchor="middle">ISO 12100</text>
+<rect x="166.8" y="404" width="93" height="30" rx="15" fill="#12303A" stroke="#1F4752" stroke-width="1"/>
+<text x="213.3" y="424" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="13" font-weight="600" fill="#F2F6F7" text-anchor="middle">ISO 3691-4</text>
+<rect x="269.8" y="404" width="101.2" height="30" rx="15" fill="#12303A" stroke="#1F4752" stroke-width="1"/>
+<text x="320.4" y="424" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="13" font-weight="600" fill="#F2F6F7" text-anchor="middle">ISO 13849-1</text>
+<rect x="381" y="404" width="93" height="30" rx="15" fill="#12303A" stroke="#1F4752" stroke-width="1"/>
+<text x="427.5" y="424" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="13" font-weight="600" fill="#F2F6F7" text-anchor="middle">EN 60204-1</text>
+<rect x="484" y="404" width="84.8" height="30" rx="15" fill="#12303A" stroke="#1F4752" stroke-width="1"/>
+<text x="526.4" y="424" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="13" font-weight="600" fill="#F2F6F7" text-anchor="middle">IEC 62443</text>
+<rect x="578.8" y="404" width="248.8" height="30" rx="15" fill="#12303A" stroke="#1F4752" stroke-width="1"/>
+<text x="703.2" y="424" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="13" font-weight="600" fill="#F2F6F7" text-anchor="middle">Machinery Reg. (EU) 2023/1230</text>
+<text x="72" y="474" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#5F7B82" text-anchor="start">Standards-informed engineering · no compliance claimed · nothing approved for operation around people</text>
+</g>
+</svg>

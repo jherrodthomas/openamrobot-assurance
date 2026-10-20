@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="603" viewBox="0 0 1000 603" role="img" aria-labelledby="road-t road-d">
+  <title id="road-t">OpenAMRobot assurance roadmap</title>
+  <desc id="road-d">Roadmap. Phase 01, Foundation (Active): Governance and safety plan, Baseline gap assessment, Work product register, Integrated process model, Decision register. Phase 02, Safety Engineering (Active): Machine limits and risk assessment, Safety functions and required PL, Detection concept, Cybersecurity threat assessment, Test operations hold point. Phase 03, Build and Verify (Planned): Bench safety hardware, Firmware hardening, Chain design and PL calculation, Stopping and detection tests, Fault injection. Phase 04, Validate and Release (Planned): Validation on the robot, Independent assessment, Technical documentation, Declaration of conformity draft, Field monitoring.</desc>
+  <defs>
+<linearGradient id="road-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10262B"/><stop offset="1" stop-color="#07151A"/></linearGradient>
+<linearGradient id="road-amber" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#B8731C"/><stop offset="0.5" stop-color="#FFD38A"/><stop offset="1" stop-color="#B8731C"/></linearGradient>
+  </defs>
+<rect x="0.5" y="0.5" width="999" height="602" rx="22" fill="url(#road-bg)" stroke="#1F4752"/>
+<rect x="40" y="0" width="920" height="3" fill="url(#road-amber)"/>
+<text x="40" y="56" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#F2A33A" text-anchor="start" letter-spacing="3">ROADMAP</text>
+<text x="40" y="94" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#F2F6F7" text-anchor="start">Four phases, status from repository evidence</text>
+<line x1="149.0" y1="150" x2="851.0" y2="150" stroke="#1F4752" stroke-width="2"/>
+<circle cx="149.0" cy="150" r="11" fill="#07151A" stroke="#3FD3C6" stroke-width="2.5"/>
+<circle cx="149.0" cy="150" r="5" fill="#3FD3C6"/>
+<rect x="40" y="180" width="218" height="373" rx="14" fill="#12303A" stroke="#3FD3C6" stroke-width="1.2"/>
+<text x="60" y="214" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#F2A33A" text-anchor="start" letter-spacing="2">PHASE 01</text>
+<text x="60" y="242" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#F2F6F7" text-anchor="start">Foundation</text>
+<rect x="60" y="290" width="84" height="24" rx="12" fill="#3FD3C6" stroke="#3FD3C6" stroke-width="1" fill-opacity="0.12"/>
+<text x="102" y="306.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#3FD3C6" text-anchor="middle" letter-spacing="1.2">ACTIVE</text>
+<rect x="60" y="332" width="6" height="6" rx="1" fill="#3FD3C6"/>
+<text x="76" y="340" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">Governance and safety</text>
+<text x="76" y="357" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">plan</text>
+<rect x="60" y="378" width="6" height="6" rx="1" fill="#3FD3C6"/>
+<text x="76" y="386" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">Baseline gap assessment</text>
+<rect x="60" y="407" width="6" height="6" rx="1" fill="#3FD3C6"/>
+<text x="76" y="415" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">Work product register</text>
+<rect x="60" y="436" width="6" height="6" rx="1" fill="#3FD3C6"/>
+<text x="76" y="444" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">Integrated process</text>
+<text x="76" y="461" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">model</text>
+<rect x="60" y="482" width="6" height="6" rx="1" fill="#3FD3C6"/>
+<text x="76" y="490" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">Decision register</text>
+<circle cx="383.0" cy="150" r="11" fill="#07151A" stroke="#3FD3C6" stroke-width="2.5"/>
+<circle cx="383.0" cy="150" r="5" fill="#3FD3C6"/>
+<rect x="274" y="180" width="218" height="373" rx="14" fill="#12303A" stroke="#3FD3C6" stroke-width="1.2"/>
+<text x="294" y="214" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#F2A33A" text-anchor="start" letter-spacing="2">PHASE 02</text>
+<text x="294" y="242" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#F2F6F7" text-anchor="start">Safety Engineering</text>
+<rect x="294" y="290" width="84" height="24" rx="12" fill="#3FD3C6" stroke="#3FD3C6" stroke-width="1" fill-opacity="0.12"/>
+<text x="336" y="306.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#3FD3C6" text-anchor="middle" letter-spacing="1.2">ACTIVE</text>
+<rect x="294" y="332" width="6" height="6" rx="1" fill="#3FD3C6"/>
+<text x="310" y="340" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">Machine limits and risk</text>
+<text x="310" y="357" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">assessment</text>
+<rect x="294" y="378" width="6" height="6" rx="1" fill="#3FD3C6"/>
+<text x="310" y="386" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">Safety functions and</text>
+<text x="310" y="403" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">required PL</text>
+<rect x="294" y="424" width="6" height="6" rx="1" fill="#3FD3C6"/>
+<text x="310" y="432" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">Detection concept</text>
+<rect x="294" y="453" width="6" height="6" rx="1" fill="#3FD3C6"/>
+<text x="310" y="461" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">Cybersecurity threat</text>
+<text x="310" y="478" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">assessment</text>
+<rect x="294" y="499" width="6" height="6" rx="1" fill="#3FD3C6"/>
+<text x="310" y="507" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">Test operations hold</text>
+<text x="310" y="524" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">point</text>
+<circle cx="617.0" cy="150" r="11" fill="#07151A" stroke="#5F7B82" stroke-width="2.5"/>
+<circle cx="617.0" cy="150" r="5" fill="#5F7B82"/>
+<rect x="508" y="180" width="218" height="373" rx="14" fill="#12303A" stroke="#5F7B82" stroke-width="1.2" fill-opacity="0.7"/>
+<text x="528" y="214" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#F2A33A" text-anchor="start" letter-spacing="2">PHASE 03</text>
+<text x="528" y="242" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#F2F6F7" text-anchor="start">Build and Verify</text>
+<rect x="528" y="290" width="84" height="24" rx="12" fill="#5F7B82" stroke="#5F7B82" stroke-width="1" fill-opacity="0.12"/>
+<text x="570" y="306.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#5F7B82" text-anchor="middle" letter-spacing="1.2">PLANNED</text>
+<rect x="528" y="332" width="6" height="6" rx="1" fill="#5F7B82"/>
+<text x="544" y="340" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">Bench safety hardware</text>
+<rect x="528" y="361" width="6" height="6" rx="1" fill="#5F7B82"/>
+<text x="544" y="369" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">Firmware hardening</text>
+<rect x="528" y="390" width="6" height="6" rx="1" fill="#5F7B82"/>
+<text x="544" y="398" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">Chain design and PL</text>
+<text x="544" y="415" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">calculation</text>
+<rect x="528" y="436" width="6" height="6" rx="1" fill="#5F7B82"/>
+<text x="544" y="444" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">Stopping and detection</text>
+<text x="544" y="461" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">tests</text>
+<rect x="528" y="482" width="6" height="6" rx="1" fill="#5F7B82"/>
+<text x="544" y="490" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">Fault injection</text>
+<circle cx="851.0" cy="150" r="11" fill="#07151A" stroke="#5F7B82" stroke-width="2.5"/>
+<circle cx="851.0" cy="150" r="5" fill="#5F7B82"/>
+<rect x="742" y="180" width="218" height="373" rx="14" fill="#12303A" stroke="#5F7B82" stroke-width="1.2" fill-opacity="0.7"/>
+<text x="762" y="214" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#F2A33A" text-anchor="start" letter-spacing="2">PHASE 04</text>
+<text x="762" y="242" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#F2F6F7" text-anchor="start">Validate and</text>
+<text x="762" y="264" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#F2F6F7" text-anchor="start">Release</text>
+<rect x="762" y="290" width="84" height="24" rx="12" fill="#5F7B82" stroke="#5F7B82" stroke-width="1" fill-opacity="0.12"/>
+<text x="804" y="306.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#5F7B82" text-anchor="middle" letter-spacing="1.2">PLANNED</text>
+<rect x="762" y="332" width="6" height="6" rx="1" fill="#5F7B82"/>
+<text x="778" y="340" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">Validation on the robot</text>
+<rect x="762" y="361" width="6" height="6" rx="1" fill="#5F7B82"/>
+<text x="778" y="369" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">Independent assessment</text>
+<rect x="762" y="390" width="6" height="6" rx="1" fill="#5F7B82"/>
+<text x="778" y="398" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">Technical documentation</text>
+<rect x="762" y="419" width="6" height="6" rx="1" fill="#5F7B82"/>
+<text x="778" y="427" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">Declaration of</text>
+<text x="778" y="444" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">conformity draft</text>
+<rect x="762" y="465" width="6" height="6" rx="1" fill="#5F7B82"/>
+<text x="778" y="473" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#93AEB5" text-anchor="start">Field monitoring</text>
+<text x="40" y="587" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5F7B82" text-anchor="start">"Active" means work products exist as drafts or skeletons; nothing is marked complete before its review. The gates are in WP-M-00 §2.</text>
+</svg>
