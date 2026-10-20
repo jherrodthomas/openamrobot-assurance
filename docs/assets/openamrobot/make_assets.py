@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Render the README figures of OpenAMRobot assurance as SVG.
+"""Render the README and wiki figures of OpenAMRobot assurance as SVG.
 
-Six figures, one style: hero.svg (banner), standards.svg (one question per standard), architecture.svg
+Eight figures, one style: hero.svg (banner), standards.svg (one question per standard), architecture.svg
 (three layers and the assurance column), roadmap.svg (four phases, status from repository evidence),
-lifecycle.svg (the seven gates and where the project stands) and status.svg (the record-status card). The
-first five are drawn from the data at the top of this file; status.svg and the README headline block between
+lifecycle.svg (the seven gates and where the project stands), status.svg (the record-status card),
+standards-map.svg (which standard shapes which phase, counted from the register) and repo-map.svg (how the
+code, the record and what is generated from it fit together). The first five and the repository map are drawn
+from the data at the top of this file; status.svg, the standards map and the README headline block between
 the `record-headline` markers are computed from the records themselves (the work product register, the gap
 assessment, the decision register, the process model, the gate and confirmation records). Nothing is typed by
 hand, so a change to the data is a change to the figure and CI checks that the committed copies and the README
@@ -27,16 +29,18 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 ASSURANCE = ROOT / "assurance"
 README = ROOT / "README.md"
-NAMES = ("hero.svg", "standards.svg", "architecture.svg", "roadmap.svg", "lifecycle.svg", "status.svg")
+NAMES = ("hero.svg", "standards.svg", "architecture.svg", "roadmap.svg", "lifecycle.svg", "status.svg", "standards-map.svg", "repo-map.svg")
 HEADLINE_BEGIN = "<!-- BEGIN GENERATED: record-headline (docs/assets/openamrobot/make_assets.py) -->"
 HEADLINE_END = "<!-- END GENERATED: record-headline -->"
 
 FONT = "Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
 MONO = "'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace"
 C = {
-  "bg1": "#10262B", "bg2": "#07151A", "panel": "#12303A", "panel2": "#0E2630", "stroke": "#1F4752",
-  "amber": "#F2A33A", "amber_hi": "#FFD38A", "amber_lo": "#B8731C", "cyan": "#3FD3C6", "cyan_lo": "#1E8F86",
-  "text": "#F2F6F7", "muted": "#93AEB5", "dim": "#5F7B82", "red": "#FF6B5C", "green": "#5FD38F", "white": "#FFFFFF",
+  # light theme: white card with a pale gradient, teal and amber accents dark enough to read on white
+  "bg1": "#FFFFFF", "bg2": "#F3F7F8", "panel": "#EDF2F4", "panel2": "#F7FAFB", "stroke": "#D3DDE2",
+  "amber": "#D4821A", "amber_hi": "#F2A33A", "amber_lo": "#A8650F", "cyan": "#0E8C83", "cyan_lo": "#8FD8D1",
+  "text": "#122026", "muted": "#4E6A73", "dim": "#7E949B", "red": "#D64535", "green": "#2C9A58", "white": "#FFFFFF",
+  "ink": "#122026",
 }
 
 # ------------------------------------------------------------------ data
@@ -71,6 +75,41 @@ ASSURANCE_COLUMN = ["Machine limits and risk assessment", "Safety functions and 
                     "Stopping, detection and E-stop validation", "Cybersecurity threat assessment", "Safety case and technical file",
                     "Decision register and gates"]
 LEGEND = [("inherited", "Inherited, functional only"), ("hardened", "Hardened by the fork (proposed)"), ("chain", "To be built, PL d target"), ("proposed", "Proposed, not yet in any repository")]
+
+# Standards map: a work product cites a standard when one of its WP-M-00 clause cells matches the pattern.
+STANDARD_PATTERNS = [
+  ("ISO 12100", "risk assessment", r"12100"),
+  ("ISO 3691-4", "driverless trucks, AMRs", r"3691-4"),
+  ("ISO 10218 · TS 15066", "robots, collaborative", r"10218|15066"),
+  ("ISO 13849-1 / -2", "safety-related control", r"13849"),
+  ("IEC 62061 · IEC 61508", "where 13849 runs out", r"62061|61508"),
+  ("EN 60204-1", "electrical equipment", r"60204"),
+  ("ISO 13850 · ISO 13855", "E-stop, safeguard positioning", r"13850|13855"),
+  ("IEC 61496", "protective equipment", r"61496"),
+  ("IEC 62443-4-1 / -4-2", "cybersecurity", r"62443"),
+  ("ISO/IEC TR 5469", "AI in safety functions", r"5469"),
+  ("ISO 21448 (method)", "performance limits", r"21448"),
+  ("Machinery Regulation", "(EU) 2023/1230", r"Machinery Reg"),
+  ("AI Act", "(EU) 2024/1689", r"AI Act"),
+  ("UL 4600", "safety case", r"4600"),
+  ("Automotive SPICE", "process capability", r"\b(SYS|SWE|SUP|MAN|ACQ|HWE|MLE|VAL)\.\d"),
+]
+
+# Repository map: the three columns of the figure and the arrows between them.
+REPO_CODE = [("openamr-platform-sw", "ROS 2 workspace: Nav2, docking, drivers, UI", "SR-Q"),
+             ("openamr-platform-fw", "Teensy firmware: the last software before the motors", "SR-A"),
+             ("openamr-platform-hw", "Power, motor control, sensors, wiring, BOM", "SR-A")]
+REPO_RECORD = [("00", "assessment", "gap findings"), ("01", "management", "strategy, plans, decisions"), ("02", "concept", "risk assessment, SF, PLr"),
+               ("03", "system", "SRS, chain architecture"), ("04", "hardware", "chain, PL calculation"), ("05", "software", "firmware, ROS 2, ML"),
+               ("06", "validation", "tests, hold point"), ("07", "supporting", "CM, change, review"), ("08", "analyses", "FMEA, FTA, STPA"),
+               ("09", "operation", "commissioning, field"), ("10", "safety-case", "case, tech file, gates"),
+               ("process/", "model", "activities, lanes, gates"), ("trace/", "items", "hazards, SF, AoU"), ("case/", "records", "claims, evidence, defeaters")]
+REPO_OUTPUTS = [("README figures and status card", "make_assets.py", "docs/assets/openamrobot/"),
+                ("Living Safety Case dashboard", "generate_dashboard.py", "docs/assets/assurance/"),
+                ("Process maps, swimlanes, gate skeletons", "process_model.py · process_figures.py", "process/maps/ · gates/skeletons/"),
+                ("Folder indexes", "folder_index.py", "assurance/*/README.md"),
+                ("Decision inbox page", "build_inbox.py", "a private page for the lead"),
+                ("GitHub wiki", "build_wiki.py", "wiki/ mirrored on merge")]
 
 ROADMAP = [
   ("01", "Foundation", "ACTIVE", ["Governance and safety plan", "Baseline gap assessment", "Work product register", "Integrated process model", "Decision register"]),
@@ -135,7 +174,7 @@ def svg(w, h, gid, title, desc, defs, body):
 def heading(x, label, title, right=""):
   out = [text(x, 56, label, 15, C["amber"], 700, extra=' letter-spacing="3"'), text(x, 94, title, 28, C["text"], 700)]
   if right:
-    out.append(text(960, 94, right, 15, C["muted"], anchor="end"))
+    out.append(text(960, 56, right, 12, C["muted"], anchor="end"))
   return "\n".join(out)
 
 
@@ -149,7 +188,7 @@ def robot_emblem(cx, cy, s=1.0):
   g.append(f'<ellipse cx="{cx + 20 * s:g}" cy="{cy + 128 * s:g}" rx="{130 * s:g}" ry="{28 * s:g}" fill="{C["cyan"]}" fill-opacity="0.08" stroke="{C["cyan"]}" stroke-opacity="0.8" stroke-width="1.6"/>')
   # wheels
   for dx in (-78, 78):
-    g.append(f'<rect x="{cx + dx * s - 22 * s:g}" y="{cy + 86 * s:g}" width="{44 * s:g}" height="{30 * s:g}" rx="{10 * s:g}" fill="#243C44" stroke="{C["stroke"]}"/>')
+    g.append(f'<rect x="{cx + dx * s - 22 * s:g}" y="{cy + 86 * s:g}" width="{44 * s:g}" height="{30 * s:g}" rx="{10 * s:g}" fill="#36515B" stroke="{C["stroke"]}"/>')
     g.append(f'<rect x="{cx + dx * s - 12 * s:g}" y="{cy + 96 * s:g}" width="{24 * s:g}" height="{10 * s:g}" rx="{4 * s:g}" fill="{C["cyan"]}" fill-opacity="0.55"/>')
   # base
   g.append(f'<rect x="{cx - 120 * s:g}" y="{cy + 30 * s:g}" width="{240 * s:g}" height="{64 * s:g}" rx="{18 * s:g}" fill="url(#hero-body)" stroke="{C["amber_lo"]}" stroke-width="1.5"/>')
@@ -158,7 +197,7 @@ def robot_emblem(cx, cy, s=1.0):
   g.append(f'<circle cx="{cx + 92 * s:g}" cy="{cy + 62 * s:g}" r="{9 * s:g}" fill="{C["red"]}" stroke="#7A2A22" stroke-width="2"/>')
   g.append(f'<circle cx="{cx + 92 * s:g}" cy="{cy + 62 * s:g}" r="{14 * s:g}" fill="none" stroke="{C["amber_hi"]}" stroke-width="1.2"/>')
   # lidar window on the front face of the base, sweeping forward (to the left)
-  g.append(f'<rect x="{cx - 112 * s:g}" y="{cy + 58 * s:g}" width="{44 * s:g}" height="{24 * s:g}" rx="{8 * s:g}" fill="#1C3942" stroke="{C["cyan_lo"]}"/>')
+  g.append(f'<rect x="{cx - 112 * s:g}" y="{cy + 58 * s:g}" width="{44 * s:g}" height="{24 * s:g}" rx="{8 * s:g}" fill="#2B4A54" stroke="{C["cyan"]}"/>')
   g.append(f'<circle cx="{cx - 90 * s:g}" cy="{cy + 70 * s:g}" r="{6 * s:g}" fill="{C["cyan"]}"/>')
   for r, op in ((70, 0.5), (120, 0.3), (170, 0.16)):
     g.append(f'<path d="M{cx - 90 * s:g},{cy + 70 * s:g} m{-r * s * 0.94:g},{-r * s * 0.34:g} a{r * s:g},{r * s:g} 0 0 1 {0:g},{r * s * 0.68:g}" fill="none" stroke="{C["cyan"]}" stroke-opacity="{op}" stroke-width="1.5"/>')
@@ -167,7 +206,7 @@ def robot_emblem(cx, cy, s=1.0):
   g.append(f'<rect x="{cx - 20 * s:g}" y="{cy - 70 * s:g}" width="{40 * s:g}" height="{8 * s:g}" rx="4" fill="{C["bg2"]}" fill-opacity="0.4"/>')
   g.append(f'<rect x="{cx - 20 * s:g}" y="{cy - 54 * s:g}" width="{40 * s:g}" height="{8 * s:g}" rx="4" fill="{C["bg2"]}" fill-opacity="0.4"/>')
   # head / camera
-  g.append(f'<rect x="{cx - 30 * s:g}" y="{cy - 134 * s:g}" width="{60 * s:g}" height="{36 * s:g}" rx="{12 * s:g}" fill="#1C3942" stroke="{C["cyan_lo"]}"/>')
+  g.append(f'<rect x="{cx - 30 * s:g}" y="{cy - 134 * s:g}" width="{60 * s:g}" height="{36 * s:g}" rx="{12 * s:g}" fill="#2B4A54" stroke="{C["cyan"]}"/>')
   g.append(f'<rect x="{cx - 18 * s:g}" y="{cy - 124 * s:g}" width="{36 * s:g}" height="{14 * s:g}" rx="7" fill="{C["cyan"]}" fill-opacity="0.9"/>')
   # arms
   for side in (-1, 1):
@@ -182,7 +221,7 @@ def robot_emblem(cx, cy, s=1.0):
 def hero_svg():
   w, h = 1280, 520
   defs = "\n".join([
-    f'<radialGradient id="hero-bg" cx="0.72" cy="0.45" r="0.95"><stop offset="0" stop-color="#153238"/><stop offset="0.55" stop-color="{C["bg1"]}"/><stop offset="1" stop-color="{C["bg2"]}"/></radialGradient>',
+    f'<radialGradient id="hero-bg" cx="0.72" cy="0.45" r="0.95"><stop offset="0" stop-color="#D9EEF0"/><stop offset="0.55" stop-color="{C["bg1"]}"/><stop offset="1" stop-color="{C["bg2"]}"/></radialGradient>',
     f'<linearGradient id="hero-body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{C["amber_hi"]}"/><stop offset="1" stop-color="{C["amber_lo"]}"/></linearGradient>',
     f'<linearGradient id="hero-amber" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="{C["amber_lo"]}"/><stop offset="0.5" stop-color="{C["amber_hi"]}"/><stop offset="1" stop-color="{C["amber_lo"]}"/></linearGradient>',
     f'<linearGradient id="hero-fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{C["cyan"]}" stop-opacity="0"/><stop offset="1" stop-color="{C["cyan"]}" stop-opacity="0.3"/></linearGradient>',
@@ -197,13 +236,13 @@ def hero_svg():
     y = vy + (h - vy) * (k / 8) ** 1.9
     half = (y - vy) * 7.5
     body.append(f'<line x1="{vx - half:g}" y1="{y:g}" x2="{vx + half:g}" y2="{y:g}" stroke="{C["cyan"]}" stroke-opacity="{0.05 + 0.03 * k:.2f}" stroke-width="1"/>')
-  body.append(f'<line x1="0" y1="{vy}" x2="{w}" y2="{vy}" stroke="{C["cyan"]}" stroke-opacity="0.25"/>')
+  body.append(f'<line x1="660" y1="{vy}" x2="{w}" y2="{vy}" stroke="{C["cyan"]}" stroke-opacity="0.25"/>')
   # emblem
   body.append(robot_emblem(990, 250, 1.0))
   # title block
   body.append(text(72, 150, "OPENAMROBOT ASSURANCE", 18, C["amber"], 700, extra=' letter-spacing="6"'))
   body.append(text(72, 218, "Open mobile manipulation.", 52, C["text"], 800, extra=' letter-spacing="-1"'))
-  body.append(text(72, 278, "Engineered for safety.", 52, C["amber_hi"], 800, extra=' letter-spacing="-1"'))
+  body.append(text(72, 278, "Engineered for safety.", 52, C["amber"], 800, extra=' letter-spacing="-1"'))
   lines = wrap("The engineering assurance record for a safety-assured fork of the OpenAMRobot platform: machinery risk assessment, a hardwired safety chain with a Performance Level target, and a safety case published as it is built.", 560, 17)
   for i, ln in enumerate(lines):
     body.append(text(72, 320 + i * 25, ln, 17, C["muted"]))
@@ -415,6 +454,17 @@ def load_records(root: Path = ROOT) -> dict:
       wp[c[8]] += 1
       g = re.match(r"G\d", c[7])
       wp_gate[g.group(0) if g else "?"] += 1
+  std_matrix: dict[str, dict[str, int]] = collections.OrderedDict((name, collections.Counter()) for name, _, _ in STANDARD_PATTERNS)
+  for line in texts["register"].splitlines():
+    m = re.match(r"^\| \[(WP-[A-Z]-\d\d)\]\([^)]+\) \|", line)
+    if m:
+      c = [x.strip() for x in line.strip().strip("|").split("|")]
+      g = re.match(r"G\d", c[7])
+      gate = g.group(0) if g else "?"
+      cells = " ".join(c[2:7])
+      for name, _, pat in STANDARD_PATTERNS:
+        if re.search(pat, cells):
+          std_matrix[name][gate] += 1
   gaps = collections.Counter()
   gap_areas: dict[str, int] = collections.OrderedDict()
   area = ""
@@ -446,6 +496,7 @@ def load_records(root: Path = ROOT) -> dict:
     h.update(name.encode())
   return {
     "wp_total": sum(wp.values()), "wp": dict(wp), "wp_gate": dict(wp_gate),
+    "std_matrix": {k: dict(v) for k, v in std_matrix.items()},
     "gaps_total": sum(gaps.values()), "gaps": dict(gaps), "gap_areas": dict(gap_areas),
     "dq": dict(dq), "dq_total": sum(dq.values()),
     "ix_total": ix_total, "ix_open": ix_open,
@@ -505,7 +556,7 @@ def status_svg(r: dict) -> str:
     seg = bw * n / total
     body.append(rect(x, 284, max(seg - 2, 2), 22, WP_STATUS_COLOR[code], r=4))
     if seg > 40:
-      body.append(text(x + seg / 2 - 1, 300, f"{n} {name.lower()}", 12, C["bg2"] if code in ("D", "A", "B") else C["text"], 600, anchor="middle"))
+      body.append(text(x + seg / 2 - 1, 300, f"{n} {name.lower()}", 12, C["ink"], 600, anchor="middle"))
     x += seg
   body.append(text(bx, 328, "Approval needs a verification review by someone other than the author; nothing has had one.", 11, C["dim"]))
   # per gate
@@ -555,11 +606,124 @@ def status_svg(r: dict) -> str:
   return svg(w, h, "stat", "OpenAMRobot assurance record status", desc, defs, "\n".join(body))
 
 
+# ------------------------------------------------------------------ standards map (from the register)
+
+def standards_map_svg(r: dict) -> str:
+  rows = [(name, sub) for name, sub, _ in STANDARD_PATTERNS]
+  label_w, cell_w, row_h, top = 300, 84, 34, 160
+  w, h = 1000, top + len(rows) * row_h + 92
+  defs, frame = card_bg(w, h, "smap")
+  body = [frame, heading(40, "STANDARDS MAP · FROM THE REGISTER", "Which standard shapes which phase",
+                         f"{r['wp_total']} work products · counted from the clause columns of WP-M-00")]
+  x0 = 40 + label_w
+  gates = [g for g, _, _ in GATES]
+  for i, (g, name, _) in enumerate(GATES):
+    x = x0 + i * cell_w
+    body.append(text(x + cell_w / 2, top - 40, g, 12, C["amber"], 700, anchor="middle", family=MONO))
+    for li, line in enumerate(wrap(name, cell_w - 6, 9)[:2]):
+      body.append(text(x + cell_w / 2, top - 27 + li * 11, line, 9, C["muted"], anchor="middle"))
+    body.append(text(x + cell_w / 2, top - 3, f"{r['wp_gate'].get(g, 0)} WPs", 9, C["dim"], anchor="middle", family=MONO))
+  body.append(text(x0 + 7 * cell_w + 28, top - 27, "total", 9.5, C["muted"], anchor="middle"))
+  vmax = max([n for m in r["std_matrix"].values() for n in m.values()] + [1])
+  for j, (name, sub) in enumerate(rows):
+    y = top + j * row_h
+    if j % 2:
+      body.append(rect(32, y, w - 64, row_h, C["panel"], r=6, opacity=0.45))
+    body.append(text(40, y + 15, name, 12, C["text"], 700))
+    body.append(text(40, y + 28, sub, 9.5, C["muted"]))
+    counts = r["std_matrix"].get(name, {})
+    for i, g in enumerate(gates):
+      n = counts.get(g, 0)
+      x = x0 + i * cell_w
+      if n:
+        body.append(rect(x + 4, y + 4, cell_w - 8, row_h - 8, C["cyan"], r=6, opacity=0.12 + 0.78 * n / vmax))
+        body.append(text(x + cell_w / 2, y + 22, str(n), 13, C["ink"], 800, anchor="middle", family=MONO))
+      else:
+        body.append(text(x + cell_w / 2, y + 22, "·", 13, C["dim"], anchor="middle"))
+    body.append(text(x0 + 7 * cell_w + 28, y + 22, str(sum(counts.values())), 13, C["amber"], 800, anchor="middle", family=MONO))
+  fy = top + len(rows) * row_h + 20
+  body.append(text(40, fy, "A cell is the number of work products needed by that gate whose register row cites the standard; one work product can answer several standards, which is the point of an integrated lifecycle.", 10.5, C["dim"]))
+  body.append(text(40, fy + 16, "Structured after the standards, cited by clause; no compliance is claimed, and every clause reference is marked to be checked against a licensed copy.", 10.5, C["dim"]))
+  body.append(text(40, h - 16, f"Records digest {r['digest']} · regenerated whenever the register changes; CI fails if this figure is stale.", 10.5, C["dim"]))
+  desc = "Standards by phase, counted from the work product register: " + "; ".join(
+    f"{name}: " + ", ".join(f"{g} {r['std_matrix'].get(name, {}).get(g, 0)}" for g in gates) for name, _ in rows) + "."
+  return svg(w, h, "smap", "Which standard shapes which phase", desc, defs, "\n".join(body))
+
+
+# ------------------------------------------------------------------ repository map
+
+def repo_map_svg() -> str:
+  w, h = 1000, 640
+  defs, frame = card_bg(w, h, "repo")
+  defs += f'\n<marker id="repo-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{C["amber"]}"/></marker>'
+  body = [frame, heading(40, "REPOSITORY MAP", "The code, the record, and what is generated from it", "three repositories of code · one of record")]
+  # column 1: code
+  cx, cy, cw = 40, 124, 230
+  body.append(rect(cx, cy, cw, 400, C["panel2"], r=14, stroke=C["stroke"]))
+  body.append(text(cx + 16, cy + 26, "ROBOT CODE · THE FORKS", 10.5, C["amber"], 700, extra=' letter-spacing="1.5"'))
+  body.append(text(cx + 16, cy + 46, "Upstream's code, changed only by pull request", 10.5, C["muted"]))
+  for i, (name, what, cls) in enumerate(REPO_CODE):
+    y = cy + 64 + i * 84
+    body.append(rect(cx + 14, y, cw - 28, 70, C["bg2"], r=10, stroke=C["stroke"]))
+    body.append(text(cx + 26, y + 20, name, 11.5, C["text"], 700, family=MONO))
+    for li, line in enumerate(wrap(what, cw - 60, 10)[:2]):
+      body.append(text(cx + 26, y + 37 + li * 13, line, 10, C["muted"]))
+    body.append(rect(cx + cw - 70, y + 8, 46, 16, C["red"] if cls == "SR-A" else C["amber"], r=8, opacity=0.9))
+    body.append(text(cx + cw - 47, y + 19.5, cls, 9, C["ink"], 700, anchor="middle", family=MONO))
+  body.append(text(cx + 16, cy + 332, "Classes from the safety-relevant file list:", 9.5, C["dim"]))
+  body.append(text(cx + 16, cy + 346, "SR-A safety chain and firmware safety layer,", 9.5, C["dim"]))
+  body.append(text(cx + 16, cy + 360, "SR-Q functional layers that feed hazards, SR-T tooling.", 9.5, C["dim"]))
+  body.append(text(cx + 16, cy + 384, "A change on one needs an impact record.", 9.5, C["amber"], 600))
+  # arrow 1
+  body.append(f'<path d="M{cx + cw + 6},{cy + 200} L{cx + cw + 44},{cy + 200}" stroke="{C["amber"]}" stroke-width="1.6" fill="none" marker-end="url(#repo-arrow)"/>')
+  body.append(text(cx + cw + 25, cy + 188, "impact", 9, C["amber"], 600, anchor="middle"))
+  # column 2: the record
+  rx, rw = cx + cw + 50, 356
+  body.append(rect(rx, cy, rw, 400, C["panel"], r=14, stroke=C["cyan_lo"]))
+  body.append(text(rx + 16, cy + 26, "THIS REPOSITORY · THE RECORD", 10.5, C["cyan"], 700, extra=' letter-spacing="1.5"'))
+  body.append(text(rx + 16, cy + 46, "assurance/ in lifecycle order; every file has a register row", 10.5, C["muted"]))
+  for i, (num, folder, what) in enumerate(REPO_RECORD):
+    col_i, row_i = i % 2, i // 2
+    x = rx + 12 + col_i * 168
+    y = cy + 60 + row_i * 44
+    body.append(rect(x, y, 158, 38, C["bg2"], r=8, stroke=C["stroke"]))
+    body.append(text(x + 10, y + 16, f"{num}", 10, C["cyan"], 700, family=MONO))
+    body.append(text(x + 38 if len(num) <= 2 else x + 10 + len(num) * 6.5 + 6, y + 16, folder, 10.5, C["text"], 700))
+    body.append(text(x + 10, y + 30, what, 9, C["muted"]))
+  body.append(text(rx + 16, cy + 388, "Plus the decision register, the process model and the checks that CI runs.", 9.5, C["dim"]))
+  # arrow 2
+  body.append(f'<path d="M{rx + rw + 6},{cy + 200} L{rx + rw + 44},{cy + 200}" stroke="{C["amber"]}" stroke-width="1.6" fill="none" marker-end="url(#repo-arrow)"/>')
+  body.append(text(rx + rw + 25, cy + 188, "generate", 9, C["amber"], 600, anchor="middle"))
+  # column 3: outputs
+  ox, ow = rx + rw + 50, w - 40 - (rx + rw + 50)
+  body.append(rect(ox, cy, ow, 400, C["panel2"], r=14, stroke=C["stroke"]))
+  body.append(text(ox + 16, cy + 26, "GENERATED · PUBLISHED", 10.5, C["amber"], 700, extra=' letter-spacing="1.5"'))
+  body.append(text(ox + 16, cy + 46, "Never edited by hand", 10.5, C["muted"]))
+  for i, (what, tool, where) in enumerate(REPO_OUTPUTS):
+    y = cy + 62 + i * 54
+    body.append(rect(ox + 12, y, ow - 24, 46, C["bg2"], r=8, stroke=C["stroke"]))
+    body.append(text(ox + 22, y + 17, wrap(what, ow - 50, 10.5)[0], 10.5, C["text"], 700))
+    body.append(text(ox + 22, y + 31, wrap(tool, ow - 50, 9)[0], 9, C["cyan"], family=MONO))
+    body.append(text(ox + 22, y + 42, wrap(where, ow - 50, 8.5)[0], 8.5, C["dim"]))
+  # bottom: CI strip
+  by = cy + 416
+  body.append(rect(40, by, w - 80, 56, C["bg2"], r=12, stroke=C["stroke"]))
+  body.append(text(58, by + 23, "CI on every pull request", 12, C["text"], 700))
+  body.append(text(58, by + 40, "case validator and dashboard · decision register · folder indexes · process model, maps and swimlanes · README figures · links and tables · wiki build.", 9.5, C["muted"]))
+  body.append(text(w - 58, by + 23, "A passing run accepts nothing on its own: a claim is accepted only by a recorded review.", 9.5, C["dim"], anchor="end"))
+  body.append(text(40, h - 16, "Code changes land in the forks under the change process; the record changes in the same pull request; every figure, map and page is regenerated from it.", 10.5, C["dim"]))
+  desc = ("Repository map. Code: " + ", ".join(n for n, _, _ in REPO_CODE) + ". Record folders: " + ", ".join(f"{n} {f}" for n, f, _ in REPO_RECORD)
+          + ". Generated: " + ", ".join(w_ for w_, _, _ in REPO_OUTPUTS) + ".")
+  return svg(w, h, "repo", "Repository map: code, record, generated outputs", desc, defs, "\n".join(body))
+
+
 # ------------------------------------------------------------------ entry points
 
 def render_all(root: Path = ROOT) -> dict[str, str]:
+  r = load_records(root)
   return {"hero.svg": hero_svg(), "standards.svg": standards_svg(), "architecture.svg": architecture_svg(),
-          "roadmap.svg": roadmap_svg(), "lifecycle.svg": lifecycle_svg(), "status.svg": status_svg(load_records(root))}
+          "roadmap.svg": roadmap_svg(), "lifecycle.svg": lifecycle_svg(), "status.svg": status_svg(r),
+          "standards-map.svg": standards_map_svg(r), "repo-map.svg": repo_map_svg()}
 
 
 def main(argv: list[str]) -> int:

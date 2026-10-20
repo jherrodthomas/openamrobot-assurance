@@ -43,10 +43,11 @@ HEAD_END = "<!-- END GENERATED: assurance-headline -->"
 
 FONT = "Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
 C = {
-  "bg0": "#070D1A", "bg1": "#0E1A31", "panel": "#111E37", "line": "#24345A",
-  "gold": "#E2B85C", "gold_hi": "#F6DC97", "gold_lo": "#A97A2A",
-  "blue": "#4EA8FF", "white": "#F4F6FA", "muted": "#93A1BC", "dim": "#5F6E8C",
-  "green": "#43D19A", "red": "#F2647A",
+  # light theme, the palette of the README figures
+  "bg0": "#FFFFFF", "bg1": "#F3F7F8", "panel": "#EDF2F4", "line": "#D3DDE2",
+  "gold": "#D4821A", "gold_hi": "#F2A33A", "gold_lo": "#A8650F",
+  "blue": "#1F6FD0", "text": "#122026", "muted": "#4E6A73", "dim": "#8A9AA2",
+  "green": "#2C9A58", "red": "#D64535",
 }
 STATUS_COLOR = {
   "Not Started": C["dim"], "In Progress": C["blue"], "Review Required": C["gold"],
@@ -58,7 +59,7 @@ STATE_COLOR = {"Development": C["blue"], "Under Review": C["gold"], "Evidence Su
 def _defs(uid: str) -> str:
   return f"""<defs>
     <linearGradient id="{uid}-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="{C['bg1']}"/><stop offset="1" stop-color="{C['bg0']}"/>
+      <stop offset="0" stop-color="{C['bg0']}"/><stop offset="1" stop-color="{C['bg1']}"/>
     </linearGradient>
     <linearGradient id="{uid}-gold" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="{C['gold_lo']}"/><stop offset="0.5" stop-color="{C['gold_hi']}"/><stop offset="1" stop-color="{C['gold_lo']}"/>
@@ -112,21 +113,21 @@ def dashboard_svg(s: dict) -> str:
   ev, cl, cf = s["evidence"], s["claims"], s["configurations"]
   body = [
     _text(40, 56, "LIVING SAFETY CASE", 15, C["gold"], 700, spacing=3),
-    _text(40, 96, "Recorded assurance state", 30, C["white"], 700),
+    _text(40, 96, "Recorded assurance state", 30, C["text"], 700),
     _text(40, 126, "Every figure is counted from the structured records in assurance/case.", 16, C["muted"]),
     _pill(960, 38, state, STATE_COLOR[state], anchor_right=True, size=15),
     _text(960, 100, f"Baseline {bl['id']} · {bl['source_revision']} · {bl['lifecycle_status'].replace('-', ' ')}", 15, C["muted"], anchor="end"),
     _text(960, 124, f"Records digest {s['records_digest']}", 15, C["dim"], anchor="end"),
   ]
   tiles = [
-    (cl["registered"], "Safety claims", "registered in the argument", C["white"]),
-    (cl["with_accepted_evidence"], "Claims with accepted", "supporting evidence", C["white"]),
-    (ev["registered"], "Evidence items", f"{ev['partial']} drafted · {ev['missing']} missing", C["white"]),
-    (ev["awaiting_review"], "Evidence to review", "drafted, not yet accepted", C["white"]),
-    (s["actions_open"], "Open actions", "safety-case open items", C["white"]),
-    (s["defeaters_open"], "Open defeaters", "known counter-evidence", C["white"]),
-    (cf["evaluated"], "Evaluated", "robot configurations", C["white"]),
-    (cf["assurance_supported"], "Assurance-supported", "robot configurations", C["white"]),
+    (cl["registered"], "Safety claims", "registered in the argument", C["text"]),
+    (cl["with_accepted_evidence"], "Claims with accepted", "supporting evidence", C["text"]),
+    (ev["registered"], "Evidence items", f"{ev['partial']} drafted · {ev['missing']} missing", C["text"]),
+    (ev["awaiting_review"], "Evidence to review", "drafted, not yet accepted", C["text"]),
+    (s["actions_open"], "Open actions", "safety-case open items", C["text"]),
+    (s["defeaters_open"], "Open defeaters", "known counter-evidence", C["text"]),
+    (cf["evaluated"], "Evaluated", "robot configurations", C["text"]),
+    (cf["assurance_supported"], "Assurance-supported", "robot configurations", C["text"]),
   ]
   tw, th, gap = 218, 128, 16
   for i, (n, l1, l2, color) in enumerate(tiles):
@@ -137,13 +138,13 @@ def dashboard_svg(s: dict) -> str:
       f'    <rect x="{x}" y="{y}" width="{tw}" height="{th}" rx="14" fill="{C["panel"]}" stroke="{C["line"]}"/>',
       f'    <rect x="{x}" y="{y + 22}" width="3" height="38" rx="1.5" fill="{accent}"/>',
       _text(x + 22, y + 58, str(n), 44, color, 700),
-      _text(x + 22, y + 90, l1, 16, C["white"], 600),
+      _text(x + 22, y + 90, l1, 16, C["text"], 600),
       _text(x + 22, y + 112, l2, 14, C["muted"]),
     ]
   y = 460
   total = ev["registered"]
   body += [
-    _text(40, y, "Evidence status", 16, C["white"], 600),
+    _text(40, y, "Evidence status", 16, C["text"], 600),
     _text(960, y, f"{total} items", 15, C["muted"], anchor="end"),
     _bar(40, y + 16, 920, 14, [(ev["available"], C["green"]), (ev["partial"], C["blue"]), (ev["missing"], C["dim"])], total),
   ]
@@ -173,7 +174,7 @@ def lifecycle_svg(s: dict) -> str:
   w, h = 1000, 420
   body = [
     _text(40, 56, "LIFECYCLE AREAS", 15, C["gold"], 700, spacing=3),
-    _text(40, 94, "Status by engineering area", 28, C["white"], 700),
+    _text(40, 94, "Status by engineering area", 28, C["text"], 700),
     _text(960, 94, "Derived from evidence status and review state", 15, C["muted"], anchor="end"),
   ]
   cw, ch, gap = 296, 130, 16
@@ -184,7 +185,7 @@ def lifecycle_svg(s: dict) -> str:
     body += [
       f'    <rect x="{x}" y="{y}" width="{cw}" height="{ch}" rx="14" fill="{C["panel"]}" stroke="{C["line"]}"/>',
       _text(x + 22, y + 36, f"{i + 1:02d}", 15, C["gold"], 700, spacing=1),
-      _text(x + 56, y + 36, a["title"], 18, C["white"], 600),
+      _text(x + 56, y + 36, a["title"], 18, C["text"], 600),
       _pill(x + 22, y + 52, a["status"], color, size=12),
       _bar(x + 22, y + 94, cw - 44, 8, [(a["available"], C["green"]), (a["partial"], C["blue"]), (a["missing"], C["dim"])], a["evidence"]),
       _text(x + 22, y + 120, f"{a['partial']} drafted · {a['missing']} missing", 13, C["muted"]),

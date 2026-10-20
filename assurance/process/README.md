@@ -44,6 +44,11 @@ review skeletons from it.
 | [maps/g6-operation.md](maps/g6-operation.md) | L1 for the operation phase, same sections plus the feedback routes into earlier phases, G6 readiness |
 | [`10-safety-case/gates/skeletons/`](../10-safety-case/gates/skeletons/) | One pre-filled gate review skeleton per gate, following the gate record template ([gates README](../10-safety-case/gates/README.md)) |
 
+The same model is drawn as figures by [`tools/process_figures.py`](tools/process_figures.py) into
+[`docs/assets/openamrobot/process/`](../../docs/assets/openamrobot/process/): a lifecycle grid (lanes by phases), one
+vertical swimlane per phase with the activities in dependency order, and the cross-domain interfaces as a list.
+They are checked by CI like the maps, and the wiki's [Process maps](../../wiki/Process-maps.md) page embeds them.
+
 L2 (how to perform an activity) remains the procedures and plans the activities point to; it is not modelled here.
 The wiki's [Processes](../../wiki/Processes.md) and [Process maps](../../wiki/Process-maps.md) pages are the
 plain-language version.

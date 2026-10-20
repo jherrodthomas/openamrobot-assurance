@@ -32,8 +32,10 @@ Every question for the lead lives in the decision register,
   [WP-M-01 §4](assurance/01-management/WP-M-01-assurance-strategy.md#4-the-standards-and-how-each-one-is-used). No
   standard is held: mark every clause reference as to be checked against a licensed copy.
 - Generated files are never edited by hand: folder READMEs (`assurance/tools/folder_index.py`), process maps and
-  gate skeletons (`assurance/process/tools/process_model.py`), README figures
-  (`docs/assets/openamrobot/make_assets.py`), the decision lifecycle figure. Run the generator and commit its output.
+  gate skeletons (`assurance/process/tools/process_model.py`), process swimlane figures
+  (`assurance/process/tools/process_figures.py`), README and wiki figures (`docs/assets/openamrobot/make_assets.py`),
+  the safety-case dashboard (`assurance/case/tools/generate_dashboard.py`), the decision lifecycle figure. Run the
+  generator and commit its output.
 - A new work product goes into [WP-M-00](assurance/01-management/WP-M-00-work-product-register.md) first, with the
   document-control header of the [assurance README](assurance/README.md#document-control-header); then the process
   model gets an activity that produces it.

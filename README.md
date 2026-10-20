@@ -134,6 +134,10 @@ the plain-language version.
 | Regulatory | Regulation (EU) 2023/1230 (Machinery), Regulation (EU) 2024/1689 (AI Act) | [Regulatory conformity strategy](assurance/01-management/WP-M-13-regulatory-conformity-strategy.md) |
 | Safety case structure | UL 4600 principles | [Safety case](assurance/10-safety-case/WP-K-01-safety-case.md) |
 
+<p align="center">
+  <img src="docs/assets/openamrobot/standards-map.svg" width="100%" alt="Standards map: fifteen standards and practices down the side, the seven gates across, each cell the number of work products needed by that gate whose register row cites the standard. Counted from the work product register.">
+</p>
+
 | Supporting practice | Where it is applied |
 |---|---|
 | Integrated process model | [WP-P-11](assurance/process/README.md): activities, lanes, cross-domain interfaces and gates as data; generated swimlane maps and gate skeletons |

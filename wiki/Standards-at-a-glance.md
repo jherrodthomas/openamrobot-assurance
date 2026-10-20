@@ -8,6 +8,15 @@ is the page-length version of this table.
 
 ![Standards-informed engineering framework, one question per standard.](../docs/assets/openamrobot/standards.svg)
 
+## Where each standard lands in the lifecycle
+
+![Standards map: fifteen standards and practices down the side, the seven gates across, each cell the number of work products needed by that gate whose register row cites the standard.](../docs/assets/openamrobot/standards-map.svg)
+
+*Counted from the clause columns of [WP-M-00](../assurance/01-management/WP-M-00-work-product-register.md) by
+[`make_assets.py`](../docs/assets/openamrobot/make_assets.py); one work product can answer several standards, which
+is the point of an integrated lifecycle. The [process maps](Process-maps.md) show the same work as activities in
+discipline lanes.*
+
 ## The standards, and the question each answers
 
 | Standard | The question | Main work products |
@@ -36,7 +45,7 @@ is the page-length version of this table.
 ## How they fit together
 
 One shared **hazard log** (the risk assessment, with cybersecurity, insufficiency and misuse cross-references) and
-one **requirements database** (in [`assurance/trace/`](../assurance/trace/README.md), tooling to be ported) hold the
+one **requirements database** (in [`assurance/trace/`](../assurance/trace/README.md), hazards and assumptions first) hold the
 standards together:
 
 | Topic | Primary standard | Interface |

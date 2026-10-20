@@ -52,6 +52,28 @@ class RenderTests(unittest.TestCase):
     self.assertIn(f"{r['gaps_total']} gap findings", h)
     self.assertIn(r["digest"], h)
 
+  def test_the_standards_map_is_counted_from_the_register(self):
+    r = ma.load_records()
+    names = [n for n, _, _ in ma.STANDARD_PATTERNS]
+    self.assertEqual(list(r["std_matrix"]), names)
+    self.assertGreater(sum(r["std_matrix"]["ISO 13849-1 / -2"].values()), 0)
+    self.assertGreater(sum(r["std_matrix"]["IEC 62443-4-1 / -4-2"].values()), 0)
+    s = ma.standards_map_svg(r)
+    xml.dom.minidom.parseString(s)
+    for n in names:
+      self.assertIn(n.replace("&", "&amp;"), s)
+    self.assertIn(r["digest"], s)
+
+  def test_the_repository_map_names_the_code_the_record_and_the_outputs(self):
+    s = ma.repo_map_svg()
+    xml.dom.minidom.parseString(s)
+    for name, _, _ in ma.REPO_CODE:
+      self.assertIn(name, s)
+    for _, folder, _ in ma.REPO_RECORD:
+      self.assertIn(folder, s)
+    for what, _, _ in ma.REPO_OUTPUTS:
+      self.assertIn(what.split(",")[0], s)
+
   def test_headline_block_is_replaced_in_place(self):
     r = ma.load_records()
     doc = f"before\n{ma.HEADLINE_BEGIN}\n\nold\n\n{ma.HEADLINE_END}\nafter"
