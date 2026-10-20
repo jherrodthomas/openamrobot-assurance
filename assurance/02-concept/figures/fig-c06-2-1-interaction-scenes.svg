@@ -203,8 +203,8 @@
 <circle cx="108.7" cy="990.8" r="25.2" fill="#B86F0C" fill-opacity="0.08" stroke="#B86F0C" stroke-width="1" stroke-dasharray="3,3"/>
 <text x="42.0" y="1088.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="start">reaches into the arm's workspace at a</text>
 <text x="42.0" y="1100.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="start">station (CFG-002)</text>
-<text x="42.0" y="1114.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="start">needs: SF-11 (arm safe stop and force</text>
-<text x="42.0" y="1126.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="start">limit per §4), SF-10</text>
+<text x="42.0" y="1114.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="start">needs: SF-11 (monitored stop on entry to</text>
+<text x="42.0" y="1126.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="start">the workspace, DQ-021 A), SF-10</text>
 <rect x="282.0" y="900.0" width="236.0" height="258.0" rx="8" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
 <rect x="292.0" y="930.0" width="180.0" height="144.0" rx="3" fill="url(#scn-grid)" stroke="#D3DDE2" stroke-width="1"/>
 <text x="292.0" y="920.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">IS-14</text>

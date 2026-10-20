@@ -169,11 +169,11 @@ because the paths do not exist. The key switch position is reported in `/firmwar
 - **SF-10 base inhibit while an arm is unstowed:** a "stowed or carry pose" signal per arm (a safe output of the
   arm controller, or a mechanical pose switch per arm, dual channel) is a condition of the traction enable in the
   safety controller; channel 1 cross-checks it against the joint states. No pose signal, no traction.
-- **SF-11 arm safe stop:** the mode is DQ-021. In every mode an external safety controller (the PNOZmulti or
-  Flexi-class device WP-H-02 proposes as option 2) takes the station's detection device (a scanner field around
-  the station, or a safety mat) and, for power-and-force limiting, the arm's measured force or torque, and cuts
-  the arms' actuator power through the chain (the K1/K2 path of `ESTOP-SCOPE` covers the arms) or asserts the
-  arms' safe torque off if the OpenArm 2.0 controllers provide one, which is not published.
+- **SF-11 arm safe stop:** a safety-rated monitored stop (DQ-021 A). An external safety controller (the PNOZmulti
+  or Flexi-class device WP-H-02 proposes as option 2) takes the station's detection device (a scanner field around
+  the station, or a safety mat) and cuts the arms' actuator power through the chain (the K1/K2 path of
+  `ESTOP-SCOPE` covers the arms) or asserts the arms' safe torque off if the OpenArm 2.0 controllers provide one,
+  which is not published. No force measurement is part of the function.
 - **SF-12 lift and gripper holding, lift interlock:** holding is by design (DM-07: a brake or self-locking lift
   drive, a spring-closed or self-locking gripper) and proven by test (WP-V-05); the interlock is a condition of the
   lift enable in the safety controller on base standstill (channel 2 of SF-03), the arm pose signals (SF-10) and
@@ -237,4 +237,4 @@ functions and the lift holding evidence.
 | OI-4 | Reliability data (MTTFd, B10d) for K0, K1/K2, E-stop devices, scanner; DCavg and CCF scoring | WP-H-03 |
 | OI-5 | Confirm K0 output count and current for three paths (K1 coil, K2 coil, BRK/DI5 of two drivers) | §3.2 |
 | OI-6 | The firmware channel (DQ-014 B): define the diagnostic output channel 2 compares against, the heartbeat window and the demand relay; start the ISO 13849-1 §7 lifecycle in WP-W-01…WP-W-08 | §3.5, WP-M-01 OI-4 |
-| OI-7 | Put to upstream: the OpenArm 2.0 safety functions (safe torque off, force limiting, pose outputs) and the DOLD holding evidence | §3.8, §7 |
+| OI-7 | Put to upstream: the OpenArm 2.0 safety functions (safe torque off, pose outputs), its reach and stopping distance, and the DOLD holding evidence | §3.8, §7 |

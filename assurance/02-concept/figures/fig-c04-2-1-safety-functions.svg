@@ -257,24 +257,23 @@
 <rect x="410.0" y="848.0" width="368.0" height="206.0" rx="8" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
 <path d="M418,848 h352 a8,8 0 0 1 8,8 v22 h-368 v-22 a8,8 0 0 1 8,-8 z" fill="#2FA69C"/>
 <text x="422.0" y="868.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="start">SF-11</text>
-<text x="476.0" y="868.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="start">Arm safe stop and collaborative force…</text>
+<text x="476.0" y="868.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="start">Arm safe stop on entry to the station…</text>
 <text x="766.0" y="868.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="end">PLr d</text>
 <text x="422.0" y="898.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">DEMAND</text>
 <text x="611.0" y="898.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">SAFE STATE</text>
 <text x="422.0" y="914.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">A person enters the station's</text>
-<text x="422.0" y="926.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">marked workspace (monitored</text>
-<text x="422.0" y="939.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">stop or</text>
-<text x="422.0" y="951.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">speed-and-separation), or the</text>
-<text x="422.0" y="964.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">arm's measured contact force</text>
-<text x="422.0" y="976.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">or speed exceeds the ISO/TS</text>
-<text x="422.0" y="989.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">15066 body-region limit i…</text>
+<text x="422.0" y="926.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">marked workspace while an arm</text>
+<text x="422.0" y="939.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">moves (safety-rated monitored</text>
+<text x="422.0" y="951.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">stop, DQ-021 A); a hand-over</text>
+<text x="422.0" y="964.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">is requested while the arm</text>
+<text x="422.0" y="976.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">moves; an E-stop</text>
 <text x="611.0" y="914.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">The arm stops as a</text>
 <text x="611.0" y="926.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">safety-rated monitored stop</text>
 <text x="611.0" y="939.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">(safe torque off or safe stop</text>
 <text x="611.0" y="951.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">with holding), the gripper</text>
 <text x="611.0" y="964.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">holds; the arm resumes only</text>
 <text x="611.0" y="976.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">on a deliberate action with</text>
-<text x="611.0" y="989.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">the workspace clear</text>
+<text x="611.0" y="989.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">the workspace clea…</text>
 <line x1="583.0" y1="947.5" x2="603.0" y2="947.5" stroke="#122026" stroke-width="1.4" marker-end="url(#sfc-arrow)"/>
 <rect x="422.0" y="1024.0" width="45.9" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
 <text x="429.0" y="1038.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">Cat. 3</text>
