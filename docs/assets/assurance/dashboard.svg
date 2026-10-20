@@ -53,12 +53,12 @@
     <rect x="508" y="326" width="3" height="38" rx="1.5" fill="#4EA8FF"/>
     <text x="530" y="362" font-size="44" font-weight="700" fill="#F4F6FA" text-anchor="start">1</text>
     <text x="530" y="394" font-size="16" font-weight="600" fill="#F4F6FA" text-anchor="start">Evaluated</text>
-    <text x="530" y="416" font-size="14" font-weight="400" fill="#93A1BC" text-anchor="start">vehicle configurations</text>
+    <text x="530" y="416" font-size="14" font-weight="400" fill="#93A1BC" text-anchor="start">robot configurations</text>
     <rect x="742" y="304" width="218" height="128" rx="14" fill="#111E37" stroke="#24345A"/>
     <rect x="742" y="326" width="3" height="38" rx="1.5" fill="#E2B85C"/>
     <text x="764" y="362" font-size="44" font-weight="700" fill="#F4F6FA" text-anchor="start">0</text>
     <text x="764" y="394" font-size="16" font-weight="600" fill="#F4F6FA" text-anchor="start">Assurance-supported</text>
-    <text x="764" y="416" font-size="14" font-weight="400" fill="#93A1BC" text-anchor="start">vehicle configurations</text>
+    <text x="764" y="416" font-size="14" font-weight="400" fill="#93A1BC" text-anchor="start">robot configurations</text>
     <text x="40" y="460" font-size="16" font-weight="600" fill="#F4F6FA" text-anchor="start">Evidence status</text>
     <text x="960" y="460" font-size="15" font-weight="400" fill="#93A1BC" text-anchor="end">15 items</text>
     <defs><clipPath id="bar40476"><rect x="40" y="476" width="920" height="14" rx="7.0"/></clipPath></defs>
