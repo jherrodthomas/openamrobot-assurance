@@ -1,6 +1,7 @@
 # OpenAMRobot assurance
 
 OpenAMRobot, but designed for safety and assurance.
+
 The engineering assurance record for a safety-assured fork of the
 [OpenAMRobot](https://github.com/openAMRobot) mobile robot platform, built the same way as
 [LionDriver](https://github.com/jherrodthomas/LionDriver): a baseline gap assessment of the inherited code, then the
