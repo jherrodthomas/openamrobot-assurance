@@ -158,7 +158,7 @@ robot is within this case (WP-C-03 §8).
 | OI-2 | Measure stopping distance from 0.20 m/s, coast and commanded, loaded and unloaded | G1 | G2.2, G1.2 |
 | OI-3 | Set a payload limit and a payload height limit | G1 | G2.2 |
 | OI-4 | Resolve what the panel E-stop button switches on the as-built unit | G1 | G1.1 |
-| OI-5 | Decide the regulatory frame (DQ-003) and the item scope (DQ-004) | G1 | G0 |
+| OI-5 | ~~Decide the regulatory frame (DQ-003) and the item scope (DQ-004)~~ decided 2026-10-20: EU frame; the base with the arms and lift (B). Widen G0 and the item once DQ-020 settles the hardware | G1 | G0 |
 | OI-6 | Reviewer with Gate A operating experience confirms every rating in WP-C-03, including the per-zone re-ratings of v0.3 §5.2 | G1 | G4.2 |
 | OI-7 | Choose the detection device and the speed monitor for the bench build; budget decision (closed 2026-10-20: DQ-007, WP-H-02) | G2 | G1.2, G1.3 |
 | OI-8 | Read the ZBLD.C20 manual for BRK/DI5, SPD/DO2 and ERR/DO1 semantics | G2 | G1.1, G1.6 |

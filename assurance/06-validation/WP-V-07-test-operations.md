@@ -38,7 +38,10 @@ It applies to every on-ground test, from the first stopping-distance measurement
 | C-8 | The operator has read this procedure and run the pre-session checks of §4 | Signed line in the test log | WP-M-04 competence |
 
 Conditions C-1 to C-3 are the bench safety hardware of [WP-M-02 §4.1](../01-management/WP-M-02-safety-plan.md#41-early-implementation-of-at-risk-work);
-buying it is decision DQ-011.
+buying it was decision DQ-011: the lead decided on 2026-10-20 (option C) that there are no on-ground tests until
+the 2.0 base with its safety chain exists. The hold point is therefore not expected to open on the Gate A unit;
+C-1 to C-3 stay as the conditions for whichever base is first driven under the fork, and every Gate A activity is
+bench work with the wheels off the ground (WP-C-02 T-08, AOU-03).
 
 ## 3. Limits during development testing
 
@@ -80,7 +83,7 @@ writing after the cause is understood.
 
 | ID | Item | Owner | Due |
 |---|---|---|---|
-| OI-1 | Buy and fit the bench safety hardware (DQ-011); write the change record | PM | Before the first on-ground test |
+| OI-1 | ~~Buy and fit the bench safety hardware (DQ-011)~~ decided 2026-10-20 (option C): no on-ground test until the 2.0 base with its chain exists; the first on-ground test moves to that base | closed | — |
 | OI-2 | Name and train the test operator(s) (WP-M-02 §3.1) | PM | Before the first on-ground test |
 | OI-3 | Replace the §3 speed limits with the budget of WP-S-04 once the stopping distance is measured (WP-V-02) | SRP | G2 |
 | OI-4 | Define the test area in WP-C-02 and reference it here | SM | G1 |

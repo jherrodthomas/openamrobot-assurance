@@ -35,7 +35,7 @@ is decision DQ-009.
 | Is any safety component a product in its own right? | The safety relay, contactors, scanner and brakes are bought safety components with their own declarations; the fork integrates them | Their certificates are evidence in WP-H-07, not something the fork issues |
 | Does Annex I Part A apply (mandatory third-party assessment)? | Part A lists safety components and machinery with "fully or partially self-evolving behaviour using machine learning approaches ensuring safety functions". The fork's strategy (WP-M-01 T-03) allocates no safety function to a learned component, so Part A is **not triggered**. Part B lists other high-risk categories (none applies to an AMR as such) | The fork may choose Module A if harmonised standards are applied in full (§3); the threshold is monitored in §5 |
 
-## 3. Route to conformity (recommended)
+## 3. Route to conformity (decided: Module A, DQ-009, 2026-10-20)
 
 Art. 25 offers internal production control (Module A, Annex VI) where the machinery is not in Annex I and the
 harmonised standards covering all the essential requirements are applied; otherwise EU type-examination plus
@@ -47,6 +47,11 @@ verification (Module G, Annex X).
 | A: Module A, harmonised standards in full (ISO 3691-4, ISO 13849-1, EN 60204-1, ISO 13850 and, for the arms later, ISO 10218) | The fork self-declares against Annex III using the presumption of conformity of Art. 20. The technical documentation must still be complete and available for ten years | No notified body fee. The standards must be bought and applied in full; any deviation voids the presumption for that requirement | **Recommended for the base**, conditional on DQ-005 option A (PL d stop functions) and DQ-007 (a safety-rated detection means), because ISO 3691-4 presumes personnel detection at PL d where people share the space |
 | B: Module B + C, voluntary EU type-examination | A notified body examines the technical documentation and the type; gives an independent view the project otherwise lacks | Fee (indicative four to five figures); scheduling | Worth it once the robot is to leave the test cell; the assessor engagement DQ-010 could be the same body |
 | C: Module H | A certified quality system covering design and production | Out of proportion for a one-person open-source project | Not recommended |
+
+The lead chose Module A on 2026-10-20 (DQ-009): the fork plans for self-declaration with the harmonised
+standards applied in full, and NB-1 is withdrawn from WP-M-06; a later external examination stays voluntary. The
+standards themselves are not bought for now (DQ-016, option C) and no assessor is engaged (DQ-010, option C), so
+"applied in full" rests on references marked to be checked until that changes.
 
 Whichever module is chosen, the harmonised standards are listed in the Official Journal under the Regulation only
 once the Commission cites them; until then the standards give state of the art, not presumption. OI-2 tracks the
@@ -100,5 +105,5 @@ document, with any additional tests appended to WP-V-01, not a second technical 
 |---|---|---|---|
 | OI-1 | Have the article and annex references of this document checked against the Official Journal text by someone qualified | PM | G1 |
 | OI-2 | Track the citation of ISO 3691-4:2023, ISO 13849-1:2023 and EN 60204-1:2018 as harmonised standards under Regulation (EU) 2023/1230; until cited, state "state of the art" rather than "presumption of conformity" everywhere | SM | G1 |
-| OI-3 | Decide the module (DQ-009) and confirm or withdraw NB-1 in WP-M-06 | PM | G0 |
+| OI-3 | ~~Decide the module (DQ-009)~~ decided 2026-10-20: Module A; NB-1 withdrawn in WP-M-06 | closed | — |
 | OI-4 | Confirm with the lead that no fork build will be made available to anyone outside the project before G5 | PM | G0 |

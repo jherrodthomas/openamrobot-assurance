@@ -19,7 +19,10 @@ and at what independence, when the functional safety audits and assessments take
 the independent cybersecurity and ML reviews and the regulatory conformity assessment fit in, and where the records
 go.
 
-No confirmation measure has been performed at baseline `726046e`. No assessor is engaged (DQ-010).
+No confirmation measure has been performed at baseline `726046e`. No assessor is engaged: the lead decided on
+2026-10-20 (DQ-010, option C) not to engage one for now, so every I2 and I3 measure in this plan is **unscheduled**
+until that decision is revisited, and no work product can leave Draft through a confirmation measure. The standards
+are not bought either (DQ-016, option C), so every clause reference stays marked as to be checked.
 
 The machinery standards do not define a confirmation review. ISO 13849-1 asks for verification (§8) and validation
 (§10) and recommends that validation is done by persons independent of the design; IEC 61508-1 §8 defines the
@@ -43,7 +46,7 @@ standards and are adequate for the safety argument.
 - **Scope.** Confirmation measures apply to the reference configuration ([WP-M-01 §3.1](WP-M-01-assurance-strategy.md#31-reference-configuration-the-only-scope-claims-apply-to)).
 - **Conformity assessment.** Whether a notified body examines the technical documentation depends on the module
   chosen in DQ-009 and on whether any safety component uses machine learning (Machinery Regulation Annex I Part A).
-  NB-1 below is planned as a placeholder and removed if Module A (internal control) is chosen.
+  NB-1 below was a placeholder; Module A (internal control) was chosen on 2026-10-20 (DQ-009), so NB-1 is withdrawn.
 
 ## 3. Independence levels
 
@@ -134,7 +137,7 @@ ISO 3691-4, EN 60204-1 experience, with evidence); declared in writing in each r
 
 | Measure | When | Scope | Who |
 |---|---|---|---|
-| NB-1 | G5 | EU type-examination of the technical documentation ([WP-K-02](../10-safety-case/WP-K-02-technical-documentation-index.md)) and the declaration of conformity draft ([WP-K-06](../10-safety-case/WP-K-06-release-record.md)), if DQ-009 selects Module B or H or Annex I Part A applies | Notified body |
+| NB-1 (withdrawn 2026-10-20, DQ-009 Module A) | G5 | EU type-examination of the technical documentation ([WP-K-02](../10-safety-case/WP-K-02-technical-documentation-index.md)) and the declaration of conformity draft ([WP-K-06](../10-safety-case/WP-K-06-release-record.md)), if DQ-009 selects Module B or H or Annex I Part A applies | Notified body |
 
 If Module A (internal control) is selected, NB-1 is withdrawn and the manufacturer's own assessment of the technical
 documentation is covered by FSA-F and CR-12. [WP-M-13](WP-M-13-regulatory-conformity-strategy.md) owns the route.
@@ -162,9 +165,9 @@ declaration; date; method; findings with IDs; outcome. Findings are tracked as G
 
 | ID | Open item | Owner | Due |
 |---|---|---|---|
-| OI-1 | Check every clause reference in this plan and in WP-M-00 against licensed copies of ISO 13849-1:2023, ISO 13849-2:2012, IEC 61508-1:2010, ISO 3691-4:2023 and ISO 12100:2010 (decision DQ-016 on buying them) | SM | G0 |
+| OI-1 | **Unscheduled** (DQ-016 option C, 2026-10-20: no standards bought until an assessor is engaged; DQ-010 option C: none for now). Check every clause reference in this plan and in WP-M-00 against licensed copies of ISO 13849-1:2023, ISO 13849-2:2012, IEC 61508-1:2010, ISO 3691-4:2023 and ISO 12100:2010 (decision DQ-016 on buying them) | SM | G0 |
 | OI-2 | Re-plan independence after WP-C-04 is approved; record the rationale for any reduction from the PL d assumption | SM | G1 |
-| OI-3 | Engage the external FS assessor (DQ-010) and agree whether the ML reviews (§7) are in their scope | PM | G0 |
+| OI-3 | ~~Engage the external FS assessor (DQ-010)~~ decided 2026-10-20 (option C): not for now; every I2 and I3 measure unscheduled; revisit at G1 | closed | — |
 | OI-4 | Identify a cybersecurity assessor and a penetration tester; agree the independence statement | CSM | G1 |
 | OI-5 | CR-01 and CR-03 are due at G0 but no assessor is engaged; decide whether G0 can pass with them scheduled rather than performed (ties to DQ-010) | SM | G0 |
-| OI-6 | Confirm or withdraw NB-1 once DQ-009 is answered | SM | G0 |
+| OI-6 | ~~Confirm or withdraw NB-1 once DQ-009 is answered~~ withdrawn 2026-10-20 (DQ-009 option A, Module A) | closed | — |

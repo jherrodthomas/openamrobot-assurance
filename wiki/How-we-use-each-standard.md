@@ -148,7 +148,7 @@ environment has no licensed copy; every clause reference is marked to be checked
 - **How:** [WP-M-13](../assurance/01-management/WP-M-13-regulatory-conformity-strategy.md) is the strategy,
   [WP-K-02](../assurance/10-safety-case/WP-K-02-technical-documentation-index.md) maps the register onto Annex IV,
   [WP-K-06](../assurance/10-safety-case/WP-K-06-release-record.md) holds the unsigned declaration draft.
-- **Position taken:** EU frame recommended (DQ-003); internal control (Module A) with the harmonised standards
+- **Position taken:** EU frame decided (DQ-003, 2026-10-20); internal control (Module A) with the harmonised standards
   applied in full recommended for the base, with a voluntary EU type-examination worth considering once the robot
   leaves the test cell (DQ-009). The US frame (ANSI/A3 R15.08) is deferred and would be a cross-reference, not a
   second file.

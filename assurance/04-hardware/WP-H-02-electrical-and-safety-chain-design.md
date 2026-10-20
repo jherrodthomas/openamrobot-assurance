@@ -18,6 +18,11 @@
 > OI-1) before purchase. Prices are list-price estimates for one unit in October 2026 and will differ. Nothing
 > has been wired. MTTFd, DCavg and CCF are estimated from catalogue B10d values and must be recalculated in
 > WP-H-03 with the final parts.
+>
+> **DQ-011 answered C (2026-10-20):** the bench safety hardware is not bought for the Gate A unit and no on-ground
+> test runs until the 2.0 base with its chain exists. This design is kept as the first draft of that chain, its
+> parts list is a budget, not an order, and the bench-build evidence it was to produce (stopping distance, field
+> sizes, fault injection) waits for 2.0 (DQ-020).
 
 ## 1. What this build is for
 

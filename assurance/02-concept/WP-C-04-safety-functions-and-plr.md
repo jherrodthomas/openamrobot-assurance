@@ -16,9 +16,10 @@
 > Draft. The functions are specified at concept level from the hazards and ratings of WP-C-03 v0.3 and the
 > scenarios of WP-C-06. The response-time figures are the budget of WP-H-02 §3.2 for the candidate parts, not
 > measurements; every stopping distance is **(TBC)** until WP-V-02 measures it. The ISO 3691-4 Performance Levels
-> quoted in §4 are from memory of the standard and are marked to be checked against a licensed copy (DQ-016).
-> Two decisions of the lead change rows below: the stop category of SF-01 (DQ-015) and the allocation of the
-> functions to the chain or the firmware (DQ-014); the planning assumptions are written in and marked.
+> quoted in §4 are from memory of the standard and are marked to be checked against a licensed copy (DQ-016,
+> answered C: unscheduled). After this version was written the lead answered DQ-014 with B (the firmware joins the
+> safety-related control system for SF-03, SF-04 and SF-06; §5 is superseded, OI-9) and DQ-004 with B (the arms and
+> lift join the item; OI-10). The stop category of SF-01 (DQ-015) is open; the planning assumption is marked.
 
 ## 1. Purpose
 
@@ -255,8 +256,10 @@ updated in its next version (WP-S-02 OI-6).
 
 ## 5. Allocation
 
-Every safety function is allocated to the hardwired safety chain (WP-M-01 T-03; DQ-014 open, planning assumption
-option A): the devices, the safety relay, the speed monitor, the contactors and the driver inhibit inputs of
+Every safety function is allocated to the hardwired safety chain (WP-M-01 T-03; the planning assumption of this
+version was DQ-014 option A; **the lead answered B on 2026-10-20**, after this version was written: SF-03, SF-04 and
+SF-06 move partly into the firmware, which then carries a PL claim and the ISO 13849-1 §7 lifecycle; the table below
+is the chain-only allocation and is superseded by the next version of WP-S-03, OI-9): the devices, the safety relay, the speed monitor, the contactors and the driver inhibit inputs of
 WP-S-03 §2 and WP-H-02. The firmware and the ROS 2 stack are functional layers: they may **demand** a stop
 through the chain (SF-04, SF-06, SF-07 raise demands; SF-08 and SF-09 are conditioned by it) but their failure
 cannot prevent one; learned components are outside every safety function. If DQ-014 is answered B, SF-03 and
@@ -350,10 +353,12 @@ function admits the bench paths under the arming input; **—**: not applicable.
 | ID | Item | Owner | Due |
 |---|---|---|---|
 | OI-1 | ~~Write the content~~ v0.1 written; a reviewer with operating experience confirms the specifications with WP-C-03 OI-5 | Reviewer | G1 |
-| OI-2 | Set the stop category of SF-01 (decision DQ-015; planning assumption category 0) | Project lead | G1 |
-| OI-3 | Allocation decision DQ-014 (chain only, or firmware inside the SRP/CS for SF-03 and SF-06) | Project lead | G2 |
-| OI-4 | Check the ISO 3691-4 Performance Levels of §4 against a licensed copy (DQ-016) | Safety manager | G1 |
+| OI-2 | Set the stop category of SF-01 (decision DQ-015, now open in batch 2; planning assumption category 0) | Project lead | G1 |
+| OI-3 | ~~Allocation decision DQ-014~~ answered B on 2026-10-20 (firmware inside the SRP/CS for the speed and loss-of-control functions); applying it is OI-9 | closed | — |
+| OI-4 | Check the ISO 3691-4 Performance Levels of §4 against a licensed copy; **unscheduled** (DQ-016 option C, 2026-10-20) | Safety manager | G1 |
 | OI-5 | WP-S-02: raise SR-05.x to PLr d; add SR-08.x (warning before motion) and SR-09.x (enabling control) | Safety manager | G1 |
 | OI-6 | Every **(TBC)** value: field length and detection height (WP-V-02, WP-C-06 OI-1), crawl limit, stall thresholds (DQ-008), warning time, teleoperation speed near a person (DQ-017), arming time-out | Safety manager | G2 |
 | OI-7 | WP-S-04: confirm the §7 budget with datasheets and settle the SF-04 target | Hardware lead | G2 |
 | OI-8 | Specify the teleoperation device with its enabling control and the sounder and stack light (WP-C-06 OI-5) in WP-H-02 | Hardware lead | G2 |
+| OI-9 | Apply DQ-014 B (2026-10-20): redesign the allocation of SF-03, SF-04 and SF-06 with WP-S-03 so the firmware is a channel of the SRP/CS at PLr d, c, c; the §4 PLr values stand | Safety manager | G2 |
+| OI-10 | Apply DQ-004 B (2026-10-20): add the safety functions of the arms and lift (from WP-C-06 §4 CA-01…CA-05 and the second item's risk assessment) once WP-C-01 v0.4 widens the item, after DQ-020 | Safety manager | G1 |

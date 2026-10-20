@@ -85,7 +85,9 @@
       title: "Both from the start"
       detail: "Covers either market. Cost: two sets of clause references in every document and two conformity files to keep aligned."
   sources: ["Regulation (EU) 2023/1230 Art. 54 (application date)", "ISO 3691-4:2023 scope", "ANSI/A3 R15.08-1:2020 scope"]
-  status: open
+  status: applied
+  answer: {choice: A, via: inbox, at: 2026-10-20}
+  applied: {ref: "openamrobot-assurance main", record: "WP-M-01 §8 D-03; WP-M-13 §2 and §6; every work product's standard references are the EU frame already", at: 2026-10-20}
 
 - id: DQ-004
   ref: GAP-00
@@ -109,7 +111,9 @@
       title: "Whole mobile manipulator from the start"
       detail: "One item, one risk assessment. Cost: most of it would be assumptions about hardware and software we cannot read, and the case cannot close until 2.0 ships."
   sources: ["openAMRobot/.github decisions.yaml LIFT, ARM-MOUNT", "openamr-platform-hw product-architecture.md"]
-  status: open
+  status: answered
+  answer: {choice: B, via: inbox, at: 2026-10-20}
+  note: "Not the recommendation. Applying it widens the item to the base with the arms and lift: WP-C-01 v0.4, the hazards and functions of WP-C-03, WP-C-04 and WP-C-06 §4, and WP-M-01 T-14. Sequenced after DQ-020, which asks which hardware the widened item describes."
 
 - id: DQ-005
   ref: GAP-00
@@ -168,7 +172,9 @@
       title: "Make it a runtime parameter the host sets at start-up"
       detail: "Flexible per zone. Cost: another unauthenticated input that changes a safety limit, which is what the hardening removed."
   sources: ["change-2026-10-20-fw-hardening.md §1 item 3", "WP-C-03 SF-03", "sw: nav2_params.yaml:116-120", "gap assessment GAP-06, GAP-36"]
-  status: open
+  status: applied
+  answer: {choice: A, via: inbox, at: 2026-10-20}
+  applied: {ref: "openamr-platform-fw claude/wonderful-einstein-kr3bsf fe673fb", record: "firmware.ino CMD_VEL_MAX_LINEAR_MPS 0.25, CMD_VEL_MAX_ANGULAR_RPS 0.6; docs/safety/motion-safety.md; WP-S-02 SR-03.04; change-2026-10-20-fw-hardening §4", at: 2026-10-20}
 
 - id: DQ-007
   ref: WP-S-03 OI-2
@@ -254,7 +260,9 @@
       title: "Decide at G2, once the architecture and the detection means are fixed"
       detail: "Nothing is committed now. Cost: WP-M-13 and WP-M-06 carry a placeholder for a notified body for two gates, and the budget cannot be planned."
   sources: ["Regulation (EU) 2023/1230 Art. 25, Annex I, Annexes VI–X", "assurance/01-management/WP-M-13-regulatory-conformity-strategy.md §3", "assurance/01-management/WP-M-06-confirmation-measures-plan.md §8"]
-  status: open
+  status: applied
+  answer: {choice: A, via: inbox, at: 2026-10-20}
+  applied: {ref: "openamrobot-assurance main", record: "WP-M-13 §3 (Module A decided); WP-M-06 §2 and §8 (NB-1 withdrawn); WP-M-02 §3.1 (no notified body)", at: 2026-10-20}
 
 - id: DQ-010
   ref: WP-M-06
@@ -283,7 +291,9 @@
       title: "Not for now; record every I2 and I3 measure as unscheduled"
       detail: "No cost. Cost: nothing leaves draft, no gate can pass on its own terms, and the record stays a self-assessment until this changes."
   sources: ["assurance/01-management/WP-M-06-confirmation-measures-plan.md §4, §6, OI-3, OI-5", "assurance/01-management/WP-M-02-safety-plan.md §3.1"]
-  status: open
+  status: applied
+  answer: {choice: C, via: inbox, at: 2026-10-20}
+  applied: {ref: "openamrobot-assurance main", record: "WP-M-06 §1 and §11 (every I2 and I3 measure unscheduled); WP-M-02 §3.1 and OI-3", at: 2026-10-20}
 
 - id: DQ-011
   ref: GAP-01
@@ -314,7 +324,9 @@
       title: "No on-ground tests until the 2.0 base with its chain exists"
       detail: "Nothing spent. Cost: no stopping-distance, stability or detection data for at least two months; the concept phase proceeds on estimates."
   sources: ["assurance/06-validation/WP-V-07-test-operations.md §2", "assurance/00-assessment/gap-assessment.md GAP-01, GAP-02, GAP-04, GAP-19, §10 action 4", "openAMRobot/.github decisions.yaml SAFETY-PROCUREMENT"]
-  status: open
+  status: answered
+  answer: {choice: C, via: inbox, at: 2026-10-20}
+  note: "Not the recommendation. No on-ground test on the Gate A unit: WP-V-07's hold point is not expected to open on it, WP-H-02 becomes the first draft of the 2.0 chain rather than a purchase, and the stopping-distance measurement (WP-C-01 OI-2) waits for 2.0. Recorded in those work products; DQ-020 asks what the reference configuration becomes."
 
 - id: DQ-012
   ref: WP-M-02
@@ -343,7 +355,9 @@
       title: "Give the assessor of DQ-010 the verification reviewer role for the plans and the risk assessment"
       detail: "One engagement covers both. Cost: more billable hours, and the assessor then cannot confirm what they reviewed (independence)."
   sources: ["assurance/01-management/WP-M-02-safety-plan.md §3.1, OI-1, OI-2", "assurance/01-management/WP-M-01-assurance-strategy.md T-09"]
-  status: open
+  status: applied
+  answer: {choice: A, via: inbox, at: 2026-10-20}
+  applied: {ref: "openamrobot-assurance main", record: "WP-M-02 §3.1 (self-approval as a recorded interim limitation, every review logged as I0) and OI-2", at: 2026-10-20}
 
 - id: DQ-013
   ref: GAP-27
@@ -358,6 +372,8 @@
   decider: lead
   blocks: "The component requirements CR 1–7 in WP-C-08; the scope of WP-W-11 and WP-V-06; the cost of penetration testing"
   gate: G1
+  asked: 2026-10-20
+  batch: 2
   options:
     - key: A
       recommended: true
@@ -370,7 +386,7 @@
       title: "SL 2 throughout"
       detail: "Simplest to state. Cost: SL 2 on use control and data confidentiality buys little for a robot with no personal data and adds verification effort."
   sources: ["assurance/00-assessment/gap-assessment.md GAP-27, GAP-28, GAP-29", "assurance/02-concept/WP-C-08-cybersecurity-requirements-and-sl-target.md §2", "IEC 62443-4-2:2019 §4 (security levels)"]
-  status: queued
+  status: open
 
 - id: DQ-014
   ref: GAP-03
@@ -399,21 +415,27 @@
       title: "Defer until the firmware has a verification history, then promote it if the evidence supports it"
       detail: "Keeps the door open. Cost: the architecture is designed twice if the answer is later B."
   sources: ["assurance/01-management/WP-M-01-assurance-strategy.md §5 T-03, T-04, §6", "assurance/00-assessment/gap-assessment.md GAP-03, GAP-11", "openAMRobot/.github decisions.yaml TELEMETRY-NOT-SAFETY-EVIDENCE, ESTOP-SCOPE"]
-  status: open
+  status: answered
+  answer: {choice: B, via: inbox, at: 2026-10-20}
+  note: "Not the recommendation. The firmware joins the safety-related control system for the speed and loss-of-control functions (SF-03, SF-04, SF-06): WP-S-03 is redesigned, WP-M-01 T-03 and T-04 are rewritten, the software work products WP-W-02 to WP-W-08 widen to an ISO 13849-1 §7 lifecycle at PL d, and WP-C-04 §5 is superseded. Recorded in those work products; the rework is the next piece of design work."
 
 - id: DQ-015
   ref: WP-C-04
   question: "What does the emergency stop do: remove actuator power at once and let the brakes stop the robot (stop category 0), or brake under control first and then remove power (category 1)?"
   context: >-
     EN 60204-1 lets an E-stop be category 0 (immediate removal of power) or category 1 (controlled stop, then
-    power removed). Category 0 is simplest and needs no software, but on the Gate A unit there are no brakes, so a
-    category 0 stop is a coast; on the 2.0 base the hub motors have brakes that engage when power is lost. Category 1
-    stops shorter on a loaded robot but puts the firmware in the stop path for the first second, which conflicts
-    with the allocation of DQ-014.
+    power removed). You answered DQ-014 with B, so the firmware joins the safety-related control system for the
+    speed and loss-of-control functions; that removes the main objection to category 1, which puts the firmware's
+    braking in the stop path for the first second. You also answered DQ-011 with C, so the drive that matters is
+    the 2.0 hub motor whose brake engages on power loss, not the brakeless Gate A drive. Category 0 stays the
+    simplest: the relay drops the contactors and the brakes hold. Category 1 stops shorter on a loaded robot but
+    needs a delayed-drop safety relay and makes the firmware's braking part of the emergency stop at PL d.
   reversibility: revisit
   decider: lead
   blocks: "SF-01 in WP-C-04; the stopping-distance budget WP-S-04; the contactor and brake design in WP-H-02"
   gate: G1
+  asked: 2026-10-20
+  batch: 2
   after: [DQ-014]
   options:
     - key: A
@@ -423,8 +445,8 @@
     - key: B
       title: "Category 1: the firmware brakes under control, then the relay removes power after a fixed delay"
       detail: "Shorter stops, less load on the mechanics. Cost: a delayed-drop safety relay, and the firmware's braking becomes part of the safety function (DQ-014 option B)."
-  sources: ["EN 60204-1:2018 §9.2 (stop categories), ISO 13850:2015 §4", "assurance/02-concept/WP-C-04-safety-functions-and-plr.md §2", "openAMRobot/.github decisions.yaml ESTOP-SCOPE, DRIVETRAIN"]
-  status: queued
+  sources: ["EN 60204-1:2018 §9.2 (stop categories), ISO 13850:2015 §4", "assurance/02-concept/WP-C-04-safety-functions-and-plr.md §2, §3.1, §7", "openAMRobot/.github decisions.yaml ESTOP-SCOPE, DRIVETRAIN"]
+  status: open
 
 - id: DQ-016
   ref: WP-M-06
@@ -453,7 +475,9 @@
       title: "Buy nothing until an assessor is engaged"
       detail: "No cost now. Cost: every clause reference stays unverified through G1 and G2, and the assessor's first finding is predictable."
   sources: ["assurance/01-management/WP-M-06-confirmation-measures-plan.md OI-1", "assurance/01-management/WP-M-00-work-product-register.md (note on clause numbers)"]
-  status: open
+  status: applied
+  answer: {choice: C, via: inbox, at: 2026-10-20}
+  applied: {ref: "openamrobot-assurance main", record: "WP-M-06 OI-1 (clause checks unscheduled; every clause reference stays marked); WP-C-03 OI-7; WP-C-04 OI-4", at: 2026-10-20}
 
 - id: DQ-017
   ref: WP-C-02
@@ -467,6 +491,8 @@
   decider: lead
   blocks: "The zone limits in WP-C-02; the development limits in WP-V-07 §3; the safely-limited-speed function SF-03"
   gate: G1
+  asked: 2026-10-20
+  batch: 2
   after: [DQ-007]
   options:
     - key: A
@@ -480,7 +506,7 @@
       title: "Zero in any zone with a person until the arms question is settled, since the base will carry them"
       detail: "The most conservative. Cost: no shared-space operation at all in the first configuration."
   sources: ["ISO 3691-4:2023 §4 (speed in shared zones)", "assurance/00-assessment/gap-assessment.md §4.1", "openAMRobot/.github decisions.yaml SPEED-CEILING"]
-  status: queued
+  status: open
 
 - id: DQ-018
   ref: GAP-35
@@ -508,7 +534,7 @@
       title: "Leave the configuration as upstream has it"
       detail: "No behaviour change. Cost: reverse at 0.10 m/s with no detection stays outside the safety case."
   sources: ["gap assessment GAP-35", "WP-S-02 SR-02.04", "WP-H-02 §3.4", "sw: nav2_params.yaml:303-307", "sw: dock_trigger.yaml:22-23"]
-  status: queued
+  status: open
 
 - id: DQ-019
   ref: WP-C-03
@@ -538,3 +564,33 @@
       detail: "Cheap. Cost: a procedure is not a control for a hazard that can kill; the gap assessment's own principle, and the rating stays e."
   sources: ["assurance/02-concept/WP-C-03-risk-assessment.md §5 (H-01 public floor), §5.2", "assurance/02-concept/WP-C-02-operating-environment-and-tasks.md Z5", "assurance/02-concept/WP-C-06-human-robot-interaction-and-misuse.md IS-09, MU-07"]
   status: queued
+
+- id: DQ-020
+  ref: DQ-004
+  question: "With the arms and lift in scope and no on-ground tests on the Gate A unit, does the reference configuration move to the 2.0 design now, or does the Gate A unit stay as the software reference beside it?"
+  context: >-
+    You answered that the first safety case covers the base with the arms and lift (DQ-004) and that no on-ground
+    test runs until the 2.0 base with its safety chain exists (DQ-011). The arms, the lift and the 2.0 chain exist
+    only in upstream's private plan set, due as a release candidate on 20 November 2026; the Gate A unit is the
+    only hardware whose code and drawings can be read today, and DQ-002 made it the reference configuration. Left
+    as they are, the two answers have the concept work products describing a base that will not be driven, and
+    the hardware the case is really about undefined in any repository.
+  reversibility: revisit
+  decider: lead
+  blocks: "The reference configuration CFG-001 in every header; which hardware WP-C-01 v0.4, WP-C-03 and WP-C-04 describe; whether WP-H-02 is a bench build or the first draft of the 2.0 chain; the order in which DQ-004 and DQ-014 are applied"
+  gate: G1
+  asked: 2026-10-20
+  batch: 2
+  options:
+    - key: A
+      recommended: true
+      title: "Keep the Gate A unit as the software and firmware reference (bench only, wheels off the ground) and add CFG-002, the 2.0 mobile manipulator, as the hardware reference"
+      detail: "Nothing already written is thrown away; the firmware and ROS 2 findings stay verifiable on Gate A and carry over. Cost: every concept document names two configurations until 2.0 lands, and the 2.0 rows rest on upstream's documents, marked unverified, not on hardware."
+    - key: B
+      title: "Move everything to 2.0 now and stop the Gate A work"
+      detail: "One configuration. Cost: no verifiable hardware or code for the arms, the lift or the chain for at least a month; every hardware claim is an assumption about a design nobody outside Botshare can read."
+    - key: C
+      title: "Keep Gate A as the only reference; DQ-004 and DQ-011 take effect when 2.0 is public"
+      detail: "Cheapest. Cost: your two answers change nothing until 2.0, and the record keeps describing a bench build you have decided not to buy."
+  sources: ["assurance/01-management/decisions/register.yaml DQ-002, DQ-004, DQ-011", "assurance/02-concept/WP-C-01-item-definition.md §1.1, §9", "assurance/00-assessment/gap-assessment.md §8"]
+  status: open

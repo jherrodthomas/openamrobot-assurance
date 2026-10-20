@@ -11,7 +11,7 @@
 | Date | YYYY-MM-DD |
 | Baseline | <commit SHA or tag> |
 | Chair | Safety manager (Jherrod Thomas (acting)) |
-| Participants | Safety manager (Jherrod Thomas (acting)); Safety-related control system engineer (Jherrod Thomas (acting); additional contributors TBD); Cybersecurity manager (Jherrod Thomas (acting); permanent holder TBD); ML safety lead (Jherrod Thomas (acting); permanent holder TBD); External functional safety assessor (TBD (DQ-010)) |
+| Participants | Safety manager (Jherrod Thomas (acting)); Safety-related control system engineer (Jherrod Thomas (acting); additional contributors TBD); Cybersecurity manager (Jherrod Thomas (acting); permanent holder TBD); ML safety lead (Jherrod Thomas (acting); permanent holder TBD); External functional safety assessor (Not engaged for now (DQ-010 option C, 2026-10-20); every I3 measure unscheduled) |
 | Assessor informed | Yes / No (name) |
 
 ## Inputs (WP-M-02 §10)
@@ -74,9 +74,7 @@ From the [process model](../../../process/README.md). Each one is a condition on
 | Quality assurance | TBD (independent of the author) | G0 |
 | Test bench owner | TBD | G3 |
 | Test operator(s) | TBD (trained per WP-M-04) | G1 |
-| External functional safety assessor | TBD (DQ-010) | G1 |
 | External cybersecurity assessor | TBD | G5 |
-| Notified body | TBD (DQ-009) | G5 |
 
 ## Exit criteria (WP-M-00 §2)
 

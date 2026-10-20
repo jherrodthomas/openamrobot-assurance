@@ -55,7 +55,7 @@ Nothing is marked complete before its review, and every number below is computed
 
 <!-- BEGIN GENERATED: record-headline (docs/assets/openamrobot/make_assets.py) -->
 
-**P0 Governance** · no gate passed · 89 work products (16 draft, 73 skeleton, 0 approved) · 40 gap findings (22 high) · 9 decisions open · 1 of 11 cross-domain interfaces open · 0 of 22 confirmation measures performed · records digest `33637a4ff941`
+**P0 Governance** · no gate passed · 89 work products (16 draft, 73 skeleton, 0 approved) · 40 gap findings (22 high) · 5 decisions open · 1 of 11 cross-domain interfaces open · 0 of 22 confirmation measures performed · records digest `fd7497d032fb`
 
 <!-- END GENERATED: record-headline -->
 

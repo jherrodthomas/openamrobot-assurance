@@ -139,8 +139,8 @@ skeleton. They are observations for the safety manager, not decisions.
    manager, ML safety lead, SRP/CS engineer and software engineer. The electrical and mechanical engineer is TBD and
    needed by G2. Independent checking rests entirely on the two G0 confirmation measures and the assessor, who is
    not engaged (DQ-010).
-3. **Two decisions shape everything below G0 and are still open:** the frame (DQ-003) and the conformity route
-   (DQ-009). The regulatory strategy (WP-M-13) is drafted on the recommended answers.
+3. **Two decisions shape everything below G0 and were answered on 2026-10-20:** the frame (DQ-003, EU) and the
+   conformity route (DQ-009, Module A). The regulatory strategy (WP-M-13) records both.
 4. **The process model is itself a G0 work product.** GOV-21 produces WP-P-11 from the register, the safety plan
    and the confirmation plan, so this model can only be as current as those three documents.
 

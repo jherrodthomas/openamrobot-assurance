@@ -71,7 +71,7 @@
 | SR-03.01 | The speed of each drive wheel shall be monitored by a means independent of the command path (a second encoder reading or the driver's speed output read by the safety controller, not the Teensy that produces the PWM) | I | d | A, T | WP-S-03 §3.5 | H-01, H-03 |
 | SR-03.02 | The monitored speed shall not exceed the limit of the active zone: 0.20 m/s linear and 0.5 rad/s in the navigation zone; the crawl limit **(TBC: 0.05 m/s)** in the dock lane and in reverse; the limits are safety parameters (SR-00.05) | F | d | T | WP-S-03 §3.5 | H-01 |
 | SR-03.03 | A violation sustained for more than 100 ms shall trigger a controlled stop and, if standstill is not reached within **(TBC: 1 s)**, power removal; the trip shall latch until reset (SR-01.06) | F, T | d | T | WP-S-03 §3.5 | H-01, H-03 |
-| SR-03.04 | The firmware shall in addition refuse any velocity command above a fixed ceiling at the command input (DQ-006 decides the value); this is a functional measure and carries no PL claim on its own | F | — | T | firmware `twistCallback` (change-2026-10-20-fw-hardening) | H-12 |
+| SR-03.04 | The firmware shall in addition refuse any velocity command above a fixed ceiling at the command input (DQ-006 decided 2026-10-20: 0.25 m/s and 0.6 rad/s, navigation limit plus margin); this is a functional measure and carries no PL claim on its own | F | — | T | firmware `twistCallback` (change-2026-10-20-fw-hardening) | H-12 |
 | SR-03.05 | A difference between commanded and monitored wheel speed beyond **(TBC: 30 % for 500 ms)** shall be treated as a drive fault (SF-06) | D | c | T | WP-S-03 §3.5 | H-03 |
 
 ## 6. SF-04 Stop on loss of command, communication or control (PLr c, Category 2, stop category 0)
@@ -141,5 +141,5 @@
 | OI-2 | Interface change for SR-04.03 (stamped or sequenced command) | SF-04 Category 2 claim |
 | OI-3 | ~~Choice of detection device~~ decided 2026-10-20 (DQ-007): front safety scanner plus rear bumper on the Gate A bench build; see WP-H-02 | closed |
 | OI-4 | Safety controller for SF-02/SF-03 (safety relay with speed monitoring, or a small safety PLC) on the Gate A bench build; upstream 2.0 names a Pilz PNOZ s3 only | WP-S-03 |
-| OI-5 | DQ-006 (firmware ceiling values) | SR-03.04 |
+| OI-5 | ~~DQ-006 (firmware ceiling values)~~ decided 2026-10-20: 0.25 m/s and 0.6 rad/s, applied in the fork firmware | closed |
 | OI-6 | Add SR-08.x (SF-08 warning before motion) and SR-09.x (SF-09 enabling control for teleoperation) from WP-C-04 §3.8 and §3.9; SR-05.x now carries PLr d, the Category 3 argument is WP-S-03 §3.3 | G1.8, G1.9 claims |

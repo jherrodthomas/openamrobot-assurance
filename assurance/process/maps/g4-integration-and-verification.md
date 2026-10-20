@@ -114,7 +114,7 @@ Which activity answers each clause reference listed in the register. One activit
 | Safety-related control system (ISO 13849-1) | Safety-related control system engineer | Jherrod Thomas (acting); additional contributors TBD | G2 |
 | Electrical and mechanical (EN 60204-1) | Electrical and mechanical engineer | TBD (likely external) | G2 |
 | Software (ISO 13849-1 §7, IEC 61508-3) | Firmware and software engineer(s) | Jherrod Thomas; additional contributors TBD | G2 |
-| Independent confirmation | External functional safety assessor | TBD (DQ-010) | G1 |
+| Independent confirmation | External functional safety assessor | Not engaged for now (DQ-010 option C, 2026-10-20); every I3 measure unscheduled | G1 (revisit) |
 
 **Other roles WP-M-02 §3.1 needs by G4:** Verification reviewer(s) (TBD (at least one person other than the author); needed by G0, still unassigned); Quality assurance (TBD (independent of the author); needed by G0, still unassigned); Test bench owner (TBD; needed by G3, still unassigned); Test operator(s) (TBD (trained per WP-M-04); needed by G1, still unassigned).
 

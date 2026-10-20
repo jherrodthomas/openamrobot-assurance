@@ -299,4 +299,5 @@ Cyber-induced hazards are analysed in WP-C-07 ([threat and risk assessment](WP-C
 | OI-4 | ~~Dock-lane speed and people in the lane~~ now DQ-017 (speed near a person) and DQ-018 (reverse); the lane is a people-class *none* zone in WP-C-02 | SF-02, SF-03 field sizes |
 | OI-5 | Reviewer with Gate A operating experience to confirm or change every rating, including the re-ratings of §5.2 | approval |
 | OI-6 | Lead decision DQ-019: keep the public floor (Z5) excluded for the Gate A unit, or open a PL e / force-limited argument for it | scope of SF-02 |
-| OI-7 | Confirm the ISO 3691-4 PLr table against a licensed copy (DQ-016) and record the type-C values in WP-C-04 §4 | WP-C-04 §4 |
+| OI-7 | Confirm the ISO 3691-4 PLr table against a licensed copy and record the type-C values in WP-C-04 §4; **unscheduled** (DQ-016 option C, 2026-10-20: no standards until an assessor is engaged) | WP-C-04 §4 |
+| OI-8 | Apply DQ-004 B (2026-10-20): the arms and lift join the item; their hazards (reach, crushing, lift load, stability) and the interface assumptions CA-01…CA-05 of WP-C-06 §4 become rows of §4 and §5, after DQ-020 settles the hardware they describe | §3–§7, v0.4 |

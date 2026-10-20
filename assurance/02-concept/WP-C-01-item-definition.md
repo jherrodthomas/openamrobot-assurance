@@ -6,7 +6,7 @@
 | Standard reference | ISO 12100:2010 §5.3 (determination of the limits of the machinery), §5.4 (hazard identification inputs); ISO 3691-4:2023 §3, §4 (terms, operating zones); ISO 13849-1:2023 §4.5; Regulation (EU) 2023/1230 Annex III §1.1.2, Annex IV Part A (technical documentation) |
 | Version | 0.3 (2026-10-20): element and interface IDs; Figures 3-1 (context and boundary), 3-2 (bdd), 3-3 (ibd), 5-1 (modes). 0.2: DQ-002 and DQ-005 applied. 0.1: initial draft |
 | Status | Draft |
-| PL / scope | PL d target for the stop functions (DQ-005, decided 2026-10-20); reference configuration Gate A unit (DQ-002, decided 2026-10-20); mobile base only (DQ-004, recommended option A, open) |
+| PL / scope | PL d target for the stop functions (DQ-005, decided 2026-10-20); reference configuration Gate A unit (DQ-002, decided 2026-10-20); mobile base only at v0.3; DQ-004 answered B on 2026-10-20 (the base with the arms and lift), to be applied in v0.4 after DQ-020 |
 | Author | Assurance team (AI-assisted draft, I0) |
 | Reviewer(s) | TBD (I1) |
 | Approver | Project lead |
@@ -243,4 +243,4 @@ lift, the embodied-AI policy runtime and the fleet server. Decisions about them 
 | OI-2 | Measure stopping distance from 0.20 m/s on the watchdog coast and on a commanded −2.5 m/s² stop, loaded and unloaded | WP-C-03, SF-02 field sizing |
 | OI-3 | Set a payload limit and a payload height limit | AOU-07 |
 | OI-4 | Resolve what the panel E-stop button switches on the as-built unit | GAP-01, SF-01 |
-| OI-5 | Decide the regulatory frame (DQ-003) and the item scope (DQ-004); DQ-002 (Gate A unit) and DQ-005 (PL d) were decided 2026-10-20 | header fields of this document |
+| OI-5 | ~~Decide the regulatory frame (DQ-003) and the item scope (DQ-004)~~ both decided 2026-10-20: EU frame; the base with the arms and lift (B). Widen this item in v0.4 once DQ-020 settles which hardware it describes | header fields, §1–§3, §9 |

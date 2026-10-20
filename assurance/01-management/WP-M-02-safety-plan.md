@@ -68,9 +68,14 @@ measures, QA audits). Roles marked TBD must be filled before the gate shown.
 | Quality assurance | Process and work product audits per [WP-M-05](WP-M-05-quality-assurance-plan.md) | TBD (independent of the author) | G0 |
 | Test bench owner | Builds and maintains the firmware bench and the hardware-in-the-loop rig (WP-W-08) | TBD | G3 |
 | Test operator(s) | On-ground tests under [WP-V-07](../06-validation/WP-V-07-test-operations.md), hand on the bench E-stop | TBD (trained per WP-M-04) | G1 (before any on-ground test) |
-| External functional safety assessor | Confirmation reviews at I3, functional safety audits, functional safety assessment | TBD (DQ-010) | G1 |
+| External functional safety assessor | Confirmation reviews at I3, functional safety audits, functional safety assessment | Not engaged for now (DQ-010 option C, 2026-10-20); every I3 measure unscheduled | G1 (revisit) |
 | External cybersecurity assessor | Cybersecurity assessment ([WP-K-05](../10-safety-case/WP-K-05-cybersecurity-assessment.md)) | TBD | G5 (interim earlier, see WP-M-06) |
-| Notified body | Conformity assessment of the technical documentation if the route of DQ-009 needs one (Module B or H) | TBD (DQ-009) | G5 |
+| Notified body | None: Module A, internal control (DQ-009 option A, 2026-10-20) | — | — |
+
+**Interim limitation (DQ-012, decided 2026-10-20, option A):** while the project has one person, the safety manager
+approves the work products they author. Every such approval is self-approval at independence I0 and is recorded
+as that in the Approver field of the work product's header as it is next revised; no verification review above I0
+and no confirmation measure exists until a second person or an assessor joins (DQ-010: none for now).
 
 Competence requirements and evidence for each role are in [WP-M-04](WP-M-04-organization-competence-safety-culture.md).
 
@@ -217,7 +222,7 @@ performed, unless the safety manager and the assessor agree a documented deferra
 | ID | Item | Owner | Gate |
 |---|---|---|---|
 | OI-1 | Fill the verification reviewer and QA roles; until then every review is I0 and no work product can leave Draft | PM | G0 |
-| OI-2 | Decide who approves work products the safety manager authors (self-approval interim; decision DQ-012) | PM | G0 |
-| OI-3 | Engage the external assessor or record the decision not to for now (DQ-010) | PM | G1 |
+| OI-2 | ~~Decide who approves work products the safety manager authors~~ decided 2026-10-20 (DQ-012 option A): self-approval as a recorded interim limitation, §3.1 | closed | — |
+| OI-3 | ~~Engage the external assessor or record the decision not to for now~~ decided 2026-10-20 (DQ-010 option C): not for now | closed | — |
 | OI-4 | Classify the AI assistant and the other drafting tools in WP-P-07 | SM | G3 |
 | OI-5 | Replace §4 with a generated lifecycle figure pinned to this table | SM | G1 |

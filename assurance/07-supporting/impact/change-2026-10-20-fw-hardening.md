@@ -46,8 +46,9 @@ drivetrain constants. No new executor handle is needed (publishers do not take o
 
 ## 4. Register decisions raised
 
-- DQ-006 (open): lower the firmware command ceilings to the navigation limits (0.20 m/s, 0.5 rad/s), keep them at the
-  mechanical clamp (0.71 m/s), or set a zone-dependent limit later with SF-03.
+- DQ-006 (answered A, 2026-10-20): the firmware command ceilings are the navigation limits plus a margin,
+  `CMD_VEL_MAX_LINEAR_MPS 0.25` and `CMD_VEL_MAX_ANGULAR_RPS 0.6`, applied on the fork branch after the initial
+  hardening commit; a bench image that needs faster motion overrides the defines. Still uncompiled and untested.
 - Stall-detector thresholds: `decider: claude`, recorded as assumed; the bench test can change them.
 
 ## 5. Verification

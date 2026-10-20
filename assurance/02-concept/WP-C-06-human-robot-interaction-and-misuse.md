@@ -175,3 +175,4 @@ or with untrained people), **L** (needs effort or bad luck). Consequence uses th
 | OI-3 | Observe people around the Gate A unit in Z1 for one session and correct the likelihood ratings of §5 | Reviewer | G1 |
 | OI-4 | Confirm the push-force figure of IS-12 by measurement against a force gauge; compare with ISO/TS 15066 Annex A limits for the hand | Hardware lead | G2 |
 | OI-5 | Specify the teleop device with a deadman (HR-04) and the sounder and stack light (HR-06, HR-07) in WP-H-02 | Hardware lead | G2 |
+| OI-6 | DQ-004 answered B (2026-10-20): the arms and lift join the item, so §4 becomes an analysis of collaborative operation in its own right (ISO 10218-2, ISO/TS 15066 body-region limits) rather than interface assumptions; after DQ-020 | Safety manager | G1 |

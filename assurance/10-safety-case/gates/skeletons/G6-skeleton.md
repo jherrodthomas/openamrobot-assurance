@@ -49,9 +49,7 @@ From the [process model](../../../process/README.md). Each one is a condition on
 | Quality assurance | TBD (independent of the author) | G0 |
 | Test bench owner | TBD | G3 |
 | Test operator(s) | TBD (trained per WP-M-04) | G1 |
-| External functional safety assessor | TBD (DQ-010) | G1 |
 | External cybersecurity assessor | TBD | G5 |
-| Notified body | TBD (DQ-009) | G5 |
 
 ## Exit criteria (WP-M-00 §2)
 
