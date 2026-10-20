@@ -1,24 +1,35 @@
 #!/usr/bin/env python3
 """Render the README figures of OpenAMRobot assurance as SVG.
 
-Five figures, one style: hero.svg (banner), standards.svg (one question per standard), architecture.svg
-(three layers and the assurance column), roadmap.svg (four phases, status from repository evidence) and
-lifecycle.svg (the seven gates and where the project stands). Everything is drawn from the data at the top
-of this file; nothing is drawn by hand, so a change to the data is a change to the figure and CI checks that
-the committed copies match (`--check`).
+Six figures, one style: hero.svg (banner), standards.svg (one question per standard), architecture.svg
+(three layers and the assurance column), roadmap.svg (four phases, status from repository evidence),
+lifecycle.svg (the seven gates and where the project stands) and status.svg (the record-status card). The
+first five are drawn from the data at the top of this file; status.svg and the README headline block between
+the `record-headline` markers are computed from the records themselves (the work product register, the gap
+assessment, the decision register, the process model, the gate and confirmation records). Nothing is typed by
+hand, so a change to the data is a change to the figure and CI checks that the committed copies and the README
+block match (`--check`).
 
 Usage: python3 docs/assets/openamrobot/make_assets.py [--out DIR | --check]
 """
 from __future__ import annotations
 
 import argparse
+import collections
+import hashlib
 import math
+import re
 import sys
 from pathlib import Path
 from xml.sax.saxutils import escape
 
 HERE = Path(__file__).resolve().parent
-NAMES = ("hero.svg", "standards.svg", "architecture.svg", "roadmap.svg", "lifecycle.svg")
+ROOT = HERE.parents[2]
+ASSURANCE = ROOT / "assurance"
+README = ROOT / "README.md"
+NAMES = ("hero.svg", "standards.svg", "architecture.svg", "roadmap.svg", "lifecycle.svg", "status.svg")
+HEADLINE_BEGIN = "<!-- BEGIN GENERATED: record-headline (docs/assets/openamrobot/make_assets.py) -->"
+HEADLINE_END = "<!-- END GENERATED: record-headline -->"
 
 FONT = "Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
 MONO = "'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace"
@@ -376,11 +387,179 @@ def lifecycle_svg():
   return svg(w, h, "life", "OpenAMRobot assurance lifecycle", desc, defs, "\n".join(body))
 
 
+# ------------------------------------------------------------------ the records
+
+WP_STATUS = (("S", "Skeleton"), ("D", "Draft"), ("R", "In review"), ("A", "Approved"), ("B", "Baselined"))
+WP_STATUS_COLOR = {"S": C["dim"], "D": C["amber"], "R": C["cyan_lo"], "A": C["green"], "B": C["cyan"]}
+SEVERITY = (("High", C["red"]), ("Medium", C["amber"]), ("Low", C["muted"]))
+DQ_STATUS = ("open", "queued", "answered", "assumed", "applied", "withdrawn")
+
+
+def load_records(root: Path = ROOT) -> dict:
+  """Every number the status card and the headline show, read from the records."""
+  a = root / "assurance"
+  files = {
+    "register": a / "01-management" / "WP-M-00-work-product-register.md",
+    "gaps": a / "00-assessment" / "gap-assessment.md",
+    "decisions": a / "01-management" / "decisions" / "register.yaml",
+    "interfaces": a / "process" / "model" / "interfaces.yaml",
+    "confirmation_md": a / "01-management" / "WP-M-06-confirmation-measures-plan.md",
+  }
+  texts = {k: (f.read_text(encoding="utf-8") if f.exists() else "") for k, f in files.items()}
+  wp = collections.Counter()
+  wp_gate = collections.Counter()
+  for line in texts["register"].splitlines():
+    m = re.match(r"^\| \[(WP-[A-Z]-\d\d)\]\([^)]+\) \|", line)
+    if m:
+      c = [x.strip() for x in line.strip().strip("|").split("|")]
+      wp[c[8]] += 1
+      g = re.match(r"G\d", c[7])
+      wp_gate[g.group(0) if g else "?"] += 1
+  gaps = collections.Counter()
+  gap_areas: dict[str, int] = collections.OrderedDict()
+  area = ""
+  for line in texts["gaps"].splitlines():
+    m = re.match(r"^## \d+\. (.+)$", line)
+    if m:
+      area = re.sub(r"\s*\(.*\)$", "", m.group(1))
+    m = re.match(r"^\| GAP-\d\d", line)
+    if m:
+      sev = [x.strip() for x in line.strip().strip("|").split("|")][-1]
+      gaps[sev] += 1
+      gap_areas[area] = gap_areas.get(area, 0) + 1
+  dq = collections.Counter(re.findall(r"^  status: (\w+)", texts["decisions"], re.M))
+  ix_total = len(re.findall(r"^- id: IX-", texts["interfaces"], re.M))
+  ix_open = len(re.findall(r"^  status: open", texts["interfaces"], re.M))
+  measures = set()
+  for line in texts["confirmation_md"].splitlines():
+    m = re.match(r"^\| (G\d) \| ([^|]+) \|$", line)
+    if m:
+      measures.update(re.findall(r"\b(CR-\d\d|FSA-[A-Z0-9]+|AUD-\d|CS-[AI]\d|ML-R\d|NB-\d)\b", m.group(2)))
+  gates_dir = a / "10-safety-case" / "gates"
+  gate_records = sorted(p.name for p in gates_dir.glob("G[0-6]-[0-9]*.md")) if gates_dir.exists() else []
+  conf_dir = a / "10-safety-case" / "confirmation"
+  conf_records = sorted(p.name for p in conf_dir.glob("*.md") if p.name != "README.md") if conf_dir.exists() else []
+  h = hashlib.sha256()
+  for k in sorted(texts):
+    h.update(k.encode()); h.update(texts[k].encode("utf-8"))
+  for name in gate_records + conf_records:
+    h.update(name.encode())
+  return {
+    "wp_total": sum(wp.values()), "wp": dict(wp), "wp_gate": dict(wp_gate),
+    "gaps_total": sum(gaps.values()), "gaps": dict(gaps), "gap_areas": dict(gap_areas),
+    "dq": dict(dq), "dq_total": sum(dq.values()),
+    "ix_total": ix_total, "ix_open": ix_open,
+    "measures_planned": len(measures), "measures_performed": len(conf_records),
+    "gates_passed": len(gate_records), "phase": "P0 Governance",
+    "digest": h.hexdigest()[:12],
+  }
+
+
+def headline(r: dict) -> str:
+  wp = r["wp"]
+  parts = [f"**{r['phase']}**",
+           ("no gate passed" if r["gates_passed"] == 0 else f"{r['gates_passed']} gate(s) passed"),
+           f"{r['wp_total']} work products ({wp.get('D', 0)} draft, {wp.get('S', 0)} skeleton, {wp.get('A', 0) + wp.get('B', 0)} approved)",
+           f"{r['gaps_total']} gap findings ({r['gaps'].get('High', 0)} high)",
+           f"{r['dq'].get('open', 0)} decisions open",
+           f"{r['ix_open']} of {r['ix_total']} cross-domain interfaces open",
+           f"{r['measures_performed']} of {r['measures_planned']} confirmation measures performed",
+           f"records digest `{r['digest']}`"]
+  return " · ".join(parts)
+
+
+def headline_block(r: dict) -> str:
+  return f"{HEADLINE_BEGIN}\n\n{headline(r)}\n\n{HEADLINE_END}"
+
+
+def with_headline(readme: str, r: dict) -> str:
+  i, j = readme.find(HEADLINE_BEGIN), readme.find(HEADLINE_END)
+  if i < 0 or j < 0:
+    return readme
+  return readme[:i] + headline_block(r) + readme[j + len(HEADLINE_END):]
+
+
+def status_svg(r: dict) -> str:
+  w, h = 1000, 600
+  defs, frame = card_bg(w, h, "stat")
+  body = [frame, heading(40, "RECORD STATUS", "Where the record stands, from the records", "generated · nothing typed by hand")]
+  # three hero tiles
+  tiles = [(str(r["gates_passed"]), "gates passed", "of 7; today is " + r["phase"].split(" ")[0], C["amber"]),
+           (str(r["wp_total"]), "work products", f"{r['wp'].get('A', 0) + r['wp'].get('B', 0)} approved, {r['wp'].get('D', 0)} draft", C["text"]),
+           (str(r["gaps_total"]), "gap findings open", f"{r['gaps'].get('High', 0)} high severity, published", C["red"])]
+  for i, (num, label, sub, col) in enumerate(tiles):
+    x = 40 + i * 206
+    body.append(rect(x, 124, 190, 112, C["panel"], r=14, stroke=C["stroke"]))
+    body.append(text(x + 18, 182, num, 44, col, 800, extra=' letter-spacing="-1"'))
+    body.append(text(x + 18, 206, label, 14, C["text"], 600))
+    body.append(text(x + 18, 226, sub, 11, C["muted"]))
+  # register by status (stacked bar)
+  bx, bw = 40, 580
+  body.append(text(bx, 272, "Work products by status", 14, C["text"], 700))
+  x = bx
+  total = max(r["wp_total"], 1)
+  for code, name in WP_STATUS:
+    n = r["wp"].get(code, 0)
+    if not n:
+      continue
+    seg = bw * n / total
+    body.append(rect(x, 284, max(seg - 2, 2), 22, WP_STATUS_COLOR[code], r=4))
+    if seg > 40:
+      body.append(text(x + seg / 2 - 1, 300, f"{n} {name.lower()}", 12, C["bg2"] if code in ("D", "A", "B") else C["text"], 600, anchor="middle"))
+    x += seg
+  body.append(text(bx, 328, "Approval needs a verification review by someone other than the author; nothing has had one.", 11, C["dim"]))
+  # per gate
+  body.append(text(bx, 358, "Needed by each gate", 14, C["text"], 700))
+  gmax = max(list(r["wp_gate"].values()) + [1])
+  for i, g in enumerate(GATES):
+    gx = bx + i * 83
+    n = r["wp_gate"].get(g[0], 0)
+    hgt = 58 * n / gmax
+    body.append(rect(gx, 392 + 58 - hgt, 64, hgt, C["cyan"], r=3, opacity=0.35))
+    body.append(text(gx + 32, 386 + 58 - hgt, str(n), 11, C["text"], 600, anchor="middle"))
+    body.append(text(gx + 32, 466, g[0], 11, C["muted"], 600, anchor="middle", family=MONO))
+  # right column: gaps by severity and area
+  rx = 660
+  body.append(rect(rx, 124, 300, 342, C["panel2"], r=14, stroke=C["stroke"]))
+  body.append(text(rx + 18, 150, "KNOWN GAPS · COUNTER-EVIDENCE", 11, C["amber"], 700, extra=' letter-spacing="1.5"'))
+  body.append(text(rx + 18, 174, "Findings against the inherited robot", 14, C["text"], 700))
+  y = 194
+  smax = max(list(r["gaps"].values()) + [1])
+  for sev, col in SEVERITY:
+    n = r["gaps"].get(sev, 0)
+    body.append(rect(rx + 18, y, 170 * n / smax, 14, col, r=3))
+    body.append(text(rx + 18 + 170 * n / smax + 8, y + 12, f"{n} {sev.lower()}", 12, C["text"]))
+    y += 24
+  y += 10
+  body.append(text(rx + 18, y, "By area", 12, C["muted"], 600))
+  y += 8
+  for area, n in list(r["gap_areas"].items())[:6]:
+    y += 20
+    body.append(text(rx + 18, y, area if len(area) <= 40 else area[:39] + "…", 11, C["text"]))
+    body.append(text(rx + 282, y, str(n), 11, C["muted"], 600, anchor="end", family=MONO))
+  body.append(text(rx + 18, 452, "Each becomes a defeater in the safety case.", 11, C["dim"]))
+  # bottom strip
+  by = 496
+  strip = [(f"{r['dq'].get('open', 0)} open · {r['dq'].get('queued', 0)} queued · {r['dq'].get('answered', 0) + r['dq'].get('applied', 0)} answered", "Decisions for the lead"),
+           (f"{r['ix_open']} of {r['ix_total']} open", "Cross-domain interfaces"),
+           (f"{r['measures_performed']} of {r['measures_planned']} performed", "Confirmation measures"),
+           ("not yet met", "Hold point: on-ground test")]
+  for i, (val, label) in enumerate(strip):
+    x = 40 + i * 232
+    body.append(rect(x, by, 216, 56, C["panel"], r=10, stroke=C["stroke"]))
+    body.append(text(x + 14, by + 24, val, 13, C["text"], 700))
+    body.append(text(x + 14, by + 43, label, 11, C["muted"]))
+  body.append(text(40, h - 14, f"Records digest {r['digest']} identifies the exact state these figures describe. A gate counts as passed only by its record; a measure only by its record.", 11, C["dim"]))
+  desc = ("Record status generated from the records: " + headline(r).replace("**", "").replace("`", "") + ". Gap findings by severity: "
+          + ", ".join(f"{r['gaps'].get(s, 0)} {s.lower()}" for s, _ in SEVERITY) + ".")
+  return svg(w, h, "stat", "OpenAMRobot assurance record status", desc, defs, "\n".join(body))
+
+
 # ------------------------------------------------------------------ entry points
 
-def render_all() -> dict[str, str]:
+def render_all(root: Path = ROOT) -> dict[str, str]:
   return {"hero.svg": hero_svg(), "standards.svg": standards_svg(), "architecture.svg": architecture_svg(),
-          "roadmap.svg": roadmap_svg(), "lifecycle.svg": lifecycle_svg()}
+          "roadmap.svg": roadmap_svg(), "lifecycle.svg": lifecycle_svg(), "status.svg": status_svg(load_records(root))}
 
 
 def main(argv: list[str]) -> int:
@@ -391,16 +570,26 @@ def main(argv: list[str]) -> int:
   args = ap.parse_args(argv)
   out = args.out or HERE
   figs = render_all()
+  records = load_records()
+  readme = README.read_text(encoding="utf-8") if README.exists() else ""
   if args.check:
     stale = [n for n, s in figs.items() if not (out / n).exists() or (out / n).read_text(encoding="utf-8") != s]
     for n in stale:
       print(f"{out / n}: stale or missing; run make_assets.py")
-    print(f"README figures: {len(figs) - len(stale)} of {len(figs)} current")
-    return 1 if stale else 0
+    headline_stale = readme and with_headline(readme, records) != readme
+    if headline_stale:
+      print(f"{README}: record-headline block is stale; run make_assets.py")
+    print(f"README figures: {len(figs) - len(stale)} of {len(figs)} current; headline {'stale' if headline_stale else 'current'}")
+    return 1 if stale or headline_stale else 0
   out.mkdir(parents=True, exist_ok=True)
   for n, s in figs.items():
     (out / n).write_text(s, encoding="utf-8")
     print(f"wrote {out / n}")
+  if readme and args.out is None:
+    new = with_headline(readme, records)
+    if new != readme:
+      README.write_text(new, encoding="utf-8")
+      print(f"updated the record-headline block in {README}")
   return 0
 
 

@@ -39,9 +39,13 @@ against it, under the standards that apply to a machine. The [README](../README.
 
 ## Where the record stands
 
+![Record status card generated from the records: gates passed, work products by status and by gate, gap findings by severity and area, decisions, interfaces, confirmation measures and the hold point.](../docs/assets/openamrobot/status.svg)
+
+*Generated from the records by [`make_assets.py`](../docs/assets/openamrobot/make_assets.py) and checked by CI; the same values are given as text in the [README](../README.md#the-assurance-record). No number on it is typed by hand.*
+
 ![The work product register at a glance: how many work products are registered, their status, and how many each gate needs.](register-status.svg)
 
-*Rendered from [WP-M-00 §3](../assurance/01-management/WP-M-00-work-product-register.md) by [`infographics.py`](../tools/wiki/infographics.py) at every wiki sync; no number on it is typed by hand.*
+*Rendered from [WP-M-00 §3](../assurance/01-management/WP-M-00-work-product-register.md) by [`infographics.py`](../tools/wiki/infographics.py) at every wiki sync.*
 
 ![The seven phases P0 to P6, each closed by its gate G0 to G6; today is P0 and no gate is passed; hold points at G1 and G4.](../docs/assets/openamrobot/lifecycle.svg)
 

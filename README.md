@@ -9,12 +9,21 @@
 <p align="center">
   <a href="docs/README.md">Documentation</a> &nbsp;·&nbsp;
   <a href="https://github.com/jherrodthomas/openamrobot-assurance/wiki">Wiki</a> &nbsp;·&nbsp;
+  <a href="#the-assurance-record">Record status</a> &nbsp;·&nbsp;
   <a href="#safety-architecture">Architecture</a> &nbsp;·&nbsp;
-  <a href="#the-assurance-record">Assurance record</a> &nbsp;·&nbsp;
   <a href="#standards-and-engineering-framework">Standards</a> &nbsp;·&nbsp;
   <a href="#roadmap">Roadmap</a> &nbsp;·&nbsp;
+  <a href="#known-gaps">Known gaps</a> &nbsp;·&nbsp;
   <a href="#getting-started">Getting started</a> &nbsp;·&nbsp;
   <a href="#contributing">Contributing</a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/jherrodthomas/openamrobot-assurance/actions/workflows/assurance.yaml"><img src="https://github.com/jherrodthomas/openamrobot-assurance/actions/workflows/assurance.yaml/badge.svg?branch=main" alt="assurance checks: register, process model, figures, links, tables"></a>
+  <a href="https://github.com/jherrodthomas/openamrobot-assurance/actions/workflows/wiki.yaml"><img src="https://github.com/jherrodthomas/openamrobot-assurance/actions/workflows/wiki.yaml/badge.svg?branch=main" alt="wiki: pages checked and synced"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/jherrodthomas/openamrobot-assurance?color=0f6e63" alt="MIT license"></a>
+  <a href="assurance/01-management/decisions/README.md"><img src="https://img.shields.io/badge/decisions-register-F2A33A" alt="decision register"></a>
+  <a href="assurance/00-assessment/gap-assessment.md"><img src="https://img.shields.io/badge/gaps-published-FF6B5C" alt="gap assessment published"></a>
 </p>
 
 > [!IMPORTANT]
@@ -36,21 +45,31 @@ around it, under the standards that apply to a machine.
 
 Every work product lives under [`assurance/`](assurance/README.md), numbered in lifecycle order, with a
 document-control header that says what it is, which clauses it answers to, and whether anyone has reviewed it.
-Nothing is marked complete before its review.
+Nothing is marked complete before its review, and every number below is computed from the records by
+[`make_assets.py`](docs/assets/openamrobot/make_assets.py) and checked by CI on every pull request.
+
+<p align="center">
+  <img src="docs/assets/openamrobot/status.svg" width="100%" alt="Record status card generated from the records: gates passed, work products by status and by gate, gap findings by severity and area, decisions for the lead, cross-domain interfaces, confirmation measures and the hold point, with a records digest. The same values are given as text in the headline below.">
+</p>
+
+<!-- BEGIN GENERATED: record-headline (docs/assets/openamrobot/make_assets.py) -->
+
+**P0 Governance** · no gate passed · 89 work products (7 draft, 82 skeleton, 0 approved) · 40 gap findings (22 high) · 10 decisions open · 1 of 11 cross-domain interfaces open · 0 of 22 confirmation measures performed · records digest `b7d56d102d92`
+
+<!-- END GENERATED: record-headline -->
 
 <p align="center">
   <img src="docs/assets/openamrobot/lifecycle.svg" width="100%" alt="The seven phases P0 to P6, each closed by its gate G0 to G6; today is P0 governance and no gate is passed; hold points at G1 (no on-ground test before the bench safety hardware) and G4 (no people in the area before detection validation).">
 </p>
 
-| Where the record stands | |
+| What the card guarantees | |
 |---|---|
-| Work products registered | 89, in [WP-M-00](assurance/01-management/WP-M-00-work-product-register.md): 7 drafts, the rest clause-mapped skeletons |
-| Gates passed | None. Today is P0 governance; [gate skeletons](assurance/10-safety-case/gates/skeletons/) are generated from the process model |
-| Findings against the inherited robot | GAP-01…GAP-40 in the [gap assessment](assurance/00-assessment/gap-assessment.md), 23 of them high severity |
-| Questions waiting on the project lead | [Decision register](assurance/01-management/decisions/README.md): the frame, the reference robot, the required PL, the conformity route, the assessor, the bench safety hardware |
-| Living Safety Case dashboard | Not yet: the record tooling is [planned](assurance/case/README.md). Until then, no number on this page is generated and none is a safety claim |
+| A gate counts as passed | only when its record in [`10-safety-case/gates/`](assurance/10-safety-case/gates/README.md) says Pass; a skeleton generated from the process model is not a record |
+| A work product counts as approved | only after a verification review by someone other than its author ([WP-P-05](assurance/07-supporting/WP-P-05-verification-review-procedure.md)); a confirmation measure counts only by its record under [`confirmation/`](assurance/10-safety-case/confirmation/README.md) |
+| The Living Safety Case dashboard | is [planned](assurance/case/README.md): claims, evidence with review state and defeaters as records, with a validator that refuses an accepted claim whose evidence is not accepted. Until it exists, no claim is made anywhere on this page |
+| The records digest | identifies the exact state of the register, the gap assessment, the decision register, the process model and the gate and confirmation records these figures describe, so two readers can confirm they saw the same state |
 
-**Start here:** [assurance strategy (WP-M-01)](assurance/01-management/WP-M-01-assurance-strategy.md) · [safety plan (WP-M-02)](assurance/01-management/WP-M-02-safety-plan.md) · [process model and maps (WP-P-11)](assurance/process/README.md) · [test operations hold point (WP-V-07)](assurance/06-validation/WP-V-07-test-operations.md)
+**Start here:** [assurance strategy (WP-M-01)](assurance/01-management/WP-M-01-assurance-strategy.md) · [safety plan (WP-M-02)](assurance/01-management/WP-M-02-safety-plan.md) · [process model and maps (WP-P-11)](assurance/process/README.md) · [test operations hold point (WP-V-07)](assurance/06-validation/WP-V-07-test-operations.md) · [decision register](assurance/01-management/decisions/README.md)
 
 > **Assurance status represents recorded engineering evidence and review state. It does not constitute certification or approval for operation around people.**
 
@@ -130,6 +149,25 @@ structure and clause map exist and the content is still to be written.
 | | [Test operations hold point](assurance/06-validation/WP-V-07-test-operations.md) | Draft; bench safety hardware waits on the lead (DQ-009) |
 | **3 · Build and verify** | Bench safety hardware, firmware hardening, [chain architecture](assurance/03-system/WP-S-03-srpcs-architecture.md) and [PL calculation](assurance/04-hardware/WP-H-04-reliability-data-and-pl-calculation.md), [stopping tests](assurance/06-validation/WP-V-02-stopping-braking-stability-tests.md), [fault injection](assurance/06-validation/WP-V-05-fault-injection.md) | Planned |
 | **4 · Validate and release** | [Safety validation](assurance/06-validation/WP-V-01-safety-validation.md), [assessment](assurance/10-safety-case/WP-K-04-functional-safety-assessment.md), [technical documentation](assurance/10-safety-case/WP-K-02-technical-documentation-index.md), [release record](assurance/10-safety-case/WP-K-06-release-record.md), [field monitoring](assurance/09-production-operation/WP-O-04-field-monitoring.md) | Planned |
+
+## Known gaps
+
+The project publishes its own counter-evidence. The [baseline gap assessment](assurance/00-assessment/gap-assessment.md)
+reviewed the inherited repositories, finding by finding, against the standards above, and most of what it found
+upstream already states about itself. The findings that shape everything:
+
+| | Finding | Closes through |
+|---|---|---|
+| GAP-01 | No emergency-stop function exists in the documented design | Bench safety hardware before any test ([WP-V-07](assurance/06-validation/WP-V-07-test-operations.md)); the hardwired chain ([WP-S-03](assurance/03-system/WP-S-03-srpcs-architecture.md)) |
+| GAP-02 | The only stop is a coast: the watchdog zeroes PWM and the wheels free-run | Brakes engaged on power loss; a measured stopping distance ([WP-V-02](assurance/06-validation/WP-V-02-stopping-braking-stability-tests.md)) |
+| GAP-14, GAP-22 | Nothing below the LiDAR plane is seen and no detection is safety-rated | The detection means decision (DQ-008) and the protective-field validation ([WP-V-03](assurance/06-validation/WP-V-03-personnel-detection-validation.md)) |
+| GAP-15, GAP-35, GAP-36 | Docking switches protection off, undock reverses blind, nothing arbitrates commands | Docking inside the envelope and a command arbiter ([WP-W-02](assurance/05-software/WP-W-02-software-safety-requirements.md)) |
+| GAP-19, GAP-20 | No battery fuse, no disconnect, battery and mains in parallel | Electrical safety ([WP-H-05](assurance/04-hardware/WP-H-05-electrical-safety.md)) |
+| GAP-27, GAP-28 | Anyone on the ROS 2 domain can move the robot; the on-screen E-stop is a network request | Cybersecurity requirements and architecture ([WP-C-08](assurance/02-concept/WP-C-08-cybersecurity-requirements-and-sl-target.md), [WP-S-07](assurance/03-system/WP-S-07-cybersecurity-architecture.md)) |
+| GAP-30 | No risk assessment, hazard list, safety functions or required PL exist | The concept phase ([WP-C-03](assurance/02-concept/WP-C-03-risk-assessment.md), [WP-C-04](assurance/02-concept/WP-C-04-safety-functions-and-plr.md)) |
+
+Every finding becomes a defeater against a claim in the safety case and stays open until the work product that
+closes it is reviewed.
 
 ## Getting started
 
