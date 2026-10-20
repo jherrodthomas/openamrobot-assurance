@@ -97,7 +97,7 @@ Clause references and status are read from the [register (WP-M-00)](../../01-man
 | CON-02 Specify the operating environment and tasks | Machinery risk assessment (ISO 12100, ISO 3691-4) | [WP-C-02](../../02-concept/WP-C-02-operating-environment-and-tasks.md) | WP-C-01 | 3691-4 §4, §6; 12100 §5.3 |  |  | ISO 21448 §5 (informative method) | SYS.1 | Draft |
 | CON-03 Analyse human-robot interaction and foreseeable misuse | Machinery risk assessment (ISO 12100, ISO 3691-4) | [WP-C-06](../../02-concept/WP-C-06-human-robot-interaction-and-misuse.md) | WP-C-01, WP-C-02 | 10218-2 §5; TS 15066 §5; 12100 §5.3; 3691-4 §4 (personnel detection) |  |  | ISO 13855 §5–§6 |  | Draft |
 | CON-04 Hazard identification and risk assessment | Machinery risk assessment (ISO 12100, ISO 3691-4) | [WP-C-03](../../02-concept/WP-C-03-risk-assessment.md) | WP-C-01, WP-C-02, WP-C-06 | 12100 §5.4–§5.6; 3691-4 Annex A; 10218-2 Annex A | 13849-1 Annex A (risk graph inputs) |  | Machinery Reg. Annex III §1 |  | Draft |
-| CON-05 Specify the safety functions and their required PL | Safety-related control system (ISO 13849-1) | [WP-C-04](../../02-concept/WP-C-04-safety-functions-and-plr.md) | WP-C-03, WP-C-06 | 3691-4 §4; 13850 §4 | 13849-1 §5, Annex A (PLr) |  | 60204-1 §9.2 (stop categories) | SYS.2 | Skeleton |
+| CON-05 Specify the safety functions and their required PL | Safety-related control system (ISO 13849-1) | [WP-C-04](../../02-concept/WP-C-04-safety-functions-and-plr.md) | WP-C-03, WP-C-06 | 3691-4 §4; 13850 §4 | 13849-1 §5, Annex A (PLr) |  | 60204-1 §9.2 (stop categories) | SYS.2 | Draft |
 | CON-06 Analyse functional insufficiencies of sensing and navigation | Machinery risk assessment (ISO 12100, ISO 3691-4) | [WP-C-10](../../02-concept/WP-C-10-functional-insufficiency-analysis.md) | WP-C-02, WP-C-03 | 3691-4 §4 (personnel detection limits); 12100 §5.4 |  |  | ISO 21448 §6–§7 (informative method); IEC 62998-1 |  | Skeleton |
 | CON-07 Risk reduction concept | Machinery risk assessment (ISO 12100, ISO 3691-4) | [WP-C-05](../../02-concept/WP-C-05-risk-reduction-concept.md) | WP-C-03, WP-C-04, WP-C-10 | 12100 §6; 3691-4 §4; 10218-2 §5 | 13849-1 §5 |  | Machinery Reg. Annex III §1.1.2 | SYS.2 | Skeleton |
 | CON-08 Cybersecurity threat and risk assessment | Cybersecurity (IEC 62443) | [WP-C-07](../../02-concept/WP-C-07-cybersecurity-threat-and-risk-assessment.md) | WP-C-01, WP-C-03 |  |  | 62443-4-1 SR-2; 62443-3-2 §5 |  | SEC.1 | Skeleton |
@@ -113,7 +113,7 @@ Each interface is anchored to text in the work products; the checker fails if an
 | ID | Pattern | Between | Topic | Status | Open item | Due |
 |---|---|---|---|---|---|---|
 | IX-01 | Safety-Security | [WP-C-03](../../02-concept/WP-C-03-risk-assessment.md), [WP-C-07](../../02-concept/WP-C-07-cybersecurity-threat-and-risk-assessment.md) (Machinery risk assessment / Cybersecurity) | Threat scenarios that can cause a hazard are rated against the hazard list; cyber-induced hazards appear in the risk assessment | Documented | — | G1 |
-| IX-02 | Safety-Performance limits | [WP-C-04](../../02-concept/WP-C-04-safety-functions-and-plr.md), [WP-C-10](../../02-concept/WP-C-10-functional-insufficiency-analysis.md) (Safety-related control system / Machinery risk assessment) | The protective stop SF-02 has a PLr but no implementation until the detection means is decided; what the LiDAR cannot see bounds the claim | Open | WP-C-10 OI-2 and decision DQ-007: choose the detection means (safety scanner, bumpers or a separated area) | G1 |
+| IX-02 | Safety-Performance limits | [WP-C-04](../../02-concept/WP-C-04-safety-functions-and-plr.md), [WP-C-10](../../02-concept/WP-C-10-functional-insufficiency-analysis.md) (Safety-related control system / Machinery risk assessment) | The protective stop SF-02 has a PLr but no implementation until the detection means is decided; what the LiDAR cannot see bounds the claim | Open | DQ-007 decided (scanner plus rear bumper); WP-C-10 OI-1 still has to bound what the scanner cannot see below its plane before SF-02 claims PL d | G1 |
 | IX-03 | Safety-ML | [WP-C-04](../../02-concept/WP-C-04-safety-functions-and-plr.md), [WP-C-09](../../02-concept/WP-C-09-ml-component-definition-and-safety-requirements.md) (Safety-related control system / Machine learning) | No safety function is allocated to a learned component; the chain is the independent safeguard | Documented | — | G1 |
 | IX-04 | Environment-Interaction | [WP-C-02](../../02-concept/WP-C-02-operating-environment-and-tasks.md), [WP-C-06](../../02-concept/WP-C-06-human-robot-interaction-and-misuse.md) (Machinery risk assessment / Machinery risk assessment) | People presence per zone drives the interaction and misuse scenarios and the approach-speed calculation | Documented | — | G1 |
 
@@ -131,7 +131,7 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Exit criterion (WP-M-00 §2):** Machine limits, risk assessment, safety functions with their required PL, risk reduction concept, cybersecurity and ML concepts approved; confirmation review of the risk assessment passed
 
-**Work products:** 6 Draft, 7 Skeleton of 13. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
+**Work products:** 7 Draft, 6 Skeleton of 13. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
 
 **Roles the lanes need (WP-M-02 §3.1):**
 
@@ -159,4 +159,4 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Work products with no confirmation measure at this gate** (verification review only): WP-C-02, WP-V-07, WP-T-01, WP-K-01.
 
-**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (WP-C-10 OI-2 and decision DQ-007: choose the detection means (safety scanner, bumpers or a separated area)).
+**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (DQ-007 decided (scanner plus rear bumper); WP-C-10 OI-1 still has to bound what the scanner cannot see below its plane before SF-02 claims PL d).

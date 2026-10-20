@@ -26,7 +26,7 @@ ISO/TS 15066) would require when the arms come, and the reasonably foreseeable m
 approach speeds and distances of ISO 13855 as the quantitative basis for personnel detection.
 
 Zones and people presence are taken from WP-C-02. Hazards are those of [WP-C-03](WP-C-03-risk-assessment.md)
-§4; the safety functions are SF-01…SF-07 of WP-C-03 §7. The outputs of this analysis are: the interaction
+§4; the safety functions are SF-01…SF-09 of WP-C-03 §7, specified in WP-C-04. The outputs of this analysis are: the interaction
 scenarios WP-V-03 validates against, the detection-distance formula WP-H-02 §3.3 sizes the protective field with,
 the misuse list WP-O-03 warns about, and the requirements HR-01…HR-10 (§7) that go to WP-C-04 and WP-S-02.
 
@@ -158,9 +158,9 @@ or with untrained people), **L** (needs effort or bad luck). Consequence uses th
 | HR-01 | SF-02's protective field in the direction of travel shall be at least L of §3 with the measured d_b, t_b and the confirmed C, per zone speed | WP-S-02 SR-02.02 |
 | HR-02 | SF-02 shall detect a person down to **(TBC: 0.3 m)** above the floor (IS-09) | SR-02.03 |
 | HR-03 | Reverse motion shall be limited to the crawl speed and covered by rear detection (IS-04) | SR-02.04, DQ-018 |
-| HR-04 | Teleoperation shall require a held control (deadman) and shall cap speed near a person (IS-06, MU-02) | WP-S-02 new SR-08.x; WP-C-04 |
+| HR-04 | Teleoperation shall require a held control (deadman) and shall cap speed near a person (IS-06, MU-02) | WP-C-04 SF-09 (enabling control for teleoperation); WP-S-02 SR-09.x (pending, WP-S-02 OI-6) |
 | HR-05 | The on-screen stop shall not be presented as an emergency stop (MU-01) | SR-01.09; WP-O-03 |
-| HR-06 | Motion after a protective slow-down, stop or wait shall be preceded by an audible and visual warning (IS-10) | WP-C-04 new SF-08 "warning before motion"; WP-H-02 (stack light, sounder) |
+| HR-06 | Motion after a protective slow-down, stop or wait shall be preceded by an audible and visual warning (IS-10) | WP-C-04 SF-08 (warning before motion); WP-S-02 SR-08.x (pending); WP-H-02 (stack light, sounder) |
 | HR-07 | The robot's state (running, slowed, stopped, reset required) shall be visible from every side (MU-14) | SR-00.04 |
 | HR-08 | A payload limit, a height limit and restraint points shall be marked on the top plate (MU-05, MU-06) | WP-H-08; WP-O-03 §4 |
 | HR-09 | Blind corners and one-way rules for people in Z2 shall be site measures recorded in the site survey (IS-02) | WP-O-03; WP-C-02 OI-5 |

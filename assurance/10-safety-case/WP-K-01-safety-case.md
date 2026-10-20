@@ -4,7 +4,7 @@
 |---|---|
 | Work product | WP-K-01 Safety case for the Gate A unit (UL 4600 structure: claims, arguments, evidence, defeaters) |
 | Standard reference | ISO 13849-1:2023 §4.7, §10 (information); ISO 12100 §7 (documentation); Regulation (EU) 2023/1230 Annex IV Part A (technical documentation); UL 4600 §5, §6 |
-| Version | 0.2 (2026-10-20): Sn-16 (WP-H-02) added; OI-7 closed. 0.1: initial structure, every claim draft, every defeater open |
+| Version | 0.3 (2026-10-20): G1 widened to SF-01…SF-09; G1.5 at PL d; G1.8, G1.9 and Sn-17 (WP-C-04) added; OI-6 widened to the re-ratings of WP-C-03 v0.3. 0.2: Sn-16 (WP-H-02) added; OI-7 closed. 0.1: initial structure, every claim draft, every defeater open |
 | Status | Draft |
 | PL / scope | PL d target; Gate A unit (CFG-001); mobile base only |
 | Author | Assurance team (AI-assisted draft, I0) |
@@ -36,14 +36,16 @@ The cybersecurity branch of the argument is WP-K-03 ([cybersecurity case](WP-K-0
 | ID | Claim | Parent | Status | Evidence | Open defeaters |
 |---|---|---|---|---|---|
 | G0 | The Gate A unit poses no unreasonable risk | — | draft | Sn-01, Sn-02, Sn-03 | 4 |
-| G1 | The safety functions SF-01 to SF-07 reach their required Performance Level | G0 | draft | Sn-04, Sn-05 | 0 |
+| G1 | The safety functions SF-01 to SF-09 reach their required Performance Level | G0 | draft | Sn-04, Sn-05, Sn-17 | 0 |
 | G1.1 | SF-01 emergency stop is implemented at PL d | G1 | draft | Sn-08, Sn-16 | 4 |
 | G1.2 | SF-02 protective stop on personnel detection is implemented at PL d | G1 | draft | Sn-11, Sn-07, Sn-16 | 5 |
 | G1.3 | SF-03 safely-limited speed is implemented at PL d | G1 | draft | Sn-11, Sn-16 | 2 |
 | G1.4 | SF-04 stop on loss of command, communication or control is implemented at PL c | G1 | draft | Sn-06, Sn-10 | 3 |
-| G1.5 | SF-05 prevention of unexpected start-up is implemented at PL c | G1 | draft | Sn-08 | 2 |
+| G1.5 | SF-05 prevention of unexpected start-up is implemented at PL d | G1 | draft | Sn-08 | 2 |
 | G1.6 | SF-06 stop on drive fault is implemented at PL c | G1 | draft | Sn-06, Sn-10 | 4 |
 | G1.7 | SF-07 powered-debug inhibit is implemented at PL b | G1 | draft | Sn-06, Sn-10 | 2 |
+| G1.8 | SF-08 warning before motion is implemented at PL b | G1 | draft | Sn-17 | 1 |
+| G1.9 | SF-09 enabling control for teleoperation is implemented at PL c | G1 | draft | Sn-17 | 1 |
 | G2 | The complementary electrical and mechanical measures are implemented | G0 | draft | — | 0 |
 | G2.1 | The 24 V bus and the mains side are protected | G2 | draft | Sn-12, Sn-16 | 4 |
 | G2.2 | Mass, payload and stability are within limits | G2 | draft | Sn-09, Sn-07 | 1 |
@@ -60,15 +62,16 @@ AOU-01 to AOU-07 of WP-C-01 §8 apply to every claim. At BL-001 each holds only 
 
 ## 5. Safety functions and Performance Levels
 
-SF-01, SF-02, SF-03 at PLr d; SF-04, SF-05, SF-06 at PLr c; SF-07 at PLr b (WP-C-03 §7, DQ-005 decided
-2026-10-20). None reaches any PL at BL-001.
+SF-01, SF-02, SF-03, SF-05 at PLr d; SF-04, SF-06, SF-09 at PLr c; SF-07, SF-08 at PLr b (WP-C-03 v0.3 §7,
+specified in WP-C-04; DQ-005 decided 2026-10-20). SF-05 rose from c to d and SF-08, SF-09 were added when the
+risk assessment was re-rated per zone (WP-C-03 §5.2). None reaches any PL at BL-001.
 
 ## 6. Evidence
 
 Status rule: Available = performed and approved at a named baseline; Partial = drafted analysis or
 specification, not reviewed; Missing = not yet performed.
 
-**Available 0, Partial 9, Missing 7** (16 evidence items)
+**Available 0, Partial 10, Missing 7** (17 evidence items)
 
 | ID | Evidence | Location | Status | Supports |
 |---|---|---|---|---|
@@ -88,6 +91,7 @@ specification, not reviewed; Missing = not yet performed.
 | Sn-14 | Baseline record BL-001 | `assurance/case/baselines/baselines.yaml` | Partial | G4.1 |
 | Sn-15 | Safety case WP-K-01 | `assurance/10-safety-case/WP-K-01-safety-case.md` | Partial | G4.3 |
 | Sn-16 | Safety-chain design for the Gate A bench build: parts, wiring, I/O, estimated PL | `assurance/04-hardware/WP-H-02-electrical-and-safety-chain-design.md` | Partial | G1.1, G1.2, G1.3, G2.1 |
+| Sn-17 | Safety functions specification SF-01 to SF-09: demand, safe state, response, stop category, PLr, allocation | `assurance/02-concept/WP-C-04-safety-functions-and-plr.md` | Partial | G1, G1.8, G1.9 |
 
 ## 7. Defeaters
 
@@ -131,8 +135,8 @@ evidence closing it.
 | DF-33 | Safety-relevant design decisions are not in any repository | GAP-33 | G4.1 | open |
 | DF-34 | Process capability at CL0 for engineering processes | GAP-34 | G4.3 | open |
 | DF-35 | Undock is a blind 0.7 m reverse; rear sector masked; backup enabled | GAP-35 | G1.2 | open |
-| DF-36 | No command arbitration; unbounded docking speeds | GAP-36 | G1.3, G3.1 | open |
-| DF-37 | Failure handling is report-only | GAP-37 | G1.4 | open |
+| DF-36 | No command arbitration; unbounded docking speeds | GAP-36 | G1.3, G1.9, G3.1 | open |
+| DF-37 | Failure handling is report-only | GAP-37 | G1.4, G1.8 | open |
 | DF-38 | Safety documentation diverges from the configuration | GAP-38 | G4.3 | open |
 | DF-39 | The motion-critical code has no tests | GAP-39 | G4.3 | open |
 | DF-40 | Simulation and real robot differ in the parameters that matter | GAP-40 | G4.3 | open |
@@ -155,7 +159,7 @@ robot is within this case (WP-C-03 §8).
 | OI-3 | Set a payload limit and a payload height limit | G1 | G2.2 |
 | OI-4 | Resolve what the panel E-stop button switches on the as-built unit | G1 | G1.1 |
 | OI-5 | Decide the regulatory frame (DQ-003) and the item scope (DQ-004) | G1 | G0 |
-| OI-6 | Reviewer with Gate A operating experience confirms every rating in WP-C-03 | G1 | G4.2 |
+| OI-6 | Reviewer with Gate A operating experience confirms every rating in WP-C-03, including the per-zone re-ratings of v0.3 §5.2 | G1 | G4.2 |
 | OI-7 | Choose the detection device and the speed monitor for the bench build; budget decision (closed 2026-10-20: DQ-007, WP-H-02) | G2 | G1.2, G1.3 |
 | OI-8 | Read the ZBLD.C20 manual for BRK/DI5, SPD/DO2 and ERR/DO1 semantics | G2 | G1.1, G1.6 |
 | OI-9 | Compile and bench-test the firmware hardening change | G2 | G1.4, G1.6, G1.7, G4.3 |

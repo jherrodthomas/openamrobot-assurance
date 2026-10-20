@@ -1,0 +1,221 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="646" viewBox="0 0 1180 646" role="img" aria-labelledby="stm-t stm-d">
+<title id="stm-t">Figure 8-1: safety function by task</title>
+<desc id="stm-d">A grid with the nine safety functions down the side and the eight tasks across; teal cells where the function is active and claimed, dashed teal where it is present but not the claimed measure, grey where it inhibits, amber for the armed bench image, white where it does not apply; each cell carries the qualifier of the table.</desc>
+<defs>
+  <marker id="stm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#122026"/></marker>
+  <pattern id="stm-hatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="8" stroke="#7E949B" stroke-width="1"/></pattern>
+</defs>
+<rect x="0" y="0" width="1180" height="646" fill="#FFFFFF"/>
+<text x="32.0" y="34.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#122026" text-anchor="start">Figure 8-1  Which safety function is active in which task</text>
+<text x="32.0" y="52.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="start">Cells from the §8 table. Teal: active and claimed; dashed teal: present but not the claimed measure; grey: the function inhibits; amber: the bench paths are admitted under arming; white: not applicable.</text>
+<text x="352.0" y="90.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">T-01</text>
+<text x="352.0" y="105.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="middle">transport (M3)</text>
+<text x="456.0" y="90.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">T-02</text>
+<text x="456.0" y="105.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="middle">wait (M3)</text>
+<text x="560.0" y="90.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">T-03</text>
+<text x="560.0" y="105.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="middle">dock (M4)</text>
+<text x="664.0" y="90.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">T-04</text>
+<text x="664.0" y="105.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="middle">undock (M4)</text>
+<text x="768.0" y="90.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">T-05</text>
+<text x="768.0" y="105.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="middle">charge (M0)</text>
+<text x="872.0" y="90.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">T-06</text>
+<text x="872.0" y="105.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="middle">teleop (M2)</text>
+<text x="976.0" y="90.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">T-07</text>
+<text x="976.0" y="105.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="middle">mapping (M5)</text>
+<text x="1080.0" y="90.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">T-08</text>
+<text x="1080.0" y="105.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="middle">bench (M1)</text>
+<text x="32.0" y="136.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">SF-01</text>
+<text x="84.0" y="136.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Emergency stop</text>
+<rect x="303.0" y="119.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="352.0" y="135.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="407.0" y="119.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="456.0" y="135.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="511.0" y="119.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="560.0" y="135.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="615.0" y="119.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="664.0" y="135.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="719.0" y="119.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="768.0" y="135.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<text x="768.0" y="147.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8.5" font-weight="400" fill="#4E6A73" text-anchor="middle">chain open by the</text>
+<text x="768.0" y="157.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8.5" font-weight="400" fill="#4E6A73" text-anchor="middle">interlock</text>
+<rect x="823.0" y="119.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="872.0" y="135.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<text x="872.0" y="147.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8.5" font-weight="400" fill="#4E6A73" text-anchor="middle">pendant</text>
+<rect x="927.0" y="119.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="976.0" y="135.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<text x="976.0" y="147.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8.5" font-weight="400" fill="#4E6A73" text-anchor="middle">pendant</text>
+<rect x="1031.0" y="119.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="1080.0" y="135.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<text x="32.0" y="186.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">SF-02</text>
+<text x="84.0" y="186.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Protective stop on personnel</text>
+<text x="84.0" y="198.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">detection</text>
+<rect x="303.0" y="169.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="352.0" y="185.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="407.0" y="169.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="456.0" y="185.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="511.0" y="169.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="560.0" y="185.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<text x="560.0" y="197.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8.5" font-weight="400" fill="#4E6A73" text-anchor="middle">dock-lane field</text>
+<text x="560.0" y="207.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8.5" font-weight="400" fill="#4E6A73" text-anchor="middle">set</text>
+<rect x="615.0" y="169.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="664.0" y="185.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<text x="664.0" y="197.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8.5" font-weight="400" fill="#4E6A73" text-anchor="middle">rear bumper</text>
+<rect x="719.0" y="169.0" width="98.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="768.0" y="195.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="823.0" y="169.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="872.0" y="185.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">not claimed</text>
+<rect x="927.0" y="169.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="976.0" y="185.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">not claimed</text>
+<rect x="1031.0" y="169.0" width="98.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1080.0" y="195.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<text x="32.0" y="236.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">SF-03</text>
+<text x="84.0" y="236.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Safely-limited speed</text>
+<rect x="303.0" y="219.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="352.0" y="235.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<text x="352.0" y="247.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8.5" font-weight="400" fill="#4E6A73" text-anchor="middle">navigation limit</text>
+<rect x="407.0" y="219.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="456.0" y="235.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<text x="456.0" y="247.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8.5" font-weight="400" fill="#4E6A73" text-anchor="middle">zero</text>
+<rect x="511.0" y="219.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="560.0" y="235.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<text x="560.0" y="247.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8.5" font-weight="400" fill="#4E6A73" text-anchor="middle">crawl</text>
+<rect x="615.0" y="219.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="664.0" y="235.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<text x="664.0" y="247.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8.5" font-weight="400" fill="#4E6A73" text-anchor="middle">crawl, reverse</text>
+<rect x="719.0" y="219.0" width="98.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="768.0" y="245.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="823.0" y="219.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="872.0" y="235.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<text x="872.0" y="247.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8.5" font-weight="400" fill="#4E6A73" text-anchor="middle">zone limit; lower</text>
+<text x="872.0" y="257.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8.5" font-weight="400" fill="#4E6A73" text-anchor="middle">near a person</text>
+<rect x="927.0" y="219.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="976.0" y="235.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<text x="976.0" y="247.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8.5" font-weight="400" fill="#4E6A73" text-anchor="middle">zone limit</text>
+<rect x="1031.0" y="219.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="1080.0" y="235.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">not claimed</text>
+<text x="32.0" y="286.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">SF-04</text>
+<text x="84.0" y="286.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Stop on loss of command,</text>
+<text x="84.0" y="298.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">communication or control</text>
+<rect x="303.0" y="269.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="352.0" y="285.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="407.0" y="269.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="456.0" y="285.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="511.0" y="269.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="560.0" y="285.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="615.0" y="269.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="664.0" y="285.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="719.0" y="269.0" width="98.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="768.0" y="295.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="823.0" y="269.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="872.0" y="285.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="927.0" y="269.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="976.0" y="285.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="1031.0" y="269.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="1080.0" y="285.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<text x="32.0" y="336.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">SF-05</text>
+<text x="84.0" y="336.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Prevention of unexpected start-up</text>
+<rect x="303.0" y="319.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="352.0" y="335.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="407.0" y="319.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="456.0" y="335.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="511.0" y="319.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="560.0" y="335.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="615.0" y="319.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="664.0" y="335.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="719.0" y="319.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="768.0" y="335.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<text x="768.0" y="347.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8.5" font-weight="400" fill="#4E6A73" text-anchor="middle">reset after</text>
+<text x="768.0" y="357.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8.5" font-weight="400" fill="#4E6A73" text-anchor="middle">charging</text>
+<rect x="823.0" y="319.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="872.0" y="335.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="927.0" y="319.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="976.0" y="335.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="1031.0" y="319.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="1080.0" y="335.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<text x="32.0" y="386.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">SF-06</text>
+<text x="84.0" y="386.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Stop on drive fault</text>
+<rect x="303.0" y="369.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="352.0" y="385.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="407.0" y="369.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="456.0" y="385.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="511.0" y="369.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="560.0" y="385.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="615.0" y="369.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="664.0" y="385.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="719.0" y="369.0" width="98.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="768.0" y="395.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="823.0" y="369.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="872.0" y="385.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="927.0" y="369.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="976.0" y="385.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="1031.0" y="369.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="1080.0" y="385.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<text x="32.0" y="436.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">SF-07</text>
+<text x="84.0" y="436.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Powered-debug inhibit</text>
+<rect x="303.0" y="419.0" width="98.0" height="44.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="352.0" y="435.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">inhibits</text>
+<rect x="407.0" y="419.0" width="98.0" height="44.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="456.0" y="435.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">inhibits</text>
+<rect x="511.0" y="419.0" width="98.0" height="44.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="560.0" y="435.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">inhibits</text>
+<rect x="615.0" y="419.0" width="98.0" height="44.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="664.0" y="435.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">inhibits</text>
+<rect x="719.0" y="419.0" width="98.0" height="44.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="768.0" y="435.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">inhibits</text>
+<rect x="823.0" y="419.0" width="98.0" height="44.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="872.0" y="435.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">inhibits</text>
+<rect x="927.0" y="419.0" width="98.0" height="44.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="976.0" y="435.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">inhibits</text>
+<rect x="1031.0" y="419.0" width="98.0" height="44.0" rx="4" fill="#FFF6E8" stroke="#B86F0C" stroke-width="1"/>
+<text x="1080.0" y="435.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">arming</text>
+<text x="32.0" y="486.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">SF-08</text>
+<text x="84.0" y="486.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Warning before motion</text>
+<rect x="303.0" y="469.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="352.0" y="485.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="407.0" y="469.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="456.0" y="485.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="511.0" y="469.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="560.0" y="485.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="615.0" y="469.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="664.0" y="485.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<text x="664.0" y="497.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8.5" font-weight="400" fill="#4E6A73" text-anchor="middle">before the reverse</text>
+<rect x="719.0" y="469.0" width="98.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="768.0" y="495.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="823.0" y="469.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="872.0" y="485.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="927.0" y="469.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="976.0" y="485.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="1031.0" y="469.0" width="98.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1080.0" y="495.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<text x="32.0" y="536.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">SF-09</text>
+<text x="84.0" y="536.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Enabling control for teleoperation</text>
+<rect x="303.0" y="519.0" width="98.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="352.0" y="545.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="407.0" y="519.0" width="98.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="456.0" y="545.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="511.0" y="519.0" width="98.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="560.0" y="545.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="615.0" y="519.0" width="98.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="664.0" y="545.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="719.0" y="519.0" width="98.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="768.0" y="545.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="823.0" y="519.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="872.0" y="535.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="927.0" y="519.0" width="98.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="976.0" y="535.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
+<rect x="1031.0" y="519.0" width="98.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1080.0" y="545.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="32.0" y="588.0" width="18.0" height="14.0" rx="2" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="58.0" y="599.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">active, claimed</text>
+<rect x="202.0" y="588.0" width="18.0" height="14.0" rx="2" fill="#E9F7F5" stroke="#00938B" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="228.0" y="599.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">present, not the claimed measure</text>
+<rect x="452.0" y="588.0" width="18.0" height="14.0" rx="2" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="478.0" y="599.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">inhibits</text>
+<rect x="552.0" y="588.0" width="18.0" height="14.0" rx="2" fill="#FFF6E8" stroke="#B86F0C" stroke-width="1"/>
+<text x="578.0" y="599.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">arming admits the bench paths</text>
+<rect x="792.0" y="588.0" width="18.0" height="14.0" rx="2" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="818.0" y="599.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">not applicable</text>
+<text x="1148.0" y="634.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#7E949B" text-anchor="end">Generated by figures/fig_c04.py from WP-C-04 §8</text>
+</svg>

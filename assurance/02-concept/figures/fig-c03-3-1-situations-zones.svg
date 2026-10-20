@@ -1,0 +1,239 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="940" viewBox="0 0 1180 940" role="img" aria-labelledby="sit-t sit-d">
+<title id="sit-t">Figure 3-1: situations by zone</title>
+<desc id="sit-d">A grid with the fifteen situations down the side and the zones across: cells filled green where nobody is exposed, teal where briefed staff are, red where the public is, grey where the situation inherits its parent; the public-floor column is hatched as excluded; the WP-C-06 scenarios of each situation are listed at the right.</desc>
+<defs>
+  <pattern id="sit-hatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="8" stroke="#7E949B" stroke-width="1"/></pattern>
+</defs>
+<rect x="0" y="0" width="1180" height="940" fill="#FFFFFF"/>
+<text x="32.0" y="34.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#122026" text-anchor="start">Figure 3-1  Situations by zone, coloured by who is exposed there</text>
+<text x="32.0" y="52.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="start">A cell is filled where the situation of §3 occurs in that zone of WP-C-02; the task IDs are written in it. The public floor is hatched: excluded at BL-001.</text>
+<text x="359.0" y="86.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">Z1</text>
+<text x="359.0" y="101.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">test area</text>
+<text x="477.0" y="86.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">Z2</text>
+<text x="477.0" y="101.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">transport aisle</text>
+<text x="595.0" y="86.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">Z3</text>
+<text x="595.0" y="101.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">dock lane</text>
+<text x="713.0" y="86.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">Z4</text>
+<text x="713.0" y="101.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">charging bay</text>
+<text x="831.0" y="86.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">Z5</text>
+<text x="831.0" y="101.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">public floor (excluded)</text>
+<text x="949.0" y="86.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">bench</text>
+<text x="949.0" y="101.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">bench</text>
+<text x="1024.0" y="101.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#4E6A73" text-anchor="start">WP-C-06 scenarios</text>
+<text x="32.0" y="136.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">OS-01</text>
+<text x="84.0" y="128.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Autonomous navigation along a</text>
+<text x="84.0" y="140.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">transport aisle with staff present,</text>
+<text x="84.0" y="152.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">including blind corners and peopl…</text>
+<rect x="303.0" y="115.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="421.0" y="115.0" width="112.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="477.0" y="141.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">T-01</text>
+<rect x="539.0" y="115.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="657.0" y="115.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="115.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="115.0" width="112.0" height="44.0" rx="4" fill="url(#sit-hatch)" stroke="none" stroke-width="0" fill-opacity="0.45"/>
+<rect x="893.0" y="115.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1024.0" y="141.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">IS-01, IS-02, IS-03</text>
+<text x="32.0" y="186.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">OS-02</text>
+<text x="84.0" y="178.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Autonomous navigation in the</text>
+<text x="84.0" y="190.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">development test area; the operator</text>
+<text x="84.0" y="202.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">holds the stop pendant and a…</text>
+<rect x="303.0" y="165.0" width="112.0" height="44.0" rx="4" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1"/>
+<text x="359.0" y="191.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">T-01, T-02</text>
+<rect x="421.0" y="165.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="539.0" y="165.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="657.0" y="165.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="165.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="165.0" width="112.0" height="44.0" rx="4" fill="url(#sit-hatch)" stroke="none" stroke-width="0" fill-opacity="0.45"/>
+<rect x="893.0" y="165.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1024.0" y="191.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="start"></text>
+<text x="32.0" y="236.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">OS-03</text>
+<text x="84.0" y="228.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Docking approach and final push, and</text>
+<text x="84.0" y="240.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">the undocking reverse, in the marked</text>
+<text x="84.0" y="252.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">dock lane</text>
+<rect x="303.0" y="215.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="421.0" y="215.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="539.0" y="215.0" width="112.0" height="44.0" rx="4" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1"/>
+<text x="595.0" y="241.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">T-03, T-04</text>
+<rect x="657.0" y="215.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="215.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="215.0" width="112.0" height="44.0" rx="4" fill="url(#sit-hatch)" stroke="none" stroke-width="0" fill-opacity="0.45"/>
+<rect x="893.0" y="215.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1024.0" y="241.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">IS-04, IS-05</text>
+<text x="32.0" y="286.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">OS-04</text>
+<text x="84.0" y="278.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Teleoperation and mapping; the</text>
+<text x="84.0" y="290.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">operator looks at the screen, not the</text>
+<text x="84.0" y="302.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">robot</text>
+<rect x="303.0" y="265.0" width="112.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="359.0" y="291.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">T-06, T-07</text>
+<rect x="421.0" y="265.0" width="112.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="477.0" y="291.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">T-06, T-07</text>
+<rect x="539.0" y="265.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="657.0" y="265.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="265.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="265.0" width="112.0" height="44.0" rx="4" fill="url(#sit-hatch)" stroke="none" stroke-width="0" fill-opacity="0.45"/>
+<rect x="893.0" y="265.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1024.0" y="291.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">IS-06, IS-11</text>
+<text x="32.0" y="336.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">OS-05</text>
+<text x="84.0" y="328.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Bench test and calibration with the</text>
+<text x="84.0" y="340.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">wheels off the ground</text>
+<rect x="303.0" y="315.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="421.0" y="315.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="539.0" y="315.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="657.0" y="315.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="315.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="315.0" width="112.0" height="44.0" rx="4" fill="url(#sit-hatch)" stroke="none" stroke-width="0" fill-opacity="0.45"/>
+<rect x="893.0" y="315.0" width="112.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="949.0" y="341.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">T-08</text>
+<text x="1024.0" y="341.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="start"></text>
+<text x="32.0" y="386.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">OS-06</text>
+<text x="84.0" y="378.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">A bench (debug-enabled) image or a</text>
+<text x="84.0" y="390.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">calibration run with the wheels on</text>
+<text x="84.0" y="402.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">the ground (foreseeable misuse…</text>
+<rect x="303.0" y="365.0" width="112.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="359.0" y="391.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">T-08</text>
+<rect x="421.0" y="365.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="539.0" y="365.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="657.0" y="365.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="365.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="365.0" width="112.0" height="44.0" rx="4" fill="url(#sit-hatch)" stroke="none" stroke-width="0" fill-opacity="0.45"/>
+<rect x="893.0" y="365.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1024.0" y="391.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="start"></text>
+<text x="32.0" y="436.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">OS-07</text>
+<text x="84.0" y="428.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Charging and battery handling; the</text>
+<text x="84.0" y="440.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">mains converter connected</text>
+<rect x="303.0" y="415.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="421.0" y="415.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="539.0" y="415.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="657.0" y="415.0" width="112.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="713.0" y="441.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">T-05</text>
+<rect x="775.0" y="415.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="415.0" width="112.0" height="44.0" rx="4" fill="url(#sit-hatch)" stroke="none" stroke-width="0" fill-opacity="0.45"/>
+<rect x="893.0" y="415.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1024.0" y="441.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">IS-07</text>
+<text x="32.0" y="486.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">OS-08</text>
+<text x="84.0" y="478.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Wiring, flashing and maintenance with</text>
+<text x="84.0" y="490.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">24 V present</text>
+<rect x="303.0" y="465.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="421.0" y="465.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="539.0" y="465.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="657.0" y="465.0" width="112.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="713.0" y="491.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">—</text>
+<rect x="775.0" y="465.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="465.0" width="112.0" height="44.0" rx="4" fill="url(#sit-hatch)" stroke="none" stroke-width="0" fill-opacity="0.45"/>
+<rect x="893.0" y="465.0" width="112.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="949.0" y="491.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">—</text>
+<text x="1024.0" y="491.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="start"></text>
+<text x="32.0" y="536.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">OS-09</text>
+<text x="84.0" y="528.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Stopped robot assumed safe: after a</text>
+<text x="84.0" y="540.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">watchdog stop, a fault, a UI stop or</text>
+<text x="84.0" y="552.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">a chain stop; people within reach</text>
+<rect x="303.0" y="515.0" width="112.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="359.0" y="541.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">T-02</text>
+<rect x="421.0" y="515.0" width="112.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="477.0" y="541.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">T-02</text>
+<rect x="539.0" y="515.0" width="112.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="595.0" y="541.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">T-02</text>
+<rect x="657.0" y="515.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="515.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="515.0" width="112.0" height="44.0" rx="4" fill="url(#sit-hatch)" stroke="none" stroke-width="0" fill-opacity="0.45"/>
+<rect x="893.0" y="515.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1024.0" y="541.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">IS-11</text>
+<text x="32.0" y="586.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">OS-10</text>
+<text x="84.0" y="578.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Payload carried; a threshold, cable</text>
+<text x="84.0" y="590.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">cover or slope crossed</text>
+<rect x="303.0" y="565.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="421.0" y="565.0" width="112.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="477.0" y="591.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">T-01</text>
+<rect x="539.0" y="565.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="657.0" y="565.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="565.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="565.0" width="112.0" height="44.0" rx="4" fill="url(#sit-hatch)" stroke="none" stroke-width="0" fill-opacity="0.45"/>
+<rect x="893.0" y="565.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1024.0" y="591.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="start"></text>
+<text x="32.0" y="636.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">OS-11</text>
+<text x="84.0" y="628.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Loss of Wi-Fi, the agent, the</text>
+<text x="84.0" y="640.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">navigation LiDAR, battery voltage or</text>
+<text x="84.0" y="652.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">a wheel during OS-01…OS-04</text>
+<rect x="303.0" y="615.0" width="112.0" height="44.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="359.0" y="641.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">as parent</text>
+<rect x="421.0" y="615.0" width="112.0" height="44.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="477.0" y="641.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">as parent</text>
+<rect x="539.0" y="615.0" width="112.0" height="44.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="595.0" y="641.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">as parent</text>
+<rect x="657.0" y="615.0" width="112.0" height="44.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="713.0" y="641.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">as parent</text>
+<rect x="775.0" y="615.0" width="112.0" height="44.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="831.0" y="641.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">as parent</text>
+<rect x="775.0" y="615.0" width="112.0" height="44.0" rx="4" fill="url(#sit-hatch)" stroke="none" stroke-width="0" fill-opacity="0.45"/>
+<rect x="893.0" y="615.0" width="112.0" height="44.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="949.0" y="641.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">as parent</text>
+<text x="1024.0" y="641.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="start"></text>
+<text x="32.0" y="686.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">OS-12</text>
+<text x="84.0" y="678.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Another person's computer or device</text>
+<text x="84.0" y="690.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">on the same network publishes</text>
+<text x="84.0" y="702.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">commands or parameters (misuse o…</text>
+<rect x="303.0" y="665.0" width="112.0" height="44.0" rx="4" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<text x="359.0" y="691.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">as parent</text>
+<rect x="421.0" y="665.0" width="112.0" height="44.0" rx="4" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<text x="477.0" y="691.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">as parent</text>
+<rect x="539.0" y="665.0" width="112.0" height="44.0" rx="4" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<text x="595.0" y="691.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">as parent</text>
+<rect x="657.0" y="665.0" width="112.0" height="44.0" rx="4" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<text x="713.0" y="691.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">as parent</text>
+<rect x="775.0" y="665.0" width="112.0" height="44.0" rx="4" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<text x="831.0" y="691.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">as parent</text>
+<rect x="775.0" y="665.0" width="112.0" height="44.0" rx="4" fill="url(#sit-hatch)" stroke="none" stroke-width="0" fill-opacity="0.45"/>
+<rect x="893.0" y="665.0" width="112.0" height="44.0" rx="4" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<text x="949.0" y="691.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">as parent</text>
+<text x="1024.0" y="691.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="start"></text>
+<text x="32.0" y="736.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">OS-13</text>
+<text x="84.0" y="728.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">The robot waits on a person standing</text>
+<text x="84.0" y="740.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">in its path, then the person steps</text>
+<text x="84.0" y="752.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">aside and the robot resumes</text>
+<rect x="303.0" y="715.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="421.0" y="715.0" width="112.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="477.0" y="741.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">T-01, T-02</text>
+<rect x="539.0" y="715.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="657.0" y="715.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="715.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="715.0" width="112.0" height="44.0" rx="4" fill="url(#sit-hatch)" stroke="none" stroke-width="0" fill-opacity="0.45"/>
+<rect x="893.0" y="715.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1024.0" y="741.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">IS-10</text>
+<text x="32.0" y="786.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">OS-14</text>
+<text x="84.0" y="778.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">A person touches the moving or</text>
+<text x="84.0" y="790.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">stopped robot: pushes it, leans or</text>
+<text x="84.0" y="802.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">sits on it, or tries to stop it b…</text>
+<rect x="303.0" y="765.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="421.0" y="765.0" width="112.0" height="44.0" rx="4" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<text x="477.0" y="791.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">T-01, T-02</text>
+<rect x="539.0" y="765.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="657.0" y="765.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="765.0" width="112.0" height="44.0" rx="4" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<text x="831.0" y="791.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">T-01, T-02</text>
+<rect x="775.0" y="765.0" width="112.0" height="44.0" rx="4" fill="url(#sit-hatch)" stroke="none" stroke-width="0" fill-opacity="0.45"/>
+<rect x="893.0" y="765.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1024.0" y="791.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">IS-08, IS-12</text>
+<text x="32.0" y="836.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">OS-15</text>
+<text x="84.0" y="828.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Shared public floor: children,</text>
+<text x="84.0" y="840.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">animals, a person lying or crouching</text>
+<text x="84.0" y="852.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">below the detection plane, visitor…</text>
+<rect x="303.0" y="815.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="421.0" y="815.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="539.0" y="815.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="657.0" y="815.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="775.0" y="815.0" width="112.0" height="44.0" rx="4" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<text x="831.0" y="841.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">T-01</text>
+<rect x="775.0" y="815.0" width="112.0" height="44.0" rx="4" fill="url(#sit-hatch)" stroke="none" stroke-width="0" fill-opacity="0.45"/>
+<rect x="893.0" y="815.0" width="112.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1024.0" y="841.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">IS-09</text>
+<rect x="32.0" y="884.0" width="18.0" height="14.0" rx="2" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1"/>
+<text x="58.0" y="895.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">none: the zone is empty of people while the robot moves</text>
+<rect x="392.0" y="884.0" width="18.0" height="14.0" rx="2" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="418.0" y="895.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">briefed staff or a technician</text>
+<rect x="612.0" y="884.0" width="18.0" height="14.0" rx="2" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<text x="638.0" y="895.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">public, or anyone</text>
+<rect x="792.0" y="884.0" width="18.0" height="14.0" rx="2" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="818.0" y="895.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">as the parent situation</text>
+<text x="1148.0" y="928.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#7E949B" text-anchor="end">Generated by figures/fig_c03.py from WP-C-03 §3</text>
+</svg>

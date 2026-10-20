@@ -1,5 +1,5 @@
-# Hazards (H-) from WP-C-03 §4 (risk assessment) and safety functions (SF-) from WP-C-03 §7. Ratings are WP-C-03
-# proposals, not approved. Source of truth is WP-C-03. Format: case/tools/subsetyaml.py (restricted YAML subset).
+# Hazards (H-) from WP-C-03 §4 (risk assessment) and safety functions (SF-) identified in WP-C-03 §7 and specified
+# in WP-C-04 §2. Ratings are WP-C-03 proposals, not approved. Source of truth is WP-C-03 (hazards, PLr) and WP-C-04 (functions). Format: case/tools/subsetyaml.py (restricted YAML subset).
 
 - id: H-01
   kind: hazard
@@ -104,7 +104,7 @@
 - id: SF-05
   kind: safety-function
   title: "Prevention of unexpected start-up"
-  plr: c
+  plr: d
   status: proposed
   source: WP-C-03
 
@@ -121,3 +121,17 @@
   plr: b
   status: proposed
   source: WP-C-03
+
+- id: SF-08
+  kind: safety-function
+  title: "Warning before motion"
+  plr: b
+  status: proposed
+  source: WP-C-04
+
+- id: SF-09
+  kind: safety-function
+  title: "Enabling control for teleoperation"
+  plr: c
+  status: proposed
+  source: WP-C-04

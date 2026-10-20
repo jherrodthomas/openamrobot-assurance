@@ -21,7 +21,7 @@
 - id: Sn-02
   kind: evidence
   title: "Risk assessment and PLr determination"
-  description: "Draft v0.2; ratings need a reviewer with operating experience"
+  description: "Draft v0.3; rated per zone against WP-C-02 and WP-C-06, v0.2 graph readings corrected; ratings need a reviewer with operating experience"
   evidence_status: partial
   lifecycle_area: hazard-analysis
   location: "assurance/02-concept/WP-C-03-risk-assessment.md"
@@ -263,6 +263,23 @@
   lifecycle_area: technical-implementation
   location: "assurance/04-hardware/WP-H-02-electrical-and-safety-chain-design.md"
   related_claims: [G1.1, G1.2, G1.3, G2.1]
+  baseline: BL-001
+  configuration: CFG-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: Sn-17
+  kind: evidence
+  title: "Safety functions specification SF-01 to SF-09: demand, safe state, response, stop category, PLr, allocation"
+  description: "Draft v0.1; concept-level specification; response budget from candidate parts, stopping distances unmeasured"
+  evidence_status: partial
+  lifecycle_area: hazard-analysis
+  location: "assurance/02-concept/WP-C-04-safety-functions-and-plr.md"
+  related_claims: [G1, G1.8, G1.9]
   baseline: BL-001
   configuration: CFG-001
   review_state: not-reviewed

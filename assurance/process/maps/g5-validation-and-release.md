@@ -155,4 +155,4 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Work products with no confirmation measure at this gate** (verification review only): WP-O-01, WP-O-02, WP-O-03, WP-V-08, WP-P-10, WP-T-01.
 
-**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (WP-C-10 OI-2 and decision DQ-007: choose the detection means (safety scanner, bumpers or a separated area)).
+**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (DQ-007 decided (scanner plus rear bumper); WP-C-10 OI-1 still has to bound what the scanner cannot see below its plane before SF-02 claims PL d).

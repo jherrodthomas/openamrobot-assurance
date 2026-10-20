@@ -1,0 +1,242 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="846" viewBox="0 0 1180 846" role="img" aria-labelledby="sfc-t sfc-d">
+<title id="sfc-t">Figure 2-1: safety-function cards</title>
+<desc id="sfc-d">Nine cards in three rows of three, grouped as stops demanded by a person or a device, monitoring that demands a stop, and restart, inhibit and warning; each card has a header coloured by Performance Level with the function's ID and name, a demand column with an arrow to a safe-state column, and badges for category, stop category and response target.</desc>
+<defs>
+  <marker id="sfc-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#122026"/></marker>
+  <pattern id="sfc-hatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="8" stroke="#7E949B" stroke-width="1"/></pattern>
+</defs>
+<rect x="0" y="0" width="1180" height="846" fill="#FFFFFF"/>
+<text x="32.0" y="34.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#122026" text-anchor="start">Figure 2-1  The safety functions: demand, safe state and the attributes a safety-requirements specification needs</text>
+<text x="32.0" y="52.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="start">One card per function of §2; the header colour is the required Performance Level. Text is the table's, cut with an ellipsis where it does not fit.</text>
+<text x="32.0" y="82.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">STOPS DEMANDED BY A PERSON OR A DETECTION DEVICE</text>
+<rect x="32.0" y="92.0" width="368.0" height="206.0" rx="8" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<path d="M40,92 h352 a8,8 0 0 1 8,8 v22 h-368 v-22 a8,8 0 0 1 8,-8 z" fill="#2FA69C"/>
+<text x="44.0" y="112.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="start">SF-01</text>
+<text x="98.0" y="112.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="start">Emergency stop</text>
+<text x="388.0" y="112.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="end">PLr d</text>
+<text x="44.0" y="142.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">DEMAND</text>
+<text x="233.0" y="142.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">SAFE STATE</text>
+<text x="44.0" y="158.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">A person actuates any</text>
+<text x="44.0" y="170.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">emergency-stop device on the</text>
+<text x="44.0" y="183.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">robot or on the operator's</text>
+<text x="44.0" y="195.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">pendant</text>
+<text x="233.0" y="158.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">Traction power removed by two</text>
+<text x="233.0" y="170.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">independent paths; latched</text>
+<text x="233.0" y="183.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">until a deliberate reset</text>
+<line x1="205.0" y1="191.5" x2="225.0" y2="191.5" stroke="#122026" stroke-width="1.4" marker-end="url(#sfc-arrow)"/>
+<rect x="44.0" y="268.0" width="45.9" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="51.0" y="282.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">Cat. 3</text>
+<rect x="95.9" y="268.0" width="72.5" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="102.9" y="282.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">stop cat. 0</text>
+<rect x="174.4" y="268.0" width="194.9" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="181.4" y="282.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">response ≤ 200 ms to power removal</text>
+<rect x="410.0" y="92.0" width="368.0" height="206.0" rx="8" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<path d="M418,92 h352 a8,8 0 0 1 8,8 v22 h-368 v-22 a8,8 0 0 1 8,-8 z" fill="#2FA69C"/>
+<text x="422.0" y="112.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="start">SF-02</text>
+<text x="476.0" y="112.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="start">Protective stop on personnel detectio…</text>
+<text x="766.0" y="112.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="end">PLr d</text>
+<text x="422.0" y="142.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">DEMAND</text>
+<text x="611.0" y="142.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">SAFE STATE</text>
+<text x="422.0" y="158.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">A person or object enters the</text>
+<text x="422.0" y="170.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">protective field in the</text>
+<text x="422.0" y="183.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">direction of travel; the rear</text>
+<text x="422.0" y="195.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">bumper is pressed; the</text>
+<text x="422.0" y="208.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">detection device reports a</text>
+<text x="422.0" y="220.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">fault or loses its field</text>
+<text x="611.0" y="158.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">Controlled stop, then power</text>
+<text x="611.0" y="170.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">removed if standstill is not</text>
+<text x="611.0" y="183.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">reached; motion resumes only</text>
+<text x="611.0" y="195.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">with the field clear, and</text>
+<text x="611.0" y="208.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">after a reset where power was</text>
+<text x="611.0" y="220.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">removed</text>
+<line x1="583.0" y1="191.5" x2="603.0" y2="191.5" stroke="#122026" stroke-width="1.4" marker-end="url(#sfc-arrow)"/>
+<rect x="422.0" y="268.0" width="45.9" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="429.0" y="282.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">Cat. 3</text>
+<rect x="473.9" y="268.0" width="109.8" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="480.9" y="282.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">stop cat. 1 then 0</text>
+<rect x="589.7" y="268.0" width="173.6" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="596.7" y="282.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">response ≤ 170 ms to the star…</text>
+<rect x="788.0" y="92.0" width="368.0" height="206.0" rx="8" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<path d="M796,92 h352 a8,8 0 0 1 8,8 v22 h-368 v-22 a8,8 0 0 1 8,-8 z" fill="#8FD3CC"/>
+<text x="800.0" y="112.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11.5" font-weight="700" fill="#122026" text-anchor="start">SF-09</text>
+<text x="854.0" y="112.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#122026" text-anchor="start">Enabling control for teleoperation</text>
+<text x="1144.0" y="112.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#122026" text-anchor="end">PLr c</text>
+<text x="800.0" y="142.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">DEMAND</text>
+<text x="989.0" y="142.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">SAFE STATE</text>
+<text x="800.0" y="158.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">The hold-to-run control of</text>
+<text x="800.0" y="170.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">the teleoperation device is</text>
+<text x="800.0" y="183.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">released, or a teleoperation</text>
+<text x="800.0" y="195.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">command arrives without it</text>
+<text x="800.0" y="208.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">held</text>
+<text x="989.0" y="158.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">Drives at zero; no</text>
+<text x="989.0" y="170.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">teleoperation motion without</text>
+<text x="989.0" y="183.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">the control held; speed</text>
+<text x="989.0" y="195.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">capped at the zone limit,</text>
+<text x="989.0" y="208.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">lower within 2 m of a person</text>
+<text x="989.0" y="220.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">(DQ-017)</text>
+<line x1="961.0" y1="191.5" x2="981.0" y2="191.5" stroke="#122026" stroke-width="1.4" marker-end="url(#sfc-arrow)"/>
+<rect x="800.0" y="268.0" width="45.9" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="807.0" y="282.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">Cat. 2</text>
+<rect x="851.9" y="268.0" width="72.5" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="858.9" y="282.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">stop cat. 0</text>
+<rect x="930.4" y="268.0" width="173.6" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="937.4" y="282.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">response ≤ 200 ms from release</text>
+<text x="32.0" y="334.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">MONITORING THAT DEMANDS A STOP</text>
+<rect x="32.0" y="344.0" width="368.0" height="206.0" rx="8" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<path d="M40,344 h352 a8,8 0 0 1 8,8 v22 h-368 v-22 a8,8 0 0 1 8,-8 z" fill="#2FA69C"/>
+<text x="44.0" y="364.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="start">SF-03</text>
+<text x="98.0" y="364.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="start">Safely-limited speed</text>
+<text x="388.0" y="364.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="end">PLr d</text>
+<text x="44.0" y="394.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">DEMAND</text>
+<text x="233.0" y="394.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">SAFE STATE</text>
+<text x="44.0" y="410.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">The monitored wheel speed</text>
+<text x="44.0" y="422.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">exceeds the limit of the</text>
+<text x="44.0" y="435.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">active zone for more than 100</text>
+<text x="44.0" y="447.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">ms, or the robot moves in a</text>
+<text x="44.0" y="460.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">direction not permitted at</text>
+<text x="44.0" y="472.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">that speed (reverse above the</text>
+<text x="44.0" y="485.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">crawl limit)</text>
+<text x="233.0" y="410.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">Controlled stop, then power</text>
+<text x="233.0" y="422.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">removed if standstill is not</text>
+<text x="233.0" y="435.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">reached; latched</text>
+<line x1="205.0" y1="443.5" x2="225.0" y2="443.5" stroke="#122026" stroke-width="1.4" marker-end="url(#sfc-arrow)"/>
+<rect x="44.0" y="520.0" width="45.9" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="51.0" y="534.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">Cat. 3</text>
+<rect x="95.9" y="520.0" width="109.8" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="102.9" y="534.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">stop cat. 1 then 0</text>
+<rect x="211.7" y="520.0" width="173.6" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="218.7" y="534.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">response detect ≤ 100 ms; ≤ 1…</text>
+<rect x="410.0" y="344.0" width="368.0" height="206.0" rx="8" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<path d="M418,344 h352 a8,8 0 0 1 8,8 v22 h-368 v-22 a8,8 0 0 1 8,-8 z" fill="#8FD3CC"/>
+<text x="422.0" y="364.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11.5" font-weight="700" fill="#122026" text-anchor="start">SF-04</text>
+<text x="476.0" y="364.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#122026" text-anchor="start">Stop on loss of command, communicatio…</text>
+<text x="766.0" y="364.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#122026" text-anchor="end">PLr c</text>
+<text x="422.0" y="394.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">DEMAND</text>
+<text x="611.0" y="394.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">SAFE STATE</text>
+<text x="422.0" y="410.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">No valid velocity command for</text>
+<text x="422.0" y="422.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">200 ms; the micro-ROS agent</text>
+<text x="422.0" y="435.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">is lost; the</text>
+<text x="422.0" y="447.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">safety-controller heartbeat</text>
+<text x="422.0" y="460.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">is lost; the control loop</text>
+<text x="422.0" y="472.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">hangs (hardware watchdog, 1</text>
+<text x="422.0" y="485.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">s)</text>
+<text x="611.0" y="410.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">Drives at zero; power removed</text>
+<text x="611.0" y="422.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">and the stop latched when the</text>
+<text x="611.0" y="435.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">cause is a fault</text>
+<line x1="583.0" y1="443.5" x2="603.0" y2="443.5" stroke="#122026" stroke-width="1.4" marker-end="url(#sfc-arrow)"/>
+<rect x="422.0" y="520.0" width="45.9" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="429.0" y="534.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">Cat. 2</text>
+<rect x="473.9" y="520.0" width="72.5" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="480.9" y="534.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">stop cat. 0</text>
+<rect x="552.4" y="520.0" width="210.8" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="559.4" y="534.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">response ≤ 200 ms (command); ≤ 1 s (…</text>
+<rect x="788.0" y="344.0" width="368.0" height="206.0" rx="8" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<path d="M796,344 h352 a8,8 0 0 1 8,8 v22 h-368 v-22 a8,8 0 0 1 8,-8 z" fill="#8FD3CC"/>
+<text x="800.0" y="364.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11.5" font-weight="700" fill="#122026" text-anchor="start">SF-06</text>
+<text x="854.0" y="364.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#122026" text-anchor="start">Stop on drive fault</text>
+<text x="1144.0" y="364.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#122026" text-anchor="end">PLr c</text>
+<text x="800.0" y="394.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">DEMAND</text>
+<text x="989.0" y="394.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">SAFE STATE</text>
+<text x="800.0" y="410.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">A motor-driver fault output;</text>
+<text x="800.0" y="422.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">a wheel driven hard that does</text>
+<text x="800.0" y="435.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">not turn (stall, dead</text>
+<text x="800.0" y="447.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">encoder); a following error</text>
+<text x="800.0" y="460.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">between commanded and</text>
+<text x="800.0" y="472.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">monitored speed; battery</text>
+<text x="800.0" y="485.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">under-voltage</text>
+<text x="989.0" y="410.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">Both drives stopped, power</text>
+<text x="989.0" y="422.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">removed, latched</text>
+<line x1="961.0" y1="443.5" x2="981.0" y2="443.5" stroke="#122026" stroke-width="1.4" marker-end="url(#sfc-arrow)"/>
+<rect x="800.0" y="520.0" width="45.9" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="807.0" y="534.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">Cat. 2</text>
+<rect x="851.9" y="520.0" width="72.5" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="858.9" y="534.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">stop cat. 0</text>
+<rect x="930.4" y="520.0" width="210.8" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="937.4" y="534.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">response ≤ 100 ms (fault input); ≤ 1…</text>
+<text x="32.0" y="586.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">RESTART, INHIBIT AND WARNING</text>
+<rect x="32.0" y="596.0" width="368.0" height="206.0" rx="8" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<path d="M40,596 h352 a8,8 0 0 1 8,8 v22 h-368 v-22 a8,8 0 0 1 8,-8 z" fill="#2FA69C"/>
+<text x="44.0" y="616.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="start">SF-05</text>
+<text x="98.0" y="616.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="start">Prevention of unexpected start-up</text>
+<text x="388.0" y="616.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="end">PLr d</text>
+<text x="44.0" y="646.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">DEMAND</text>
+<text x="233.0" y="646.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">SAFE STATE</text>
+<text x="44.0" y="662.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">Any stop that removed power</text>
+<text x="44.0" y="674.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">(SF-01, SF-02, SF-03, SF-04</text>
+<text x="44.0" y="687.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">on a fault, SF-06), a power</text>
+<text x="44.0" y="699.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">cycle, a reboot of the</text>
+<text x="44.0" y="712.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">microcontroller</text>
+<text x="233.0" y="662.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">No motion until a deliberate</text>
+<text x="233.0" y="674.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">reset at the robot with every</text>
+<text x="233.0" y="687.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">demand cleared, followed by a</text>
+<text x="233.0" y="699.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">fresh velocity command</text>
+<line x1="205.0" y1="695.5" x2="225.0" y2="695.5" stroke="#122026" stroke-width="1.4" marker-end="url(#sfc-arrow)"/>
+<rect x="44.0" y="772.0" width="45.9" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="51.0" y="786.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">Cat. 3</text>
+<rect x="95.9" y="772.0" width="72.5" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="102.9" y="786.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">stop cat. —</text>
+<rect x="174.4" y="772.0" width="210.8" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="181.4" y="786.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">response reset accepted only after a…</text>
+<rect x="410.0" y="596.0" width="368.0" height="206.0" rx="8" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<path d="M418,596 h352 a8,8 0 0 1 8,8 v22 h-368 v-22 a8,8 0 0 1 8,-8 z" fill="#C9ECE8"/>
+<text x="422.0" y="616.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11.5" font-weight="700" fill="#122026" text-anchor="start">SF-07</text>
+<text x="476.0" y="616.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#122026" text-anchor="start">Powered-debug inhibit</text>
+<text x="766.0" y="616.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#122026" text-anchor="end">PLr b</text>
+<text x="422.0" y="646.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">DEMAND</text>
+<text x="611.0" y="646.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">SAFE STATE</text>
+<text x="422.0" y="662.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">A raw-PWM, gain or</text>
+<text x="422.0" y="674.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">calibration command arrives</text>
+<text x="422.0" y="687.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">on the reference image, or on</text>
+<text x="422.0" y="699.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">a bench image without the</text>
+<text x="422.0" y="712.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">physical arming input</text>
+<text x="611.0" y="662.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">The command is refused; the</text>
+<text x="611.0" y="674.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">motors neither move nor</text>
+<text x="611.0" y="687.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">retune; the image reports</text>
+<text x="611.0" y="699.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">which it is</text>
+<line x1="583.0" y1="695.5" x2="603.0" y2="695.5" stroke="#122026" stroke-width="1.4" marker-end="url(#sfc-arrow)"/>
+<rect x="422.0" y="772.0" width="45.9" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="429.0" y="786.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">Cat. 1</text>
+<rect x="473.9" y="772.0" width="72.5" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="480.9" y="786.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">stop cat. —</text>
+<rect x="552.4" y="772.0" width="184.2" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="559.4" y="786.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">response — (inhibit, not a stop)</text>
+<rect x="788.0" y="596.0" width="368.0" height="206.0" rx="8" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<path d="M796,596 h352 a8,8 0 0 1 8,8 v22 h-368 v-22 a8,8 0 0 1 8,-8 z" fill="#C9ECE8"/>
+<text x="800.0" y="616.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11.5" font-weight="700" fill="#122026" text-anchor="start">SF-08</text>
+<text x="854.0" y="616.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#122026" text-anchor="start">Warning before motion</text>
+<text x="1144.0" y="616.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#122026" text-anchor="end">PLr b</text>
+<text x="800.0" y="646.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">DEMAND</text>
+<text x="989.0" y="646.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#4E6A73" text-anchor="start" letter-spacing="1">SAFE STATE</text>
+<text x="800.0" y="662.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">Motion is about to start or</text>
+<text x="800.0" y="674.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">resume: after a reset, after</text>
+<text x="800.0" y="687.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">a protective stop or</text>
+<text x="800.0" y="699.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">slow-down, after a wait on a</text>
+<text x="800.0" y="712.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">person, before an undock</text>
+<text x="800.0" y="724.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">reverse</text>
+<text x="989.0" y="662.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">An audible and visual warning</text>
+<text x="989.0" y="674.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">for (TBC: 2 s) before the</text>
+<text x="989.0" y="687.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">wheels turn, and a visible</text>
+<text x="989.0" y="699.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">state on every side while</text>
+<text x="989.0" y="712.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#122026" text-anchor="start">slowed or stopped</text>
+<line x1="961.0" y1="695.5" x2="981.0" y2="695.5" stroke="#122026" stroke-width="1.4" marker-end="url(#sfc-arrow)"/>
+<rect x="800.0" y="772.0" width="45.9" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="807.0" y="786.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">Cat. 1</text>
+<rect x="851.9" y="772.0" width="72.5" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="858.9" y="786.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">stop cat. —</text>
+<rect x="930.4" y="772.0" width="210.8" height="20.0" rx="10" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="937.4" y="786.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">response warning ≥ (TBC: 2 s) before…</text>
+<text x="32.0" y="826.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#4E6A73" text-anchor="start">PLr</text>
+<rect x="66.0" y="814.0" width="32.0" height="16.0" rx="3" fill="#EAF6F5" stroke="#D3DDE2" stroke-width="1"/>
+<text x="82.0" y="826.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#122026" text-anchor="middle">a</text>
+<rect x="106.0" y="814.0" width="32.0" height="16.0" rx="3" fill="#C9ECE8" stroke="#C9ECE8" stroke-width="1"/>
+<text x="122.0" y="826.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#122026" text-anchor="middle">b</text>
+<rect x="146.0" y="814.0" width="32.0" height="16.0" rx="3" fill="#8FD3CC" stroke="#8FD3CC" stroke-width="1"/>
+<text x="162.0" y="826.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#122026" text-anchor="middle">c</text>
+<rect x="186.0" y="814.0" width="32.0" height="16.0" rx="3" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
+<text x="202.0" y="826.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">d</text>
+<rect x="226.0" y="814.0" width="32.0" height="16.0" rx="3" fill="#D64535" stroke="#D64535" stroke-width="1"/>
+<text x="242.0" y="826.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">e</text>
+<text x="1148.0" y="826.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#7E949B" text-anchor="end">Generated by figures/fig_c04.py from WP-C-04 §2</text>
+</svg>

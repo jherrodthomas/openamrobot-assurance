@@ -4,9 +4,9 @@
 |---|---|
 | Work product | WP-S-02 Safety requirements specification: functional and integrity requirements of SF-01…SF-07 (ISO 13849-1 §5.1 "safety requirements specification") |
 | Standard reference | ISO 13849-1:2023 §5 (safety functions, SRS), §4.5 (PLr), §6 (categories), §7 (software); ISO 13850:2015 §4; EN 60204-1:2018 §9.2.2, §9.2.3.4, §9.4; ISO 3691-4:2023 §4, Annex A; IEC 62443-4-2 (CR 1, CR 3) |
-| Version | 0.1 (2026-10-20): initial draft from WP-C-03 v0.2 |
+| Version | 0.2 (2026-10-20): SF-05 raised to PLr d per WP-C-03 v0.3 and WP-C-04; SF-08 and SF-09 noted as pending (OI-6). 0.1: initial draft from WP-C-03 v0.2 |
 | Status | Draft |
-| PL / scope | PL d (SF-01, SF-02, SF-03), PL c (SF-04, SF-05, SF-06), PL b (SF-07); Gate A unit (CFG-001); mobile base only |
+| PL / scope | PL d (SF-01, SF-02, SF-03, SF-05), PL c (SF-04, SF-06), PL b (SF-07); SF-08 and SF-09 of WP-C-04 not yet broken into requirements (OI-6); Gate A unit (CFG-001); mobile base only |
 | Author | Assurance team (AI-assisted draft, I0) |
 | Reviewer(s) | TBD (I1) |
 | Approver | Project lead |
@@ -85,14 +85,14 @@
 | SR-04.05 | Loss of the micro-ROS session, of the scan source (per SR-02.06) or of the safety controller heartbeat shall stop the robot within the respective timeout; the stop shall latch when it results from a fault (not from a normal end of session) | F | c | T | firmware agent-loss stop (exists); WP-S-03 §3.5 | H-11 |
 | SR-04.06 | The host shall not re-feed a stale command: the velocity smoother shall publish zero after its timeout (exists, 1 s) and no node shall republish a command older than 200 ms | F | c | I, T | `openamr-platform-sw` nav2 chain, docking sequencer | H-02 |
 
-## 7. SF-05 Prevention of unexpected start-up (PLr c, Category 2)
+## 7. SF-05 Prevention of unexpected start-up (PLr d, Category 3)
 
 | ID | Requirement | Type | PLr | Verif. | Implemented by | Trace |
 |---|---|---|---|---|---|---|
-| SR-05.01 | After SF-01, SF-02 (with power removal), SF-03, SF-06 or a power cycle, the robot shall not move until a deliberate reset at the robot (SR-01.06); the first motion after reset shall need a fresh velocity command | F | c | T | WP-S-03 §3.3 | H-05 |
-| SR-05.02 | A reset shall not be possible while a stop demand is present, and shall not itself cause motion | F | c | T | WP-S-03 §3.3 | H-05 |
-| SR-05.03 | A pending or latched stop shall be indicated at the robot (lamp) and on the operator interface | F | c | I | WP-S-03 §6 | H-05, H-10 |
-| SR-05.04 | A reboot of the microcontroller shall report its reset cause and shall not re-enable motion by itself (exists in part: status topic; the enable path is WP-S-03 §3.3) | D | c | T | firmware status (fork change); WP-S-03 §3.3 | H-05 |
+| SR-05.01 | After SF-01, SF-02 (with power removal), SF-03, SF-06 or a power cycle, the robot shall not move until a deliberate reset at the robot (SR-01.06); the first motion after reset shall need a fresh velocity command | F | d | T | WP-S-03 §3.3 | H-05 |
+| SR-05.02 | A reset shall not be possible while a stop demand is present, and shall not itself cause motion | F | d | T | WP-S-03 §3.3 | H-05 |
+| SR-05.03 | A pending or latched stop shall be indicated at the robot (lamp) and on the operator interface | F | d | I | WP-S-03 §6 | H-05, H-10 |
+| SR-05.04 | A reboot of the microcontroller shall report its reset cause and shall not re-enable motion by itself (exists in part: status topic; the enable path is WP-S-03 §3.3) | D | d | T | firmware status (fork change); WP-S-03 §3.3 | H-05 |
 
 ## 8. SF-06 Stop on drive fault (PLr c, Category 2, stop category 0)
 
@@ -142,3 +142,4 @@
 | OI-3 | ~~Choice of detection device~~ decided 2026-10-20 (DQ-007): front safety scanner plus rear bumper on the Gate A bench build; see WP-H-02 | closed |
 | OI-4 | Safety controller for SF-02/SF-03 (safety relay with speed monitoring, or a small safety PLC) on the Gate A bench build; upstream 2.0 names a Pilz PNOZ s3 only | WP-S-03 |
 | OI-5 | DQ-006 (firmware ceiling values) | SR-03.04 |
+| OI-6 | Add SR-08.x (SF-08 warning before motion) and SR-09.x (SF-09 enabling control for teleoperation) from WP-C-04 §3.8 and §3.9; SR-05.x now carries PLr d, the Category 3 argument is WP-S-03 §3.3 | G1.8, G1.9 claims |

@@ -23,7 +23,7 @@
   topic: "The protective stop SF-02 has a PLr but no implementation until the detection means is decided; what the LiDAR cannot see bounds the claim"
   anchors: ["WP-C-04:The detection means of SF-02 is settled in WP-C-10", "WP-C-10:Blind zones below the scan plane bound the claim SF-02 can make"]
   status: open
-  open_item: "WP-C-10 OI-2 and decision DQ-007: choose the detection means (safety scanner, bumpers or a separated area)"
+  open_item: "DQ-007 decided (scanner plus rear bumper); WP-C-10 OI-1 still has to bound what the scanner cannot see below its plane before SF-02 claims PL d"
   due: G1
 - id: IX-03
   kind: interface

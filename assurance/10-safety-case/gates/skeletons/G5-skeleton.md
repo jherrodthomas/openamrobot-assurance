@@ -63,7 +63,7 @@ From the [process model](../../../process/README.md). Each one is a condition on
 
 | Interface | Topic | Open item | Due | Closed? |
 |---|---|---|---|---|
-| IX-02 | The protective stop SF-02 has a PLr but no implementation until the detection means is decided; what the LiDAR cannot see bounds the claim | WP-C-10 OI-2 and decision DQ-007: choose the detection means (safety scanner, bumpers or a separated area) | G1 | |
+| IX-02 | The protective stop SF-02 has a PLr but no implementation until the detection means is decided; what the LiDAR cannot see bounds the claim | DQ-007 decided (scanner plus rear bumper); WP-C-10 OI-1 still has to bound what the scanner cannot see below its plane before SF-02 claims PL d | G1 | |
 
 ### Roles WP-M-02 §3.1 needs by this gate that are not assigned
 

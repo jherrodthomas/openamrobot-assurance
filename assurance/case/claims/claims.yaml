@@ -24,17 +24,17 @@
 
 - id: G1
   kind: claim
-  title: "The safety functions SF-01 to SF-07 reach their required Performance Level"
-  description: "Each safety function of WP-C-03 §7 is specified (WP-S-02), implemented by a safety-related part of the control system at its PLr (WP-S-03, WP-H-03) and validated per ISO 13849-2."
+  title: "The safety functions SF-01 to SF-09 reach their required Performance Level"
+  description: "Each safety function of WP-C-03 §7, specified in WP-C-04, is broken into requirements (WP-S-02), implemented by a safety-related part of the control system at its PLr (WP-S-03, WP-H-03) and validated per ISO 13849-2."
   parent: G0
   argument: S0
   lifecycle_status: draft
   baseline: BL-001
   configuration: CFG-001
   related_hazards: [H-01, H-02, H-03, H-04, H-05, H-11]
-  related_requirements: [SF-01, SF-02, SF-03, SF-04, SF-05, SF-06, SF-07]
+  related_requirements: [SF-01, SF-02, SF-03, SF-04, SF-05, SF-06, SF-07, SF-08, SF-09]
   related_assumptions: []
-  evidence_refs: [Sn-04, Sn-05]
+  evidence_refs: [Sn-04, Sn-05, Sn-17]
   defeaters: []
   review_state: not-reviewed
   reviewer: null
@@ -129,7 +129,7 @@
 
 - id: G1.5
   kind: claim
-  title: "SF-05 prevention of unexpected start-up is implemented at PL c"
+  title: "SF-05 prevention of unexpected start-up is implemented at PL d"
   description: "After any stop, motion needs a deliberate reset at the robot and is indicated."
   parent: G1
   argument: S1
@@ -183,6 +183,48 @@
   related_assumptions: []
   evidence_refs: [Sn-06, Sn-10]
   defeaters: [DF-07, DF-08]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G1.8
+  kind: claim
+  title: "SF-08 warning before motion is implemented at PL b"
+  description: "An audible and visual warning precedes every start or resume of motion, and the robot's state is visible from every side (WP-C-04 §3.8; WP-C-06 HR-06, HR-07)."
+  parent: G1
+  argument: S1
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [H-05, H-10]
+  related_requirements: [SF-08]
+  related_assumptions: []
+  evidence_refs: [Sn-17]
+  defeaters: [DF-37]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G1.9
+  kind: claim
+  title: "SF-09 enabling control for teleoperation is implemented at PL c"
+  description: "Teleoperation moves the robot only while a hold-to-run control is held, stops within 200 ms of its release, and is speed-capped near a person (WP-C-04 §3.9; WP-C-06 HR-04)."
+  parent: G1
+  argument: S1
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [H-01, H-10]
+  related_requirements: [SF-09]
+  related_assumptions: [AOU-01]
+  evidence_refs: [Sn-17]
+  defeaters: [DF-36]
   review_state: not-reviewed
   reviewer: null
   review_date: null

@@ -55,7 +55,7 @@ Nothing is marked complete before its review, and every number below is computed
 
 <!-- BEGIN GENERATED: record-headline (docs/assets/openamrobot/make_assets.py) -->
 
-**P0 Governance** · no gate passed · 89 work products (15 draft, 74 skeleton, 0 approved) · 40 gap findings (22 high) · 9 decisions open · 1 of 11 cross-domain interfaces open · 0 of 22 confirmation measures performed · records digest `ba4771f53fcf`
+**P0 Governance** · no gate passed · 89 work products (16 draft, 73 skeleton, 0 approved) · 40 gap findings (22 high) · 9 decisions open · 1 of 11 cross-domain interfaces open · 0 of 22 confirmation measures performed · records digest `33637a4ff941`
 
 <!-- END GENERATED: record-headline -->
 
@@ -79,7 +79,7 @@ validated and drawn by [`generate_dashboard.py`](assurance/case/tools/generate_d
 
 <!-- BEGIN GENERATED: assurance-headline (assurance/case/tools/generate_dashboard.py) -->
 
-**Development** · baseline `BL-001` at `8a7a5b1` · 18 claims (0 with accepted evidence) · 16 evidence items (0 accepted) · 40 open defeaters · records digest `ac14faa4fe9a`
+**Development** · baseline `BL-001` at `8a7a5b1` · 20 claims (0 with accepted evidence) · 17 evidence items (0 accepted) · 40 open defeaters · records digest `1a4ecd52713c`
 
 <!-- END GENERATED: assurance-headline -->
 

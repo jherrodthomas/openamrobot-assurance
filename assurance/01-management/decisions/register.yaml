@@ -509,3 +509,32 @@
       detail: "No behaviour change. Cost: reverse at 0.10 m/s with no detection stays outside the safety case."
   sources: ["gap assessment GAP-35", "WP-S-02 SR-02.04", "WP-H-02 §3.4", "sw: nav2_params.yaml:303-307", "sw: dock_trigger.yaml:22-23"]
   status: queued
+
+- id: DQ-019
+  ref: WP-C-03
+  question: "Do we keep public floors (showrooms, visitor corridors, anywhere children may be) out of the Gate A unit's operating environment, or open a case for them?"
+  context: >-
+    The risk assessment, re-rated per zone, puts a robot moving among people who do not know it (children, a
+    person lying or crouching below the scanner plane) at the top of the ISO 13849-1 risk graph: required
+    Performance Level e, which no function of the bench build is designed to reach. Every other zone rates d or
+    below. Keeping the public floor out costs nothing today, since the operating environment already excludes it;
+    opening it would need a PL e argument or a measured proof that the robot cannot hurt a child on contact
+    (force and kinetic-energy limits), which is a 2.0 question rather than a Gate A one.
+  reversibility: easy
+  decider: lead
+  blocks: "Zone Z5 in WP-C-02; the scope of SF-02 in WP-C-04; the exclusions carried to the information for use (WP-O-03)"
+  gate: G1
+  after: [DQ-017]
+  options:
+    - key: A
+      recommended: true
+      title: "Keep public floors excluded for the Gate A unit; revisit for 2.0 with measured contact forces"
+      detail: "The safety case stays at PL d with people who are briefed. Cost: no demonstrations in a showroom or an office corridor with visitors until 2.0."
+    - key: B
+      title: "Open a PL e argument for the protective stop on the bench build"
+      detail: "Would allow public demonstrations. Cost: a category 4 detection chain and a stopping distance proven at PL e, well beyond the budget and the Gate A drive."
+    - key: C
+      title: "Allow public floors with a chaperone and the robot at crawl speed, as a procedural measure"
+      detail: "Cheap. Cost: a procedure is not a control for a hazard that can kill; the gap assessment's own principle, and the rating stays e."
+  sources: ["assurance/02-concept/WP-C-03-risk-assessment.md §5 (H-01 public floor), §5.2", "assurance/02-concept/WP-C-02-operating-environment-and-tasks.md Z5", "assurance/02-concept/WP-C-06-human-robot-interaction-and-misuse.md IS-09, MU-07"]
+  status: queued

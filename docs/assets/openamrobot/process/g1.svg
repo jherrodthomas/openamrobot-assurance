@@ -83,7 +83,7 @@
 <text x="430" y="647" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="500" fill="#122026" text-anchor="start">Specify the safety</text>
 <text x="430" y="660" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="500" fill="#122026" text-anchor="start">functions and their</text>
 <text x="430" y="673" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="500" fill="#122026" text-anchor="start">required PL</text>
-<rect x="430" y="678" width="35.2" height="13" rx="6.5" fill="#C9D4D9" fill-opacity="0.9"/>
+<rect x="430" y="678" width="35.2" height="13" rx="6.5" fill="#F2A33A" fill-opacity="0.9"/>
 <text x="447.6" y="687.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="700" fill="#122026" text-anchor="middle">C-04</text>
 <rect x="235" y="616" width="162" height="80" rx="9" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
 <rect x="235" y="624" width="3" height="64" rx="1.5" fill="#D4821A"/>

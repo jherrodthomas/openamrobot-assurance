@@ -392,7 +392,7 @@
   description: "Closure route: gap assessment §10 priority actions; see GAP-36"
   lifecycle_status: open
   gaps: [GAP-36]
-  related_claims: [G1.3, G3.1]
+  related_claims: [G1.3, G1.9, G3.1]
   baseline: BL-001
   source: WP-K-01
   source_revision: "8a7a5b1"
@@ -403,7 +403,7 @@
   description: "Closure route: gap assessment §10 priority actions; see GAP-37"
   lifecycle_status: open
   gaps: [GAP-37]
-  related_claims: [G1.4]
+  related_claims: [G1.4, G1.8]
   baseline: BL-001
   source: WP-K-01
   source_revision: "8a7a5b1"
