@@ -1,0 +1,29 @@
+name: assurance
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  records:
+    name: records, register and generated outputs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Living Safety Case records are valid
+        run: python3 assurance/case/tools/validate.py
+      - name: validator self-tests
+        run: python3 assurance/case/tools/test_case.py
+      - name: decision register is consistent
+        run: |
+          python3 assurance/01-management/decisions/check_decisions.py
+          python3 assurance/01-management/decisions/test_decisions.py
+      - name: generated dashboard and README blocks are up to date
+        run: python3 assurance/case/tools/generate_dashboard.py --check

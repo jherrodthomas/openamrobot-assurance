@@ -1,0 +1,57 @@
+# Source: WP-K-01 Safety Case (§3, strategies). Machine-readable copy; WP-K-01 remains the reviewed document.
+# Format: README.md. Lifecycle and review fields are set only through recorded reviews.
+
+- id: S0
+  kind: argument
+  title: "Argue over each source of risk"
+  description: "Argue over each source of risk identified in WP-C-03: the safety functions of the control system, the electrical and mechanical measures, the command path security, and the process that produced the evidence"
+  claim: G0
+  subclaims: [G1, G2, G3, G4]
+  lifecycle_status: draft
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: S1
+  kind: argument
+  title: "Argue per safety function"
+  description: "One sub-claim per safety function SF-01 to SF-07 of WP-C-03 §7: each is specified, implemented at its PLr and validated"
+  claim: G1
+  subclaims: [G1.1, G1.2, G1.3, G1.4, G1.5, G1.6, G1.7]
+  lifecycle_status: draft
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: S2
+  kind: argument
+  title: "Argue over the complementary measures"
+  description: "The design and complementary measures DM-01 to DM-06 of WP-C-03 §6 are implemented and verified"
+  claim: G2
+  subclaims: [G2.1, G2.2]
+  lifecycle_status: draft
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: S3
+  kind: argument
+  title: "Argue that the command path cannot defeat the safety functions"
+  description: "No network participant can cause motion beyond the safety limits or disable a safety function"
+  claim: G3
+  subclaims: [G3.1]
+  lifecycle_status: draft
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: S4
+  kind: argument
+  title: "Argue over the process"
+  description: "The evidence was produced under a controlled baseline, reviewed with the required independence, and the hazards were identified completely"
+  claim: G4
+  subclaims: [G4.1, G4.2, G4.3]
+  lifecycle_status: draft
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "8a7a5b1"

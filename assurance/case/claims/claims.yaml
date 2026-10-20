@@ -1,0 +1,380 @@
+# Source: WP-K-01 Safety Case (§3, claims). Machine-readable copy; WP-K-01 remains the reviewed document.
+# Format: README.md. Lifecycle and review fields are set only through recorded reviews.
+
+- id: G0
+  kind: claim
+  title: "The Gate A unit poses no unreasonable risk"
+  description: "The OpenAMRobot Gate A unit, operated within the limits of WP-C-01 by a trained operator, does not pose unreasonable risk to people who share its floor. The risk of every hazard in WP-C-03 is reduced to an acceptable level by the safety functions, the complementary measures and the information for use."
+  parent: null
+  argument: null
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: []
+  related_requirements: []
+  related_assumptions: [AOU-01, AOU-02, AOU-03, AOU-04, AOU-05, AOU-06, AOU-07]
+  evidence_refs: [Sn-01, Sn-02, Sn-03]
+  defeaters: [DF-12, DF-18, DF-25, DF-26]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G1
+  kind: claim
+  title: "The safety functions SF-01 to SF-07 reach their required Performance Level"
+  description: "Each safety function of WP-C-03 §7 is specified (WP-S-02), implemented by a safety-related part of the control system at its PLr (WP-S-03, WP-H-03) and validated per ISO 13849-2."
+  parent: G0
+  argument: S0
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [H-01, H-02, H-03, H-04, H-05, H-11]
+  related_requirements: [SF-01, SF-02, SF-03, SF-04, SF-05, SF-06, SF-07]
+  related_assumptions: []
+  evidence_refs: [Sn-04, Sn-05]
+  defeaters: []
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G1.1
+  kind: claim
+  title: "SF-01 emergency stop is implemented at PL d"
+  description: "A hardwired, dual-channel, monitored emergency stop removes traction power within 200 ms independently of software and latches until reset."
+  parent: G1
+  argument: S1
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [H-01, H-02, H-04, H-05, H-10]
+  related_requirements: [SF-01]
+  related_assumptions: []
+  evidence_refs: [Sn-08]
+  defeaters: [DF-01, DF-02, DF-19, DF-28]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G1.2
+  kind: claim
+  title: "SF-02 protective stop on personnel detection is implemented at PL d"
+  description: "A safety-rated detection device stops the robot before contact with a person in its direction of travel, including reverse and the dock lane, and cannot be disabled by software."
+  parent: G1
+  argument: S1
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [H-01, H-11]
+  related_requirements: [SF-02]
+  related_assumptions: []
+  evidence_refs: [Sn-11, Sn-07]
+  defeaters: [DF-14, DF-15, DF-16, DF-22, DF-35]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G1.3
+  kind: claim
+  title: "SF-03 safely-limited speed is implemented at PL d"
+  description: "Wheel speed is monitored independently of the command path and a violation trips the stop chain."
+  parent: G1
+  argument: S1
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [H-01, H-03, H-12]
+  related_requirements: [SF-03]
+  related_assumptions: []
+  evidence_refs: [Sn-11]
+  defeaters: [DF-13, DF-36]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G1.4
+  kind: claim
+  title: "SF-04 stop on loss of command, communication or control is implemented at PL c"
+  description: "No valid command for 200 ms, a lost session, a stale scan or a controller hang stops the robot; the firmware runs a hardware watchdog and validates every command."
+  parent: G1
+  argument: S1
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [H-02, H-11]
+  related_requirements: [SF-04]
+  related_assumptions: []
+  evidence_refs: [Sn-06, Sn-10]
+  defeaters: [DF-03, DF-06, DF-37]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G1.5
+  kind: claim
+  title: "SF-05 prevention of unexpected start-up is implemented at PL c"
+  description: "After any stop, motion needs a deliberate reset at the robot and is indicated."
+  parent: G1
+  argument: S1
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [H-05, H-10]
+  related_requirements: [SF-05]
+  related_assumptions: []
+  evidence_refs: [Sn-08]
+  defeaters: [DF-09, DF-10]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G1.6
+  kind: claim
+  title: "SF-06 stop on drive fault is implemented at PL c"
+  description: "A driver fault, a stalled or encoder-dead wheel, a following error or a low battery stops both wheels and latches."
+  parent: G1
+  argument: S1
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [H-03]
+  related_requirements: [SF-06]
+  related_assumptions: []
+  evidence_refs: [Sn-06, Sn-10]
+  defeaters: [DF-04, DF-05, DF-17, DF-24]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G1.7
+  kind: claim
+  title: "SF-07 powered-debug inhibit is implemented at PL b"
+  description: "The reference firmware image cannot drive or retune the motors from the network; a bench image is identifiable, bounded and armed physically."
+  parent: G1
+  argument: S1
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [H-04, H-02, H-12]
+  related_requirements: [SF-07]
+  related_assumptions: []
+  evidence_refs: [Sn-06, Sn-10]
+  defeaters: [DF-07, DF-08]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G2
+  kind: claim
+  title: "The complementary electrical and mechanical measures are implemented"
+  description: "Fuse and disconnect, mains protection, single-source charging, battery monitoring, payload and stability limits are in place and verified (WP-C-03 §6 DM-01 to DM-06)."
+  parent: G0
+  argument: S0
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [H-06, H-07, H-08, H-09]
+  related_requirements: []
+  related_assumptions: [AOU-06, AOU-07]
+  evidence_refs: []
+  defeaters: []
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G2.1
+  kind: claim
+  title: "The 24 V bus and the mains side are protected"
+  description: "Battery fuse and lockable disconnect are fitted, the mains converter is identified and installed per EN 60204-1, battery and mains are never paralleled uncontrolled."
+  parent: G2
+  argument: S2
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [H-07, H-08, H-09]
+  related_requirements: []
+  related_assumptions: []
+  evidence_refs: [Sn-12]
+  defeaters: [DF-19, DF-20, DF-21, DF-24]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G2.2
+  kind: claim
+  title: "Mass, payload and stability are within limits"
+  description: "Mass and centre of gravity are recorded, a payload limit is set, tipping margins and stopping distance are measured and the configured deceleration respects them."
+  parent: G2
+  argument: S2
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [H-06]
+  related_requirements: []
+  related_assumptions: [AOU-06, AOU-07]
+  evidence_refs: [Sn-09, Sn-07]
+  defeaters: [DF-23]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G3
+  kind: claim
+  title: "The command path cannot defeat the safety functions"
+  description: "No participant on the network can command motion beyond the safety limits or disable a safety function; the safety functions depend on no network interface."
+  parent: G0
+  argument: S0
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [H-12, H-02]
+  related_requirements: [SF-03, SF-07]
+  related_assumptions: [AOU-05]
+  evidence_refs: []
+  defeaters: []
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G3.1
+  kind: claim
+  title: "Motion and parameter interfaces are authenticated and bounded"
+  description: "SROS2 or an isolated network restricts who can publish commands; the operator interface authenticates operators; every input the firmware accepts is bounded."
+  parent: G3
+  argument: S3
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [H-12]
+  related_requirements: [SF-07]
+  related_assumptions: [AOU-05]
+  evidence_refs: [Sn-13]
+  defeaters: [DF-27, DF-28, DF-29, DF-36]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G4
+  kind: claim
+  title: "The evidence was produced under a controlled process"
+  description: "Every work product refers to a recorded baseline, hazards were identified completely, reviews have the required independence, and verification is recorded."
+  parent: G0
+  argument: S0
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: []
+  related_requirements: []
+  related_assumptions: []
+  evidence_refs: []
+  defeaters: []
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G4.1
+  kind: claim
+  title: "A configuration baseline exists and the forks are pinned to it"
+  description: "BL-001 names every repository commit; the forks carry the baseline; CI workflows and third-party sources are pinned."
+  parent: G4
+  argument: S4
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: []
+  related_requirements: []
+  related_assumptions: []
+  evidence_refs: [Sn-14]
+  defeaters: [DF-29, DF-32, DF-33]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G4.2
+  kind: claim
+  title: "Hazards are identified completely and rated"
+  description: "The ISO 12100 risk assessment WP-C-03 covers every task and situation of WP-C-01 and is confirmed by a reviewer with operating experience."
+  parent: G4
+  argument: S4
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [H-01, H-02, H-03, H-04, H-05, H-06, H-07, H-08, H-09, H-10, H-11, H-12]
+  related_requirements: []
+  related_assumptions: []
+  evidence_refs: [Sn-02, Sn-01]
+  defeaters: [DF-30, DF-23]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: G4.3
+  kind: claim
+  title: "Verification and review evidence exists for the motion-critical code"
+  description: "The firmware and the docking sequencer have tests that run in CI, static analysis, and reviewed records; safety-relevant changes carry an impact analysis."
+  parent: G4
+  argument: S4
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: []
+  related_requirements: []
+  related_assumptions: []
+  evidence_refs: [Sn-10, Sn-15]
+  defeaters: [DF-11, DF-31, DF-34, DF-38, DF-39, DF-40]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"

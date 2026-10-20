@@ -31,6 +31,22 @@ OpenAMRobot is a machine, not a road vehicle, so the frame differs from LionDriv
 | Regulatory | Regulation (EU) 2023/1230 (Machinery), in force 20 January 2027; Regulation (EU) 2024/1689 (AI Act) Annex I | UNECE / national |
 | Safety case structure | UL 4600 principles | same |
 
+## Living Safety Case
+
+Every figure below is generated from the records in [`assurance/case/`](assurance/case/README.md) and checked by CI.
+
+<p align="center">
+  <img src="docs/assets/assurance/dashboard.svg" width="100%" alt="Living Safety Case dashboard generated from the assurance records. The same values are listed as text in the assurance README.">
+</p>
+
+<!-- BEGIN GENERATED: assurance-headline (assurance/case/tools/generate_dashboard.py) -->
+
+**Development** · baseline `BL-001` at `8a7a5b1` · 18 claims (0 with accepted evidence) · 15 evidence items (0 accepted) · 40 open defeaters · records digest `046324807e6a`
+
+<!-- END GENERATED: assurance-headline -->
+
+> **Assurance status represents recorded engineering evidence and review state. It does not constitute certification, CE conformity or approval for operation around people.**
+
 ## Start here
 
 | Document | Why read it |

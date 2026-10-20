@@ -1,0 +1,51 @@
+# Assumptions of use (AOU-) from WP-C-01 §8 (item definition). Source of truth is WP-C-01.
+# Format: case/tools/subsetyaml.py (restricted YAML subset).
+
+- id: AOU-01
+  kind: aou
+  text: "A trained operator is present, watching the robot, with the means to cut 24 V by hand, for every powered run"
+  aou_status: "Procedural only"
+  status: proposed
+  source: WP-C-01
+
+- id: AOU-02
+  kind: aou
+  text: "The operating area is clear of people during autonomous navigation, docking and undocking"
+  aou_status: "Procedural only"
+  status: proposed
+  source: WP-C-01
+
+- id: AOU-03
+  kind: aou
+  text: "Wheels are off the ground whenever a powered debug path or calibration runs"
+  aou_status: "Procedural only"
+  status: proposed
+  source: WP-C-01
+
+- id: AOU-04
+  kind: aou
+  text: "The battery is at or above 25 V at rest before a run"
+  aou_status: "Procedural only"
+  status: proposed
+  source: WP-C-01
+
+- id: AOU-05
+  kind: aou
+  text: "The Wi-Fi network carrying DDS is private and reaches only trusted hosts"
+  aou_status: "Not stated upstream"
+  status: proposed
+  source: WP-C-01
+
+- id: AOU-06
+  kind: aou
+  text: "The floor is flat, dry, indoor, free of steps above the castor limit"
+  aou_status: "Assumed"
+  status: proposed
+  source: WP-C-01
+
+- id: AOU-07
+  kind: aou
+  text: "The payload is restrained and within a mass and height limit still to be set"
+  aou_status: "No limit stated"
+  status: proposed
+  source: WP-C-01
