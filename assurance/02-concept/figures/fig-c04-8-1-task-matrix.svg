@@ -318,8 +318,8 @@
 <text x="1130.0" y="585.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
 <text x="1130.0" y="597.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#4E6A73" text-anchor="middle">carry pose</text>
 <text x="32.0" y="636.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">SF-11</text>
-<text x="84.0" y="636.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Arm safe stop and collaborative</text>
-<text x="84.0" y="648.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">force limiting (CFG-002)</text>
+<text x="84.0" y="636.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Arm safe stop on entry to the</text>
+<text x="84.0" y="648.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">station workspace (CFG-002)</text>
 <rect x="293.0" y="619.0" width="74.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
 <text x="330.0" y="645.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
 <rect x="373.0" y="619.0" width="74.0" height="44.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
@@ -338,7 +338,7 @@
 <text x="890.0" y="645.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
 <rect x="933.0" y="619.0" width="74.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
 <text x="970.0" y="635.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
-<text x="970.0" y="647.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#4E6A73" text-anchor="middle">mode per DQ-021</text>
+<text x="970.0" y="647.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#4E6A73" text-anchor="middle">monitored stop</text>
 <rect x="1013.0" y="619.0" width="74.0" height="44.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
 <text x="1050.0" y="635.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">active</text>
 <text x="1050.0" y="647.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#4E6A73" text-anchor="middle">arms stopped</text>

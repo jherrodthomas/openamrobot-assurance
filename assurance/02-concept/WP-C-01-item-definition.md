@@ -345,5 +345,5 @@ OpenAMRobot 3.0. Until v0.3 the whole 2.0 design was out of scope; from v0.4 it 
 | OI-3 | Set a payload limit and a payload height limit | AOU-07 |
 | OI-4 | Resolve what the panel E-stop button switches on the as-built unit | GAP-01, SF-01 |
 | OI-5 | ~~Decide the regulatory frame (DQ-003) and the item scope (DQ-004)~~ both decided 2026-10-20 and applied in v0.4 (EU frame; the base with the arms and lift on CFG-001 and CFG-002, DQ-020 A) | closed |
-| OI-6 | Obtain the OpenArm 2.0 reach, joint torques and contact-force limits from the official description and record them in §4.5 | WP-C-03 H-13, WP-C-06 §4 |
+| OI-6 | Obtain the OpenArm 2.0 reach and stopping distance from the official description and record them in §4.5 (the contact-force limits are not needed for the claim since DQ-021 A) | WP-C-03 H-13, WP-C-06 CA-02 |
 | OI-7 | Replace every CFG-002 row by a verified value as the 2.0 repositories and drawings become public (v2.0.0-rc.1, 20 November 2026) | every CFG-002 claim |

@@ -4,7 +4,7 @@
 |---|---|
 | Work product | WP-C-02 Operating environment and task specification (zones, floors, people, lighting) |
 | Standard reference | Machinery: 3691-4 §4, §6; 12100 §5.3; Other: ISO 21448 §5 (informative method); ASPICE: SYS.1 |
-| Version | 0.3 (2026-10-20): DQ-017 A and DQ-018 A applied: speed ceiling with a person in the zone, reverse at crawl without back-up recovery. 0.2 ( 2026-10-20): DQ-004 B and DQ-020 A applied: tasks T-09…T-11 of the arms and lift on CFG-002; T-06 names SF-09; the status column distinguishes the configurations. 0.1: zones Z0–Z5, tasks T-01–T-08, environmental limits, exclusions, the development test area; Figures 2-1 and 3-1. 0.0: skeleton |
+| Version | 0.3 (2026-10-20): DQ-017 A and DQ-018 A applied: speed ceiling with a person in the zone, reverse at crawl without back-up recovery. 0.2 (2026-10-20): DQ-004 B and DQ-020 A applied: tasks T-09…T-11 of the arms and lift on CFG-002; T-06 names SF-09; the status column distinguishes the configurations. 0.1: zones Z0–Z5, tasks T-01–T-08, environmental limits, exclusions, the development test area; Figures 2-1 and 3-1. 0.0: skeleton |
 | Status | Draft |
 | PL / scope | PL d target (DQ-005); CFG-001 Gate A unit (bench only, DQ-011 C) and CFG-002 2.0 mobile manipulator (unverified); the base with the arms and lift (DQ-004 B) |
 | Author | Assurance team (AI-assisted draft, I0) |

@@ -642,8 +642,8 @@
       detail: "The collaborative use upstream's hand-over scenario implies. Cost: the OpenArm 2.0 forces must be measured per body region and the arm must limit them by design, which is not published; the head stays excluded in every case."
   sources: ["assurance/02-concept/WP-C-06-human-robot-interaction-and-misuse.md §4 CA-02, CA-06", "assurance/02-concept/WP-C-04-safety-functions-and-plr.md §3.11", "ISO 10218-2 §5.10, ISO/TS 15066 §5 (to be checked)"]
   status: applied
-  answer: {choice: A, via: inbox, at: 2026-10-20}
-  applied: {ref: "openamrobot-assurance main", record: "WP-C-04 v0.3 §3.11 SF-11 (safety-rated monitored stop), §5, §8, OI-11; WP-C-06 v0.3 §4 CA-02, CA-06, HR-11, OI-7; WP-C-03 v0.5 H-13, OI-9; WP-S-03 §7 SF-11", at: 2026-10-20}
+  answer: {choice: A, via: chat, at: 2026-10-20}
+  applied: {ref: "openamrobot-assurance main", record: "WP-C-04 §3.11 (SF-11 demand: safety-rated monitored stop on entry to the station workspace); WP-C-06 §4 CA-02, CA-06; WP-C-03 §5 H-13 row; WP-S-03 §3.8", at: 2026-10-20}
 
 - id: DQ-022
   ref: WP-M-06 OI-5
