@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420" role="img" aria-labelledby="life-t life-d">
   <title id="life-t">OpenAMRobot assurance lifecycle areas</title>
-  <desc id="life-d">Safety Management: In Progress (2 evidence items, 2 drafted, 0 missing, 0 accepted); Hazard Analysis: In Progress (5 evidence items, 4 drafted, 1 missing, 0 accepted); Safety Concepts: In Progress (3 evidence items, 2 drafted, 1 missing, 0 accepted); Technical Implementation: In Progress (3 evidence items, 2 drafted, 1 missing, 0 accepted); Verification and Validation: Not Started (4 evidence items, 0 drafted, 4 missing, 0 accepted); Safety Case and Review: In Progress (1 evidence items, 1 drafted, 0 missing, 0 accepted)</desc>
+  <desc id="life-d">Safety Management: In Progress (2 evidence items, 2 drafted, 0 missing, 0 accepted); Hazard Analysis: In Progress (5 evidence items, 4 drafted, 1 missing, 0 accepted); Safety Concepts: In Progress (4 evidence items, 3 drafted, 1 missing, 0 accepted); Technical Implementation: In Progress (3 evidence items, 2 drafted, 1 missing, 0 accepted); Verification and Validation: Not Started (4 evidence items, 0 drafted, 4 missing, 0 accepted); Safety Case and Review: In Progress (1 evidence items, 1 drafted, 0 missing, 0 accepted)</desc>
   <defs>
     <linearGradient id="life-bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F3F7F8"/>
@@ -48,11 +48,11 @@
     <defs><clipPath id="bar686218"><rect x="686" y="218" width="252" height="8" rx="4.0"/></clipPath></defs>
     <g clip-path="url(#bar686218)">
     <rect x="686" y="218" width="252" height="8" rx="4.0" fill="#FFFFFF" stroke="#D3DDE2"/>
-    <rect x="686.0" y="218" width="168.0" height="8" fill="#1F6FD0"/>
-    <rect x="854.0" y="218" width="84.0" height="8" fill="#8A9AA2"/>
+    <rect x="686.0" y="218" width="189.0" height="8" fill="#1F6FD0"/>
+    <rect x="875.0" y="218" width="63.0" height="8" fill="#8A9AA2"/>
     </g>
-    <text x="686" y="244" font-size="13" font-weight="400" fill="#4E6A73" text-anchor="start">2 drafted · 1 missing</text>
-    <text x="938" y="244" font-size="13" font-weight="400" fill="#4E6A73" text-anchor="end">0 of 3 accepted</text>
+    <text x="686" y="244" font-size="13" font-weight="400" fill="#4E6A73" text-anchor="start">3 drafted · 1 missing</text>
+    <text x="938" y="244" font-size="13" font-weight="400" fill="#4E6A73" text-anchor="end">0 of 4 accepted</text>
     <rect x="40" y="270" width="296" height="130" rx="14" fill="#EDF2F4" stroke="#D3DDE2"/>
     <text x="62" y="306" font-size="15" font-weight="700" fill="#D4821A" text-anchor="start" letter-spacing="1">04</text>
     <text x="96" y="306" font-size="18" font-weight="600" fill="#122026" text-anchor="start">Technical Implementation</text>

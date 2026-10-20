@@ -75,8 +75,8 @@
 <text x="734.3" y="307.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">50</text>
 <rect x="789.6" y="292" width="126.0" height="22" fill="url(#rb-hatch)" fill-opacity="0.6" stroke="none"/>
 <text x="795.6" y="328.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start">total 252 ms</text>
-<line x1="783.3" y1="286" x2="783.3" y2="320" stroke="#D64535" stroke-width="2"/>
-<text x="788.3" y="286.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="start">target 250 · over by the relay time</text>
+<line x1="890.0" y1="286" x2="890.0" y2="320" stroke="#D64535" stroke-width="2"/>
+<text x="895.0" y="286.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="start">target 300</text>
 <rect x="28.0" y="334.0" width="1124.0" height="56.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
 <text x="32.0" y="358.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">SF-06</text>
 <text x="32.0" y="374.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Stop on drive fault</text>
@@ -118,12 +118,14 @@
 <text x="32.0" y="542.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Arm safe stop on entry to the</text>
 <text x="32.0" y="554.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">station workspace (CFG-002)</text>
 <text x="242.0" y="526.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="end">stop cat. 1 then 0 (arm)</text>
-<rect x="250.0" y="516" width="104.7" height="22" fill="#00938B"/>
-<text x="303.3" y="531.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">50</text>
-<rect x="356.7" y="516" width="40.7" height="22" fill="#B86F0C"/>
-<text x="378.0" y="531.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">20</text>
-<rect x="401.3" y="516" width="126.0" height="22" fill="url(#rb-hatch)" fill-opacity="0.6" stroke="none"/>
-<text x="407.3" y="552.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start">total 70 ms</text>
+<rect x="250.0" y="516" width="211.3" height="22" fill="#7E949B"/>
+<text x="356.7" y="531.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#122026" text-anchor="middle">100</text>
+<rect x="463.3" y="516" width="104.7" height="22" fill="#00938B"/>
+<text x="516.7" y="531.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">50</text>
+<rect x="570.0" y="516" width="40.7" height="22" fill="#B86F0C"/>
+<text x="591.3" y="531.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">20</text>
+<rect x="614.7" y="516" width="126.0" height="22" fill="url(#rb-hatch)" fill-opacity="0.6" stroke="none"/>
+<text x="620.7" y="552.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start">total 170 ms</text>
 <line x1="676.7" y1="510" x2="676.7" y2="544" stroke="#D64535" stroke-width="2"/>
 <text x="681.7" y="510.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="start">target 200</text>
 <rect x="32.0" y="584.0" width="18.0" height="12.0" rx="2" fill="#7E949B" stroke="#7E949B" stroke-width="1"/>

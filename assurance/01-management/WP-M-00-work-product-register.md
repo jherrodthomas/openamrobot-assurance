@@ -97,7 +97,7 @@ Regulation (EU) 2023/1230 (Machinery Regulation), Regulation (EU) 2024/1689 (AI 
 | [WP-S-01](../03-system/WP-S-01-system-requirements.md) | System requirements specification (functional, non-safety) | | | | | SYS.2 | G2 | S |
 | [WP-S-02](../03-system/WP-S-02-safety-requirements.md) | Safety requirements specification for the SRP/CS | 3691-4 §4 | 13849-1 §5; 62061 §6 | | 60204-1 §9 | SYS.2 | G2 | D |
 | [WP-S-03](../03-system/WP-S-03-technical-safety-concept.md) | Technical safety concept: safety-related control system architecture (designated architectures, categories, channels, diagnostics, allocation of SF-01…SF-07) | | 13849-1 §6 | | 60204-1 §9.4 | SYS.3 | G2 | D |
-| [WP-S-04](../03-system/WP-S-04-response-time-and-stopping-budget.md) | Response time, stopping performance and safety distance budget | 3691-4 §4 (braking, speed) | 13849-1 §5 (response time) | | ISO 13855 §6 | SYS.3 | G2 | S |
+| [WP-S-04](../03-system/WP-S-04-response-time-and-stopping-budget.md) | Response time, stopping performance and safety distance budget | 3691-4 §4 (braking, speed) | 13849-1 §5 (response time) | | ISO 13855 §6 | SYS.3 | G2 | D |
 | [WP-S-05](../03-system/WP-S-05-safety-chain-io-interface.md) | Hardware-software interface of the safety chain (I/O map, signal semantics) | | 13849-1 §6, §7 | | | SYS.3 | G2 | S |
 | [WP-S-06](../03-system/WP-S-06-requirements-installation-operation.md) | Requirements for installation, operation, maintenance and decommissioning | 12100 §6.4; 3691-4 §6 | 13849-1 §11 | 62443-4-1 SG-1…SG-7 | | SYS.2 | G2 | S |
 | [WP-S-07](../03-system/WP-S-07-cybersecurity-architecture.md) | Cybersecurity architecture (zones, conduits, controls) | | | 62443-4-1 SD-1…SD-4; 62443-3-3 §5 | | SEC.1, SYS.3 | G2 | S |

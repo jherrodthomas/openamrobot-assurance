@@ -306,3 +306,20 @@
   review_ref: null
   source: WP-K-01
   source_revision: "8a7a5b1"
+
+- id: Sn-19
+  kind: evidence
+  title: "Response time, stopping performance and safety distance budget"
+  description: "Draft v0.1; datasheet response budget per stop path, planning decelerations bracketing the unmeasured coast, field lengths per field set recomputed by CI; no value measured"
+  evidence_status: partial
+  lifecycle_area: safety-concepts
+  location: "assurance/03-system/WP-S-04-response-time-and-stopping-budget.md"
+  related_claims: [G1.2, G1.3]
+  baseline: BL-001
+  configuration: CFG-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"

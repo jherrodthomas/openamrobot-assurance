@@ -53,7 +53,7 @@ jobs:
         python3 assurance/process/tools/test_process_model.py
         python3 assurance/process/tools/process_figures.py --check
         python3 assurance/process/tools/test_process_figures.py
-    - name: Work-product figures match their generators (WP-C-01, WP-C-02, WP-C-03, WP-C-04, WP-C-05, WP-C-06, WP-S-02)
+    - name: Work-product figures match their generators (WP-C-01, WP-C-02, WP-C-03, WP-C-04, WP-C-05, WP-C-06, WP-S-02, WP-S-04)
       run: |
         python3 assurance/02-concept/figures/fig_c01.py --check
         python3 assurance/02-concept/figures/test_fig_c01.py
@@ -69,6 +69,8 @@ jobs:
         python3 assurance/02-concept/figures/test_fig_c05.py
         python3 assurance/03-system/figures/fig_s02.py --check
         python3 assurance/03-system/figures/test_fig_s02.py
+        python3 assurance/03-system/figures/fig_s04.py --check
+        python3 assurance/03-system/figures/test_fig_s04.py
     - name: README figures match their generator
       run: |
         python3 docs/assets/openamrobot/make_assets.py --check

@@ -91,7 +91,7 @@ Clause references and status are read from the [register (WP-M-00)](../../01-man
 | DES-01 System requirements | Joint (all disciplines) | [WP-S-01](../../03-system/WP-S-01-system-requirements.md) | WP-C-01, WP-C-02 |  |  |  |  | SYS.2 | Skeleton |
 | DES-02 Mechanical and stability analysis | Electrical and mechanical (EN 60204-1) | [WP-H-08](../../04-hardware/WP-H-08-mechanical-and-stability-analysis.md) | WP-C-01, WP-C-03 | 12100 §5.3, §6.2; 3691-4 §4 (stability, braking) |  |  | Machinery Reg. Annex III §1.3 |  | Skeleton |
 | DES-03 Safety requirements specification | Safety-related control system (ISO 13849-1) | [WP-S-02](../../03-system/WP-S-02-safety-requirements.md) | WP-C-04, WP-C-05, WP-S-01 | 3691-4 §4 | 13849-1 §5; 62061 §6 |  | 60204-1 §9 | SYS.2 | Draft |
-| DES-04 Response time, stopping and safety distance budget | Safety-related control system (ISO 13849-1) | [WP-S-04](../../03-system/WP-S-04-response-time-and-stopping-budget.md) | WP-C-04, WP-C-06, WP-H-08 | 3691-4 §4 (braking, speed) | 13849-1 §5 (response time) |  | ISO 13855 §6 | SYS.3 | Skeleton |
+| DES-04 Response time, stopping and safety distance budget | Safety-related control system (ISO 13849-1) | [WP-S-04](../../03-system/WP-S-04-response-time-and-stopping-budget.md) | WP-C-04, WP-C-06, WP-H-08 | 3691-4 §4 (braking, speed) | 13849-1 §5 (response time) |  | ISO 13855 §6 | SYS.3 | Draft |
 | DES-05 Safety-related control system architecture | Safety-related control system (ISO 13849-1) | [WP-S-03](../../03-system/WP-S-03-technical-safety-concept.md) | WP-S-02, WP-S-04 |  | 13849-1 §6 |  | 60204-1 §9.4 | SYS.3 | Draft |
 | DES-06 Safety chain I/O interface | Safety-related control system (ISO 13849-1) | [WP-S-05](../../03-system/WP-S-05-safety-chain-io-interface.md) | WP-S-03 |  | 13849-1 §6, §7 |  |  | SYS.3 | Skeleton |
 | DES-07 Requirements for installation, operation and maintenance | Joint (all disciplines) | [WP-S-06](../../03-system/WP-S-06-requirements-installation-operation.md) | WP-C-05, WP-S-02 | 12100 §6.4; 3691-4 §6 | 13849-1 §11 | 62443-4-1 SG-1…SG-7 |  | SYS.2 | Skeleton |
@@ -126,7 +126,7 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Exit criterion (WP-M-00 §2):** Safety requirements specification, SRP/CS architecture with categories and diagnostics, response-time budget, mechanical and stability analysis and system-level analyses approved
 
-**Work products:** 3 Draft, 12 Skeleton of 15. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
+**Work products:** 4 Draft, 11 Skeleton of 15. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
 
 **Roles the lanes need (WP-M-02 §3.1):**
 

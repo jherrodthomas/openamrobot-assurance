@@ -45,6 +45,7 @@ python3 assurance/02-concept/figures/fig_c04.py --check
 python3 assurance/02-concept/figures/fig_c06.py --check
 python3 assurance/02-concept/figures/fig_c05.py --check
 python3 assurance/03-system/figures/fig_s02.py --check
+python3 assurance/03-system/figures/fig_s04.py --check
 python3 docs/assets/openamrobot/make_assets.py --check
 python3 assurance/tools/check_links.py
 python3 assurance/tools/check_tables.py

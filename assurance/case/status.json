@@ -21,10 +21,10 @@
   "evidence": {
     "accepted": 0,
     "available": 0,
-    "awaiting_review": 11,
+    "awaiting_review": 12,
     "missing": 7,
-    "partial": 11,
-    "registered": 18
+    "partial": 12,
+    "registered": 19
   },
   "gates": {
     "records": []
@@ -53,10 +53,10 @@
     {
       "accepted": 0,
       "available": 0,
-      "evidence": 3,
+      "evidence": 4,
       "id": "safety-concepts",
       "missing": 1,
-      "partial": 2,
+      "partial": 3,
       "status": "In Progress",
       "title": "Safety Concepts"
     },
@@ -91,6 +91,6 @@
       "title": "Safety Case and Review"
     }
   ],
-  "records_digest": "68473fbf82fa",
+  "records_digest": "de6c1d56b20e",
   "reviews": 0
 }

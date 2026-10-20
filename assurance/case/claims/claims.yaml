@@ -76,7 +76,7 @@
   related_hazards: [H-01, H-11]
   related_requirements: [SF-02]
   related_assumptions: []
-  evidence_refs: [Sn-11, Sn-07, Sn-16]
+  evidence_refs: [Sn-11, Sn-07, Sn-16, Sn-19]
   defeaters: [DF-14, DF-15, DF-16, DF-22, DF-35]
   review_state: not-reviewed
   reviewer: null
@@ -97,7 +97,7 @@
   related_hazards: [H-01, H-03, H-12]
   related_requirements: [SF-03]
   related_assumptions: []
-  evidence_refs: [Sn-11, Sn-16]
+  evidence_refs: [Sn-11, Sn-16, Sn-19]
   defeaters: [DF-13, DF-36]
   review_state: not-reviewed
   reviewer: null

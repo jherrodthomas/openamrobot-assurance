@@ -4,7 +4,7 @@
 |---|---|
 | Work product | WP-C-04 Safety functions specification with required Performance Level, stop category and response time |
 | Standard reference | Machinery: 3691-4 §4; 13850 §4; SRP/CS: 13849-1 §5, Annex A (PLr); Other: 60204-1 §9.2 (stop categories); ASPICE: SYS.2 |
-| Version | 0.3 (2026-10-20): DQ-008 A, DQ-015 A, DQ-017 A and DQ-021 A applied: SF-01 category 0, SF-03 person-in-zone ceiling, SF-06 stall thresholds, SF-11 as a safety-rated monitored stop. 0.2 (2026-10-20): DQ-004 B, DQ-014 B and DQ-020 A applied: SF-10…SF-12 (arms and lift, CFG-002) specified; §5 allocation rewritten with the firmware as a channel of the SRP/CS for SF-03, SF-04 and SF-06; configuration stated per function; §8 tasks T-09…T-11. 0.1: SF-01…SF-09 specified (demand, safe state, response, stop category, modes and tasks); PLr derived from WP-C-03 v0.3 with the type-C check; allocation; response-time budget; task applicability; Figures 2-1, 7-1, 8-1. 0.0: skeleton |
+| Version | 0.4 (2026-10-20): §7 SF-04 contactor target 300 ms and SF-11 detection stage per WP-S-04 v0.1; OI-7 closed. 0.3 (2026-10-20): DQ-008 A, DQ-015 A, DQ-017 A and DQ-021 A applied: SF-01 category 0, SF-03 person-in-zone ceiling, SF-06 stall thresholds, SF-11 as a safety-rated monitored stop. 0.2 (2026-10-20): DQ-004 B, DQ-014 B and DQ-020 A applied: SF-10…SF-12 (arms and lift, CFG-002) specified; §5 allocation rewritten with the firmware as a channel of the SRP/CS for SF-03, SF-04 and SF-06; configuration stated per function; §8 tasks T-09…T-11. 0.1: SF-01…SF-09 specified (demand, safe state, response, stop category, modes and tasks); PLr derived from WP-C-03 v0.3 with the type-C check; allocation; response-time budget; task applicability; Figures 2-1, 7-1, 8-1. 0.0: skeleton |
 | Status | Draft |
 | PL / scope | PL d (SF-01, SF-02, SF-03, SF-05, SF-10, SF-11, SF-12), PL c (SF-04, SF-06, SF-09), PL b (SF-07, SF-08); CFG-001 Gate A unit (bench only) and CFG-002 2.0 mobile manipulator (unverified); SF-10…SF-12 exist only on CFG-002 |
 | Author | Assurance team (AI-assisted draft, I0) |
@@ -372,18 +372,18 @@ unmeasured on the Gate A unit (coasting; the figure draws it as a hatched bar).
 | SF-01 | 0 | 0 | 30 | 20 | 50 | 200 | coast, **(TBC)** |
 | SF-02 | 1 then 0 | 100 | 50 | 20 | 170 | 170 | within the field length L (WP-C-06 §3), **(TBC)** |
 | SF-03 | 1 then 0 | 100 | 50 | 20 | 170 | 200 | controlled stop, then coast if not at standstill, **(TBC)** |
-| SF-04 | 0 | 200 | 2 | 50 | 252 | 250 | coast, **(TBC)** |
+| SF-04 | 0 | 200 | 2 | 50 | 252 | 300 | coast, **(TBC)** |
 | SF-06 | 0 | 0 | 50 | 20 | 70 | 100 | coast, **(TBC)** |
 | SF-09 | 0 | 0 | 50 | 20 | 70 | 200 | coast, **(TBC)** |
 | SF-10 | 0 | 0 | 50 | 20 | 70 | 200 | brakes (CFG-002), **(TBC)** |
-| SF-11 | 1 then 0 (arm) | 0 | 50 | 20 | 70 | 200 | arm stopping distance **(TBC)**; the protective distance of CA-02 depends on it |
+| SF-11 | 1 then 0 (arm) | 100 | 50 | 20 | 170 | 200 | arm stopping distance **(TBC)**; the protective distance of CA-02 depends on it |
 
 SF-05, SF-07, SF-08 and SF-12 are not timed stops: SF-05 gates the reset, SF-07 refuses a command, SF-08 leads
 motion by the warning time, SF-12 holds from the instant of power removal. SF-10 and SF-11 are CFG-002 rows with
-the chain budget assumed for the 2.0 parts, unverified. SF-04's command window (200 ms) is the functional watchdog; its budget exceeds the 250 ms target
-by the relay time only when the demand goes through the chain, which happens for a fault, not for a plain timeout
-(the firmware sets PWM 0 inside 202 ms); WP-S-04 settles whether the target is 200 ms at the firmware or 250 ms
-at the contactor.
+the chain budget assumed for the 2.0 parts, unverified. SF-04's command window (200 ms) is the functional watchdog: the firmware sets PWM 0 inside 202 ms, which is the
+200 ms of SR-04.01 at the drive; the chain removes power 50 ms later, against a target of 300 ms at the contactor
+(WP-S-04 §2, which also budgets the fault path through the hardware watchdog at 1.1 s). SF-11's detection stage
+is the station device (WP-S-04 §2).
 
 ![Figure 7-1: horizontal timeline per stop function (eight, the two CFG-002 ones marked), each bar made of three segments for the detecting device or input window, the logic and the power removal in milliseconds, a target marker at the function's response target, and a hatched bar to the right for the unmeasured stopping time](figures/fig-c04-7-1-response-budget.svg)
 
@@ -442,7 +442,7 @@ function admits the bench paths under the arming input; **—**: not applicable.
 | OI-4 | Check the ISO 3691-4 Performance Levels of §4 against a licensed copy; **unscheduled** (DQ-016 option C, 2026-10-20) | Safety manager | G1 |
 | OI-5 | ~~WP-S-02: raise SR-05.x to PLr d; add SR-08.x and SR-09.x; name the firmware channel in SR-03, SR-04 and SR-06~~ done in WP-S-02 v0.3 | closed | — |
 | OI-6 | Every **(TBC)** value: field length and detection height (WP-V-02, WP-C-06 OI-1), crawl limit, warning time, arming time-out; the stall thresholds (DQ-008 A) and the speed near a person (DQ-017 A) are decided | Safety manager | G2 |
-| OI-7 | WP-S-04: confirm the §7 budget with datasheets and settle the SF-04 target | Hardware lead | G2 |
+| OI-7 | ~~WP-S-04: confirm the §7 budget with datasheets and settle the SF-04 target~~ settled in WP-S-04 v0.1 §2 (200 ms at the drive, 300 ms at the contactor; SF-11 includes its detection device); the datasheet confirmation is WP-S-04 OI-1 | closed | — |
 | OI-8 | Specify the teleoperation device with its enabling control and the sounder and stack light (WP-C-06 OI-5) in WP-H-02 | Hardware lead | G2 |
 | OI-9 | ~~Apply DQ-014 B~~ done in v0.2 §5; WP-S-03 v0.3 carries the architecture; the software work products widen (WP-M-01 OI-4) | closed | — |
 | OI-10 | ~~Apply DQ-004 B~~ done in v0.2 (SF-10…SF-12); re-specify when the 2.0 design and the OpenArm safety functions are public | closed | — |
