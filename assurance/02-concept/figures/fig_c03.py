@@ -313,8 +313,8 @@ def fig_measures(src: dict) -> str:
   hazards = list(src["hazards"])
   measures = src["measures"]
   groups = [(g, [m for m in measures if m["group"] == g]) for g, _ in MEASURE_GROUPS]
-  W = 1180
   x0, y0, rowh, colw, ggap = 250, 156, 34, 33, 12
+  W = x0 + sum(colw * len(ms) + ggap for _, ms in groups) + 40
   H = y0 + rowh * len(hazards) + 92
   body = [text(32, 34, "Figure 6-1  Which measure reduces which hazard, in the ISO 12100 order", 15, C["ink"], 700),
           text(32, 52, "A dot where the §6 table says the measure reduces the hazard. Left to right: inherently safe design and complementary measures, operating-environment limits, safety functions, information for use.", 11, C["muted"])]

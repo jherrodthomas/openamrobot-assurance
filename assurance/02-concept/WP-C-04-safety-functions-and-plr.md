@@ -257,7 +257,7 @@ requirements SR-nn.mm of WP-S-02 are the testable form. "Today" is the Gate A un
 | Verification | Command the base with an arm raised; break a pose signal during a move; validate the carry pose geometry against the SF-02 field |
 | Today | Nothing: an upstream motion rule in `LIFT`; no interlock in any repository; no arm exists on CFG-001 |
 
-### 3.11 SF-11 Arm safe stop and collaborative force limiting (CFG-002)
+### 3.11 SF-11 Arm safe stop on entry to the station workspace (CFG-002)
 
 | Item | Specification |
 |---|---|

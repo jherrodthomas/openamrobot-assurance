@@ -99,7 +99,7 @@ Clause references and status are read from the [register (WP-M-00)](../../01-man
 | CON-04 Hazard identification and risk assessment | Machinery risk assessment (ISO 12100, ISO 3691-4) | [WP-C-03](../../02-concept/WP-C-03-risk-assessment.md) | WP-C-01, WP-C-02, WP-C-06 | 12100 §5.4–§5.6; 3691-4 Annex A; 10218-2 Annex A | 13849-1 Annex A (risk graph inputs) |  | Machinery Reg. Annex III §1 |  | Draft |
 | CON-05 Specify the safety functions and their required PL | Safety-related control system (ISO 13849-1) | [WP-C-04](../../02-concept/WP-C-04-safety-functions-and-plr.md) | WP-C-03, WP-C-06 | 3691-4 §4; 13850 §4 | 13849-1 §5, Annex A (PLr) |  | 60204-1 §9.2 (stop categories) | SYS.2 | Draft |
 | CON-06 Analyse functional insufficiencies of sensing and navigation | Machinery risk assessment (ISO 12100, ISO 3691-4) | [WP-C-10](../../02-concept/WP-C-10-functional-insufficiency-analysis.md) | WP-C-02, WP-C-03 | 3691-4 §4 (personnel detection limits); 12100 §5.4 |  |  | ISO 21448 §6–§7 (informative method); IEC 62998-1 |  | Skeleton |
-| CON-07 Risk reduction concept | Machinery risk assessment (ISO 12100, ISO 3691-4) | [WP-C-05](../../02-concept/WP-C-05-risk-reduction-concept.md) | WP-C-03, WP-C-04, WP-C-10 | 12100 §6; 3691-4 §4; 10218-2 §5 | 13849-1 §5 |  | Machinery Reg. Annex III §1.1.2 | SYS.2 | Skeleton |
+| CON-07 Risk reduction concept | Machinery risk assessment (ISO 12100, ISO 3691-4) | [WP-C-05](../../02-concept/WP-C-05-risk-reduction-concept.md) | WP-C-03, WP-C-04, WP-C-10 | 12100 §6; 3691-4 §4; 10218-2 §5 | 13849-1 §5 |  | Machinery Reg. Annex III §1.1.2 | SYS.2 | Draft |
 | CON-08 Cybersecurity threat and risk assessment | Cybersecurity (IEC 62443) | [WP-C-07](../../02-concept/WP-C-07-cybersecurity-threat-and-risk-assessment.md) | WP-C-01, WP-C-03 |  |  | 62443-4-1 SR-2; 62443-3-2 §5 |  | SEC.1 | Skeleton |
 | CON-09 Cybersecurity requirements and security level target | Cybersecurity (IEC 62443) | [WP-C-08](../../02-concept/WP-C-08-cybersecurity-requirements-and-sl-target.md) | WP-C-04, WP-C-07 |  |  | 62443-4-1 SR-3…SR-5; 62443-4-2 CR 1–7, SL-T |  | SEC.1 | Skeleton |
 | CON-10 Define the ML components and their safety requirements | Machine learning (ISO/IEC TR 5469) | [WP-C-09](../../02-concept/WP-C-09-ml-component-definition-and-safety-requirements.md) | WP-C-04, WP-C-10 |  |  |  | TR 5469 §6–§8 (classes, usage levels, properties); AI Act Annex IV | MLE.1 | Skeleton |
@@ -131,7 +131,7 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Exit criterion (WP-M-00 §2):** Machine limits, risk assessment, safety functions with their required PL, risk reduction concept, cybersecurity and ML concepts approved; confirmation review of the risk assessment passed
 
-**Work products:** 7 Draft, 6 Skeleton of 13. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
+**Work products:** 8 Draft, 5 Skeleton of 13. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
 
 **Roles the lanes need (WP-M-02 §3.1):**
 

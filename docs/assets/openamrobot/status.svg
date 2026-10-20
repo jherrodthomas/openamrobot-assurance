@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600" role="img" aria-labelledby="stat-t stat-d">
   <title id="stat-t">OpenAMRobot assurance record status</title>
-  <desc id="stat-d">Record status generated from the records: P0 Governance · no gate passed · 89 work products (16 draft, 73 skeleton, 0 approved) · 40 gap findings (22 high) · 4 decisions open · 1 of 11 cross-domain interfaces open · 0 of 22 confirmation measures performed · records digest b610fd54b62c. Gap findings by severity: 22 high, 16 medium, 2 low.</desc>
+  <desc id="stat-d">Record status generated from the records: P0 Governance · no gate passed · 89 work products (17 draft, 72 skeleton, 0 approved) · 40 gap findings (22 high) · 4 decisions open · 1 of 11 cross-domain interfaces open · 0 of 22 confirmation measures performed · records digest da8dd0627b9b. Gap findings by severity: 22 high, 16 medium, 2 low.</desc>
   <defs>
 <linearGradient id="stat-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F3F7F8"/></linearGradient>
 <linearGradient id="stat-amber" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#A8650F"/><stop offset="0.5" stop-color="#F2A33A"/><stop offset="1" stop-color="#A8650F"/></linearGradient>
@@ -17,16 +17,16 @@
 <rect x="246" y="124" width="190" height="112" rx="14" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
 <text x="264" y="182" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="44" font-weight="800" fill="#122026" text-anchor="start" letter-spacing="-1">89</text>
 <text x="264" y="206" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#122026" text-anchor="start">work products</text>
-<text x="264" y="226" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="start">0 approved, 16 draft</text>
+<text x="264" y="226" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="start">0 approved, 17 draft</text>
 <rect x="452" y="124" width="190" height="112" rx="14" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
 <text x="470" y="182" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="44" font-weight="800" fill="#D64535" text-anchor="start" letter-spacing="-1">40</text>
 <text x="470" y="206" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#122026" text-anchor="start">gap findings open</text>
 <text x="470" y="226" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="start">22 high severity, published</text>
 <text x="40" y="272" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#122026" text-anchor="start">Work products by status</text>
-<rect x="40" y="284" width="473.73" height="22" rx="4" fill="#7E949B"/>
-<text x="276.865" y="300" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#122026" text-anchor="middle">73 skeleton</text>
-<rect x="515.73" y="284" width="102.27" height="22" rx="4" fill="#D4821A"/>
-<text x="566.865" y="300" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#122026" text-anchor="middle">16 draft</text>
+<rect x="40" y="284" width="467.213" height="22" rx="4" fill="#7E949B"/>
+<text x="273.607" y="300" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#122026" text-anchor="middle">72 skeleton</text>
+<rect x="509.213" y="284" width="108.787" height="22" rx="4" fill="#D4821A"/>
+<text x="563.607" y="300" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#122026" text-anchor="middle">17 draft</text>
 <text x="40" y="328" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="start">Approval needs a verification review by someone other than the author; nothing has had one.</text>
 <text x="40" y="358" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#122026" text-anchor="start">Needed by each gate</text>
 <rect x="40" y="392" width="64" height="58" rx="3" fill="#0E8C83" fill-opacity="0.35"/>
@@ -83,5 +83,5 @@
 <rect x="736" y="496" width="216" height="56" rx="10" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
 <text x="750" y="520" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#122026" text-anchor="start">not yet met</text>
 <text x="750" y="539" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="start">Hold point: on-ground test</text>
-<text x="40" y="586" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="start">Records digest b610fd54b62c identifies the exact state these figures describe. A gate counts as passed only by its record; a measure only by its record.</text>
+<text x="40" y="586" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="start">Records digest da8dd0627b9b identifies the exact state these figures describe. A gate counts as passed only by its record; a measure only by its record.</text>
 </svg>

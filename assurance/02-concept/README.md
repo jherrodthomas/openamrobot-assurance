@@ -14,7 +14,7 @@ Standard clauses: ISO 12100 §5–§6, ISO 3691-4 §4 and Annex A, ISO 10218-2, 
 | [WP-C-02](WP-C-02-operating-environment-and-tasks.md) | Operating environment and task specification (zones, floors, people, lighting) | G1 | Draft |
 | [WP-C-03](WP-C-03-risk-assessment.md) | Hazard identification and risk assessment (hazard list, risk estimation and evaluation) | G1 | Draft |
 | [WP-C-04](WP-C-04-safety-functions-and-plr.md) | Safety functions specification with required Performance Level, stop category and response time | G1 | Draft |
-| [WP-C-05](WP-C-05-risk-reduction-concept.md) | Risk reduction concept (three-step method: inherently safe design, safeguarding, information for use) | G1 | Skeleton |
+| [WP-C-05](WP-C-05-risk-reduction-concept.md) | Risk reduction concept (three-step method: inherently safe design, safeguarding, information for use) | G1 | Draft |
 | [WP-C-06](WP-C-06-human-robot-interaction-and-misuse.md) | Human-robot interaction, collaborative operation and reasonably foreseeable misuse analysis | G1 | Draft |
 | [WP-C-07](WP-C-07-cybersecurity-threat-and-risk-assessment.md) | Cybersecurity threat and risk assessment | G1 | Skeleton |
 | [WP-C-08](WP-C-08-cybersecurity-requirements-and-sl-target.md) | Cybersecurity requirements and security level target | G1 | Skeleton |

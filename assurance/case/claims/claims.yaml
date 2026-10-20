@@ -13,7 +13,7 @@
   related_hazards: []
   related_requirements: []
   related_assumptions: [AOU-01, AOU-02, AOU-03, AOU-04, AOU-05, AOU-06, AOU-07]
-  evidence_refs: [Sn-01, Sn-02, Sn-03]
+  evidence_refs: [Sn-01, Sn-02, Sn-03, Sn-18]
   defeaters: [DF-12, DF-18, DF-25, DF-26]
   review_state: not-reviewed
   reviewer: null
@@ -255,7 +255,7 @@
 
 - id: G1.11
   kind: claim
-  title: "SF-11 arm safe stop and collaborative force limiting is implemented at PL d (CFG-002)"
+  title: "SF-11 arm safe stop on entry to the station workspace is implemented at PL d (CFG-002)"
   description: "An arm stops as a safety-rated monitored stop when a person enters its workspace or a force limit is exceeded, in the collaborative mode of DQ-021, with the limits measured against ISO/TS 15066 (WP-C-04 §3.11; WP-C-06 §4). Exists only on CFG-002."
   parent: G1
   argument: S1

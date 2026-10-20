@@ -288,3 +288,21 @@
   review_ref: null
   source: WP-K-01
   source_revision: "8a7a5b1"
+
+
+- id: Sn-18
+  kind: evidence
+  title: "Risk reduction concept: three-step allocation per rated row, residual-risk classes, adequacy criteria"
+  description: "Draft v0.1; every rated row of WP-C-03 allocated to ISO 12100 steps 1 to 3 with a residual class; five CFG-002 rows open, one row excluded; measures DM-08 to DM-10 added to the WP-C-03 register"
+  evidence_status: partial
+  lifecycle_area: hazard-analysis
+  location: "assurance/02-concept/WP-C-05-risk-reduction-concept.md"
+  related_claims: [G0]
+  baseline: BL-001
+  configuration: CFG-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"

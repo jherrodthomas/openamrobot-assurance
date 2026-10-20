@@ -18,12 +18,12 @@
 
 | Input | Status at this baseline | Link |
 |---|---|---|
-| WP-M-00 status of the gate's work products | 7 Draft, 6 Skeleton of 13 (table below) | [WP-M-00](../../../01-management/WP-M-00-work-product-register.md) |
+| WP-M-00 status of the gate's work products | 8 Draft, 5 Skeleton of 13 (table below) | [WP-M-00](../../../01-management/WP-M-00-work-product-register.md) |
 | Open anomalies (`safety-anomaly`) | | GitHub issues labelled `safety-anomaly` |
 | Open risks (WP-M-07) | | [WP-M-07](../../../01-management/WP-M-07-risk-management.md) |
 | Confirmation measures assigned to this gate (WP-M-06) and their results | 0 of 6 performed: CR-02, CR-03@G1, CR-04, FSA-I1, CS-I1, ML-R1 | [WP-M-06](../../../01-management/WP-M-06-confirmation-measures-plan.md) |
 | QA findings (WP-M-05) | | [WP-M-05](../../../01-management/WP-M-05-quality-assurance-plan.md) |
-| Open items of the phase's work products | 48 open-item rows not marked closed, any due gate (table below) | |
+| Open items of the phase's work products | 54 open-item rows not marked closed, any due gate (table below) | |
 
 ### Work products of this gate
 
@@ -35,7 +35,7 @@
 | [WP-C-03](../../../02-concept/WP-C-03-risk-assessment.md) Hazard identification and risk assessment (hazard list, risk estimation and evaluation) | CON-04 | Draft | 7 | |
 | [WP-C-04](../../../02-concept/WP-C-04-safety-functions-and-plr.md) Safety functions specification with required Performance Level, stop category and response time | CON-05 | Draft | 5 | |
 | [WP-C-10](../../../02-concept/WP-C-10-functional-insufficiency-analysis.md) Functional insufficiency analysis of sensing and navigation (performance limits, triggering conditions) | CON-06 | Skeleton | 2 | |
-| [WP-C-05](../../../02-concept/WP-C-05-risk-reduction-concept.md) Risk reduction concept (three-step method: inherently safe design, safeguarding, information for use) | CON-07 | Skeleton | 1 | |
+| [WP-C-05](../../../02-concept/WP-C-05-risk-reduction-concept.md) Risk reduction concept (three-step method: inherently safe design, safeguarding, information for use) | CON-07 | Draft | 7 | |
 | [WP-C-07](../../../02-concept/WP-C-07-cybersecurity-threat-and-risk-assessment.md) Cybersecurity threat and risk assessment | CON-08 | Skeleton | 1 | |
 | [WP-C-08](../../../02-concept/WP-C-08-cybersecurity-requirements-and-sl-target.md) Cybersecurity requirements and security level target | CON-09 | Skeleton | 1 | |
 | [WP-C-09](../../../02-concept/WP-C-09-ml-component-definition-and-safety-requirements.md) ML component definition and safety requirements (learned policy, perception models) | CON-10 | Skeleton | 1 | |

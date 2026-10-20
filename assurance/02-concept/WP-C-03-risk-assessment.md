@@ -4,7 +4,7 @@
 |---|---|
 | Work product | WP-C-03 Risk assessment (ISO 12100) and determination of the required Performance Level per safety function (ISO 13849-1) |
 | Standard reference | ISO 12100:2010 §5.4–§5.6, Annex B; ISO 13849-1:2023 §5, Annex A (risk graph); ISO 3691-4:2023 §4, Annex A; ISO 13850:2015; EN 60204-1:2018 §9.2.2 (stop categories); Regulation (EU) 2023/1230 Annex III §1.1.2 |
-| Version | 0.5 (2026-10-20): DQ-017 A, DQ-018 A and DQ-021 A applied in OL-02 and H-13. 0.4 (2026-10-20): DQ-004 B and DQ-020 A applied: the arms and lift on CFG-002 join the assessment as OS-16…OS-18, H-13…H-15, five rated rows, DM-07, IFU-04 and SF-10…SF-12; the configuration each row belongs to is stated. 0.3: situations reworked against the zones and tasks of WP-C-02 and the scenarios and misuses of WP-C-06 (OS-13…OS-15 added); risk estimated per zone; the risk-graph readings of v0.2 corrected (§5.2); SF-08 and SF-09 identified; the specification of each function moved to WP-C-04; Figures 3-1, 5-1, 6-1. 0.2: DQ-005 applied, PLr d confirmed as the target. 0.1: initial draft |
+| Version | 0.6 (2026-10-20): §6 register extended by DM-08…DM-10 from WP-C-05 and its "Reduces" lists aligned with the WP-C-05 allocation; SF-11 named as the monitored stop. 0.5 (2026-10-20): DQ-017 A, DQ-018 A and DQ-021 A applied in OL-02 and H-13. 0.4 (2026-10-20): DQ-004 B and DQ-020 A applied: the arms and lift on CFG-002 join the assessment as OS-16…OS-18, H-13…H-15, five rated rows, DM-07, IFU-04 and SF-10…SF-12; the configuration each row belongs to is stated. 0.3: situations reworked against the zones and tasks of WP-C-02 and the scenarios and misuses of WP-C-06 (OS-13…OS-15 added); risk estimated per zone; the risk-graph readings of v0.2 corrected (§5.2); SF-08 and SF-09 identified; the specification of each function moved to WP-C-04; Figures 3-1, 5-1, 6-1. 0.2: DQ-005 applied, PLr d confirmed as the target. 0.1: initial draft |
 | Status | Draft |
 | PL / scope | Highest PLr: **d** (SF-01, SF-02, SF-03, SF-05, SF-10, SF-11, SF-12), decided by the lead 2026-10-20 (DQ-005 option A: people share the space); one situation rates **e** and is excluded from the operating environment (Z5, §5); the base with the arms and lift (DQ-004 B) on CFG-001 (Gate A unit, bench only) and CFG-002 (2.0 mobile manipulator, unverified) |
 | Author | Assurance team (AI-assisted draft, I0) |
@@ -185,8 +185,8 @@ the function addressing the row must reach; it is the risk-graph value unless th
 15 hazards rated in 25 rows across the zones and the two configurations. Highest PLr adopted: **d** (eleven rows:
 H-01 in Z2 and Z3, H-02, H-05 both cases, H-10 as a contributor, H-07 as a complementary measure, and on CFG-002
 both H-13 cases and the H-14 load drop). One row rates **e** (H-01 on the public floor) and is excluded from the
-operating environment. Nine rows at c, one at b, three at a. Twelve safety functions (SF-01…SF-12, §7); seven
-design or complementary measures (DM-01…DM-07); two operating-environment limits (OL-01, OL-02); four
+operating environment. Nine rows at c, one at b, three at a. Twelve safety functions (SF-01…SF-12, §7); ten
+design or complementary measures (DM-01…DM-10); two operating-environment limits (OL-01, OL-02); four
 information-for-use items (IFU-01…IFU-04). The five CFG-002 rows rest on upstream's plan set.
 
 ### 5.2 Corrections from version 0.2
@@ -216,31 +216,34 @@ ISO 12100 §6 order. None of the measures exists on the Gate A unit; the table s
 |---|---|---|---|
 | DM-01 payload limit and restraint; payload height limit | inherently safe design (limits) | H-06 | no limit stated |
 | DM-02 measured stopping distance and deceleration limit consistent with stability | inherently safe design | H-06, H-01 | not measured |
-| DM-03 mass and centre-of-gravity record; tipping test | inherently safe design | H-06 | not done |
+| DM-03 mass and centre-of-gravity record; tipping test | inherently safe design | H-06, H-15 | not done |
 | DM-04 fuse on the battery positive, lockable disconnect | complementary (EN 60204-1 §5.3, §7.2) | H-07, H-04, H-08 | none fitted (GAP-19) |
 | DM-05 mains side per EN 60204-1: identified converter, RCD, earth, enclosure, inlet | complementary | H-08 | unknown converter (GAP-20) |
 | DM-06 one source at a time (selector or charge interlock), battery voltage monitoring | complementary | H-09, H-03 | parallel sources, no monitor |
 | DM-07 gripper and lift hold their load on power loss by design (spring-closed or self-locking gripper, brake or self-locking lift drive); payload limit of the gripper marked (CFG-002) | inherently safe design | H-14, H-15 | upstream `LIFT` release gate "written DOLD holding on E-stop and power loss" not passed; gripper behaviour not published |
+| DM-08 speed ceiling and drive-torque limit: firmware command ceiling 0.25 m/s and 0.6 rad/s (DQ-006 A) above the zone limits; about 1.4 J at the ceiling for 45 kg and about 70 N of stall push (WP-C-05 §2) | inherently safe design (limiting energy and force) | H-01, H-02, H-03 | applied in the fork firmware (`fe673fb`); not safety-rated, SF-03 is |
+| DM-09 brakes that engage on power loss (hub-motor brakes on CFG-002; none on CFG-001, which coasts) | inherently safe design (fail-safe on loss of energy) | H-01, H-06, H-15 | CFG-002 per upstream, unverified; CFG-001 coasts (GAP-02) and stays on the bench (DQ-011 C) |
+| DM-10 control-system design: actuator power removed by the chain upstream of every actuator, never through software; one command arbiter with the stop at the highest priority (SR-00.02); safety parameters not writable from the network (SR-00.05) | inherently safe design of the control system (ISO 12100 §6.2.11, to be checked) | H-02, H-12 | no arbitration (GAP-36); parameters open from the network (GAP-07, GAP-27) |
 | OL-01 zone exclusions of WP-C-02 §5: no public floor (Z5), no Z0, no ramps, edges, glass, crowds | operating-environment limit | H-01, H-06 | map limits only; no geofence (WP-C-02 OI-3) |
-| OL-02 speed limit per zone and the crawl limit for the dock lane and reverse (WP-C-02 §2; DQ-017 A: 0.3 m/s with detection, 0 without; DQ-018 A: no blind back-up, undock at 0.05 m/s) | operating-environment limit, enforced by SF-03 | H-01, H-03 | Nav2 limit only; docking unbounded |
-| SF-01 emergency stop | safeguarding, control function | H-01, H-02, H-04, H-05, H-10 | none |
-| SF-02 protective stop on personnel detection | safeguarding, control function | H-01, H-05, H-11 | none |
-| SF-03 safely-limited speed | safeguarding, control function | H-01, H-03, H-12 | none |
+| OL-02 speed limit per zone and the crawl limit for the dock lane and reverse (WP-C-02 §2; DQ-017 A: 0.3 m/s with detection, 0 without; DQ-018 A: no blind back-up, undock at 0.05 m/s) | operating-environment limit, enforced by SF-03 | H-01, H-03, H-06, H-15 | Nav2 limit only; docking unbounded |
+| SF-01 emergency stop | safeguarding, control function | H-01, H-02, H-04, H-05, H-10, H-13, H-14 | none |
+| SF-02 protective stop on personnel detection | safeguarding, control function | H-01, H-05, H-11, H-13 | none |
+| SF-03 safely-limited speed | safeguarding, control function | H-01, H-02, H-03, H-12, H-13, H-15 | none |
 | SF-04 stop on loss of command, communication or control | safeguarding, control function | H-02, H-11 | partly (firmware watchdog) |
-| SF-05 prevention of unexpected start-up | safeguarding, control function | H-05, H-02 | none |
-| SF-06 stop on drive fault | safeguarding, control function | H-03, H-01 | none |
+| SF-05 prevention of unexpected start-up | safeguarding, control function | H-05, H-02, H-10 | none |
+| SF-06 stop on drive fault | safeguarding, control function | H-03, H-01, H-09 | none |
 | SF-07 powered-debug inhibit | safeguarding, control function | H-04, H-02, H-12 | compile-time define only |
-| SF-08 warning before motion | safeguarding, complementary (warning device) | H-05, H-10 | none |
+| SF-08 warning before motion | safeguarding, complementary (warning device) | H-05, H-10, H-02, H-13, H-15 | none |
 | SF-09 enabling control for teleoperation | safeguarding, control function | H-01, H-10 | none (keyboard teleop floods `/cmd_vel`) |
 | SF-10 base motion inhibit while an arm is outside the stowed or carry pose (CFG-002) | safeguarding, control function | H-13, H-15 | none: an upstream motion rule, no interlock |
-| SF-11 arm safe stop and collaborative force limiting (CFG-002) | safeguarding, control function | H-13 | none: no arm safety function named upstream |
+| SF-11 arm safe stop on entry to the station workspace (monitored stop, DQ-021 A; CFG-002) | safeguarding, control function | H-13, H-14 | none: no arm safety function named upstream |
 | SF-12 lift and gripper holding on stop and power loss; lift interlock (CFG-002) | safeguarding, control function | H-14, H-15 | none: holding evidence is a release gate |
-| IFU-01 operator training; the on-screen stop is not an emergency stop; markings; the rule that a stopped robot is not an idle one | information for use | H-10, H-01, H-04, H-05 | upstream user page exists |
+| IFU-01 operator training; the on-screen stop is not an emergency stop; markings; the rule that a stopped robot is not an idle one | information for use | H-10, H-01, H-02, H-04, H-05 | upstream user page exists |
 | IFU-02 site measures: blind corners, one-way rules for people, lane marking, recorded in the site survey (HR-09) | information for use | H-01 | none |
 | IFU-03 payload, height and restraint markings on the top plate (HR-08) | information for use | H-06 | none |
 | IFU-04 station marking, the hand-over rule and the lift keep-clear zone (CFG-002; CA-02, CA-06) | information for use | H-13, H-14, H-15 | none |
 
-![Figure 6-1: hazard-to-measure matrix: the twelve hazards down the side and the measures across, grouped as design measures, operating-environment limits, safety functions and information for use, with a dot where the measure reduces the hazard and the adopted required Performance Level of each hazard written beside its row](figures/fig-c03-6-1-hazard-measures.svg)
+![Figure 6-1: hazard-to-measure matrix: the fifteen hazards down the side and the measures across, grouped as design measures, operating-environment limits, safety functions and information for use, with a dot where the measure reduces the hazard and the adopted required Performance Level of each hazard written beside its row](figures/fig-c03-6-1-hazard-measures.svg)
 
 *Figure 6-1.* Which measure acts on which hazard, in the ISO 12100 order from left to right. Every hazard has at least one dot outside the information-for-use group; the hazards rated d have a safety function. Generated by [`figures/fig_c03.py`](figures/fig_c03.py) from the §6 table; CI fails if it is stale.
 
@@ -262,7 +265,7 @@ PLr is the highest adopted in §5 among the rows the function addresses.
 | SF-08 | Warning before motion | b | H-05 resume (residual with SF-02) | H-05, H-10 | IS-10, MU-14 | nothing: no sounder or stack light |
 | SF-09 | Enabling control for teleoperation | c | H-01 teleoperation | H-01, H-10 | IS-06, MU-02 | nothing: no deadman; teleop bypasses the smoother and the monitor |
 | SF-10 | Base motion inhibit while an arm is outside the stowed or carry pose (CFG-002) | d | H-13 base moves with an arm extended | H-13, H-15 | IS-15, MU-16 | nothing: upstream `LIFT` motion rule, no interlock in any repository |
-| SF-11 | Arm safe stop and collaborative force limiting (CFG-002) | d | H-13 arm contact | H-13 | IS-13, MU-15 | nothing: no arm safety function named upstream; the OpenArm limits are not published |
+| SF-11 | Arm safe stop on entry to the station workspace (monitored stop, DQ-021 A; CFG-002) | d | H-13 arm contact | H-13 | IS-13, MU-15 | nothing: no arm safety function named upstream; the OpenArm limits are not published |
 | SF-12 | Lift and gripper holding on stop and power loss; lift interlock (CFG-002) | d | H-14 load drop; H-15 lift crushing | H-14, H-15 | IS-14, MU-16 | nothing: the DOLD holding evidence is an upstream release gate not yet passed |
 
 Notes:

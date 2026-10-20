@@ -4,7 +4,7 @@
 |---|---|
 | Work product | WP-K-01 Safety case for the Gate A unit (UL 4600 structure: claims, arguments, evidence, defeaters) |
 | Standard reference | ISO 13849-1:2023 §4.7, §10 (information); ISO 12100 §7 (documentation); Regulation (EU) 2023/1230 Annex IV Part A (technical documentation); UL 4600 §5, §6 |
-| Version | 0.4 (2026-10-20): CFG-002 added; G1 widened to SF-01…SF-12 with G1.10…G1.12 on CFG-002; DF-22, DF-23, DF-36 bear on them. 0.3: G1 widened to SF-01…SF-09; G1.5 at PL d; G1.8, G1.9 and Sn-17 (WP-C-04) added; OI-6 widened to the re-ratings of WP-C-03 v0.3. 0.2: Sn-16 (WP-H-02) added; OI-7 closed. 0.1: initial structure, every claim draft, every defeater open |
+| Version | 0.5 (2026-10-20): Sn-18 (WP-C-05 risk reduction concept) added to G0; G1.11 named as the monitored stop (DQ-021 A). 0.4 (2026-10-20): CFG-002 added; G1 widened to SF-01…SF-12 with G1.10…G1.12 on CFG-002; DF-22, DF-23, DF-36 bear on them. 0.3: G1 widened to SF-01…SF-09; G1.5 at PL d; G1.8, G1.9 and Sn-17 (WP-C-04) added; OI-6 widened to the re-ratings of WP-C-03 v0.3. 0.2: Sn-16 (WP-H-02) added; OI-7 closed. 0.1: initial structure, every claim draft, every defeater open |
 | Status | Draft |
 | PL / scope | PL d target; CFG-001 Gate A unit (software and firmware reference, bench only) and CFG-002 2.0 mobile manipulator (hardware reference, unverified); the base with the arms and lift |
 | Author | Assurance team (AI-assisted draft, I0) |
@@ -36,7 +36,7 @@ The cybersecurity branch of the argument is WP-K-03 ([cybersecurity case](WP-K-0
 
 | ID | Claim | Parent | Status | Evidence | Open defeaters |
 |---|---|---|---|---|---|
-| G0 | The Gate A unit poses no unreasonable risk | — | draft | Sn-01, Sn-02, Sn-03 | 4 |
+| G0 | The Gate A unit poses no unreasonable risk | — | draft | Sn-01, Sn-02, Sn-03, Sn-18 | 4 |
 | G1 | The safety functions SF-01 to SF-12 reach their required Performance Level | G0 | draft | Sn-04, Sn-05, Sn-17 | 0 |
 | G1.1 | SF-01 emergency stop is implemented at PL d | G1 | draft | Sn-08, Sn-16 | 4 |
 | G1.2 | SF-02 protective stop on personnel detection is implemented at PL d | G1 | draft | Sn-11, Sn-07, Sn-16 | 5 |
@@ -48,7 +48,7 @@ The cybersecurity branch of the argument is WP-K-03 ([cybersecurity case](WP-K-0
 | G1.8 | SF-08 warning before motion is implemented at PL b | G1 | draft | Sn-17 | 1 |
 | G1.9 | SF-09 enabling control for teleoperation is implemented at PL c | G1 | draft | Sn-17 | 1 |
 | G1.10 | SF-10 base motion inhibit while an arm is unstowed is implemented at PL d (CFG-002) | G1 | draft | Sn-17 | 1 |
-| G1.11 | SF-11 arm safe stop and collaborative force limiting is implemented at PL d (CFG-002) | G1 | draft | Sn-17 | 1 |
+| G1.11 | SF-11 arm safe stop on entry to the station workspace is implemented at PL d (CFG-002) | G1 | draft | Sn-17 | 1 |
 | G1.12 | SF-12 lift and gripper holding on stop and power loss, with the lift interlock, is implemented at PL d (CFG-002) | G1 | draft | Sn-17 | 1 |
 | G2 | The complementary electrical and mechanical measures are implemented | G0 | draft | — | 0 |
 | G2.1 | The 24 V bus and the mains side are protected | G2 | draft | Sn-12, Sn-16 | 4 |
@@ -77,7 +77,7 @@ reaches any PL at BL-001.
 Status rule: Available = performed and approved at a named baseline; Partial = drafted analysis or
 specification, not reviewed; Missing = not yet performed.
 
-**Available 0, Partial 10, Missing 7** (17 evidence items)
+**Available 0, Partial 11, Missing 7** (18 evidence items)
 
 | ID | Evidence | Location | Status | Supports |
 |---|---|---|---|---|
@@ -98,6 +98,7 @@ specification, not reviewed; Missing = not yet performed.
 | Sn-15 | Safety case WP-K-01 | `assurance/10-safety-case/WP-K-01-safety-case.md` | Partial | G4.3 |
 | Sn-16 | Safety-chain design for the Gate A bench build: parts, wiring, I/O, estimated PL | `assurance/04-hardware/WP-H-02-electrical-and-safety-chain-design.md` | Partial | G1.1, G1.2, G1.3, G2.1 |
 | Sn-17 | Safety functions specification SF-01 to SF-12: demand, safe state, response, stop category, PLr, allocation | `assurance/02-concept/WP-C-04-safety-functions-and-plr.md` | Partial | G1, G1.8, G1.9, G1.10, G1.11, G1.12 |
+| Sn-18 | Risk reduction concept: three-step allocation per rated row, residual-risk classes, adequacy criteria | `assurance/02-concept/WP-C-05-risk-reduction-concept.md` | Partial | G0 |
 
 ## 7. Defeaters
 

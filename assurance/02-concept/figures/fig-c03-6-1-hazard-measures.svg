@@ -1,15 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="758" viewBox="0 0 1180 758" role="img" aria-labelledby="hm-t hm-d">
+<svg xmlns="http://www.w3.org/2000/svg" width="1262" height="758" viewBox="0 0 1262 758" role="img" aria-labelledby="hm-t hm-d">
 <title id="hm-t">Figure 6-1: hazard-to-measure matrix</title>
 <desc id="hm-d">A grid with the fifteen hazards down the side, each with its adopted Performance Level in a coloured chip, and the measures across in four groups: design and complementary measures, operating-environment limits, safety functions and information for use; a dot marks each pair where the measure reduces the hazard.</desc>
 <defs>
   <pattern id="hm-hatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
     <line x1="0" y1="0" x2="0" y2="8" stroke="#7E949B" stroke-width="1"/></pattern>
 </defs>
-<rect x="0" y="0" width="1180" height="758" fill="#FFFFFF"/>
+<rect x="0" y="0" width="1262" height="758" fill="#FFFFFF"/>
 <text x="32.0" y="34.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#122026" text-anchor="start">Figure 6-1  Which measure reduces which hazard, in the ISO 12100 order</text>
 <text x="32.0" y="52.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="start">A dot where the §6 table says the measure reduces the hazard. Left to right: inherently safe design and complementary measures, operating-environment limits, safety functions, information for use.</text>
-<rect x="250.0" y="86.0" width="231.0" height="24.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
-<text x="365.5" y="102.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#122026" text-anchor="middle">Inherently safe design and complementary</text>
+<rect x="250.0" y="86.0" width="330.0" height="24.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="415.0" y="102.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#122026" text-anchor="middle">Inherently safe design and complementary</text>
 <text x="260.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 260.5 146)">DM-01</text>
 <text x="293.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 293.5 146)">DM-02</text>
 <text x="326.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 326.5 146)">DM-03</text>
@@ -17,80 +17,91 @@
 <text x="392.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 392.5 146)">DM-05</text>
 <text x="425.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 425.5 146)">DM-06</text>
 <text x="458.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 458.5 146)">DM-07</text>
-<rect x="493.0" y="86.0" width="66.0" height="24.0" rx="4" fill="#FFF6E8" stroke="#B86F0C" stroke-width="1"/>
-<text x="526.0" y="102.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#122026" text-anchor="middle">OL</text>
-<text x="503.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 503.5 146)">OL-01</text>
-<text x="536.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 536.5 146)">OL-02</text>
-<rect x="571.0" y="86.0" width="396.0" height="24.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
-<text x="769.0" y="102.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#122026" text-anchor="middle">Safety functions</text>
-<text x="581.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 581.5 146)">SF-01</text>
-<text x="614.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 614.5 146)">SF-02</text>
-<text x="647.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 647.5 146)">SF-03</text>
-<text x="680.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 680.5 146)">SF-04</text>
-<text x="713.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 713.5 146)">SF-05</text>
-<text x="746.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 746.5 146)">SF-06</text>
-<text x="779.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 779.5 146)">SF-07</text>
-<text x="812.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 812.5 146)">SF-08</text>
-<text x="845.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 845.5 146)">SF-09</text>
-<text x="878.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 878.5 146)">SF-10</text>
-<text x="911.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 911.5 146)">SF-11</text>
-<text x="944.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 944.5 146)">SF-12</text>
-<rect x="979.0" y="86.0" width="132.0" height="24.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
-<text x="1045.0" y="102.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#122026" text-anchor="middle">Information for use</text>
-<text x="989.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 989.5 146)">IFU-01</text>
-<text x="1022.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 1022.5 146)">IFU-02</text>
-<text x="1055.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 1055.5 146)">IFU-03</text>
-<text x="1088.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 1088.5 146)">IFU-04</text>
-<rect x="28.0" y="156.0" width="1124.0" height="34.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
+<text x="491.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 491.5 146)">DM-08</text>
+<text x="524.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 524.5 146)">DM-09</text>
+<text x="557.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 557.5 146)">DM-10</text>
+<rect x="592.0" y="86.0" width="66.0" height="24.0" rx="4" fill="#FFF6E8" stroke="#B86F0C" stroke-width="1"/>
+<text x="625.0" y="102.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#122026" text-anchor="middle">OL</text>
+<text x="602.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 602.5 146)">OL-01</text>
+<text x="635.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 635.5 146)">OL-02</text>
+<rect x="670.0" y="86.0" width="396.0" height="24.0" rx="4" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="868.0" y="102.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#122026" text-anchor="middle">Safety functions</text>
+<text x="680.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 680.5 146)">SF-01</text>
+<text x="713.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 713.5 146)">SF-02</text>
+<text x="746.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 746.5 146)">SF-03</text>
+<text x="779.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 779.5 146)">SF-04</text>
+<text x="812.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 812.5 146)">SF-05</text>
+<text x="845.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 845.5 146)">SF-06</text>
+<text x="878.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 878.5 146)">SF-07</text>
+<text x="911.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 911.5 146)">SF-08</text>
+<text x="944.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 944.5 146)">SF-09</text>
+<text x="977.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 977.5 146)">SF-10</text>
+<text x="1010.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 1010.5 146)">SF-11</text>
+<text x="1043.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 1043.5 146)">SF-12</text>
+<rect x="1078.0" y="86.0" width="132.0" height="24.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1144.0" y="102.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#122026" text-anchor="middle">Information for use</text>
+<text x="1088.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 1088.5 146)">IFU-01</text>
+<text x="1121.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 1121.5 146)">IFU-02</text>
+<text x="1154.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 1154.5 146)">IFU-03</text>
+<text x="1187.5" y="146.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#122026" text-anchor="start" transform="rotate(-60 1187.5 146)">IFU-04</text>
+<rect x="28.0" y="156.0" width="1206.0" height="34.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
 <text x="32.0" y="177.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-01</text>
 <text x="80.0" y="177.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">impact, crushing…</text>
 <rect x="210.0" y="164.0" width="22.0" height="18.0" rx="4" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
 <text x="221.0" y="177.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">d</text>
 <circle cx="299.5" cy="173.0" r="6" fill="#122026"/>
-<circle cx="509.5" cy="173.0" r="6" fill="#B86F0C"/>
-<circle cx="542.5" cy="173.0" r="6" fill="#B86F0C"/>
-<circle cx="587.5" cy="173.0" r="6" fill="#00938B"/>
-<circle cx="620.5" cy="173.0" r="6" fill="#00938B"/>
-<circle cx="653.5" cy="173.0" r="6" fill="#00938B"/>
+<circle cx="497.5" cy="173.0" r="6" fill="#122026"/>
+<circle cx="530.5" cy="173.0" r="6" fill="#122026"/>
+<circle cx="608.5" cy="173.0" r="6" fill="#B86F0C"/>
+<circle cx="641.5" cy="173.0" r="6" fill="#B86F0C"/>
+<circle cx="686.5" cy="173.0" r="6" fill="#00938B"/>
+<circle cx="719.5" cy="173.0" r="6" fill="#00938B"/>
 <circle cx="752.5" cy="173.0" r="6" fill="#00938B"/>
 <circle cx="851.5" cy="173.0" r="6" fill="#00938B"/>
-<circle cx="995.5" cy="173.0" r="6" fill="#122026"/>
-<circle cx="1028.5" cy="173.0" r="6" fill="#122026"/>
+<circle cx="950.5" cy="173.0" r="6" fill="#00938B"/>
+<circle cx="1094.5" cy="173.0" r="6" fill="#122026"/>
+<circle cx="1127.5" cy="173.0" r="6" fill="#122026"/>
 <text x="32.0" y="211.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-02</text>
 <text x="80.0" y="211.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">impact (uncommanded…</text>
 <rect x="210.0" y="198.0" width="22.0" height="18.0" rx="4" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
 <text x="221.0" y="211.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">d</text>
-<circle cx="587.5" cy="207.0" r="6" fill="#00938B"/>
+<circle cx="497.5" cy="207.0" r="6" fill="#122026"/>
+<circle cx="563.5" cy="207.0" r="6" fill="#122026"/>
 <circle cx="686.5" cy="207.0" r="6" fill="#00938B"/>
-<circle cx="719.5" cy="207.0" r="6" fill="#00938B"/>
+<circle cx="752.5" cy="207.0" r="6" fill="#00938B"/>
 <circle cx="785.5" cy="207.0" r="6" fill="#00938B"/>
-<rect x="28.0" y="224.0" width="1124.0" height="34.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
+<circle cx="818.5" cy="207.0" r="6" fill="#00938B"/>
+<circle cx="884.5" cy="207.0" r="6" fill="#00938B"/>
+<circle cx="917.5" cy="207.0" r="6" fill="#00938B"/>
+<circle cx="1094.5" cy="207.0" r="6" fill="#122026"/>
+<rect x="28.0" y="224.0" width="1206.0" height="34.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
 <text x="32.0" y="245.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-03</text>
 <text x="80.0" y="245.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">loss of control…</text>
 <rect x="210.0" y="232.0" width="22.0" height="18.0" rx="4" fill="#8FD3CC" stroke="#8FD3CC" stroke-width="1"/>
 <text x="221.0" y="245.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#122026" text-anchor="middle">c</text>
 <circle cx="431.5" cy="241.0" r="6" fill="#122026"/>
-<circle cx="542.5" cy="241.0" r="6" fill="#B86F0C"/>
-<circle cx="653.5" cy="241.0" r="6" fill="#00938B"/>
+<circle cx="497.5" cy="241.0" r="6" fill="#122026"/>
+<circle cx="641.5" cy="241.0" r="6" fill="#B86F0C"/>
 <circle cx="752.5" cy="241.0" r="6" fill="#00938B"/>
+<circle cx="851.5" cy="241.0" r="6" fill="#00938B"/>
 <text x="32.0" y="279.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-04</text>
 <text x="80.0" y="279.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">entanglement, crushing…</text>
 <rect x="210.0" y="266.0" width="22.0" height="18.0" rx="4" fill="#C9ECE8" stroke="#C9ECE8" stroke-width="1"/>
 <text x="221.0" y="279.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#122026" text-anchor="middle">b</text>
 <circle cx="365.5" cy="275.0" r="6" fill="#122026"/>
-<circle cx="587.5" cy="275.0" r="6" fill="#00938B"/>
-<circle cx="785.5" cy="275.0" r="6" fill="#00938B"/>
-<circle cx="995.5" cy="275.0" r="6" fill="#122026"/>
-<rect x="28.0" y="292.0" width="1124.0" height="34.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
+<circle cx="686.5" cy="275.0" r="6" fill="#00938B"/>
+<circle cx="884.5" cy="275.0" r="6" fill="#00938B"/>
+<circle cx="1094.5" cy="275.0" r="6" fill="#122026"/>
+<rect x="28.0" y="292.0" width="1206.0" height="34.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
 <text x="32.0" y="313.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-05</text>
 <text x="80.0" y="313.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">unexpected start-up</text>
 <rect x="210.0" y="300.0" width="22.0" height="18.0" rx="4" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
 <text x="221.0" y="313.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">d</text>
-<circle cx="587.5" cy="309.0" r="6" fill="#00938B"/>
-<circle cx="620.5" cy="309.0" r="6" fill="#00938B"/>
+<circle cx="686.5" cy="309.0" r="6" fill="#00938B"/>
 <circle cx="719.5" cy="309.0" r="6" fill="#00938B"/>
 <circle cx="818.5" cy="309.0" r="6" fill="#00938B"/>
-<circle cx="995.5" cy="309.0" r="6" fill="#122026"/>
+<circle cx="917.5" cy="309.0" r="6" fill="#00938B"/>
+<circle cx="1094.5" cy="309.0" r="6" fill="#122026"/>
 <text x="32.0" y="347.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-06</text>
 <text x="80.0" y="347.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">instability, tipping</text>
 <rect x="210.0" y="334.0" width="22.0" height="18.0" rx="4" fill="#8FD3CC" stroke="#8FD3CC" stroke-width="1"/>
@@ -98,9 +109,11 @@
 <circle cx="266.5" cy="343.0" r="6" fill="#122026"/>
 <circle cx="299.5" cy="343.0" r="6" fill="#122026"/>
 <circle cx="332.5" cy="343.0" r="6" fill="#122026"/>
-<circle cx="509.5" cy="343.0" r="6" fill="#B86F0C"/>
-<circle cx="1061.5" cy="343.0" r="6" fill="#122026"/>
-<rect x="28.0" y="360.0" width="1124.0" height="34.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
+<circle cx="530.5" cy="343.0" r="6" fill="#122026"/>
+<circle cx="608.5" cy="343.0" r="6" fill="#B86F0C"/>
+<circle cx="641.5" cy="343.0" r="6" fill="#B86F0C"/>
+<circle cx="1160.5" cy="343.0" r="6" fill="#122026"/>
+<rect x="28.0" y="360.0" width="1206.0" height="34.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
 <text x="32.0" y="381.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-07</text>
 <text x="80.0" y="381.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">short circuit, fire</text>
 <text x="221.0" y="381.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
@@ -110,58 +123,72 @@
 <text x="221.0" y="415.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
 <circle cx="365.5" cy="411.0" r="6" fill="#122026"/>
 <circle cx="398.5" cy="411.0" r="6" fill="#122026"/>
-<rect x="28.0" y="428.0" width="1124.0" height="34.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
+<rect x="28.0" y="428.0" width="1206.0" height="34.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
 <text x="32.0" y="449.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-09</text>
 <text x="80.0" y="449.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">battery</text>
 <text x="221.0" y="449.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
 <circle cx="431.5" cy="445.0" r="6" fill="#122026"/>
+<circle cx="851.5" cy="445.0" r="6" fill="#00938B"/>
 <text x="32.0" y="483.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-10</text>
 <text x="80.0" y="483.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">mode confusion</text>
 <rect x="210.0" y="470.0" width="22.0" height="18.0" rx="4" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
 <text x="221.0" y="483.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">d</text>
-<circle cx="587.5" cy="479.0" r="6" fill="#00938B"/>
+<circle cx="686.5" cy="479.0" r="6" fill="#00938B"/>
 <circle cx="818.5" cy="479.0" r="6" fill="#00938B"/>
-<circle cx="851.5" cy="479.0" r="6" fill="#00938B"/>
-<circle cx="995.5" cy="479.0" r="6" fill="#122026"/>
-<rect x="28.0" y="496.0" width="1124.0" height="34.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
+<circle cx="917.5" cy="479.0" r="6" fill="#00938B"/>
+<circle cx="950.5" cy="479.0" r="6" fill="#00938B"/>
+<circle cx="1094.5" cy="479.0" r="6" fill="#122026"/>
+<rect x="28.0" y="496.0" width="1206.0" height="34.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
 <text x="32.0" y="517.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-11</text>
 <text x="80.0" y="517.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">loss of sensing not…</text>
 <rect x="210.0" y="504.0" width="22.0" height="18.0" rx="4" fill="#8FD3CC" stroke="#8FD3CC" stroke-width="1"/>
 <text x="221.0" y="517.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#122026" text-anchor="middle">c</text>
-<circle cx="620.5" cy="513.0" r="6" fill="#00938B"/>
-<circle cx="686.5" cy="513.0" r="6" fill="#00938B"/>
+<circle cx="719.5" cy="513.0" r="6" fill="#00938B"/>
+<circle cx="785.5" cy="513.0" r="6" fill="#00938B"/>
 <text x="32.0" y="551.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-12</text>
 <text x="80.0" y="551.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">unauthorised command</text>
 <rect x="210.0" y="538.0" width="22.0" height="18.0" rx="4" fill="#8FD3CC" stroke="#8FD3CC" stroke-width="1"/>
 <text x="221.0" y="551.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#122026" text-anchor="middle">c</text>
-<circle cx="653.5" cy="547.0" r="6" fill="#00938B"/>
-<circle cx="785.5" cy="547.0" r="6" fill="#00938B"/>
-<rect x="28.0" y="564.0" width="1124.0" height="34.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
+<circle cx="563.5" cy="547.0" r="6" fill="#122026"/>
+<circle cx="752.5" cy="547.0" r="6" fill="#00938B"/>
+<circle cx="884.5" cy="547.0" r="6" fill="#00938B"/>
+<rect x="28.0" y="564.0" width="1206.0" height="34.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
 <text x="32.0" y="585.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-13</text>
 <text x="80.0" y="585.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">impact, clamping by an…</text>
 <rect x="210.0" y="572.0" width="22.0" height="18.0" rx="4" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
 <text x="221.0" y="585.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">d</text>
-<circle cx="884.5" cy="581.0" r="6" fill="#00938B"/>
+<circle cx="686.5" cy="581.0" r="6" fill="#00938B"/>
+<circle cx="719.5" cy="581.0" r="6" fill="#00938B"/>
+<circle cx="752.5" cy="581.0" r="6" fill="#00938B"/>
 <circle cx="917.5" cy="581.0" r="6" fill="#00938B"/>
-<circle cx="1094.5" cy="581.0" r="6" fill="#122026"/>
+<circle cx="983.5" cy="581.0" r="6" fill="#00938B"/>
+<circle cx="1016.5" cy="581.0" r="6" fill="#00938B"/>
+<circle cx="1193.5" cy="581.0" r="6" fill="#122026"/>
 <text x="32.0" y="619.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-14</text>
 <text x="80.0" y="619.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">falling or thrown load…</text>
 <rect x="210.0" y="606.0" width="22.0" height="18.0" rx="4" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
 <text x="221.0" y="619.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">d</text>
 <circle cx="464.5" cy="615.0" r="6" fill="#122026"/>
-<circle cx="950.5" cy="615.0" r="6" fill="#00938B"/>
-<circle cx="1094.5" cy="615.0" r="6" fill="#122026"/>
-<rect x="28.0" y="632.0" width="1124.0" height="34.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
+<circle cx="686.5" cy="615.0" r="6" fill="#00938B"/>
+<circle cx="1016.5" cy="615.0" r="6" fill="#00938B"/>
+<circle cx="1049.5" cy="615.0" r="6" fill="#00938B"/>
+<circle cx="1193.5" cy="615.0" r="6" fill="#122026"/>
+<rect x="28.0" y="632.0" width="1206.0" height="34.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
 <text x="32.0" y="653.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-15</text>
 <text x="80.0" y="653.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">crushing, shearing at…</text>
 <rect x="210.0" y="640.0" width="22.0" height="18.0" rx="4" fill="#8FD3CC" stroke="#8FD3CC" stroke-width="1"/>
 <text x="221.0" y="653.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#122026" text-anchor="middle">c</text>
+<circle cx="332.5" cy="649.0" r="6" fill="#122026"/>
 <circle cx="464.5" cy="649.0" r="6" fill="#122026"/>
-<circle cx="884.5" cy="649.0" r="6" fill="#00938B"/>
-<circle cx="950.5" cy="649.0" r="6" fill="#00938B"/>
-<circle cx="1094.5" cy="649.0" r="6" fill="#122026"/>
+<circle cx="530.5" cy="649.0" r="6" fill="#122026"/>
+<circle cx="641.5" cy="649.0" r="6" fill="#B86F0C"/>
+<circle cx="752.5" cy="649.0" r="6" fill="#00938B"/>
+<circle cx="917.5" cy="649.0" r="6" fill="#00938B"/>
+<circle cx="983.5" cy="649.0" r="6" fill="#00938B"/>
+<circle cx="1049.5" cy="649.0" r="6" fill="#00938B"/>
+<circle cx="1193.5" cy="649.0" r="6" fill="#122026"/>
 <text x="221.0" y="148.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#4E6A73" text-anchor="middle">PLr</text>
 <text x="32.0" y="699.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">PLr: the highest adopted in §5 for the hazard (rows that are excluded or not a control function do not count).</text>
 <text x="32.0" y="716.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">The legend of the measure IDs is the §6 table; the hazards rated d each have at least one safety-function dot.</text>
-<text x="1148.0" y="746.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#7E949B" text-anchor="end">Generated by figures/fig_c03.py from WP-C-03 §4, §5 and §6</text>
+<text x="1230.0" y="746.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#7E949B" text-anchor="end">Generated by figures/fig_c03.py from WP-C-03 §4, §5 and §6</text>
 </svg>

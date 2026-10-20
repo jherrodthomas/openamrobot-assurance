@@ -163,7 +163,7 @@
 
 - id: SF-11
   kind: safety-function
-  title: "Arm safe stop and collaborative force limiting (CFG-002)"
+  title: "Arm safe stop on entry to the station workspace (monitored stop; CFG-002)"
   plr: d
   status: proposed
   source: WP-C-04

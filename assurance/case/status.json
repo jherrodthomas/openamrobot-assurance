@@ -21,10 +21,10 @@
   "evidence": {
     "accepted": 0,
     "available": 0,
-    "awaiting_review": 10,
+    "awaiting_review": 11,
     "missing": 7,
-    "partial": 10,
-    "registered": 17
+    "partial": 11,
+    "registered": 18
   },
   "gates": {
     "records": []
@@ -43,10 +43,10 @@
     {
       "accepted": 0,
       "available": 0,
-      "evidence": 4,
+      "evidence": 5,
       "id": "hazard-analysis",
       "missing": 1,
-      "partial": 3,
+      "partial": 4,
       "status": "In Progress",
       "title": "Hazard Analysis"
     },
@@ -91,6 +91,6 @@
       "title": "Safety Case and Review"
     }
   ],
-  "records_digest": "fb18a8fd52a5",
+  "records_digest": "68473fbf82fa",
   "reviews": 0
 }
