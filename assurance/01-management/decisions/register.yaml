@@ -131,3 +131,31 @@
       detail: "Methodologically clean (the PLr comes from the risk graph). Cost: the risk graph for an AMR around people lands on PL d anyway, so the hardware gap stays open a month longer."
   sources: ["ISO 3691-4:2023 §5.3 (safety-related parts), Annex A", "ISO 13849-1:2023 Annex A (PLr)", "openamr-platform-fw docs/safety/motion-safety.md", "openAMRobot/.github decisions.yaml SAFETY-PROCUREMENT"]
   status: open
+
+- id: DQ-006
+  ref: GAP-06
+  question: "Where should the firmware's own speed ceiling sit: at the navigation limit, or at the mechanical clamp?"
+  context: >-
+    The hardened firmware now refuses any `/cmd_vel` above a ceiling before it reaches the motors. Today the
+    ceiling equals the existing 68 rpm clamp (0.71 m/s), so nothing changes for valid commands. Navigation never
+    asks for more than 0.20 m/s and 0.5 rad/s, but teleoperation, docking and anything else on the network can,
+    and that path has no other limit until an independent speed monitor (SF-03) exists.
+  reversibility: easy
+  blocks: "The value of CMD_VEL_MAX_LINEAR_MPS and CMD_VEL_MAX_ANGULAR_RPS in the firmware; WP-C-03 SF-03 interim measure"
+  gate: G1
+  asked: 2026-10-20
+  batch: 1
+  proceed_after: 2026-10-27
+  options:
+    - key: A
+      recommended: true
+      title: "Navigation limit plus margin: 0.25 m/s and 0.6 rad/s"
+      detail: "Every path to the motors, including teleop and docking, is capped near what the risk assessment rates. Cost: a bench test that needs faster motion must flash a bench image with a different define."
+    - key: B
+      title: "Keep the mechanical clamp: 0.71 m/s and 3.1 rad/s"
+      detail: "No behaviour change at all. Cost: a stray teleop or docking command can still drive the robot at 3.5 times the navigation speed."
+    - key: C
+      title: "Make it a runtime parameter the host sets at start-up"
+      detail: "Flexible per zone. Cost: another unauthenticated input that changes a safety limit, which is what the hardening removed."
+  sources: ["change-2026-10-20-fw-hardening.md §1 item 3", "WP-C-03 SF-03", "sw: nav2_params.yaml:116-120", "gap assessment GAP-06, GAP-36"]
+  status: open

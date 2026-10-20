@@ -1,0 +1,12 @@
+# Engineering baselines the assurance records refer to. A baseline is frozen only by a tagged
+# configuration baseline under WP-P-01; until then it is under development. Format: the restricted
+# YAML subset of LionDriver's assurance/case/README.md §3, so the validator can be shared when ported.
+
+- id: BL-001
+  kind: baseline
+  title: "Initial assurance baseline (upstream Gate A unit as inherited)"
+  description: "Upstream repository state analysed by the gap assessment: openamr-platform-sw 8a7a5b1 (2026-10-19), openamr-platform-hw 6c32fba (2026-10-16), openamr-platform-fw f96014d (2026-10-12), openamrobot-release b9f4a9d (v0.0.1 manifest), openAMRobot/.github 9109d3e (decisions register, 2026-10-19), openamrobot-docs 95c6140. Firmware base linorobot2_hardware aaf9d59. No fork changes. Tag assurance/BL-001 to be set on each forked repository at these commits."
+  lifecycle_status: under-development
+  tag: null
+  source: WP-P-01
+  source_revision: "8a7a5b1"
