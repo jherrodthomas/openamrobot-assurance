@@ -56,7 +56,9 @@
       title: "Assess both as two configurations from the start"
       detail: "Most complete. Cost: doubles every work product while 2.0 is still moving (the register changed five times in October)."
   sources: ["openAMRobot/.github decisions.yaml BASE-CONTROLLER-GATES, RELEASE-MILESTONES, SAFETY-PROCUREMENT", "openamr-platform-hw product-architecture.md"]
-  status: open
+  status: applied
+  answer: {choice: A, via: chat, at: 2026-10-20}
+  applied: {ref: "openamrobot-assurance main", record: "WP-C-01 §1 and header (reference configuration: Gate A unit); WP-C-03 header", at: 2026-10-20}
 
 - id: DQ-003
   ref: GAP-00
@@ -135,9 +137,40 @@
       title: "Defer: set the PL after the risk assessment"
       detail: "Methodologically clean (the PLr comes from the risk graph). Cost: the risk graph for an AMR around people lands on PL d anyway, so the hardware gap stays open a month longer."
   sources: ["ISO 3691-4:2023 §5.3 (safety-related parts), Annex A", "ISO 13849-1:2023 Annex A (PLr)", "openamr-platform-fw docs/safety/motion-safety.md", "openAMRobot/.github decisions.yaml SAFETY-PROCUREMENT"]
-  status: open
+  status: applied
+  answer: {choice: A, via: chat, at: 2026-10-20}
+  applied: {ref: "openamrobot-assurance main", record: "WP-C-03 header and §7 (PLr d for SF-01, SF-02, SF-03); WP-S-02", at: 2026-10-20}
 
 - id: DQ-006
+  ref: GAP-06
+  question: "Where should the firmware's own speed ceiling sit: at the navigation limit, or at the mechanical clamp?"
+  context: >-
+    The hardened firmware now refuses any `/cmd_vel` above a ceiling before it reaches the motors. Today the
+    ceiling equals the existing 68 rpm clamp (0.71 m/s), so nothing changes for valid commands. Navigation never
+    asks for more than 0.20 m/s and 0.5 rad/s, but teleoperation, docking and anything else on the network can,
+    and that path has no other limit until an independent speed monitor (SF-03) exists.
+  reversibility: easy
+  decider: lead
+  blocks: "The value of CMD_VEL_MAX_LINEAR_MPS and CMD_VEL_MAX_ANGULAR_RPS in the firmware; WP-C-03 SF-03 interim measure"
+  gate: G1
+  asked: 2026-10-20
+  batch: 1
+  proceed_after: 2026-10-27
+  options:
+    - key: A
+      recommended: true
+      title: "Navigation limit plus margin: 0.25 m/s and 0.6 rad/s"
+      detail: "Every path to the motors, including teleop and docking, is capped near what the risk assessment rates. Cost: a bench test that needs faster motion must flash a bench image with a different define."
+    - key: B
+      title: "Keep the mechanical clamp: 0.71 m/s and 3.1 rad/s"
+      detail: "No behaviour change at all. Cost: a stray teleop or docking command can still drive the robot at 3.5 times the navigation speed."
+    - key: C
+      title: "Make it a runtime parameter the host sets at start-up"
+      detail: "Flexible per zone. Cost: another unauthenticated input that changes a safety limit, which is what the hardening removed."
+  sources: ["change-2026-10-20-fw-hardening.md §1 item 3", "WP-C-03 SF-03", "sw: nav2_params.yaml:116-120", "gap assessment GAP-06, GAP-36"]
+  status: open
+
+- id: DQ-007
   ref: WP-M-13
   question: "Which route to conformity do we plan for under the Machinery Regulation: self-declaration against the harmonised standards, or a notified body's type-examination?"
   context: >-
@@ -160,14 +193,14 @@
       detail: "No notified-body fee; one technical file. Cost: the standards must be bought and applied without deviation, and the presumption of conformity only holds once the Commission cites them under the new Regulation. Any later external examination is voluntary."
     - key: B
       title: "Plan for a voluntary EU type-examination (Modules B and C) from the start"
-      detail: "An independent body reads the technical file, which the project otherwise lacks. Cost: a fee in the four to five figures and scheduling around the body; could be the same party as the assessor of DQ-007."
+      detail: "An independent body reads the technical file, which the project otherwise lacks. Cost: a fee in the four to five figures and scheduling around the body; could be the same party as the assessor of DQ-008."
     - key: C
       title: "Decide at G2, once the architecture and the detection means are fixed"
       detail: "Nothing is committed now. Cost: WP-M-13 and WP-M-06 carry a placeholder for a notified body for two gates, and the budget cannot be planned."
   sources: ["Regulation (EU) 2023/1230 Art. 25, Annex I, Annexes VI–X", "assurance/01-management/WP-M-13-regulatory-conformity-strategy.md §3", "assurance/01-management/WP-M-06-confirmation-measures-plan.md §8"]
   status: open
 
-- id: DQ-007
+- id: DQ-008
   ref: WP-M-06
   question: "When do we engage an independent functional safety assessor: now, at the concept gate, or not for now?"
   context: >-
@@ -196,7 +229,7 @@
   sources: ["assurance/01-management/WP-M-06-confirmation-measures-plan.md §4, §6, OI-3, OI-5", "assurance/01-management/WP-M-02-safety-plan.md §3.1"]
   status: open
 
-- id: DQ-008
+- id: DQ-009
   ref: GAP-14
   question: "How does the robot detect people: a safety laser scanner, bumpers with a low speed limit, or a separated area with nobody in it?"
   context: >-
@@ -224,7 +257,7 @@
   sources: ["assurance/00-assessment/gap-assessment.md GAP-14, GAP-22, GAP-35", "assurance/02-concept/WP-C-10-functional-insufficiency-analysis.md §4", "assurance/process/model/interfaces.yaml IX-02", "ISO 3691-4:2023 §4 (personnel detection), ISO 13855:2024"]
   status: queued
 
-- id: DQ-009
+- id: DQ-010
   ref: GAP-01
   question: "Do we buy and fit the bench safety hardware before any on-ground test: a battery fuse and disconnect, a dual-channel E-stop through a safety relay, and driver fault read-back?"
   context: >-
@@ -255,7 +288,7 @@
   sources: ["assurance/06-validation/WP-V-07-test-operations.md §2", "assurance/00-assessment/gap-assessment.md GAP-01, GAP-02, GAP-04, GAP-19, §10 action 4", "openAMRobot/.github decisions.yaml SAFETY-PROCUREMENT"]
   status: open
 
-- id: DQ-010
+- id: DQ-011
   ref: WP-M-02
   question: "While the project has one person, who approves the work products the safety manager writes, and do you accept self-approval as a recorded interim limitation?"
   context: >-
@@ -263,7 +296,7 @@
     verification review needs someone other than the author (I1); nobody holds that role. One honest option is to
     record self-approval as an accepted interim limitation with the gap stated in every header, and to treat every
     review as I0 until a second person joins. The alternative is to find a volunteer reviewer now, or to let the assessor of
-    DQ-007 take the reviewer role for the few documents that matter.
+    DQ-008 take the reviewer role for the few documents that matter.
   reversibility: easy
   decider: lead
   blocks: "The WP-M-02 roles 'Verification reviewer(s)' and 'Quality assurance'; whether any work product can move from Draft to Approved; the G0 exit criterion 'roles assigned'"
@@ -279,12 +312,12 @@
       title: "Find a volunteer reviewer with machinery safety experience before G0"
       detail: "Gives I1 reviews and lets drafts be approved. Cost: finding and keeping a volunteer; their time is the project's critical path."
     - key: C
-      title: "Give the assessor of DQ-007 the verification reviewer role for the plans and the risk assessment"
+      title: "Give the assessor of DQ-008 the verification reviewer role for the plans and the risk assessment"
       detail: "One engagement covers both. Cost: more billable hours, and the assessor then cannot confirm what they reviewed (independence)."
   sources: ["assurance/01-management/WP-M-02-safety-plan.md §3.1, OI-1, OI-2", "assurance/01-management/WP-M-01-assurance-strategy.md T-09"]
   status: open
 
-- id: DQ-011
+- id: DQ-012
   ref: GAP-27
   question: "What security level do we target for the robot under IEC 62443-4-2: SL 1 (casual misuse) or SL 2 (an intentional attacker with simple means)?"
   context: >-
@@ -311,7 +344,7 @@
   sources: ["assurance/00-assessment/gap-assessment.md GAP-27, GAP-28, GAP-29", "assurance/02-concept/WP-C-08-cybersecurity-requirements-and-sl-target.md §2", "IEC 62443-4-2:2019 §4 (security levels)"]
   status: queued
 
-- id: DQ-012
+- id: DQ-013
   ref: GAP-03
   question: "Where do the safety functions live: on a hardwired safety chain alone, with the firmware as a functional layer, or with the Teensy firmware inside the safety-related control system?"
   context: >-
@@ -340,7 +373,7 @@
   sources: ["assurance/01-management/WP-M-01-assurance-strategy.md §5 T-03, T-04, §6", "assurance/00-assessment/gap-assessment.md GAP-03, GAP-11", "openAMRobot/.github decisions.yaml TELEMETRY-NOT-SAFETY-EVIDENCE, ESTOP-SCOPE"]
   status: open
 
-- id: DQ-013
+- id: DQ-014
   ref: WP-C-04
   question: "What does the emergency stop do: remove actuator power at once and let the brakes stop the robot (stop category 0), or brake under control first and then remove power (category 1)?"
   context: >-
@@ -348,12 +381,12 @@
     power removed). Category 0 is simplest and needs no software, but on the Gate A unit there are no brakes, so a
     category 0 stop is a coast; on the 2.0 base the hub motors have brakes that engage when power is lost. Category 1
     stops shorter on a loaded robot but puts the firmware in the stop path for the first second, which conflicts
-    with the allocation of DQ-012.
+    with the allocation of DQ-013.
   reversibility: revisit
   decider: lead
   blocks: "SF-01 in WP-C-04; the stopping-distance budget WP-S-04; the contactor and brake design in WP-H-02"
   gate: G1
-  after: [DQ-012]
+  after: [DQ-013]
   options:
     - key: A
       recommended: true
@@ -361,11 +394,11 @@
       detail: "No software in the stop path; validated by a measured stopping distance. Cost: the Gate A unit coasts until it has brakes, so its speed limit and payload stay low."
     - key: B
       title: "Category 1: the firmware brakes under control, then the relay removes power after a fixed delay"
-      detail: "Shorter stops, less load on the mechanics. Cost: a delayed-drop safety relay, and the firmware's braking becomes part of the safety function (DQ-012 option B)."
+      detail: "Shorter stops, less load on the mechanics. Cost: a delayed-drop safety relay, and the firmware's braking becomes part of the safety function (DQ-013 option B)."
   sources: ["EN 60204-1:2018 §9.2 (stop categories), ISO 13850:2015 §4", "assurance/02-concept/WP-C-04-safety-functions-and-plr.md §2", "openAMRobot/.github decisions.yaml ESTOP-SCOPE, DRIVETRAIN"]
   status: queued
 
-- id: DQ-014
+- id: DQ-015
   ref: WP-M-06
   question: "Do we buy the standards now (ISO 12100, ISO 3691-4, ISO 13849-1 and -2, EN 60204-1, ISO 13850, about €1,000 to €1,500), or only when an assessor is engaged?"
   context: >-
@@ -394,19 +427,19 @@
   sources: ["assurance/01-management/WP-M-06-confirmation-measures-plan.md OI-1", "assurance/01-management/WP-M-00-work-product-register.md (note on clause numbers)"]
   status: open
 
-- id: DQ-015
+- id: DQ-016
   ref: WP-C-02
   question: "What is the default speed limit when a person is in the robot's zone: walking pace, a fraction of it, or zero (the robot waits)?"
   context: >-
     ISO 3691-4 ties the permitted speed in shared zones to the detection means and the stopping distance. Until
-    the detection means (DQ-008) and the stopping distance (WP-V-02) are known, the fork needs a default for the
+    the detection means (DQ-009) and the stopping distance (WP-V-02) are known, the fork needs a default for the
     operating-environment limits and for the test procedure. The Nav2 limit as committed is 0.20 m/s; upstream's
     2.0 ceiling is 1.5 m/s as an analytical limit.
   reversibility: easy
   decider: lead
   blocks: "The zone limits in WP-C-02; the development limits in WP-V-07 §3; the safely-limited-speed function SF-03"
   gate: G1
-  after: [DQ-008]
+  after: [DQ-009]
   options:
     - key: A
       recommended: true

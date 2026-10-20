@@ -23,7 +23,7 @@ OpenAMRobot is machinery, and in the EU machinery is placed on the market under 
 replaces Directive 2006/42/EC. This document records which regulations apply to the fork, which route to conformity
 is recommended, what the technical documentation must contain, and how the assurance work products of
 [WP-M-00](WP-M-00-work-product-register.md) map onto it. The frame itself is decision DQ-003 (EU recommended); the route
-is decision DQ-006.
+is decision DQ-007.
 
 ## 2. What the fork is, in regulatory terms
 
@@ -44,8 +44,8 @@ verification (Module G, Annex X).
 
 | Option | What it means for the fork | Cost | Recommendation |
 |---|---|---|---|
-| A: Module A, harmonised standards in full (ISO 3691-4, ISO 13849-1, EN 60204-1, ISO 13850 and, for the arms later, ISO 10218) | The fork self-declares against Annex III using the presumption of conformity of Art. 20. The technical documentation must still be complete and available for ten years | No notified body fee. The standards must be bought and applied in full; any deviation voids the presumption for that requirement | **Recommended for the base**, conditional on DQ-005 option A (PL d stop functions) and DQ-008 (a safety-rated detection means), because ISO 3691-4 presumes personnel detection at PL d where people share the space |
-| B: Module B + C, voluntary EU type-examination | A notified body examines the technical documentation and the type; gives an independent view the project otherwise lacks | Fee (indicative four to five figures); scheduling | Worth it once the robot is to leave the test cell; the assessor engagement DQ-007 could be the same body |
+| A: Module A, harmonised standards in full (ISO 3691-4, ISO 13849-1, EN 60204-1, ISO 13850 and, for the arms later, ISO 10218) | The fork self-declares against Annex III using the presumption of conformity of Art. 20. The technical documentation must still be complete and available for ten years | No notified body fee. The standards must be bought and applied in full; any deviation voids the presumption for that requirement | **Recommended for the base**, conditional on DQ-005 option A (PL d stop functions) and DQ-009 (a safety-rated detection means), because ISO 3691-4 presumes personnel detection at PL d where people share the space |
+| B: Module B + C, voluntary EU type-examination | A notified body examines the technical documentation and the type; gives an independent view the project otherwise lacks | Fee (indicative four to five figures); scheduling | Worth it once the robot is to leave the test cell; the assessor engagement DQ-008 could be the same body |
 | C: Module H | A certified quality system covering design and production | Out of proportion for a one-person open-source project | Not recommended |
 
 Whichever module is chosen, the harmonised standards are listed in the Official Journal under the Regulation only
@@ -100,5 +100,5 @@ document, with any additional tests appended to WP-V-01, not a second technical 
 |---|---|---|---|
 | OI-1 | Have the article and annex references of this document checked against the Official Journal text by someone qualified | PM | G1 |
 | OI-2 | Track the citation of ISO 3691-4:2023, ISO 13849-1:2023 and EN 60204-1:2018 as harmonised standards under Regulation (EU) 2023/1230; until cited, state "state of the art" rather than "presumption of conformity" everywhere | SM | G1 |
-| OI-3 | Decide the module (DQ-006) and confirm or withdraw NB-1 in WP-M-06 | PM | G0 |
+| OI-3 | Decide the module (DQ-007) and confirm or withdraw NB-1 in WP-M-06 | PM | G0 |
 | OI-4 | Confirm with the lead that no fork build will be made available to anyone outside the project before G5 | PM | G0 |

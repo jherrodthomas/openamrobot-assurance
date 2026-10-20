@@ -9,7 +9,7 @@ this page decides nothing and claims nothing.
 > [!NOTE]
 > **No confirmation measure has been performed, and no assessor has been engaged.** The project has one
 > maintainer, so every review at independence level I2 or I3 is planned as external. Whether and when to engage an
-> assessor is an open question for the project lead (decision register DQ-007).
+> assessor is an open question for the project lead (decision register DQ-008).
 
 ## Where things stand
 
@@ -17,10 +17,10 @@ this page decides nothing and claims nothing.
 |---|---|
 | No confirmation review, audit or assessment has taken place | [Confirmation records folder](../assurance/10-safety-case/confirmation/README.md), [WP-M-06 §1](../assurance/01-management/WP-M-06-confirmation-measures-plan.md#1-purpose) |
 | No gate review has been held | [Gate records folder](../assurance/10-safety-case/gates/README.md) |
-| The assessor role is open | [WP-M-02 §3.1](../assurance/01-management/WP-M-02-safety-plan.md#31-role-assignments); decision register entry DQ-007 in [`register.yaml`](../assurance/01-management/decisions/register.yaml) |
+| The assessor role is open | [WP-M-02 §3.1](../assurance/01-management/WP-M-02-safety-plan.md#31-role-assignments); decision register entry DQ-008 in [`register.yaml`](../assurance/01-management/decisions/register.yaml) |
 | Every role in the safety plan resolves to the maintainer; roles needing independence are TBD | [WP-M-02 §3.1](../assurance/01-management/WP-M-02-safety-plan.md#31-role-assignments) |
 | Much of the record is AI-assisted drafting, which counts at I0 and gives no review credit | [WP-M-02 §3.3](../assurance/01-management/WP-M-02-safety-plan.md#33-ai-assisted-authoring) |
-| Clause citations are marked "check against the licensed copy"; no standard is held | [WP-M-06 OI-1](../assurance/01-management/WP-M-06-confirmation-measures-plan.md#11-open-items); decision register DQ-014 |
+| Clause citations are marked "check against the licensed copy"; no standard is held | [WP-M-06 OI-1](../assurance/01-management/WP-M-06-confirmation-measures-plan.md#11-open-items); decision register DQ-015 |
 | No work product is approved or baselined; 7 are drafts, the rest skeletons | [WP-M-00 §3](../assurance/01-management/WP-M-00-work-product-register.md#3-register) |
 | Nothing has been tested: the fork has driven no robot | [WP-V-07](../assurance/06-validation/WP-V-07-test-operations.md), [test sites](../assurance/06-validation/test-sites/README.md) |
 
@@ -112,7 +112,7 @@ The project publishes its own counter-evidence. Start with these rather than hun
 
 ## Taking the role on
 
-Engaging an assessor is a decision of the project lead, recorded in the decision register (DQ-007 for functional
+Engaging an assessor is a decision of the project lead, recorded in the decision register (DQ-008 for functional
 safety; the cybersecurity assessor and the notified body are open items of WP-M-06 and WP-M-13). If you are
 considering it, the shortest route is an issue saying so, with the competence evidence
 [WP-M-04](../assurance/01-management/WP-M-04-organization-competence-safety-culture.md) asks for.

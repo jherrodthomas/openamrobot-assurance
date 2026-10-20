@@ -34,7 +34,7 @@ Likelihood and impact per scenario; Safety impact is anchored to the hazard list
 
 ## 5. Treatment
 
-Security level target (WP-C-08), requirements CSR-nn, residual risk accepted by the lead (DQ-011).
+Security level target (WP-C-08), requirements CSR-nn, residual risk accepted by the lead (DQ-012).
 
 ## 6. Open items
 

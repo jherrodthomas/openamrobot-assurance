@@ -79,9 +79,9 @@ Regulation (EU) 2023/1230 (Machinery Regulation), Regulation (EU) 2024/1689 (AI 
 
 | ID | Work product | Machinery | SRP/CS | IEC 62443 | Other | ASPICE | Gate | Status |
 |---|---|---|---|---|---|---|---|---|
-| [WP-C-01](../02-concept/WP-C-01-machine-definition-and-limits.md) | Machine definition and limits (intended use, foreseeable misuse, use, space and time limits) | 12100 §5.3; 3691-4 §1, §4 | 13849-1 §5 (inputs) | 62443-4-1 SR-1 | Machinery Reg. Annex III §1.1.2 | SYS.1 | G1 | S |
+| [WP-C-01](../02-concept/WP-C-01-item-definition.md) | Item definition and limits of the machinery (intended use, foreseeable misuse, use, space and time limits) | 12100 §5.3; 3691-4 §1, §4 | 13849-1 §5 (inputs) | 62443-4-1 SR-1 | Machinery Reg. Annex III §1.1.2 | SYS.1 | G1 | D |
 | [WP-C-02](../02-concept/WP-C-02-operating-environment-and-tasks.md) | Operating environment and task specification (zones, floors, people, lighting) | 3691-4 §4, §6; 12100 §5.3 | | | ISO 21448 §5 (informative method) | SYS.1 | G1 | S |
-| [WP-C-03](../02-concept/WP-C-03-risk-assessment.md) | Hazard identification and risk assessment (hazard list, risk estimation and evaluation) | 12100 §5.4–§5.6; 3691-4 Annex A; 10218-2 Annex A | 13849-1 Annex A (risk graph inputs) | | Machinery Reg. Annex III §1 | — | G1 | S |
+| [WP-C-03](../02-concept/WP-C-03-risk-assessment.md) | Hazard identification and risk assessment (hazard list, risk estimation and evaluation) | 12100 §5.4–§5.6; 3691-4 Annex A; 10218-2 Annex A | 13849-1 Annex A (risk graph inputs) | | Machinery Reg. Annex III §1 | — | G1 | D |
 | [WP-C-04](../02-concept/WP-C-04-safety-functions-and-plr.md) | Safety functions specification with required Performance Level, stop category and response time | 3691-4 §4; 13850 §4 | 13849-1 §5, Annex A (PLr) | | 60204-1 §9.2 (stop categories) | SYS.2 | G1 | S |
 | [WP-C-05](../02-concept/WP-C-05-risk-reduction-concept.md) | Risk reduction concept (three-step method: inherently safe design, safeguarding, information for use) | 12100 §6; 3691-4 §4; 10218-2 §5 | 13849-1 §5 | | Machinery Reg. Annex III §1.1.2 | SYS.2 | G1 | S |
 | [WP-C-06](../02-concept/WP-C-06-human-robot-interaction-and-misuse.md) | Human-robot interaction, collaborative operation and reasonably foreseeable misuse analysis | 10218-2 §5; TS 15066 §5; 12100 §5.3; 3691-4 §4 (personnel detection) | | | ISO 13855 §5–§6 | — | G1 | S |
@@ -204,7 +204,7 @@ Regulation (EU) 2023/1230 (Machinery Regulation), Regulation (EU) 2024/1689 (AI 
 
 | Standard work product | Where it is covered |
 |---|---|
-| Documentation of the risk assessment (ISO 12100 §7) | [WP-C-01](../02-concept/WP-C-01-machine-definition-and-limits.md), [WP-C-03](../02-concept/WP-C-03-risk-assessment.md), [WP-C-05](../02-concept/WP-C-05-risk-reduction-concept.md), indexed by [WP-K-02](../10-safety-case/WP-K-02-technical-documentation-index.md) |
+| Documentation of the risk assessment (ISO 12100 §7) | [WP-C-01](../02-concept/WP-C-01-item-definition.md), [WP-C-03](../02-concept/WP-C-03-risk-assessment.md), [WP-C-05](../02-concept/WP-C-05-risk-reduction-concept.md), indexed by [WP-K-02](../10-safety-case/WP-K-02-technical-documentation-index.md) |
 | Safety requirements specification (ISO 13849-1 §5) | [WP-C-04](../02-concept/WP-C-04-safety-functions-and-plr.md) at concept level, [WP-S-02](../03-system/WP-S-02-safety-requirements-specification.md) for the SRP/CS |
 | Validation plan and report (ISO 13849-1 §10, ISO 13849-2) | [WP-V-01](../06-validation/WP-V-01-safety-validation.md), with the test work products [WP-V-02](../06-validation/WP-V-02-stopping-braking-stability-tests.md)…[WP-V-05](../06-validation/WP-V-05-fault-injection.md) |
 | Technical documentation (ISO 13849-1 §12; Machinery Reg. Annex IV) | [WP-K-02](../10-safety-case/WP-K-02-technical-documentation-index.md) indexes this register |

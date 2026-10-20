@@ -139,9 +139,9 @@ Which activity answers each clause reference listed in the register. One activit
 | Safety-related control system (ISO 13849-1) | Safety-related control system engineer | Jherrod Thomas (acting); additional contributors TBD | G2 |
 | Cybersecurity (IEC 62443) | Cybersecurity manager | Jherrod Thomas (acting); permanent holder TBD | G1 |
 | Machine learning (ISO/IEC TR 5469) | ML safety lead | Jherrod Thomas (acting); permanent holder TBD | G1 |
-| Independent confirmation | External functional safety assessor | TBD (DQ-007) | G1 |
+| Independent confirmation | External functional safety assessor | TBD (DQ-008) | G1 |
 
-**Other roles WP-M-02 §3.1 needs by G5:** Electrical and mechanical engineer (TBD (likely external); needed by G2, still unassigned); Verification reviewer(s) (TBD (at least one person other than the author); needed by G0, still unassigned); Quality assurance (TBD (independent of the author); needed by G0, still unassigned); Test bench owner (TBD; needed by G3, still unassigned); Test operator(s) (TBD (trained per WP-M-04); needed by G1, still unassigned); External cybersecurity assessor (TBD); Notified body (TBD (DQ-006)).
+**Other roles WP-M-02 §3.1 needs by G5:** Electrical and mechanical engineer (TBD (likely external); needed by G2, still unassigned); Verification reviewer(s) (TBD (at least one person other than the author); needed by G0, still unassigned); Quality assurance (TBD (independent of the author); needed by G0, still unassigned); Test bench owner (TBD; needed by G3, still unassigned); Test operator(s) (TBD (trained per WP-M-04); needed by G1, still unassigned); External cybersecurity assessor (TBD); Notified body (TBD (DQ-007)).
 
 **Confirmation measures (WP-M-06 §9):**
 
@@ -155,4 +155,4 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Work products with no confirmation measure at this gate** (verification review only): WP-O-01, WP-O-02, WP-O-03, WP-V-08, WP-P-10, WP-T-01.
 
-**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (WP-C-10 OI-2 and decision DQ-008: choose the detection means (safety scanner, bumpers or a separated area)).
+**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (WP-C-10 OI-2 and decision DQ-009: choose the detection means (safety scanner, bumpers or a separated area)).

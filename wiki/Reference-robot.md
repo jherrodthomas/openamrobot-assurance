@@ -28,7 +28,7 @@ The hold point [WP-V-07](../assurance/06-validation/WP-V-07-test-operations.md) 
 unit the fork drives: a battery fuse and lockable disconnect, a dual-channel emergency stop on a pendant through a
 safety relay that drops the driver supply, both drivers' fault outputs read by the firmware, a reproducible firmware
 build with the watchdog on and the debug path off, a command arbiter, and a marked test area with nobody in it.
-Buying that hardware is a decision for the lead (DQ-009). The bench chain is carried forward as the first draft of
+Buying that hardware is a decision for the lead (DQ-010). The bench chain is carried forward as the first draft of
 the product chain, not thrown away.
 
 ## What the reference configuration fixes

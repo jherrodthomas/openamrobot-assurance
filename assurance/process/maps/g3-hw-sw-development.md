@@ -163,7 +163,7 @@ Which activity answers each clause reference listed in the register. One activit
 | Software (ISO 13849-1 §7, IEC 61508-3) | Firmware and software engineer(s) | Jherrod Thomas; additional contributors TBD | G2 |
 | Cybersecurity (IEC 62443) | Cybersecurity manager | Jherrod Thomas (acting); permanent holder TBD | G1 |
 | Machine learning (ISO/IEC TR 5469) | ML safety lead | Jherrod Thomas (acting); permanent holder TBD | G1 |
-| Independent confirmation | External functional safety assessor | TBD (DQ-007) | G1 |
+| Independent confirmation | External functional safety assessor | TBD (DQ-008) | G1 |
 
 **Other roles WP-M-02 §3.1 needs by G3:** Verification reviewer(s) (TBD (at least one person other than the author); needed by G0, still unassigned); Quality assurance (TBD (independent of the author); needed by G0, still unassigned); Test bench owner (TBD); Test operator(s) (TBD (trained per WP-M-04); needed by G1, still unassigned).
 
@@ -180,4 +180,4 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Work products with no confirmation measure at this gate** (verification review only): WP-W-01, WP-H-01, WP-H-02, WP-H-05, WP-W-02, WP-W-03, WP-W-09, WP-W-05, WP-W-06, WP-W-11, WP-P-09, WP-T-01, WP-K-01.
 
-**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (WP-C-10 OI-2 and decision DQ-008: choose the detection means (safety scanner, bumpers or a separated area)).
+**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (WP-C-10 OI-2 and decision DQ-009: choose the detection means (safety scanner, bumpers or a separated area)).

@@ -26,7 +26,7 @@ SR-nn grouped by SF-nn; each with PLr inherited, category target, response time,
 
 ## 3. Stop categories and E-stop requirements
 
-EN 60204-1 §9.2 category 0 or 1 per function (DQ-013); ISO 13850 requirements on the devices, latching and reset.
+EN 60204-1 §9.2 category 0 or 1 per function (DQ-014); ISO 13850 requirements on the devices, latching and reset.
 
 ## 4. Requirements on the functional layers
 

@@ -16,7 +16,7 @@ environment has no licensed copy; every clause reference is marked to be checked
   risk estimation and evaluation, then the three-step method in order: inherently safe design, safeguarding and
   complementary protective measures, information for use. The documentation of §7 becomes the heart of the
   technical file.
-- **How:** [WP-C-01](../assurance/02-concept/WP-C-01-machine-definition-and-limits.md) defines the machine and its
+- **How:** [WP-C-01](../assurance/02-concept/WP-C-01-item-definition.md) defines the machine and its
   limits, [WP-C-03](../assurance/02-concept/WP-C-03-risk-assessment.md) is the one hazard log of the project, and
   [WP-C-05](../assurance/02-concept/WP-C-05-risk-reduction-concept.md) allocates every hazard to the three steps.
 - **Position taken:** a limitation that is only documented is not a control for a hazard that can kill; the gap
@@ -57,7 +57,7 @@ environment has no licensed copy; every clause reference is marked to be checked
   [WP-V-05](../assurance/06-validation/WP-V-05-fault-injection.md) (validation and fault lists).
 - **Position taken:** the safety functions are allocated to a **hardwired safety chain** (E-stop, safety relay,
   contactors, brakes, safety scanner outputs). The Teensy firmware and the ROS 2 stack are functional layers that
-  are hardened but carry no PL claim in the first safety case (decision DQ-012). That keeps the PL d argument inside
+  are hardened but carry no PL claim in the first safety case (decision DQ-013). That keeps the PL d argument inside
   components with certificates and known reliability data, and matches upstream's own principle that watchdogs and
   telemetry are never safety evidence.
 
@@ -81,7 +81,7 @@ environment has no licensed copy; every clause reference is marked to be checked
   [WP-V-04](../assurance/06-validation/WP-V-04-emergency-stop-and-safety-chain-validation.md).
 - **Position taken:** the first engineering act of the fork is a fuse, a disconnect and a dual-channel E-stop
   through a safety relay on any unit it tests with, as bench equipment before it is a product design
-  ([WP-V-07](../assurance/06-validation/WP-V-07-test-operations.md), decision DQ-009).
+  ([WP-V-07](../assurance/06-validation/WP-V-07-test-operations.md), decision DQ-010).
 
 ## ISO 13855:2024 and IEC 61496, safeguard positioning and protective equipment
 
@@ -91,7 +91,7 @@ environment has no licensed copy; every clause reference is marked to be checked
   [WP-V-02](../assurance/06-validation/WP-V-02-stopping-braking-stability-tests.md) measures the stopping distance,
   [WP-V-03](../assurance/06-validation/WP-V-03-personnel-detection-validation.md) validates the fields.
 - **Position taken:** the detection means (a type 3 scanner at a low plane, bumpers, or a separated area with no
-  people) is a decision for the lead (DQ-008). Until it is made, no operation around people is inside the case.
+  people) is a decision for the lead (DQ-009). Until it is made, no operation around people is inside the case.
 
 ## IEC 62443-4-1:2018 and IEC 62443-4-2:2019, cybersecurity
 
@@ -148,7 +148,7 @@ environment has no licensed copy; every clause reference is marked to be checked
   [WP-K-06](../assurance/10-safety-case/WP-K-06-release-record.md) holds the unsigned declaration draft.
 - **Position taken:** EU frame recommended (DQ-003); internal control (Module A) with the harmonised standards
   applied in full recommended for the base, with a voluntary EU type-examination worth considering once the robot
-  leaves the test cell (DQ-006). The US frame (ANSI/A3 R15.08) is deferred and would be a cross-reference, not a
+  leaves the test cell (DQ-007). The US frame (ANSI/A3 R15.08) is deferred and would be a cross-reference, not a
   second file.
 
 ## Automotive SPICE, process capability

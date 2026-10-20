@@ -11,7 +11,7 @@
 | Date | YYYY-MM-DD |
 | Baseline | <commit SHA or tag> |
 | Chair | Safety manager (Jherrod Thomas (acting)) |
-| Participants | Safety manager (Jherrod Thomas (acting)); Safety-related control system engineer (Jherrod Thomas (acting); additional contributors TBD); Electrical and mechanical engineer (TBD (likely external)); Firmware and software engineer(s) (Jherrod Thomas; additional contributors TBD); External functional safety assessor (TBD (DQ-007)) |
+| Participants | Safety manager (Jherrod Thomas (acting)); Safety-related control system engineer (Jherrod Thomas (acting); additional contributors TBD); Electrical and mechanical engineer (TBD (likely external)); Firmware and software engineer(s) (Jherrod Thomas; additional contributors TBD); External functional safety assessor (TBD (DQ-008)) |
 | Assessor informed | Yes / No (name) |
 
 ## Inputs (WP-M-02 §10)
@@ -55,7 +55,7 @@ From the [process model](../../../process/README.md). Each one is a condition on
 
 | Interface | Topic | Open item | Due | Closed? |
 |---|---|---|---|---|
-| IX-02 | The protective stop SF-02 has a PLr but no implementation until the detection means is decided; what the LiDAR cannot see bounds the claim | WP-C-10 OI-2 and decision DQ-008: choose the detection means (safety scanner, bumpers or a separated area) | G1 | |
+| IX-02 | The protective stop SF-02 has a PLr but no implementation until the detection means is decided; what the LiDAR cannot see bounds the claim | WP-C-10 OI-2 and decision DQ-009: choose the detection means (safety scanner, bumpers or a separated area) | G1 | |
 
 ### Roles WP-M-02 §3.1 needs by this gate that are not assigned
 
@@ -66,7 +66,7 @@ From the [process model](../../../process/README.md). Each one is a condition on
 | Quality assurance | TBD (independent of the author) | G0 |
 | Test bench owner | TBD | G3 |
 | Test operator(s) | TBD (trained per WP-M-04) | G1 |
-| External functional safety assessor | TBD (DQ-007) | G1 |
+| External functional safety assessor | TBD (DQ-008) | G1 |
 
 ## Exit criteria (WP-M-00 §2)
 
