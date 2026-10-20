@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="612" viewBox="0 0 1180 612" role="img" aria-labelledby="mtx-t mtx-d">
+<title id="mtx-t">Figure 3-1: task-by-zone matrix</title>
+<desc id="mtx-d">A grid with the eight tasks down the side and the five zones across: green cells where the task is inside the case at the current baseline, all of them in the test area; amber cells where it becomes permitted once a named safety function is validated, with the speed limit written in; grey cells excluded.</desc>
+<defs>
+  <pattern id="mtx-hatch" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="10" stroke="#7E949B" stroke-width="1.2"/></pattern>
+  <pattern id="mtx-grid" patternUnits="userSpaceOnUse" width="40" height="40">
+    <path d="M40,0 L0,0 L0,40" fill="none" stroke="#D3DDE2" stroke-width="0.8"/></pattern>
+</defs>
+<rect x="0" y="0" width="1180" height="612" fill="#FFFFFF"/>
+<text x="32.0" y="34.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#122026" text-anchor="start">Figure 3-1  Task-by-zone matrix: where each task may run, now and once the safety functions exist</text>
+<text x="32.0" y="52.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="start">Green: inside the case at BL-001. Amber: permitted once the named safety function is validated. Grey: excluded. The cell gives the speed limit of §3.</text>
+<text x="350.0" y="84.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">Z1</text>
+<text x="350.0" y="99.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">Development test area (§6)</text>
+<text x="526.0" y="84.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">Z2</text>
+<text x="526.0" y="99.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">Transport aisle</text>
+<text x="702.0" y="84.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">Z3</text>
+<text x="702.0" y="99.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">Dock lane</text>
+<text x="878.0" y="84.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">Z4</text>
+<text x="878.0" y="99.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">Charging and parking bay</text>
+<text x="1054.0" y="84.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">Z5</text>
+<text x="1054.0" y="99.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">Shared public floor (showroom,</text>
+<text x="32.0" y="130.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">T-01</text>
+<text x="80.0" y="130.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Transport leg</text>
+<rect x="265.0" y="113.0" width="170.0" height="48.0" rx="4" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1"/>
+<text x="350.0" y="133.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">0.20 m/s</text>
+<rect x="441.0" y="113.0" width="170.0" height="48.0" rx="4" fill="#FFF6E8" stroke="#D4821A" stroke-width="1"/>
+<text x="526.0" y="133.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="middle">0.20 m/s · SF-02, SF-03</text>
+<rect x="617.0" y="113.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="702.0" y="133.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="793.0" y="113.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="878.0" y="133.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="969.0" y="113.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1054.0" y="133.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">excluded</text>
+<text x="32.0" y="184.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">T-02</text>
+<text x="80.0" y="184.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Wait</text>
+<rect x="265.0" y="167.0" width="170.0" height="48.0" rx="4" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1"/>
+<text x="350.0" y="187.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">0</text>
+<rect x="441.0" y="167.0" width="170.0" height="48.0" rx="4" fill="#FFF6E8" stroke="#D4821A" stroke-width="1"/>
+<text x="526.0" y="187.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="middle">0 · SF-05</text>
+<rect x="617.0" y="167.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="702.0" y="187.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="793.0" y="167.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="878.0" y="187.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="969.0" y="167.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1054.0" y="187.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">excluded</text>
+<text x="32.0" y="238.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">T-03</text>
+<text x="80.0" y="238.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Docking approach</text>
+<rect x="265.0" y="221.0" width="170.0" height="48.0" rx="4" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1"/>
+<text x="350.0" y="241.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">crawl, lane empty</text>
+<rect x="441.0" y="221.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="526.0" y="241.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="617.0" y="221.0" width="170.0" height="48.0" rx="4" fill="#FFF6E8" stroke="#D4821A" stroke-width="1"/>
+<text x="702.0" y="241.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="middle">0.05 m/s · SF-02 lane field</text>
+<rect x="793.0" y="221.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="878.0" y="241.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="969.0" y="221.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1054.0" y="241.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">excluded</text>
+<text x="32.0" y="292.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">T-04</text>
+<text x="80.0" y="292.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Undocking</text>
+<rect x="265.0" y="275.0" width="170.0" height="48.0" rx="4" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1"/>
+<text x="350.0" y="295.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">crawl, observer behind</text>
+<rect x="441.0" y="275.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="526.0" y="295.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="617.0" y="275.0" width="170.0" height="48.0" rx="4" fill="#FFF6E8" stroke="#D4821A" stroke-width="1"/>
+<text x="702.0" y="295.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="middle">0.05 m/s · rear bumper</text>
+<rect x="793.0" y="275.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="878.0" y="295.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="969.0" y="275.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1054.0" y="295.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">excluded</text>
+<text x="32.0" y="346.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">T-05</text>
+<text x="80.0" y="346.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Charging</text>
+<rect x="265.0" y="329.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="350.0" y="349.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="441.0" y="329.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="526.0" y="349.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="617.0" y="329.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="702.0" y="349.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="793.0" y="329.0" width="170.0" height="48.0" rx="4" fill="#FFF6E8" stroke="#D4821A" stroke-width="1"/>
+<text x="878.0" y="349.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="middle">0 · charge interlock</text>
+<rect x="969.0" y="329.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1054.0" y="349.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">excluded</text>
+<text x="32.0" y="400.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">T-06</text>
+<text x="80.0" y="400.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Manual recovery and</text>
+<text x="80.0" y="413.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">teleoperation</text>
+<rect x="265.0" y="383.0" width="170.0" height="48.0" rx="4" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1"/>
+<text x="350.0" y="403.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">0.20 m/s</text>
+<rect x="441.0" y="383.0" width="170.0" height="48.0" rx="4" fill="#FFF6E8" stroke="#D4821A" stroke-width="1"/>
+<text x="526.0" y="403.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="middle">0.20 / 0.10 m/s · SF-01,</text>
+<text x="526.0" y="416.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="middle">deadman</text>
+<rect x="617.0" y="383.0" width="170.0" height="48.0" rx="4" fill="#FFF6E8" stroke="#D4821A" stroke-width="1"/>
+<text x="702.0" y="403.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="middle">crawl</text>
+<rect x="793.0" y="383.0" width="170.0" height="48.0" rx="4" fill="#FFF6E8" stroke="#D4821A" stroke-width="1"/>
+<text x="878.0" y="403.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="middle">crawl</text>
+<rect x="969.0" y="383.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1054.0" y="403.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">excluded</text>
+<text x="32.0" y="454.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">T-07</text>
+<text x="80.0" y="454.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Mapping</text>
+<rect x="265.0" y="437.0" width="170.0" height="48.0" rx="4" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1"/>
+<text x="350.0" y="457.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">as T-06</text>
+<rect x="441.0" y="437.0" width="170.0" height="48.0" rx="4" fill="#FFF6E8" stroke="#D4821A" stroke-width="1"/>
+<text x="526.0" y="457.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="middle">as T-06, floor empty</text>
+<rect x="617.0" y="437.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="702.0" y="457.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="793.0" y="437.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="878.0" y="457.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="969.0" y="437.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1054.0" y="457.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">excluded</text>
+<text x="32.0" y="508.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">T-08</text>
+<text x="80.0" y="508.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Bench, calibration and powered</text>
+<text x="80.0" y="521.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">debug</text>
+<rect x="265.0" y="491.0" width="170.0" height="48.0" rx="4" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1"/>
+<text x="350.0" y="511.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#122026" text-anchor="middle">wheels off the ground</text>
+<rect x="441.0" y="491.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="526.0" y="511.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="617.0" y="491.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="702.0" y="511.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="793.0" y="491.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="878.0" y="511.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="969.0" y="491.0" width="170.0" height="48.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="1054.0" y="511.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="32.0" y="566.0" width="18.0" height="14.0" rx="2" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1"/>
+<text x="58.0" y="577.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">inside the case at BL-001 (test area, WP-V-07)</text>
+<rect x="362.0" y="566.0" width="18.0" height="14.0" rx="2" fill="#FFF6E8" stroke="#D4821A" stroke-width="1"/>
+<text x="388.0" y="577.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">permitted once the named safety function is validated</text>
+<rect x="752.0" y="566.0" width="18.0" height="14.0" rx="2" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="778.0" y="577.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">excluded</text>
+<text x="1148.0" y="600.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#7E949B" text-anchor="end">Generated by figures/fig_c02.py from WP-C-02 §2 and §3</text>
+</svg>

@@ -60,7 +60,7 @@
 <text x="246" y="308" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="700" fill="#D4821A" text-anchor="start">CON-02</text>
 <text x="246" y="323" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="500" fill="#122026" text-anchor="start">Specify the operating</text>
 <text x="246" y="336" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="500" fill="#122026" text-anchor="start">environment and tasks</text>
-<rect x="246" y="354" width="35.2" height="13" rx="6.5" fill="#C9D4D9" fill-opacity="0.9"/>
+<rect x="246" y="354" width="35.2" height="13" rx="6.5" fill="#F2A33A" fill-opacity="0.9"/>
 <text x="263.6" y="363.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="700" fill="#122026" text-anchor="middle">C-02</text>
 <rect x="235" y="400" width="162" height="80" rx="9" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
 <rect x="235" y="408" width="3" height="64" rx="1.5" fill="#D4821A"/>

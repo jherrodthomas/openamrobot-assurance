@@ -94,7 +94,7 @@ Clause references and status are read from the [register (WP-M-00)](../../01-man
 | Activity | Lane | Produces | Inputs | Machinery | SRP/CS | IEC 62443 | Other | ASPICE | Status |
 |---|---|---|---|---|---|---|---|---|---|
 | CON-01 Define the machine and its limits | Joint (all disciplines) | [WP-C-01](../../02-concept/WP-C-01-item-definition.md) | WP-M-01, WP-M-11 | 12100 §5.3; 3691-4 §1, §4 | 13849-1 §5 (inputs) | 62443-4-1 SR-1 | Machinery Reg. Annex III §1.1.2 | SYS.1 | Draft |
-| CON-02 Specify the operating environment and tasks | Machinery risk assessment (ISO 12100, ISO 3691-4) | [WP-C-02](../../02-concept/WP-C-02-operating-environment-and-tasks.md) | WP-C-01 | 3691-4 §4, §6; 12100 §5.3 |  |  | ISO 21448 §5 (informative method) | SYS.1 | Skeleton |
+| CON-02 Specify the operating environment and tasks | Machinery risk assessment (ISO 12100, ISO 3691-4) | [WP-C-02](../../02-concept/WP-C-02-operating-environment-and-tasks.md) | WP-C-01 | 3691-4 §4, §6; 12100 §5.3 |  |  | ISO 21448 §5 (informative method) | SYS.1 | Draft |
 | CON-03 Analyse human-robot interaction and foreseeable misuse | Machinery risk assessment (ISO 12100, ISO 3691-4) | [WP-C-06](../../02-concept/WP-C-06-human-robot-interaction-and-misuse.md) | WP-C-01, WP-C-02 | 10218-2 §5; TS 15066 §5; 12100 §5.3; 3691-4 §4 (personnel detection) |  |  | ISO 13855 §5–§6 |  | Skeleton |
 | CON-04 Hazard identification and risk assessment | Machinery risk assessment (ISO 12100, ISO 3691-4) | [WP-C-03](../../02-concept/WP-C-03-risk-assessment.md) | WP-C-01, WP-C-02, WP-C-06 | 12100 §5.4–§5.6; 3691-4 Annex A; 10218-2 Annex A | 13849-1 Annex A (risk graph inputs) |  | Machinery Reg. Annex III §1 |  | Draft |
 | CON-05 Specify the safety functions and their required PL | Safety-related control system (ISO 13849-1) | [WP-C-04](../../02-concept/WP-C-04-safety-functions-and-plr.md) | WP-C-03, WP-C-06 | 3691-4 §4; 13850 §4 | 13849-1 §5, Annex A (PLr) |  | 60204-1 §9.2 (stop categories) | SYS.2 | Skeleton |
@@ -131,7 +131,7 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Exit criterion (WP-M-00 §2):** Machine limits, risk assessment, safety functions with their required PL, risk reduction concept, cybersecurity and ML concepts approved; confirmation review of the risk assessment passed
 
-**Work products:** 4 Draft, 9 Skeleton of 13. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
+**Work products:** 5 Draft, 8 Skeleton of 13. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
 
 **Roles the lanes need (WP-M-02 §3.1):**
 

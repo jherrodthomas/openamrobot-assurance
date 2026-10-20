@@ -11,7 +11,7 @@ Standard clauses: ISO 12100 §5–§6, ISO 3691-4 §4 and Annex A, ISO 10218-2, 
 | ID | Work product | Gate | Status |
 |---|---|---|---|
 | [WP-C-01](WP-C-01-item-definition.md) | Item definition and limits of the machinery (intended use, foreseeable misuse, use, space and time limits) | G1 | Draft |
-| [WP-C-02](WP-C-02-operating-environment-and-tasks.md) | Operating environment and task specification (zones, floors, people, lighting) | G1 | Skeleton |
+| [WP-C-02](WP-C-02-operating-environment-and-tasks.md) | Operating environment and task specification (zones, floors, people, lighting) | G1 | Draft |
 | [WP-C-03](WP-C-03-risk-assessment.md) | Hazard identification and risk assessment (hazard list, risk estimation and evaluation) | G1 | Draft |
 | [WP-C-04](WP-C-04-safety-functions-and-plr.md) | Safety functions specification with required Performance Level, stop category and response time | G1 | Skeleton |
 | [WP-C-05](WP-C-05-risk-reduction-concept.md) | Risk reduction concept (three-step method: inherently safe design, safeguarding, information for use) | G1 | Skeleton |
