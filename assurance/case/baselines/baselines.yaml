@@ -5,8 +5,8 @@
 - id: BL-001
   kind: baseline
   title: "Initial assurance baseline (upstream Gate A unit as inherited)"
-  description: "Upstream repository state analysed by the gap assessment: openamr-platform-sw 8a7a5b1 (2026-10-19), openamr-platform-hw 6c32fba (2026-10-16), openamr-platform-fw f96014d (2026-10-12), openamrobot-release b9f4a9d (v0.0.1 manifest), openAMRobot/.github 9109d3e (decisions register, 2026-10-19), openamrobot-docs 95c6140. Firmware base linorobot2_hardware aaf9d59. No fork changes. Tagged assurance/BL-001 on jherrodthomas/openamr-platform-{sw,hw,fw} at these commits (2026-10-20). The fork firmware branch claude/wonderful-einstein-kr3bsf carries the hardening change on top."
+  description: "Upstream repository state analysed by the gap assessment: openamr-platform-sw 8a7a5b1 (2026-10-19), openamr-platform-hw 6c32fba (2026-10-16), openamr-platform-fw f96014d (2026-10-12), openamrobot-release b9f4a9d (v0.0.1 manifest), openAMRobot/.github 9109d3e (decisions register, 2026-10-19), openamrobot-docs 95c6140. Firmware base linorobot2_hardware aaf9d59. No fork changes. Tag assurance/BL-001 created at these commits in the local clones of jherrodthomas/openamr-platform-{sw,hw,fw} on 2026-10-20; the session git proxy refused tag pushes, so the tags are not on GitHub yet and the commit hashes are the baseline of record. The fork firmware branch claude/wonderful-einstein-kr3bsf carries the hardening change on top."
   lifecycle_status: under-development
-  tag: "assurance/BL-001"
+  tag: null
   source: WP-P-01
   source_revision: "8a7a5b1"
