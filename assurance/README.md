@@ -4,8 +4,7 @@ This tree holds the engineering assurance work products for the OpenAMRobot fork
 (ISO 12100), AMR and robot safety requirements (ISO 3691-4, ISO 10218, ISO/TS 15066), safety-related control
 (ISO 13849-1/-2, with IEC 62061 and IEC 61508 where 13849 runs out), electrical safety (EN 60204-1), cybersecurity
 (IEC 62443-4-1/-4-2), machine learning in safety functions (ISO/IEC TR 5469) and the regulatory file for
-Regulation (EU) 2023/1230. Safety-case structure follows UL 4600 principles. The layout, identifiers and lifecycle
-are LionDriver's, so the Living Safety Case tooling can be shared.
+Regulation (EU) 2023/1230. Safety-case structure follows UL 4600 principles.
 
 > [!WARNING]
 > Everything here is a **draft prepared for engineering review**. None of it has passed verification review,
@@ -15,13 +14,12 @@ are LionDriver's, so the Living Safety Case tooling can be shared.
 
 ## Living Safety Case
 
-The machine-readable records, the validator and the dashboard generator are to be ported from LionDriver's
-[`assurance/case/`](https://github.com/jherrodthomas/LionDriver/tree/liondriver-dev/assurance/case); see
+The machine-readable records, the validator and the dashboard generator are planned; see
 [`case/README.md`](case/README.md). Until then the safety case is the document [WP-K-01](10-safety-case/WP-K-01-safety-case.md),
 every figure on the README is generated from this repository's own data (register, process model, decision
 register), and no figure is a safety claim.
 
-What the dashboard will guarantee, as in LionDriver: a claim counts as accepted only when a recorded review accepts
+What the dashboard will guarantee: a claim counts as accepted only when a recorded review accepts
 it, every piece of evidence it cites is available and accepted, and no defeater against it is open. A passing CI run
 never accepts a claim on its own.
 
@@ -59,7 +57,7 @@ never accepts a claim on its own.
 | [`10-safety-case/`](10-safety-case/README.md) | Safety case, technical documentation index, cybersecurity case, assessment reports, release record and declaration draft; gate and confirmation records | UL 4600, IEC 61508-1 §8, Machinery Reg. Annexes IV–V |
 | [`process/`](process/README.md) | Integrated process model: activities, lanes, cross-domain interfaces and gates as data; generated maps and gate skeletons | ISO 13849-1 §4, IEC 61508-1 §6, MAN.3 |
 | [`trace/`](trace/README.md) | Machine-readable hazards, safety functions, requirements and trace data (tooling to be ported) | ISO 13849-1 §5 |
-| [`case/`](case/README.md) | Living Safety Case records, validator and generators (to be ported from LionDriver) | UL 4600 |
+| [`case/`](case/README.md) | Living Safety Case records, validator and generators (planned) | UL 4600 |
 | [`tools/`](tools/) | Folder index generator, link and table checkers | WP-P-04 |
 
 ## Conventions

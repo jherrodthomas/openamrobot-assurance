@@ -30,7 +30,7 @@ Every hazard has a safety function or a limit; every safety function has SRS row
 
 ## 4. Tooling
 
-To be ported from LionDriver's `trace/tools/`.
+A consistency checker and matrix generator over `trace/`, run in CI.
 
 ## 5. Open items
 

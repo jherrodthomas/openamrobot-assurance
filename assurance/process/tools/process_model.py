@@ -7,8 +7,7 @@ skeletons in `assurance/10-safety-case/gates/skeletons/`. Clause references, gat
 work-product status and role assignments are never copied into the model. They are read from WP-M-00,
 WP-M-02 and WP-M-06 at generation time, so a map cannot disagree with the register.
 
-Ported from LionDriver (assurance/process/tools/process_model.py); the standards columns and the
-confirmation-measure identifiers are the machinery set of WP-M-00 and WP-M-06.
+The standards columns and the confirmation-measure identifiers are the machinery set of WP-M-00 and WP-M-06.
 
 Usage:
     python3 process_model.py           # check the model and write the maps

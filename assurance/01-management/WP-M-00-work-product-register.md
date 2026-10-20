@@ -23,10 +23,8 @@ maps these work products onto the technical documentation that Regulation (EU) 2
 Tailoring decisions are recorded in [WP-M-01 §5](WP-M-01-assurance-strategy.md#5-tailoring). If a work product is
 tailored out, it stays in this register with status `N/A (tailored)` and a reference to its rationale.
 
-The layout, identifiers and lifecycle are LionDriver's, so the generators and checkers can be shared. The standards
-are different: OpenAMRobot is a machine under the Machinery Regulation, so the columns name the machinery standards
-([WP-M-01 §4](WP-M-01-assurance-strategy.md#4-the-standards-and-how-each-one-is-used) explains the mapping from
-LionDriver's automotive frame).
+OpenAMRobot is a machine under the Machinery Regulation, so the columns name the machinery standards
+([WP-M-01 §4](WP-M-01-assurance-strategy.md#4-the-standards-and-how-each-one-is-used) explains how each one is used).
 
 > [!NOTE]
 > Clause numbers are given for the editions named in [WP-M-01 §4](WP-M-01-assurance-strategy.md#4-the-standards-and-how-each-one-is-used).
@@ -221,7 +219,7 @@ Regulation (EU) 2023/1230 (Machinery Regulation), Regulation (EU) 2024/1689 (AI 
 
 | Standard or part | Rationale |
 |---|---|
-| ISO 26262, ISO 21448, ISO/SAE 21434, ISO/PAS 8800 | Road-vehicle standards. OpenAMRobot is machinery. LionDriver's method is kept where it is standard-agnostic (one hazard log, one requirements database, the Living Safety Case); ISO 21448 is cited only as an informative method for the insufficiency analysis (WP-C-10, WP-V-08) because no machinery standard covers performance limits of learned perception |
+| ISO 26262, ISO 21448, ISO/SAE 21434, ISO/PAS 8800 | Road-vehicle standards. OpenAMRobot is machinery. The standard-agnostic method is kept (one hazard log, one requirements database, the Living Safety Case); ISO 21448 is cited only as an informative method for the insufficiency analysis (WP-C-10, WP-V-08) because no machinery standard covers performance limits of learned perception |
 | ISO 13482 (personal care robots) | OpenAMRobot is assessed as an industrial mobile manipulator in a workplace; if a home or public-space use is added, this decision is revisited in WP-C-01 |
 | ANSI/A3 R15.08 (US industrial mobile robots) | Deferred pending the regulatory frame decision ([decision register](decisions/register.yaml) DQ-003). If the US market is added, a cross-reference to R15.08-1 is added to WP-M-13, not a second technical file |
 | UL 4600 conformance | Used as guidance for structuring the safety case (WP-K-01). No conformance claim is made |

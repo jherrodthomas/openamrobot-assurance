@@ -226,7 +226,7 @@ def standards_svg():
     body.append(text(330, y + 30, question, 17, C["text"], 600))
     body.append(text(330, y + 52, scope, 13, C["muted"]))
     y += row_h + 10
-  body.append(text(40, h - 14, "Every clause reference is marked to be checked against a licensed copy; the mapping from LionDriver's automotive frame is WP-M-01 §4.", 12, C["dim"]))
+  body.append(text(40, h - 14, "Every clause reference is marked to be checked against a licensed copy; how each standard is used is WP-M-01 §4.", 12, C["dim"]))
   desc = "Standards the engineering framework draws on. " + " ".join(f"{n} ({s}): {q}" for n, s, q, _ in STANDARDS) + " Aligned practices, not a claim of compliance."
   return svg(w, h, "std", "Standards-informed engineering framework", desc, defs, "\n".join(body))
 

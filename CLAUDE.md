@@ -1,7 +1,7 @@
 # Working with the project lead
 
-OpenAMRobot assurance is the safety-assurance record for a fork of the OpenAMRobot mobile manipulator platform,
-built the way LionDriver's is. The project lead is its safety authority and often reviews from a phone. Keep the
+OpenAMRobot assurance is the safety-assurance record for a fork of the OpenAMRobot mobile manipulator platform.
+The project lead is its safety authority and often reviews from a phone. Keep the
 decisions asked of them few, and make each one quick to answer.
 
 ## Decisions
@@ -28,7 +28,7 @@ Every question for the lead lives in the decision register,
 ## The record
 
 - The standards are the machinery set (ISO 12100, ISO 3691-4, ISO 13849-1, EN 60204-1, IEC 62443, ISO/IEC TR 5469,
-  the Machinery Regulation), mapped from LionDriver's automotive frame in
+  the Machinery Regulation); how each is used is
   [WP-M-01 §4](assurance/01-management/WP-M-01-assurance-strategy.md#4-the-standards-and-how-each-one-is-used). No
   standard is held: mark every clause reference as to be checked against a licensed copy.
 - Generated files are never edited by hand: folder READMEs (`assurance/tools/folder_index.py`), process maps and

@@ -19,7 +19,7 @@ be bench safety hardware on any unit the fork tests with, and it waits on a deci
 ## Why machinery standards and not ISO 26262?
 
 Because a robot that drives itself around a workplace is machinery under Regulation (EU) 2023/1230, not a road
-vehicle. The method is LionDriver's; the standards are ISO 12100, ISO 3691-4, ISO 13849-1, EN 60204-1, IEC 62443
+vehicle. The standards are ISO 12100, ISO 3691-4, ISO 13849-1, EN 60204-1, IEC 62443
 and ISO/IEC TR 5469. [How we use each standard](How-we-use-each-standard.md) has the mapping.
 
 ## What is a Performance Level, and why PL d?
@@ -45,7 +45,7 @@ never restated ([WP-M-10](../assurance/01-management/WP-M-10-upstream-and-suppli
 
 ## Where is the Living Safety Case dashboard?
 
-Not yet generated. The records, validator and dashboard generator are being ported from LionDriver
+Not yet generated. The records, validator and dashboard generator are planned
 ([`case/`](../assurance/case/README.md)). Until then, no number on the README is a safety claim; the figures that do
 exist (lifecycle, register status) are generated from this repository's own data.
 

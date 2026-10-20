@@ -22,7 +22,7 @@ changes its document-control header.
 | | [Baseline gap assessment](../assurance/00-assessment/gap-assessment.md) | Draft |
 | | [Work product register](../assurance/01-management/WP-M-00-work-product-register.md), [process model](../assurance/process/README.md), [decision register](../assurance/01-management/decisions/README.md) | Draft; checked by CI |
 | | Project plan, QA plan, risk register, cybersecurity and ML plans, upstream management, impact analysis, capability baseline | Skeleton |
-| | Living Safety Case records and dashboard | [To be ported](../assurance/case/README.md) from LionDriver |
+| | Living Safety Case records and dashboard | [Planned](../assurance/case/README.md) |
 | **2 · Safety engineering** | [Machine definition](../assurance/02-concept/WP-C-01-machine-definition-and-limits.md), [operating environment](../assurance/02-concept/WP-C-02-operating-environment-and-tasks.md), [risk assessment](../assurance/02-concept/WP-C-03-risk-assessment.md), [safety functions and PLr](../assurance/02-concept/WP-C-04-safety-functions-and-plr.md), [risk reduction concept](../assurance/02-concept/WP-C-05-risk-reduction-concept.md) | Skeleton |
 | | [Insufficiency analysis](../assurance/02-concept/WP-C-10-functional-insufficiency-analysis.md), [cybersecurity threat assessment](../assurance/02-concept/WP-C-07-cybersecurity-threat-and-risk-assessment.md), [ML component definition](../assurance/02-concept/WP-C-09-ml-component-definition-and-safety-requirements.md) | Skeleton |
 | | [Test operations hold point](../assurance/06-validation/WP-V-07-test-operations.md) | Draft; the bench safety hardware waits on the lead |

@@ -25,8 +25,8 @@ This document is the assurance path for the OpenAMRobot fork. It sets out:
 The [safety plan (WP-M-02)](WP-M-02-safety-plan.md), [cybersecurity plan (WP-M-08)](WP-M-08-cybersecurity-plan.md),
 [ML safety plan (WP-M-09)](WP-M-09-ml-safety-plan.md) and [regulatory conformity strategy (WP-M-13)](WP-M-13-regulatory-conformity-strategy.md)
 carry out this strategy for their own disciplines. The [work product register (WP-M-00)](WP-M-00-work-product-register.md)
-lists every output. The method is LionDriver's; the standards are the machinery set, because a robot that drives
-itself around a workplace is machinery under Regulation (EU) 2023/1230, not a road vehicle.
+lists every output. The standards are the machinery set, because a robot that drives itself around a workplace is
+machinery under Regulation (EU) 2023/1230, not a road vehicle.
 
 ## 2. Starting point
 
@@ -92,22 +92,22 @@ operating area, or for any configuration outside §3.1.**
 
 ## 4. The standards and how each one is used
 
-OpenAMRobot is machinery. The frame therefore differs from LionDriver's at every level, while the method (one
-hazard log, one requirements database, generated figures, a Living Safety Case) stays the same.
+OpenAMRobot is machinery. The method is one hazard log, one requirements database, generated figures and a Living
+Safety Case; the standards that feed it are these.
 
-| Question | LionDriver answers it with | OpenAMRobot answers it with | Where |
-|---|---|---|---|
-| What are the hazards and how much risk reduction does each need? | ISO 26262-3 HARA, ASIL | **ISO 12100** risk assessment (three-step method); **ISO 3691-4** list of significant hazards for AMRs; **ISO 10218-2** and **ISO/TS 15066** for the arms when they come; required **Performance Level** from the ISO 13849-1 Annex A risk graph | WP-C-01, C-03, C-04, C-05 |
-| Which safety functions must the machine have? | Vehicle-level safety goals | **ISO 3691-4 §4**: emergency stop, protective stop on personnel detection, speed control, braking, stability; **ISO 13850** for the emergency stop; **EN 60204-1 §9** for stop categories | WP-C-04 |
-| How good must the control system be, and how is that shown? | ASIL, ISO 26262-4/-5/-6 | **ISO 13849-1** categories B to 4, MTTFD, DCavg, CCF, PL a to e; **ISO 13849-2** validation and fault lists; **IEC 62061 / IEC 61508** where 13849 runs out (software beyond 13849-1 §7, management, assessment) | WP-S-02…S-05, WP-H-01…H-07, WP-W-01…W-09, WP-V-01…V-05 |
-| Is the electrical installation safe? | n/a (vehicle ECUs are outside the item) | **EN 60204-1**: supply disconnecting device, overcurrent protection, protection against electric shock, control circuits, verification | WP-H-02, H-05 |
-| Where may a person be relative to the robot? | ODD, ISO 21448 | **ISO 13855** approach speeds and safety distances; **IEC 61496** for electro-sensitive protective equipment; **ISO/TS 15066** power and force limits for the arms | WP-C-06, S-04, V-03 |
-| What if nothing fails but the sensors do not see? | ISO 21448 SOTIF | No machinery standard covers performance limits of perception. **ISO 21448 is used as an informative method** (triggering conditions, known and unknown scenarios) inside WP-C-10 and WP-V-08; the resulting limits become operating-environment limits or safety functions | WP-C-10, V-08 |
-| What if someone attacks it? | ISO/SAE 21434 | **IEC 62443-4-1** (secure development lifecycle) and **62443-4-2** (component requirements, security level target); 62443-3-2 for the zone and conduit model | WP-M-08, C-07, C-08, S-07, W-11, V-06, O-05 |
-| How far can a learned component be trusted? | ISO/PAS 8800 | **ISO/IEC TR 5469**: AI technology class and usage level; the fork's position is that no learned component implements a safety function. **AI Act** Annex I lists the Machinery Regulation, so a learned safety component would be a high-risk AI system | WP-M-09, C-09, W-10, K-07 |
-| Is the whole argument convincing? | UL 4600 | **UL 4600** principles for the safety case; the Living Safety Case records and generators ported from LionDriver | WP-K-01, `case/` |
-| What does the law require? | UNECE, NHTSA | **Regulation (EU) 2023/1230** (Machinery Regulation, applies from 20 January 2027): essential health and safety requirements (Annex III), technical documentation (Annex IV), conformity assessment (Art. 25, Annexes VI–X) with third-party assessment mandatory for machinery with self-evolving safety behaviour (Annex I Part A); **Regulation (EU) 2024/1689** (AI Act) for a learned safety component | WP-M-13, K-02, K-06, K-07 |
-| Are the processes capable? | ASPICE | **ASPICE 4.0** kept as the process capability frame (self-assessment), because the gap assessment already rates upstream against it and no machinery-specific process model exists | WP-M-12 |
+| Question | Answered with | Where |
+|---|---|---|
+| What are the hazards and how much risk reduction does each need? | **ISO 12100** risk assessment (three-step method); **ISO 3691-4** list of significant hazards for AMRs; **ISO 10218-2** and **ISO/TS 15066** for the arms when they come; required **Performance Level** from the ISO 13849-1 Annex A risk graph | WP-C-01, C-03, C-04, C-05 |
+| Which safety functions must the machine have? | **ISO 3691-4 §4**: emergency stop, protective stop on personnel detection, speed control, braking, stability; **ISO 13850** for the emergency stop; **EN 60204-1 §9** for stop categories | WP-C-04 |
+| How good must the control system be, and how is that shown? | **ISO 13849-1** categories B to 4, MTTFD, DCavg, CCF, PL a to e; **ISO 13849-2** validation and fault lists; **IEC 62061 / IEC 61508** where 13849 runs out (software beyond 13849-1 §7, management, assessment) | WP-S-02…S-05, WP-H-01…H-07, WP-W-01…W-09, WP-V-01…V-05 |
+| Is the electrical installation safe? | **EN 60204-1**: supply disconnecting device, overcurrent protection, protection against electric shock, control circuits, verification | WP-H-02, H-05 |
+| Where may a person be relative to the robot? | **ISO 13855** approach speeds and safety distances; **IEC 61496** for electro-sensitive protective equipment; **ISO/TS 15066** power and force limits for the arms | WP-C-06, S-04, V-03 |
+| What if nothing fails but the sensors do not see? | No machinery standard covers performance limits of perception. **ISO 21448 is used as an informative method** (triggering conditions, known and unknown scenarios) inside WP-C-10 and WP-V-08; the resulting limits become operating-environment limits or safety functions | WP-C-10, V-08 |
+| What if someone attacks it? | **IEC 62443-4-1** (secure development lifecycle) and **62443-4-2** (component requirements, security level target); 62443-3-2 for the zone and conduit model | WP-M-08, C-07, C-08, S-07, W-11, V-06, O-05 |
+| How far can a learned component be trusted? | **ISO/IEC TR 5469**: AI technology class and usage level; the fork's position is that no learned component implements a safety function. **AI Act** Annex I lists the Machinery Regulation, so a learned safety component would be a high-risk AI system | WP-M-09, C-09, W-10, K-07 |
+| Is the whole argument convincing? | **UL 4600** principles for the safety case; the Living Safety Case records and generators | WP-K-01, `case/` |
+| What does the law require? | **Regulation (EU) 2023/1230** (Machinery Regulation, applies from 20 January 2027): essential health and safety requirements (Annex III), technical documentation (Annex IV), conformity assessment (Art. 25, Annexes VI–X) with third-party assessment mandatory for machinery with self-evolving safety behaviour (Annex I Part A); **Regulation (EU) 2024/1689** (AI Act) for a learned safety component | WP-M-13, K-02, K-06, K-07 |
+| Are the processes capable? | **ASPICE 4.0** kept as the process capability frame (self-assessment), because the gap assessment already rates upstream against it and no machinery-specific process model exists | WP-M-12 |
 
 How each standard is cited: work products are structured after these standards and cite their clauses. **No
 compliance is claimed**, because no assessment has been performed and the drafting environment has no licensed copy
@@ -125,7 +125,7 @@ needs confirmation review by an independent assessor.
 | T-01 | Lifecycle entry | Treat the fork as a **modification of existing machinery**: impact analysis ([WP-M-11](WP-M-11-impact-analysis.md)), then a full concept phase. Nothing is reused from upstream as a safety work product, because none exists | Upstream has no risk assessment, safety functions or validation; the "deliberate and tracked" gaps are strengths of process, not evidence |
 | T-02 | Machine boundary | The machine is the mobile base as delivered plus the safety hardware the fork adds. The docking station, the Wi-Fi network and the operator's computer are outside the machine, with interface assumptions | The fork controls the robot; it does not control the site network or the operator's laptop |
 | T-03 | Safety function allocation | **Safety functions are implemented by a hardwired safety chain** (E-stop, safety relay, contactors, brakes, safety scanner OSSDs). The Teensy firmware and the ROS 2 stack are functional layers that are hardened but carry no PL claim. Recommended in decision DQ-012; open | Matches upstream's own principle (`TELEMETRY-NOT-SAFETY-EVIDENCE`); keeps the PL d argument inside components with certificates and known reliability data; avoids a PL d software lifecycle on 2,765 lines of untested Python |
-| T-04 | Firmware hardening | The firmware is hardened as LionDriver hardened panda (watchdog, `/cmd_vel` validation, plausibility checks, debug paths removed), **as defence in depth**, and recorded with impact analyses. It is verified to ISO 13849-1 §7 SRESW practices at the level of "could be claimed later", not claimed now | The hardening is cheap and reduces demand on the chain; a later decision can promote the firmware to part of the SRP/CS once it has a verification history |
+| T-04 | Firmware hardening | The firmware is hardened (watchdog, `/cmd_vel` validation, plausibility checks, debug paths removed), **as defence in depth**, and recorded with impact analyses. It is verified to ISO 13849-1 §7 SRESW practices at the level of "could be claimed later", not claimed now | The hardening is cheap and reduces demand on the chain; a later decision can promote the firmware to part of the SRP/CS once it has a verification history |
 | T-05 | Hardware | Safety components are bought with certificates (safety relay, contactors with mirror contacts, type 3 scanner, brakes) and qualified under ISO 13849-1 as well-tried or certified components; the remaining hardware (drivers, motors, encoders) is treated as not safety-related | No supplier evidence exists for the inherited drivers or motors; the chain removes power upstream of them |
 | T-06 | Proven in use | **Not claimed** for any element. Upstream's run history is supporting evidence only ([WP-P-09](../07-supporting/WP-P-09-proven-in-use.md)) | No controlled configuration or field-problem history that would meet IEC 61508 |
 | T-07 | Production | Tailored to assembly, commissioning and configuration control of a kit ([WP-O-01](../09-production-operation/WP-O-01-assembly-installation-commissioning.md)). The fork manufactures nothing | The robot is built by whoever follows the instructions; the instructions and the commissioning checks are the product |
@@ -244,7 +244,7 @@ Project risks are managed in [WP-M-07](WP-M-07-risk-management.md). The ones tha
 
 | ID | Item | Owner | Gate |
 |---|---|---|---|
-| OI-1 | Record CFG-001 as a configuration record once the Living Safety Case tooling is ported from LionDriver | Safety manager | G1 |
-| OI-2 | Replace the text diagram of §6.1 with a generated figure pinned to §6.1 and §6.2, as LionDriver pins WP-M-01 Figure 4-1 | Safety manager | G1 |
+| OI-1 | Record CFG-001 as a configuration record once the Living Safety Case records exist | Safety manager | G1 |
+| OI-2 | Replace the text diagram of §6.1 with a generated figure pinned to §6.1 and §6.2 so CI detects when it may be stale | Safety manager | G1 |
 | OI-3 | Confirm the tailoring table with the assessor once engaged (DQ-007) | Safety manager | G1 |
 | OI-4 | Obtain upstream's plan-set documents P-03, E-01 and B-02 or record their content as the fork's own design (GAP-33) | Project maintainer | G1 |

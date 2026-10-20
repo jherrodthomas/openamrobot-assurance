@@ -24,8 +24,8 @@ No confirmation measure has been performed at baseline `726046e`. No assessor is
 The machinery standards do not define a confirmation review. ISO 13849-1 asks for verification (§8) and validation
 (§10) and recommends that validation is done by persons independent of the design; IEC 61508-1 §8 defines the
 functional safety assessment and its independence (independent person, department or organisation, rising with the
-consequence of failure). This plan keeps LionDriver's vocabulary (confirmation reviews CR-nn at levels I0 to I3)
-and maps it onto those requirements, so that the same records, checkers and gate skeletons serve both projects.
+consequence of failure). This plan uses one vocabulary (confirmation reviews CR-nn at independence levels I0 to I3)
+and maps it onto those requirements, so that one set of records, checkers and gate skeletons serves every measure.
 
 Confirmation measures are separate from verification reviews. Verification reviews (normally by pull request, per
 [WP-P-05](../07-supporting/WP-P-05-verification-review-procedure.md)) check a work product against its inputs and

@@ -186,7 +186,7 @@ repository, not evidence.
 
 - **The architecture is the right shape.** A separate microcontroller is the last stage before the motors, and
   upstream intends the stop chain to bypass it in hardware (`ESTOP-SCOPE`, `TELEMETRY-NOT-SAFETY-EVIDENCE`). The
-  fork's safety argument can be the same doer/checker argument as LionDriver's, with the hardwired chain as the
+  fork's safety argument can be a doer/checker argument, with the hardwired chain as the
   checker of last resort.
 - **Upstream is honest about its gaps.** `docs/safety/00_safety_overview.md` §4, the hardware "Known hardware
   limitations", `motion-safety.md`, `KNOWN_LIMITATIONS.md` and the user safety page each state the absence of an
@@ -194,7 +194,7 @@ repository, not evidence.
   claim of safety; upstream makes none.
 - **A decision register with machine checks.** `decisions.yaml` records values, limits, exclusions and
   distinctions with sources, supersession, review dates and regex consistency scans run across every repository.
-  That is the same idea as this project's register and the LionDriver trace checks; it should be cited, not
+  That is the same idea as this project's register and trace checks; it should be cited, not
   duplicated.
 - **Governance.** Two-human approval on safety paths, DCO and CLA, CODEOWNERS, an engineering quality standard
   with evidence-based readiness levels that explicitly refuse "production-ready" without evidence, and a release
@@ -226,7 +226,7 @@ repository, not evidence.
    disconnect (GAP-19), a dual-channel E-stop through a safety relay dropping the driver supply or `BRK/DI5` on
    both drivers (GAP-01, GAP-02), and `ERR/DO1` read by the Teensy (GAP-04). This is bench hardware, not the
    product design; it is what makes the next months of testing defensible.
-5. **Harden the firmware layer** in the fork, as LionDriver hardened panda: enable the i.MX RT watchdog
+5. **Harden the firmware layer** in the fork: enable the i.MX RT watchdog
    (GAP-03), validate `/cmd_vel` (finite, bounded, with a sequence or timestamp; GAP-06), remove or arm the debug
    paths at runtime and bound their parameters (GAP-07, GAP-08), add encoder and stall plausibility (GAP-05),
    publish a version, reset cause and calibration-loaded flag (GAP-09, GAP-10). Record each change with an
@@ -242,5 +242,5 @@ repository, not evidence.
    reusable workflow to a SHA, pin the linorobot2 base as a submodule or vendored copy (GAP-29, GAP-32).
 10. **Request the plan-set documents** (P-03, E-01, B-02) from upstream or recreate their content in the fork's
    system design, so that every 2.0 claim in §8 has a readable source (GAP-33).
-11. **Port the Living Safety Case tooling** from LionDriver and register GAP-01…GAP-40 as the first defeaters
+11. **Build the Living Safety Case tooling** and register GAP-01…GAP-40 as the first defeaters
     against the top-level claim.

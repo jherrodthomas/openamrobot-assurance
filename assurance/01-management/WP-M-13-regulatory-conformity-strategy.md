@@ -19,8 +19,7 @@
 
 ## 1. Purpose
 
-LionDriver's regulatory frame was the US aftermarket, where no type approval applies. OpenAMRobot is machinery, and
-in the EU machinery is placed on the market under Regulation (EU) 2023/1230, which applies from 20 January 2027 and
+OpenAMRobot is machinery, and in the EU machinery is placed on the market under Regulation (EU) 2023/1230, which applies from 20 January 2027 and
 replaces Directive 2006/42/EC. This document records which regulations apply to the fork, which route to conformity
 is recommended, what the technical documentation must contain, and how the assurance work products of
 [WP-M-00](WP-M-00-work-product-register.md) map onto it. The frame itself is decision DQ-003 (EU recommended); the route

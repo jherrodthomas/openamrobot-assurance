@@ -30,8 +30,7 @@ architecture has the right shape for a safety argument: a large ROS 2 stack in f
 separate microcontroller that is the last thing before the motors. What it lacks, by its own account, is the safety
 engineering: no risk assessment, no emergency stop in the documented wiring, no brakes, no fuse, no safety-rated
 personnel detection, and no verification of the firmware. This fork keeps upstream's code and adds the record
-around it, built the way [LionDriver](https://github.com/jherrodthomas/LionDriver) built its record for openpilot,
-but under the standards that apply to a machine rather than a road vehicle.
+around it, under the standards that apply to a machine.
 
 ## The assurance record
 
@@ -49,7 +48,7 @@ Nothing is marked complete before its review.
 | Gates passed | None. Today is P0 governance; [gate skeletons](assurance/10-safety-case/gates/skeletons/) are generated from the process model |
 | Findings against the inherited robot | GAP-01…GAP-40 in the [gap assessment](assurance/00-assessment/gap-assessment.md), 23 of them high severity |
 | Questions waiting on the project lead | [Decision register](assurance/01-management/decisions/README.md): the frame, the reference robot, the required PL, the conformity route, the assessor, the bench safety hardware |
-| Living Safety Case dashboard | Not yet: the record tooling is [to be ported from LionDriver](assurance/case/README.md). Until then, no number on this page is generated and none is a safety claim |
+| Living Safety Case dashboard | Not yet: the record tooling is [planned](assurance/case/README.md). Until then, no number on this page is generated and none is a safety claim |
 
 **Start here:** [assurance strategy (WP-M-01)](assurance/01-management/WP-M-01-assurance-strategy.md) · [safety plan (WP-M-02)](assurance/01-management/WP-M-02-safety-plan.md) · [process model and maps (WP-P-11)](assurance/process/README.md) · [test operations hold point (WP-V-07)](assurance/06-validation/WP-V-07-test-operations.md)
 
@@ -61,7 +60,7 @@ Nothing is marked complete before its review.
   <img src="docs/assets/openamrobot/architecture.svg" width="100%" alt="Platform architecture. Layer 1, the ROS 2 functional stack inherited from OpenAMRobot and hardened as defence in depth: Nav2, velocity smoother, collision monitor, command arbiter, docking inside the envelope, authenticated operator UI, SROS2 and pinned builds, a learned policy outside every safety function. Layer 2, the Teensy firmware, the last software before the motors: command validation, hardware watchdog, driver fault read-back, plausibility checks, bounded debug paths, version and reset cause. Layer 3, the hardwired safety chain with a PL d target: two-channel E-stops, safety relay, two contactors, brakes engaged on power loss, safety scanner OSSDs, fuse and disconnect. A cross-cutting safety and assurance column of draft work products applies to every layer.">
 </p>
 
-The argument is LionDriver's doer-and-checker argument with one more step. The ROS 2 stack proposes; the firmware
+The argument is a doer-and-checker argument with one more step. The ROS 2 stack proposes; the firmware
 checks; and a hardwired safety chain is the checker of last resort that nothing in software can override. Only the
 chain carries a Performance Level target. The firmware and the ROS 2 stack are hardened so that the chain is rarely
 demanded, and recorded as defence in depth.
@@ -69,7 +68,7 @@ demanded, and recorded as defence in depth.
 | Layer | Role | State |
 |---|---|---|
 | ROS 2 functional stack | Navigation, docking, teleoperation, operator UI; in future a learned policy | Inherited; hardening proposed (command arbiter, docking inside the envelope, SROS2, pinned builds) |
-| Teensy firmware | Validates, times out and clamps every command; reads driver faults; drives the brakes | Inherited; hardening proposed, as LionDriver hardened panda |
+| Teensy firmware | Validates, times out and clamps every command; reads driver faults; drives the brakes | Inherited; hardening proposed |
 | Hardwired safety chain | Emergency stop, protective stop, brakes, power removal | **Does not exist yet.** Bench version first ([WP-V-07](assurance/06-validation/WP-V-07-test-operations.md)), product version in the [SRP/CS architecture](assurance/03-system/WP-S-03-srpcs-architecture.md) |
 | Safety and assurance | Risk assessment, safety functions and PLr, PL calculation, validation, cybersecurity, safety case | Draft and skeleton work products, not yet reviewed |
 
@@ -81,26 +80,26 @@ More in the [architecture overview](docs/architecture.md) and [WP-M-01 §6](assu
   <img src="docs/assets/openamrobot/standards.svg" width="100%" alt="Standards-informed engineering framework, one question per standard. ISO 12100: what could hurt someone, and how much risk reduction does it need? ISO 3691-4: which safety functions must a driverless machine have? ISO 13849-1 and -2: how reliable must the control system be, and how is that shown? EN 60204-1 and ISO 13850: is the electrical installation safe, and does the E-stop work? ISO 13855 and IEC 61496: where may a person be relative to the robot? IEC 62443: what if someone attacks it? ISO/IEC TR 5469: how far can a learned component be trusted? UL 4600 and the Machinery Regulation: is the whole argument convincing, and what does the law require? Aligned practices, not a compliance claim.">
 </p>
 
-OpenAMRobot is a machine, so the frame differs from LionDriver's at every level while the method stays the same: one
-hazard log, one requirements database, generated figures, a safety case with its defeaters published. Work products
+OpenAMRobot is a machine, so the frame is the machinery set, applied with one method: one hazard log, one
+requirements database, generated figures, a safety case with its defeaters published. Work products
 are structured after these standards and cite their clauses; **no compliance is claimed**, because no assessment has
 been performed. [WP-M-01 §4](assurance/01-management/WP-M-01-assurance-strategy.md#4-the-standards-and-how-each-one-is-used)
 explains how each standard is used and where it is tailored; the wiki's
 [How we use each standard](https://github.com/jherrodthomas/openamrobot-assurance/wiki/How-we-use-each-standard) is
 the plain-language version.
 
-| Topic | Standard | Replaces (LionDriver) | Main work products |
-|---|---|---|---|
-| Risk assessment and reduction | ISO 12100:2010 | HARA (ISO 26262-3) | [Machine definition](assurance/02-concept/WP-C-01-machine-definition-and-limits.md) · [Risk assessment](assurance/02-concept/WP-C-03-risk-assessment.md) · [Risk reduction concept](assurance/02-concept/WP-C-05-risk-reduction-concept.md) |
-| Driverless industrial trucks, including AMRs | ISO 3691-4:2023 | vehicle-level safety goals | [Safety functions and required PL](assurance/02-concept/WP-C-04-safety-functions-and-plr.md) |
-| Industrial robots and collaborative operation (arms, later) | ISO 10218-1/-2:2025, ISO/TS 15066:2016 | n/a | [Human-robot interaction](assurance/02-concept/WP-C-06-human-robot-interaction-and-misuse.md) |
-| Safety-related parts of control systems | ISO 13849-1:2023, ISO 13849-2:2012 | ASIL (ISO 26262) | [SRP/CS architecture](assurance/03-system/WP-S-03-srpcs-architecture.md) · [PL calculation](assurance/04-hardware/WP-H-04-reliability-data-and-pl-calculation.md) · [Safety validation](assurance/06-validation/WP-V-01-safety-validation.md) |
-| Where ISO 13849 runs out | IEC 62061:2021, IEC 61508:2010 | ISO 26262-5/-6 | [Software safety requirements](assurance/05-software/WP-W-02-software-safety-requirements.md) · [Confirmation measures](assurance/01-management/WP-M-06-confirmation-measures-plan.md) |
-| Electrical equipment, emergency stop, safeguard positioning | EN 60204-1:2018, ISO 13850:2015, ISO 13855:2024 | n/a | [Electrical safety](assurance/04-hardware/WP-H-05-electrical-safety.md) · [Stopping budget](assurance/03-system/WP-S-04-response-time-and-stopping-budget.md) |
-| Cybersecurity | IEC 62443-4-1:2018, IEC 62443-4-2:2019 | ISO/SAE 21434 | [Threat and risk assessment](assurance/02-concept/WP-C-07-cybersecurity-threat-and-risk-assessment.md) · [Cybersecurity plan](assurance/01-management/WP-M-08-cybersecurity-plan.md) |
-| Machine learning in safety functions | ISO/IEC TR 5469:2024 | ISO/PAS 8800 | [ML component definition](assurance/02-concept/WP-C-09-ml-component-definition-and-safety-requirements.md) · [ML safety plan](assurance/01-management/WP-M-09-ml-safety-plan.md) |
-| Regulatory | Regulation (EU) 2023/1230 (Machinery), Regulation (EU) 2024/1689 (AI Act) | UNECE / national | [Regulatory conformity strategy](assurance/01-management/WP-M-13-regulatory-conformity-strategy.md) |
-| Safety case structure | UL 4600 principles | same | [Safety case](assurance/10-safety-case/WP-K-01-safety-case.md) |
+| Topic | Standard | Main work products |
+|---|---|---|
+| Risk assessment and reduction | ISO 12100:2010 | [Machine definition](assurance/02-concept/WP-C-01-machine-definition-and-limits.md) · [Risk assessment](assurance/02-concept/WP-C-03-risk-assessment.md) · [Risk reduction concept](assurance/02-concept/WP-C-05-risk-reduction-concept.md) |
+| Driverless industrial trucks, including AMRs | ISO 3691-4:2023 | [Safety functions and required PL](assurance/02-concept/WP-C-04-safety-functions-and-plr.md) |
+| Industrial robots and collaborative operation (arms, later) | ISO 10218-1/-2:2025, ISO/TS 15066:2016 | [Human-robot interaction](assurance/02-concept/WP-C-06-human-robot-interaction-and-misuse.md) |
+| Safety-related parts of control systems | ISO 13849-1:2023, ISO 13849-2:2012 | [SRP/CS architecture](assurance/03-system/WP-S-03-srpcs-architecture.md) · [PL calculation](assurance/04-hardware/WP-H-04-reliability-data-and-pl-calculation.md) · [Safety validation](assurance/06-validation/WP-V-01-safety-validation.md) |
+| Where ISO 13849 runs out | IEC 62061:2021, IEC 61508:2010 | [Software safety requirements](assurance/05-software/WP-W-02-software-safety-requirements.md) · [Confirmation measures](assurance/01-management/WP-M-06-confirmation-measures-plan.md) |
+| Electrical equipment, emergency stop, safeguard positioning | EN 60204-1:2018, ISO 13850:2015, ISO 13855:2024 | [Electrical safety](assurance/04-hardware/WP-H-05-electrical-safety.md) · [Stopping budget](assurance/03-system/WP-S-04-response-time-and-stopping-budget.md) |
+| Cybersecurity | IEC 62443-4-1:2018, IEC 62443-4-2:2019 | [Threat and risk assessment](assurance/02-concept/WP-C-07-cybersecurity-threat-and-risk-assessment.md) · [Cybersecurity plan](assurance/01-management/WP-M-08-cybersecurity-plan.md) |
+| Machine learning in safety functions | ISO/IEC TR 5469:2024 | [ML component definition](assurance/02-concept/WP-C-09-ml-component-definition-and-safety-requirements.md) · [ML safety plan](assurance/01-management/WP-M-09-ml-safety-plan.md) |
+| Regulatory | Regulation (EU) 2023/1230 (Machinery), Regulation (EU) 2024/1689 (AI Act) | [Regulatory conformity strategy](assurance/01-management/WP-M-13-regulatory-conformity-strategy.md) |
+| Safety case structure | UL 4600 principles | [Safety case](assurance/10-safety-case/WP-K-01-safety-case.md) |
 
 | Supporting practice | Where it is applied |
 |---|---|
@@ -125,7 +124,7 @@ structure and clause map exist and the content is still to be written.
 | **1 · Foundation** | [Assurance strategy](assurance/01-management/WP-M-01-assurance-strategy.md), [safety plan](assurance/01-management/WP-M-02-safety-plan.md), [confirmation measures](assurance/01-management/WP-M-06-confirmation-measures-plan.md), [regulatory strategy](assurance/01-management/WP-M-13-regulatory-conformity-strategy.md) | Draft |
 | | [Baseline gap assessment](assurance/00-assessment/gap-assessment.md) | Draft |
 | | [Work product register](assurance/01-management/WP-M-00-work-product-register.md), [process model and maps](assurance/process/README.md), [decision register](assurance/01-management/decisions/README.md) | Draft; checked by CI |
-| | Living Safety Case records and dashboard | [To be ported](assurance/case/README.md) from LionDriver |
+| | Living Safety Case records and dashboard | [Planned](assurance/case/README.md) |
 | **2 · Safety engineering** | [Machine definition](assurance/02-concept/WP-C-01-machine-definition-and-limits.md), [operating environment](assurance/02-concept/WP-C-02-operating-environment-and-tasks.md), [risk assessment](assurance/02-concept/WP-C-03-risk-assessment.md), [safety functions and PLr](assurance/02-concept/WP-C-04-safety-functions-and-plr.md) | Skeleton |
 | | [Insufficiency analysis](assurance/02-concept/WP-C-10-functional-insufficiency-analysis.md), [cybersecurity threat assessment](assurance/02-concept/WP-C-07-cybersecurity-threat-and-risk-assessment.md), [ML component definition](assurance/02-concept/WP-C-09-ml-component-definition-and-safety-requirements.md) | Skeleton |
 | | [Test operations hold point](assurance/06-validation/WP-V-07-test-operations.md) | Draft; bench safety hardware waits on the lead (DQ-009) |
@@ -171,8 +170,7 @@ changes need a rationale, an impact analysis and appropriate verification.
 ## Maintainer and upstream attribution
 
 **Jherrod Thomas** maintains this record as an open engineering initiative: a public demonstration of
-safety-lifecycle development, systems engineering and assurance practice on a real robotics platform, the second
-such record after LionDriver.
+safety-lifecycle development, systems engineering and assurance practice on a real robotics platform.
 
 OpenAMRobot is published by [Botshare LTD](https://github.com/openAMRobot) under MIT (software), CERN-OHL-P-2.0
 (hardware) and CC BY 4.0 (documentation). This repository holds only assurance work products, under the

@@ -5,7 +5,7 @@
 
 - id: DQ-001
   ref: GAP-00
-  question: "Do we fork OpenAMRobot, as with openpilot, or contribute the assurance work upstream?"
+  question: "Do we fork OpenAMRobot, or contribute the assurance work upstream?"
   context: >-
     Upstream (Botshare LTD) publishes under MIT, CERN-OHL-P-2.0 and CC BY 4.0, so a fork is allowed. Contributing
     upstream instead means their contributor agreement, which transfers economic rights in contributions to
@@ -21,7 +21,7 @@
     - key: A
       recommended: true
       title: "Fork the three platform repositories and keep this record separate"
-      detail: "Same shape as LionDriver. Cost: our fixes reach upstream only through pull requests we choose to open, and the fork must not imply Botshare's endorsement."
+      detail: "Our own record, our own pace. Cost: our fixes reach upstream only through pull requests we choose to open, and the fork must not imply Botshare's endorsement."
     - key: B
       title: "Contribute upstream only"
       detail: "No fork to maintain. Cost: the contributor agreement, upstream's review cadence, and no control over what the record claims."
@@ -173,8 +173,8 @@
   context: >-
     Every confirmation review and the functional safety assessment need someone independent of the author, and the
     project has one person. Two measures are already due at G0 (the impact analysis and the safety plan) and six at
-    G1, including the review of the risk assessment that G1 cannot pass without. LionDriver answered the same
-    question with "not for now" and carries every I3 measure as unscheduled. An assessor with ISO 13849-1 and
+    G1, including the review of the risk assessment that G1 cannot pass without. Without an answer, every I3
+    measure stays unscheduled. An assessor with ISO 13849-1 and
     ISO 3691-4 experience costs money and time to brief; without one, no work product can ever leave draft.
   reversibility: revisit
   decider: lead
@@ -193,7 +193,7 @@
     - key: C
       title: "Not for now; record every I2 and I3 measure as unscheduled"
       detail: "No cost. Cost: nothing leaves draft, no gate can pass on its own terms, and the record stays a self-assessment until this changes."
-  sources: ["assurance/01-management/WP-M-06-confirmation-measures-plan.md §4, §6, OI-3, OI-5", "assurance/01-management/WP-M-02-safety-plan.md §3.1", "LionDriver decision register DQ-009"]
+  sources: ["assurance/01-management/WP-M-06-confirmation-measures-plan.md §4, §6, OI-3, OI-5", "assurance/01-management/WP-M-02-safety-plan.md §3.1"]
   status: open
 
 - id: DQ-008
@@ -260,9 +260,9 @@
   question: "While the project has one person, who approves the work products the safety manager writes, and do you accept self-approval as a recorded interim limitation?"
   context: >-
     The safety plan gives the safety manager approval of safety work products, and the same person writes them. A
-    verification review needs someone other than the author (I1); nobody holds that role. LionDriver recorded
-    self-approval as an accepted interim limitation with the gap stated in every header, and treats every review as
-    I0 until a second person joins. The alternative is to find a volunteer reviewer now, or to let the assessor of
+    verification review needs someone other than the author (I1); nobody holds that role. One honest option is to
+    record self-approval as an accepted interim limitation with the gap stated in every header, and to treat every
+    review as I0 until a second person joins. The alternative is to find a volunteer reviewer now, or to let the assessor of
     DQ-007 take the reviewer role for the few documents that matter.
   reversibility: easy
   decider: lead
@@ -281,7 +281,7 @@
     - key: C
       title: "Give the assessor of DQ-007 the verification reviewer role for the plans and the risk assessment"
       detail: "One engagement covers both. Cost: more billable hours, and the assessor then cannot confirm what they reviewed (independence)."
-  sources: ["assurance/01-management/WP-M-02-safety-plan.md §3.1, OI-1, OI-2", "assurance/01-management/WP-M-01-assurance-strategy.md T-09", "LionDriver WP-M-02 OI-2"]
+  sources: ["assurance/01-management/WP-M-02-safety-plan.md §3.1, OI-1, OI-2", "assurance/01-management/WP-M-01-assurance-strategy.md T-09"]
   status: open
 
 - id: DQ-011
@@ -391,7 +391,7 @@
     - key: C
       title: "Buy nothing until an assessor is engaged"
       detail: "No cost now. Cost: every clause reference stays unverified through G1 and G2, and the assessor's first finding is predictable."
-  sources: ["assurance/01-management/WP-M-06-confirmation-measures-plan.md OI-1", "assurance/01-management/WP-M-00-work-product-register.md (note on clause numbers)", "LionDriver decision register DQ-014"]
+  sources: ["assurance/01-management/WP-M-06-confirmation-measures-plan.md OI-1", "assurance/01-management/WP-M-00-work-product-register.md (note on clause numbers)"]
   status: open
 
 - id: DQ-015

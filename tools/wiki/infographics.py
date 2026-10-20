@@ -17,7 +17,6 @@ build_wiki.py renders them into the built wiki next to the pages at each sync, s
 and nothing is committed. `--out DIR` writes them anywhere; `--check DIR` fails when DIR's copies differ from what
 the records give now.
 
-Ported from LionDriver (tools/wiki/infographics.py) with the register figure added.
 
 Usage: python3 tools/wiki/infographics.py [--out DIR | --check DIR]
 """

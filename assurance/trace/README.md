@@ -18,7 +18,7 @@
 
 ## 1. Purpose
 
-Machine-readable requirement and trace data: hazards, safety functions, requirements, parameters, tests and their links, with the consistency checks CI runs; the data behind the trace matrices. Tooling to be ported from LionDriver's `trace/`.
+Machine-readable requirement and trace data: hazards, safety functions, requirements, parameters, tests and their links, with the consistency checks CI runs; the data behind the trace matrices. Tooling to be built with the first requirements.
 
 ## 2. Data files
 

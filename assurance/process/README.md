@@ -4,7 +4,7 @@
 |---|---|
 | Work product | WP-P-11 Integrated process model and generated process maps (all phases G0–G6 modelled) |
 | Standard reference | ISO 12100:2010 §4 (strategy: the iterative risk assessment and reduction process); ISO 13849-1:2023 §4 (planning and the design process of the SRP/CS); IEC 61508-1:2010 §6 and §7 (management and overall safety lifecycle); IEC 62443-4-1:2018 SM-1 (secure development process); ISO/IEC TR 5469:2024 (AI lifecycle, informative); ASPICE 4.0 MAN.3 (project lifecycle definition) |
-| Version | 0.1 (all phases G0 governance to G6 operation modelled; ported from LionDriver; 2026-10-20) |
+| Version | 0.1 (all phases G0 governance to G6 operation modelled; 2026-10-20) |
 | Status | Draft |
 | PL / scope | Process (all disciplines) |
 | Author | Assurance team (initial draft) |
@@ -20,7 +20,7 @@ say *what* each discipline produces. The [register (WP-M-00)](../01-management/W
 *which gate* needs each work product. Neither says how the disciplines' work fits together inside a phase: which
 analysis waits for which, and where two disciplines must agree.
 
-This folder records that as one integrated lifecycle, LionDriver's method applied to the machinery standards. The
+This folder records that as one integrated lifecycle. The
 principle is one lifecycle, not parallel lifecycles per standard:
 
 - each phase is a set of **activities** in discipline **lanes** (machinery risk assessment, safety-related control

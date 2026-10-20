@@ -30,7 +30,7 @@ Assembled by WP-K-02 from WP-M-00; retention and availability to authorities.
 
 ## 4. Controlled copies and snapshots
 
-To be ported from LionDriver's snapshot and controlled-copy workflows.
+A snapshot workflow that publishes the safety case as a PDF at a named baseline with a manifest of hashes, and a controlled-copy workflow that issues a numbered copy to a named recipient and records it.
 
 ## 5. Open items
 

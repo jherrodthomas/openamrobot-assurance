@@ -15,7 +15,7 @@ chain that removes actuator power and engages the brakes without any software in
 | Teensy 4.0 firmware | The last software before the motors: validates commands, times out, clamps, reads driver faults | ISO 13849-1 §7 practices, as "could be claimed later" | No Performance Level in the first safety case ([WP-M-01](../assurance/01-management/WP-M-01-assurance-strategy.md) T-04) |
 | Hardwired safety chain | Two-channel E-stops and safety-scanner outputs into a safety relay that drops two contactors and engages the brakes | ISO 13849-1 categories, MTTFD, DCavg, CCF; EN 60204-1; ISO 13850 | **PL d target** for the emergency stop and the protective stop (decision DQ-005) |
 
-The argument is LionDriver's doer-and-checker argument with one more step: the ROS 2 stack proposes, the firmware
+The argument is a doer-and-checker argument with one more step: the ROS 2 stack proposes, the firmware
 checks, and the chain is the checker of last resort that nothing in software can override. The full strategy is
 [WP-M-01 §6](../assurance/01-management/WP-M-01-assurance-strategy.md#6-safety-architecture-argument-the-central-strategy);
 the architecture work products are [WP-S-03](../assurance/03-system/WP-S-03-srpcs-architecture.md) (the chain),

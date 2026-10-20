@@ -104,8 +104,7 @@ product.
 
 ### 3.3 AI-assisted authoring
 
-Most work products to date were drafted with an AI coding assistant working under the maintainer's direction, as in
-LionDriver. Rules:
+Most work products to date were drafted with an AI coding assistant working under the maintainer's direction. Rules:
 
 - An AI-drafted work product or code change is the author's work. The person who commits it is the author for
   independence purposes (WP-P-05) and answers for its content.
@@ -164,7 +163,7 @@ applies them; it adds none.
 | Problem resolution, safety anomalies | [WP-P-03](../07-supporting/WP-P-03-problem-resolution.md) | Skeleton; GitHub issue templates in place |
 | Documentation management, technical file | [WP-P-04](../07-supporting/WP-P-04-documentation-management.md), [WP-K-02](../10-safety-case/WP-K-02-technical-documentation-index.md) | Skeleton |
 | Verification and review | [WP-P-05](../07-supporting/WP-P-05-verification-review-procedure.md) | Skeleton |
-| Requirements management and traceability | [WP-P-06](../07-supporting/WP-P-06-requirements-management-traceability.md), [`trace/`](../trace/README.md) | Skeleton; tooling to be ported from LionDriver |
+| Requirements management and traceability | [WP-P-06](../07-supporting/WP-P-06-requirements-management-traceability.md), [`trace/`](../trace/README.md) | Skeleton; tooling planned |
 | Tool and component qualification | [WP-P-07](../07-supporting/WP-P-07-tool-classification-qualification.md), [WP-P-08](../07-supporting/WP-P-08-software-component-qualification.md) | Skeleton |
 | Release | [WP-P-10](../07-supporting/WP-P-10-release-management.md) | Skeleton |
 | Integrated process model | [WP-P-11](../process/README.md) | Draft; maps and gate skeletons generated |
@@ -221,4 +220,4 @@ performed, unless the safety manager and the assessor agree a documented deferra
 | OI-2 | Decide who approves work products the safety manager authors (self-approval interim; decision DQ-010) | PM | G0 |
 | OI-3 | Engage the external assessor or record the decision not to for now (DQ-007) | PM | G1 |
 | OI-4 | Classify the AI assistant and the other drafting tools in WP-P-07 | SM | G3 |
-| OI-5 | Replace §4 with a generated lifecycle figure pinned to this table, as LionDriver's Figure 4-1 | SM | G1 |
+| OI-5 | Replace §4 with a generated lifecycle figure pinned to this table | SM | G1 |

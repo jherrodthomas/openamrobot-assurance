@@ -1,8 +1,7 @@
 # Reading the safety case
 
 The safety argument is published while it is being built. This page explains what the safety case is today, what
-the dashboard will show once the Living Safety Case tooling is ported from LionDriver, and what it does and does
-not promise.
+the dashboard will show once the Living Safety Case tooling exists, and what it does and does not promise.
 
 ## Today
 
@@ -24,12 +23,11 @@ No claim has evidence. No evidence is accepted. The known counter-evidence is GA
 
 ## What the dashboard will show
 
-LionDriver's [`assurance/case/`](https://github.com/jherrodthomas/LionDriver/tree/liondriver-dev/assurance/case)
-holds claims, evidence items, defeaters, assumptions, configurations, baselines and reviews as machine-readable
-records, a validator, and a generator that draws the README dashboard and a one-line headline: the lifecycle
-stage, the baseline, the number of claims and how many have accepted evidence, the evidence items and how many are
-accepted, the open defeaters, and a digest of every record. Porting it is [planned](../assurance/case/README.md).
-When it lands, the same rules apply here:
+[`assurance/case/`](../assurance/case/README.md) will hold claims, evidence items, defeaters, assumptions,
+configurations, baselines and reviews as machine-readable records, a validator, and a generator that draws the
+README dashboard and a one-line headline: the lifecycle stage, the baseline, the number of claims and how many have
+accepted evidence, the evidence items and how many are accepted, the open defeaters, and a digest of every record.
+When it lands, these rules apply:
 
 - A claim counts as accepted only when a recorded review accepts it, every piece of evidence it cites is available
   and accepted, and no defeater against it is open. The validator refuses anything else.

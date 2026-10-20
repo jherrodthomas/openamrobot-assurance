@@ -18,7 +18,7 @@
 
 ## 1. Purpose
 
-The safety case: the top-level claim of WP-M-01 §3.2, the sub-claims G1…G6, the argument under each, the evidence items with their review state, the assumptions, and the defeaters, seeded with GAP-01…GAP-40. Structured on UL 4600 principles; the machine-readable records and the generated dashboard are to be ported from LionDriver's `case/`.
+The safety case: the top-level claim of WP-M-01 §3.2, the sub-claims G1…G6, the argument under each, the evidence items with their review state, the assumptions, and the defeaters, seeded with GAP-01…GAP-40. Structured on UL 4600 principles; the machine-readable records and the generated dashboard are planned under `case/`.
 
 ## 2. Claim structure
 

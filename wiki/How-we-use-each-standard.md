@@ -1,7 +1,7 @@
 # How we use each standard
 
-OpenAMRobot is a machine, not a road vehicle, so the standards differ from LionDriver's at every level while the
-method stays the same: one hazard log, one requirements database, generated figures, a safety case with its
+OpenAMRobot is a machine, not a road vehicle. The standards are the machinery set, applied with one method: one
+hazard log, one requirements database, generated figures, a safety case with its
 defeaters published. This page says, for each standard, what the fork takes from it, what it does not claim, and
 where it lands in the record. The authoritative version is
 [WP-M-01 §4 and §5](../assurance/01-management/WP-M-01-assurance-strategy.md#4-the-standards-and-how-each-one-is-used).
@@ -134,7 +134,7 @@ environment has no licensed copy; every clause reference is marked to be checked
 - **What we take:** the structure: claims, arguments, evidence with review state, defeaters published rather than
   hidden, assumptions stated, feedback from the field.
 - **How:** [WP-K-01](../assurance/10-safety-case/WP-K-01-safety-case.md) now; the machine-readable records, validator
-  and dashboard [to be ported from LionDriver](../assurance/case/README.md). GAP-01…GAP-40 become the first
+  and dashboard [planned](../assurance/case/README.md). GAP-01…GAP-40 become the first
   defeaters.
 - **Position taken:** no UL 4600 conformance claim; guidance only.
 
@@ -159,19 +159,3 @@ environment has no licensed copy; every clause reference is marked to be checked
   register.
 - **Position taken:** a self-assessment, not an assessment; target CL2 for management, support, system and
   software processes, CL1 for hardware and ML.
-
-## What changed from LionDriver, in one table
-
-| Question | LionDriver | OpenAMRobot |
-|---|---|---|
-| Hazards and how much reduction | ISO 26262-3 HARA, ASIL | ISO 12100 risk assessment, ISO 3691-4 hazard list, required PL |
-| Which safety functions | Vehicle-level safety goals | ISO 3691-4 §4, ISO 13850, EN 60204-1 stop categories |
-| How good the control system is | ASIL, ISO 26262-4/-5/-6 | ISO 13849-1 categories, MTTFD, DCavg, CCF, PL |
-| Electrical installation | Outside the item | EN 60204-1 |
-| Where a person may be | ODD, ISO 21448 | ISO 13855, IEC 61496, ISO/TS 15066 |
-| Perception limits | ISO 21448 SOTIF | ISO 21448 as a method only |
-| Attacks | ISO/SAE 21434 | IEC 62443-4-1/-4-2 |
-| Learned components | ISO/PAS 8800 | ISO/IEC TR 5469, AI Act threshold |
-| The argument | UL 4600 | UL 4600 |
-| The law | UNECE, NHTSA | Machinery Regulation, AI Act |
-| Process capability | ASPICE | ASPICE (kept) |

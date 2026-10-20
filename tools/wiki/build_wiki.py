@@ -18,7 +18,6 @@ everything else. This tool turns that folder into what the GitHub wiki repositor
 It also checks the pages: every page is reachable from _Sidebar.md, every page link names a page that
 exists, and every repository link names a file or folder that exists in the checkout.
 
-Ported from LionDriver (tools/wiki/build_wiki.py).
 
 Usage: python3 tools/wiki/build_wiki.py [--out DIR] [--repo OWNER/NAME] [--branch NAME]
                                         [--commit SHA] [--date YYYY-MM-DD] [--src DIR]
