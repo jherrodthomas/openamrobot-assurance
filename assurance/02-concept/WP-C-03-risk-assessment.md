@@ -108,7 +108,7 @@ that hold only procedurally. The PLr is the level the safety function that addre
 | H-09 battery | S1 | F1 | P1 | AGM is sealed; gassing and back-feed are slow events | n/a | DM-06 source selection, battery monitoring |
 | H-10 mode confusion | S2 | F2 | P1 | Enables H-01 and H-02; a trained operator can avoid it | **c** (as a contributor to SF-01's usability) | SF-01 (physical, reachable, marked), information for use |
 | H-11 loss of sensing | S2 | F1 | P2 | Known LiDAR dropouts; software coasts on stale data | **c** | SF-04, SF-02 (fail-safe on stale source) |
-| H-12 unauthorised command | S2 | F1 | P2 | Depends on the network; a malicious or mistaken publisher is credible on a shared Wi-Fi | **c** (security, IEC 62443 SL 2 target) | CS-01 (WP-C-10), SF-03 bounds the consequence |
+| H-12 unauthorised command | S2 | F1 | P2 | Depends on the network; a malicious or mistaken publisher is credible on a shared Wi-Fi | **c** (security, IEC 62443 SL 2 target) | Cybersecurity requirements of [WP-C-08](WP-C-08-cybersecurity-requirements-and-sl-target.md) (threat scenario in WP-C-07); SF-03 bounds the consequence |
 
 ### 5.1 Counts
 
@@ -176,7 +176,7 @@ outside the assessment until GAP-15 and GAP-35 are closed.
 | Hazard | Gap-assessment findings | Decisions |
 |---|---|---|
 | H-01 | GAP-01, GAP-02, GAP-13, GAP-14, GAP-15, GAP-16, GAP-22, GAP-35 | DQ-005 |
-| H-02 | GAP-01, GAP-06, GAP-07, GAP-08, GAP-27, GAP-36 | |
+| H-02 | GAP-01, GAP-06, GAP-07, GAP-08, GAP-27, GAP-36 | DQ-006 |
 | H-03 | GAP-04, GAP-05, GAP-17, GAP-24 | |
 | H-04 | GAP-08, GAP-09 | |
 | H-05 | GAP-09, GAP-10, GAP-37 | |
@@ -186,7 +186,9 @@ outside the assessment until GAP-15 and GAP-35 are closed.
 | H-09 | GAP-20, GAP-21 | |
 | H-10 | GAP-28, GAP-12, GAP-38 | |
 | H-11 | GAP-03, GAP-16, GAP-37 | |
-| H-12 | GAP-27, GAP-29 | DQ-003 |
+| H-12 | GAP-27, GAP-29 | DQ-003, DQ-013 |
+
+Cyber-induced hazards are analysed in WP-C-07 ([threat and risk assessment](WP-C-07-cybersecurity-threat-and-risk-assessment.md)); H-12 is the hazard its scenarios map back to, and the security level target behind the PLr c rating is decision DQ-013.
 
 ## 10. Open items
 

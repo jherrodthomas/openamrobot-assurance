@@ -3,7 +3,7 @@
 | Field | Value |
 |---|---|
 | Work product | WP-C-01 Item definition and limits of the machinery |
-| Standard reference | ISO 12100:2010 §5.3 (determination of the limits of the machinery), §5.4 (hazard identification inputs); ISO 3691-4:2023 §3, §4 (terms, operating zones); ISO 13849-1:2023 §4.5; Regulation (EU) 2023/1230 Annex III §1.1.2, Annex VII Part A |
+| Standard reference | ISO 12100:2010 §5.3 (determination of the limits of the machinery), §5.4 (hazard identification inputs); ISO 3691-4:2023 §3, §4 (terms, operating zones); ISO 13849-1:2023 §4.5; Regulation (EU) 2023/1230 Annex III §1.1.2, Annex IV Part A (technical documentation) |
 | Version | 0.2 (2026-10-20): DQ-002 and DQ-005 applied. 0.1: initial draft from the gap assessment and the upstream record |
 | Status | Draft |
 | PL / scope | PL d target for the stop functions (DQ-005, decided 2026-10-20); reference configuration Gate A unit (DQ-002, decided 2026-10-20); mobile base only (DQ-004, recommended option A, open) |

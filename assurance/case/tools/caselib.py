@@ -1,7 +1,7 @@
 """Shared loading, validation and summary logic for the Living Safety Case records.
 
 The records live in assurance/case/<kind dir>/*.yaml and use the restricted YAML subset of
-LionDriver trace README section 4.1 (subsetyaml.py). They are parsed with the same subset parser as the trace
+assurance/case/README.md (subsetyaml.py). They are parsed with the same subset parser as the trace
 data (never PyYAML), so the result does not depend on what is installed.
 
 Nothing in this module changes a review or lifecycle state. It only reports what the records say,

@@ -3,7 +3,7 @@
 | Field | Value |
 |---|---|
 | Work product | WP-K-01 Safety case for the Gate A unit (UL 4600 structure: claims, arguments, evidence, defeaters) |
-| Standard reference | ISO 13849-1:2023 §4.7, §10 (information); ISO 12100 §7 (documentation); Regulation (EU) 2023/1230 Annex VII Part A (technical file); UL 4600 §5, §6 |
+| Standard reference | ISO 13849-1:2023 §4.7, §10 (information); ISO 12100 §7 (documentation); Regulation (EU) 2023/1230 Annex IV Part A (technical documentation); UL 4600 §5, §6 |
 | Version | 0.1 (2026-10-20): initial structure, every claim draft, every defeater open |
 | Status | Draft |
 | PL / scope | PL d target; Gate A unit (CFG-001); mobile base only |
@@ -28,6 +28,8 @@ it records what would have to be true, what evidence would show it, and what is 
 Goal G0 is argued over four strategies: S1 per safety function (G1.x), S2 over the complementary measures (G2.x),
 S3 over the command path (G3.x), S4 over the process (G4.x). GSN diagrams are generated from the records
 (`case/tools`), not drawn by hand.
+
+The cybersecurity branch of the argument is WP-K-03 ([cybersecurity case](WP-K-03-cybersecurity-case.md)); claims there that protect a safety function are referenced from the claims below, and the evidence for the safety functions themselves stays in this document.
 
 ## 3. Claims
 

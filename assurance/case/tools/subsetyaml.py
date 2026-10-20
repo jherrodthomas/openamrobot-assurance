@@ -1,4 +1,4 @@
-"""Parser for the restricted YAML subset of the assurance records (LionDriver trace README §4.1).
+"""Parser for the restricted YAML subset of the assurance records (assurance/case/README.md, record format).
 
 Standard library only; never PyYAML, so the result does not depend on what is installed.
 """

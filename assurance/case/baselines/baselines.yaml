@@ -1,6 +1,6 @@
 # Engineering baselines the assurance records refer to. A baseline is frozen only by a tagged
 # configuration baseline under WP-P-01; until then it is under development. Format: the restricted
-# YAML subset of LionDriver's assurance/case/README.md §3, so the validator can be shared when ported.
+# YAML subset described in assurance/case/README.md, so one validator can read every record.
 
 - id: BL-001
   kind: baseline

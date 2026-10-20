@@ -136,8 +136,8 @@ a gap.
 | GAP-22 ✔ | **No safety-rated detection of persons.** The LiDAR is "functional sensing only, not a safety device"; there is no safety laser scanner with OSSD outputs, no bumper, no protective field or speed-and-separation concept, and no blind-zone analysis. A1 range starts at 0.15 m; the A1 model itself is "not formally confirmed" | `hw: electrical/sensors/lidar.md:10-11, 54, 98`; `near-field.md:8-9` | 3691-4 §4, Annex A; 13849-1 §5 | High |
 | GAP-23 | **No mechanical safety data.** Mass, payload, centre of gravity, tip-over margin, slope limit, pinch and crush points, ingress protection and stopping distance are stated nowhere (the 45 kg figure is a worked example in the motor-sizing note, and its torque arithmetic disagrees with the rated torque). The Rev B battery pack is "placed only and not fixed"; CAD track (0.4075 m) is not the as-built track (0.46 m) | `hw: datasheets/motor-sizing-calculations.md:209, 507`; `components-bom.md:33, 50-52`; `CHANGELOG.md:61` | 12100 §5.3 (limits of the machinery); 3691-4 §4 (stability, braking) | High |
 | GAP-24 | **No regenerative-braking path.** Fault codes 7–9 cite "regenerative braking spikes (decel) with no bleed"; no braking resistor or bus clamp is documented. A hard deceleration can latch a driver fault (see GAP-04) | `hw: motor_control/motor-driver-fault-codes.md:42` | 60204-1 §7; 3691-4 §4 | Medium |
-| GAP-25 | **The BOM does not describe the robot.** The label-verified electrical BOM lists no fuse, E-stop, contactor, wire gauge or connector; the "preliminary" BOM and the spreadsheet list an E-stop and inline fuse that are not fitted; the spreadsheet is dated 2025 and names superseded parts. Key datasheets (ZBLD.C20 manual, S3, MB7060, TF-Luna, AC/DC, charger) are missing | `hw: manufacturing/bom/components-bom.md:11-24, 86, 91-95`; `mechanical-bom.md:142-143`; `BOM_specs_MMP.xlsx` | 13849-1 §10; Machinery Reg. Annex VII (technical file) | Medium |
-| GAP-26 | **Licence statements conflict** (CERN-OHL-P in `LICENSE`, "MIT for docs" in `NOTICE.md` and `CONTRIBUTING.md`, CC BY 4.0 in `LICENSING.md`); CAD declared "placeholder" while present; LFS declared unusable while the mechanical README says the files are in LFS. Not a safety finding, but it blocks a clean provenance record for the fork | `hw: LICENSE:1`; `LICENSING.md:7-9`; `NOTICE.md:18-20`; `CONTRIBUTING.md:7-13`; `.gitattributes:2` | 13849-1 §10; Machinery Reg. Annex VII | Low |
+| GAP-25 | **The BOM does not describe the robot.** The label-verified electrical BOM lists no fuse, E-stop, contactor, wire gauge or connector; the "preliminary" BOM and the spreadsheet list an E-stop and inline fuse that are not fitted; the spreadsheet is dated 2025 and names superseded parts. Key datasheets (ZBLD.C20 manual, S3, MB7060, TF-Luna, AC/DC, charger) are missing | `hw: manufacturing/bom/components-bom.md:11-24, 86, 91-95`; `mechanical-bom.md:142-143`; `BOM_specs_MMP.xlsx` | 13849-1 §12; Machinery Reg. Annex IV (technical documentation) | Medium |
+| GAP-26 | **Licence statements conflict** (CERN-OHL-P in `LICENSE`, "MIT for docs" in `NOTICE.md` and `CONTRIBUTING.md`, CC BY 4.0 in `LICENSING.md`); CAD declared "placeholder" while present; LFS declared unusable while the mechanical README says the files are in LFS. Not a safety finding, but it blocks a clean provenance record for the fork | `hw: LICENSE:1`; `LICENSING.md:7-9`; `NOTICE.md:18-20`; `CONTRIBUTING.md:7-13`; `.gitattributes:2` | 13849-1 §12; Machinery Reg. Annex IV | Low |
 
 ## 6. Cybersecurity
 
@@ -154,7 +154,7 @@ a gap.
 | GAP-30 ✔ | **No risk assessment, hazard list, safety functions or PLr exist.** The documentation site's Risk Assessment, Emergency Stop, Battery Safety, Safety-for-builders and E-stop-config pages are unfilled templates ("Under development … Do not treat unfinished guidance as validated"). Upstream places the risk assessment on the user: "perform a documented risk assessment for the complete configured system" | `docs: docs/foundations/safety/risk-assessment.md`, `emergency-stop.md`, `configure/safety-limits/estop-config.md`; `docs/safety/index.md`; `release: KNOWN_LIMITATIONS.md` | 12100 §5; 3691-4 §4; 13849-1 §4.5, §5; Machinery Reg. Annex III §1.1.2 | High |
 | GAP-31 | **Safety review is a checkbox.** Safety-relevant PRs require a "safety-impact statement" and two human approvals under CODEOWNERS, which is good, but there is no verification review, no independence level, no confirmation measure and no acceptance criterion behind the statement; CODEOWNERS has no owner for `/safety/` or `/electrical/` in the hardware repository | `.github: ENGINEERING_QUALITY_STANDARD.md` §7; `GOVERNANCE.md` (Platform-lead-authored PRs); `hw: .github/CODEOWNERS:1-4`; `.github/PULL_REQUEST_TEMPLATE.md:19` | 13849-1 §4.6, §10; 61508-1 §8 (functional safety assessment) | Medium |
 | GAP-32 | **The release is not a configuration baseline.** v0.0.1 was built from `*-main.zip` archives; the manifest "does not resolve immutable component commits"; every README still reads "OpenAMRobot vX.X.X"; the firmware repository has no tags and the deployed binary differs from the repository (2026-10-12 comment edits over the 2026-06-29 deployed files) | `release: release-config.json`, `RELEASE_PROCESS.md`; `.github: ENGINEERING_QUALITY_STANDARD.md` §2; `fw: boards/teensy_4_0/linorobot2_overlay/README.md:120-123` | 61508-1 §6.2.3; 13849-1 §10; ASPICE SUP.8 | Medium |
-| GAP-33 | **The safety-relevant design decisions are not in any repository.** The 2.0 safety chain, power distribution and gate criteria are cited to "P-03 Decision Addendum rev19.x" and "E-01 Safety and Power Distribution Baseline rev1.3", each "a plan-set document, not held in any repository; CI never reads it". The public register scans text for consistency with them but cannot verify them | `.github: decisions.yaml:78-101, 143-151, 774-867` | 13849-1 §10; Machinery Reg. Annex VII; 61508-1 §6.2 | High |
+| GAP-33 | **The safety-relevant design decisions are not in any repository.** The 2.0 safety chain, power distribution and gate criteria are cited to "P-03 Decision Addendum rev19.x" and "E-01 Safety and Power Distribution Baseline rev1.3", each "a plan-set document, not held in any repository; CI never reads it". The public register scans text for consistency with them but cannot verify them | `.github: decisions.yaml:78-101, 143-151, 774-867` | 13849-1 §12; Machinery Reg. Annex IV; 61508-1 §6.2 | High |
 | GAP-34 | **Process capability (estimated):** MAN.3, SUP.8, SUP.10 at CL1 on governance evidence; SYS.1–SYS.3, SWE.1–SWE.3, HWE.1–HWE.2 at CL0 (no requirements, architecture or analyses); SWE.4–SWE.6 at CL0 for firmware and for the docking package, CL1 for the navigation and driver packages (two CI test workflows); VAL.1 at CL0 (no recorded acceptance tests). Upstream's own "truthful inventory" audit of 4 September 2026 reaches the same picture | `.github: ENGINEERING_QUALITY_STANDARD.md` §2, §4; `sw: .github/workflows/` | ASPICE PAM 4.0; 61508-1 §6 | Medium |
 
 ## 8. OpenAMRobot 2.0: decided, not verifiable
@@ -186,7 +186,7 @@ repository, not evidence.
 
 - **The architecture is the right shape.** A separate microcontroller is the last stage before the motors, and
   upstream intends the stop chain to bypass it in hardware (`ESTOP-SCOPE`, `TELEMETRY-NOT-SAFETY-EVIDENCE`). The
-  fork's safety argument can be the same doer/checker argument as LionDriver's, with the hardwired chain as the
+  fork's safety argument can be a doer/checker argument, with the hardwired chain as the
   checker of last resort.
 - **Upstream is honest about its gaps.** `docs/safety/00_safety_overview.md` §4, the hardware "Known hardware
   limitations", `motion-safety.md`, `KNOWN_LIMITATIONS.md` and the user safety page each state the absence of an
@@ -194,7 +194,7 @@ repository, not evidence.
   claim of safety; upstream makes none.
 - **A decision register with machine checks.** `decisions.yaml` records values, limits, exclusions and
   distinctions with sources, supersession, review dates and regex consistency scans run across every repository.
-  That is the same idea as this project's register and the LionDriver trace checks; it should be cited, not
+  That is the same idea as this project's register and trace checks; it should be cited, not
   duplicated.
 - **Governance.** Two-human approval on safety paths, DCO and CLA, CODEOWNERS, an engineering quality standard
   with evidence-based readiness levels that explicitly refuse "production-ready" without evidence, and a release
@@ -226,7 +226,7 @@ repository, not evidence.
    disconnect (GAP-19), a dual-channel E-stop through a safety relay dropping the driver supply or `BRK/DI5` on
    both drivers (GAP-01, GAP-02), and `ERR/DO1` read by the Teensy (GAP-04). This is bench hardware, not the
    product design; it is what makes the next months of testing defensible.
-5. **Harden the firmware layer** in the fork, as LionDriver hardened panda: enable the i.MX RT watchdog
+5. **Harden the firmware layer** in the fork: enable the i.MX RT watchdog
    (GAP-03), validate `/cmd_vel` (finite, bounded, with a sequence or timestamp; GAP-06), remove or arm the debug
    paths at runtime and bound their parameters (GAP-07, GAP-08), add encoder and stall plausibility (GAP-05),
    publish a version, reset cause and calibration-loaded flag (GAP-09, GAP-10). Record each change with an
@@ -242,5 +242,5 @@ repository, not evidence.
    reusable workflow to a SHA, pin the linorobot2 base as a submodule or vendored copy (GAP-29, GAP-32).
 10. **Request the plan-set documents** (P-03, E-01, B-02) from upstream or recreate their content in the fork's
    system design, so that every 2.0 claim in §8 has a readable source (GAP-33).
-11. **Port the Living Safety Case tooling** from LionDriver and register GAP-01…GAP-40 as the first defeaters
+11. **Build the Living Safety Case tooling** and register GAP-01…GAP-40 as the first defeaters
     against the top-level claim.

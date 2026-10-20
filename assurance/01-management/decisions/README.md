@@ -40,6 +40,8 @@ The queue is seeded from the open items of the baseline gap assessment (`assuran
 
 ## The inbox page
 
+The published page is <https://claude.ai/artifact/MSSBZE1LNuCHs4xqaCNHzA> (private to the lead until shared). Republish it to that URL after every change to the register.
+
 The page shows open questions first (hard, then revisit, then easy), then answers waiting to be
 applied, then what is done, with a link to each commit or PR.
 

@@ -125,8 +125,8 @@ def dashboard_svg(s: dict) -> str:
     (ev["awaiting_review"], "Evidence to review", "drafted, not yet accepted", C["white"]),
     (s["actions_open"], "Open actions", "safety-case open items", C["white"]),
     (s["defeaters_open"], "Open defeaters", "known counter-evidence", C["white"]),
-    (cf["evaluated"], "Evaluated", "vehicle configurations", C["white"]),
-    (cf["assurance_supported"], "Assurance-supported", "vehicle configurations", C["white"]),
+    (cf["evaluated"], "Evaluated", "robot configurations", C["white"]),
+    (cf["assurance_supported"], "Assurance-supported", "robot configurations", C["white"]),
   ]
   tw, th, gap = 218, 128, 16
   for i, (n, l1, l2, color) in enumerate(tiles):

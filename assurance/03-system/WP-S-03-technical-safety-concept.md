@@ -26,8 +26,10 @@ driver brake inputs) that removes traction power on an emergency stop, a protect
 or a drive fault, and that must be reset deliberately. The microcontroller keeps its functional watchdog and gains
 a hardware watchdog, command validation and a fault detector, which are functional measures that reduce demands on
 the chain; they carry no PL claim on their own. Personnel detection and speed monitoring are done by safety-rated
-devices wired into the chain, never by the ROS 2 stack. This is the same doer/checker split as LionDriver's, with
+devices wired into the chain, never by the ROS 2 stack. This is the doer/checker split of the assurance strategy (WP-M-01 §6), with
 the checker in copper rather than in a second processor.
+
+The chain has no network input: every element that can stop the robot is wired, so no input of the safety chain is reachable from the network; the cybersecurity architecture ([WP-S-07](WP-S-07-cybersecurity-architecture.md)) keeps it a zone of its own.
 
 ## 2. Allocation of safety functions to elements
 
