@@ -3,9 +3,9 @@
 | Field | Value |
 |---|---|
 | Scope | Ideation note for a family of 2D views of the hazard situations, to complement the Blender review scenes of [`blender/`](blender/README.md): which views earn their place, what each is generated from, static or looping, what a view may claim, and which one is built first |
-| Version | 0.1 (2026-10-21): the options as discussed with the project lead in one session, with mockups shown in chat and the lead's picks |
-| Status | Draft. AI-drafted (Claude, AI assistant; I0 under WP-M-02 §3.3). No figures; nothing here is built. **Pictures only, no evidence credit** applies to everything this note proposes |
-| Feeds | A later generator under this track; [WP-C-06](../02-concept/WP-C-06-human-robot-interaction-and-misuse.md) §2 and [WP-C-02](../02-concept/WP-C-02-operating-environment-and-tasks.md) §2 as the places the views would be embedded; [WP-S-04](../03-system/WP-S-04-response-time-and-stopping-budget.md) §2 as the place for the loop diagrams. Not a work product of [WP-M-00](../01-management/WP-M-00-work-product-register.md); the generator is registered there before anything is committed (OI-1) |
+| Version | 0.2 (2026-10-21): the pilot built on the lead's "go": `figures/fig_sim_is.py`, the warehouse plan as WP-C-02 Figure 2-2 and the IS-01 loop as WP-C-06 Figure 2-2, checked in CI; OI-1 and OI-2 closed. 0.1 (2026-10-21): the options as discussed with the project lead in one session, with mockups shown in chat and the lead's picks |
+| Status | Draft. AI-drafted (Claude, AI assistant; I0 under WP-M-02 §3.3). The pilot of §8 is built; the rest is not. **Pictures only, no evidence credit** applies to everything this note proposes |
+| Feeds | A later generator under this track; [WP-C-06](../02-concept/WP-C-06-human-robot-interaction-and-misuse.md) §2 and [WP-C-02](../02-concept/WP-C-02-operating-environment-and-tasks.md) §2 as the places the views would be embedded; [WP-S-04](../03-system/WP-S-04-response-time-and-stopping-budget.md) §2 as the place for the loop diagrams. Not a work product of [WP-M-00](../01-management/WP-M-00-work-product-register.md): the generator is a figure source of WP-C-02 and WP-C-06, as their other figure scripts are, listed in the sim README and checked by CI |
 
 ## 1. What this note is
 
@@ -110,7 +110,7 @@ redraws every view from the measured value.
 
 ## 8. Order of work
 
-1. **Pilot:** the IS-01 crop as a loop and the warehouse plan as a still, both with the drawn stand-in sprite, so the
+1. **Pilot (built 2026-10-21, v0.2):** the IS-01 crop as a loop and the warehouse plan as a still, both with the drawn stand-in sprite, so the
    family is judged before any Blender time is spent. The pilot must show: the field as the sum of its terms with
    the coast hatched as unmeasured; the person's 0.91 m walk and the robot's 0.11 m; the outline changing at the
    demand and at power removal; the event row, the time strip and the distance plot; the band of §7.
@@ -162,8 +162,8 @@ pick below is the recommended option and can be overturned by a line in this tab
 
 | ID | Item | Owner | Due |
 |---|---|---|---|
-| OI-1 | Register the generator before the pilot is committed: WP-M-00 entry or figure source of WP-C-06 and WP-C-02, document-control header, CONTRIBUTING.md check line, sim README entry | Assurance team | before the pilot |
-| OI-2 | The session's mockups (warehouse plan, IS-01 loop with filmstrip, loop diagram, side elevation, dashboard) are not committed; the pilot reproduces the plan and the IS-01 loop from the tables | Assurance team | pilot |
+| OI-1 | ~~Register the generator before the pilot is committed~~ done in v0.2: `figures/fig_sim_is.py` is a figure source of WP-C-02 (Figure 2-2) and WP-C-06 (Figure 2-2), listed in the sim README, with its `--check` and self-tests in CONTRIBUTING.md and CI | closed | — |
+| OI-2 | ~~The session's mockups are not committed; the pilot reproduces the plan and the IS-01 loop from the tables~~ done in v0.2; the loop-diagram, side-elevation and dashboard mockups stay uncommitted until their steps of §8 | closed | — |
 | OI-3 | Replace the fictional site with the surveyed one when WP-O-01 records it; the aisle width and dock-lane length stay **(TBC)** against WP-C-02 §2 until then | Assurance team | with WP-O-01 |
 | OI-4 | The CAD sprite needs the Blender environment of `blender/README.md` §2; render CFG-001 and CFG-002 (stowed, carry) orthographic top-down, transparent, at a fixed scale, and pin the files | Assurance team | step 2 of §8 |
 | OI-5 | Decide whether the reBot-DevArm scenes.yaml schema is adopted when the tour loop or the dashboard is built, so that the 2D views and the Blender scenes share one description | Project lead | when the tour loop is scheduled |
