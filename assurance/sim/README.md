@@ -14,5 +14,6 @@
 | Path | Content |
 |---|---|
 | [`blender/`](blender/README.md) | The 3D scenes: STEP tessellation, the OpenArm arms from their description package, the procedural upper body, the warehouse set, the eight review renders and how to regenerate them |
+| [`ideas-2d-views.md`](ideas-2d-views.md) | Ideation note (Draft, no figures): the 2D views of the hazard situations to complement the 3D scenes, the options weighed, what each is generated from, and the lead's picks of 2026-10-21 |
 
 Not built yet: a physics layer (the stopping-distance and field model of WP-S-04 run as a plant with the fault list of WP-V-05), known scenarios as scripted runs, a closed loop with the navigation stack. Each is a planned layer of the same pattern and is added here when it exists; none is a work product of [WP-M-00](../01-management/WP-M-00-work-product-register.md) until the process model gets an activity for it.
