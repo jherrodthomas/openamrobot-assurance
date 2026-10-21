@@ -2,7 +2,7 @@
 
 | Field | Value |
 |---|---|
-| Scope | Pictures and, later, physics for the review of the risk assessment: the LionDriver `assurance/sim` pattern (physics in a scriptable engine, Blender for the review pictures, labelled synthetic output with no evidence credit) applied to OpenAMRobot |
+| Scope | Pictures and, later, physics for the review of the risk assessment: physics in a scriptable engine, Blender for the review pictures, labelled synthetic output with no evidence credit |
 | Version | 0.1 (2026-10-21): the Blender track only: the base from upstream's CAD, the 2.0 mobile manipulator from the OpenArm description package and documented dimensions, eight review scenes with a person |
 | Status | Draft. AI-drafted (Claude, AI assistant; I0 under WP-M-02 §3.3); reviewed by the project lead as pictures (2026-10-21). **Synthetic: pictures only, no evidence credit** |
 | Feeds | Review of [WP-C-03](../02-concept/WP-C-03-risk-assessment.md), [WP-C-06](../02-concept/WP-C-06-human-robot-interaction-and-misuse.md) and [WP-S-04](../03-system/WP-S-04-response-time-and-stopping-budget.md); one derived planning value (the arm reach, [blender/README.md §4](blender/README.md#4-what-is-real-and-what-is-approximated)). Nothing in the safety case |

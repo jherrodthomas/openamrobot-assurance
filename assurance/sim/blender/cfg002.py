@@ -2,7 +2,7 @@
 upstream's documented dimensions (general-arrangement page; supplier CAD not public, so these are labelled
 approximations), the two OpenArm 2.0 arms from the official description package (URDF joint tree and Collada
 meshes, enactic/openarm_description), a head camera and a chest E-stop; plus a CC0 pedestrian figure
-(LionDriver library/people). Everything here is a picture for review and earns no evidence credit."""
+(library/people). Everything here is a picture for review and earns no evidence credit."""
 import math
 import os
 import xml.etree.ElementTree as ET

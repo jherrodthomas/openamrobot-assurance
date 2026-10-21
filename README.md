@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/openamrobot/hero.svg" width="100%" alt="OpenAMRobot assurance. Open mobile manipulation. Engineered for safety. A geometric amber mobile manipulator with a cyan LiDAR, a red emergency stop and a dashed protective field on a perspective floor grid, beside the project name and the standards it follows.">
+  <img src="docs/assets/openamrobot/hero.svg" width="100%" alt="OpenAMRobot assurance. Open mobile manipulation. Engineered for safety. The OpenAMRobot 2.0 mobile manipulator rendered from the upstream CAD and description packages: a white octagonal base with a red emergency stop, a lift column, two OpenArm arms hanging stowed and a head camera, over a dashed protective field on a perspective floor grid, beside the project name and the standards it follows.">
 </p>
 
 <p align="center">

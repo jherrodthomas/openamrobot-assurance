@@ -17,6 +17,7 @@ Usage: python3 docs/assets/openamrobot/make_assets.py [--out DIR | --check]
 from __future__ import annotations
 
 import argparse
+import base64
 import collections
 import hashlib
 import math
@@ -30,6 +31,7 @@ ROOT = HERE.parents[2]
 ASSURANCE = ROOT / "assurance"
 README = ROOT / "README.md"
 NAMES = ("hero.svg", "standards.svg", "architecture.svg", "roadmap.svg", "lifecycle.svg", "status.svg", "standards-map.svg", "repo-map.svg")
+RENDER = HERE / "render" / "manipulator-three-quarter.png"   # rendered from upstream's STEP assembly; see render/README.md
 HEADLINE_BEGIN = "<!-- BEGIN GENERATED: record-headline (docs/assets/openamrobot/make_assets.py) -->"
 HEADLINE_END = "<!-- END GENERATED: record-headline -->"
 
@@ -237,8 +239,17 @@ def hero_svg():
     half = (y - vy) * 7.5
     body.append(f'<line x1="{vx - half:g}" y1="{y:g}" x2="{vx + half:g}" y2="{y:g}" stroke="{C["cyan"]}" stroke-opacity="{0.05 + 0.03 * k:.2f}" stroke-width="1"/>')
   body.append(f'<line x1="660" y1="{vy}" x2="{w}" y2="{vy}" stroke="{C["cyan"]}" stroke-opacity="0.25"/>')
-  # emblem
-  body.append(robot_emblem(990, 250, 1.0))
+  # the robot: the 2.0 mobile manipulator rendered from upstream's CAD and description packages (render/README.md),
+  # with the protective field drawn under the base
+  if RENDER.exists():
+    rx, ry, rw, rh = 772, 8, 445, 490    # the PNG is 1000 x 1100 with a transparent ground; the base's floor centre is at (505, 905)
+    cx, cy = rx + rw * 0.505, ry + rh * 0.823
+    body.append(f'<ellipse cx="{cx:g}" cy="{cy:g}" rx="172" ry="40" fill="{C["cyan"]}" fill-opacity="0.05" stroke="{C["cyan"]}" stroke-opacity="0.5" stroke-width="1.6" stroke-dasharray="8 6"/>')
+    body.append(f'<ellipse cx="{cx:g}" cy="{cy:g}" rx="118" ry="27" fill="{C["cyan"]}" fill-opacity="0.07" stroke="{C["cyan"]}" stroke-opacity="0.75" stroke-width="1.6"/>')
+    png = base64.b64encode(RENDER.read_bytes()).decode("ascii")
+    body.append(f'<image x="{rx}" y="{ry}" width="{rw}" height="{rh}" href="data:image/png;base64,{png}"/>')
+  else:
+    body.append(robot_emblem(990, 250, 1.0))
   # title block
   body.append(text(72, 150, "OPENAMROBOT ASSURANCE", 18, C["amber"], 700, extra=' letter-spacing="6"'))
   body.append(text(72, 218, "Open mobile manipulation.", 52, C["text"], 800, extra=' letter-spacing="-1"'))
@@ -253,9 +264,12 @@ def hero_svg():
     body.append(text(x + cw / 2, 424, chip, 13, C["text"], 600, anchor="middle", family=MONO))
     x += cw + 10
   body.append(text(72, 474, "Standards-informed engineering · no compliance claimed · nothing approved for operation around people", 13, C["dim"]))
+  if RENDER.exists():
+    body.append(text(w - 40, 500, "Rendered from the openAMRobot CAD (openamr-platform-hw, CERN-OHL-P-2.0) and the OpenArm 2.0 description package · a presentation asset, not evidence", 11, C["dim"], anchor="end"))
   body.append("</g>")
-  desc = ("OpenAMRobot assurance banner: a geometric mobile manipulator in amber with a cyan LiDAR, a red emergency stop and a dashed protective field on a "
-          "perspective floor grid, beside the project name and the tagline " + TAGLINE + " Chips name the standards: " + ", ".join(CHIPS) + ".")
+  robot = ("the OpenAMRobot 2.0 mobile manipulator rendered from upstream's CAD and description packages: a white octagonal base with a red emergency stop, a lift column, two OpenArm arms hanging stowed and a head camera, over a dashed protective field on a "
+           if RENDER.exists() else "a geometric mobile manipulator in amber with a cyan LiDAR, a red emergency stop and a dashed protective field on a ")
+  desc = ("OpenAMRobot assurance banner: " + robot + "perspective floor grid, beside the project name and the tagline " + TAGLINE + " Chips name the standards: " + ", ".join(CHIPS) + ".")
   return svg(w, h, "hero", "OpenAMRobot assurance: " + TAGLINE, desc, defs, "\n".join(body))
 
 
