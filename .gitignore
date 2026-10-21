@@ -1,3 +1,7 @@
 __pycache__/
 *.pyc
 build/
+assurance/sim/blender/mesh/
+assurance/sim/blender/out/
+assurance/sim/blender/render-venv/
+*.blend

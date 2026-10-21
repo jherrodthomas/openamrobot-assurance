@@ -239,8 +239,9 @@ scanners provides.
 
 SR-11.02 sizes the station workspace as the arm's reach plus K·(t_r + t_b) of the arm. With the SF-11 row of §2
 (t_r = 0.17 s) and the arm's stopping time unknown: the walk term is 0.32 m at 0.2 s total, 0.48 m at 0.3 s and
-0.80 m at 0.5 s. The reach and the stopping time of the OpenArm 2.0 are **(TBC: WP-C-01 OI-6)**; until they
-exist, the boundary cannot be drawn and AOU-10 holds. The lift moves at 18 mm/s: a stop within the 200 ms of
+0.80 m at 0.5 s. The reach of the OpenArm 2.0 is about 0.6 m shoulder to fingertip as a planning value read from the description
+package's joint offsets (`assurance/sim/blender`), so the boundary is about 1.1 m from the shoulder at a 0.3 s stop;
+the stopping time is **(TBC: WP-C-01 OI-6)** and until it exists the boundary is provisional and AOU-10 holds. The lift moves at 18 mm/s: a stop within the 200 ms of
 SR-12.04 travels 3.6 mm after the demand, so the keep-clear detection, not the lift's speed, sets the hazard.
 
 ## 5. Speed limits per zone

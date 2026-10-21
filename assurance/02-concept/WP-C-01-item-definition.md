@@ -250,7 +250,7 @@ without a cooler. Lighting: AprilTag docking needs the tags visible to the camer
 | Footprint and height | 780 × 582 mm chassis; at most 1700 mm high at full lift extension; arm mount points at x +0.240 or +0.290 m from `base_link`, y ±31 mm | `ARM-MOUNT`; 2.0 index page |
 | Mass | to be weighed; drive pair rated for 120 kg drivable mass; the F2S model is "static and quasi-static on flat floors" and "makes no safety claim" | `mass-and-stability.md` |
 | Arm payload and pulls | 4.1 kg nominal, 6.0 kg peak including the end effector; drawer and door pulls up to 150 N at working height with the hands close to the body | `dark-store-simulation.md`; `mass-and-stability.md` |
-| Arm reach, joint torque, contact force | **(TBC: official OpenArm 2.0 description; not quoted upstream)** | — |
+| Arm reach, joint torque, contact force | reach about 0.6 m shoulder to fingertip, a planning value read from the joint offsets of the OpenArm 2.0 description package (`enactic/openarm_description`, v2 URDF; see `assurance/sim/blender`); joint torque and contact force **(TBC: official OpenArm 2.0 description; not quoted upstream)** | `assurance/sim/blender/README.md` §4 |
 | Lift | 350 mm stroke, 800 N push, 18 mm/s; shoulder 1000 to 1350 mm; motion only in the stowed or carry pose with the base stopped | `LIFT` |
 | Floor and thresholds | flat indoor floors; thresholds and cable covers at crawl speed; the 35 mm castors stop on small steps | `mass-and-stability.md` |
 | Stopping distance, tipping margins | from the stopping tests and the F2S rerun, both pending | `mass-and-stability.md` |
@@ -345,5 +345,5 @@ OpenAMRobot 3.0. Until v0.3 the whole 2.0 design was out of scope; from v0.4 it 
 | OI-3 | Set a payload limit and a payload height limit | AOU-07 |
 | OI-4 | Resolve what the panel E-stop button switches on the as-built unit | GAP-01, SF-01 |
 | OI-5 | ~~Decide the regulatory frame (DQ-003) and the item scope (DQ-004)~~ both decided 2026-10-20 and applied in v0.4 (EU frame; the base with the arms and lift on CFG-001 and CFG-002, DQ-020 A) | closed |
-| OI-6 | Obtain the OpenArm 2.0 reach and stopping distance from the official description and record them in §4.5 (the contact-force limits are not needed for the claim since DQ-021 A) | WP-C-03 H-13, WP-C-06 CA-02 |
+| OI-6 | Obtain the OpenArm 2.0 reach and stopping distance from the official description and record them in §4.5 (the reach is in §4.5 as a planning value read from the description package's joint offsets, 2026-10-21; the stopping distance is still open) (the contact-force limits are not needed for the claim since DQ-021 A) | WP-C-03 H-13, WP-C-06 CA-02 |
 | OI-7 | Replace every CFG-002 row by a verified value as the 2.0 repositories and drawings become public (v2.0.0-rc.1, 20 November 2026) | every CFG-002 claim |
