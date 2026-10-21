@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="980" viewBox="0 0 1200 980" role="img" aria-labelledby="sim-is-01-t sim-is-01-d">
+<title id="sim-is-01-t">IS-01: a person crosses the aisle ahead at walking pace, looping</title>
+<desc id="sim-is-01-d">Looping top view of IS-01: in a warehouse aisle between two rack rows the robot drives at 0.2 m/s with its protective field FS-1b drawn ahead of it as four bands, the robot's travel during the reaction time, the coast, the person's walk and the tolerance; a person walks into the field at 1.6 m/s; the field outline turns red at the demand, the contactors open at 0.17 s, the robot coasts to a standstill at 0.57 s; the events light up below, a cursor runs along a time strip, and a plot shows the distance from the person to the robot's front falling to 0.72 m in the planning case.</desc>
+<defs><marker id="sim-is-01-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#122026"/></marker><pattern id="sim-is-01-hz" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#F2C01E"/><rect width="5" height="10" fill="#222222"/></pattern><pattern id="sim-is-01-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#B86F0C" stroke-width="1.2" opacity="0.6"/></pattern><pattern id="sim-is-01-hatchred" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#D64535" stroke-width="1.2" opacity="0.5"/></pattern><pattern id="sim-is-01-pallet" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#C9A06A"/><rect x="0" y="4" width="14" height="2" fill="#A77E4A"/><rect x="0" y="10" width="14" height="2" fill="#A77E4A"/></pattern></defs>
+<rect x="0" y="0" width="1200" height="980" fill="#FFFFFF"/>
+<text x="40.0" y="36.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#122026" text-anchor="start" >IS-01 · H-01 · Z2 · T-01: a person crosses the aisle ahead at walking pace</text>
+<text x="40.0" y="60.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#4E6A73" text-anchor="start" >Looping view: a fixed 6 × 3.6 m crop of the warehouse plan; FS-1b (CFG-001, coast fast: a = 0.5 m/s², unmeasured); t = -0.4 s to 0.90 s, then a 1.5 s hold</text>
+<text x="40.0" y="78.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#4E6A73" text-anchor="start" >The person is briefed staff, closest 0 m if the robot does not stop (WP-C-06 §2). A viewer that shows the SVG as a still shows t = -0.4 s.</text>
+<rect x="40.0" y="96.0" width="900.0" height="540.0" rx="0" fill="#D7DADD" stroke="#3B4045" stroke-width="3" />
+<clipPath id="sim-is-01-crop"><rect x="40" y="96" width="900.0" height="540.0"/></clipPath>
+<g clip-path="url(#sim-is-01-crop)">
+<rect x="-830.0" y="-579.0" width="630.0" height="390.0" rx="0" fill="#F2C01E" stroke="#3B4045" stroke-width="3" />
+<rect x="-830.0" y="-579.0" width="630.0" height="390.0" rx="0" fill="url(#sim-is-01-hatchred)" stroke="none" stroke-width="1" />
+<rect x="-830.0" y="-174.0" width="630.0" height="135.0" rx="0" fill="url(#sim-is-01-hatchred)" stroke="#D64535" stroke-width="1" stroke-dasharray="4,3" />
+<rect x="1705.0" y="921.0" width="900.0" height="660.0" rx="0" fill="#3B4045" stroke="none" stroke-width="1" />
+<rect x="1702.0" y="918.0" width="906.0" height="3.0" rx="0" fill="url(#sim-is-01-hz)" stroke="none" stroke-width="1" />
+<rect x="1810.0" y="981.0" width="240.0" height="540.0" rx="6" fill="#C8382E" stroke="#4A5B6C" stroke-width="2" />
+<rect x="1840.0" y="1401.0" width="180.0" height="135.0" rx="6" fill="#9FB3C8" stroke="#4A5B6C" stroke-width="2" />
+<rect x="2170.0" y="981.0" width="240.0" height="540.0" rx="6" fill="#8E9AA2" stroke="#4A5B6C" stroke-width="2" />
+<rect x="2200.0" y="1401.0" width="180.0" height="135.0" rx="6" fill="#9FB3C8" stroke="#4A5B6C" stroke-width="2" />
+<rect x="-830.0" y="771.0" width="810.0" height="750.0" rx="0" fill="#E6EFE8" stroke="#2C9A58" stroke-width="2.5" stroke-dasharray="8,5" />
+<rect x="-833.0" y="768.0" width="816.0" height="3.0" rx="0" fill="url(#sim-is-01-hz)" stroke="none" stroke-width="1" />
+<rect x="-695.0" y="1251.0" width="90.0" height="90.0" rx="2" fill="#E2C79B" stroke="#8C6B3F" stroke-width="1" />
+<rect x="-380.0" y="1401.0" width="90.0" height="45.0" rx="2" fill="#E2C79B" stroke="#8C6B3F" stroke-width="1" />
+<ellipse cx="-185.0" cy="1041.0" rx="42.0" ry="21.0" fill="#2F6DB5" stroke="#2B2B2B" stroke-width="1.2"/>
+<circle cx="-185.0" cy="1041.0" r="15.0" fill="#5B3A1E" stroke="#2B2B2B" stroke-width="1" />
+<rect x="127.0" y="-342.0" width="1446.0" height="126.0" rx="0" fill="url(#sim-is-01-hz)" stroke="none" stroke-width="1" />
+<rect x="130.0" y="-339.0" width="1440.0" height="120.0" rx="0" fill="#5F666C" stroke="none" stroke-width="1" />
+<rect x="133.0" y="-336.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="313.0" y="-336.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="493.0" y="-336.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="673.0" y="-336.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="853.0" y="-336.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="1033.0" y="-336.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="1213.0" y="-336.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="1393.0" y="-336.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="127.0" y="33.0" width="1446.0" height="126.0" rx="0" fill="url(#sim-is-01-hz)" stroke="none" stroke-width="1" />
+<rect x="130.0" y="36.0" width="1440.0" height="120.0" rx="0" fill="#5F666C" stroke="none" stroke-width="1" />
+<rect x="133.0" y="39.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="313.0" y="39.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="493.0" y="39.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="673.0" y="39.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="853.0" y="39.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="1033.0" y="39.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="1213.0" y="39.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="1393.0" y="39.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="127.0" y="498.0" width="1446.0" height="126.0" rx="0" fill="url(#sim-is-01-hz)" stroke="none" stroke-width="1" />
+<rect x="130.0" y="501.0" width="1440.0" height="120.0" rx="0" fill="#5F666C" stroke="none" stroke-width="1" />
+<rect x="133.0" y="504.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="313.0" y="504.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="493.0" y="504.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="673.0" y="504.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="853.0" y="504.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="1033.0" y="504.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="1213.0" y="504.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<rect x="1393.0" y="504.0" width="174.0" height="114.0" rx="0" fill="#7A8187" stroke="none" stroke-width="1" />
+<line x1="10.0" y1="-504.0" x2="10.0" y2="1431.0" stroke="#FFFFFF" stroke-width="2.5" stroke-dasharray="10,7" />
+<line x1="1660.0" y1="-504.0" x2="1660.0" y2="231.0" stroke="#FFFFFF" stroke-width="2.5" stroke-dasharray="10,7" />
+<line x1="10.0" y1="-504.0" x2="1660.0" y2="-504.0" stroke="#FFFFFF" stroke-width="2.5" stroke-dasharray="10,7" />
+<line x1="10.0" y1="1431.0" x2="1660.0" y2="1431.0" stroke="#FFFFFF" stroke-width="2.5" stroke-dasharray="10,7" />
+<line x1="10.0" y1="-91.5" x2="1660.0" y2="-91.5" stroke="#FFFFFF" stroke-width="2.5" stroke-dasharray="10,7" />
+<line x1="10.0" y1="328.5" x2="1660.0" y2="328.5" stroke="#FFFFFF" stroke-width="2.5" stroke-dasharray="10,7" />
+<line x1="10.0" y1="696.0" x2="1660.0" y2="696.0" stroke="#FFFFFF" stroke-width="2.5" stroke-dasharray="10,7" />
+<rect x="160.0" y="1236.0" width="180.0" height="150.0" rx="2" fill="url(#sim-is-01-pallet)" stroke="#8C6B3F" stroke-width="1" />
+<rect x="166.0" y="1242.0" width="67.5" height="127.5" rx="2" fill="#E2C79B" stroke="#8C6B3F" stroke-width="1" />
+<rect x="241.0" y="1242.0" width="67.5" height="127.5" rx="2" fill="#E2C79B" stroke="#8C6B3F" stroke-width="1" />
+<rect x="370.0" y="1236.0" width="180.0" height="150.0" rx="2" fill="url(#sim-is-01-pallet)" stroke="#8C6B3F" stroke-width="1" />
+<rect x="376.0" y="1242.0" width="67.5" height="127.5" rx="2" fill="#E2C79B" stroke="#8C6B3F" stroke-width="1" />
+<rect x="451.0" y="1242.0" width="67.5" height="127.5" rx="2" fill="#E2C79B" stroke="#8C6B3F" stroke-width="1" />
+<rect x="526.0" y="1242.0" width="67.5" height="127.5" rx="2" fill="#E2C79B" stroke="#8C6B3F" stroke-width="1" />
+<rect x="1330.0" y="1236.0" width="180.0" height="150.0" rx="2" fill="url(#sim-is-01-pallet)" stroke="#8C6B3F" stroke-width="1" />
+<rect x="1336.0" y="1242.0" width="67.5" height="127.5" rx="2" fill="#E2C79B" stroke="#8C6B3F" stroke-width="1" />
+<rect x="1411.0" y="1242.0" width="67.5" height="127.5" rx="2" fill="#E2C79B" stroke="#8C6B3F" stroke-width="1" />
+<rect x="640.0" y="-669.0" width="180.0" height="150.0" rx="2" fill="url(#sim-is-01-pallet)" stroke="#8C6B3F" stroke-width="1" />
+<rect x="646.0" y="-663.0" width="67.5" height="127.5" rx="2" fill="#E2C79B" stroke="#8C6B3F" stroke-width="1" />
+<rect x="721.0" y="-663.0" width="67.5" height="127.5" rx="2" fill="#E2C79B" stroke="#8C6B3F" stroke-width="1" />
+<rect x="796.0" y="-663.0" width="67.5" height="127.5" rx="2" fill="#E2C79B" stroke="#8C6B3F" stroke-width="1" />
+<rect x="880.0" y="-669.0" width="180.0" height="150.0" rx="2" fill="url(#sim-is-01-pallet)" stroke="#8C6B3F" stroke-width="1" />
+<rect x="886.0" y="-663.0" width="67.5" height="127.5" rx="2" fill="#E2C79B" stroke="#8C6B3F" stroke-width="1" />
+<rect x="961.0" y="-663.0" width="67.5" height="127.5" rx="2" fill="#E2C79B" stroke="#8C6B3F" stroke-width="1" />
+<circle cx="1270.0" cy="-594.0" r="45.0" fill="#F2C01E" stroke="#9A7A05" stroke-width="1.5" />
+<circle cx="1270.0" cy="-594.0" r="18.0" fill="#9A7A05" stroke="none" stroke-width="1" />
+<circle cx="1375.0" cy="-594.0" r="45.0" fill="#F2C01E" stroke="#9A7A05" stroke-width="1.5" />
+<circle cx="1375.0" cy="-594.0" r="18.0" fill="#9A7A05" stroke="none" stroke-width="1" />
+<circle cx="1270.0" cy="-489.0" r="45.0" fill="#F2C01E" stroke="#9A7A05" stroke-width="1.5" />
+<circle cx="1270.0" cy="-489.0" r="18.0" fill="#9A7A05" stroke="none" stroke-width="1" />
+<rect x="1090.0" y="1251.0" width="150.0" height="90.0" rx="2" fill="#C9CDD1" stroke="#7A8187" stroke-width="1" />
+<rect x="1720.0" y="-489.0" width="870.0" height="180.0" rx="0" fill="#DCE8F5" stroke="#2F6DB5" stroke-width="2" stroke-dasharray="6,4" />
+<rect x="2515.0" y="-444.0" width="60.0" height="90.0" rx="2" fill="#2F6DB5" stroke="#1E4A80" stroke-width="1.5" />
+<rect x="1720.0" y="-234.0" width="870.0" height="210.0" rx="0" fill="#FFF1D6" stroke="#B86F0C" stroke-width="2" />
+<rect x="1717.0" y="-237.0" width="876.0" height="3.0" rx="0" fill="url(#sim-is-01-hz)" stroke="none" stroke-width="1" />
+<rect x="2485.0" y="-166.5" width="75.0" height="105.0" rx="2" fill="#F2C01E" stroke="#9A7A05" stroke-width="1.5" />
+<rect x="790.0" y="156.0" width="360.0" height="75.0" rx="0" fill="#F2C01E" stroke="none" stroke-width="1" opacity="0.6"/>
+<circle cx="970.0" cy="306.0" r="162.0" fill="#B86F0C" stroke="#B86F0C" stroke-width="1.2" stroke-dasharray="4,3" fill-opacity="0.12"/>
+<circle cx="970.0" cy="381.0" r="82.5" fill="url(#sim-is-01-hatch)" stroke="#B86F0C" stroke-width="1" />
+<text x="138.0" y="565.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#E8EBED" text-anchor="start" >RACK 3</text>
+<g><animateTransform attributeName="transform" type="translate" values="0.00,0.00;12.00,0.00;17.10,0.00;23.10,0.00;23.10,0.00;23.10,0.00" keyTimes="0.0000;0.1429;0.2036;0.3464;0.4643;1.0000" dur="2.80s" repeatCount="indefinite" calcMode="linear"/>
+<rect x="233.5" y="270.0" width="5.1" height="117.0" rx="0" fill="#D64535" stroke="none" stroke-width="1" fill-opacity="0.22"/>
+<rect x="238.6" y="270.0" width="6.0" height="117.0" rx="0" fill="url(#sim-is-01-hatch)" stroke="none" stroke-width="1" />
+<rect x="244.6" y="270.0" width="136.8" height="117.0" rx="0" fill="#00938B" stroke="none" stroke-width="1" fill-opacity="0.22"/>
+<rect x="381.4" y="270.0" width="15.0" height="117.0" rx="0" fill="#2F6DB5" stroke="none" stroke-width="1" fill-opacity="0.22"/>
+<rect x="233.5" y="270.0" width="162.9" height="117.0" fill="none" stroke="#00938B" stroke-width="2" stroke-dasharray="6,3"><animate attributeName="stroke" values="#00938B;#00938B;#D64535;#D64535;#7E949B;#7E949B" keyTimes="0;0.1429;0.1439;0.2036;0.2046;1" dur="2.80s" repeatCount="indefinite"/></rect>
+<text x="237.5" y="401.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#00938B" text-anchor="start" >FS-1b 1.09 m = 0.034 + 0.040 coast + 0.91 walk + 0.10</text>
+<g opacity="1.0" transform="translate(175.0,328.5) scale(1,1)">
+<rect x="-58.5" y="-43.5" width="117.0" height="87.0" rx="10.500000000000002" fill="#F4F6F7" stroke="#1B1F22" stroke-width="2" />
+<rect x="-58.5" y="-43.5" width="7.5" height="87.0" rx="4.5" fill="#1B1F22" stroke="none" stroke-width="1" />
+<rect x="51.0" y="-43.5" width="7.5" height="87.0" rx="4.5" fill="#1B1F22" stroke="none" stroke-width="1" />
+<rect x="-30.0" y="-48.0" width="30.0" height="9.0" rx="2" fill="#15181A" stroke="#2F3A44" stroke-width="1" />
+<rect x="-30.0" y="39.0" width="30.0" height="9.0" rx="2" fill="#15181A" stroke="#2F3A44" stroke-width="1" />
+<circle cx="-37.5" cy="0.0" r="7.5" fill="#9AA3AB" stroke="#2F6DB5" stroke-width="1" />
+<circle cx="40.5" cy="-28.5" r="7.5" fill="#9AA3AB" stroke="#2F6DB5" stroke-width="1" />
+<circle cx="40.5" cy="28.5" r="7.5" fill="#9AA3AB" stroke="#2F6DB5" stroke-width="1" />
+<circle cx="43.5" cy="0.0" r="5.3" fill="#00938B" stroke="none" stroke-width="1" />
+<rect x="-65.2" y="-40.5" width="6.0" height="81.0" rx="2" fill="#D64535" stroke="none" stroke-width="1" />
+</g>
+<text x="175.0" y="265.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="middle" opacity="1">0.20 m/s<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.2036;0.2046;1" dur="2.80s" repeatCount="indefinite"/></text>
+<text x="175.0" y="265.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#B86F0C" text-anchor="middle" opacity="0">coasting<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.2036;0.2046;0.3464;0.3474;1" dur="2.80s" repeatCount="indefinite"/></text>
+<text x="175.0" y="265.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#2C9A58" text-anchor="middle" opacity="0">STANDSTILL<animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.3464;0.3474;1" dur="2.80s" repeatCount="indefinite"/></text>
+</g>
+<g><animateTransform attributeName="transform" type="translate" values="-0.00,-96.00;0.00,216.00;0.00,216.00" keyTimes="0.0000;0.4643;1.0000" dur="2.80s" repeatCount="indefinite" calcMode="linear"/>
+<ellipse cx="363.4" cy="249.0" rx="42.0" ry="21.0" fill="#F28C28" stroke="#2B2B2B" stroke-width="1.2"/>
+<circle cx="363.4" cy="249.0" r="15.0" fill="#5B3A1E" stroke="#2B2B2B" stroke-width="1" />
+<text x="415.9" y="253.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#122026" text-anchor="start" >briefed staff, K = 1.6 m/s</text>
+</g>
+</g>
+<rect x="790.0" y="121.5" width="126.0" height="20.0" rx="10" fill="#FFFFFF" stroke="#00938B" stroke-width="1.4" />
+<text x="798.0" y="135.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="700" fill="#00938B" text-anchor="start" >H-01 IS-01</text>
+<text x="910.0" y="135.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="700" fill="#00938B" text-anchor="end" >PLr d</text>
+<g opacity="0.25"><animate attributeName="opacity" values="0.25;0.25;1;1" keyTimes="0;0.1429;0.1439;1" dur="2.80s" repeatCount="indefinite"/><rect x="40.0" y="660.0" width="216.0" height="30.0" rx="6" fill="#F7FAFB" stroke="#D64535" stroke-width="1.4" /><text x="50.0" y="680.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10.5" font-weight="700" fill="#D64535" text-anchor="start" >0.00 s  field violated</text></g>
+<g opacity="0.25"><animate attributeName="opacity" values="0.25;0.25;1;1" keyTimes="0;0.1786;0.1796;1" dur="2.80s" repeatCount="indefinite"/><rect x="272.0" y="660.0" width="216.0" height="30.0" rx="6" fill="#F7FAFB" stroke="#00938B" stroke-width="1.4" /><text x="282.0" y="680.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10.5" font-weight="700" fill="#00938B" text-anchor="start" >0.10 s  OSSDs open</text></g>
+<g opacity="0.25"><animate attributeName="opacity" values="0.25;0.25;1;1" keyTimes="0;0.2036;0.2046;1" dur="2.80s" repeatCount="indefinite"/><rect x="504.0" y="660.0" width="216.0" height="30.0" rx="6" fill="#F7FAFB" stroke="#D64535" stroke-width="1.4" /><text x="514.0" y="680.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10.5" font-weight="700" fill="#D64535" text-anchor="start" >0.17 s  contactors open</text></g>
+<g opacity="0.25"><animate attributeName="opacity" values="0.25;0.25;1;1" keyTimes="0;0.3464;0.3474;1" dur="2.80s" repeatCount="indefinite"/><rect x="736.0" y="660.0" width="216.0" height="30.0" rx="6" fill="#F7FAFB" stroke="#2C9A58" stroke-width="1.4" /><text x="746.0" y="680.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10.5" font-weight="700" fill="#2C9A58" text-anchor="start" >0.57 s  standstill</text></g>
+<g opacity="0.25"><rect x="968.0" y="660.0" width="216.0" height="30.0" rx="6" fill="#F7FAFB" stroke="#2C9A58" stroke-width="1.4" /><text x="978.0" y="680.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10.5" font-weight="700" fill="#2C9A58" text-anchor="start" >contact: none</text></g>
+<text x="40.0" y="714.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start" >time, scene seconds</text>
+<line x1="60.0" y1="730.0" x2="1140.0" y2="730.0" stroke="#7E949B" stroke-width="2" />
+<line x1="60.0" y1="723.0" x2="60.0" y2="737.0" stroke="#122026" stroke-width="1.5" />
+<text x="60.0" y="752.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="middle" >-0.4</text>
+<line x1="392.3" y1="723.0" x2="392.3" y2="737.0" stroke="#122026" stroke-width="1.5" />
+<text x="392.3" y="752.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="middle" >0 demand</text>
+<line x1="533.5" y1="723.0" x2="533.5" y2="737.0" stroke="#122026" stroke-width="1.5" />
+<text x="533.5" y="752.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="middle" >0.17 power off</text>
+<line x1="865.8" y1="723.0" x2="865.8" y2="737.0" stroke="#122026" stroke-width="1.5" />
+<text x="865.8" y="752.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="middle" >0.57 standstill</text>
+<line x1="1140.0" y1="723.0" x2="1140.0" y2="737.0" stroke="#122026" stroke-width="1.5" />
+<text x="1140.0" y="752.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="middle" >0.90 hold</text>
+<line x1="60" y1="714.0" x2="60" y2="740.0" stroke="#D64535" stroke-width="2.5"><animateTransform attributeName="transform" type="translate" values="0,0;1080.0,0;1080.0,0" keyTimes="0;0.4643;1" dur="2.80s" repeatCount="indefinite" calcMode="linear"/></line>
+<rect x="40.0" y="768.0" width="1120.0" height="130.0" rx="6" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1" />
+<text x="52.0" y="782.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start" >distance from the person to the robot's front, m (planning case); the red line is the field edge, the cursor the time shown</text>
+<polyline points="60.0,835.2 101.5,837.4 143.1,839.5 184.6,841.5 226.2,843.5 267.7,845.5 309.2,847.4 350.8,849.1 392.3,850.8 433.8,852.4 475.4,853.8 516.9,855.1 558.5,856.1 600.0,857.0 641.5,857.5 683.1,857.7 724.6,857.6 766.2,857.2 807.7,856.5 849.2,855.6 890.8,854.4 932.3,853.1 973.8,851.5 1015.4,849.9 1056.9,848.2 1098.5,846.4 1140.0,844.4" fill="none" stroke="#00938B" stroke-width="2"/>
+<line x1="60.0" y1="846.6" x2="1140.0" y2="846.6" stroke="#D64535" stroke-width="1" stroke-dasharray="4,3" />
+<text x="54.0" y="850.6" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9" font-weight="600" fill="#D64535" text-anchor="end" >1.09</text>
+<text x="54.0" y="884.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9" font-weight="600" fill="#4E6A73" text-anchor="end" >0</text>
+<line x1="60" y1="788.0" x2="60" y2="880.0" stroke="#122026" stroke-width="1.5"><animateTransform attributeName="transform" type="translate" values="0,0;1080.0,0;1080.0,0" keyTimes="0;0.4643;1" dur="2.80s" repeatCount="indefinite" calcMode="linear"/></line>
+<text x="1140.0" y="896.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#00938B" text-anchor="end" >closest approach in the planning case: 0.72 m; a person who keeps walking passes in front of the stopped robot</text>
+<text x="1168.0" y="928.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#7E949B" text-anchor="end" >Generated by assurance/sim/figures/fig_sim_is.py</text>
+<rect x="0.0" y="936.0" width="1200.0" height="44.0" rx="0" fill="#FFF6E8" stroke="none" stroke-width="1" />
+<text x="16.0" y="954.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#B86F0C" text-anchor="start" >SYNTHETIC: pictures only, no evidence credit</text>
+<text x="16.0" y="969.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#B86F0C" text-anchor="start" >Kinematic motion from WP-S-04 v0.1 planning values (t_r 0.17 s, a = 0.5 m/s² unmeasured, C = 0, K = 1.6 m/s). A loop shows a situation; it does not show that a measure works.</text>
+</svg>
