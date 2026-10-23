@@ -16,8 +16,8 @@ Standard clauses: ISO 12100 §5–§6, ISO 3691-4 §4 and Annex A, ISO 10218-2, 
 | [WP-C-04](WP-C-04-safety-functions-and-plr.md) | Safety functions specification with required Performance Level, stop category and response time | G1 | Draft |
 | [WP-C-05](WP-C-05-risk-reduction-concept.md) | Risk reduction concept (three-step method: inherently safe design, safeguarding, information for use) | G1 | Draft |
 | [WP-C-06](WP-C-06-human-robot-interaction-and-misuse.md) | Human-robot interaction, collaborative operation and reasonably foreseeable misuse analysis | G1 | Draft |
-| [WP-C-07](WP-C-07-cybersecurity-threat-and-risk-assessment.md) | Cybersecurity threat and risk assessment | G1 | Skeleton |
-| [WP-C-08](WP-C-08-cybersecurity-requirements-and-sl-target.md) | Cybersecurity requirements and security level target | G1 | Skeleton |
+| [WP-C-07](WP-C-07-cybersecurity-threat-and-risk-assessment.md) | Cybersecurity threat and risk assessment | G1 | Draft |
+| [WP-C-08](WP-C-08-cybersecurity-requirements-and-sl-target.md) | Cybersecurity requirements and security level target | G1 | Draft |
 | [WP-C-09](WP-C-09-ml-component-definition-and-safety-requirements.md) | ML component definition and safety requirements (learned policy, perception models) | G1 | Skeleton |
 | [WP-C-10](WP-C-10-functional-insufficiency-analysis.md) | Functional insufficiency analysis of sensing and navigation (performance limits, triggering conditions) | G1 | Skeleton |
 

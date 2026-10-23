@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="590" viewBox="0 0 1200 590" role="img" aria-labelledby="c07-4-1-t c07-4-1-d">
+<title id="c07-4-1-t">Security zones and conduits of WP-C-07</title>
+<desc id="c07-4-1-d">Five security zones: the site network, the robot compute, motion control, the safety chain and the development, supply and maintenance zone, with the conduits between them. The safety chain has no data conduit in; it reports one way to motion control and is configured only at commissioning.</desc>
+<defs><marker id="c07-4-1-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7E949B"/></marker><marker id="c07-4-1-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#D64535"/></marker><marker id="c07-4-1-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#B86F0C"/></marker></defs>
+<rect x="0" y="0" width="1200" height="590" fill="#FFFFFF"/>
+<text x="24.0" y="30.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#122026" text-anchor="start">Figure 4-1  Security zones and conduits of the robot (IEC 62443-3-2 ZCR 3)</text>
+<text x="24.0" y="50.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="start">5 zones, 6 conduits. No conduit from the network reaches the safety chain: it reports one way and is configured only at commissioning</text>
+<rect x="24.0" y="92.0" width="214.0" height="244.0" rx="10" fill="#EDF2F4" stroke="#7E949B" stroke-width="1.4" stroke-dasharray="6,4"/>
+<text x="38.0" y="116.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#7E949B" text-anchor="start">SZ-1</text>
+<text x="74.9" y="116.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#122026" text-anchor="start">Site network</text>
+<text x="38.0" y="134.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="500" fill="#4E6A73" text-anchor="start">trust: untrusted</text>
+<text x="38.0" y="155.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">Wi-Fi, operator computers,</text>
+<text x="38.0" y="169.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">tablets and phones, the fleet</text>
+<text x="38.0" y="183.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">server, other robots</text>
+<rect x="300.0" y="92.0" width="296.0" height="244.0" rx="10" fill="#EAF1FC" stroke="#2F6FD6" stroke-width="1.4"/>
+<text x="314.0" y="116.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#2F6FD6" text-anchor="start">SZ-2</text>
+<text x="350.9" y="116.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#122026" text-anchor="start">Robot compute</text>
+<text x="314.0" y="134.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="500" fill="#4E6A73" text-anchor="start">trust: trusted once authenticated</text>
+<text x="314.0" y="155.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">Raspberry Pi 5 (CFG-001) or Jetson (CFG-002):</text>
+<text x="314.0" y="169.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">the ROS 2 graph, the operator gateway,</text>
+<text x="314.0" y="183.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">containers, the manipulation server and the</text>
+<text x="314.0" y="197.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">policy runtime</text>
+<rect x="314.0" y="306.0" width="29.0" height="16.0" rx="4" fill="#FFFFFF" stroke="#2F6FD6" stroke-width="1"/>
+<text x="328.5" y="317.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="600" fill="#2F6FD6" text-anchor="middle">A-01</text>
+<rect x="347.0" y="306.0" width="29.0" height="16.0" rx="4" fill="#FFFFFF" stroke="#2F6FD6" stroke-width="1"/>
+<text x="361.6" y="317.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="600" fill="#2F6FD6" text-anchor="middle">A-03</text>
+<rect x="380.1" y="306.0" width="29.0" height="16.0" rx="4" fill="#FFFFFF" stroke="#2F6FD6" stroke-width="1"/>
+<text x="394.6" y="317.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="600" fill="#2F6FD6" text-anchor="middle">A-04</text>
+<rect x="413.1" y="306.0" width="29.0" height="16.0" rx="4" fill="#FFFFFF" stroke="#2F6FD6" stroke-width="1"/>
+<text x="427.6" y="317.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="600" fill="#2F6FD6" text-anchor="middle">A-06</text>
+<rect x="446.2" y="306.0" width="29.0" height="16.0" rx="4" fill="#FFFFFF" stroke="#2F6FD6" stroke-width="1"/>
+<text x="460.7" y="317.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="600" fill="#2F6FD6" text-anchor="middle">A-07</text>
+<rect x="479.2" y="306.0" width="29.0" height="16.0" rx="4" fill="#FFFFFF" stroke="#2F6FD6" stroke-width="1"/>
+<text x="493.7" y="317.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="600" fill="#2F6FD6" text-anchor="middle">A-08</text>
+<rect x="512.2" y="306.0" width="29.0" height="16.0" rx="4" fill="#FFFFFF" stroke="#2F6FD6" stroke-width="1"/>
+<text x="526.8" y="317.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="600" fill="#2F6FD6" text-anchor="middle">A-11</text>
+<rect x="545.3" y="306.0" width="29.0" height="16.0" rx="4" fill="#FFFFFF" stroke="#2F6FD6" stroke-width="1"/>
+<text x="559.8" y="317.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="600" fill="#2F6FD6" text-anchor="middle">A-12</text>
+<rect x="314.0" y="286.0" width="29.0" height="16.0" rx="4" fill="#FFFFFF" stroke="#2F6FD6" stroke-width="1"/>
+<text x="328.5" y="297.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="600" fill="#2F6FD6" text-anchor="middle">A-14</text>
+<rect x="347.0" y="286.0" width="29.0" height="16.0" rx="4" fill="#FFFFFF" stroke="#2F6FD6" stroke-width="1"/>
+<text x="361.6" y="297.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="600" fill="#2F6FD6" text-anchor="middle">A-15</text>
+<rect x="380.1" y="286.0" width="29.0" height="16.0" rx="4" fill="#FFFFFF" stroke="#2F6FD6" stroke-width="1"/>
+<text x="394.6" y="297.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="600" fill="#2F6FD6" text-anchor="middle">A-16</text>
+<rect x="664.0" y="92.0" width="214.0" height="244.0" rx="10" fill="#FFF1DC" stroke="#B86F0C" stroke-width="1.4"/>
+<text x="678.0" y="116.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#B86F0C" text-anchor="start">SZ-3</text>
+<text x="714.9" y="116.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#122026" text-anchor="start">Motion control</text>
+<text x="678.0" y="134.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="500" fill="#4E6A73" text-anchor="start">trust: trusted; channel 1 of the</text>
+<text x="678.0" y="147.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="500" fill="#4E6A73" text-anchor="start">two-channel functions</text>
+<text x="678.0" y="168.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">Teensy (CFG-001) or STM32</text>
+<text x="678.0" y="182.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">(CFG-002) firmware, motor</text>
+<text x="678.0" y="196.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">drivers, encoders, the CAN buses</text>
+<text x="678.0" y="210.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">to the drive, BMS and lift, the</text>
+<text x="678.0" y="224.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">arm joint drives</text>
+<rect x="678.0" y="306.0" width="29.0" height="16.0" rx="4" fill="#FFFFFF" stroke="#B86F0C" stroke-width="1"/>
+<text x="692.5" y="317.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="600" fill="#B86F0C" text-anchor="middle">A-01</text>
+<rect x="711.0" y="306.0" width="29.0" height="16.0" rx="4" fill="#FFFFFF" stroke="#B86F0C" stroke-width="1"/>
+<text x="725.6" y="317.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="600" fill="#B86F0C" text-anchor="middle">A-02</text>
+<rect x="744.1" y="306.0" width="29.0" height="16.0" rx="4" fill="#FFFFFF" stroke="#B86F0C" stroke-width="1"/>
+<text x="758.6" y="317.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="600" fill="#B86F0C" text-anchor="middle">A-05</text>
+<rect x="777.1" y="306.0" width="29.0" height="16.0" rx="4" fill="#FFFFFF" stroke="#B86F0C" stroke-width="1"/>
+<text x="791.6" y="317.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="600" fill="#B86F0C" text-anchor="middle">A-11</text>
+<rect x="810.2" y="306.0" width="29.0" height="16.0" rx="4" fill="#FFFFFF" stroke="#B86F0C" stroke-width="1"/>
+<text x="824.7" y="317.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="600" fill="#B86F0C" text-anchor="middle">A-13</text>
+<rect x="944.0" y="92.0" width="232.0" height="244.0" rx="10" fill="#FBE3E0" stroke="#D64535" stroke-width="2.6"/>
+<text x="958.0" y="116.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#D64535" text-anchor="start">SZ-4</text>
+<text x="994.9" y="116.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#122026" text-anchor="start">Safety chain</text>
+<text x="958.0" y="134.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="500" fill="#4E6A73" text-anchor="start">trust: highest; no data conduit in</text>
+<text x="958.0" y="147.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="500" fill="#4E6A73" text-anchor="start">during operation</text>
+<text x="958.0" y="168.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">emergency stops, safety relay,</text>
+<text x="958.0" y="182.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">contactors, reset, the safety</text>
+<text x="958.0" y="196.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">scanner and speed monitor with their</text>
+<text x="958.0" y="210.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">configuration</text>
+<rect x="958.0" y="306.0" width="29.0" height="16.0" rx="4" fill="#FFFFFF" stroke="#D64535" stroke-width="1"/>
+<text x="972.5" y="317.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="600" fill="#D64535" text-anchor="middle">A-09</text>
+<rect x="991.0" y="306.0" width="29.0" height="16.0" rx="4" fill="#FFFFFF" stroke="#D64535" stroke-width="1"/>
+<text x="1005.6" y="317.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="600" fill="#D64535" text-anchor="middle">A-10</text>
+<rect x="300.0" y="418.0" width="876.0" height="96.0" rx="10" fill="#F7FAFB" stroke="#4E6A73" stroke-width="1.4" stroke-dasharray="6,4"/>
+<text x="314.0" y="442.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#4E6A73" text-anchor="start">SZ-5</text>
+<text x="350.9" y="442.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#122026" text-anchor="start">Development, supply and maintenance</text>
+<text x="314.0" y="460.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="500" fill="#4E6A73" text-anchor="start">trust: outside the item; controlled by process</text>
+<text x="314.0" y="481.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">build hosts, the repositories and their CI, container registries, upstream repositories, the model hub, the maintainer's laptop</text>
+<rect x="314.0" y="488.0" width="29.0" height="16.0" rx="4" fill="#FFFFFF" stroke="#4E6A73" stroke-width="1"/>
+<text x="328.5" y="499.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="600" fill="#4E6A73" text-anchor="middle">A-05</text>
+<rect x="347.0" y="488.0" width="29.0" height="16.0" rx="4" fill="#FFFFFF" stroke="#4E6A73" stroke-width="1"/>
+<text x="361.6" y="499.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="600" fill="#4E6A73" text-anchor="middle">A-06</text>
+<rect x="380.1" y="488.0" width="29.0" height="16.0" rx="4" fill="#FFFFFF" stroke="#4E6A73" stroke-width="1"/>
+<text x="394.6" y="499.5" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="8.5" font-weight="600" fill="#4E6A73" text-anchor="middle">A-12</text>
+<line x1="238.0" y1="204.0" x2="300.0" y2="204.0" stroke="#7E949B" stroke-width="2" marker-end="url(#c07-4-1-ink)"/>
+<text x="269.0" y="172.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="middle">CD-1</text>
+<text x="269.0" y="184.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="middle">operator</text>
+<text x="269.0" y="196.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="middle">traffic</text>
+<line x1="596.0" y1="204.0" x2="664.0" y2="204.0" stroke="#7E949B" stroke-width="2" marker-end="url(#c07-4-1-ink)"/>
+<text x="630.0" y="172.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="middle">CD-2</text>
+<text x="630.0" y="184.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="middle">commands</text>
+<text x="630.0" y="196.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="middle">down</text>
+<line x1="944.0" y1="204.0" x2="878.0" y2="204.0" stroke="#B86F0C" stroke-width="2" marker-end="url(#c07-4-1-amber)"/>
+<text x="911.0" y="160.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#B86F0C" text-anchor="middle">CD-3 chain</text>
+<text x="911.0" y="172.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#B86F0C" text-anchor="middle">state as</text>
+<text x="911.0" y="184.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#B86F0C" text-anchor="middle">diagnostic</text>
+<text x="911.0" y="196.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#B86F0C" text-anchor="middle">inputs</text>
+<line x1="448.0" y1="418.0" x2="448.0" y2="336.0" stroke="#7E949B" stroke-width="2" marker-end="url(#c07-4-1-ink)"/>
+<text x="456.0" y="367.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">CD-4 images, packages,</text>
+<text x="456.0" y="379.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="start">configuration and model</text>
+<text x="456.0" y="391.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="start">weights at deployment</text>
+<line x1="771.0" y1="418.0" x2="771.0" y2="336.0" stroke="#7E949B" stroke-width="2" marker-end="url(#c07-4-1-ink)"/>
+<text x="779.0" y="367.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="start">CD-5 a firmware image</text>
+<text x="779.0" y="379.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="start">flashed by a maintainer over</text>
+<text x="779.0" y="391.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="start">USB</text>
+<line x1="1111.0" y1="418.0" x2="1111.0" y2="336.0" stroke="#D64535" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#c07-4-1-red)"/>
+<text x="1103.0" y="367.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="end">CD-6 safety-device configuration</text>
+<text x="1103.0" y="379.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#D64535" text-anchor="end">with the vendor tool at</text>
+<text x="1103.0" y="391.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#D64535" text-anchor="end">commissioning only, disconnected in</text>
+<text x="1103.0" y="403.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#D64535" text-anchor="end">operation</text>
+<text x="958.0" y="296.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#D64535" text-anchor="start">no conduit from the network</text>
+<line x1="24" y1="564" x2="60" y2="564" stroke="#7E949B" stroke-width="2" marker-end="url(#c07-4-1-ink)"/>
+<text x="66.0" y="568.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">conduit, from the zone that opens it</text>
+<line x1="300" y1="564" x2="336" y2="564" stroke="#B86F0C" stroke-width="2" marker-end="url(#c07-4-1-amber)"/>
+<text x="342.0" y="568.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">one-way status out of the safety chain</text>
+<line x1="600" y1="564" x2="636" y2="564" stroke="#D64535" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#c07-4-1-red)"/>
+<text x="642.0" y="568.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">into the safety chain: commissioning only, disconnected in operation</text>
+<text x="24.0" y="542.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Dashed zones are outside the item. Chips are the assets of §3 each zone holds.</text>
+</svg>

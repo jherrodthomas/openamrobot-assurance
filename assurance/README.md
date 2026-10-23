@@ -38,19 +38,19 @@ below. CI fails if any of them is stale. The document form of the same argument 
 | Engineering baseline | `BL-001` at `8a7a5b1` (under development) |
 | Registered safety claims | 23 |
 | Claims with accepted supporting evidence | 0 |
-| Registered evidence items | 19 (0 available, 12 drafted, 7 not yet performed) |
-| Evidence requiring review | 12 |
+| Registered evidence items | 21 (0 available, 14 drafted, 7 not yet performed) |
+| Evidence requiring review | 14 |
 | Open assurance actions | 10 |
 | Open defeaters (known counter-evidence) | 40 |
 | Evaluated configurations | 1 |
 | Assurance-supported configurations | 0 |
-| Records digest | `de6c1d56b20e` |
+| Records digest | `29480b59e6c3` |
 
 | Lifecycle area | Status | Evidence (drafted / missing / accepted) |
 |---|---|---|
 | Safety Management | In Progress | 2 (2 / 0 / 0) |
-| Hazard Analysis | In Progress | 5 (4 / 1 / 0) |
-| Safety Concepts | In Progress | 4 (3 / 1 / 0) |
+| Hazard Analysis | In Progress | 6 (5 / 1 / 0) |
+| Safety Concepts | In Progress | 5 (4 / 1 / 0) |
 | Technical Implementation | In Progress | 3 (2 / 1 / 0) |
 | Verification and Validation | Not Started | 4 (0 / 4 / 0) |
 | Safety Case and Review | In Progress | 1 (1 / 0 / 0) |
