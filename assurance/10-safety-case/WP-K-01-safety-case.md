@@ -4,7 +4,7 @@
 |---|---|
 | Work product | WP-K-01 Safety case for the Gate A unit (UL 4600 structure: claims, arguments, evidence, defeaters) |
 | Standard reference | ISO 13849-1:2023 §4.7, §10 (information); ISO 12100 §7 (documentation); Regulation (EU) 2023/1230 Annex IV Part A (technical documentation); UL 4600 §5, §6 |
-| Version | 0.6 (2026-10-20): Sn-19 (WP-S-04 stopping budget) added to G1.2 and G1.3. 0.5 (2026-10-20): Sn-18 (WP-C-05 risk reduction concept) added to G0; G1.11 named as the monitored stop (DQ-021 A). 0.4 (2026-10-20): CFG-002 added; G1 widened to SF-01…SF-12 with G1.10…G1.12 on CFG-002; DF-22, DF-23, DF-36 bear on them. 0.3: G1 widened to SF-01…SF-09; G1.5 at PL d; G1.8, G1.9 and Sn-17 (WP-C-04) added; OI-6 widened to the re-ratings of WP-C-03 v0.3. 0.2: Sn-16 (WP-H-02) added; OI-7 closed. 0.1: initial structure, every claim draft, every defeater open |
+| Version | 0.7 (2026-10-23): Sn-20 (WP-C-07 threat and risk assessment) and Sn-21 (WP-C-08 cybersecurity requirements) added to G3 and G3.1. 0.6 (2026-10-20): Sn-19 (WP-S-04 stopping budget) added to G1.2 and G1.3. 0.5 (2026-10-20): Sn-18 (WP-C-05 risk reduction concept) added to G0; G1.11 named as the monitored stop (DQ-021 A). 0.4 (2026-10-20): CFG-002 added; G1 widened to SF-01…SF-12 with G1.10…G1.12 on CFG-002; DF-22, DF-23, DF-36 bear on them. 0.3: G1 widened to SF-01…SF-09; G1.5 at PL d; G1.8, G1.9 and Sn-17 (WP-C-04) added; OI-6 widened to the re-ratings of WP-C-03 v0.3. 0.2: Sn-16 (WP-H-02) added; OI-7 closed. 0.1: initial structure, every claim draft, every defeater open |
 | Status | Draft |
 | PL / scope | PL d target; CFG-001 Gate A unit (software and firmware reference, bench only) and CFG-002 2.0 mobile manipulator (hardware reference, unverified); the base with the arms and lift |
 | Author | Assurance team (AI-assisted draft, I0) |
@@ -53,8 +53,8 @@ The cybersecurity branch of the argument is WP-K-03 ([cybersecurity case](WP-K-0
 | G2 | The complementary electrical and mechanical measures are implemented | G0 | draft | — | 0 |
 | G2.1 | The 24 V bus and the mains side are protected | G2 | draft | Sn-12, Sn-16 | 4 |
 | G2.2 | Mass, payload and stability are within limits | G2 | draft | Sn-09, Sn-07 | 1 |
-| G3 | The command path cannot defeat the safety functions | G0 | draft | — | 0 |
-| G3.1 | Motion and parameter interfaces are authenticated and bounded | G3 | draft | Sn-13 | 4 |
+| G3 | The command path cannot defeat the safety functions | G0 | draft | Sn-20, Sn-21 | 0 |
+| G3.1 | Motion and parameter interfaces are authenticated and bounded | G3 | draft | Sn-13, Sn-20, Sn-21 | 4 |
 | G4 | The evidence was produced under a controlled process | G0 | draft | — | 0 |
 | G4.1 | A configuration baseline exists and the forks are pinned to it | G4 | draft | Sn-14 | 3 |
 | G4.2 | Hazards are identified completely and rated | G4 | draft | Sn-02, Sn-01 | 2 |
@@ -77,7 +77,7 @@ reaches any PL at BL-001.
 Status rule: Available = performed and approved at a named baseline; Partial = drafted analysis or
 specification, not reviewed; Missing = not yet performed.
 
-**Available 0, Partial 12, Missing 7** (19 evidence items)
+**Available 0, Partial 14, Missing 7** (21 evidence items)
 
 | ID | Evidence | Location | Status | Supports |
 |---|---|---|---|---|
@@ -100,6 +100,8 @@ specification, not reviewed; Missing = not yet performed.
 | Sn-17 | Safety functions specification SF-01 to SF-12: demand, safe state, response, stop category, PLr, allocation | `assurance/02-concept/WP-C-04-safety-functions-and-plr.md` | Partial | G1, G1.8, G1.9, G1.10, G1.11, G1.12 |
 | Sn-18 | Risk reduction concept: three-step allocation per rated row, residual-risk classes, adequacy criteria | `assurance/02-concept/WP-C-05-risk-reduction-concept.md` | Partial | G0 |
 | Sn-19 | Response time, stopping performance and safety distance budget | `assurance/03-system/WP-S-04-response-time-and-stopping-budget.md` | Partial | G1.2, G1.3 |
+| Sn-20 | Cybersecurity threat and risk assessment: actors, assets, zones and conduits, 20 threat scenarios rated before and after treatment | `assurance/02-concept/WP-C-07-cybersecurity-threat-and-risk-assessment.md` | Partial | G3, G3.1 |
+| Sn-21 | Cybersecurity requirements CSR-01 to CSR-24 at the security level target, traced to threat scenarios and safety functions | `assurance/02-concept/WP-C-08-cybersecurity-requirements-and-sl-target.md` | Partial | G3, G3.1 |
 
 ## 7. Defeaters
 

@@ -44,6 +44,8 @@ python3 assurance/02-concept/figures/fig_c03.py --check
 python3 assurance/02-concept/figures/fig_c04.py --check
 python3 assurance/02-concept/figures/fig_c06.py --check
 python3 assurance/02-concept/figures/fig_c05.py --check
+python3 assurance/02-concept/figures/fig_c07.py --check
+python3 assurance/02-concept/figures/fig_c08.py --check
 python3 assurance/03-system/figures/fig_s02.py --check
 python3 assurance/03-system/figures/fig_s04.py --check
 python3 assurance/sim/figures/fig_sim_is.py --check

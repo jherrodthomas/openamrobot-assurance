@@ -235,6 +235,8 @@ index, the register entry is the question.
 | D-20 | Hold G0 with its confirmation reviews unperformed | DQ-022 | Open, batch 3 |
 | D-21 | Teleoperation pendant and warning devices on the bench build | DQ-023 | Open, batch 3 |
 | D-22 | Payload limit stated for the item | DQ-024 | Open, batch 3 |
+| D-23 | Use control between programs on the robot at SL 2 | DQ-025 | Open, batch 3 |
+| D-24 | Acceptance of the two medium cybersecurity residual risks | DQ-026 | Open, batch 3 |
 
 ## 9. Top risks to the assurance path
 

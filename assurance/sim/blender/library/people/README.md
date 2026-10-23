@@ -1,6 +1,6 @@
 # People
 
-Copied from LionDriver `assurance/sim/blender/library/people/` (same files, same licence); the notes below are LionDriver's. In this record `cfg002.add_person()` imports a figure, drops the pack's stray helper sphere, faces it along a heading and recolours the shirt; the walk cycle is used only to pick a standing frame.
+Two CC0 figure packs, kept with their licence notes below. In this record `cfg002.add_person()` imports a figure, drops the pack's stray helper sphere, faces it along a heading and recolours the shirt; the walk cycle is used only to pick a standing frame.
 
 Two walking figures for the pedestrians of the hazardous-event scenes. They are built by
 [`build_people.py`](build_people.py) from two free Quaternius packs, both **CC0 1.0** (public domain dedication; no
@@ -19,7 +19,7 @@ their outfits are in the paid versions.
 **In a scene:**
 - `hazard_scene.py` imports one figure per pedestrian, faces it along the path at its standing height, and recolours the shirt.
 - It plays `Walk_Loop` by the distance walked: one loop, two steps, every 1.45 m. The figure stands still when the pedestrian stops.
-- A scene picks the figure with `figure: male` or `female` on the actor in `scenes.yaml` (LionDriver). Without it, the figure and shirt colour follow from the actor's name and the base scene's ID, so a condition variant shows the same person.
+- A scene picks the figure with `figure: male` or `female` on the actor. Without it, the figure and shirt colour follow from the actor's name and the base scene's ID, so a condition variant shows the same person.
 - Without these files, the scene falls back to the procedural figure.
 
 **Sources** (downloaded 2026-10-19):

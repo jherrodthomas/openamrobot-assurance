@@ -370,7 +370,7 @@
   related_hazards: [H-12, H-02]
   related_requirements: [SF-03, SF-07]
   related_assumptions: [AOU-05]
-  evidence_refs: []
+  evidence_refs: [Sn-20, Sn-21]
   defeaters: []
   review_state: not-reviewed
   reviewer: null
@@ -391,7 +391,7 @@
   related_hazards: [H-12]
   related_requirements: [SF-07]
   related_assumptions: [AOU-05]
-  evidence_refs: [Sn-13]
+  evidence_refs: [Sn-13, Sn-20, Sn-21]
   defeaters: [DF-27, DF-28, DF-29, DF-36]
   review_state: not-reviewed
   reviewer: null

@@ -17,5 +17,6 @@ Every figure is generated and checked by CI; nothing in them is drawn by hand:
 | Figures | Generator |
 |---|---|
 | README and wiki figures under [`assets/openamrobot/`](assets/openamrobot/): hero, standards, architecture, roadmap, lifecycle, status card, standards map, repository map | [`make_assets.py`](assets/openamrobot/make_assets.py) |
+| Robot renders under [`assets/openamrobot/render/`](assets/openamrobot/render/README.md): the base from upstream's CAD and the 2.0 manipulator with the OpenArm arms, embedded in the hero (presentation assets, not evidence) | [`render/tools/`](assets/openamrobot/render/tools/), run by hand |
 | Process swimlanes, lifecycle grid and interface figure under [`assets/openamrobot/process/`](assets/openamrobot/process/) | [`process_figures.py`](../assurance/process/tools/process_figures.py), from the process model |
 | Living Safety Case dashboard and lifecycle areas under [`assets/assurance/`](assets/assurance/) | [`generate_dashboard.py`](../assurance/case/tools/generate_dashboard.py), from the case records |
