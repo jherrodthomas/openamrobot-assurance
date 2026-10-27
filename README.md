@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/openamrobot/hero.svg" width="100%" alt="OpenAMRobot assurance. Open mobile manipulation. Engineered for safety. A geometric amber mobile manipulator with a cyan LiDAR, a red emergency stop and a dashed protective field on a perspective floor grid, beside the project name and the standards it follows.">
+  <img src="docs/assets/openamrobot/hero.svg" width="100%" alt="OpenAMRobot assurance. Open mobile manipulation. Engineered for safety. The OpenAMRobot 2.0 mobile manipulator rendered from the upstream CAD and description packages: a white octagonal base with a red emergency stop, a lift column, two OpenArm arms hanging stowed and a head camera, over a dashed protective field on a perspective floor grid, beside the project name and the standards it follows.">
 </p>
 
 <p align="center">
@@ -55,7 +55,7 @@ Nothing is marked complete before its review, and every number below is computed
 
 <!-- BEGIN GENERATED: record-headline (docs/assets/openamrobot/make_assets.py) -->
 
-**P0 Governance** · no gate passed · 89 work products (18 draft, 71 skeleton, 0 approved) · 40 gap findings (22 high) · 4 decisions open · 1 of 11 cross-domain interfaces open · 0 of 22 confirmation measures performed · records digest `f3a9796fe020`
+**P0 Governance** · no gate passed · 89 work products (20 draft, 69 skeleton, 0 approved) · 40 gap findings (22 high) · 2 decisions open · 1 of 11 cross-domain interfaces open · 0 of 22 confirmation measures performed · records digest `3ffb89e6fe85`
 
 <!-- END GENERATED: record-headline -->
 
@@ -79,7 +79,7 @@ validated and drawn by [`generate_dashboard.py`](assurance/case/tools/generate_d
 
 <!-- BEGIN GENERATED: assurance-headline (assurance/case/tools/generate_dashboard.py) -->
 
-**Development** · baseline `BL-001` at `8a7a5b1` · 23 claims (0 with accepted evidence) · 19 evidence items (0 accepted) · 40 open defeaters · records digest `de6c1d56b20e`
+**Development** · baseline `BL-001` at `8a7a5b1` · 23 claims (0 with accepted evidence) · 21 evidence items (0 accepted) · 40 open defeaters · records digest `29480b59e6c3`
 
 <!-- END GENERATED: assurance-headline -->
 

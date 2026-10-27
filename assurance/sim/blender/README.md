@@ -62,7 +62,7 @@ and rack part before the render and prints each intersection; a scene is publish
 | [`cfg002.py`](cfg002.py) | The upper body: base plate, lift column, adapter plate, vertical arm profile, J1_A plates, head camera, chest E-stop from the documented dimensions; the two arms from the URDF joint tree by forward kinematics at the documented mount points; poses `stowed`, `reach_right`, `carry`; a person from the library; floor rings and a tote |
 | [`render_amr.py`](render_amr.py) | The scene: imports the OBJ set (auto-detecting the SolidWorks Y-up frame and the mm unit), assigns materials by part-name rules, builds the warehouse set, the props of each view, the lights, the camera; Cycles on CPU with denoising |
 | [`band.py`](band.py), [`make_set.py`](make_set.py) | The review band (title, caption, the rule) and the driver that renders the set |
-| [`library/people/`](library/people/README.md) | Two CC0 walking figures, copied from LionDriver |
+| [`library/people/`](library/people/README.md) | Two CC0 walking figures |
 
 ## 4. What is real and what is approximated
 
@@ -87,4 +87,4 @@ stopping distance (WP-S-02 OI-8, WP-C-01 OI-6). It is a number read off a descri
 | OI-1 | A reaching or crouching pose for the person (the packs ship the walk cycle only), so the hand-in-gripper case of IS-13 and the hand-under-carriage case of IS-14 can be drawn | Assurance team | next set |
 | OI-2 | The Gate A unit as built (Pi 5, Teensy, ZBLD, RPLIDAR A1 at 0.18 m) as its own configuration of the base scene, when a CAD of its electronics bracket exists; today the base is the 2.0-electronics MMP | Assurance team | — |
 | OI-3 | Replace the drawn upper body with upstream's supplier CAD when `openamr-upperbody-hw` publishes it | Assurance team | when public |
-| OI-4 | A physics layer: run the WP-S-04 stopping model as a plant and draw the stop where the model puts it, as LionDriver's layer 1 does | Assurance team | after WP-V-02 |
+| OI-4 | A physics layer: run the WP-S-04 stopping model as a plant and draw the stop where the model puts it (the Gazebo scenario tests of `../gazebo/` are a first physics layer; they do not yet carry the WP-S-04 model) | Assurance team | after WP-V-02 |

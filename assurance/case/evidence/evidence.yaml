@@ -323,3 +323,37 @@
   review_ref: null
   source: WP-K-01
   source_revision: "8a7a5b1"
+
+- id: Sn-20
+  kind: evidence
+  title: "Cybersecurity threat and risk assessment: actors, assets, zones and conduits, 20 threat scenarios rated before and after treatment"
+  description: "Draft v0.1; IEC 62443-3-2 method, risk with and without the safety architecture, security level target checked against every scenario (FR 2 finding, DQ-025), two medium residuals for acceptance (DQ-026); nothing tested"
+  evidence_status: partial
+  lifecycle_area: hazard-analysis
+  location: "assurance/02-concept/WP-C-07-cybersecurity-threat-and-risk-assessment.md"
+  related_claims: [G3, G3.1]
+  baseline: BL-001
+  configuration: CFG-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"
+
+- id: Sn-21
+  kind: evidence
+  title: "Cybersecurity requirements CSR-01 to CSR-24 at the security level target, traced to threat scenarios and safety functions"
+  description: "Draft v0.1; IEC 62443-4-2 component requirements per FR at the target of DQ-013 A, each met by an allocated requirement; two-way trace to WP-C-07 and to the safety functions, checked by CI; none implemented"
+  evidence_status: partial
+  lifecycle_area: safety-concepts
+  location: "assurance/02-concept/WP-C-08-cybersecurity-requirements-and-sl-target.md"
+  related_claims: [G3, G3.1]
+  baseline: BL-001
+  configuration: CFG-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "8a7a5b1"

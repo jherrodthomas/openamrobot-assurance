@@ -11,8 +11,8 @@
 
 The 3D review scenes committed on 2026-10-21 show the robot in its environment as pictures. What they cannot show is
 scale, time and the arithmetic of a stop: how long the protective field is and why, how far the person walks while
-the robot coasts, where the standstill lands. LionDriver's record answers that with 2D views drawn from its tables.
-This note weighs the same idea for OpenAMRobot and records what the lead chose. Mockups of each candidate were drawn
+the robot coasts, where the standstill lands. Vehicle safety records answer that with 2D views drawn from their
+tables. This note weighs the same idea for OpenAMRobot and records what the lead chose. Mockups of each candidate were drawn
 in the session and shown in chat; they are not committed, and the pilot (§7) reproduces what they showed.
 
 ## 2. What the record already draws
@@ -37,10 +37,10 @@ document it sits in. The views below follow that pattern.
 | (c) side elevation | scan plane against a 0.15 m and a 0.30 m carton and a person below the plane; the arm workspace and the lift keep-clear; the 1.7 m envelope | **kept, after the pilot**: one static sheet, the only 2D view with no counterpart today |
 | (d) loop diagram per hazardous event | demand, detection, logic, power removal, coast, standstill, with the WP-S-04 times on the arrows and a distance ledger | **kept**: one per field-sizing path of WP-S-04 §2 (SF-02 scanner, SF-02 bumper, SF-03, SF-04 fault path, SF-11, SF-12), six, in WP-S-04 |
 | (e) review dashboard | the 3D render, a top view, the WP-C-03 rating and the WP-C-05 allocation on one frame | **deferred** to the physics layer (blender README OI-4): without a plant run it composes what the other views already show |
-| factory-floor top view (the lead's addition) | the robot on a warehouse plan with its fields, zones and the situations where they happen, as LionDriver's known-scenario loops put the car on its road | **this is the family**: §4 |
+| factory-floor top view (the lead's addition) | the robot on a warehouse plan with its fields, zones and the situations where they happen, the way a known-scenario loop puts a vehicle on its road | **this is the family**: §4 |
 
-Two things the mockups settled on the way. A straightened aisle with the robot held in place, LionDriver's road
-device, is wrong here: at 0.20 m/s the robot moves 0.26 m over a whole loop while the person walks 2 m, so the
+Two things the mockups settled on the way. A straightened aisle with the robot held in place, the road
+device of the vehicle loops, is wrong here: at 0.20 m/s the robot moves 0.26 m over a whole loop while the person walks 2 m, so the
 view is a fixed crop of the plan with the robot moving through it. And the plan is drawn in the vocabulary of a
 warehouse seen from above (rack rows with hazard striping, a dashed lane grid, pallets and cartons, an office, a
 truck loading dock, people as small figures), not in the schematic of WP-C-02 Figure 2-1; the zones of the record
@@ -60,8 +60,8 @@ route as Z5 (excluded, DQ-019).
 **The sprite.** No free top-down sprite of an AMR exists (the CC0 packs found are cars, tanks and side-view pixel
 robots; the warehouse vectors found are stock art under attribution licences). The robot is therefore its own CAD:
 the Blender pipeline's existing `top` camera made orthographic, rendered with a transparent background at a fixed
-pixels-per-metre, one PNG per configuration and pose (CFG-001; CFG-002 stowed and carry), pinned by hash as
-LionDriver pins its Kenney sprites, and embedded by the SVG. A drawn footprint of the same shape (white deck, dark
+pixels-per-metre, one PNG per configuration and pose (CFG-001; CFG-002 stowed and carry), pinned by hash like
+a sprite sheet, and embedded by the SVG. A drawn footprint of the same shape (white deck, dark
 bumper ends, two drive wheels, three castors, the scanner dot at the front) is the fallback when Blender is absent,
 and is what the mockups used.
 
@@ -90,7 +90,7 @@ rest chosen to be ordinary. It is replaced by the surveyed site when WP-O-01 rec
 
 ## 6. Static or looping, and where embedded
 
-- The per-situation loops are SMIL animations in SVG, no script, as LionDriver's `fig-sim-ks-*-anim.svg`: they play
+- The per-situation loops are SMIL animations in SVG, no script: they play
   in a browser and in GitHub's markdown preview, and a viewer that shows the SVG as a still shows the first frame
   (t = −0.5 s, the robot driving and the person approaching). The mockup of IS-01 was 15 KB.
 - The warehouse plan, the loop diagrams and the side elevation are static SVG.
@@ -144,12 +144,6 @@ pick below is the recommended option and can be overturned by a line in this tab
 - This record: WP-C-02 §2 and Figure 2-1; WP-C-03 §3, §4, §5; WP-C-05 §5; WP-C-06 §2, §3 and Figures 2-1, 3-1,
   5-1; WP-S-04 §1 to §5 and Figure 4-1; WP-C-04 Figure 7-1; WP-S-02 SR-02.03, SR-11.02, SR-12.03;
   `blender/README.md` (the renders, the rule that pictures earn no evidence credit, the overlap check, OI-1 to OI-4).
-- LionDriver, cloned read-only beside this repository: `assurance/02-concept/figures/fig_c09_scenes.py` (scene
-  cards), `assurance/sim/figures/fig_sim_ks.py` and `assurance/sim/scenarios/README.md` §1.1 (looping top views
-  from a replay, Kenney CC0 sprites), `assurance/sim/figures/fig_sim_he.py` and `assurance/sim/README.md` §3.7
-  (loop diagram and animation per hazardous event from a plant run), `assurance/sim/blender/compose.py` and
-  `assurance/sim/README.md` §1.1 (the review dashboard and how to read one), `assurance/sim/blender/scenes.yaml`
-  (its scene description format).
 - A message relayed from the reBot-DevArm session (2026-10-21, information to weigh, not adopted): its
   `assurance/sim/` pipeline on branch `claude/dreamy-feynman-ljvcno` of jherrodthomas/reBot-DevArm has a
   scenes.yaml to scene.json exporter with a CI test needing only PyYAML and numpy, an HTML dashboard composer

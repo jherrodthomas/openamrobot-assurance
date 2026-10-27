@@ -53,7 +53,7 @@ jobs:
         python3 assurance/process/tools/test_process_model.py
         python3 assurance/process/tools/process_figures.py --check
         python3 assurance/process/tools/test_process_figures.py
-    - name: Work-product figures match their generators (WP-C-01, WP-C-02, WP-C-03, WP-C-04, WP-C-05, WP-C-06, WP-S-02, WP-S-04)
+    - name: Work-product figures match their generators (WP-C-01…WP-C-08, WP-S-02, WP-S-04)
       run: |
         python3 assurance/02-concept/figures/fig_c01.py --check
         python3 assurance/02-concept/figures/test_fig_c01.py
@@ -67,12 +67,20 @@ jobs:
         python3 assurance/02-concept/figures/test_fig_c06.py
         python3 assurance/02-concept/figures/fig_c05.py --check
         python3 assurance/02-concept/figures/test_fig_c05.py
+        python3 assurance/02-concept/figures/fig_c07.py --check
+        python3 assurance/02-concept/figures/test_fig_c07.py
+        python3 assurance/02-concept/figures/fig_c08.py --check
+        python3 assurance/02-concept/figures/test_fig_c08.py
         python3 assurance/03-system/figures/fig_s02.py --check
         python3 assurance/03-system/figures/test_fig_s02.py
         python3 assurance/03-system/figures/fig_s04.py --check
         python3 assurance/03-system/figures/test_fig_s04.py
         python3 assurance/sim/figures/fig_sim_is.py --check
         python3 assurance/sim/figures/test_fig_sim_is.py
+    - name: Gazebo scenario results match their committed traces and show what the record predicts (the simulation itself runs in gazebo.yaml)
+      run: |
+        python3 assurance/sim/gazebo/evaluate.py --check
+        python3 assurance/sim/gazebo/test_evaluate.py
     - name: README figures match their generator
       run: |
         python3 docs/assets/openamrobot/make_assets.py --check

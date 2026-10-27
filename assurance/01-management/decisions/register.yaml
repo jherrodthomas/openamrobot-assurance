@@ -578,7 +578,8 @@
       title: "Allow public floors with a chaperone and the robot at crawl speed, as a procedural measure"
       detail: "Cheap. Cost: a procedure is not a control for a hazard that can kill; the gap assessment's own principle, and the rating stays e."
   sources: ["assurance/02-concept/WP-C-03-risk-assessment.md §5 (H-01 public floor), §5.2", "assurance/02-concept/WP-C-02-operating-environment-and-tasks.md Z5", "assurance/02-concept/WP-C-06-human-robot-interaction-and-misuse.md IS-09, MU-07"]
-  status: open
+  status: answered
+  answer: {choice: A, via: inbox, at: 2026-10-23}
 
 - id: DQ-020
   ref: DQ-004
@@ -672,7 +673,8 @@
       title: "Do not hold G0 until an assessor performs CR-01 and CR-03"
       detail: "The gate means what the plan says. Cost: no gate passes for months and the record shows P0 throughout the concept work."
   sources: ["assurance/01-management/WP-M-06-confirmation-measures-plan.md §9, OI-5", "assurance/01-management/WP-M-02-safety-plan.md §10", "assurance/01-management/decisions/register.yaml DQ-010, DQ-012"]
-  status: open
+  status: answered
+  answer: {choice: A, via: inbox, at: 2026-10-23}
 
 - id: DQ-023
   ref: WP-C-06 OI-5
@@ -703,7 +705,8 @@
       title: "Neither on the bench build: teleoperation from the screen only, in the empty test area, with the robot's own E-stops"
       detail: "No purchase. Cost: no enabling control, so SF-09 is not implemented on CFG-001 and manual recovery near a person stays outside the case."
   sources: ["assurance/02-concept/WP-C-06-human-robot-interaction-and-misuse.md HR-04, HR-06, HR-07, OI-5", "assurance/02-concept/WP-C-04-safety-functions-and-plr.md §3.8, §3.9, OI-8", "assurance/04-hardware/WP-H-02-electrical-and-safety-chain-design.md E7", "gap assessment GAP-28"]
-  status: open
+  status: answered
+  answer: {choice: A, via: inbox, at: 2026-10-23}
 
 - id: DQ-024
   ref: WP-C-01 OI-3
@@ -733,4 +736,63 @@
       title: "Leave the payload limit open until the robot is weighed and the stability rerun exists"
       detail: "No unverified number. Cost: AOU-07 stays unmet and H-06 (tipping) cannot be rated with confidence."
   sources: ["assurance/02-concept/WP-C-01-item-definition.md §4 (arm payload and pulls), AOU-07, OI-3", "assurance/02-concept/WP-C-06-human-robot-interaction-and-misuse.md CA-05, CA-07", "assurance/02-concept/WP-C-03-risk-assessment.md H-06"]
+  status: answered
+  answer: {choice: A, via: inbox, at: 2026-10-23}
+
+- id: DQ-025
+  ref: WP-C-07 §7
+  question: "Do we raise the security level for use control (FR 2) to SL 2, so that each program on the robot may send only the commands it is meant to send?"
+  context: >-
+    The security level you set on 2026-10-20 gives use control SL 1, because the only people are operators and
+    maintainers. The threat assessment finds that the use control that matters here is between programs on the robot:
+    which one may drive the wheels, start an undock, move the arms or switch off the collision monitor. At SL 1 the
+    robot keeps the site network out, but one compromised program on it, such as the web interface, could send any
+    command. The safety functions would still bound what that command can do.
+  reversibility: revisit
+  decider: lead
+  blocks: "WP-C-08 CSR-03 and CR 2.1 RE(1), RE(2); the access-control design of WP-S-07; five threat scenarios in WP-C-07 §7"
+  gate: G1
+  asked: 2026-10-23
+  batch: 3
+  options:
+    - key: A
+      recommended: true
+      title: "Raise use control to SL 2: each program gets only the permissions it needs"
+      detail: "A compromised program can do only what it was allowed to. Cost: one permission set per program in the SROS2 set-up we build anyway, and a test per permission; nothing to buy."
+    - key: B
+      title: "Keep SL 1 and rely on keeping the site network out"
+      detail: "Less to write and test now. Cost: one compromised program on the robot can command motion, docking and the arms, within the safety limits; WP-C-07 records five scenarios as accepted at that level."
+    - key: C
+      title: "Keep SL 1 for now and decide at the design gate G2, with the cybersecurity architecture"
+      detail: "Decides when the design is concrete. Cost: CSR-03 stays written for both answers, and WP-S-07 cannot settle its access-control design until then."
+  sources: ["assurance/02-concept/WP-C-07-cybersecurity-threat-and-risk-assessment.md §7 (TS-01, TS-04, TS-05, TS-11, TS-14)", "assurance/02-concept/WP-C-08-cybersecurity-requirements-and-sl-target.md §2, §3, CSR-03", "DQ-013", "IEC 62443-4-2 CR 2.1 and its enhancements (to be checked against a licensed copy)"]
+  status: open
+
+- id: DQ-026
+  ref: WP-C-07 §8
+  question: "Do we accept the two cybersecurity risks that stay medium after every planned measure: a jammed Wi-Fi that silences the on-screen stop, and someone with the device password and the chassis key changing a protective field?"
+  context: >-
+    With the planned requirements, 18 of the 20 threat scenarios are low risk; these two stay medium. A jammed Wi-Fi
+    costs the on-screen stop request and the operator's view, but the hardwired emergency stops and the
+    loss-of-command stop still work, because neither uses the network. A person with the safety device's password and
+    access inside the chassis can shorten a protective field, and no safety function can catch an attack on the
+    safety device itself. Accepting a residual risk is yours to decide.
+  reversibility: revisit
+  decider: lead
+  blocks: "WP-C-07 §8 and OI-2; the cybersecurity part of the G1 risk acceptance; WP-C-08 OI-2"
+  gate: G1
+  asked: 2026-10-23
+  batch: 3
+  options:
+    - key: A
+      recommended: true
+      title: "Accept both, with the measures already planned"
+      detail: "Jamming stays a loss of availability with the hardwired stops intact; changing a field needs the password, the key and a broken seal. Cost: nothing more now; both are recorded as accepted residual risks."
+    - key: B
+      title: "Accept the jamming risk; add a start-up check of the safety device's configuration"
+      detail: "At every start the robot compares the device's configuration checksum with the recorded one and stays stopped on a mismatch, which brings the field-change risk to low. Cost: an integration task on the bench build, and only if the chosen scanner reports its checksum."
+    - key: C
+      title: "Accept neither: the start-up check, plus a certified wireless emergency stop for anyone supervising from a distance"
+      detail: "Both risks drop to low. Cost: a certified wireless emergency-stop set, which is hardware money, and its integration into the safety chain."
+  sources: ["assurance/02-concept/WP-C-07-cybersecurity-threat-and-risk-assessment.md §6, §8 (TS-07, TS-12)", "assurance/02-concept/WP-C-08-cybersecurity-requirements-and-sl-target.md CSR-07, CSR-08, CSR-16, CSR-17", "gap assessment GAP-28"]
   status: open

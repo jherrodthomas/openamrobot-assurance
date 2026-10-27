@@ -1,0 +1,64 @@
+name: gazebo
+
+# The Gazebo scenario tests (assurance/sim/gazebo): build the scenario image of every target in pins.yaml from the
+# pinned sources, run every scenario headless and judge the fresh traces against the outcomes the record predicts.
+# The committed traces and results are checked on every pull request by assurance.yaml; this job re-runs the
+# simulation itself, so it runs when the harness, the pins or the predictions change, weekly, and on demand.
+# Read-only: the traces are kept as a workflow artifact, never committed by the job. Simulation is development
+# evidence only, no evidence credit.
+
+on:
+  pull_request:
+    paths:
+      - assurance/sim/gazebo/**
+      - .github/workflows/gazebo.yaml
+  schedule:
+    - cron: "17 4 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: gazebo-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  scenarios:
+    name: build the images, run the scenarios, judge the traces
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        persist-credentials: false
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+    - name: PyYAML for the pins and scenarios
+      run: python3 -m pip install --quiet pyyaml
+    - name: Room for two ROS images (the runner starts with about 14 GB free)
+      run: |
+        sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+        df -h /
+    - name: Fetch the pinned sources
+      run: assurance/sim/gazebo/prepare.sh
+    - uses: docker/setup-buildx-action@v3
+    - name: Build one image per target, the dependency layer shared and cached
+      run: |
+        for t in $(python3 -c 'import yaml; print(" ".join(yaml.safe_load(open("assurance/sim/gazebo/pins.yaml"))["targets"]))'); do
+          docker buildx build --load --build-arg TARGET="$t" -t "openamr-scenarios:$t" \
+            --cache-from type=gha,scope=gazebo --cache-to type=gha,mode=max,scope=gazebo assurance/sim/gazebo/docker
+        done
+    - name: Run every scenario on every target and judge the fresh traces
+      env:
+        SCENARIO_OUT: ${{ runner.temp }}/traces
+        SCENARIO_MODE: verify
+      run: assurance/sim/gazebo/run.sh
+    - name: Keep the traces and logs
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: gazebo-traces
+        path: ${{ runner.temp }}/traces
+        retention-days: 30
