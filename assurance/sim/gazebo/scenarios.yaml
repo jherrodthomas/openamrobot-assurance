@@ -1,0 +1,120 @@
+# Scenario tests. Each scenario is a world, a command profile on a named input topic, optional faults, and checks.
+# Every check carries the outcome the record predicts (`expected`: holds, violated or not exercised; one value for
+# every target of pins.yaml, or one per target) and why. A test passes when the simulation shows what the record
+# says: a known gap that is still there passes, a gap that closes or a property that breaks fails, so the record and
+# the software cannot drift apart unnoticed. When a prediction changes, its `why` says what changed it.
+# Robot frame: x forward, y left; base_footprint at the drive-axle midpoint on the floor. The footprint of
+# nav2_params.yaml runs from x -0.390 to +0.415 and y -0.29 to +0.29. The LiDAR sits at x 0.330, yawed 180 degrees,
+# its scan plane 0.222 m above the floor.
+# Topics: cmd_vel_smoothed is the collision monitor's input (the path Nav2 uses); cmd_vel goes straight to the base
+# (the path the docking sequencer and the operator UI use, GAP-36).
+# The baseline finding (GAP-40): at bl-001 the sim scan body filter keeps an angular window in the LiDAR frame that
+# was set before the LiDAR was turned round, so it removes the robot's forward 80 degrees and keeps the returns from
+# its own body. The collision monitor sees an obstacle inside the footprint and holds the robot still on the
+# monitored path. Upstream replaced the filter after the baseline (upstream-main, upstream issue #74).
+# The second finding (GAP-40): the simulated LiDAR's minimum range is 0.40 m (gazebo_control.xacro) and it sits
+# 0.085 m behind the footprint's front edge, so anything closer than 0.315 m ahead of the robot is out of the scan;
+# the approach polygon looks 0.16 m ahead at 0.20 m/s (time_before_collision 0.8 s), so on upstream-main an
+# obstacle leaves the scan before the monitor would act. At a real LiDAR's minimum range (GZ-06) the scan shows the
+# robot's own posts outside upstream's sim mask, which was measured with the 0.40 m minimum hiding them.
+scenarios:
+  - id: GZ-01
+    title: "A low carton, 0.15 m tall, ahead of the robot driving at navigation speed through the collision monitor"
+    record: [GAP-14, GAP-40, H-01, WP-C-10]
+    obstacles:
+      - {name: carton_low, shape: box, size: [0.30, 0.40, 0.15], pose: [1.40, 0.0, 0.075]}
+    profile:
+      - {topic: cmd_vel_smoothed, linear: 0.20, angular: 0.0, duration: 10.0}
+    checks:
+      - property: advances
+        min_m: 0.30
+        expected: {bl-001: violated, upstream-main: holds}
+        why: {bl-001: "GAP-40: the monitor sees the robot's own body and holds it still", upstream-main: "the per-sector filter removes the body returns and the robot drives"}
+      - property: no_contact
+        expected: {bl-001: holds, upstream-main: violated}
+        why: {bl-001: "only because the robot never moves", upstream-main: "GAP-14: an object below the 0.222 m scan plane is invisible to every software layer"}
+  - id: GZ-02
+    title: "A tall box, 0.60 m, in the same place: the positive control"
+    record: [H-01, GAP-13, GAP-40]
+    obstacles:
+      - {name: box_tall, shape: box, size: [0.30, 0.40, 0.60], pose: [1.40, 0.0, 0.30]}
+    profile:
+      - {topic: cmd_vel_smoothed, linear: 0.20, angular: 0.0, duration: 10.0}
+    checks:
+      - property: advances
+        min_m: 0.30
+        expected: {bl-001: violated, upstream-main: holds}
+        why: {bl-001: "GAP-40, as in GZ-01", upstream-main: "the robot drives towards the box"}
+      - property: no_contact
+        expected: {bl-001: holds, upstream-main: violated}
+        why: {bl-001: "only because the robot never moves", upstream-main: "GAP-40: the box leaves the scan 0.315 m ahead of the footprint (LiDAR minimum range 0.40 m, mounted 0.085 m behind the front), before the 0.16 m approach look-ahead reaches it"}
+      - property: monitor_engaged
+        expected: {bl-001: holds, upstream-main: violated}
+        why: {bl-001: "on the robot's own body (the baseline finding)", upstream-main: "the monitor never has the box inside its look-ahead"}
+  - id: GZ-03
+    title: "The LiDAR stops publishing while the robot drives on an open floor"
+    record: [GAP-16, GAP-40, H-11]
+    obstacles: []
+    profile:
+      - {topic: cmd_vel_smoothed, linear: 0.20, angular: 0.0, duration: 12.0}
+    faults:
+      - {kind: scan_dropout, at: 4.0}
+    checks:
+      - property: advances
+        min_m: 0.30
+        expected: {bl-001: violated, upstream-main: holds}
+        why: {bl-001: "GAP-40, as in GZ-01", upstream-main: "the robot drives until the fault"}
+      - property: stops_after_fault
+        limit_m: 0.30
+        expected: {bl-001: not exercised, upstream-main: holds}
+        why: {bl-001: "the robot is already standing when the scan stops", upstream-main: "GAP-16: with source_timeout 1.0 the monitor runs on the last scan for up to a second, then stops on an invalid source: 0.20 m at 0.20 m/s, 0.02 m for one scan period and 0.04 m braking at 0.5 m/s2 make 0.26 m"}
+  - id: GZ-04
+    title: "The undock reverse, 0.7 m at 0.10 m/s on the direct path, with a person 0.5 m behind the robot"
+    record: [GAP-35, GAP-36, SR-02.04, DQ-018]
+    obstacles:
+      - {name: person, shape: cylinder, size: [0.15, 1.70], pose: [-1.04, 0.0, 0.85]}
+    profile:
+      - {topic: cmd_vel, linear: -0.10, angular: 0.0, duration: 7.0}
+    checks:
+      - property: no_contact
+        expected: violated
+        why: "GAP-35 and GAP-36: the sequencer reverses blind on /cmd_vel, past every software layer"
+      - property: reverse_speed_le
+        limit_mps: 0.05
+        expected: violated
+        why: "SR-02.04 and DQ-018 A ask 0.05 m/s; the software reverses at 0.10 m/s (the fork change is not made yet)"
+  - id: GZ-05
+    title: "The same reverse through the collision monitor"
+    record: [GAP-35, GAP-40, H-01]
+    obstacles:
+      - {name: person, shape: cylinder, size: [0.15, 1.70], pose: [-1.04, 0.0, 0.85]}
+    profile:
+      - {topic: cmd_vel_smoothed, linear: -0.10, angular: 0.0, duration: 7.0}
+    checks:
+      - property: advances
+        min_m: 0.30
+        expected: {bl-001: violated, upstream-main: holds}
+        why: {bl-001: "GAP-40, as in GZ-01", upstream-main: "the robot reverses"}
+      - property: no_contact
+        expected: {bl-001: holds, upstream-main: violated}
+        why: {bl-001: "only because the robot never moves", upstream-main: "GAP-35: the per-sector filter removes the rear 66 degrees at every range, so the monitor cannot see behind the robot"}
+  - id: GZ-06
+    title: "GZ-02 with the simulated LiDAR's minimum range at the RPLIDAR S3 datasheet value, 0.05 m, in place of upstream's 0.40 m: the control for the second finding"
+    record: [H-01, GAP-13, GAP-40]
+    obstacles:
+      - {name: box_tall, shape: box, size: [0.30, 0.40, 0.60], pose: [1.40, 0.0, 0.30]}
+    sensor_overrides:
+      - {sensor: lidar_sensor, element: range/min, value: 0.05, upstream: 0.40, source: "RPLIDAR S3 datasheet, ranging 0.05 m minimum (to be checked against the datasheet revision of the mounted unit)"}
+    profile:
+      - {topic: cmd_vel_smoothed, linear: 0.20, angular: 0.0, duration: 10.0}
+    checks:
+      - property: advances
+        min_m: 0.30
+        expected: violated
+        why: {bl-001: "GAP-40, as in GZ-01", upstream-main: "GAP-40: at 0.05 m the scan shows the robot's own posts at 0.23 to 0.27 m, at -38 to -36 and +32 to +38 degrees, just outside the sim mask of -35 to +31 degrees; the monitor holds the robot still"}
+      - property: no_contact
+        expected: holds
+        why: "only because the robot never moves"
+      - property: monitor_engaged
+        expected: holds
+        why: "on the robot's own body"

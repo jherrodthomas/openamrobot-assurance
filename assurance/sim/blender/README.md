@@ -87,4 +87,4 @@ stopping distance (WP-S-02 OI-8, WP-C-01 OI-6). It is a number read off a descri
 | OI-1 | A reaching or crouching pose for the person (the packs ship the walk cycle only), so the hand-in-gripper case of IS-13 and the hand-under-carriage case of IS-14 can be drawn | Assurance team | next set |
 | OI-2 | The Gate A unit as built (Pi 5, Teensy, ZBLD, RPLIDAR A1 at 0.18 m) as its own configuration of the base scene, when a CAD of its electronics bracket exists; today the base is the 2.0-electronics MMP | Assurance team | — |
 | OI-3 | Replace the drawn upper body with upstream's supplier CAD when `openamr-upperbody-hw` publishes it | Assurance team | when public |
-| OI-4 | A physics layer: run the WP-S-04 stopping model as a plant and draw the stop where the model puts it | Assurance team | after WP-V-02 |
+| OI-4 | A physics layer: run the WP-S-04 stopping model as a plant and draw the stop where the model puts it (the Gazebo scenario tests of `../gazebo/` are a first physics layer; they do not yet carry the WP-S-04 model) | Assurance team | after WP-V-02 |

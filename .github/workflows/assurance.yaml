@@ -77,6 +77,10 @@ jobs:
         python3 assurance/03-system/figures/test_fig_s04.py
         python3 assurance/sim/figures/fig_sim_is.py --check
         python3 assurance/sim/figures/test_fig_sim_is.py
+    - name: Gazebo scenario results match their committed traces and show what the record predicts (the simulation itself runs in gazebo.yaml)
+      run: |
+        python3 assurance/sim/gazebo/evaluate.py --check
+        python3 assurance/sim/gazebo/test_evaluate.py
     - name: README figures match their generator
       run: |
         python3 docs/assets/openamrobot/make_assets.py --check

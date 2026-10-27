@@ -1,0 +1,21 @@
+# What the scenario tests run, pinned. Change a pin only in the pull request that also re-records the outcomes in
+# scenarios.yaml. Every target is the software under test at one commit, built into its own image on the shared
+# dependency layer below; each check in scenarios.yaml predicts its outcome per target.
+software:
+  repo: https://github.com/openAMRobot/openamr-platform-sw.git
+  packages: [openamrobot_description, openamrobot_gazebo, openamrobot_nav2, openamrobot_perception]   # those present at the commit
+targets:
+  bl-001:
+    commit: 8a7a5b1      # BL-001, the assessed baseline (assurance/case/baselines/baselines.yaml)
+  upstream-main:
+    commit: 7494771      # upstream main on 2026-10-27: the per-sector sim scan filter (upstream issue #74); not a baseline
+laser_filters:
+  repo: https://github.com/ros-perception/laser_filters.git
+  commit: 959c848b34af41aef87595ec0d84631aa85f3842   # tag 2.0.10
+navigation2:
+  repo: https://github.com/ros-navigation/navigation2.git
+  commit: 58e4019eb149ed4387938d9cd13f38659b86f754   # tag 1.3.14, the version whose manifests the image carries
+  packages: [nav2_common, nav2_msgs, nav2_util, nav2_voxel_grid, nav2_costmap_2d, nav2_collision_monitor]
+image:
+  base: ghcr.io/ros-navigation/navigation2:jazzy@sha256:243dec3ba8c7d7af47c27bd87056e8271c3a894d578d7860919e2d395a43724c
+  # ROS 2 Jazzy, Gazebo Harmonic 8 and every system dependency of Nav2; the Nav2 packages above are built on it

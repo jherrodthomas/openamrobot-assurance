@@ -1,0 +1,13 @@
+# Plant calibration. The scenario harness replaces these values of the diff-drive plugin in upstream's
+# gazebo_control.xacro before the robot is spawned, so the simulated base moves like the Gate A unit as recorded
+# (GAP-40 lists the divergence). `upstream` is the value at the software pin; the harness refuses to run if the
+# upstream file no longer says it, so a pin change cannot silently change the plant.
+diff_drive:
+  wheel_separation:        {value: 0.46,  upstream: 0.400, source: "WP-C-01 §1.1, track 0.46 m measured on the Gate A unit; the CAD and the sim say 0.400"}
+  wheel_radius:            {value: 0.100, upstream: 0.100, source: "WP-C-01 §1.1, 0.200 m drive wheels"}
+  max_linear_velocity:     {value: 0.71,  upstream: 1.0,   source: "BL-001 firmware clamp, 68 rpm at the wheel (WP-C-01 §4.1); the fork's 0.25 m/s ceiling (DQ-006 A) is not in BL-001"}
+  min_linear_velocity:     {value: -0.71, upstream: -1.0,  source: "as above"}
+  max_angular_velocity:    {value: 3.1,   upstream: 2.0,   source: "BL-001 firmware clamp (DQ-006 context)"}
+  min_angular_velocity:    {value: -3.1,  upstream: -2.0,  source: "as above"}
+  max_linear_acceleration: {value: 0.5,   upstream: 0.5,   source: "upstream value kept; the BL-001 firmware applies no ramp of its own (GAP-06)"}
+  min_linear_acceleration: {value: -0.5,  upstream: -0.5,  source: "upstream value kept. The Gate A unit coasts and the coast is unmeasured; WP-S-04 plans 0.1 to 0.5 m/s2, so stops here are the short end of that bracket"}
