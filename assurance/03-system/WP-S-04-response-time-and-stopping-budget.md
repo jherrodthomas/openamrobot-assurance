@@ -4,7 +4,7 @@
 |---|---|
 | Work product | WP-S-04 Response time, stopping performance and safety distance budget |
 | Standard reference | Machinery: 3691-4 §4 (braking, speed, personnel detection), §5; SRP/CS: 13849-1 §5 (response time as a requirement of the safety function); Other: ISO 13855 §6 (minimum distance; approach speed K), IEC 61496-3 (AOPDLR response time, tolerance); ASPICE: SYS.3 |
-| Version | 0.1 (2026-10-20): first content. Response-time budget per stop path and configuration from the datasheet values of WP-H-02 §3.2; the SF-04 target settled (200 ms at the drive, 300 ms at the contactor); stopping-distance model with planning bounds for the unmeasured coast and the braked stop; field lengths per field set from the WP-C-06 §3 formula; speed-limit consequences per zone and for the 2.0 ceiling; the parameters handed to WP-W-09; what WP-V-02, WP-V-03 and WP-V-04 measure. 0.0: skeleton |
+| Version | 0.2 (2026-10-27): §2.1, the six field-sizing paths as loop diagrams (Figures 2-1 to 2-6) with a render of each standstill moment; Figure 4-2, the side elevation in two panels with its two renders; §4.3 stopping distances corrected to 17 and 7 mm (the text had used 70 ms for the 90 ms bumper path); §4.5 names the assumed keep-clear radius; OI-8 (FS-1 against the channel 1 cap) from Figure 2-3. 0.1 (2026-10-20): first content. Response-time budget per stop path and configuration from the datasheet values of WP-H-02 §3.2; the SF-04 target settled (200 ms at the drive, 300 ms at the contactor); stopping-distance model with planning bounds for the unmeasured coast and the braked stop; field lengths per field set from the WP-C-06 §3 formula; speed-limit consequences per zone and for the 2.0 ceiling; the parameters handed to WP-W-09; what WP-V-02, WP-V-03 and WP-V-04 measure. 0.0: skeleton |
 | Status | Draft |
 | PL / scope | SF-01, SF-02, SF-03, SF-04, SF-06, SF-09 on CFG-001 (bench only, DQ-011 C) and CFG-002 (unverified); SF-10, SF-11, SF-12 on CFG-002 |
 | Author | Assurance team (AI-assisted draft, I0) |
@@ -105,6 +105,68 @@ What the table settles:
 
 Figure 7-1 of WP-C-04 draws the demand-to-power-removal part of the first eight paths; its SF-04 and SF-11 rows
 follow this table.
+
+### 2.1 The six field-sizing paths as loop diagrams
+
+One diagram per path that sizes a distance: the chain from the demand to the standstill with the stage times of the
+table above, a time axis, the distance ledger that makes the field length or the ring radius, and the same numbers
+on the floor to scale. Beside each, a render of the standstill moment from the simulation track. Every number on a
+diagram is read from this document's tables and re-derived by the generator; nothing is measured, and the
+decelerations are the planning cases of §3.1 until WP-V-02 replaces them. Synthetic: pictures only, no evidence
+credit (`assurance/sim/ideas-2d-views.md` §7).
+
+![Figure 2-1: loop diagram of SF-02 by the scanner at navigation speed: six boxes from the demand through the scanner, the logic, the contactors, the coast and the standstill with the stage times, a time axis to 0.6 s, a distance bar adding the reaction travel, the hatched coast, the person's walk and the tolerance to the 1.09 m field length, and a floor strip with the robot, the field, the standstill ghost and the person at the demand and at standstill](figures/fig-s04-2-1-loop-sf02-scanner.svg)
+
+![Render of Figure 2-1 at standstill: the base stopped in an aisle with field set FS-1b drawn red on the floor ahead and a walking person 0.10 m from its front bumper](../sim/blender/renders/openamrobot-loop-sf02-scanner.jpg)
+
+*Figure 2-1.* SF-02 by the scanner, field set FS-1b: the person who entered the 1.09 m field walks 0.91 m at K while
+the robot travels 0.034 m reacting and 0.040 m coasting; the gap at standstill is Z. On the slow coast the same loop
+needs 3.81 m (FS-1a). The render shows the standstill moment with the planning-case gap.
+
+![Figure 2-2: loop diagram of SF-02 by the rear bumper reversing at 0.05 m/s: six boxes from contact through the edge, the monitoring unit and relay, the contactors, the coast and the standstill, a time axis to 0.6 s with both coast cases, a millimetre-scale ledger with the 7 mm and 17 mm stopping distances inside the 20 to 40 mm overtravel band, and a floor strip with the robot reversing toward the dock over the blind path with a person behind it](figures/fig-s04-2-2-loop-sf02-bumper.svg)
+
+![Render of Figure 2-2 at standstill: the base stopped with its rear bumper against a standing person's shin, the dock and the red reverse path behind](../sim/blender/renders/openamrobot-loop-sf02-bumper.jpg)
+
+*Figure 2-2.* SF-02 by the bumper: no distance before contact, so the ledger is the stop after contact (7 to 17 mm)
+against the edge's overtravel (20 to 40 mm, TBC). The reverse limit of DQ-018 A is what keeps that inequality true
+(§4.3).
+
+![Figure 2-3: loop diagram of SF-03 at the 0.25 m/s channel 1 ceiling: six boxes from the overspeed demand through the monitor window, the logic, the contactors, the coast from 0.25 m/s and the standstill, a time axis to 0.8 s, the 1.09 m field carried as a thin bar over the 1.28 m distance bar the stop from the ceiling needs with the 0.19 m shortfall hatched red, and a floor strip with the robot, the field, the standstill ghost and the person reaching the front](figures/fig-s04-2-3-loop-sf03.svg)
+
+![Render of Figure 2-3 at standstill: the base stopped with the red field ahead, an amber strip of the shortfall beyond it and a walking person at the front bumper](../sim/blender/renders/openamrobot-loop-sf03.jpg)
+
+*Figure 2-3.* SF-03 at the ceiling: FS-1b is sized for 0.20 m/s; a stop from the 0.25 m/s cap on the fast coast
+needs 1.28 m (CK-1b), 0.19 m more than the field carries, so in the planning case the person reaches the robot
+before it stops. The cap and the trip threshold bound this fault case, not the field (§5); whether FS-1 is sized
+for the cap is OI-8.
+
+![Figure 2-4: loop diagram of the SF-04 fault path: six boxes from the fault through the hardware watchdog window, the logic, the contactors, the coast and the standstill, a time axis to 1.5 s with the window red, a distance bar of the 0.21 m driven with no command and the coast, and a floor strip with the robot at the fault, its still-live field and the standstill ghost](figures/fig-s04-2-4-loop-sf04-fault.svg)
+
+![Render of Figure 2-4 at standstill: the base stopped with a red and amber ruler on the floor beside it marking the distance driven with no command and the coast, the operator standing beyond](../sim/blender/renders/openamrobot-loop-sf04.jpg)
+
+*Figure 2-4.* The SF-04 fault path: channel 1 dead with PWM applied, no demand; the hardware watchdog trips the
+chain at 1.07 s and the robot has driven 0.21 m plus the coast. No person is in this ledger: the scanner path stays
+live through channel 2. What the path bounds is how far a faulty drive carries the robot.
+
+![Figure 2-5: loop diagram of SF-11 at the station: six boxes from the ring crossing through the station device, the logic, the safe-torque-off path, the arm's assumed stop and the standstill, a time axis to 0.6 s, a distance bar adding the 0.6 m reach and the 0.48 m walk to the 1.08 m boundary, and a top view of the station with the base, the reach circle, the ring, the shelf and the person at the ring and at the reach radius](figures/fig-s04-2-5-loop-sf11.svg)
+
+![Render of Figure 2-5 at standstill: the 2.0 manipulator at a rack with the lift extended and the right arm reaching to a shelf, a person standing at the reach radius inside the amber workspace ring](../sim/blender/renders/openamrobot-m-loop-sf11.jpg)
+
+*Figure 2-5.* SF-11: the workspace ring is the reach (0.6 m, planning value) plus the walk during the arm's response
+and stop; with the stopping time unknown the diagram draws 0.13 s so that t_r + t_b = 0.3 s (0.48 m of walk). A 0.5 s
+stop moves the ring to 1.4 m.
+
+![Figure 2-6: loop diagram of SF-12 at the lift: six boxes from stepping onto the zone through the keep-clear device, the logic, the lift power, the brake's assumed engagement and the standstill, a time axis to 0.4 s with the 200 ms target marked, a distance bar of the 0.27 m walked during the reaction and the walk during the brake inside the 0.55 m radius, and a top view of the base, the column, the hatched keep-clear ring and the person at its edge and at standstill](figures/fig-s04-2-6-loop-sf12.svg)
+
+![Render of Figure 2-6 at standstill: the 2.0 manipulator with the lift raised and a person standing at the column's side inside the amber keep-clear ring](../sim/blender/renders/openamrobot-m-loop-sf12.jpg)
+
+*Figure 2-6.* SF-12: a person stepping onto the keep-clear zone walks 0.27 m before power is removed and more while
+the lift brake engages (TBC); against the 0.55 m radius the simulation track assumes, that leaves about 0.2 m. The
+lift's own 3.6 mm of travel is not the hazard; the radius and the brake's time are (§4.5).
+
+All six are generated by [`figures/fig_s04.py`](figures/fig_s04.py); CI fails if a stage time, a field row, §4.3 or §4.5
+disagrees with the formula or a figure is stale. The renders are from
+[`assurance/sim/blender`](../sim/blender/README.md), review pictures with no evidence credit.
 
 ## 3. Stopping distance model
 
@@ -208,12 +270,25 @@ below-plane case closed separately by SR-02.03 (0.3 m detection height, **(TBC)*
 two standards may add C back; the figure shows what that costs (the WP-C-06 §3 band). This is a technical
 interpretation (`decider: claude`), reversible, recorded as OI-3; it is not put to the lead.
 
+![Figure 4-2: side elevation in two panels. A: the base in side view with the 0.222 m and 0.18 m scan planes drawn as dashed lines ahead of it over a translucent band up to the 0.3 m detection height, a 0.15 m carton, a 0.3 m carton, a foot and a crawling child on the floor, each labelled seen, unseen or marginal. B: the 2.0 manipulator with the lift extended, the arm profile and head camera, a reaching arm, the 0.6 m reach arc, the 1.08 m workspace boundary as a vertical dashed line with a person standing at it, the 1.7 m envelope line and the 0.55 m keep-clear bar on the floor](figures/fig-s04-4-2-side-elevation.svg)
+
+![Render of Figure 4-2 panel A: orthographic side view of the base with the scan plane, a 0.15 m carton below it, a 0.30 m carton cut by it and a standing adult, the heights drawn on](../sim/blender/renders/openamrobot-elev-a.jpg)
+
+![Render of Figure 4-2 panel B: orthographic side view of the 2.0 manipulator with the lift extended and an arm reaching, the reach arc, the workspace boundary with a person standing at it, the envelope line and the keep-clear bar drawn on](../sim/blender/renders/openamrobot-m-elev-b.jpg)
+
+*Figure 4-2.* The vertical hazards the top views cannot show. Panel A is the case behind the C = 0 reading: a plane
+at 0.18 or 0.222 m detects a standing or walking person's legs and a 0.30 m carton, and misses a 0.15 m carton or
+a foot; SR-02.03's 0.30 m is the band. Panel B is §4.5 drawn: the reach, the walk term and the keep-clear on the
+2.0 manipulator with the lift extended, inside the 1.7 m envelope. Generated by [`figures/fig_s04.py`](figures/fig_s04.py)
+from §4.5, WP-C-01 §4 and WP-S-02 SR-02.03; the two renders are the same views from the simulation track, orthographic
+with the heights drawn on at the camera's scale. Synthetic: pictures only, no evidence credit.
+
 ### 4.3 Reverse and the bumper
 
 Reverse is permitted only at the crawl limit (DQ-018 A) and is covered by the rear bumper (E5b), which detects by
 contact. The condition is that the edge's overtravel exceeds the stopping distance on the bumper path of §2
-(t_r = 0.09 s) at 0.05 m/s: d_s = 0.0045 m + d_b, that is **16 mm** on the slow coast and **6 mm** on the fast
-one. A pressure-sensitive edge of the Mayser SL/BK class has an overtravel of about 20 to 40 mm **(TBC:
+(t_r = 0.09 s) at 0.05 m/s: d_s = 0.0045 m + d_b, that is **17 mm** on the slow coast and **7 mm** on the fast
+one (Figure 2-2). A pressure-sensitive edge of the Mayser SL/BK class has an overtravel of about 20 to 40 mm **(TBC:
 datasheet)**, so the margin holds at the crawl speed and fails above about 0.1 m/s on a slow coast: the speed
 monitor's direction-and-speed rule (SR-03.02) is what keeps the bumper adequate, and the undock speed of
 0.05 m/s is a safety parameter, not a tuning value.
@@ -242,7 +317,10 @@ SR-11.02 sizes the station workspace as the arm's reach plus K·(t_r + t_b) of t
 0.80 m at 0.5 s. The reach of the OpenArm 2.0 is about 0.6 m shoulder to fingertip as a planning value read from the description
 package's joint offsets (`assurance/sim/blender`), so the boundary is about 1.1 m from the shoulder at a 0.3 s stop;
 the stopping time is **(TBC: WP-C-01 OI-6)** and until it exists the boundary is provisional and AOU-10 holds. The lift moves at 18 mm/s: a stop within the 200 ms of
-SR-12.04 travels 3.6 mm after the demand, so the keep-clear detection, not the lift's speed, sets the hazard.
+SR-12.04 travels 3.6 mm after the demand, so the keep-clear detection, not the lift's speed, sets the hazard. The
+keep-clear radius of SR-12.03 is not yet sized; the simulation track draws it at 0.55 m (assumed), and Figure 2-6
+shows what that radius must cover: 0.27 m walked during t_r plus the walk during the lift brake's engagement, which
+is **(TBC)**. Figure 2-5 draws the workspace arithmetic the same way; Figure 4-2 panel B draws both on the elevation.
 
 ## 5. Speed limits per zone
 
@@ -332,3 +410,4 @@ measurement named in §6 replaces it.
 | OI-5 | WP-H-08: the tipping-limited deceleration for both configurations, the lift extended; until then a_cmd stays at the torque limit and the configured −2.5 m/s² is unreachable | Hardware lead | G2 |
 | OI-6 | Carry the §7 table into WP-W-09 as PAR entries when it is written | Software lead | G3 |
 | OI-7 | Update WP-H-02 §3.3 (field start value 1.0 m) to the field-set table of §4.1 and its worst applicable case | Hardware lead | G2 |
+| OI-8 | FS-1 is sized for the 0.20 m/s limit; a stop from the 0.25 m/s channel 1 cap needs 0.19 m more on the fast coast (CK-1b, Figure 2-3). Decide, with the measured coast, whether FS-1 is sized for the cap or the cap case is accepted as a fault bounded by the trip threshold (§5); either way WP-W-09 carries the answer | Hardware lead | G2, after WP-V-02 ST-01 |

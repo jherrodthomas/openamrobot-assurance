@@ -71,5 +71,24 @@ class TestFigSimIs(unittest.TestCase):
         self.assertEqual(len(m.group(1).split(";")), len(m.group(2).split(";")), m.group(0)[:80])
 
 
+  def test_sprites_pinned_and_embedded(self):
+    sp = self.src["sprites"]
+    self.assertEqual(set(sp), set(f.SPRITES), "every pinned sprite file is present")
+    for kind, v in sp.items():
+      self.assertEqual(v["sha"], v["pin"], kind)
+      self.assertEqual(v["ppm"], 250, kind)
+      self.assertGreater(v["w"], 100, kind)
+    plan = f.fig_plan(self.src)
+    self.assertIn('id="sim-plan-sp-cfg001"', plan)
+    self.assertIn('id="sim-plan-sp-cfg002-carry"', plan)
+    self.assertGreaterEqual(plan.count('<use href="#sim-plan-sp-'), 3)
+    self.assertIn('id="sim-is-01-sp-cfg001"', f.fig_loop(self.src, "IS-01"))
+
+  def test_fallback_footprint_without_sprites(self):
+    src = dict(self.src, sprites={})
+    self.assertNotIn("<image", f.fig_plan(src))
+    self.assertIn("<circle", f.fig_plan(src))
+
+
 if __name__ == "__main__":
   unittest.main()

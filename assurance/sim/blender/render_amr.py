@@ -5,7 +5,11 @@ Usage: python render_amr.py <mesh_dir> <out.png> [samples] [width] [height] [vie
        python render_amr.py <mesh_dir> --probe          # print the bounding box and named-part centroids, no render
 
 Views: hero (three-quarter front), scanplane (low side view with a 0.15 m obstacle under the LiDAR plane, GAP-14),
-undock (rear three-quarter with the dock and the 0.7 m blind reverse path, GAP-35), front, top.
+undock (rear three-quarter with the dock and the 0.7 m blind reverse path, GAP-35), front, top; m-hero, m-station,
+m-carry, m-lift, m-aisle (CFG-002); the companions of the WP-S-04 figures: elev-a and elev-b (orthographic side views
+with the heights of Figure 4-2 drawn on them by overlay.py) and loop-sf02-scanner, loop-sf02-bumper, loop-sf03,
+loop-sf04, loop-sf11, loop-sf12 (the standstill moment of each loop diagram of Figures 2-1 to 2-6); the sprites
+sprite, m-sprite, m-carry-sprite (orthographic top-down, transparent, cropped to 250 px/m for fig_sim_is.py).
 Synthetic picture for review: it earns no evidence credit.
 """
 import collections
@@ -191,6 +195,34 @@ if raw:
   print(f"imported {len(raw)} parts", collections.Counter(o.data.materials[0].name for o in coll.objects).most_common(12))
   bpy.ops.wm.save_as_mainfile(filepath=str(cache)); print("cached", cache)
 
+
+
+def _bbox(o):
+  pts = [o.matrix_world @ Vector(c) for c in o.bound_box]
+  return (min(p.x for p in pts), min(p.y for p in pts), min(p.z for p in pts)), (max(p.x for p in pts), max(p.y for p in pts), max(p.z for p in pts))
+
+
+def _union(objs):
+  boxes = [_bbox(o) for o in objs if o.type == "MESH"]
+  lo = tuple(min(b[0][i] for b in boxes) for i in range(3)); hi = tuple(max(b[1][i] for b in boxes) for i in range(3))
+  return lo, hi
+
+
+ROBOT_LO, ROBOT_HI = _union(list(coll.objects))     # the base's extent in metres: ROBOT_HI[0] is the front bumper face, ROBOT_LO[0] the rear
+print(f"base extent x {ROBOT_LO[0]:.3f}..{ROBOT_HI[0]:.3f}, y {ROBOT_LO[1]:.3f}..{ROBOT_HI[1]:.3f}, z to {ROBOT_HI[2]:.3f}")
+
+
+def place_person(rig, axis, face, target):
+  """Slide a placed person along one axis so that the near face of their bounding box (the rest pose, as the overlap
+  check sees it) sits at the target coordinate: axis 0 or 1, face 'lo' or 'hi'. The planning-case gaps of the loop
+  diagrams are set this way, so a still shows the same clearance the ledger prints."""
+  bpy.context.view_layer.update()
+  lo, hi = _union([o for o in rig.children_recursive if o.type == "MESH"])
+  cur = lo[axis] if face == "lo" else hi[axis]
+  rig.location[axis] += target - cur
+  bpy.context.view_layer.update()
+
+
 # ---------------------------------------------------------------- set dressing: a warehouse floor and racking
 
 
@@ -231,23 +263,77 @@ for i in range(-8, 9):   # a lane marking: yellow-black tape along y = 1.6 m
   cube("tape", (0.5, 0.06, 0.002), (i * 0.5, 1.6, 0.001), tape_y if i % 2 == 0 else tape_k)
 
 # the robot's frame: +x is forward (set from the probe: the camera and LiDAR sit toward +x)
-if view == "scanplane":
-  # GAP-14: a 0.15 m carton in the path, below the 0.18 m scan plane; the plane drawn as a translucent disc
-  cube("low obstacle", (0.4, 0.3, 0.15), (1.05, 0.0, 0.075), cardboard)
-  rim_mat = principled("LiDAR scan plane rim", (0.1, 0.9, 1.0), rough=0.3, emission=(0.1, 0.9, 1.0))
-  bpy.ops.mesh.primitive_torus_add(major_radius=1.6, minor_radius=0.004, major_segments=128, minor_segments=6, location=(0.3, 0.0, 0.222)); r = bpy.context.active_object; r.name = "scan plane rim"; r.data.materials.append(rim_mat)
-  for k in range(-60, 61, 6):   # the scan plane drawn as beams from the LiDAR, forward sector only
+SCAN_PLANE_Z = 0.222     # RPLIDAR S3 on the 2.0 base: 174 + 17.5 + 30.55 mm (mechanical BOM); the Gate A unit's A1 sits at 0.18 m
+rim_mat = principled("LiDAR scan plane rim", (0.1, 0.9, 1.0), rough=0.3, emission=(0.1, 0.9, 1.0))
+zone_mat = principled("workspace boundary", (0.95, 0.6, 0.05), rough=0.6, alpha=0.55, emission=(0.9, 0.5, 0.05))
+field_mat = principled("protective field", (0.1, 0.9, 1.0), rough=0.3, alpha=0.22, emission=(0.1, 0.9, 1.0))
+field_red = principled("protective field, violated", (0.95, 0.15, 0.1), rough=0.3, alpha=0.30, emission=(0.9, 0.1, 0.1))
+strip_amber = principled("coast strip", (0.95, 0.6, 0.05), rough=0.6, alpha=0.5, emission=(0.9, 0.5, 0.05))
+shirt = principled("shirt, work blue", (0.08, 0.22, 0.5), rough=0.85)
+people = Path(__file__).resolve().parent / "library" / "people"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import cfg002  # noqa: E402  (the upper body, the arms, the people and the floor rings)
+
+
+def scan_beams(depth=1.25, rim=True):
+  """The scan plane drawn as beams from the LiDAR over the forward sector, with the rim torus at the plane height."""
+  if rim:
+    bpy.ops.mesh.primitive_torus_add(major_radius=1.6, minor_radius=0.004, major_segments=128, minor_segments=6, location=(0.3, 0.0, SCAN_PLANE_Z)); r = bpy.context.active_object; r.name = "scan plane rim"; r.data.materials.append(rim_mat)
+  for k in range(-60, 61, 6):
     ang = math.radians(k)
-    bpy.ops.mesh.primitive_cylinder_add(vertices=8, radius=0.0025, depth=1.25, location=(0.35 + 0.625 * math.cos(ang), 0.625 * math.sin(ang), 0.222), rotation=(0, math.radians(90), ang))
+    bpy.ops.mesh.primitive_cylinder_add(vertices=8, radius=0.0025, depth=depth, location=(0.35 + depth / 2 * math.cos(ang), depth / 2 * math.sin(ang), SCAN_PLANE_Z), rotation=(0, math.radians(90), ang))
     b = bpy.context.active_object; b.name = "scan beam"; b.data.materials.append(rim_mat)
-  # a second carton at the plane height for comparison: seen by the scanner
-  cube("tall obstacle", (0.4, 0.3, 0.30), (1.05, 0.55, 0.15), cardboard)
-if view == "undock":
-  # GAP-35: the dock behind the robot and the 0.7 m blind reverse path on the floor
+
+
+def dock_props():
   dock = principled("dock, grey", (0.35, 0.36, 0.38), rough=0.5, metallic=0.3)
   cube("dock", (0.35, 0.5, 0.30), (-1.35, 0.0, 0.15), dock); cube("dock contact", (0.06, 0.2, 0.08), (-1.15, 0.0, 0.1), MATS["copper"])
   path_mat = principled("reverse path", (0.95, 0.15, 0.1), rough=0.6, alpha=0.45, emission=(0.9, 0.1, 0.1))
   cube("reverse path", (0.7, 0.60, 0.003), (-0.78, 0.0, 0.0015), path_mat)
+
+
+def field_strip(name, length, start_x, mat, width=0.78, y=0.0):
+  """A translucent strip on the floor from start_x forward by length (a field set, or one term of the ledger)."""
+  return cube(name, (length, width, 0.003), (start_x + length / 2, y, 0.0015), mat)
+
+
+FRONT, REAR = ROBOT_HI[0], ROBOT_LO[0]
+if view == "scanplane":
+  # GAP-14: a 0.15 m carton in the path, below the scan plane; a 0.30 m one beside it is seen
+  cube("low obstacle", (0.4, 0.3, 0.15), (1.05, 0.0, 0.075), cardboard)
+  scan_beams()
+  cube("tall obstacle", (0.4, 0.3, 0.30), (1.05, 0.55, 0.15), cardboard)
+if view == "undock":
+  dock_props()   # GAP-35: the dock behind the robot and the 0.7 m blind reverse path on the floor
+if view == "elev-a":
+  # Figure 4-2 panel A: the scan plane against a 0.15 m carton (below it), a 0.30 m carton (at the SR-02.03 height) and a standing adult's legs
+  scan_beams(depth=0.98, rim=False)
+  kraft = principled("carton, kraft", (0.30, 0.19, 0.09), rough=0.85)
+  cube("low obstacle", (0.4, 0.3, 0.15), (1.05, 0.0, 0.075), kraft)
+  cube("tall obstacle", (0.4, 0.3, 0.30), (1.55, 0.0, 0.15), kraft)
+  rig = cfg002.add_person(scene.collection, people / "pedestrian_male.glb", (2.4, 0.0, 0.0), 180.0, frame=0, shirt=shirt)
+  place_person(rig, 0, "lo", 2.05)
+if view == "loop-sf02-scanner":
+  # Figure 2-1 at standstill: the robot has coasted to rest, the person who entered field FS-1b has walked K·(t_r + t_b) and stands Z = 0.10 m from the front
+  field_strip("protective field FS-1b (1.09 m), violated", 1.09, FRONT, field_red)
+  rig = cfg002.add_person(scene.collection, people / "pedestrian_female.glb", (1.2, 0.0, 0.0), 180.0, frame=12, shirt=shirt)
+  place_person(rig, 0, "lo", FRONT + 0.10)
+if view == "loop-sf03":
+  # Figure 2-3 at standstill: at the 0.25 m/s ceiling the fast coast needs 1.28 m (CK-1b) and the field is 0.19 m short: contact in the planning case
+  field_strip("protective field FS-1b (1.09 m), violated", 1.09, FRONT, field_red)
+  field_strip("CK-1b shortfall (0.19 m)", 0.19, FRONT + 1.09, strip_amber)
+  rig = cfg002.add_person(scene.collection, people / "pedestrian_female.glb", (1.2, 0.0, 0.0), 180.0, frame=12, shirt=shirt)
+  place_person(rig, 0, "lo", FRONT + 0.002)
+if view == "loop-sf02-bumper":
+  # Figure 2-2 at standstill: reversing at 0.05 m/s into a person's shin; the bumper's overtravel absorbs the 7 to 17 mm stop
+  dock_props()
+  rig = cfg002.add_person(scene.collection, people / "pedestrian_male.glb", (-0.9, 0.0, 0.0), 0.0, frame=0, shirt=shirt)
+  place_person(rig, 0, "hi", REAR - 0.002)
+if view == "loop-sf04":
+  # Figure 2-4 at standstill: channel 1 died with PWM applied; 1.07 s at 0.20 m/s with no command (red), then the coast (amber), drawn as a ruler beside the robot
+  field_strip("no command: 1.07 s at 0.20 m/s (0.21 m)", 0.214, FRONT - 0.254, principled("no-command strip", (0.95, 0.15, 0.1), rough=0.6, alpha=0.6, emission=(0.9, 0.1, 0.1)), width=0.25, y=-0.55)
+  field_strip("coast 0.04 m (fast case)", 0.040, FRONT - 0.040, strip_amber, width=0.25, y=-0.55)
+  rig = cfg002.add_person(scene.collection, people / "pedestrian_male.glb", (-2.4, 2.6, 0.0), -45.0, frame=0, shirt=shirt)   # the operator, pendant in hand, well outside the path
 
 # world: soft gradient sky (no HDRI available in this container)
 world = bpy.data.worlds.new("studio"); scene.world = world; world.use_nodes = True
@@ -281,21 +367,45 @@ views = {
   "top": ((0.0, -0.01, 3.2), (0.0, 0.0, 0.0), 40),
   "scanplane": ((2.4, -1.7, 0.55), (0.8, 0.15, 0.16), 45),
   "undock": ((-2.3, -1.7, 1.05), (-0.55, 0.0, 0.15), 42),
+  "sprite": ((0, 0, 4), (0, 0, 0), 50),
+  "elev-a": ((1.2, -6.0, 0.82), (1.2, 0.0, 0.82), 50),
+  "loop-sf02-scanner": ((1.6, -3.2, 1.4), (0.8, 0.0, 0.55), 30),
+  "loop-sf03": ((1.6, -3.2, 1.4), (0.8, 0.0, 0.55), 30),
+  "loop-sf02-bumper": ((-2.4, -1.9, 1.1), (-0.6, 0.0, 0.3), 42),
+  "loop-sf04": ((1.3, -1.6, 0.8), (0.0, -0.35, 0.15), 38),
 }
 # ---------------------------------------------------------------- CFG-002 scenes (m-*): upper body, arms, a person, props
 if view.startswith("m-"):
   sys.path.insert(0, str(Path(__file__).resolve().parent))
   import cfg002
   mats2 = {"white": MATS["white"], "alu": MATS["alu"], "silver": MATS["alu"], "black": MATS["black"], "red": MATS["red"], "yellow": MATS["yellow"]}
-  lift, pose = {"m-hero": (0.0, "stowed"), "m-station": (0.35, "reach_right"), "m-carry": (0.0, "carry"), "m-lift": (0.20, "stowed"), "m-aisle": (0.0, "stowed")}[view]
+  lift, pose = {"m-hero": (0.0, "stowed"), "m-station": (0.35, "reach_right"), "m-carry": (0.0, "carry"), "m-lift": (0.20, "stowed"), "m-aisle": (0.0, "stowed"),
+                "m-sprite": (0.0, "stowed"), "m-carry-sprite": (0.0, "carry"), "m-elev-b": (0.35, "reach_right"), "m-loop-sf11": (0.35, "reach_right"), "m-loop-sf12": (0.20, "stowed")}[view]
   ub = bpy.data.collections.new("cfg002"); scene.collection.children.link(ub)
   cfg002.build_upper_body(ub, lift, mats2)
   world_m, tips = cfg002.build_arms(ub, *cfg002.POSES[pose], lift, mats2)
   print("arm fingertips", {k: tuple(round(c, 3) for c in v) for k, v in tips.items()})
-  people = Path(__file__).resolve().parent / "library" / "people"
-  zone_mat = principled("workspace boundary", (0.95, 0.6, 0.05), rough=0.6, alpha=0.55, emission=(0.9, 0.5, 0.05))
-  field_mat = principled("protective field", (0.1, 0.9, 1.0), rough=0.3, alpha=0.22, emission=(0.1, 0.9, 1.0))
-  shirt = principled("shirt, work blue", (0.08, 0.22, 0.5), rough=0.85)
+  if view == "m-elev-b":
+    # Figure 4-2 panel B: lift extended, the right arm reaching, a person standing at the workspace boundary (reach 0.6 + walk 0.48 m from the shoulder axis)
+    cfg002.floor_ring(ub, "workspace boundary (reach 0.6 m + 0.48 m walk)", (cfg002.ARM_MOUNT_X, 0.0), 1.08, 0.06, zone_mat)
+    rig = cfg002.add_person(ub, people / "pedestrian_male.glb", (1.6, 0.0, 0.0), 180.0, frame=0, shirt=shirt)
+    place_person(rig, 0, "lo", cfg002.ARM_MOUNT_X + 1.08)
+  if view == "m-loop-sf11":
+    # Figure 2-5 at standstill: the person who crossed the ring at 1.08 m has walked 0.48 m and stands at the reach radius, 0.6 m from the shoulder axis; the arm is stopped
+    for y in (-0.9, 0.9):
+      cube("station upright", (0.09, 0.09, 2.2), (1.05, y, 1.1), upright_mat)
+    for z in (0.45, 0.95, 1.45):
+      cube("station beam", (0.08, 1.9, 0.10), (1.0, 0.0, z), beam_mat); cube("station shelf", (0.5, 1.8, 0.03), (1.25, 0.0, z + 0.06), pallet)
+      for y in (-0.6, -0.15, 0.3):
+        cube("item", (0.3, 0.25, 0.22), (1.25, y, z + 0.19), cardboard)
+    cfg002.floor_ring(ub, "workspace boundary (reach 0.6 m + 0.48 m walk)", (cfg002.ARM_MOUNT_X, 0.0), 1.08, 0.06, zone_mat)
+    rig = cfg002.add_person(ub, people / "pedestrian_male.glb", (cfg002.ARM_MOUNT_X, -1.0, 0.0), 90.0, frame=0, shirt=shirt)
+    place_person(rig, 1, "hi", -cfg002.ARM_MOUNT_Y - 0.60)
+  if view == "m-loop-sf12":
+    # Figure 2-6 at standstill: the person who stepped onto the 0.55 m keep-clear ring has walked K·t_r = 0.27 m and stands at the column's side; the lift has moved 3 mm
+    cfg002.floor_ring(ub, "lift keep-clear zone", (cfg002.COLUMN_AXIS_X, 0.0), 0.55, 0.05, zone_mat)
+    rig = cfg002.add_person(ub, people / "pedestrian_male.glb", (cfg002.COLUMN_AXIS_X, -0.95, 0.0), 90.0, frame=0, shirt=shirt)
+    place_person(rig, 1, "hi", ROBOT_LO[1] - 0.002)
   if view == "m-station":
     # a station rack ahead of the robot; the person works at the same shelf (IS-13); the workspace ring = reach + walk term (WP-S-04 §4.5)
     for y in (-0.9, 0.9):
@@ -324,13 +434,12 @@ if view.startswith("m-"):
     "m-carry": ((3.5, -3.1, 1.6), (1.1, 0.3, 0.7), 40),
     "m-lift": ((3.0, -3.6, 1.55), (0.1, -0.45, 0.8), 42),
     "m-aisle": ((3.4, -2.7, 1.5), (0.95, 0.15, 0.55), 40),
+    "m-sprite": ((0, 0, 4), (0, 0, 0), 50), "m-carry-sprite": ((0, 0, 4), (0, 0, 0), 50),
+    "m-elev-b": ((0.80, -6.0, 0.95), (0.80, 0.0, 0.95), 50),
+    "m-loop-sf11": ((-2.2, -3.2, 2.4), (0.45, -0.3, 0.9), 40),
+    "m-loop-sf12": ((3.0, -3.6, 1.55), (0.1, -0.45, 0.8), 42),
   })
 
-
-
-def _bbox(o):
-  pts = [o.matrix_world @ Vector(c) for c in o.bound_box]
-  return (min(p.x for p in pts), min(p.y for p in pts), min(p.z for p in pts)), (max(p.x for p in pts), max(p.y for p in pts), max(p.z for p in pts))
 
 
 def overlap_report():
@@ -358,5 +467,33 @@ cam.data.lens = lens
 cam.location = loc; cam.rotation_euler = (mathutils.Vector(target) - mathutils.Vector(loc)).to_track_quat("-Z", "Y").to_euler()
 cam.data.dof.use_dof = True; cam.data.dof.focus_distance = (mathutils.Vector(target) - mathutils.Vector(loc)).length; cam.data.dof.aperture_fstop = 8.0
 
+# ---------------------------------------------------------------- top-down sprite: orthographic, transparent, fixed pixels per metre
+if view.endswith("sprite"):
+  for o in list(bpy.data.objects):
+    if o.type == "MESH" and o.users_collection and o.users_collection[0].name not in ("model", "cfg002"):
+      bpy.data.objects.remove(o, do_unlink=True)     # no floor, racking, props
+    elif o.type == "LIGHT":
+      bpy.data.objects.remove(o, do_unlink=True)
+  scene.render.film_transparent = True
+  bpy.ops.object.light_add(type="SUN", location=(0, 0, 5)); sun = bpy.context.active_object; sun.data.energy = 3.0; sun.rotation_euler = (math.radians(20), math.radians(10), 0)
+  bg.inputs["Strength"].default_value = 1.0
+  cam.data.type = "ORTHO"; cam.data.ortho_scale = 2.0        # 2.0 m across the frame
+  scene.render.resolution_x = scene.render.resolution_y = 1000   # 500 px per metre; cropped and halved to 250 px/m below
+  cam.location = (0.0, 0.0, 4.0); cam.rotation_euler = (0, 0, 0)
+  cam.data.dof.use_dof = False
+# ---------------------------------------------------------------- side elevations: orthographic, a known number of pixels per metre, heights drawn on by overlay.py
+ELEV = {"elev-a": 3.6, "m-elev-b": 3.4}   # metres across the frame
+if view in ELEV:
+  cam.data.type = "ORTHO"; cam.data.ortho_scale = ELEV[view]; cam.data.dof.use_dof = False
+  for o in list(bpy.data.objects):   # no racking behind an elevation: the silhouettes must read against the wall
+    if o.type == "MESH" and o.name.split(".")[0] in ("upright", "beam", "pallet", "box"):
+      bpy.data.objects.remove(o, do_unlink=True)
 scene.render.filepath = str(out_png.resolve())
 bpy.ops.render.render(write_still=True); print("rendered", out_png)
+
+if view.endswith("sprite"):
+  import sprites
+  sprites.crop(out_png, 500, view)
+if view in ELEV and "--no-overlay" not in sys.argv:
+  import overlay
+  overlay.draw(out_png, view, W / ELEV[view], (loc[0], loc[2]), FRONT, ROBOT_HI[2])

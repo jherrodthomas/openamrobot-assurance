@@ -1,0 +1,14 @@
+{
+ "file": "cfg002-stowed-top.png",
+ "view": "m-sprite",
+ "px_per_m": 250,
+ "origin_px": [
+  106.0,
+  78.0
+ ],
+ "size_px": [
+  212,
+  156
+ ],
+ "frame": "the robot's +x (forward) is image right, +y is image up; origin_px is the base's centre"
+}

@@ -3,8 +3,8 @@
 | Field | Value |
 |---|---|
 | Scope | Ideation note for a family of 2D views of the hazard situations, to complement the Blender review scenes of [`blender/`](blender/README.md): which views earn their place, what each is generated from, static or looping, what a view may claim, and which one is built first |
-| Version | 0.2 (2026-10-21): the pilot built on the lead's "go": `figures/fig_sim_is.py`, the warehouse plan as WP-C-02 Figure 2-2 and the IS-01 loop as WP-C-06 Figure 2-2, checked in CI; OI-1 and OI-2 closed. 0.1 (2026-10-21): the options as discussed with the project lead in one session, with mockups shown in chat and the lead's picks |
-| Status | Draft. AI-drafted (Claude, AI assistant; I0 under WP-M-02 §3.3). The pilot of §8 is built; the rest is not. **Pictures only, no evidence credit** applies to everything this note proposes |
+| Version | 0.3 (2026-10-27): §8 steps 2, 4 and 5 built: the CAD sprites (three, pinned by hash, `blender/sprites`), the six loop diagrams (WP-S-04 Figures 2-1 to 2-6, `03-system/figures/fig_s04.py`) and the side elevation in two panels (WP-S-04 Figure 4-2), each 2D figure with a Blender companion render as the lead chose on 2026-10-27; OI-4 closed. 0.2 (2026-10-21): the pilot built on the lead's "go": `figures/fig_sim_is.py`, the warehouse plan as WP-C-02 Figure 2-2 and the IS-01 loop as WP-C-06 Figure 2-2, checked in CI; OI-1 and OI-2 closed. 0.1 (2026-10-21): the options as discussed with the project lead in one session, with mockups shown in chat and the lead's picks |
+| Status | Draft. AI-drafted (Claude, AI assistant; I0 under WP-M-02 §3.3). Steps 1, 2, 4 and 5 of §8 are built; steps 3 and 6 are not. **Pictures only, no evidence credit** applies to everything this note proposes |
 | Feeds | A later generator under this track; [WP-C-06](../02-concept/WP-C-06-human-robot-interaction-and-misuse.md) §2 and [WP-C-02](../02-concept/WP-C-02-operating-environment-and-tasks.md) §2 as the places the views would be embedded; [WP-S-04](../03-system/WP-S-04-response-time-and-stopping-budget.md) §2 as the place for the loop diagrams. Not a work product of [WP-M-00](../01-management/WP-M-00-work-product-register.md): the generator is a figure source of WP-C-02 and WP-C-06, as their other figure scripts are, listed in the sim README and checked by CI |
 
 ## 1. What this note is
@@ -54,8 +54,8 @@ route as Z5 (excluded, DQ-019).
 | **The warehouse plan** | one still of a typical site: the five zones, the rack rows and aisles, the station bay with the SR-11.02 workspace ring and the SR-12.03 keep-clear, the dock lane with the robot's dock and the undock reverse, the charging bay, the loading dock and the office; the robot on it with every WP-S-04 field set at its planning length; hazard chips naming the hazard, the situation and the PLr adopted | WP-C-02 §2 as the successor of Figure 2-1; the sim README |
 | **The per-situation loops** | one looping view per IS-01…IS-15: a fixed crop of the plan around the event, about 6 × 3.6 m; the robot sprite moving at the zone speed with the field set that applies drawn as the sum of its terms; the person on their path at K; the field outline changing state at the demand and at power removal; an event row that lights up; a time strip with a cursor; a plot of the person-to-robot distance with the field edge marked. The three with no motion (IS-07, IS-08, IS-11) are stills | WP-C-06 §2, replacing Figure 2-1; listed in the sim README |
 | **The tour loop** | the robot driving the plan's route, the field set switching at each zone boundary, each situation playing as it is reached | the sim README, later, from the same generator |
-| **The loop diagrams** | six, one per field-sizing path of WP-S-04 §2, each with the distance ledger that makes the field length | WP-S-04 §2 |
-| **The side elevation** | one static sheet, two or three panels | WP-S-04 §4.2 beside the conditions that make C = 0 defensible, or WP-C-06 §3; decided when built |
+| **The loop diagrams** | six, one per field-sizing path of WP-S-04 §2, each with the distance ledger that makes the field length; beside each, a render of the standstill moment from the Blender track (the lead's pick of 2026-10-27: companions, the 2D figure stays the checked one) | WP-S-04 §2.1, Figures 2-1 to 2-6 (built) |
+| **The side elevation** | one static sheet, two panels (the scan plane against low objects; the CFG-002 envelope, workspace and keep-clear), with an orthographic render of each panel beside it, the heights drawn on | WP-S-04 §4.2, Figure 4-2 (built) |
 
 **The sprite.** No free top-down sprite of an AMR exists (the CC0 packs found are cars, tanks and side-view pixel
 robots; the warehouse vectors found are stock art under attribution licences). The robot is therefore its own CAD:
@@ -63,7 +63,9 @@ the Blender pipeline's existing `top` camera made orthographic, rendered with a 
 pixels-per-metre, one PNG per configuration and pose (CFG-001; CFG-002 stowed and carry), pinned by hash like
 a sprite sheet, and embedded by the SVG. A drawn footprint of the same shape (white deck, dark
 bumper ends, two drive wheels, three castors, the scanner dot at the front) is the fallback when Blender is absent,
-and is what the mockups used.
+and is what the mockups used. Built in v0.3: `blender/sprites/` holds the three files at 250 px/m with a sidecar
+giving the base's centre; `fig_sim_is.py` embeds them as data URIs and fails `--check` when a file's SHA-256 differs
+from its pin.
 
 ## 5. What each view is generated from
 
@@ -114,10 +116,10 @@ redraws every view from the measured value.
    family is judged before any Blender time is spent. The pilot must show: the field as the sum of its terms with
    the coast hatched as unmeasured; the person's 0.91 m walk and the robot's 0.11 m; the outline changing at the
    demand and at power removal; the event row, the time strip and the distance plot; the band of §7.
-2. The CAD sprite rendered and swapped in; the generator keeps the fallback.
+2. **Built 2026-10-27:** the CAD sprite rendered and swapped in; the generator keeps the fallback.
 3. The other fourteen situations; Figure 2-1 of WP-C-06 retired.
-4. The six loop diagrams in WP-S-04.
-5. The side elevation sheet.
+4. **Built 2026-10-27:** the six loop diagrams in WP-S-04 §2.1, each with its render of the standstill moment.
+5. **Built 2026-10-27:** the side elevation sheet in WP-S-04 §4.2, two panels, each with its orthographic render.
 6. The tour loop; the dashboard when the physics layer exists.
 
 Before step 1 is committed: the generator goes into WP-M-00 as a work product or as a figure source of the work
@@ -159,5 +161,5 @@ pick below is the recommended option and can be overturned by a line in this tab
 | OI-1 | ~~Register the generator before the pilot is committed~~ done in v0.2: `figures/fig_sim_is.py` is a figure source of WP-C-02 (Figure 2-2) and WP-C-06 (Figure 2-2), listed in the sim README, with its `--check` and self-tests in CONTRIBUTING.md and CI | closed | — |
 | OI-2 | ~~The session's mockups are not committed; the pilot reproduces the plan and the IS-01 loop from the tables~~ done in v0.2; the loop-diagram, side-elevation and dashboard mockups stay uncommitted until their steps of §8 | closed | — |
 | OI-3 | Replace the fictional site with the surveyed one when WP-O-01 records it; the aisle width and dock-lane length stay **(TBC)** against WP-C-02 §2 until then | Assurance team | with WP-O-01 |
-| OI-4 | The CAD sprite needs the Blender environment of `blender/README.md` §2; render CFG-001 and CFG-002 (stowed, carry) orthographic top-down, transparent, at a fixed scale, and pin the files | Assurance team | step 2 of §8 |
+| OI-4 | ~~The CAD sprite needs the Blender environment of `blender/README.md` §2; render CFG-001 and CFG-002 (stowed, carry) orthographic top-down, transparent, at a fixed scale, and pin the files~~ done in v0.3 (`blender/sprites`, pinned in `fig_sim_is.py`) | closed | — |
 | OI-5 | Decide whether the reBot-DevArm scenes.yaml schema is adopted when the tour loop or the dashboard is built, so that the 2D views and the Blender scenes share one description | Project lead | when the tour loop is scheduled |

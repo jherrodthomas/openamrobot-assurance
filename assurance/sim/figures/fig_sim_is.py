@@ -23,10 +23,14 @@ planning values; the coast is unmeasured until WP-V-02 (assurance/sim/ideas-2d-v
     python3 fig_sim_is.py            # regenerate
     python3 fig_sim_is.py --check    # fail if the sources changed or an SVG is stale
 
-Standard library only. Output is deterministic.
+The robot on the views is the top-down CAD render of assurance/sim/blender/sprites (pinned by hash in SPRITES); the
+drawn footprint stands in when the files are absent. Standard library only. Output is deterministic.
 """
 from __future__ import annotations
 
+import base64
+import hashlib
+import json
 import math
 import re
 import sys
@@ -51,6 +55,31 @@ C = {
   "tape": "#F2C01E", "pallet": "#C9A06A", "pallet2": "#A77E4A", "carton": "#E2C79B", "carton2": "#8C6B3F",
 }
 BAND = "SYNTHETIC: pictures only, no evidence credit"
+
+# The robot on the views is its own CAD, rendered top-down by the Blender pipeline (assurance/sim/blender/README.md §2:
+# orthographic, transparent, cropped to 250 px/m) and pinned here by hash like a sprite sheet (ideas-2d-views.md §4).
+# A re-render that changes a file fails --check until its pin is updated on purpose. Without the files the drawn
+# footprint of Plan.sprite() stands in.
+SPRITE_DIR = ROOT / "assurance" / "sim" / "blender" / "sprites"
+SPRITES = {
+  "cfg001": ("cfg001-top.png", "41e4878c8835083d336de1060cfb85e59c840a5a5edaf3574838f9b33f5499f9"),
+  "cfg002": ("cfg002-stowed-top.png", "24ced09a24f7b1b211f6bc3a6df25228f9a82351e7318e88a153a55c0cb59575"),
+  "cfg002-carry": ("cfg002-carry-top.png", "4bb417c6ac9d1ce52942021d4d915333299bd8fa4aea8da59d6dd2234515875f"),
+}
+
+
+def load_sprites() -> dict:
+  out = {}
+  for kind, (name, pin) in SPRITES.items():
+    png = SPRITE_DIR / name
+    meta = png.with_name(name + ".json")
+    if not png.exists() or not meta.exists():
+      continue
+    data = png.read_bytes()
+    m = json.loads(meta.read_text(encoding="utf-8"))
+    out[kind] = {"name": name, "sha": hashlib.sha256(data).hexdigest(), "pin": pin, "b64": base64.b64encode(data).decode("ascii"),
+                 "w": m["size_px"][0], "h": m["size_px"][1], "ox": m["origin_px"][0], "oy": m["origin_px"][1], "ppm": m["px_per_m"]}
+  return out
 
 
 # ------------------------------------------------------------------------------------------------------ sources
@@ -97,7 +126,8 @@ def load_source() -> dict:
     head = _clean(r[0])
     ratings.append({"row": head, "hazard": head.split(" ")[0], "scenes": re.findall(r"IS-\d\d", head), "plr": _clean(r[7]).split(" ")[0]})
   return {"scenes": scenes, "K": params.get("K"), "Z": params.get("Z"), "K_s04": _num(conv["K"][1]) if "K" in conv else None,
-          "Z_s04": _num(conv["Z"][1]) if "Z" in conv else None, "budget": budget, "fields": fields, "zones": zones, "ratings": ratings}
+          "Z_s04": _num(conv["Z"][1]) if "Z" in conv else None, "budget": budget, "fields": fields, "zones": zones, "ratings": ratings,
+          "sprites": load_sprites()}
 
 
 def model(v: float, a: float, t_r: float, K: float, Z: float) -> tuple[float, float, float]:
@@ -145,6 +175,11 @@ def check_source(src: dict) -> list[str]:
   for sid in SCENES:
     if rating_for(src, sid) is None:
       errs.append(f"WP-C-03 §5 has no rated row naming {sid}")
+  for kind, sp in src["sprites"].items():
+    if sp["sha"] != sp["pin"]:
+      errs.append(f"sprite {sp['name']} changed (sha256 {sp['sha'][:12]}…): re-pin it in SPRITES if the new render is the one to use")
+    if sp["ppm"] != 250:
+      errs.append(f"sprite {sp['name']} is {sp['ppm']} px/m, not 250")
   return errs
 
 
@@ -223,9 +258,11 @@ def defs(uid: str) -> str:
           f'<rect x="0" y="4" width="14" height="2" fill="{C["pallet2"]}"/><rect x="0" y="10" width="14" height="2" fill="{C["pallet2"]}"/></pattern></defs>')
 
 
-def svg(w, h, uid, title, desc, body):
-  return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="{uid}-t {uid}-d">\n'
-          f'<title id="{uid}-t">{escape(title)}</title>\n<desc id="{uid}-d">{escape(desc)}</desc>\n' + defs(uid) + "\n"
+def svg(w, h, uid, title, desc, body, sprites=()):
+  """sprites: the (kind, spec) pairs a Plan used; each becomes one <image> in <defs> that the <use> elements reference."""
+  images = "".join(f'<image id="{uid}-sp-{kind}" width="{sp["w"]}" height="{sp["h"]}" href="data:image/png;base64,{sp["b64"]}"/>' for kind, sp in sprites)
+  return (f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="{uid}-t {uid}-d">\n'
+          f'<title id="{uid}-t">{escape(title)}</title>\n<desc id="{uid}-d">{escape(desc)}</desc>\n' + defs(uid) + (f"<defs>{images}</defs>" if images else "") + "\n"
           f'<rect x="0" y="0" width="{w}" height="{h}" fill="{C["bg"]}"/>\n' + "\n".join(body) + "\n</svg>\n")
 
 
@@ -236,10 +273,12 @@ def band(w, h, note):
 class Plan:
   """The site in a pixel frame: P maps metres to pixels, M is pixels per metre, uid prefixes the pattern ids."""
 
-  def __init__(self, px, py, M, uid, origin=(0.0, 0.0), height=None):
+  def __init__(self, px, py, M, uid, origin=(0.0, 0.0), height=None, sprites=None):
     self.px, self.py, self.M, self.uid = px, py, M, uid
     self.ox, self.oy = origin
     self.h = height if height is not None else SITE["size"][1]
+    self.sprites = sprites or {}
+    self.used = {}
 
   def P(self, xm, ym):
     return self.px + (xm - self.ox) * self.M, self.py + (self.h - (ym - self.oy)) * self.M
@@ -285,11 +324,17 @@ class Plan:
     X2, Y2 = self.P(*b)
     return [line(X1, Y1, X2, Y2, C["lane"], 2.5, "10,7")]
 
-  def sprite(self, x, y, heading=1, opacity=1.0):
-    """A drawn footprint of the base (WP-C-01 §4: 780 × 582 mm): deck, bumper ends, drive wheels, castors, the
-    scanner at the front, the rear bumper edge red. Replaced by the top-down CAD render when it exists (OI-4)."""
+  def sprite(self, x, y, heading=1, opacity=1.0, kind="cfg001"):
+    """The robot from above: the CAD render of SPRITES when the file is present and pinned (the image's +x is to the
+    right and its +y up, as on the plan; origin_px is the base's centre), else a drawn footprint of the base
+    (WP-C-01 §4: 780 × 582 mm): deck, bumper ends, drive wheels, castors, the scanner at the front, the rear bumper red."""
     M = self.M
     cx, cy = self.P(x, y)
+    sp = self.sprites.get(kind)
+    if sp:
+      self.used[kind] = sp
+      s = M / sp["ppm"]
+      return [f'<use href="#{self.uid}-sp-{kind}" opacity="{opacity}" transform="translate({cx:.1f},{cy:.1f}) scale({heading * s:.4f},{s:.4f}) translate({-sp["ox"]:.1f},{-sp["oy"]:.1f})"/>']
     rl, rw = ROBOT_L * M, ROBOT_W * M
     g = [f'<g opacity="{opacity}" transform="translate({cx:.1f},{cy:.1f}) scale({heading},1)">',
          rect(-rl / 2, -rw / 2, rl, rw, "#F4F6F7", "#1B1F22", 0.07 * M, 2)]
@@ -402,7 +447,7 @@ def fig_plan(src: dict) -> str:
   W, H = 1400, 1000
   M = 52.0
   uid = "sim-plan"
-  pl = Plan(40, 92, M, uid)
+  pl = Plan(40, 92, M, uid, sprites=src["sprites"])
   F = src["fields"]
   sw, sh = SITE["size"]
   body = [text(40, 36, "The warehouse from above: the zones of WP-C-02 §2 on a typical floor, the robot with every field set of WP-S-04 §4.1, the situations where they happen", 18, C["ink"], 700),
@@ -427,7 +472,7 @@ def fig_plan(src: dict) -> str:
     body.append(text(X, Y + i * 12, f"{fid} {F[fid]['L']:.2f} m ({F[fid]['case']}, {F[fid]['config']})", 9.5, col, 700))
   bx, by = SITE["aisle1_robot"]
   body += nested(bx, by, 1, ["FS-3b", "FS-4"], [C["amber"], C["blue"]])
-  body += pl.sprite(bx, by, 1, 0.35)
+  body += pl.sprite(bx, by, 1, 0.35, "cfg002-carry")
   X, Y = pl.P(bx - ROBOT_L / 2, by + ROBOT_W / 2 + 0.42)
   body += [text(X, Y, f"FS-4 {F['FS-4']['L']:.2f} m (carry, {F['FS-4']['config']})", 9.5, C["blue"], 700),
            text(X, Y + 13, f"FS-3b {F['FS-3b']['L']:.2f} m (0.30 m/s with a person, {F['FS-3b']['case']})", 9.5, C["amber"], 700)]
@@ -456,11 +501,12 @@ def fig_plan(src: dict) -> str:
   body += pl.worker(9.0, 3.2) + pl.worker(15.8, 11.0, C["blue"]) + pl.worker(4.0, 11.25, "#9AA3AB")
   ly = 92 + sh * M + 16
   body += [text(40, ly + 12, "Zones are WP-C-02 §2's; the loading dock, office and visitor route show what Z0 and Z5 look like on a real floor. Workers in vests are briefed staff, blue is the technician, grey a visitor. Chips: hazard, scenario, PLr adopted (WP-C-03 §5).", 10.5, C["muted"]),
-           text(40, ly + 28, "Robot footprint 0.78 × 0.58 m (WP-C-01 §4), drawn; replaced by the top-down CAD render when it exists. Field lengths: WP-S-04 §4.1 planning values, C = 0; the coast is unmeasured (WP-V-02).", 10.5, C["muted"]),
+           text(40, ly + 28, ("The robot is its CAD rendered from above (assurance/sim/blender/sprites); the carry ghost is CFG-002 in the carry pose." if src["sprites"] else "Robot footprint 0.78 × 0.58 m (WP-C-01 §4), drawn.")
+                + " Field lengths: WP-S-04 §4.1 planning values, C = 0; the coast is unmeasured (WP-V-02).", 10.5, C["muted"]),
            text(W - 32, ly + 28, "Generated by assurance/sim/figures/fig_sim_is.py", 9.5, C["dim"], anchor="end")]
   body += band(W, H, "Drawn to WP-S-04 v0.1 planning values; the coast is unmeasured (WP-V-02). A plan shows where the situations are; it does not show that a measure works.")
   return svg(W, H, uid, "The warehouse from above with the zones, the field sets and the situations",
-             "A typical warehouse floor seen from above: the office and visitor route as Z5 excluded, a taped test area Z1, three rack rows with dashed aisle lanes as Z2, a dock lane Z3 with the robot's dock, a charging bay Z4, a truck loading dock as Z0 excluded; the robot in an aisle with the three FS-1 field lengths nested ahead of it, a carry ghost with FS-3 and FS-4, a docking ghost with the FS-2 lengths and the blind reverse path; a station bay with the workspace ring and lift keep-clear; the people of IS-01, IS-02, IS-04 and IS-13 where they happen, with hazard chips.", body)
+             "A typical warehouse floor seen from above: the office and visitor route as Z5 excluded, a taped test area Z1, three rack rows with dashed aisle lanes as Z2, a dock lane Z3 with the robot's dock, a charging bay Z4, a truck loading dock as Z0 excluded; the robot in an aisle with the three FS-1 field lengths nested ahead of it, a carry ghost with FS-3 and FS-4, a docking ghost with the FS-2 lengths and the blind reverse path; a station bay with the workspace ring and lift keep-clear; the people of IS-01, IS-02, IS-04 and IS-13 where they happen, with hazard chips.", body, sprites=list(pl.used.items()))
 
 
 # ------------------------------------------------------------------------------------------------------ the loops
@@ -495,7 +541,7 @@ def fig_loop(src: dict, sid: str) -> str:
   cx0, cy0, cw, ch = sc["crop"]
   px, py = 40, 96
   pw, ph = cw * M, ch * M
-  pl = Plan(px, py, M, uid, origin=(cx0, cy0), height=ch)
+  pl = Plan(px, py, M, uid, origin=(cx0, cy0), height=ch, sprites=src["sprites"])
   rating = rating_for(src, sid)
   body = [text(40, 36, f"{sid} · {row['hazard']} · {row['zone']} · {row['task']}: {sc['title']}", 20, C["ink"], 700),
           text(40, 60, f"Looping view: a fixed {cw:g} × {ch:g} m crop of the warehouse plan; {sc['field']} ({src['fields'][sc['field']]['config']}, {src['fields'][sc['field']]['case']}: a = {k['a']:g} m/s², unmeasured); "
@@ -593,7 +639,7 @@ def fig_loop(src: dict, sid: str) -> str:
   return svg(W, H, uid, f"{sid}: {sc['title']}, looping",
              f"Looping top view of {sid}: in a warehouse aisle between two rack rows the robot drives at {k['v']:g} m/s with its protective field {sc['field']} drawn ahead of it as four bands, the robot's travel during the reaction time, the coast, the person's walk and the tolerance; "
              f"a person walks into the field at {k['K']:g} m/s; the field outline turns red at the demand, the contactors open at {k['t_r']:.2f} s, the robot coasts to a standstill at {k['t_s']:.2f} s; "
-             f"the events light up below, a cursor runs along a time strip, and a plot shows the distance from the person to the robot's front falling to {dmin:.2f} m in the planning case.", body)
+             f"the events light up below, a cursor runs along a time strip, and a plot shows the distance from the person to the robot's front falling to {dmin:.2f} m in the planning case.", body, sprites=list(pl.used.items()))
 
 
 def _translate(xs, ys, keys, dur):

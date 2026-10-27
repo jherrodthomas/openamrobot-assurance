@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="700" viewBox="0 0 1120 700" role="img" aria-labelledby="s04-4-2-t s04-4-2-d">
+<title id="s04-4-2-t">Figure 4-2: side elevation, the scan plane against low objects and the CFG-002 envelope, workspace and keep-clear</title>
+<desc id="s04-4-2-d">Two panels. A: the base in side view with the 0.222 m and 0.18 m scan planes drawn as dashed lines ahead of it over a translucent band up to the 0.3 m detection height; a 0.15 m carton, a 0.3 m carton, a foot and a crawling child on the floor, each labelled seen, unseen or marginal. B: the 2.0 manipulator with the lift extended, the arm profile and head camera, a reaching arm, the 0.6 m reach arc, the 1.08 m workspace boundary as a vertical dashed line with a person standing at it, the 1.7 m envelope line and the 0.55 m keep-clear bar on the floor.</desc>
+<rect x="0" y="0" width="1120" height="700" fill="#FFFFFF"/>
+<defs><pattern id="s04-4-2-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#B86F0C" stroke-width="1.2" opacity="0.7"/></pattern><pattern id="s04-4-2-hatchred" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#D64535" stroke-width="1.2" opacity="0.5"/></pattern><marker id="s04-4-2-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#122026"/></marker></defs>
+<text x="28.0" y="34.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#122026" text-anchor="start">Figure 4-2  Side elevation: the vertical hazards the top views cannot show</text>
+<text x="28.0" y="54.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="start">A: the scan plane against what is on the floor (SR-02.03, GAP-14, the C = 0 reading). B: the 2.0 manipulator's envelope, the arm workspace and the lift keep-clear (SR-11.02, SR-12.03). 1 m = 150 px in both.</text>
+<rect x="28.0" y="72.0" width="520.0" height="500.0" rx="6" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="44.0" y="94.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="start">A  Scan plane height against what is on the floor</text>
+<line x1="44.0" y1="480.0" x2="532.0" y2="480.0" stroke="#122026" stroke-width="1.6"/>
+<line x1="44.0" y1="435.0" x2="532.0" y2="435.0" stroke="#D3DDE2" stroke-width="1"/>
+<text x="46.0" y="432.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#7E949B" text-anchor="start">0.3 m</text>
+<line x1="44.0" y1="330.0" x2="532.0" y2="330.0" stroke="#D3DDE2" stroke-width="1"/>
+<text x="46.0" y="327.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#7E949B" text-anchor="start">1 m</text>
+<line x1="44.0" y1="255.0" x2="532.0" y2="255.0" stroke="#D3DDE2" stroke-width="1"/>
+<text x="46.0" y="252.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#7E949B" text-anchor="start">1.5 m</text>
+<line x1="44.0" y1="180.0" x2="532.0" y2="180.0" stroke="#D3DDE2" stroke-width="1"/>
+<text x="46.0" y="177.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#7E949B" text-anchor="start">2 m</text>
+<text x="44.0" y="494.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="start">floor</text>
+<rect x="90.0" y="434.2" width="117.0" height="45.8" rx="6" fill="#FFFFFF" stroke="#122026" stroke-width="1.4"/>
+<circle cx="127.5" cy="480.0" r="15.0" fill="#122026" stroke="none" stroke-width="1"/>
+<circle cx="189.0" cy="480.0" r="6.8" fill="#7E949B" stroke="none" stroke-width="1"/>
+<text x="148.5" y="426.2" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="middle">MMP base, deck 0.294 m</text>
+<text x="148.5" y="414.2" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="middle">0.305 m over all</text>
+<rect x="207.0" y="435.0" width="325.0" height="45.0" rx="0" fill="#D64535" stroke="none" stroke-width="1" opacity="0.06"/>
+<text x="211.0" y="369.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#D64535" text-anchor="start">SR-02.03: detect from the floor to 0.3 m (TBC)</text>
+<text x="211.0" y="381.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#D64535" text-anchor="start">a plane alone cannot: a bumper or a second plane (§4.2)</text>
+<line x1="211.0" y1="387.0" x2="211.0" y2="433.0" stroke="#D64535" stroke-width="1"/>
+<text x="215.0" y="431.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#D64535" text-anchor="start">0.3 m</text>
+<line x1="195.0" y1="446.7" x2="532.0" y2="446.7" stroke="#00938B" stroke-width="1.6" stroke-dasharray="6,3"/>
+<line x1="195.0" y1="453.0" x2="532.0" y2="453.0" stroke="#2FA69C" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="528.0" y="405.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#00938B" text-anchor="end">S3 plane 0.222 m (2.0 base)</text>
+<line x1="530.0" y1="409.0" x2="530.0" y2="446.7" stroke="#00938B" stroke-width="1"/>
+<text x="528.0" y="393.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#2FA69C" text-anchor="end">A1 plane 0.18 m (Gate A unit)</text>
+<line x1="535.0" y1="397.0" x2="535.0" y2="453.0" stroke="#2FA69C" stroke-width="1"/>
+<rect x="231.0" y="457.5" width="60.0" height="22.5" rx="1" fill="#F0E4D2" stroke="#D64535" stroke-width="1.2"/>
+<text x="261.0" y="504.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#D64535" text-anchor="middle">0.15 m carton</text>
+<text x="261.0" y="516.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#D64535" text-anchor="middle">unseen</text>
+<rect x="312.0" y="435.0" width="60.0" height="45.0" rx="1" fill="#F0E4D2" stroke="#2C9A58" stroke-width="1.2"/>
+<text x="342.0" y="504.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#2C9A58" text-anchor="middle">0.3 m carton</text>
+<text x="342.0" y="516.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#2C9A58" text-anchor="middle">seen</text>
+<rect x="387.0" y="462.0" width="39.0" height="18.0" rx="6" fill="#F0E4D2" stroke="#D64535" stroke-width="1.2"/>
+<text x="406.5" y="530.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#D64535" text-anchor="middle">foot on the floor</text>
+<text x="406.5" y="542.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#D64535" text-anchor="middle">unseen</text>
+<ellipse cx="465.0" cy="459.0" rx="28.5" ry="18.0" fill="#E9D5C3" stroke="#B86F0C" stroke-width="1.2"/>
+<circle cx="495.0" cy="447.0" r="10.5" fill="#E9D5C3" stroke="#B86F0C" stroke-width="1.2"/>
+<text x="477.0" y="504.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#B86F0C" text-anchor="middle">crawling child</text>
+<text x="477.0" y="516.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#B86F0C" text-anchor="middle">marginal: head at the plane</text>
+<text x="44.0" y="550.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#4E6A73" text-anchor="start">Heights: S3 174 + 17.5 + 30.55 mm (mechanical BOM); A1 0.18 m (WP-C-01 §4.2). The objects are the cases behind the C = 0 reading of §4.2;</text>
+<text x="44.0" y="562.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#4E6A73" text-anchor="start">the standing or walking person a mobile platform's field is sized for is detected at the legs. Nothing here is a measurement.</text>
+<rect x="568.0" y="72.0" width="524.0" height="500.0" rx="6" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1"/>
+<text x="584.0" y="94.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#122026" text-anchor="start">B  CFG-002 envelope, arm workspace and lift keep-clear (lift extended 0.35 m)</text>
+<line x1="584.0" y1="480.0" x2="1076.0" y2="480.0" stroke="#122026" stroke-width="1.6"/>
+<line x1="584.0" y1="405.0" x2="1076.0" y2="405.0" stroke="#D3DDE2" stroke-width="1"/>
+<text x="586.0" y="402.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#7E949B" text-anchor="start">0.5 m</text>
+<line x1="584.0" y1="330.0" x2="1076.0" y2="330.0" stroke="#D3DDE2" stroke-width="1"/>
+<text x="586.0" y="327.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#7E949B" text-anchor="start">1 m</text>
+<line x1="584.0" y1="255.0" x2="1076.0" y2="255.0" stroke="#D3DDE2" stroke-width="1"/>
+<text x="586.0" y="252.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#7E949B" text-anchor="start">1.5 m</text>
+<line x1="584.0" y1="225.0" x2="1076.0" y2="225.0" stroke="#D64535" stroke-width="1" stroke-dasharray="6,3"/>
+<text x="1074.0" y="221.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="600" fill="#D64535" text-anchor="end">1.7 m envelope (WP-C-01 §4)</text>
+<rect x="628.0" y="434.2" width="117.0" height="45.8" rx="6" fill="#FFFFFF" stroke="#122026" stroke-width="1.4"/>
+<circle cx="665.5" cy="480.0" r="15.0" fill="#122026" stroke="none" stroke-width="1"/>
+<rect x="677.5" y="354.9" width="36.0" height="79.5" rx="1" fill="#FFFFFF" stroke="#122026" stroke-width="1.2"/>
+<rect x="680.5" y="302.4" width="30.0" height="52.5" rx="1" fill="#EDF2F4" stroke="#122026" stroke-width="1.2"/>
+<rect x="713.5" y="249.9" width="18.0" height="51.0" rx="1" fill="#FFFFFF" stroke="#122026" stroke-width="1.2"/>
+<rect x="723.5" y="241.8" width="4.5" height="4.5" rx="1" fill="#122026" stroke="none" stroke-width="1"/>
+<path d="M 722.5 187.5 A 90.0 90.0 0 0 1 812.5 277.5 A 90.0 90.0 0 0 1 722.5 367.5" fill="#E9F7F5" fill-opacity="0.6" stroke="#00938B" stroke-width="1.2" stroke-dasharray="4,3"/>
+<line x1="722.5" y1="277.5" x2="776.5" y2="310.5" stroke="#122026" stroke-width="5" stroke-linecap="round"/>
+<line x1="776.5" y1="310.5" x2="806.5" y2="280.5" stroke="#122026" stroke-width="4" stroke-linecap="round"/>
+<circle cx="722.5" cy="277.5" r="4.0" fill="#00938B" stroke="none" stroke-width="1"/>
+<text x="707.5" y="271.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#00938B" text-anchor="end">shoulder 1.35 m</text>
+<text x="707.5" y="283.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#00938B" text-anchor="end">(1.00 retracted)</text>
+<text x="767.5" y="181.5" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#00938B" text-anchor="start">reach 0.6 m (planning value)</text>
+<line x1="884.5" y1="480.0" x2="884.5" y2="262.5" stroke="#B86F0C" stroke-width="1.6" stroke-dasharray="6,3"/>
+<text x="878.5" y="414.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#B86F0C" text-anchor="end">boundary 1.08 m</text>
+<text x="878.5" y="427.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#B86F0C" text-anchor="end">0.6 reach + 0.48 walk (0.3 s; §4.5)</text>
+<circle cx="917.5" cy="231.0" r="12.0" fill="#E9D5C3" stroke="#122026" stroke-width="1"/>
+<rect x="902.5" y="246.0" width="30.0" height="108.0" rx="8" fill="#5B8BD6" stroke="none" stroke-width="1"/>
+<rect x="904.0" y="351.0" width="12.0" height="129.0" rx="1" fill="#4E4E52" stroke="none" stroke-width="1"/>
+<rect x="919.0" y="351.0" width="12.0" height="129.0" rx="1" fill="#4E4E52" stroke="none" stroke-width="1"/>
+<text x="917.5" y="496.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="middle">person, 1.78 m</text>
+<rect x="613.0" y="480.0" width="165.0" height="6.0" rx="0" fill="#B86F0C" stroke="none" stroke-width="1" opacity="0.6"/>
+<text x="695.5" y="508.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#B86F0C" text-anchor="middle">lift keep-clear 0.55 m each side of the column axis (SR-12.03; radius assumed)</text>
+<line x1="670.0" y1="354.9" x2="670.0" y2="302.4" stroke="#2C9A58" stroke-width="1.2"/>
+<text x="666.0" y="381.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#2C9A58" text-anchor="end">lift 0.35 m drawn</text>
+<text x="666.0" y="393.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#2C9A58" text-anchor="end">18 mm/s</text>
+<text x="584.0" y="550.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#4E6A73" text-anchor="start">Heights from upstream's general-arrangement page; the column section, carriage and brackets are drawn (supplier CAD not public).</text>
+<text x="584.0" y="562.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#4E6A73" text-anchor="start">Reach from the OpenArm description's joint offsets; the arm's stopping time is TBC (WP-C-01 OI-6); the keep-clear radius is assumed.</text>
+<text x="1088.0" y="648.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#7E949B" text-anchor="end">Generated by assurance/03-system/figures/fig_s04.py from WP-S-04 §1 and §4.5, WP-C-01 §4 and WP-S-02 SR-02.03</text>
+<rect x="0.0" y="656.0" width="1120.0" height="44.0" rx="0" fill="#FFF6E8" stroke="none" stroke-width="1"/>
+<text x="16.0" y="674.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#B86F0C" text-anchor="start">SYNTHETIC: pictures only, no evidence credit</text>
+<text x="16.0" y="689.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#B86F0C" text-anchor="start">Drawn to WP-S-04 v0.2 planning values and documented dimensions; nothing measured (K = 1.6 m/s, t_r = 0.17 s). An elevation shows what a plane can and cannot see; it does not show that a measure works.</text>
+</svg>
