@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="480" viewBox="0 0 940 480" role="img" aria-labelledby="hc6-t hc6-d">
+<title id="hc6-t">Figure A-6: hazard sheet H-02 · uncommanded motion near people</title>
+<desc id="hc6-d">The hazard sheet of H-02 · uncommanded motion near people: the hazardous event, the S, F and P ratings in words with the required Performance Level d, the measures of the three ISO 12100 steps coloured by whether each exists today, the residual-risk class and its text, and the gap and scenario references.</desc>
+<defs>
+  <pattern id="hc6-hatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="8" stroke="#7E949B" stroke-width="1"/></pattern>
+</defs>
+<rect x="0" y="0" width="940" height="480" fill="#FFFFFF"/>
+<rect x="0.0" y="0.0" width="940.0" height="6.0" rx="0" fill="#2FA69C" stroke="none" stroke-width="0"/>
+<text x="32.0" y="36.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#4E6A73" text-anchor="start">Figure A-6</text>
+<text x="32.0" y="60.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#122026" text-anchor="start">H-02 · uncommanded motion near people</text>
+<text x="32.0" y="78.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Mechanical: impact (uncommanded motion)  ·  zone Z2</text>
+<rect x="828.0" y="22.0" width="80.0" height="46.0" rx="4" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
+<text x="868.0" y="53.6" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle">d</text>
+<text x="868.0" y="82.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="middle">required PL</text>
+<text x="32.0" y="100.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#122026" text-anchor="start">The robot moves when nobody commanded it, or continues after a stop was requested: watchdog fed by a stale publisher, debug</text>
+<text x="32.0" y="115.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#122026" text-anchor="start">path active, a stuck command, a wrong parameter, an unauthenticated publisher</text>
+<line x1="32" y1="128" x2="908" y2="128" stroke="#D3DDE2"/>
+<text x="32.0" y="148.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#4E6A73" text-anchor="start">WHY THIS RATING</text>
+<rect x="32.0" y="160.0" width="48.0" height="36.0" rx="4" fill="#FDEDEB" stroke="none" stroke-width="0"/>
+<text x="56.0" y="183.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="14" font-weight="700" fill="#122026" text-anchor="middle">S2</text>
+<text x="90.0" y="182.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#122026" text-anchor="start">serious, normally irreversible</text>
+<rect x="32.0" y="204.0" width="48.0" height="36.0" rx="4" fill="#FDEDEB" stroke="none" stroke-width="0"/>
+<text x="56.0" y="227.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="14" font-weight="700" fill="#122026" text-anchor="middle">F2</text>
+<text x="90.0" y="226.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#122026" text-anchor="start">frequent or long exposure</text>
+<rect x="32.0" y="248.0" width="48.0" height="36.0" rx="4" fill="#EDF2F4" stroke="none" stroke-width="0"/>
+<text x="56.0" y="271.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="14" font-weight="700" fill="#122026" text-anchor="middle">P1</text>
+<text x="90.0" y="270.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#122026" text-anchor="start">possible to avoid</text>
+<text x="32.0" y="308.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#122026" text-anchor="start">→ risk graph d  ·  adopted d</text>
+<text x="32.0" y="330.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Can occur at any time with no warning and the robot</text>
+<text x="32.0" y="345.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">looks stopped; at a speed bounded by SF-03 a</text>
+<text x="32.0" y="360.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">briefed person next to it can step away. Depends on</text>
+<text x="32.0" y="375.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">SF-03 (d) and SF-08 (warning)</text>
+<text x="370.0" y="148.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#4E6A73" text-anchor="start">WHAT REDUCES IT, AND WHAT EXISTS TODAY</text>
+<text x="370.0" y="174.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#122026" text-anchor="start">Step 1  inherently safe design</text>
+<rect x="370.0" y="180.0" width="38.6" height="18.0" rx="3" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<rect x="370.5" y="180.5" width="3.5" height="17" rx="1.5" fill="#5B6B9A"/>
+<text x="390.8" y="193.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="middle">DM-10</text>
+<rect x="412.6" y="180.0" width="38.6" height="18.0" rx="3" fill="#FFF6E8" stroke="#B86F0C" stroke-width="1"/>
+<rect x="413.1" y="180.5" width="3.5" height="17" rx="1.5" fill="#5B6B9A"/>
+<text x="433.4" y="193.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#B86F0C" text-anchor="middle">DM-08</text>
+<text x="370.0" y="226.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#122026" text-anchor="start">Step 2  safeguarding</text>
+<rect x="370.0" y="232.0" width="38.6" height="18.0" rx="3" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<rect x="370.5" y="232.5" width="3.5" height="17" rx="1.5" fill="#00938B"/>
+<text x="390.8" y="245.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="middle">SF-01</text>
+<rect x="412.6" y="232.0" width="38.6" height="18.0" rx="3" fill="#FFF6E8" stroke="#B86F0C" stroke-width="1"/>
+<rect x="413.1" y="232.5" width="3.5" height="17" rx="1.5" fill="#00938B"/>
+<text x="433.4" y="245.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#B86F0C" text-anchor="middle">SF-04</text>
+<rect x="455.2" y="232.0" width="38.6" height="18.0" rx="3" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<rect x="455.7" y="232.5" width="3.5" height="17" rx="1.5" fill="#00938B"/>
+<text x="476.0" y="245.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="middle">SF-05</text>
+<rect x="497.8" y="232.0" width="38.6" height="18.0" rx="3" fill="#FFF6E8" stroke="#B86F0C" stroke-width="1"/>
+<rect x="498.3" y="232.5" width="3.5" height="17" rx="1.5" fill="#00938B"/>
+<text x="518.6" y="245.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#B86F0C" text-anchor="middle">SF-07</text>
+<rect x="540.4" y="232.0" width="38.6" height="18.0" rx="3" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<rect x="540.9" y="232.5" width="3.5" height="17" rx="1.5" fill="#00938B"/>
+<text x="561.2" y="245.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="middle">SF-03</text>
+<rect x="583.0" y="232.0" width="38.6" height="18.0" rx="3" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<rect x="583.5" y="232.5" width="3.5" height="17" rx="1.5" fill="#00938B"/>
+<text x="603.8" y="245.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="middle">SF-08</text>
+<text x="370.0" y="278.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#122026" text-anchor="start">Step 3  information for use</text>
+<rect x="370.0" y="284.0" width="43.9" height="18.0" rx="3" fill="#FFF6E8" stroke="#B86F0C" stroke-width="1"/>
+<rect x="370.5" y="284.5" width="3.5" height="17" rx="1.5" fill="#8A6FB0"/>
+<text x="393.5" y="297.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#B86F0C" text-anchor="middle">IFU-01</text>
+<text x="370.0" y="330.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#D64535" text-anchor="start">Today: 0 of 9 measures in place, 4 partial, 5 with nothing on any build.</text>
+<text x="370.0" y="348.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#4E6A73" text-anchor="start">AFTER THE MEASURES (WP-C-05): S SAFEGUARDED AT THE PLR</text>
+<text x="370.0" y="366.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">Every uncommanded path is bounded by SF-03 and ends in SF-04 or SF-01; a restart needs</text>
+<text x="370.0" y="382.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">the reset of SF-05 and is announced by SF-08; what remains is a motion inside the speed</text>
+<text x="370.0" y="398.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">limit for the watchdog time (200 ms) before the stop, and the SRP/CS failure probability</text>
+<text x="370.0" y="418.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Verification: Sn-10 (WP-V-05), Sn-08</text>
+<line x1="32" y1="430" x2="908" y2="430" stroke="#D3DDE2"/>
+<text x="32.0" y="444.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="start">Gaps GAP-01, GAP-06, GAP-07, GAP-08, GAP-27, GAP-36 · scenarios IS-07, IS-10, IS-11, MU-01, MU-08, MU-09, MU-10</text>
+<text x="908.0" y="472.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#7E949B" text-anchor="end">Generated by figures/fig_c03.py from WP-C-03 §4, §5, §6, §9 and WP-C-05 §5</text>
+</svg>

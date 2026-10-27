@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="449" viewBox="0 0 940 449" role="img" aria-labelledby="hc9-t hc9-d">
+<title id="hc9-t">Figure A-9: hazard sheet H-07 · electrical fire</title>
+<desc id="hc9-d">The hazard sheet of H-07 · electrical fire: the hazardous event, the S, F and P ratings in words with the required Performance Level n/a, the measures of the three ISO 12100 steps coloured by whether each exists today, the residual-risk class and its text, and the gap and scenario references.</desc>
+<defs>
+  <pattern id="hc9-hatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="8" stroke="#7E949B" stroke-width="1"/></pattern>
+</defs>
+<rect x="0" y="0" width="940" height="449" fill="#FFFFFF"/>
+<rect x="0.0" y="0.0" width="940.0" height="6.0" rx="0" fill="#EDF2F4" stroke="none" stroke-width="0"/>
+<text x="32.0" y="36.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#4E6A73" text-anchor="start">Figure A-9</text>
+<text x="32.0" y="60.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#122026" text-anchor="start">H-07 · electrical fire</text>
+<text x="32.0" y="78.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Electrical: short circuit, fire  ·  zone any</text>
+<rect x="828.0" y="22.0" width="80.0" height="46.0" rx="4" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="868.0" y="53.6" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#4E6A73" text-anchor="middle">n/a</text>
+<text x="868.0" y="82.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="middle">no control fn</text>
+<text x="32.0" y="100.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#122026" text-anchor="start">A short on the unfused 24 V bus (hundreds of amps from lead-acid), a chafed motor cable, a regenerative spike with no bleed</text>
+<line x1="32" y1="113" x2="908" y2="113" stroke="#D3DDE2"/>
+<text x="32.0" y="133.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#4E6A73" text-anchor="start">WHY THIS RATING</text>
+<rect x="32.0" y="145.0" width="48.0" height="36.0" rx="4" fill="#FDEDEB" stroke="none" stroke-width="0"/>
+<text x="56.0" y="168.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="14" font-weight="700" fill="#122026" text-anchor="middle">S2</text>
+<text x="90.0" y="167.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#122026" text-anchor="start">serious, normally irreversible</text>
+<rect x="32.0" y="189.0" width="48.0" height="36.0" rx="4" fill="#EDF2F4" stroke="none" stroke-width="0"/>
+<text x="56.0" y="212.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="14" font-weight="700" fill="#122026" text-anchor="middle">F1</text>
+<text x="90.0" y="211.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#122026" text-anchor="start">seldom or short exposure</text>
+<rect x="32.0" y="233.0" width="48.0" height="36.0" rx="4" fill="#FDEDEB" stroke="none" stroke-width="0"/>
+<text x="56.0" y="256.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="14" font-weight="700" fill="#122026" text-anchor="middle">P2</text>
+<text x="90.0" y="255.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#122026" text-anchor="start">scarcely possible to avoid</text>
+<text x="32.0" y="293.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#122026" text-anchor="start">→ risk graph d  ·  adopted n/a (complementary measure)</text>
+<text x="32.0" y="315.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">A short is rare; its consequence is uncontrolled</text>
+<text x="370.0" y="133.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#4E6A73" text-anchor="start">WHAT REDUCES IT, AND WHAT EXISTS TODAY</text>
+<text x="370.0" y="159.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#122026" text-anchor="start">Step 1  inherently safe design</text>
+<rect x="370.0" y="165.0" width="38.6" height="18.0" rx="3" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<rect x="370.5" y="165.5" width="3.5" height="17" rx="1.5" fill="#5B6B9A"/>
+<text x="390.8" y="178.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="middle">DM-04</text>
+<text x="370.0" y="211.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#122026" text-anchor="start">Step 2  safeguarding</text>
+<text x="370.0" y="231.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#7E949B" text-anchor="start">—</text>
+<text x="370.0" y="263.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#122026" text-anchor="start">Step 3  information for use</text>
+<text x="370.0" y="283.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#7E949B" text-anchor="start">—</text>
+<text x="370.0" y="315.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#D64535" text-anchor="start">Today: 0 of 1 measures in place, 0 partial, 1 with nothing on any build.</text>
+<text x="370.0" y="333.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#4E6A73" text-anchor="start">AFTER THE MEASURES (WP-C-05): D REDUCED BY DESIGN</text>
+<text x="370.0" y="351.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">A fused, disconnectable 24 V bus (EN 60204-1 §7.2); the residual is a fault downstream</text>
+<text x="370.0" y="367.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">of the fuse within the fuse's let-through, bounded by cable sizing (WP-H-05)</text>
+<text x="370.0" y="387.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Verification: Sn-12 (inspection)</text>
+<line x1="32" y1="399" x2="908" y2="399" stroke="#D3DDE2"/>
+<text x="32.0" y="413.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="start">Gaps GAP-19, GAP-24 · scenarios —</text>
+<text x="908.0" y="441.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#7E949B" text-anchor="end">Generated by figures/fig_c03.py from WP-C-03 §4, §5, §6, §9 and WP-C-05 §5</text>
+</svg>
