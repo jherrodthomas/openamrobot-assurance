@@ -578,7 +578,8 @@
       title: "Allow public floors with a chaperone and the robot at crawl speed, as a procedural measure"
       detail: "Cheap. Cost: a procedure is not a control for a hazard that can kill; the gap assessment's own principle, and the rating stays e."
   sources: ["assurance/02-concept/WP-C-03-risk-assessment.md §5 (H-01 public floor), §5.2", "assurance/02-concept/WP-C-02-operating-environment-and-tasks.md Z5", "assurance/02-concept/WP-C-06-human-robot-interaction-and-misuse.md IS-09, MU-07"]
-  status: open
+  status: answered
+  answer: {choice: A, via: inbox, at: 2026-10-23}
 
 - id: DQ-020
   ref: DQ-004
@@ -672,7 +673,8 @@
       title: "Do not hold G0 until an assessor performs CR-01 and CR-03"
       detail: "The gate means what the plan says. Cost: no gate passes for months and the record shows P0 throughout the concept work."
   sources: ["assurance/01-management/WP-M-06-confirmation-measures-plan.md §9, OI-5", "assurance/01-management/WP-M-02-safety-plan.md §10", "assurance/01-management/decisions/register.yaml DQ-010, DQ-012"]
-  status: open
+  status: answered
+  answer: {choice: A, via: inbox, at: 2026-10-23}
 
 - id: DQ-023
   ref: WP-C-06 OI-5
@@ -703,7 +705,8 @@
       title: "Neither on the bench build: teleoperation from the screen only, in the empty test area, with the robot's own E-stops"
       detail: "No purchase. Cost: no enabling control, so SF-09 is not implemented on CFG-001 and manual recovery near a person stays outside the case."
   sources: ["assurance/02-concept/WP-C-06-human-robot-interaction-and-misuse.md HR-04, HR-06, HR-07, OI-5", "assurance/02-concept/WP-C-04-safety-functions-and-plr.md §3.8, §3.9, OI-8", "assurance/04-hardware/WP-H-02-electrical-and-safety-chain-design.md E7", "gap assessment GAP-28"]
-  status: open
+  status: answered
+  answer: {choice: A, via: inbox, at: 2026-10-23}
 
 - id: DQ-024
   ref: WP-C-01 OI-3
@@ -733,7 +736,8 @@
       title: "Leave the payload limit open until the robot is weighed and the stability rerun exists"
       detail: "No unverified number. Cost: AOU-07 stays unmet and H-06 (tipping) cannot be rated with confidence."
   sources: ["assurance/02-concept/WP-C-01-item-definition.md §4 (arm payload and pulls), AOU-07, OI-3", "assurance/02-concept/WP-C-06-human-robot-interaction-and-misuse.md CA-05, CA-07", "assurance/02-concept/WP-C-03-risk-assessment.md H-06"]
-  status: open
+  status: answered
+  answer: {choice: A, via: inbox, at: 2026-10-23}
 
 - id: DQ-025
   ref: WP-C-07 §7

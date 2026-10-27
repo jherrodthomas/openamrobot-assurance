@@ -229,12 +229,12 @@ index, the register entry is the question.
 | D-14 | Buying the standards | DQ-016 | Applied: C, not until an assessor is engaged (2026-10-20) |
 | D-15 | Speed limit with a person in the zone | DQ-017 | Applied: A, 0.3 m/s with a safety-rated detection means, 0 m/s without (2026-10-20; WP-C-02 §2) |
 | D-16 | Reverse motion: no blind back-up, undock at crawl | DQ-018 | Answered: A (2026-10-20); applied when the fork change lands |
-| D-17 | Public floors excluded for the Gate A unit | DQ-019 | Open, batch 3 |
+| D-17 | Public floors excluded for the Gate A unit | DQ-019 | Answered: A (2026-10-23); to be applied |
 | D-18 | Reference configurations: Gate A unit beside the 2.0 mobile manipulator | DQ-020 | Applied: A (2026-10-20; T-14) |
 | D-19 | Collaborative mode of the arms at a station | DQ-021 | Applied: A, safety-rated monitored stop (2026-10-20; WP-C-04 §3.11) |
-| D-20 | Hold G0 with its confirmation reviews unperformed | DQ-022 | Open, batch 3 |
-| D-21 | Teleoperation pendant and warning devices on the bench build | DQ-023 | Open, batch 3 |
-| D-22 | Payload limit stated for the item | DQ-024 | Open, batch 3 |
+| D-20 | Hold G0 with its confirmation reviews unperformed | DQ-022 | Answered: A (2026-10-23); to be applied |
+| D-21 | Teleoperation pendant and warning devices on the bench build | DQ-023 | Answered: A (2026-10-23); to be applied |
+| D-22 | Payload limit stated for the item | DQ-024 | Answered: A (2026-10-23); to be applied |
 | D-23 | Use control between programs on the robot at SL 2 | DQ-025 | Open, batch 3 |
 | D-24 | Acceptance of the two medium cybersecurity residual risks | DQ-026 | Open, batch 3 |
 
