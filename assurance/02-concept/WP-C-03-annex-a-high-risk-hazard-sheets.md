@@ -15,7 +15,7 @@
 > pictures only, no evidence credit. A picture shows the situation; the sheet under it says what would stop it and
 > what exists today.
 
-12 rows are high risk; 4 have a review picture so far.
+12 rows are high risk; 12 of them have a review picture.
 
 ## A.1 What to build first
 
@@ -35,7 +35,9 @@
 
 ### A.2.2 H-01 · aisle, blind corner
 
-*Review picture: not drawn yet.*
+![Review picture for H-01, aisle, blind corner: synthetic render, no evidence credit](../sim/blender/renders/openamrobot-m-corner.jpg)
+
+*Review picture* `openamrobot-m-corner.jpg`: synthetic, no evidence credit ([the render set](../sim/blender/README.md#1-the-renders)).
 
 ![Figure A-3: hazard sheet for H-01, aisle, blind corner: the event, the S, F and P ratings in words and the required PL d, the measures of the three steps coloured by whether each exists today, the residual class and the references](figures/fig-c03-a-03-card.svg)
 
@@ -49,37 +51,49 @@
 
 ### A.2.4 H-01 · public floor
 
-*Review picture: not drawn yet.*
+![Review picture for H-01, public floor: synthetic render, no evidence credit](../sim/blender/renders/openamrobot-m-public.jpg)
+
+*Review picture* `openamrobot-m-public.jpg`: synthetic, no evidence credit ([the render set](../sim/blender/README.md#1-the-renders)).
 
 ![Figure A-5: hazard sheet for H-01, public floor: the event, the S, F and P ratings in words and the required PL e, the measures of the three steps coloured by whether each exists today, the residual class and the references](figures/fig-c03-a-05-card.svg)
 
 ### A.2.5 H-02 · uncommanded motion near people
 
-*Review picture: not drawn yet.*
+![Review picture for H-02, uncommanded motion near people: synthetic render, no evidence credit](../sim/blender/renders/openamrobot-m-uncommanded.jpg)
+
+*Review picture* `openamrobot-m-uncommanded.jpg`: synthetic, no evidence credit ([the render set](../sim/blender/README.md#1-the-renders)).
 
 ![Figure A-6: hazard sheet for H-02, uncommanded motion near people: the event, the S, F and P ratings in words and the required PL d, the measures of the three steps coloured by whether each exists today, the residual class and the references](figures/fig-c03-a-06-card.svg)
 
 ### A.2.6 H-05 · restart after a chain, fault or watchdog stop
 
-*Review picture: not drawn yet.*
+![Review picture for H-05, restart after a chain, fault or watchdog stop: synthetic render, no evidence credit](../sim/blender/renders/openamrobot-m-restart.jpg)
+
+*Review picture* `openamrobot-m-restart.jpg`: synthetic, no evidence credit ([the render set](../sim/blender/README.md#1-the-renders)).
 
 ![Figure A-7: hazard sheet for H-05, restart after a chain, fault or watchdog stop: the event, the S, F and P ratings in words and the required PL d, the measures of the three steps coloured by whether each exists today, the residual class and the references](figures/fig-c03-a-07-card.svg)
 
 ### A.2.7 H-05 · resume after waiting on a person
 
-*Review picture: not drawn yet.*
+![Review picture for H-05, resume after waiting on a person: synthetic render, no evidence credit](../sim/blender/renders/openamrobot-m-resume.jpg)
+
+*Review picture* `openamrobot-m-resume.jpg`: synthetic, no evidence credit ([the render set](../sim/blender/README.md#1-the-renders)).
 
 ![Figure A-8: hazard sheet for H-05, resume after waiting on a person: the event, the S, F and P ratings in words and the required PL d, the measures of the three steps coloured by whether each exists today, the residual class and the references](figures/fig-c03-a-08-card.svg)
 
 ### A.2.8 H-07 · electrical fire
 
-*Review picture: not drawn yet.*
+![Review picture for H-07, electrical fire: synthetic render, no evidence credit](../sim/blender/renders/openamrobot-fire.jpg)
+
+*Review picture* `openamrobot-fire.jpg`: synthetic, no evidence credit ([the render set](../sim/blender/README.md#1-the-renders)).
 
 ![Figure A-9: hazard sheet for H-07, electrical fire: the event, the S, F and P ratings in words and the required PL n/a, the measures of the three steps coloured by whether each exists today, the residual class and the references](figures/fig-c03-a-09-card.svg)
 
 ### A.2.9 H-10 · mode confusion
 
-*Review picture: not drawn yet.*
+![Review picture for H-10, mode confusion: synthetic render, no evidence credit](../sim/blender/renders/openamrobot-m-mode.jpg)
+
+*Review picture* `openamrobot-m-mode.jpg`: synthetic, no evidence credit ([the render set](../sim/blender/README.md#1-the-renders)).
 
 ![Figure A-10: hazard sheet for H-10, mode confusion: the event, the S, F and P ratings in words and the required PL d, the measures of the three steps coloured by whether each exists today, the residual class and the references](figures/fig-c03-a-10-card.svg)
 
@@ -101,7 +115,9 @@
 
 ### A.2.12 H-14 · load drops from the gripper or the lift
 
-*Review picture: not drawn yet.*
+![Review picture for H-14, load drops from the gripper or the lift: synthetic render, no evidence credit](../sim/blender/renders/openamrobot-m-drop.jpg)
+
+*Review picture* `openamrobot-m-drop.jpg`: synthetic, no evidence credit ([the render set](../sim/blender/README.md#1-the-renders)).
 
 ![Figure A-13: hazard sheet for H-14, load drops from the gripper or the lift: the event, the S, F and P ratings in words and the required PL d, the measures of the three steps coloured by whether each exists today, the residual class and the references](figures/fig-c03-a-13-card.svg)
 

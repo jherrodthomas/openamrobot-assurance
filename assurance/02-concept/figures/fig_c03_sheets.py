@@ -34,8 +34,12 @@ S_WORD = {"S1": "slight, normally reversible", "S2": "serious, normally irrevers
 F_WORD = {"F1": "seldom or short exposure", "F2": "frequent or long exposure"}
 P_WORD = {"P1": "possible to avoid", "P2": "scarcely possible to avoid"}
 # The review pictures of the Blender track that show a high-risk row: (hazard, start of the §5 situation) -> render
-PICTURES = {("H-01", "aisle, staff crossing"): "openamrobot-m-aisle.jpg", ("H-01", "dock lane"): "openamrobot-undock.jpg",
-            ("H-13", "arm contact"): "openamrobot-m-station.jpg", ("H-13", "base moves"): "openamrobot-m-carry.jpg"}
+PICTURES = {("H-01", "aisle, staff crossing"): "openamrobot-m-aisle.jpg", ("H-01", "aisle, blind corner"): "openamrobot-m-corner.jpg",
+            ("H-01", "dock lane"): "openamrobot-undock.jpg", ("H-01", "public floor"): "openamrobot-m-public.jpg",
+            ("H-02", "uncommanded"): "openamrobot-m-uncommanded.jpg", ("H-05", "restart"): "openamrobot-m-restart.jpg",
+            ("H-05", "resume"): "openamrobot-m-resume.jpg", ("H-07", "electrical fire"): "openamrobot-fire.jpg",
+            ("H-10", "mode confusion"): "openamrobot-m-mode.jpg", ("H-13", "arm contact"): "openamrobot-m-station.jpg",
+            ("H-13", "base moves"): "openamrobot-m-carry.jpg", ("H-14", "load drops"): "openamrobot-m-drop.jpg"}
 CONDITION = r"\b(?:AOU|CA|HR)-\d\d\b"
 MEASURE = r"\b(?:DM|OL|SF|IFU)-\d\d\b"
 
@@ -491,7 +495,7 @@ def annex(f, d: dict, version: str) -> str:
        "> change it there and run `figures/fig_c03.py`. The pictures are review renders of the simulation track: synthetic,",
        "> pictures only, no evidence credit. A picture shows the situation; the sheet under it says what would stop it and",
        "> what exists today.", "",
-       f"{len(rows)} rows are high risk; {with_pic} have a review picture so far.", "",
+       f"{len(rows)} rows are high risk; {with_pic} of them have a review picture.", "",
        "## A.1 What to build first", "",
        "![Figure A-1: the high-risk rows against the measures they rely on, by what exists today: a grid with the rows down the side and the measures across, filled where a row relies on a measure, red where nothing exists, amber where something partial does, with the number of rows waiting on each measure under its column](figures/fig-c03-a-1-barrier-board.svg)", "",
        "*Figure A-1.* Every high-risk row waits on at least one measure with nothing on any build; the column counts rank the measures by how many of these rows they unblock.", "",

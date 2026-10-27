@@ -2,8 +2,8 @@
 
 | Field | Value |
 |---|---|
-| Scope | Photorealistic review pictures of the robot in its operating environment: CFG-001, the MMP base from upstream's CAD; CFG-002, the 2.0 mobile manipulator with the OpenArm 2.0 arms; five hazard scenes with a person |
-| Version | 0.1 (2026-10-21): first set of eight renders, reviewed by the project lead as pictures |
+| Scope | Photorealistic review pictures of the robot in its operating environment: CFG-001, the MMP base from upstream's CAD; CFG-002, the 2.0 mobile manipulator with the OpenArm 2.0 arms; thirteen hazard scenes, one for every high-risk row of WP-C-03 |
+| Version | 0.2 (2026-10-27): eight more hazard scenes, so that every high-risk row of WP-C-03 has a picture in its [Annex A](../../02-concept/WP-C-03-annex-a-high-risk-hazard-sheets.md) sheet (the lead's pick of 2026-10-27); a child figure scaled from the library. 0.1 (2026-10-21): first set of eight renders, reviewed by the project lead as pictures |
 | Status | Draft. AI-drafted (Claude, AI assistant; I0 under WP-M-02 §3.3). **Synthetic: pictures only, no evidence credit** |
 | Inputs | `openamr-platform-hw/mechanical/cad/Full_assembly_STEP` (the base), `enactic/openarm_description` (the arms), the general-arrangement page of `openamrobot-docs` (the upper body), the CC0 figures of [`library/people/`](library/people/README.md) |
 
@@ -22,6 +22,14 @@ stands in for a measurement, an inspection or a test.
 | ![The manipulator at a rack with the lift extended and an arm reaching to a shelf, a person in the aisle inside an amber ring](renders/openamrobot-m-station.jpg) | **H-13, IS-13**: a person at the station while an arm reaches; the amber ring is the SR-11.02 workspace boundary, reach plus walk term | WP-C-06 IS-13 and CA-02, SR-11.02, WP-S-04 §4.5 |
 | ![The manipulator carrying a blue crate in both arms with the carry field ahead and a person crossing](renders/openamrobot-m-carry.jpg) | **H-13, IS-15**: carrying at 0.3 m/s; the arms and the load widen the footprint the carry field must cover | WP-C-06 IS-15 and CA-07, SR-02.10, SR-03.06 |
 | ![The manipulator with the lift raised and a person standing beside the column inside an amber keep-clear ring](renders/openamrobot-m-lift.jpg) | **H-15, IS-14**: the lift moving with a person beside the column; the ring is the keep-clear zone of SR-12.03 | WP-C-06 IS-14 and CA-04, SR-12.03 |
+| ![The manipulator in an aisle beside racking that ends at a cross-aisle, a person walking out from behind the rack end into its path, the protective field in cyan ahead](renders/openamrobot-m-corner.jpg) | **H-01, IS-02**: a person steps out of a blind corner; nothing is visible until 0.5 m ahead, so the zone speed and the site measures carry the row | WP-C-03 H-01 blind corner, Annex A; WP-C-06 IS-02 |
+| ![The manipulator on a shop floor by white shelving, a small child standing in its path beside an adult](renders/openamrobot-m-public.jpg) | **H-01, IS-09**: the public floor, rated e and excluded; the child is the library figure scaled to 1.04 m | WP-C-03 H-01 public floor, OL-01, DQ-019 |
+| ![The manipulator standing still with a person just ahead of it, their back to the robot, and a red strip on the floor where it moves](renders/openamrobot-m-uncommanded.jpg) | **H-02**: the robot looks stopped and moves anyway | WP-C-03 H-02, SF-01, SF-04, SF-05 |
+| ![A technician in a green shirt facing the stopped manipulator at its front, a red strip on the floor under him](renders/openamrobot-m-restart.jpg) | **H-05, OS-09**: a restart after a stop with nobody having reset it | WP-C-03 H-05 restart, SF-05 |
+| ![The manipulator with the protective field ahead clear and a person beside it turning back across its path](renders/openamrobot-m-resume.jpg) | **H-05, IS-10**: resuming after waiting on a person who stepped aside | WP-C-03 H-05 resume, SF-02, SF-08 |
+| ![An operator in the foreground holding a tablet with a red on-screen stop while the manipulator drives along a red path toward a second person](renders/openamrobot-m-mode.jpg) | **H-10, IS-06**: the on-screen stop taken for an emergency stop, eyes on the screen | WP-C-03 H-10, SF-01, HR-05 |
+| ![The manipulator with both arms raised at shoulder height and a blue tote falling beside a person, an amber landing zone on the floor](renders/openamrobot-m-drop.jpg) | **H-14, IS-14**: the gripper lets go of its load on a stop or a power loss | WP-C-03 H-14, SF-12, DM-07 |
+| ![The base on the warehouse floor with grey smoke rising from it and an orange glow on the floor beside it](renders/openamrobot-fire.jpg) | **H-07**: an electrical fire in the battery bay of the inherited base | WP-C-03 H-07, DM-04, GAP-19 |
 
 ## 2. How to regenerate
 
@@ -48,8 +56,8 @@ $PY -I assurance/sim/blender/make_set.py assurance/sim/blender/mesh assurance/si
 $PY -I assurance/sim/blender/render_amr.py assurance/sim/blender/mesh /tmp/preview.png 24 900 506 m-station
 ```
 
-Views: `hero`, `scanplane`, `undock` (the base) and `m-hero`, `m-station`, `m-carry`, `m-lift`, `m-aisle` (the
-manipulator). `render_amr.py ... --probe` prints the model's extent, up axis and named-part positions without
+Views: `hero`, `scanplane`, `undock`, `fire` (the base) and `m-hero`, `m-station`, `m-carry`, `m-lift`, `m-aisle`,
+`m-corner`, `m-public`, `m-uncommanded`, `m-restart`, `m-resume`, `m-mode`, `m-drop` (the manipulator). `render_amr.py ... --probe` prints the model's extent, up axis and named-part positions without
 rendering. Every scene with a person or a prop runs an axis-aligned overlap check of the actors against every robot
 and rack part before the render and prints each intersection; a scene is published only with zero.
 

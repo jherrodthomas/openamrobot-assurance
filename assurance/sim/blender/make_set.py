@@ -11,7 +11,8 @@ mesh, out = Path(sys.argv[1]), Path(sys.argv[2])
 samples = sys.argv[3] if len(sys.argv) > 3 else "64"
 W = sys.argv[4] if len(sys.argv) > 4 else "1400"
 H = sys.argv[5] if len(sys.argv) > 5 else "788"
-views = sys.argv[6:] or ["hero", "scanplane", "undock", "m-hero", "m-station", "m-carry", "m-lift", "m-aisle"]
+views = sys.argv[6:] or ["hero", "scanplane", "undock", "fire", "m-hero", "m-station", "m-carry", "m-lift", "m-aisle",
+                         "m-corner", "m-public", "m-uncommanded", "m-restart", "m-resume", "m-mode", "m-drop"]
 
 CAPTIONS = {
   "hero": ("CFG-001 base: the MMP platform from upstream's full-assembly STEP (1,983 parts)",
@@ -30,6 +31,22 @@ CAPTIONS = {
              "The amber ring is the keep-clear zone of SR-12.03 around the column; the lift moves at 18 mm/s and stops within 200 ms (3.6 mm) of a demand (WP-S-04 §4.5)."),
   "m-aisle": ("H-01 / IS-01: a person crossing the aisle ahead at navigation speed (SF-02 protective stop)",
               "The cyan patch is field set FS-1b of WP-S-04 §4.1: 1.09 m on the fast-coast planning case. On the slow coast it would be 3.8 m; the measurement of WP-V-02 decides."),
+  "m-corner": ("H-01 / IS-02: a person steps out of a blind corner into the aisle (SF-02, SF-03; zone speed DQ-017 A)",
+               "The racking hides the cross-aisle: nothing is visible until 0.5 m ahead, so neither party can avoid the other (WP-C-03 §5, P2). The cyan patch is field set FS-1b; no field sees round a corner, so the zone speed and the site measures of IFU-02 carry the row."),
+  "m-public": ("H-01 / IS-09: the public floor, rated e and excluded (OL-01, DQ-019)",
+               "A child in the path on a shop floor: people who do not know the robot, all day, and a child or a person below the detection plane cannot avoid it. No function of the bench build is designed for it; the zone is outside the operating environment."),
+  "m-uncommanded": ("H-02: the robot looks stopped and moves anyway (SF-01, SF-04, SF-05, SF-07)",
+                    "The red strip is the path an uncommanded motion takes: a watchdog fed by a stale publisher, an active debug path, a stuck command or an unauthenticated publisher. The person beside it has no warning; SF-03 bounds the speed, SF-04 and SF-01 end the motion."),
+  "m-restart": ("H-05 / OS-09: a restart after a stop, with a technician at the robot (SF-05, SF-01)",
+                "After a chain, fault or watchdog stop the inherited robot restarts as soon as commands resume, with nobody having reset it and no indication. SF-05 asks a deliberate reset at the robot with no demand present."),
+  "m-resume": ("H-05 / IS-10: resuming after waiting on a person who stepped aside (SF-02, SF-08)",
+               "The robot may resume only with the field clear (SR-02.08) and after the warning of SF-08. The residual is the person beside it, outside the field, who starts to cross as it resumes."),
+  "m-mode": ("H-10 / IS-06: the operator watches the tablet's on-screen stop while the robot drives on (SF-01, HR-05)",
+             "The on-screen E-STOP is not an emergency stop, and the operator's eyes are on the screen, not the robot. SF-01 is a physical, reachable, marked stop; HR-05 keeps the interface from being taken for it."),
+  "m-drop": ("H-14 / IS-14: the gripper lets go of its load on a stop or a power loss (SF-12, DM-07)",
+             "A 6 kg load from shoulder height onto a foot or a head gives no warning. DM-07 asks the gripper and the lift to hold their load on power loss by design; upstream's holding evidence is a release gate not yet passed."),
+  "fire": ("H-07: an electrical fire in the battery bay of the base (DM-04 fuse and disconnect)",
+           "A short on the unfused 24 V bus (hundreds of amps from lead-acid), a chafed motor cable or a regenerative spike with no bleed. DM-04, a fuse on the battery positive and a lockable disconnect, is the measure; none is fitted (GAP-19)."),
 }
 
 out.mkdir(parents=True, exist_ok=True)

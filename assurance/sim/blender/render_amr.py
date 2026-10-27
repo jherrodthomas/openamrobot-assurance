@@ -5,7 +5,8 @@ Usage: python render_amr.py <mesh_dir> <out.png> [samples] [width] [height] [vie
        python render_amr.py <mesh_dir> --probe          # print the bounding box and named-part centroids, no render
 
 Views: hero (three-quarter front), scanplane (low side view with a 0.15 m obstacle under the LiDAR plane, GAP-14),
-undock (rear three-quarter with the dock and the 0.7 m blind reverse path, GAP-35), front, top.
+undock (rear three-quarter with the dock and the 0.7 m blind reverse path, GAP-35), fire (H-07), front, top; and the
+CFG-002 views m-* (see the set in make_set.py).
 Synthetic picture for review: it earns no evidence credit.
 """
 import collections
@@ -242,6 +243,17 @@ if view == "scanplane":
     b = bpy.context.active_object; b.name = "scan beam"; b.data.materials.append(rim_mat)
   # a second carton at the plane height for comparison: seen by the scanner
   cube("tall obstacle", (0.4, 0.3, 0.30), (1.05, 0.55, 0.15), cardboard)
+if view == "fire":
+  # H-07: smoke from the battery bay after a short on the unfused 24 V bus, lit orange from inside the chassis
+  for k, (x, y, z, r) in enumerate(((-0.18, -0.05, 0.42, 0.16), (-0.08, 0.06, 0.62, 0.22), (-0.2, 0.15, 0.86, 0.27), (0.02, 0.02, 1.08, 0.31),
+                                    (-0.12, 0.22, 1.32, 0.36), (0.1, 0.18, 1.6, 0.4))):
+    puff = principled(f"smoke {k}", (0.16 + 0.04 * k, 0.16 + 0.04 * k, 0.17 + 0.04 * k), rough=1.0, specular=0.0, alpha=0.42 - 0.05 * k)
+    bpy.ops.mesh.primitive_ico_sphere_add(subdivisions=5, radius=r, location=(x, y, z)); ob = bpy.context.active_object; ob.name = f"smoke {k}"
+    ob.scale = (1.0, 0.9, 0.8); ob.data.materials.append(puff)
+    tex = bpy.data.textures.new(f"smoke billow {k}", type="CLOUDS"); tex.noise_scale = 0.12
+    dm = ob.modifiers.new("billow", "DISPLACE"); dm.texture = tex; dm.strength = 0.35 * r
+  bpy.ops.object.light_add(type="POINT", location=(-0.1, -0.36, 0.18)); gl = bpy.context.active_object; gl.name = "fire glow"
+  gl.data.energy = 60; gl.data.color = (1.0, 0.42, 0.08); gl.data.shadow_soft_size = 0.05
 if view == "undock":
   # GAP-35: the dock behind the robot and the 0.7 m blind reverse path on the floor
   dock = principled("dock, grey", (0.35, 0.36, 0.38), rough=0.5, metallic=0.3)
@@ -281,13 +293,16 @@ views = {
   "top": ((0.0, -0.01, 3.2), (0.0, 0.0, 0.0), 40),
   "scanplane": ((2.4, -1.7, 0.55), (0.8, 0.15, 0.16), 45),
   "undock": ((-2.3, -1.7, 1.05), (-0.55, 0.0, 0.15), 42),
+  "fire": ((2.2, -2.5, 1.2), (-0.05, 0.0, 0.6), 36),
 }
 # ---------------------------------------------------------------- CFG-002 scenes (m-*): upper body, arms, a person, props
 if view.startswith("m-"):
   sys.path.insert(0, str(Path(__file__).resolve().parent))
   import cfg002
   mats2 = {"white": MATS["white"], "alu": MATS["alu"], "silver": MATS["alu"], "black": MATS["black"], "red": MATS["red"], "yellow": MATS["yellow"]}
-  lift, pose = {"m-hero": (0.0, "stowed"), "m-station": (0.35, "reach_right"), "m-carry": (0.0, "carry"), "m-lift": (0.20, "stowed"), "m-aisle": (0.0, "stowed")}[view]
+  lift, pose = {"m-hero": (0.0, "stowed"), "m-station": (0.35, "reach_right"), "m-carry": (0.0, "carry"), "m-lift": (0.20, "stowed"), "m-aisle": (0.0, "stowed"),
+                "m-corner": (0.0, "stowed"), "m-public": (0.0, "stowed"), "m-uncommanded": (0.0, "stowed"), "m-restart": (0.0, "stowed"),
+                "m-resume": (0.0, "stowed"), "m-mode": (0.0, "stowed"), "m-drop": (0.35, "carry")}[view]
   ub = bpy.data.collections.new("cfg002"); scene.collection.children.link(ub)
   cfg002.build_upper_body(ub, lift, mats2)
   world_m, tips = cfg002.build_arms(ub, *cfg002.POSES[pose], lift, mats2)
@@ -318,7 +333,72 @@ if view.startswith("m-"):
   if view == "m-aisle":
     cube("protective field FS-1b (1.09 m)", (1.09, 0.78, 0.003), (0.41 + 0.545, 0.0, 0.0015), field_mat)
     cfg002.add_person(ub, people / "pedestrian_female.glb", (1.75, 0.65, 0.0), -90.0, frame=12, shirt=shirt)
+  path_mat = principled("motion path, red", (0.95, 0.15, 0.1), rough=0.6, alpha=0.45, emission=(0.9, 0.1, 0.1))
+  shirt2 = principled("shirt, work green", (0.08, 0.30, 0.14), rough=0.85)
+  if view == "m-corner":
+    # H-01 / IS-02: racking on the robot's left ends at a cross-aisle; a person walks out from behind its end
+    for x in (-2.0, -0.85, 0.3, 1.0):
+      for y in (0.62, 1.55):
+        cube("rack end upright", (0.08, 0.08, 2.4), (x, y, 1.2), upright_mat)
+    for z in (0.12, 0.95, 1.8):
+      for y in (0.62, 1.55):
+        cube("rack end beam", (3.1, 0.07, 0.10), (-0.5, y, z), beam_mat)
+      for xc in (-1.45, -0.3, 0.65):
+        cube("rack end box", (0.95, 0.8, 0.62 if z > 0.2 else 0.7), (xc, 1.085, z + (0.38 if z > 0.2 else 0.42)), cardboard)
+    cube("protective field FS-1b (1.09 m)", (1.09, 0.78, 0.003), (0.41 + 0.545, 0.0, 0.0015), field_mat)
+    cfg002.add_person(ub, people / "pedestrian_female.glb", (1.42, 0.78, 0.0), -90.0, frame=12, shirt=shirt)
+  if view == "m-public":
+    # H-01 / IS-09, excluded: a shop floor with low gondola shelving; a small child stands in the robot's path
+    gondola = principled("gondola shelving, white", (0.85, 0.86, 0.86), rough=0.4)
+    for y in (1.05,):
+      cube("gondola", (2.6, 0.5, 1.4), (1.3, y, 0.7), gondola)
+      for z in (0.35, 0.75, 1.15):
+        for xc in (0.4, 0.95, 1.5, 2.05):
+          cube("goods", (0.4, 0.3, 0.22), (xc, y - (0.12 if y > 0 else -0.12), z + 0.11), principled(f"goods {xc} {z}", (0.2 + 0.3 * ((xc * 7) % 1), 0.25 + 0.4 * ((z * 3) % 1), 0.5), rough=0.6))
+    child = cfg002.add_person(ub, people / "pedestrian_male.glb", (1.05, 0.12, 0.0), 180.0, frame=0, shirt=shirt2)
+    child.scale = (0.58, 0.58, 0.58)
+    cfg002.add_person(ub, people / "pedestrian_female.glb", (1.5, 0.52, 0.0), 200.0, frame=0, shirt=shirt)
+  if view == "m-uncommanded":
+    # H-02: the robot looks stopped; a person stands just ahead of it; a stale or stuck command moves it (red: the path it takes)
+    cube("uncommanded path", (1.0, 0.62, 0.003), (0.42 + 0.5, 0.0, 0.0015), path_mat)
+    cfg002.add_person(ub, people / "pedestrian_male.glb", (1.08, 0.02, 0.0), 0.0, frame=0, shirt=shirt)
+  if view == "m-restart":
+    # H-05 / OS-09: after a stop a technician works at the robot's front; it restarts when commands resume, with no reset
+    cube("restart path", (1.0, 0.62, 0.003), (0.42 + 0.5, 0.0, 0.0015), path_mat)
+    cfg002.add_person(ub, people / "pedestrian_male.glb", (0.9, 0.04, 0.0), 180.0, frame=0, shirt=shirt2)
+  if view == "m-resume":
+    # H-05 / IS-10: the robot waited for a person who stepped aside; it resumes while the person turns back across its path
+    cube("protective field FS-1b (1.09 m)", (1.09, 0.78, 0.003), (0.41 + 0.545, 0.0, 0.0015), field_mat)
+    cfg002.add_person(ub, people / "pedestrian_female.glb", (0.72, -0.88, 0.0), 75.0, frame=4, shirt=shirt)
+  if view == "m-mode":
+    # H-10 / IS-06: the operator watches the tablet with its on-screen stop while the robot drives toward a second person
+    op = (-1.05, -1.25)
+    cfg002.add_person(ub, people / "pedestrian_male.glb", (op[0], op[1], 0.0), 35.0, frame=0, shirt=shirt2)
+    th = math.radians(35.0)
+    screen = principled("tablet screen", (0.05, 0.08, 0.12), rough=0.2, emission=(0.25, 0.45, 0.7))
+    tab = cube("tablet", (0.32, 0.22, 0.014), (op[0] + 0.40 * math.cos(th), op[1] + 0.40 * math.sin(th), 1.2), screen)
+    tab.rotation_euler = (0.0, math.radians(-62), th)
+    stop_btn = principled("on-screen stop", (0.85, 0.05, 0.03), rough=0.3, emission=(0.9, 0.05, 0.03))
+    b = cube("on-screen stop", (0.07, 0.07, 0.004), tab.location, stop_btn); b.rotation_euler = tab.rotation_euler
+    b.location = tab.location + mathutils.Euler(tab.rotation_euler).to_matrix() @ Vector((0.05, 0.0, 0.008))
+    cube("motion path", (1.6, 0.62, 0.003), (0.42 + 0.8, 0.0, 0.0015), path_mat)
+    cfg002.add_person(ub, people / "pedestrian_female.glb", (1.95, 0.55, 0.0), -90.0, frame=12, shirt=shirt)
+  if view == "m-drop":
+    # H-14 / IS-14: at the station the gripper releases its tote on a stop or power loss; it falls beside a person's feet
+    mid = sum((Vector(t) for t in tips.values()), Vector()) / max(len(tips), 1)
+    crate = principled("tote, blue plastic crate", (0.08, 0.25, 0.6), rough=0.5, coat=0.2)
+    t = cube("tote falling", (0.40, 0.30, 0.22), (mid.x + 0.08, -0.05, 0.55), crate); t.rotation_euler = (math.radians(18), math.radians(-24), math.radians(10))
+    fall_mat = principled("fall path", (0.95, 0.6, 0.05), rough=0.6, alpha=0.5, emission=(0.9, 0.5, 0.05))
+    bpy.ops.mesh.primitive_cylinder_add(vertices=32, radius=0.26, depth=0.003, location=(mid.x + 0.08, -0.05, 0.0015)); fp = bpy.context.active_object; fp.name = "landing zone"; fp.data.materials.append(fall_mat)
+    cfg002.add_person(ub, people / "pedestrian_female.glb", (mid.x + 0.30, -0.92, 0.0), 90.0, frame=0, shirt=shirt)
   views.update({
+    "m-corner": ((2.9, -2.9, 2.7), (0.55, 0.45, 0.45), 36),
+    "m-public": ((3.9, -3.0, 1.9), (0.95, 0.2, 0.6), 34),
+    "m-uncommanded": ((0.9, -4.3, 1.8), (0.6, 0.0, 0.75), 34),
+    "m-restart": ((0.6, -4.3, 1.8), (0.45, 0.0, 0.75), 34),
+    "m-resume": ((0.9, 2.9, 1.7), (0.6, -0.35, 0.55), 36),
+    "m-mode": ((0.1, -4.6, 2.7), (0.35, -0.35, 0.55), 30),
+    "m-drop": ((1.0, 2.9, 1.9), (0.65, -0.35, 0.75), 36),
     "m-hero": ((2.15, -1.95, 1.35), (0.12, 0.0, 0.72), 45),
     "m-station": ((-1.3, -3.9, 2.2), (0.7, -0.25, 1.0), 40),
     "m-carry": ((3.5, -3.1, 1.6), (1.1, 0.3, 0.7), 40),
@@ -338,7 +418,8 @@ def overlap_report():
   markings are exempt. Prints every pair that intersects by more than 5 mm so a placement error is caught before a render."""
   robot = [o for o in bpy.data.objects if o.type == "MESH" and (o.users_collection and o.users_collection[0].name in ("model", "cfg002"))
            and not o.name.lower().startswith(("superhero", "eyes", "eyebrows", "hair", "tote", "workspace", "lift keep", "protective", "carry field"))]
-  actors = [o for o in bpy.data.objects if o.type == "MESH" and (o.name.lower().startswith("superhero") or o.name.split(".")[0] in ("tote", "low obstacle", "tall obstacle", "dock", "station upright", "station beam", "station shelf", "item"))]
+  actors = [o for o in bpy.data.objects if o.type == "MESH" and (o.name.lower().startswith("superhero") or o.name.split(".")[0] in ("tote", "low obstacle", "tall obstacle", "dock", "station upright", "station beam", "station shelf", "item",
+                                                                                                  "rack end upright", "rack end beam", "rack end box", "gondola", "goods", "tote on floor", "tote falling", "tablet"))]
   rb = [(_bbox(o), o.name) for o in robot]
   bad = 0
   for a in actors:
