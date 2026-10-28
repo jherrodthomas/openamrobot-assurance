@@ -5,10 +5,12 @@
                               with every field set of WP-S-04 §4.1 at its planning length, the station rings of
                               WP-S-04 §4.5, the people of the interaction scenarios where they happen, hazard chips
                               with the PLr adopted in WP-C-03 §5
-  fig-sim-is-01-anim.svg      IS-01 as a loop (SMIL, no script): a fixed crop of the same plan; the robot at the zone
-                              speed with the field set that applies drawn as the sum of its terms; the person at K;
-                              the field outline changing at the demand and at power removal; events, time strip and
-                              the person-to-robot distance with a cursor. A still viewer shows the first frame
+  fig-sim-is-NN-anim.svg      one loop per interaction scenario (SMIL, no script): a fixed crop of the same plan; the
+                              robot at the zone speed with the field set that applies drawn as the sum of its terms, or
+                              turning, reversing, or at rest with the arm or the lift; the person at K; the field or
+                              ring outline changing at the demand and at power removal; events, time strip and the
+                              person-to-robot distance with a cursor. A still viewer shows the first frame
+  fig-sim-is-NN-still.svg     the three scenarios with no motion (IS-07, IS-08, IS-11) as stills of the same crop
 
 The sources of record are the tables: WP-C-06 §2 (scenarios) and §3 (K, Z); WP-S-04 §2 (the stage times of the
 scanner path), §3.1 (the planning decelerations) and §4.1 (the field sets, recomputed here from
@@ -161,7 +163,7 @@ def check_source(src: dict) -> list[str]:
     errs.append("WP-S-04 §2: no SF-02 scanner row")
     return errs
   t_r = sp["t_r"] / 1000.0
-  for fid in PLAN_FIELDS + [sc["field"] for sc in SCENES.values()]:
+  for fid in PLAN_FIELDS + [sc["field"] for sc in SCENES.values() if sc["field"]]:
     f = src["fields"].get(fid)
     if not f:
       errs.append(f"WP-S-04 §4.1 has no row {fid}")
@@ -173,7 +175,7 @@ def check_source(src: dict) -> list[str]:
     if zid not in src["zones"]:
       errs.append(f"WP-C-02 §2 has no row {zid}")
   for sid in SCENES:
-    if rating_for(src, sid) is None:
+    if rating_for(src, sid) is None and sid not in UNRATED:
       errs.append(f"WP-C-03 §5 has no rated row naming {sid}")
   for kind, sp in src["sprites"].items():
     if sp["sha"] != sp["pin"]:
@@ -204,11 +206,12 @@ SITE = {
   "charger": (22.7, 10.95, 0.5, 0.7),
   "loading_dock": (17.5, 0.0, 6.0, 4.4),      # Z0
   "trucks": [(18.2, 0.4, 1.6, 3.6, "#C8382E"), (20.6, 0.4, 1.6, 3.6, "#8E9AA2")],
-  "station": {"mark": (11.4, 9.0, 2.4, 0.5), "centre": (12.6, 8.5), "robot": (12.6, 8.0)},
+  "station": {"mark": (11.4, 9.0, 2.4, 0.5), "centre": (12.6, 8.34), "robot": (12.6, 8.1)},   # the ring on the arm mount, 0.24 m ahead of the base centre (heading +y)
   "aisle_robot": (7.6, 8.35),                  # the live robot, aisle 2, heading +x
   "aisle1_robot": (14.0, 11.1),               # the carry-pose ghost, aisle 1
   "dock_robot": (20.8, 13.2),                 # the docking ghost, heading −x, reverse path behind it
 }
+UNRATED = ("IS-07", "IS-08")   # scenarios WP-C-03 §5 folds into H-02/H-08 and H-03/H-06 without naming them; their chips say so
 PLAN_FIELDS = ["FS-1a", "FS-1b", "FS-1c", "FS-2a", "FS-2b", "FS-2c", "FS-3b", "FS-4"]
 ROBOT_L, ROBOT_W = 0.78, 0.58                # WP-C-01 §4: 780 × 582 mm chassis
 REACH, WALK_ARM, KEEP_CLEAR = 0.6, 0.48, 0.55  # WP-S-04 §4.5 planning values; SR-12.03 keep-clear as the Blender scenes assume it
@@ -310,8 +313,8 @@ class Plan:
     X, Y = self.P(x, y)
     return [circle(X, Y, 0.3 * self.M, C["tape"], "#9A7A05", 1.5), circle(X, Y, 0.12 * self.M, "#9A7A05")]
 
-  def worker(self, x, y, vest=None, label="", color=None):
-    M = self.M
+  def worker(self, x, y, vest=None, label="", color=None, scale=1.0):
+    M = self.M * scale
     X, Y = self.P(x, y)
     out = [f'<ellipse cx="{X:.1f}" cy="{Y:.1f}" rx="{0.28 * M:.1f}" ry="{0.14 * M:.1f}" fill="{vest or C["vest"]}" stroke="#2B2B2B" stroke-width="1.2"/>',
            circle(X, Y, 0.1 * M, C["skin"], "#2B2B2B", 1)]
@@ -324,12 +327,12 @@ class Plan:
     X2, Y2 = self.P(*b)
     return [line(X1, Y1, X2, Y2, C["lane"], 2.5, "10,7")]
 
-  def sprite(self, x, y, heading=1, opacity=1.0, kind="cfg001"):
+  def sprite(self, x, y, heading=1, opacity=1.0, kind="cfg001", at_origin=False):
     """The robot from above: the CAD render of SPRITES when the file is present and pinned (the image's +x is to the
     right and its +y up, as on the plan; origin_px is the base's centre), else a drawn footprint of the base
     (WP-C-01 §4: 780 × 582 mm): deck, bumper ends, drive wheels, castors, the scanner at the front, the rear bumper red."""
     M = self.M
-    cx, cy = self.P(x, y)
+    cx, cy = (0.0, 0.0) if at_origin else self.P(x, y)
     sp = self.sprites.get(kind)
     if sp:
       self.used[kind] = sp
@@ -510,9 +513,19 @@ def fig_plan(src: dict) -> str:
 
 
 # ------------------------------------------------------------------------------------------------------ the loops
-def kinematics(src: dict, fid: str):
+# One looping view per interaction scenario, a fixed crop of the plan. Every loop is built the same way: each actor
+# gets a trajectory sampled at DT from the planning values (the robot's stop profile from WP-S-04, the person at K),
+# the demand is found where the person's body meets the field the row names, and the SVG animates the samples with
+# SMIL. The three scenarios with no motion (IS-07, IS-08, IS-11) are stills from the same crop machinery.
+DT = 0.05
+ARM_MOUNT, COLUMN_X, SWEEP = 0.24, 0.06, 0.85   # CFG-002: arm mount and column axis ahead of the base centre (blender/cfg002.py); the load's sweep radius at head height in the carry pose
+TURN_RATE = 0.5                                  # rad/s, the Z1/Z2 angular limit (WP-C-02 §2)
+
+
+def kinematics(src: dict, fid: str, path: str = "scanner"):
+  """The stop from a field row: t_r of the named §2 path (scanner or bumper), the coast t_b, d_r, d_b, the walk term, L."""
   f = src["fields"][fid]
-  sp = scanner_path(src)
+  sp = scanner_path(src) if path == "scanner" else next(b for b in src["budget"] if b["sf"] == "SF-02" and "bumper" in b["path"])
   t_r = sp["t_r"] / 1000.0
   t_b, d_s, L = model(f["v"], f["a"], t_r, src["K"], src["Z"])
   return {"v": f["v"], "a": f["a"], "t_r": t_r, "t_b": t_b, "t_s": t_r + t_b, "d_r": f["v"] * t_r, "d_b": f["v"] ** 2 / (2 * f["a"]),
@@ -520,7 +533,7 @@ def kinematics(src: dict, fid: str):
 
 
 def robot_travel(k: dict, t: float, t0: float) -> float:
-  """Distance travelled since t0: constant speed until t_r, then the coast, then standstill."""
+  """Distance travelled since t0: constant speed until t_r, then the coast, then standstill (the demand at t = 0)."""
   if t <= k["t_r"]:
     return k["v"] * (t - t0)
   if t <= k["t_s"]:
@@ -528,14 +541,591 @@ def robot_travel(k: dict, t: float, t0: float) -> float:
   return k["v"] * (k["t_r"] - t0) + k["d_b"]
 
 
-def fig_loop(src: dict, sid: str) -> str:
+def speed_after_demand(k: dict, t_d: float):
+  """The robot's speed as a function of time for a demand at t_d: v until t_d + t_r, the coast, then 0."""
+  def v(t):
+    if t <= t_d + k["t_r"]:
+      return k["v"]
+    if t <= t_d + k["t_s"]:
+      return k["v"] - k["a"] * (t - t_d - k["t_r"])
+    return 0.0
+  return v
+
+
+def samples(T0, T1):
+  n = int(round((T1 - T0) / DT))
+  return [T0 + i * DT for i in range(n + 1)]
+
+
+def integrate_pose(x0, y0, yaw0, vel, T0, T1):
+  """Robot samples (t, x, y, yaw_deg) from a velocity function vel(t) -> (speed along the heading, yaw rate deg/s)."""
+  out = [(T0, x0, y0, yaw0)]
+  x, y, yaw = x0, y0, yaw0
+  for t in samples(T0, T1)[1:]:
+    v, w = vel(t - DT / 2)
+    yaw += w * DT
+    x += v * math.cos(math.radians(yaw)) * DT
+    y += v * math.sin(math.radians(yaw)) * DT
+    out.append((t, x, y, yaw))
+  return out
+
+
+def integrate_xy(x0, y0, vel, T0, T1):
+  """Person samples (t, x, y) from vel(t) -> (vx, vy)."""
+  out = [(T0, x0, y0)]
+  x, y = x0, y0
+  for t in samples(T0, T1)[1:]:
+    vx, vy = vel(t - DT / 2)
+    x += vx * DT
+    y += vy * DT
+    out.append((t, x, y))
+  return out
+
+
+def walk(K, segments):
+  """vel(t) for a walker: segments are (t_until, (dx, dy)) unit directions in order; standing still is (0, 0)."""
+  def vel(t):
+    for t_until, (dx, dy) in segments:
+      if t < t_until:
+        return (dx * K, dy * K)
+    return (0.0, 0.0)
+  return vel
+
+
+def at(samples_, t):
+  """Linear interpolation of a sample list at time t."""
+  if t <= samples_[0][0]:
+    return samples_[0][1:]
+  for a, b in zip(samples_, samples_[1:]):
+    if t <= b[0]:
+      f = (t - a[0]) / (b[0] - a[0]) if b[0] > a[0] else 0.0
+      return tuple(p + (q - p) * f for p, q in zip(a[1:], b[1:]))
+  return samples_[-1][1:]
+
+
+def in_field(robot_pose, px, py, L, half_w, r=0.14):
+  """Whether a person circle meets the field rectangle ahead of the robot, in the robot's frame."""
+  x, y, yaw = robot_pose
+  c, s = math.cos(math.radians(yaw)), math.sin(math.radians(yaw))
+  dx, dy = px - x, py - y
+  u, v = dx * c + dy * s, -dx * s + dy * c
+  return (ROBOT_L / 2 - r) <= u <= (ROBOT_L / 2 + L + r) and abs(v) <= half_w + r
+
+
+def hull_distance(robot_pose, px, py):
+  """Distance from a point to the robot's hull rectangle (0 inside)."""
+  x, y, yaw = robot_pose
+  c, s = math.cos(math.radians(yaw)), math.sin(math.radians(yaw))
+  dx, dy = px - x, py - y
+  u, v = dx * c + dy * s, -dx * s + dy * c
+  du, dv = max(abs(u) - ROBOT_L / 2, 0.0), max(abs(v) - ROBOT_W / 2, 0.0)
+  return math.hypot(du, dv)
+
+
+def front_distance(robot_pose, px, py):
+  """Distance from the robot's front face (centre) to a point, along the heading, floored at zero."""
+  x, y, yaw = robot_pose
+  c, s = math.cos(math.radians(yaw)), math.sin(math.radians(yaw))
+  u = (px - x) * c + (py - y) * s
+  return max(u - ROBOT_L / 2, 0.0)
+
+
+# The scenes. Each entry names the crop, the configuration drawn and a builder; the builder returns the actors, the
+# events and the plot from the tables. Titles are the scenario in a line; the row of WP-C-06 §2 supplies the rest.
+SCENES = {
+  "IS-01": dict(crop=(6.4, 6.3, 6.0, 3.6), field="FS-1b", kind="cfg001", title="a person crosses the aisle ahead at walking pace"),
+  "IS-02": dict(crop=(13.0, 6.5, 6.0, 3.6), field="FS-1b", kind="cfg001", title="a person steps out from behind the rack end, unseen until 0.5 m ahead"),
+  "IS-03": dict(crop=(7.0, 9.4, 6.0, 3.6), field="FS-1b", kind="cfg001", title="a person walks alongside inside 0.5 m; the robot turns toward the rack"),
+  "IS-04": dict(crop=(17.4, 11.2, 6.0, 3.6), field="FS-2b", kind="cfg001", title="a person behind the robot as it reverses out of the dock at the crawl limit"),
+  "IS-05": dict(crop=(17.4, 11.2, 6.0, 3.6), field="FS-2b", kind="cfg001", title="a person steps into the dock lane during the final blind approach"),
+  "IS-06": dict(crop=(0.6, 0.4, 6.0, 3.6), field="FS-1b", kind="cfg001", title="teleoperation: the operator watches the screen, the robot is not where the map says"),
+  "IS-07": dict(crop=(17.4, 9.6, 6.0, 3.6), field=None, kind="cfg001", still=True, title="the charger is connected with the robot powered; a command arrives from the network"),
+  "IS-08": dict(crop=(7.0, 9.4, 6.0, 3.6), field=None, kind="cfg001", still=True, title="a person sits on the robot while another pushes it"),
+  "IS-09": dict(crop=(9.0, 9.4, 6.0, 3.6), field="FS-1b", kind="cfg001", title="a crawling child below the scan plane: the field passes over them"),
+  "IS-10": dict(crop=(5.0, 6.3, 6.0, 3.6), field="FS-1b", kind="cfg001", title="a person stands in the path; the robot waits, the person steps aside, the robot resumes"),
+  "IS-11": dict(crop=(7.0, 9.4, 6.0, 3.6), field="FS-1b", kind="cfg001", still=True, title="the on-screen E-STOP is pressed; the robot does not stop"),
+  "IS-12": dict(crop=(5.0, 6.3, 6.0, 3.6), field="FS-1b", kind="cfg001", title="a bystander stands in front with a hand out, then holds the robot"),
+  "IS-13": dict(crop=(9.6, 6.6, 6.0, 3.6), field=None, kind="cfg002", title="a person reaches into the arm's workspace at the station while the arm moves"),
+  "IS-14": dict(crop=(9.6, 6.6, 6.0, 3.6), field=None, kind="cfg002", title="a person steps under the lowering lift carriage"),
+  "IS-15": dict(crop=(9.0, 9.4, 6.0, 3.6), field="FS-4", kind="cfg002-carry", title="carrying at 0.3 m/s past a bystander, then a turn in place: the load sweeps at head height"),
+}
+
+
+def _stop_states(k, t_d, T0, T1, resume=None):
+  """Field outline colour over time and the robot's status label: live, violated, power removed, (resumed)."""
+  states = [(T0, C["teal"]), (t_d, C["red"]), (t_d + k["t_r"], C["line"])]
+  labels = [(T0, f"{k['v']:.2f} m/s", C["ink"]), (t_d + k["t_r"], "coasting", C["amber"]), (t_d + k["t_s"], "STANDSTILL", C["green"])]
+  if resume is not None:
+    states.append((resume, C["teal"]))
+    labels.append((resume, f"{k['v']:.2f} m/s", C["ink"]))
+  return states, labels
+
+
+def _stop_events(k, t_d, what="field violated", device="OSSDs open"):
+  return [(t_d, what, C["red"]), (t_d + k["t_det"], device, C["teal"]), (t_d + k["t_r"], "contactors open", C["red"]), (t_d + k["t_s"], "standstill", C["green"])]
+
+
+def _approach(src, sid, robot0, person0, walk_segments, standing=False, T0=-0.5, t_after=0.33, hold=1.5, who=None):
+  """The common case: the robot drives +x at the field's speed, a person on foot; the demand where the body meets the field."""
+  sc = SCENES[sid]
+  k = kinematics(src, sc["field"])
+  half_w = ROBOT_W / 2 + k["Z"]
+  pre = integrate_pose(robot0[0], robot0[1], 0.0, lambda t: (k["v"], 0.0), T0, T0 + 12.0)
+  person = integrate_xy(person0[0], person0[1], walk(k["K"], walk_segments), T0, T0 + 12.0)
+  t_d = next((t for (t, *_) in pre if in_field(at(pre, t), *at(person, t), k["L"], half_w)), None)
+  assert t_d is not None, sid
+  T1 = t_d + k["t_s"] + t_after
+  robot = integrate_pose(robot0[0], robot0[1], 0.0, (lambda v: lambda t: (v(t), 0.0))(speed_after_demand(k, t_d)), T0, T1)
+  person = integrate_xy(person0[0], person0[1], walk(k["K"], walk_segments), T0, T1)
+  states, labels = _stop_states(k, t_d, T0, T1)
+  dist = lambda t: math.hypot(*(a - b for a, b in zip(at(person, t), at(robot, t)[:2]))) if False else _person_front(robot, person, t)  # noqa: E731
+  return dict(k=k, T0=T0, T1=T1, HOLD=hold, t_d=t_d, robot=robot, person=person, states=states, labels=labels, dist=dist,
+              events=_stop_events(k, t_d) + [(None, "contact: none", C["green"])], who=who)
+
+
+def _person_front(robot, person, t):
+  return front_distance(at(robot, t), *at(person, t)) if abs(at(person, t)[1] - at(robot, t)[1]) < ROBOT_W / 2 + 0.14 else hull_distance(at(robot, t), *at(person, t))
+
+
+def build(src: dict, sid: str) -> dict:
+  """The actors, events and plot of one scenario, from the tables and the scene geometry below."""
   sc = SCENES[sid]
   row = src["scenes"][sid]
-  k = kinematics(src, sc["field"])
-  T0, T1, HOLD = sc["t0"], k["t_s"] + sc["t_after"], sc["hold"]
+  K, Z = src["K"], src["Z"]
+  cx0, cy0, cw, ch = sc["crop"]
+  if sid == "IS-01":
+    k = kinematics(src, "FS-1b")
+    rx, ry = 7.3, 8.35
+    x_edge0 = rx + ROBOT_L / 2 + k["v"] * 0.5 + k["L"]
+    s = _approach(src, sid, (rx, ry), (x_edge0 - 0.30, ry + ROBOT_W / 2 + Z + 0.14 + 0.8), [(99, (0, -1))], T0=-0.5)
+    s["note"] = f"closest approach in the planning case: {s['dmin']:.2f} m; a person who keeps walking passes in front of the stopped robot" if "dmin" in s else ""
+    return s
+  if sid == "IS-02":
+    k = kinematics(src, "FS-1b")
+    # the person walks down the cross-aisle at x = 16.95 from behind rack 2 (y ≥ 9.5); the robot's front is 0.5 m short of that line when they appear
+    appear_y = 9.5 + 0.14
+    person0 = (16.95, appear_y + K * 0.5)
+    s = _approach(src, sid, (16.45 - ROBOT_L / 2 - k["v"] * 0.5, 8.35), person0, [(99, (0, -1))], T0=-0.5)
+    s["events"].insert(0, (0.0, "appears 0.5 m ahead", C["amber"]))
+    s["statics"] = ["occluded"]
+    return s
+  if sid == "IS-03":
+    k = kinematics(src, "FS-1b")
+    T0 = -1.0
+    rx, ry = 8.2, 11.15
+    py = ry + ROBOT_W / 2 + 0.14 + 0.25       # 0.25 m between the body and the hull, inside the 0.5 m of the row
+    turn = 15.0                               # deg/s, below the 0.5 rad/s limit
+    pre = integrate_pose(rx, ry, 0.0, lambda t: (k["v"], turn if t >= 0 else 0.0), T0, 6.0)
+    person_pre = integrate_xy(rx - 0.1, py, lambda t: (k["v"], 0.0), T0, 6.0)
+    t_c = next(t for (t, *_) in pre if hull_distance(at(pre, t), *at(person_pre, t)) <= 0.14 + 0.005)
+    stall = next(b for b in src["budget"] if b["sf"] == "SF-06" and "stall" in b["path"])
+    t_stall = t_c + stall["t_r"] / 1000.0
+    T1 = t_stall + k["t_b"] + 0.3
+    vel = lambda t: ((k["v"] if t < t_stall else max(k["v"] - k["a"] * (t - t_stall), 0.0)), (turn if 0 <= t < 2.0 else 0.0))  # noqa: E731
+    robot = integrate_pose(rx, ry, 0.0, vel, T0, T1)
+    person = integrate_xy(rx - 0.1, py, lambda t: ((k["v"], 0.0) if t < t_c else (0.0, 0.0)), T0, T1)
+    person = [(t, x, min(y, 12.0 - 0.14)) for t, x, y in person]
+    return dict(k=k, T0=T0, T1=T1, HOLD=1.5, t_d=None, robot=robot, person=person, masked=True,
+                states=[(T0, C["teal"])], labels=[(T0, f"{k['v']:.2f} m/s", C["ink"]), (0.0, "turning 15°/s", C["ink"]), (t_stall, "stall: power off", C["amber"]), (t_stall + k["t_b"], "STANDSTILL", C["green"])],
+                dist=lambda t: hull_distance(at(robot, t), *at(person, t)) - 0.14 + 0.14 if True else 0,
+                events=[(0.0, "turn toward the rack begins", C["amber"]), (t_c, "corner meets the person: no demand (side masked, GAP-35)", C["red"]),
+                        (t_stall, f"SF-06 stall detector, {stall['t_r'] / 1000:.2f} s", C["teal"]), (t_stall + k["t_b"], "standstill", C["green"]), (None, "pinned against the rack", C["red"])],
+                dist_label="distance from the person to the hull, m: the side sectors are masked, so the field never sees them", dist_line=None)
+  if sid in ("IS-04", "IS-05"):
+    kb = kinematics(src, "FS-2b", "bumper")
+    kf = kinematics(src, "FS-2b")
+    if sid == "IS-04":
+      T0 = -1.0
+      px, py = 21.5, 13.2
+      cx_contact = px - 0.14 - 0.045 - ROBOT_L / 2        # the rear bumper edge meets the shin at t = 0 (yaw 180: the rear is at +x)
+      rx = cx_contact + 0.05 * T0 * 1.0
+      vel = lambda t: ((-0.05 if t < kb["t_r"] else -max(0.05 - kb["a"] * (t - kb["t_r"]), 0.0)), 0.0)  # noqa: E731
+      T1 = kb["t_s"] + 0.6
+      robot = integrate_pose(rx, py, 180.0, vel, T0, T1)
+      person = [(t, px, py) for t in samples(T0, T1)]
+      rear = lambda t: max(px - 0.14 - (at(robot, t)[0] + ROBOT_L / 2 + 0.045), 0.0)  # noqa: E731
+      return dict(k=kb, T0=T0, T1=T1, HOLD=1.5, t_d=0.0, robot=robot, person=person, no_field=True, rear_red=True, reverse_strip=rx,
+                  states=[(T0, C["line"])], labels=[(T0, "reversing 0.05 m/s", C["ink"]), (kb["t_r"], "coasting", C["amber"]), (kb["t_s"], "STANDSTILL", C["green"])],
+                  dist=rear, events=[(0.0, "bumper edge meets the shin", C["red"]), (kb["t_det"], "edge detected", C["teal"]), (kb["t_r"], "contactors open", C["red"]), (kb["t_s"], f"standstill, {kb['d_r'] * 1000 + kb['d_b'] * 1000:.0f} mm after contact", C["green"]), (None, "rear sector masked: no field", C["amber"])],
+                  dist_label="distance from the rear bumper to the person's shin, m; the stop after contact is millimetres", dist_line=None)
+    # IS-05: the final approach, nose first at the crawl limit; the field is muted inside the last metre (GAP-15)
+    T0 = -2.0
+    dock_x = 22.9
+    rx0 = dock_x - 1.0 - ROBOT_L / 2 + 0.05 * T0      # the front is 1.0 m from the dock at t = 0
+    px0, py0 = 22.3, 12.35
+    person = integrate_xy(px0, py0, walk(K, [(0.2, (0, 0)), (0.2 + (13.2 - py0) / K, (0, 1))]), T0, 12.0)
+    pre = integrate_pose(rx0, 13.2, 0.0, lambda t: (0.05, 0.0), T0, 12.0)
+    t_c = next(t for (t, *_) in pre if at(pre, t)[0] + ROBOT_L / 2 + 0.045 >= px0 - 0.14)
+    T1 = t_c + kb["t_s"] + 0.6
+    vel = lambda t: ((0.05 if t < t_c + kb["t_r"] else max(0.05 - kb["a"] * (t - t_c - kb["t_r"]), 0.0)), 0.0)  # noqa: E731
+    robot = integrate_pose(rx0, 13.2, 0.0, vel, T0, T1)
+    person = integrate_xy(px0, py0, walk(K, [(0.2, (0, 0)), (0.2 + (13.2 - py0) / K, (0, 1))]), T0, T1)
+    return dict(k=kf, kb=kb, T0=T0, T1=T1, HOLD=1.5, t_d=t_c, robot=robot, person=person, muted_at=0.0,
+                states=[(T0, C["teal"]), (0.0, C["dim"]), (t_c, C["red"]), (t_c + kb["t_r"], C["line"])],
+                labels=[(T0, "0.05 m/s", C["ink"]), (t_c + kb["t_r"], "coasting", C["amber"]), (t_c + kb["t_s"], "STANDSTILL", C["green"])],
+                dist=lambda t: front_distance(at(robot, t), *at(person, t)) if at(person, t)[1] > 13.2 - ROBOT_W / 2 - 0.14 else 9.0,
+                events=[(0.0, "field muted inside the last metre (GAP-15)", C["amber"]), (0.2, "steps into the lane", C["amber"]), (t_c, "bumper meets the person", C["red"]),
+                        (t_c + kb["t_r"], "contactors open", C["red"]), (t_c + kb["t_s"], f"standstill, {(kb['d_r'] + kb['d_b']) * 1000:.0f} mm after contact", C["green"])],
+                dist_label="distance from the front bumper to the person, m, once they are in the lane; nothing but the bumper detects them")
+  if sid == "IS-06":
+    s = _approach(src, sid, (3.0, 2.4), (4.8, 2.4), [(99, (0, 0))], T0=-0.5, who="bystander")
+    s["map_ghost"] = 0.6
+    s["events"] = [(None, "operator watches the screen: no SF-01, no deadman release", C["red"])] + s["events"][:-1] + [(None, "SF-02 is live in every mode", C["green"])]
+    return s
+  if sid == "IS-09":
+    k = kinematics(src, "FS-1b")
+    T0 = -0.5
+    rx, ry, cx_child = 9.8, 11.15, 11.6
+    stall = next(b for b in src["budget"] if b["sf"] == "SF-06" and "stall" in b["path"])
+    t_field = next(t for t in samples(T0, 10) if rx + k["v"] * (t - T0) + ROBOT_L / 2 + k["L"] >= cx_child - 0.2)
+    t_c = next(t for t in samples(T0, 10) if rx + k["v"] * (t - T0) + ROBOT_L / 2 >= cx_child - 0.2)
+    t_stall = t_c + stall["t_r"] / 1000.0
+    T1 = t_stall + k["t_b"] + 0.3
+    vel = lambda t: ((k["v"] if t < t_stall else max(k["v"] - k["a"] * (t - t_stall), 0.0)), 0.0)  # noqa: E731
+    robot = integrate_pose(rx, ry, 0.0, vel, T0, T1)
+    child = [(t, cx_child, ry) for t in samples(T0, T1)]
+    return dict(k=k, T0=T0, T1=T1, HOLD=1.5, t_d=None, robot=robot, person=child, child=True,
+                states=[(T0, C["teal"])], labels=[(T0, f"{k['v']:.2f} m/s", C["ink"]), (t_c, "pushing", C["red"]), (t_stall, "stall: power off", C["amber"]), (t_stall + k["t_b"], "STANDSTILL", C["green"])],
+                dist=lambda t: max(at(robot, t)[0] + ROBOT_L / 2 - (cx_child - 0.2), 0.0) * 0 + max(cx_child - 0.2 - at(robot, t)[0] - ROBOT_L / 2, 0.0),
+                events=[(t_field, "field over the child: no demand (below the 0.18 m plane)", C["amber"]), (t_c, "front meets the child at 0.20 m/s", C["red"]),
+                        (t_stall, f"SF-06 stall detector, {stall['t_r'] / 1000:.2f} s, if the wheels block", C["teal"]), (t_stall + k["t_b"], "standstill", C["green"])],
+                dist_label="distance from the robot's front to the child, m; the field never sees them (SR-02.03: detection to 0.3 m, TBC)")
+  if sid in ("IS-10", "IS-12"):
+    k = kinematics(src, "FS-1b")
+    T0 = -0.5
+    rx, ry, px = 8.2, 8.35, 10.3
+    t_d = next(t for t in samples(T0, 10) if rx + k["v"] * (t - T0) + ROBOT_L / 2 + k["L"] >= px - 0.14)
+    if sid == "IS-10":
+      t_aside = t_d + k["t_s"] + 1.5
+      t_reset = t_aside + 0.9 / K + 0.4
+      warn = 2.0                                     # HR-07, SR-08.01: warning time before motion, TBC
+      t_go = t_reset + warn
+      T1 = t_go + 1.5
+      vel = lambda t: ((speed_after_demand(k, t_d)(t) if t < t_go else k["v"]), 0.0)  # noqa: E731
+      robot = integrate_pose(rx, ry, 0.0, vel, T0, T1)
+      person = integrate_xy(px, ry, walk(K, [(t_aside, (0, 0)), (t_aside + 0.9 / K, (0, 1))]), T0, T1)
+      states, labels = _stop_states(k, t_d, T0, T1, resume=t_go)
+      labels.insert(-1, (t_reset, "warning 2 s", C["amber"]))
+      events = _stop_events(k, t_d) + [(t_aside, "steps aside", C["amber"]), (t_reset, "SF-05 reset, warning 2 s (HR-07, TBC)", C["amber"]), (t_go, "motion resumes", C["teal"])]
+      return dict(k=k, T0=T0, T1=T1, HOLD=1.0, t_d=t_d, robot=robot, person=person, states=states, labels=labels, warn=(t_reset, t_go),
+                  dist=lambda t: _person_front(robot, person, t), events=events, dist_label="distance from the person to the robot's front, m; the warning is drawn as a flashing beacon")
+    t_hold = t_d + k["t_s"] + 0.8
+    T1 = t_hold + 1.5
+    vel = lambda t: (speed_after_demand(k, t_d)(t), 0.0)  # noqa: E731
+    robot = integrate_pose(rx, ry, 0.0, vel, T0, T1)
+    person = integrate_xy(px, ry, lambda t: ((-K, 0.0) if t_hold <= t and at(robot, t)[0] + ROBOT_L / 2 + 0.14 < px - K * (t - t_hold) - 0.0 else (0.0, 0.0)), T0, T1)
+    person = [(t, max(x, at(robot, t)[0] + ROBOT_L / 2 + 0.14), y) for t, x, y in person]
+    states, labels = _stop_states(k, t_d, T0, T1)
+    return dict(k=k, T0=T0, T1=T1, HOLD=1.5, t_d=t_d, robot=robot, person=person, states=states, labels=labels, hand_out=True,
+                dist=lambda t: _person_front(robot, person, t),
+                events=_stop_events(k, t_d, "hand out: field violated") + [(t_hold, "walks up and holds the robot: no motion, latched (SF-05)", C["teal"])],
+                dist_label="distance from the bystander to the robot's front, m; a hold on a powered drive would trip SF-06 within 1 s")
+  if sid == "IS-13":
+    b11 = next(b for b in src["budget"] if b["sf"] == "SF-11")
+    t_r, t_b = b11["t_r"] / 1000.0, 0.30 - b11["t_r"] / 1000.0   # the arm's stopping time is TBC; 0.3 s total is the middle case of WP-S-04 §4.5
+    T0 = -0.6
+    rx, ry = SITE["station"]["robot"]
+    mx, my = rx, ry + ARM_MOUNT
+    ring = REACH + WALK_ARM
+    px0 = mx - ring - 0.14 - K * 0.6
+    person = integrate_xy(px0, my, walk(K, [(0.30, (1, 0))]), T0, 2.6)
+    T1 = 2.6
+    period = 4.0
+    arm = [(t, 135.0 + 45.0 * math.cos(2 * math.pi * (min(t, t_r + t_b) - (t_r + t_b)) / period)) for t in samples(T0, T1)]
+    robot = [(t, rx, ry, 90.0) for t in samples(T0, T1)]
+    def tip(t):
+      a = math.radians(at(arm, t)[0])
+      return mx + REACH * math.cos(a), my + REACH * math.sin(a)
+    return dict(k=None, T0=T0, T1=T1, HOLD=1.5, t_d=0.0, robot=robot, person=person, arm=arm, station=True, ring=(mx, my, ring),
+                states=[(T0, C["amber"]), (0.0, C["red"]), (t_r, C["line"])], labels=[(T0, "arm moving", C["ink"]), (t_r, "torque off", C["amber"]), (t_r + t_b, "ARM AT REST", C["green"])],
+                dist=lambda t: max(math.hypot(*(a - b for a, b in zip(at(person, t), tip(t)))) - 0.14, 0.0),
+                events=[(0.0, "crosses the workspace ring", C["red"]), (b11["det"] / 1000.0, "station device", C["teal"]), (t_r, "arm safe torque off", C["red"]), (t_r + t_b, "arm at rest (0.13 s assumed)", C["green"]), (0.30, "person at the reach radius", C["amber"])],
+                dist_label="distance from the person to the gripper, m; the ring is reach plus the walk during the stop (WP-S-04 §4.5)")
+  if sid == "IS-14":
+    b12 = next(b for b in src["budget"] if b["sf"] == "SF-12")
+    t_r, t_b = b12["t_r"] / 1000.0, 0.05
+    T0 = -0.6
+    rx, ry = SITE["station"]["robot"]
+    cx_col, cy_col = rx, ry + COLUMN_X
+    px0 = cx_col - KEEP_CLEAR - 0.14 - K * 0.6
+    stop_x = cx_col - ROBOT_W / 2 - 0.14
+    person = integrate_xy(px0, cy_col, lambda t: ((K, 0.0) if px0 + K * (t - T0) < stop_x else (0.0, 0.0)), T0, 2.2)
+    T1 = 2.2
+    robot = [(t, rx, ry, 90.0) for t in samples(T0, T1)]
+    lift_mm = 18.0
+    return dict(k=None, T0=T0, T1=T1, HOLD=1.5, t_d=0.0, robot=robot, person=person, station=True, lift=(t_r + t_b, lift_mm), ring=(cx_col, cy_col, KEEP_CLEAR),
+                states=[(T0, C["amber"]), (0.0, C["red"]), (t_r, C["line"])], labels=[(T0, "lift lowering 18 mm/s", C["ink"]), (t_r, "power off", C["amber"]), (t_r + t_b, "LIFT AT REST", C["green"])],
+                dist=lambda t: max(stop_x - at(person, t)[0], 0.0),
+                events=[(0.0, "steps onto the keep-clear zone", C["red"]), (b12["det"] / 1000.0, "keep-clear device", C["teal"]), (t_r, "lift power removed", C["red"]), (t_r + t_b, f"lift at rest, {lift_mm * (t_r + t_b):.0f} mm lower (brake 0.05 s assumed)", C["green"]), ((stop_x - px0) / K + T0, "person at the column", C["amber"])],
+                dist_label="distance from the person to the base's side, m; the carriage is the hazard above them")
+  if sid == "IS-15":
+    k = kinematics(src, "FS-4")
+    T0 = -0.5
+    rx, ry = 11.3, 11.15
+    bx, by = 12.2, ry + ROBOT_W / 2 + 0.14 + 0.15
+    a_cmd = 1.0
+    t_dec = (bx - rx - k["v"] ** 2 / (2 * a_cmd)) / k["v"] + T0
+    t_stop = t_dec + k["v"] / a_cmd
+    t_turn_end = t_stop + math.pi / 2 / TURN_RATE
+    T1 = t_turn_end + 0.5
+    def vel(t):
+      if t < t_dec:
+        return (k["v"], 0.0)
+      if t < t_stop:
+        return (max(k["v"] - a_cmd * (t - t_dec), 0.0), 0.0)
+      if t < t_turn_end:
+        return (0.0, math.degrees(TURN_RATE))
+      return (0.0, 0.0)
+    robot = integrate_pose(rx, ry, 0.0, vel, T0, T1)
+    person = [(t, bx, by) for t in samples(T0, T1)]
+    def load(t):
+      x, y, yaw = at(robot, t)
+      a = math.radians(yaw)
+      return x + 0.64 * math.cos(a), y + 0.64 * math.sin(a)
+    dist = lambda t: max(math.hypot(*(a - b for a, b in zip(load(t), (bx, by)))) - 0.2 - 0.14, 0.0)  # noqa: E731
+    t_c = next((t for t in samples(T0, T1) if t > t_stop and dist(t) <= 0.0), T1)
+    return dict(k=k, T0=T0, T1=T1, HOLD=1.5, t_d=None, robot=robot, person=person, sweep=True,
+                states=[(T0, C["teal"])], labels=[(T0, f"{k['v']:.2f} m/s, carry pose", C["ink"]), (t_dec, "planned stop", C["ink"]), (t_stop, "turn in place 0.5 rad/s", C["amber"]), (t_turn_end, "STANDSTILL", C["green"])],
+                dist=dist, events=[(None, "bystander beside the path: outside FS-4", C["amber"]), (t_dec, "planned stop at the bay", C["teal"]), (t_stop, "turn in place: the load sweeps 0.85 m at head height", C["amber"]),
+                                   (t_c, "load reaches the bystander: no demand (above the plane)", C["red"]), (t_turn_end, "turn complete", C["green"])],
+                dist_label="distance from the load's edge to the bystander, m; the field is ahead and the sweep is above the scan plane (CA-07, SR-02.10)")
+  raise KeyError(sid)
+
+
+# ------------------------------------------------------------------------------------------------------ rendering a loop
+def _discrete(attr, states, kt, dur, T0):
+  vals, keys = [], []
+  for i, (t, v) in enumerate(states):
+    if i == 0:
+      vals.append(v); keys.append("0")
+    else:
+      vals.append(v); keys.append(f"{kt(t):.4f}")
+  vals.append(vals[-1]); keys.append("1")
+  return f'<animate attributeName="{attr}" values="{";".join(vals)}" keyTimes="{";".join(keys)}" dur="{dur:.2f}s" calcMode="discrete" repeatCount="indefinite"/>'
+
+
+def _anim_translate(samples_, pl, kt, dur, ref):
+  """animateTransform translate from (t, x, y[, yaw]) samples, relative to the reference point ref (metres)."""
+  X0, Y0 = pl.P(*ref)
+  vals, keys = [], []
+  for s_ in samples_:
+    X, Y = pl.P(s_[1], s_[2])
+    vals.append(f"{X - X0:.2f},{Y - Y0:.2f}"); keys.append(f"{kt(s_[0]):.4f}")
+  vals.append(vals[-1]); keys.append("1")
+  return f'<animateTransform attributeName="transform" type="translate" values="{";".join(vals)}" keyTimes="{";".join(keys)}" dur="{dur:.2f}s" repeatCount="indefinite" calcMode="linear"/>'
+
+
+def _anim_rotate(samples_, kt, dur, yaw0, idx=3):
+  vals = [f"{-(s_[idx] - yaw0):.2f}" for s_ in samples_] + [f"{-(samples_[-1][idx] - yaw0):.2f}"]
+  keys = [f"{kt(s_[0]):.4f}" for s_ in samples_] + ["1"]
+  return f'<animateTransform attributeName="transform" type="rotate" values="{";".join(vals)}" keyTimes="{";".join(keys)}" dur="{dur:.2f}s" repeatCount="indefinite" calcMode="linear"/>'
+
+
+def _show(kt, dur, t_on, t_off=None):
+  """An opacity animation: hidden before t_on, shown after (and hidden again after t_off)."""
+  if t_off is None:
+    return f'<animate attributeName="opacity" values="0;0;1;1" keyTimes="0;{kt(t_on):.4f};{kt(t_on) + 0.0005:.4f};1" dur="{dur:.2f}s" repeatCount="indefinite"/>'
+  return f'<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;{kt(t_on):.4f};{kt(t_on) + 0.0005:.4f};{kt(t_off):.4f};{kt(t_off) + 0.0005:.4f};1" dur="{dur:.2f}s" repeatCount="indefinite"/>'
+
+
+def fig_loop(src: dict, sid: str) -> str:
+  sc = SCENES[sid]
+  if sc.get("still"):
+    return fig_still(src, sid)
+  s = build(src, sid)
+  row = src["scenes"][sid]
+  T0, T1, HOLD = s["T0"], s["T1"], s["HOLD"]
   DUR = (T1 - T0) + HOLD
-  kt = lambda t: (t - T0) / DUR  # noqa: E731
-  W, H = 1200, 980
+  kt = lambda t: min(max((t - T0) / DUR, 0.0), 1.0)  # noqa: E731
+  W, H = 1200, 980 + (36 if len(s["events"]) > 5 else 0)
+  M = 150.0
+  uid = f"sim-{sid.lower()}"
+  cx0, cy0, cw, ch = sc["crop"]
+  px, py = 40, 96
+  pw, ph = cw * M, ch * M
+  pl = Plan(px, py, M, uid, origin=(cx0, cy0), height=ch, sprites=src["sprites"])
+  rating = rating_for(src, sid)
+  k = s.get("k")
+  fid = sc["field"]
+  f = src["fields"][fid] if fid else None
+  case = (f"{fid} ({f['config']}, {f['case']}: a = {f['a']:g} m/s², unmeasured)" if f else "CFG-002, the base at rest")
+  body = [text(40, 36, f"{sid} · {row['hazard']} · {row['zone']} · {row['task']}: {sc['title']}", 20, C["ink"], 700),
+          text(40, 60, f"Looping view: a fixed {cw:g} × {ch:g} m crop of the warehouse plan; {case}; t = {T0:g} s to {T1:.2f} s, then a {HOLD:g} s hold", 12, C["muted"]),
+          text(40, 78, f"The person is {row['who']}, closest {row['closest'].split(' if')[0]} if nothing stops the robot (WP-C-06 §2). A viewer that shows the SVG as a still shows t = {T0:g} s.", 12, C["muted"]),
+          rect(px, py, pw, ph, C["floor"], C["wall"], 0, 3),
+          f'<clipPath id="{uid}-crop"><rect x="{px}" y="{py}" width="{pw:.1f}" height="{ph:.1f}"/></clipPath>',
+          f'<g clip-path="url(#{uid}-crop)">']
+  body += pl.floor(src, with_labels=False)
+  for i, (x, y, w, h) in enumerate(SITE["racks"]):
+    if cy0 + 0.15 <= y + h / 2 <= cy0 + ch - 0.15 and x < cx0 + cw and x + w > cx0:
+      X, Y = pl.P(max(x, cx0), y + h)
+      body.append(text(X + 8, Y + h * M / 2 + 4, f"RACK {i + 1}", 10, "#E8EBED", 700))
+  robot = s["robot"]
+  r0 = robot[0]
+  RX, RY = pl.P(r0[1], r0[2])
+  # static props
+  if s.get("reverse_strip") is not None:
+    body.append(pl.R(r0[1] + ROBOT_L / 2, r0[2] - ROBOT_W / 2, 0.7, ROBOT_W, f"url(#{uid}-hatchred)", C["red"], 0, 1))
+    X, Y = pl.P(r0[1] + ROBOT_L / 2 + 0.35, r0[2] - ROBOT_W / 2 - 0.12)
+    body.append(text(X, Y, "blind reverse 0.7 m on odometry (GAP-35)", 9.5, C["red"], 700, "middle"))
+  if s.get("map_ghost"):
+    body.append(f'<g opacity="0.3">{_anim_translate(robot, pl, kt, DUR, (r0[1], r0[2]))}' + "".join(pl.sprite(r0[1] - s["map_ghost"], r0[2], 1, 1.0, sc["kind"])) + "</g>")
+    X, Y = pl.P(r0[1] - s["map_ghost"], r0[2] - ROBOT_W / 2 - 0.12)
+    body.append(f'<text x="{X:.1f}" y="{Y:.1f}" font-family="{FONT}" font-size="10" font-weight="700" fill="{C["blue"]}" text-anchor="middle">where the map says it is, {s["map_ghost"]:g} m behind'
+                f'{_anim_translate(robot, pl, kt, DUR, (r0[1], r0[2]))}</text>')
+    ox, oy = 4.9, 3.6
+    body.append(pl.R(ox - 0.65, oy - 0.1, 0.3, 0.2, "#DCE8F5", C["blue"], 2, 1.2))
+    X, Y = pl.P(ox - 0.5, oy + 0.3)
+    body.append(text(X, Y, "pendant screen", 9, C["blue"], 700, "middle"))
+  if s.get("station"):
+    mx, my, rr = s["ring"]
+    MX, MY = pl.P(mx, my)
+    body.append(f'<circle cx="{MX:.1f}" cy="{MY:.1f}" r="{rr * M:.1f}" fill="{C["amber"]}" fill-opacity="0.10" stroke="{C["amber"]}" stroke-width="2" stroke-dasharray="6,3">{_discrete("stroke", s["states"], kt, DUR, T0)}</circle>')
+    if sid == "IS-13":
+      body.append(circle(MX, MY, REACH * M, "none", C["teal"], 1.2, "4,3"))
+      body.append(text(MX + REACH * M + 4, MY - 6, f"reach {REACH:g} m", 9.5, C["teal"], 700))
+      body.append(text(MX + rr * M + 6, MY - 0.25 * M, f"workspace ring {rr:.2f} m = reach + walk {WALK_ARM:g}", 10, C["amber"], 700))
+    else:
+      body.append(text(MX + rr * M + 6, MY - 0.25 * M, f"keep-clear {rr:g} m (SR-12.03; radius assumed)", 10, C["amber"], 700))
+  # the robot group: translated and rotated by the samples; the field and the status label ride with it
+  body.append(f'<g>{_anim_translate(robot, pl, kt, DUR, (r0[1], r0[2]))}<g transform="translate({RX:.1f},{RY:.1f})"><g>{_anim_rotate(robot, kt, DUR, 0.0)}')
+  if f and not s.get("no_field"):
+    hw = (ROBOT_W / 2 + src["Z"]) * M
+    fx0 = ROBOT_L / 2 * M
+    x = fx0
+    terms = ((k["d_r"], C["red"]), (k["d_b"], C["amber"]), (k["walk"], C["teal"]), (k["Z"], C["blue"])) if k and k.get("walk") is not None else ()
+    for length, col in terms:
+      fill = f"url(#{uid}-hatch)" if col == C["amber"] else col
+      body.append(rect(x, -hw, length * M, 2 * hw, fill, "none", 0, 1, "", 'fill-opacity="0.22"' if col != C["amber"] else ""))
+      x += length * M
+    body.append(f'<rect x="{fx0:.1f}" y="{-hw:.1f}" width="{f["L"] * M:.1f}" height="{2 * hw:.1f}" fill="none" stroke="{C["teal"]}" stroke-width="2" stroke-dasharray="6,3">{_discrete("stroke", s["states"], kt, DUR, T0)}</rect>')
+    body.append(text(fx0 + 4, hw + 14, f"{fid} {f['L']:.2f} m" + (f" = {k['d_r']:.3f} + {k['d_b']:.3f} coast + {k['walk']:.2f} walk + {k['Z']:.2f}" if k else ""), 10, C["teal"], 700))
+  if s.get("masked"):
+    for sy in (-1, 1):
+      body.append(f'<path d="M {-ROBOT_L / 2 * M:.1f},{sy * ROBOT_W / 2 * M:.1f} L {ROBOT_L / 2 * M:.1f},{sy * ROBOT_W / 2 * M:.1f} L {ROBOT_L / 2 * M:.1f},{sy * (ROBOT_W / 2 + 0.5) * M:.1f} L {-ROBOT_L / 2 * M:.1f},{sy * (ROBOT_W / 2 + 0.5) * M:.1f} Z" fill="{C["dim"]}" fill-opacity="0.25" stroke="{C["dim"]}" stroke-dasharray="3,3"/>')
+    body.append(text(0, -(ROBOT_W / 2 + 0.5) * M - 6, "side sectors masked in the scan (GAP-35)", 9.5, C["dim"], 700, "middle"))
+  if s.get("sweep"):
+    body.append(circle(0, 0, SWEEP * M, C["amber"], C["amber"], 1.2, "4,3", 'fill-opacity="0.10"'))
+    body.append(text(0, -SWEEP * M - 6, f"load sweep at head height, {SWEEP:g} m", 9.5, C["amber"], 700, "middle"))
+  body += pl.sprite(r0[1], r0[2], 1, 1.0, sc["kind"], at_origin=True)
+  if s.get("rear_red"):
+    body.append(rect(-ROBOT_L / 2 * M - 0.045 * M, -ROBOT_W / 2 * M + 2, 0.045 * M, ROBOT_W * M - 4, C["red"], "none", 2))
+  if s.get("arm"):
+    AX = ARM_MOUNT * M
+    body.append(f'<g transform="translate({AX:.1f},0)"><g>{_anim_rotate(s["arm"], kt, DUR, 0.0, idx=1)}'
+                f'<line x1="0" y1="0" x2="{0.33 * M:.1f}" y2="{-0.06 * M:.1f}" stroke="{C["ink"]}" stroke-width="5" stroke-linecap="round"/>'
+                f'<line x1="{0.33 * M:.1f}" y1="{-0.06 * M:.1f}" x2="{REACH * M:.1f}" y2="0" stroke="{C["ink"]}" stroke-width="4" stroke-linecap="round"/>'
+                f'<rect x="{REACH * M - 6:.1f}" y="-5" width="10" height="10" fill="{C["teal"]}"/></g></g>')
+  if s.get("warn"):
+    t_on, t_off = s["warn"]
+    body.append(f'<circle cx="0" cy="{-(ROBOT_W / 2 + 0.06) * M:.1f}" r="7" fill="{C["amber"]}" opacity="0">'
+                f'<animate attributeName="opacity" values="0;0;1;0;1;0;1;0;1;0;0" keyTimes="0;{kt(t_on):.4f};{kt(t_on) + 0.001:.4f};{kt(t_on + 0.5):.4f};{kt(t_on + 1.0):.4f};{kt(t_on + 1.25):.4f};{kt(t_on + 1.5):.4f};{kt(t_on + 1.75):.4f};{kt(t_off - 0.05):.4f};{kt(t_off):.4f};1" dur="{DUR:.2f}s" repeatCount="indefinite"/></circle>')
+  body.append("</g>")   # rotation
+  # the status label (not rotated)
+  for i, (t_on, lab, col) in enumerate(s["labels"]):
+    t_off = s["labels"][i + 1][0] if i + 1 < len(s["labels"]) else None
+    anim = _show(kt, DUR, t_on, t_off) if t_on > T0 else (_show(kt, DUR, T0 - 1, t_off).replace('values="0;0;1;1;0;0"', 'values="1;1;1;1;0;0"') if t_off is not None else "")
+    body.append(f'<text x="0" y="{-0.42 * M - (0.5 * M if s.get("masked") else 0):.1f}" font-family="{MONO}" font-size="11" font-weight="700" fill="{col}" text-anchor="middle" opacity="{1 if t_on <= T0 else 0}">{escape(lab)}{anim}</text>')
+  body.append("</g></g>")   # translate
+  # the person
+  person = s["person"]
+  p0 = person[0]
+  who = s.get("who") or row["who"]
+  body.append(f'<g>{_anim_translate(person, pl, kt, DUR, (p0[1], p0[2]))}')
+  if s.get("child"):
+    body += pl.worker(p0[1], p0[2], C["vest"], f"{who.split(',')[0]}, below the plane", scale=0.65)
+  else:
+    body += pl.worker(p0[1], p0[2], None, f"{who}, K = {src['K']:g} m/s" if any(abs(a[1] - b[1]) + abs(a[2] - b[2]) > 1e-6 for a, b in zip(person, person[1:])) else who)
+  if s.get("hand_out"):
+    PX, PY = pl.P(p0[1], p0[2])
+    body.append(line(PX - 0.14 * M, PY, PX - 0.45 * M, PY, C["skin"], 4))
+  body.append("</g>")
+  if s.get("lift"):
+    t_stop, mm = s["lift"]
+    LX, LY = pl.P(cx0 + 0.15, cy0 + ch - 0.15)
+    body += [rect(LX, LY, 1.1 * M, 0.26 * M, C["bg"], C["stroke"], 4), text(LX + 8, LY + 15, "lift carriage: lowering 18 mm/s", 9.5, C["ink"], 700)]
+    body.append(f'<text x="{LX + 8:.1f}" y="{LY + 30:.1f}" font-family="{MONO}" font-size="10" font-weight="700" fill="{C["green"]}" opacity="0">stopped, {mm * t_stop:.0f} mm after the demand{_show(kt, DUR, t_stop)}</text>')
+  body.append('</g>')
+  if rating:
+    body += pl.chip(cx0 + cw - 1.0, cy0 + ch - 0.25, f"{rating['hazard']} {sid}", f"PLr {rating['plr']}", C["teal"])
+  else:
+    body += pl.chip(cx0 + cw - 1.0, cy0 + ch - 0.25, f"{row['hazard'].split(',')[0]} {sid}", "not rated", C["muted"])
+  # events, time strip, distance plot
+  ey = py + ph + 24
+  evs = s["events"]
+  for i, (t, lab, col) in enumerate(evs[:5]):
+    X = 40 + i * 232
+    anim = "" if t is None else f'<animate attributeName="opacity" values="0.25;0.25;1;1" keyTimes="0;{kt(t):.4f};{kt(t) + 0.0005:.4f};1" dur="{DUR:.2f}s" repeatCount="indefinite"/>'
+    label = lab if t is None else f"{t:.2f} s  {lab}"
+    body.append(f'<g opacity="{1 if t is None else 0.25}">{anim}' + rect(X, ey, 216, 30, C["panel"], col, 6, 1.4) + text(X + 10, ey + 20, _fit(label, 216 - 20, 10.5), 10.5, col, 700, family=MONO) + '</g>')
+  if len(evs) > 5:
+    for i, (t, lab, col) in enumerate(evs[5:10]):
+      X = 40 + i * 232
+      anim = "" if t is None else f'<animate attributeName="opacity" values="0.25;0.25;1;1" keyTimes="0;{kt(t):.4f};{kt(t) + 0.0005:.4f};1" dur="{DUR:.2f}s" repeatCount="indefinite"/>'
+      label = lab if t is None else f"{t:.2f} s  {lab}"
+      body.append(f'<g opacity="{1 if t is None else 0.25}">{anim}' + rect(X, ey + 36, 216, 30, C["panel"], col, 6, 1.4) + text(X + 10, ey + 56, _fit(label, 216 - 20, 10.5), 10.5, col, 700, family=MONO) + '</g>')
+  sy = ey + (70 if len(evs) <= 5 else 106)
+  x0, x1 = 60, W - 60
+  Xt = lambda t: x0 + (x1 - x0) * (t - T0) / (T1 - T0)  # noqa: E731
+  body += [text(40, sy - 16, "time, scene seconds", 10, C["muted"], 600), line(x0, sy, x1, sy, C["line"], 2)]
+  marks = [(T0, f"{T0:g}")] + [(t, f"{t:.2f} {lab.split(':')[0].split(',')[0][:18]}") for t, lab, _ in evs if t is not None and T0 < t < T1] + [(T1, f"{T1:.2f} hold")]
+  placed = []
+  for j, (t, lab) in enumerate(marks):
+    X = Xt(t)
+    body.append(line(X, sy - 7, X, sy + 7, C["ink"], 1.5))
+    row_ = next(r for r in range(4) if all(abs(X - x_) > _w(lab, 9) / 2 + 40 for x_, r_ in placed if r_ == r))
+    placed.append((X, row_))
+    body.append(text(X, sy + 22 + 12 * row_, lab, 9, C["muted"], 600, "middle", MONO))
+  cursor = (f'<animateTransform attributeName="transform" type="translate" values="0,0;{x1 - x0:.1f},0;{x1 - x0:.1f},0" keyTimes="0;{kt(T1):.4f};1" '
+            f'dur="{DUR:.2f}s" repeatCount="indefinite" calcMode="linear"/>')
+  body.append(f'<line x1="{x0}" y1="{sy - 16}" x2="{x0}" y2="{sy + 10}" stroke="{C["red"]}" stroke-width="2.5">{cursor}</line>')
+  gy0, gy1 = sy + 70, sy + 170
+  dist_label = s.get("dist_label", "distance from the person to the robot's front, m (planning case); the red line is the field edge, the cursor the time shown")
+  body += [rect(40, gy0 - 12, W - 80, 130, C["panel"], C["stroke"], 6), text(52, gy0 + 2, dist_label, 10, C["muted"], 600)]
+  dist = s["dist"]
+  dmax = 2.6
+  pts = []
+  for t in samples(T0, T1):
+    pts.append((Xt(t), gy1 - min(dist(t), dmax) / dmax * (gy1 - gy0 - 20)))
+  body.append('<polyline points="' + " ".join(f"{a:.1f},{b:.1f}" for a, b in pts) + f'" fill="none" stroke="{C["teal"]}" stroke-width="2"/>')
+  if f and "dist_label" not in s:
+    yL = gy1 - f["L"] / dmax * (gy1 - gy0 - 20)
+    body += [line(x0, yL, x1, yL, C["red"], 1, "4,3"), text(x0 - 6, yL + 4, f"{f['L']:.2f}", 9, C["red"], 600, "end", MONO)]
+  body += [text(x0 - 6, gy1 + 4, "0", 9, C["muted"], 600, "end", MONO), f'<line x1="{x0}" y1="{gy0 + 8}" x2="{x0}" y2="{gy1}" stroke="{C["ink"]}" stroke-width="1.5">{cursor}</line>']
+  dmin = min(dist(t) for t in samples(T0, T1))
+  note = s.get("note") or (f"closest approach in the planning case: {dmin:.2f} m" if dmin > 0.005 else "contact in the planning case: the distance reaches zero")
+  body.append(text(x1, gy1 + 16, note, 10, C["teal"] if dmin > 0.005 else C["red"], 600, "end"))
+  body.append(text(W - 32, H - 52, "Generated by assurance/sim/figures/fig_sim_is.py", 9.5, C["dim"], anchor="end"))
+  band_note = (f"Kinematic motion from WP-S-04 v0.2 planning values (t_r {k['t_r']:g} s, a = {k['a']:g} m/s² unmeasured, C = 0, K = {src['K']:g} m/s). A loop shows a situation; it does not show that a measure works."
+               if k else f"Kinematic motion from WP-S-04 v0.2 planning values (t_r 0.17 s, the arm's and the lift brake's stopping times assumed, K = {src['K']:g} m/s). A loop shows a situation; it does not show that a measure works.")
+  body += band(W, H, band_note)
+  desc = (f"Looping top view of {sid}: {sc['title']}. A fixed crop of the warehouse plan with the robot, its field where one applies, the person on their path at walking speed, "
+          f"the events lighting up below, a cursor on a time strip and a plot of the distance between the person and the robot, which reaches {dmin:.2f} m in the planning case.")
+  return svg(W, H, uid, f"{sid}: {sc['title']}, looping", desc, body, sprites=list(pl.used.items()))
+
+
+def _fit(s: str, width: float, size: float) -> str:
+  return s if len(s) * size * 0.6 <= width else s[: int(width / (size * 0.6)) - 1] + "…"
+
+
+# ------------------------------------------------------------------------------------------------------ the stills
+STILLS = {
+  "IS-07": dict(robot=(22.2, 11.3, 0), people=[((21.3, 11.9), "technician", C["blue"])],
+                notes=["charger connected: the interlock opens the safety chain (WP-H-02 §3.6)", "a command arrives from the network: no motion, the chain is open",
+                       "mains never paralleled with the battery (H-08)"], cable=((21.45, 11.9), (22.75, 11.3))),
+  "IS-08": dict(robot=(9.6, 11.15, 0), people=[((9.6, 11.15), "sits on the top plate", C["vest"]), ((8.95, 11.15), "pushes", C["vest"])],
+                notes=["no field demand: the robot is a load, not an obstacle", "payload and stability limits (WP-H-08); information for use",
+                       "SF-06 stall detector trips when the wheels are blocked (1 s)"], arrow=((8.6, 11.15), (9.1, 11.15))),
+  "IS-11": dict(robot=(9.0, 11.15, 0), moving=True, people=[((11.4, 10.55), "operator, tablet in hand", C["blue"])],
+                notes=["on-screen E-STOP pressed: no effect, the robot drives on at 0.20 m/s", "SR-01.09: the screen control is not labelled as an emergency stop",
+                       "the physical E-stop (SF-01, E1) is within reach: 50 ms to power off"], screen=(11.75, 10.55)),
+}
+
+
+def fig_still(src: dict, sid: str) -> str:
+  sc, st = SCENES[sid], STILLS[sid]
+  row = src["scenes"][sid]
+  W, H = 1200, 760
   M = 150.0
   uid = f"sim-{sid.lower()}"
   cx0, cy0, cw, ch = sc["crop"]
@@ -544,113 +1134,55 @@ def fig_loop(src: dict, sid: str) -> str:
   pl = Plan(px, py, M, uid, origin=(cx0, cy0), height=ch, sprites=src["sprites"])
   rating = rating_for(src, sid)
   body = [text(40, 36, f"{sid} · {row['hazard']} · {row['zone']} · {row['task']}: {sc['title']}", 20, C["ink"], 700),
-          text(40, 60, f"Looping view: a fixed {cw:g} × {ch:g} m crop of the warehouse plan; {sc['field']} ({src['fields'][sc['field']]['config']}, {src['fields'][sc['field']]['case']}: a = {k['a']:g} m/s², unmeasured); "
-               f"t = {T0:g} s to {T1:.2f} s, then a {HOLD:g} s hold", 12, C["muted"]),
-          text(40, 78, f"The person is {row['who']}, closest {row['closest'].split(' if')[0]} if the robot does not stop (WP-C-06 §2). A viewer that shows the SVG as a still shows t = {T0:g} s.", 12, C["muted"]),
+          text(40, 60, f"Still: a fixed {cw:g} × {ch:g} m crop of the warehouse plan; nothing moves in this scenario that a kinematic loop could show", 12, C["muted"]),
+          text(40, 78, f"The person is {row['who']}, closest {row['closest'].split(' if')[0]} (WP-C-06 §2); the measure needed: {row['measure'][:110]}", 12, C["muted"]),
           rect(px, py, pw, ph, C["floor"], C["wall"], 0, 3),
           f'<clipPath id="{uid}-crop"><rect x="{px}" y="{py}" width="{pw:.1f}" height="{ph:.1f}"/></clipPath>',
           f'<g clip-path="url(#{uid}-crop)">']
   body += pl.floor(src, with_labels=False)
-  for i, (x, y, w, h) in enumerate(SITE["racks"]):
-    if not (cy0 + 0.15 <= y + h / 2 <= cy0 + ch - 0.15):
-      continue
-    X, Y = pl.P(x, y + h)
-    body.append(text(X + 8 + (cx0 - x) * M if x < cx0 else X + 8, Y + h * M / 2 + 4, f"RACK {i + 1}", 10, "#E8EBED", 700))
-  # the robot group: sprite and field, translated by the travel
-  rx, ry, heading = sc["robot"]
-  RX, RY = pl.P(rx, ry)
-  times = [T0, 0.0, k["t_r"], k["t_s"], T1, T1 + HOLD]
-  xs = [robot_travel(k, t, T0) * M for t in times]
-  body.append('<g>' + _translate(xs, [0.0] * len(xs), [kt(t) for t in times], DUR))
-  fx0 = RX + ROBOT_L / 2 * M
-  hw = (ROBOT_W / 2 + k["Z"]) * M
-  x = fx0
-  for length, col in ((k["d_r"], C["red"]), (k["d_b"], C["amber"]), (k["walk"], C["teal"]), (k["Z"], C["blue"])):
-    fill = f"url(#{uid}-hatch)" if col == C["amber"] else col
-    body.append(rect(x, RY - hw, length * M, 2 * hw, fill, "none", 0, 1, "", 'fill-opacity="0.22"' if col != C["amber"] else ""))
-    x += length * M
-  body.append(f'<rect x="{fx0:.1f}" y="{RY - hw:.1f}" width="{k["L"] * M:.1f}" height="{2 * hw:.1f}" fill="none" stroke="{C["teal"]}" stroke-width="2" stroke-dasharray="6,3">'
-              f'<animate attributeName="stroke" values="{C["teal"]};{C["teal"]};{C["red"]};{C["red"]};{C["line"]};{C["line"]}" '
-              f'keyTimes="0;{kt(0):.4f};{kt(0) + 0.001:.4f};{kt(k["t_r"]):.4f};{kt(k["t_r"]) + 0.001:.4f};1" dur="{DUR:.2f}s" repeatCount="indefinite"/></rect>')
-  body.append(text(fx0 + 4, RY + hw + 14, f"{sc['field']} {k['L']:.2f} m = {k['d_r']:.3f} + {k['d_b']:.3f} coast + {k['walk']:.2f} walk + {k['Z']:.2f}", 10, C["teal"], 700))
-  body += pl.sprite(rx, ry, heading)
-  for lab, col, t_on, t_off in (("%.2f m/s" % k["v"], C["ink"], None, k["t_r"]), ("coasting", C["amber"], k["t_r"], k["t_s"]), ("STANDSTILL", C["green"], k["t_s"], None)):
-    keys = "0;1" if t_on is None and t_off is None else ""
-    if t_on is None:
-      vals, keys = "1;1;0;0", f"0;{kt(t_off):.4f};{kt(t_off) + 0.001:.4f};1"
-    elif t_off is None:
-      vals, keys = "0;0;1;1", f"0;{kt(t_on):.4f};{kt(t_on) + 0.001:.4f};1"
-    else:
-      vals, keys = "0;0;1;1;0;0", f"0;{kt(t_on):.4f};{kt(t_on) + 0.001:.4f};{kt(t_off):.4f};{kt(t_off) + 0.001:.4f};1"
-    body.append(f'<text x="{RX:.1f}" y="{RY - 0.42 * M:.1f}" font-family="{MONO}" font-size="11" font-weight="700" fill="{col}" text-anchor="middle" opacity="{1 if t_on is None else 0}">{lab}'
-                f'<animate attributeName="opacity" values="{vals}" keyTimes="{keys}" dur="{DUR:.2f}s" repeatCount="indefinite"/></text>')
-  body.append('</g>')
-  # the person: body touches the field's lateral edge at t = 0, x set back from the field's far edge
-  pe = sc["person"]
-  x_edge0 = rx + ROBOT_L / 2 + robot_travel(k, 0.0, T0) + k["L"]
-  pxm = x_edge0 + pe["x_from_edge"]
-  y_enter = ry + pe["side"] * (ROBOT_W / 2 + k["Z"] + 0.14)
-  dxm, dym = pe["dir"]
-  PX, PY = pl.P(pxm, y_enter)
-  def off(t):  # pixel offset of the person at scene time t
-    return (dxm * k["K"] * t * M, -dym * k["K"] * t * M)
-  body.append('<g>' + _translate([off(T0)[0], off(T1)[0], off(T1)[0]], [off(T0)[1], off(T1)[1], off(T1)[1]], [0.0, kt(T1), 1.0], DUR))
-  body += pl.worker(pxm, y_enter, None, f"{row['who']}, K = {k['K']:g} m/s")
-  body.append('</g>')
-  body.append('</g>')
-  body += pl.chip(cx0 + cw - 1.0, cy0 + ch - 0.25, f"{rating['hazard']} {sid}", f"PLr {rating['plr']}", C["teal"])
-  # events, time strip, distance plot
-  ey = py + ph + 24
-  events = [(0.0, "field violated", C["red"]), (k["t_det"], "OSSDs open", C["teal"]), (k["t_r"], "contactors open", C["red"]), (k["t_s"], "standstill", C["green"]), (None, "contact: none", C["green"])]
-  for i, (t, lab, col) in enumerate(events):
-    X = 40 + i * 232
-    anim = "" if t is None else f'<animate attributeName="opacity" values="0.25;0.25;1;1" keyTimes="0;{kt(t):.4f};{kt(t) + 0.001:.4f};1" dur="{DUR:.2f}s" repeatCount="indefinite"/>'
-    label = lab if t is None else f"{t:.2f} s  {lab}"
-    body.append(f'<g opacity="0.25">{anim}' + rect(X, ey, 216, 30, C["panel"], col, 6, 1.4) + text(X + 10, ey + 20, label, 10.5, col, 700, family=MONO) + '</g>')
-  sy = ey + 70
-  x0, x1 = 60, W - 60
-  Xt = lambda t: x0 + (x1 - x0) * (t - T0) / (T1 - T0)  # noqa: E731
-  body += [text(40, sy - 16, "time, scene seconds", 10, C["muted"], 600), line(x0, sy, x1, sy, C["line"], 2)]
-  for t, lab in ((T0, f"{T0:g}"), (0.0, "0 demand"), (k["t_r"], f"{k['t_r']:.2f} power off"), (k["t_s"], f"{k['t_s']:.2f} standstill"), (T1, f"{T1:.2f} hold")):
-    body += [line(Xt(t), sy - 7, Xt(t), sy + 7, C["ink"], 1.5), text(Xt(t), sy + 22, lab, 9.5, C["muted"], 600, "middle", MONO)]
-  cursor = (f'<animateTransform attributeName="transform" type="translate" values="0,0;{x1 - x0:.1f},0;{x1 - x0:.1f},0" keyTimes="0;{kt(T1):.4f};1" '
-            f'dur="{DUR:.2f}s" repeatCount="indefinite" calcMode="linear"/>')
-  body.append(f'<line x1="{x0}" y1="{sy - 16}" x2="{x0}" y2="{sy + 10}" stroke="{C["red"]}" stroke-width="2.5">{cursor}</line>')
-  gy0, gy1 = sy + 50, sy + 150
-  body += [rect(40, gy0 - 12, W - 80, 130, C["panel"], C["stroke"], 6),
-           text(52, gy0 + 2, "distance from the person to the robot's front, m (planning case); the red line is the field edge, the cursor the time shown", 10, C["muted"], 600)]
-  def dist(t):
-    rfx = rx + ROBOT_L / 2 + robot_travel(k, t, T0)
-    return math.hypot(pxm + dxm * k["K"] * t - rfx, y_enter + dym * k["K"] * t - ry)
-  dmax = 2.6
-  pts = []
-  n = int(round((T1 - T0) / 0.05))
-  for i in range(n + 1):
-    t = T0 + i * 0.05
-    pts.append((Xt(t), gy1 - min(dist(t), dmax) / dmax * (gy1 - gy0 - 20)))
-  body.append('<polyline points="' + " ".join(f"{a:.1f},{b:.1f}" for a, b in pts) + f'" fill="none" stroke="{C["teal"]}" stroke-width="2"/>')
-  yL = gy1 - k["L"] / dmax * (gy1 - gy0 - 20)
-  body += [line(x0, yL, x1, yL, C["red"], 1, "4,3"), text(x0 - 6, yL + 4, f"{k['L']:.2f}", 9, C["red"], 600, "end", MONO), text(x0 - 6, gy1 + 4, "0", 9, C["muted"], 600, "end", MONO),
-           f'<line x1="{x0}" y1="{gy0 + 8}" x2="{x0}" y2="{gy1}" stroke="{C["ink"]}" stroke-width="1.5">{cursor}</line>']
-  dmin = min(dist(T0 + i * 0.01) for i in range(int(round((T1 - T0) / 0.01)) + 1))
-  body.append(text(x1, gy1 + 16, f"closest approach in the planning case: {dmin:.2f} m; a person who keeps walking passes in front of the stopped robot", 10, C["teal"], 600, "end"))
+  rx, ry, yaw = st["robot"]
+  if st.get("moving"):
+    f = src["fields"][sc["field"]]
+    body.append(pl.R(rx + ROBOT_L / 2, ry - ROBOT_W / 2 - src["Z"], f["L"], ROBOT_W + 2 * src["Z"], C["teal"], C["teal"], 0, 1.5, "6,3", 'fill-opacity="0.16"'))
+    X, Y = pl.P(rx + ROBOT_L / 2 + f["L"] + 0.1, ry)
+    body.append(text(X, Y + 4, "→ 0.20 m/s, continues", 11, C["red"], 700, family=MONO))
+  body += pl.sprite(rx, ry, 1, 1.0, sc["kind"])
+  if st.get("cable"):
+    (ax, ay), (bx, by) = st["cable"]
+    AX, AY = pl.P(ax, ay); BX, BY = pl.P(bx, by)
+    body.append(f'<path d="M {AX:.1f},{AY:.1f} Q {(AX + BX) / 2:.1f},{AY + 30:.1f} {BX:.1f},{BY:.1f}" fill="none" stroke="{C["ink"]}" stroke-width="3"/>')
+  if st.get("arrow"):
+    (ax, ay), (bx, by) = st["arrow"]
+    AX, AY = pl.P(ax, ay); BX, BY = pl.P(bx, by)
+    body.append(line(AX, AY, BX, BY, C["red"], 3, arrow=True).replace("url(#arrow)", f"url(#{uid}-arrow)"))
+  if st.get("screen"):
+    sx, sy_ = st["screen"]
+    body.append(pl.R(sx, sy_ - 0.1, 0.28, 0.2, "#DCE8F5", C["blue"], 2, 1.2))
+    X, Y = pl.P(sx + 0.14, sy_)
+    body.append(rect(X - 10, Y - 6, 20, 12, C["red"], "none", 2))
+  for (x, y), label, col in st["people"]:
+    body += pl.worker(x, y, col, label)
+  X, Y = pl.P(cx0 + 0.2, cy0 + 0.25)
+  for i, n in enumerate(reversed(st["notes"])):
+    body.append(rect(X - 6, Y - 16 - i * 22, _w(n, 11) + 16, 20, C["bg"], C["stroke"], 4, 1, "", 'fill-opacity="0.92"'))
+    body.append(text(X + 2, Y - 2 - i * 22, n, 11, C["ink"], 600))
+  body.append("</g>")
+  if rating:
+    body += pl.chip(cx0 + cw - 1.0, cy0 + ch - 0.25, f"{rating['hazard']} {sid}", f"PLr {rating['plr']}", C["teal"])
+  else:
+    body += pl.chip(cx0 + cw - 1.0, cy0 + ch - 0.25, f"{row['hazard'].split(',')[0]} {sid}", "not rated", C["muted"])
   body.append(text(W - 32, H - 52, "Generated by assurance/sim/figures/fig_sim_is.py", 9.5, C["dim"], anchor="end"))
-  body += band(W, H, f"Kinematic motion from WP-S-04 v0.1 planning values (t_r {k['t_r']:g} s, a = {k['a']:g} m/s² unmeasured, C = 0, K = {k['K']:g} m/s). A loop shows a situation; it does not show that a measure works.")
-  return svg(W, H, uid, f"{sid}: {sc['title']}, looping",
-             f"Looping top view of {sid}: in a warehouse aisle between two rack rows the robot drives at {k['v']:g} m/s with its protective field {sc['field']} drawn ahead of it as four bands, the robot's travel during the reaction time, the coast, the person's walk and the tolerance; "
-             f"a person walks into the field at {k['K']:g} m/s; the field outline turns red at the demand, the contactors open at {k['t_r']:.2f} s, the robot coasts to a standstill at {k['t_s']:.2f} s; "
-             f"the events light up below, a cursor runs along a time strip, and a plot shows the distance from the person to the robot's front falling to {dmin:.2f} m in the planning case.", body, sprites=list(pl.used.items()))
+  body += band(W, H, "Drawn to the WP-C-06 §2 row; nothing here is measured. A still shows a situation; it does not show that a measure works.")
+  return svg(W, H, uid, f"{sid}: {sc['title']}", f"Top view of {sid}: {sc['title']}. A fixed crop of the warehouse plan with the robot, the people of the row and three notes naming the measures.", body, sprites=list(pl.used.items()))
 
 
-def _translate(xs, ys, keys, dur):
-  vals = ";".join(f"{x:.2f},{y:.2f}" for x, y in zip(xs, ys))
-  kts = ";".join(f"{k:.4f}" for k in keys)
-  return f'<animateTransform attributeName="transform" type="translate" values="{vals}" keyTimes="{kts}" dur="{dur:.2f}s" repeatCount="indefinite" calcMode="linear"/>'
+def _w(s: str, size: float) -> float:
+  return len(s) * size * 0.56
 
 
 OUTPUTS = {"fig-sim-plan.svg": fig_plan}
 for _sid in SCENES:
-  OUTPUTS[f"fig-sim-{_sid.lower()}-anim.svg"] = (lambda s, sid=_sid: fig_loop(s, sid))
+  OUTPUTS[f"fig-sim-{_sid.lower()}-{'still' if SCENES[_sid].get('still') else 'anim'}.svg"] = (lambda s, sid=_sid: fig_loop(s, sid))
 
 
 def main(argv: list[str]) -> int:

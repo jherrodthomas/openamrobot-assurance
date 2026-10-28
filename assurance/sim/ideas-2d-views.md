@@ -3,8 +3,8 @@
 | Field | Value |
 |---|---|
 | Scope | Ideation note for a family of 2D views of the hazard situations, to complement the Blender review scenes of [`blender/`](blender/README.md): which views earn their place, what each is generated from, static or looping, what a view may claim, and which one is built first |
-| Version | 0.3 (2026-10-27): §8 steps 2, 4 and 5 built: the CAD sprites (three, pinned by hash, `blender/sprites`), the six loop diagrams (WP-S-04 Figures 2-1 to 2-6, `03-system/figures/fig_s04.py`) and the side elevation in two panels (WP-S-04 Figure 4-2), each 2D figure with a Blender companion render as the lead chose on 2026-10-27; OI-4 closed. 0.2 (2026-10-21): the pilot built on the lead's "go": `figures/fig_sim_is.py`, the warehouse plan as WP-C-02 Figure 2-2 and the IS-01 loop as WP-C-06 Figure 2-2, checked in CI; OI-1 and OI-2 closed. 0.1 (2026-10-21): the options as discussed with the project lead in one session, with mockups shown in chat and the lead's picks |
-| Status | Draft. AI-drafted (Claude, AI assistant; I0 under WP-M-02 §3.3). Steps 1, 2, 4 and 5 of §8 are built; steps 3 and 6 are not. **Pictures only, no evidence credit** applies to everything this note proposes |
+| Version | 0.4 (2026-10-28): §8 step 3 built: the other fourteen scenario loops as WP-C-06 Figures 2-1 to 2-15 (stills for IS-07, IS-08, IS-11), the scene cards of WP-C-06's former Figure 2-1 retired. 0.3 (2026-10-27): §8 steps 2, 4 and 5 built: the CAD sprites (three, pinned by hash, `blender/sprites`), the six loop diagrams (WP-S-04 Figures 2-1 to 2-6, `03-system/figures/fig_s04.py`) and the side elevation in two panels (WP-S-04 Figure 4-2), each 2D figure with a Blender companion render as the lead chose on 2026-10-27; OI-4 closed. 0.2 (2026-10-21): the pilot built on the lead's "go": `figures/fig_sim_is.py`, the warehouse plan as WP-C-02 Figure 2-2 and the IS-01 loop as WP-C-06 Figure 2-2, checked in CI; OI-1 and OI-2 closed. 0.1 (2026-10-21): the options as discussed with the project lead in one session, with mockups shown in chat and the lead's picks |
+| Status | Draft. AI-drafted (Claude, AI assistant; I0 under WP-M-02 §3.3). Steps 1 to 5 of §8 are built; step 6 (the tour loop, the dashboard) is not. **Pictures only, no evidence credit** applies to everything this note proposes |
 | Feeds | A later generator under this track; [WP-C-06](../02-concept/WP-C-06-human-robot-interaction-and-misuse.md) §2 and [WP-C-02](../02-concept/WP-C-02-operating-environment-and-tasks.md) §2 as the places the views would be embedded; [WP-S-04](../03-system/WP-S-04-response-time-and-stopping-budget.md) §2 as the place for the loop diagrams. Not a work product of [WP-M-00](../01-management/WP-M-00-work-product-register.md): the generator is a figure source of WP-C-02 and WP-C-06, as their other figure scripts are, listed in the sim README and checked by CI |
 
 ## 1. What this note is
@@ -19,7 +19,7 @@ in the session and shown in chat; they are not committed, and the pilot (§7) re
 
 | Figure | What it shows | Bearing on the candidates |
 |---|---|---|
-| WP-C-06 Figure 2-1 | fifteen static scene cards IS-01…IS-15 on a 1 m grid, with the 1.0 m starting field of WP-H-02 §3.3 | the per-situation view replaces it once built: same cards, to scale, with the field set of WP-S-04 and motion |
+| WP-C-06 Figure 2-1 (retired in v0.4) | fifteen static scene cards IS-01…IS-15 on a 1 m grid, with the 1.0 m starting field of WP-H-02 §3.3 | replaced by the per-situation loops, Figures 2-1 to 2-15 |
 | WP-C-06 Figure 3-1 | the detection distance L against the coasting time | stays; the loop shows one point of that curve in motion |
 | WP-S-04 Figure 4-1 | L against speed for the four planning decelerations | stays |
 | WP-C-02 Figure 2-1 | the zone plan Z0…Z5 with the 1.0 m field | the warehouse plan of §4 is its successor: same zones, the real vocabulary of a floor, every field set |
@@ -117,7 +117,7 @@ redraws every view from the measured value.
    the coast hatched as unmeasured; the person's 0.91 m walk and the robot's 0.11 m; the outline changing at the
    demand and at power removal; the event row, the time strip and the distance plot; the band of §7.
 2. **Built 2026-10-27:** the CAD sprite rendered and swapped in; the generator keeps the fallback.
-3. The other fourteen situations; Figure 2-1 of WP-C-06 retired.
+3. **Built 2026-10-28:** the other fourteen situations; Figure 2-1 of WP-C-06 retired. The engine samples every actor's trajectory from the planning values, so a turn (IS-03, IS-15), a reverse (IS-04, IS-05), the arm (IS-13) and a resume after a wait (IS-10) are drawn by the same renderer.
 4. **Built 2026-10-27:** the six loop diagrams in WP-S-04 §2.1, each with its render of the standstill moment.
 5. **Built 2026-10-27:** the side elevation sheet in WP-S-04 §4.2, two panels, each with its orthographic render.
 6. The tour loop; the dashboard when the physics layer exists.

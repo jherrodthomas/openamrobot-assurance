@@ -102,9 +102,9 @@
 <text x="963.2" y="258.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="800" fill="#B86F0C" text-anchor="start" >Z4 CHARGING BAY · briefed technician · 0 m/s · chain open</text>
 <rect x="1220.4" y="266.2" width="26.0" height="36.4" rx="2" fill="#F2C01E" stroke="#9A7A05" stroke-width="1.5" />
 <rect x="632.8" y="378.0" width="124.8" height="26.0" rx="0" fill="#F2C01E" stroke="none" stroke-width="1" opacity="0.6"/>
-<circle cx="695.2" cy="430.0" r="56.2" fill="#B86F0C" stroke="#B86F0C" stroke-width="1.2" stroke-dasharray="4,3" fill-opacity="0.12"/>
-<circle cx="695.2" cy="456.0" r="28.6" fill="url(#sim-plan-hatch)" stroke="#B86F0C" stroke-width="1" />
-<text x="757.4" y="398.8" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#B86F0C" text-anchor="start" >station: workspace 1.1 m (reach 0.6 + walk 0.48, planning), keep-clear 0.55 m</text>
+<circle cx="695.2" cy="438.3" r="56.2" fill="#B86F0C" stroke="#B86F0C" stroke-width="1.2" stroke-dasharray="4,3" fill-opacity="0.12"/>
+<circle cx="695.2" cy="450.8" r="28.6" fill="url(#sim-plan-hatch)" stroke="#B86F0C" stroke-width="1" />
+<text x="757.4" y="407.1" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#B86F0C" text-anchor="start" >station: workspace 1.1 m (reach 0.6 + walk 0.48, planning), keep-clear 0.55 m</text>
 <rect x="455.5" y="417.5" width="198.1" height="40.6" rx="0" fill="#B86F0C" stroke="#B86F0C" stroke-width="1.2" stroke-dasharray="5,3" fill-opacity="0.16"/>
 <rect x="455.5" y="417.5" width="56.7" height="40.6" rx="0" fill="#00938B" stroke="#00938B" stroke-width="1.2" stroke-dasharray="5,3" fill-opacity="0.16"/>
 <rect x="455.5" y="417.5" width="39.0" height="40.6" rx="0" fill="#2C9A58" stroke="#2C9A58" stroke-width="1.2" stroke-dasharray="5,3" fill-opacity="0.16"/>

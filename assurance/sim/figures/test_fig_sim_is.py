@@ -30,20 +30,51 @@ class TestFigSimIs(unittest.TestCase):
       self.assertAlmostEqual(t_b, row["t_b"], delta=0.006, msg=fid)
 
   def test_kinematics_end_in_standstill(self):
-    for sid, sc in f.SCENES.items():
-      k = f.kinematics(self.src, sc["field"])
+    for fid in ("FS-1b", "FS-2b", "FS-4"):
+      k = f.kinematics(self.src, fid)
       self.assertGreater(k["t_s"], k["t_r"])
-      travel_at_stop = f.robot_travel(k, k["t_s"], sc["t0"])
-      self.assertAlmostEqual(f.robot_travel(k, k["t_s"] + 1.0, sc["t0"]), travel_at_stop, places=9, msg=sid)
-      self.assertAlmostEqual(travel_at_stop - f.robot_travel(k, 0.0, sc["t0"]), k["d_r"] + k["d_b"], places=9, msg=sid)
+      travel_at_stop = f.robot_travel(k, k["t_s"], -0.5)
+      self.assertAlmostEqual(f.robot_travel(k, k["t_s"] + 1.0, -0.5), travel_at_stop, places=9, msg=fid)
+      self.assertAlmostEqual(travel_at_stop - f.robot_travel(k, 0.0, -0.5), k["d_r"] + k["d_b"], places=9, msg=fid)
       # the person's walk during the stop exceeds the robot's own travel: the term that sizes the field
-      self.assertGreater(k["walk"], k["d_r"] + k["d_b"], sid)
+      self.assertGreater(k["walk"], k["d_r"] + k["d_b"], fid)
+    kb = f.kinematics(self.src, "FS-2b", "bumper")
+    self.assertAlmostEqual(kb["t_r"], 0.09)
+
+  def test_every_scene_builds_and_rests(self):
+    self.assertEqual(len(f.SCENES), 15)
+    for sid, sc in f.SCENES.items():
+      if sc.get("still"):
+        self.assertIn(sid, f.STILLS)
+        continue
+      s = f.build(self.src, sid)
+      self.assertLess(s["T0"], 0.0, sid)
+      self.assertGreater(s["T1"], 0.0, sid)
+      last = s["robot"][-1]; before = s["robot"][-2]
+      if sid != "IS-10":   # IS-10 ends with the robot driving on after the warning
+        self.assertAlmostEqual(last[1], before[1], places=6, msg=f"{sid}: the robot still moves at the end of the loop")
+        self.assertAlmostEqual(last[2], before[2], places=6, msg=sid)
+      self.assertTrue(all(t0 < t1 for (t0, *_), (t1, *_) in zip(s["robot"], s["robot"][1:])), sid)
+      self.assertGreaterEqual(min(s["dist"](t) for t in f.samples(s["T0"], s["T1"])), 0.0, sid)
+      self.assertTrue(all(c in (f.C["teal"], f.C["red"], f.C["line"], f.C["dim"], f.C["amber"]) for _, c in s["states"]), sid)
+
+  def test_demands_land_where_the_rows_say(self):
+    s = f.build(self.src, "IS-01")
+    self.assertAlmostEqual(s["t_d"], 0.0, delta=f.DT)
+    s = f.build(self.src, "IS-04")
+    self.assertAlmostEqual(min(s["dist"](t) for t in f.samples(s["T0"], s["T1"])), 0.0, places=6, msg="the bumper case is a contact")
+    s = f.build(self.src, "IS-13")
+    self.assertAlmostEqual(min(s["dist"](t) for t in f.samples(s["T0"], s["T1"])), 0.0, delta=0.02, msg="the ring is reach plus walk: no margin in the planning case")
+    s = f.build(self.src, "IS-15")
+    self.assertTrue(any(l.startswith("load reaches") and t is not None for t, l, _ in s["events"]))
 
   def test_scenes_resolve(self):
     for sid in f.SCENES:
       self.assertIn(sid, self.src["scenes"])
-      self.assertIsNotNone(f.rating_for(self.src, sid), sid)
-      self.assertIn(f.SCENES[sid]["field"], self.src["fields"])
+      if sid not in f.UNRATED:
+        self.assertIsNotNone(f.rating_for(self.src, sid), sid)
+      if f.SCENES[sid]["field"]:
+        self.assertIn(f.SCENES[sid]["field"], self.src["fields"])
 
   def test_svgs_well_formed_and_deterministic(self):
     for name, fn in f.OUTPUTS.items():
@@ -83,6 +114,8 @@ class TestFigSimIs(unittest.TestCase):
     self.assertIn('id="sim-plan-sp-cfg002-carry"', plan)
     self.assertGreaterEqual(plan.count('<use href="#sim-plan-sp-'), 3)
     self.assertIn('id="sim-is-01-sp-cfg001"', f.fig_loop(self.src, "IS-01"))
+    self.assertIn('id="sim-is-15-sp-cfg002-carry"', f.fig_loop(self.src, "IS-15"))
+    self.assertNotIn("<animate", f.fig_loop(self.src, "IS-07"))
 
   def test_fallback_footprint_without_sprites(self):
     src = dict(self.src, sprites={})
