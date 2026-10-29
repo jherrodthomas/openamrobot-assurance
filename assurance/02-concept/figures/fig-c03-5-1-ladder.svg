@@ -1,0 +1,272 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1010" height="626" viewBox="0 0 1010 626" role="img" aria-labelledby="lad-t lad-d">
+<title id="lad-t">Figure 5-1: where each hazard's rated rows land on the PL scale</title>
+<desc id="lad-d">One line per hazard with five cells for the Performance Levels a to e; a dot in a cell for each rated row at that level, the cell coloured by level; at the right the number of high-risk rows and a bar of the measures the rows rely on, coloured by whether each exists today.</desc>
+<defs>
+  <pattern id="lad-hatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="8" stroke="#7E949B" stroke-width="1"/></pattern>
+</defs>
+<rect x="0" y="0" width="1010" height="626" fill="#FFFFFF"/>
+<text x="32.0" y="34.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#122026" text-anchor="start">Figure 5-1  Where each hazard's rated rows land on the Performance Level scale</text>
+<text x="32.0" y="52.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="start">One line per hazard of §4; one dot per rated row of §5 at its adopted PLr (rows with no control function at their risk-graph value, hollow).</text>
+<text x="32.0" y="68.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="start">The two right-hand columns say how many of the hazard's rows are high risk and how many of the measures they rely on exist today.</text>
+<rect x="401.0" y="86.0" width="28.0" height="20.0" rx="4" fill="#EAF6F5" stroke="#D3DDE2" stroke-width="1"/>
+<text x="415.0" y="100.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">a</text>
+<rect x="477.0" y="86.0" width="28.0" height="20.0" rx="4" fill="#C9ECE8" stroke="#C9ECE8" stroke-width="1"/>
+<text x="491.0" y="100.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">b</text>
+<rect x="553.0" y="86.0" width="28.0" height="20.0" rx="4" fill="#8FD3CC" stroke="#8FD3CC" stroke-width="1"/>
+<text x="567.0" y="100.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#122026" text-anchor="middle">c</text>
+<rect x="629.0" y="86.0" width="28.0" height="20.0" rx="4" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
+<text x="643.0" y="100.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">d</text>
+<rect x="705.0" y="86.0" width="28.0" height="20.0" rx="4" fill="#D64535" stroke="#D64535" stroke-width="1"/>
+<text x="719.0" y="100.3" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">e</text>
+<text x="774.0" y="100.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">high-risk rows</text>
+<text x="870.0" y="100.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">measures today</text>
+<rect x="28.0" y="112.0" width="954.0" height="30.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
+<text x="32.0" y="131.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-01</text>
+<text x="80.0" y="131.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">impact, crushing (moving robot vs person)</text>
+<rect x="380.0" y="116.0" width="70.0" height="22.0" rx="4" fill="#EAF6F5" stroke="#D3DDE2" stroke-width="1"/>
+<circle cx="415.0" cy="127.0" r="5" fill="#122026"/>
+<rect x="456.0" y="116.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="532.0" y="116.0" width="70.0" height="22.0" rx="4" fill="#8FD3CC" stroke="#8FD3CC" stroke-width="1"/>
+<circle cx="560.5" cy="127.0" r="5" fill="#122026"/>
+<circle cx="573.5" cy="127.0" r="5" fill="#122026"/>
+<rect x="608.0" y="116.0" width="70.0" height="22.0" rx="4" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
+<circle cx="630.0" cy="127.0" r="5" fill="#FFFFFF"/>
+<circle cx="643.0" cy="127.0" r="5" fill="#FFFFFF"/>
+<circle cx="656.0" cy="127.0" r="5" fill="#FFFFFF"/>
+<rect x="684.0" y="116.0" width="70.0" height="22.0" rx="4" fill="#D64535" stroke="#D64535" stroke-width="1"/>
+<circle cx="719.0" cy="127.0" r="5" fill="#FFFFFF"/>
+<text x="800.0" y="131.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#D64535" text-anchor="middle">4</text>
+<rect x="870.0" y="122" width="5.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="877.0" y="122" width="5.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="884.0" y="122" width="5.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="891.0" y="122" width="5.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="898.0" y="122" width="5.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="905.0" y="122" width="5.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="912.0" y="122" width="5.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="919.0" y="122" width="5.5" height="10" rx="1.5" fill="#B86F0C"/>
+<rect x="926.0" y="122" width="5.5" height="10" rx="1.5" fill="#B86F0C"/>
+<rect x="933.0" y="122" width="5.5" height="10" rx="1.5" fill="#B86F0C"/>
+<rect x="940.0" y="122" width="5.5" height="10" rx="1.5" fill="#B86F0C"/>
+<rect x="947.0" y="122" width="5.5" height="10" rx="1.5" fill="#B86F0C"/>
+<text x="960.0" y="131.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">0/12</text>
+<text x="32.0" y="161.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-02</text>
+<text x="80.0" y="161.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">impact (uncommanded motion)</text>
+<rect x="380.0" y="146.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="456.0" y="146.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="532.0" y="146.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="608.0" y="146.0" width="70.0" height="22.0" rx="4" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
+<circle cx="643.0" cy="157.0" r="5" fill="#FFFFFF"/>
+<rect x="684.0" y="146.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="800.0" y="161.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#D64535" text-anchor="middle">1</text>
+<rect x="870.0" y="152" width="7.8" height="10" rx="1.5" fill="#D64535"/>
+<rect x="879.3" y="152" width="7.8" height="10" rx="1.5" fill="#D64535"/>
+<rect x="888.7" y="152" width="7.8" height="10" rx="1.5" fill="#D64535"/>
+<rect x="898.0" y="152" width="7.8" height="10" rx="1.5" fill="#D64535"/>
+<rect x="907.3" y="152" width="7.8" height="10" rx="1.5" fill="#D64535"/>
+<rect x="916.7" y="152" width="7.8" height="10" rx="1.5" fill="#B86F0C"/>
+<rect x="926.0" y="152" width="7.8" height="10" rx="1.5" fill="#B86F0C"/>
+<rect x="935.3" y="152" width="7.8" height="10" rx="1.5" fill="#B86F0C"/>
+<rect x="944.7" y="152" width="7.8" height="10" rx="1.5" fill="#B86F0C"/>
+<text x="960.0" y="161.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">0/9</text>
+<rect x="28.0" y="172.0" width="954.0" height="30.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
+<text x="32.0" y="191.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-03</text>
+<text x="80.0" y="191.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">loss of control (run-away, swerve)</text>
+<rect x="380.0" y="176.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="456.0" y="176.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="532.0" y="176.0" width="70.0" height="22.0" rx="4" fill="#8FD3CC" stroke="#8FD3CC" stroke-width="1"/>
+<circle cx="567.0" cy="187.0" r="5" fill="#122026"/>
+<rect x="608.0" y="176.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="684.0" y="176.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="800.0" y="191.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="870.0" y="182" width="15.3" height="10" rx="1.5" fill="#D64535"/>
+<rect x="886.8" y="182" width="15.3" height="10" rx="1.5" fill="#D64535"/>
+<rect x="903.6" y="182" width="15.3" height="10" rx="1.5" fill="#D64535"/>
+<rect x="920.4" y="182" width="15.3" height="10" rx="1.5" fill="#B86F0C"/>
+<rect x="937.2" y="182" width="15.3" height="10" rx="1.5" fill="#B86F0C"/>
+<text x="960.0" y="191.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">0/5</text>
+<text x="32.0" y="221.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-04</text>
+<text x="80.0" y="221.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">entanglement, crushing (bench)</text>
+<rect x="380.0" y="206.0" width="70.0" height="22.0" rx="4" fill="#EAF6F5" stroke="#D3DDE2" stroke-width="1"/>
+<circle cx="415.0" cy="217.0" r="5" fill="#122026"/>
+<rect x="456.0" y="206.0" width="70.0" height="22.0" rx="4" fill="#C9ECE8" stroke="#C9ECE8" stroke-width="1"/>
+<circle cx="491.0" cy="217.0" r="5" fill="#122026"/>
+<rect x="532.0" y="206.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="608.0" y="206.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="684.0" y="206.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="800.0" y="221.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="870.0" y="212" width="19.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="891.0" y="212" width="19.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="912.0" y="212" width="19.5" height="10" rx="1.5" fill="#B86F0C"/>
+<rect x="933.0" y="212" width="19.5" height="10" rx="1.5" fill="#B86F0C"/>
+<text x="960.0" y="221.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">0/4</text>
+<rect x="28.0" y="232.0" width="954.0" height="30.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
+<text x="32.0" y="251.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-05</text>
+<text x="80.0" y="251.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">unexpected start-up</text>
+<rect x="380.0" y="236.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="456.0" y="236.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="532.0" y="236.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="608.0" y="236.0" width="70.0" height="22.0" rx="4" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
+<circle cx="636.5" cy="247.0" r="5" fill="#FFFFFF"/>
+<circle cx="649.5" cy="247.0" r="5" fill="#FFFFFF"/>
+<rect x="684.0" y="236.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="800.0" y="251.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#D64535" text-anchor="middle">2</text>
+<rect x="870.0" y="242" width="15.3" height="10" rx="1.5" fill="#D64535"/>
+<rect x="886.8" y="242" width="15.3" height="10" rx="1.5" fill="#D64535"/>
+<rect x="903.6" y="242" width="15.3" height="10" rx="1.5" fill="#D64535"/>
+<rect x="920.4" y="242" width="15.3" height="10" rx="1.5" fill="#D64535"/>
+<rect x="937.2" y="242" width="15.3" height="10" rx="1.5" fill="#B86F0C"/>
+<text x="960.0" y="251.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">0/5</text>
+<text x="32.0" y="281.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-06</text>
+<text x="80.0" y="281.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">instability, tipping</text>
+<rect x="380.0" y="266.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="456.0" y="266.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="532.0" y="266.0" width="70.0" height="22.0" rx="4" fill="#8FD3CC" stroke="#8FD3CC" stroke-width="1"/>
+<circle cx="567.0" cy="277.0" r="5" fill="#122026"/>
+<rect x="608.0" y="266.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="684.0" y="266.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="800.0" y="281.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="870.0" y="272" width="10.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="882.0" y="272" width="10.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="894.0" y="272" width="10.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="906.0" y="272" width="10.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="918.0" y="272" width="10.5" height="10" rx="1.5" fill="#B86F0C"/>
+<rect x="930.0" y="272" width="10.5" height="10" rx="1.5" fill="#B86F0C"/>
+<rect x="942.0" y="272" width="10.5" height="10" rx="1.5" fill="#B86F0C"/>
+<text x="960.0" y="281.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">0/7</text>
+<rect x="28.0" y="292.0" width="954.0" height="30.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
+<text x="32.0" y="311.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-07</text>
+<text x="80.0" y="311.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">short circuit, fire</text>
+<rect x="380.0" y="296.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="456.0" y="296.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="532.0" y="296.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="608.0" y="296.0" width="70.0" height="22.0" rx="4" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
+<circle cx="643.0" cy="307.0" r="4.5" fill="none" stroke="#FFFFFF" stroke-width="1.6"/>
+<rect x="684.0" y="296.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="800.0" y="311.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#D64535" text-anchor="middle">1</text>
+<rect x="870.0" y="302" width="82.5" height="10" rx="1.5" fill="#D64535"/>
+<text x="960.0" y="311.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">0/1</text>
+<text x="32.0" y="341.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-08</text>
+<text x="80.0" y="341.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">shock</text>
+<rect x="380.0" y="326.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="456.0" y="326.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="532.0" y="326.0" width="70.0" height="22.0" rx="4" fill="#8FD3CC" stroke="#8FD3CC" stroke-width="1"/>
+<circle cx="567.0" cy="337.0" r="4.5" fill="none" stroke="#122026" stroke-width="1.6"/>
+<rect x="608.0" y="326.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="684.0" y="326.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="800.0" y="341.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="870.0" y="332" width="40.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="912.0" y="332" width="40.5" height="10" rx="1.5" fill="#D64535"/>
+<text x="960.0" y="341.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">0/2</text>
+<rect x="28.0" y="352.0" width="954.0" height="30.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
+<text x="32.0" y="371.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-09</text>
+<text x="80.0" y="371.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">battery</text>
+<rect x="380.0" y="356.0" width="70.0" height="22.0" rx="4" fill="#EAF6F5" stroke="#D3DDE2" stroke-width="1"/>
+<circle cx="415.0" cy="367.0" r="4.5" fill="none" stroke="#122026" stroke-width="1.6"/>
+<rect x="456.0" y="356.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="532.0" y="356.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="608.0" y="356.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="684.0" y="356.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="800.0" y="371.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="870.0" y="362" width="40.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="912.0" y="362" width="40.5" height="10" rx="1.5" fill="#D64535"/>
+<text x="960.0" y="371.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">0/2</text>
+<text x="32.0" y="401.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-10</text>
+<text x="80.0" y="401.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">mode confusion</text>
+<rect x="380.0" y="386.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="456.0" y="386.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="532.0" y="386.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="608.0" y="386.0" width="70.0" height="22.0" rx="4" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
+<circle cx="643.0" cy="397.0" r="5" fill="#FFFFFF"/>
+<rect x="684.0" y="386.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="800.0" y="401.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#D64535" text-anchor="middle">1</text>
+<rect x="870.0" y="392" width="15.3" height="10" rx="1.5" fill="#D64535"/>
+<rect x="886.8" y="392" width="15.3" height="10" rx="1.5" fill="#D64535"/>
+<rect x="903.6" y="392" width="15.3" height="10" rx="1.5" fill="#D64535"/>
+<rect x="920.4" y="392" width="15.3" height="10" rx="1.5" fill="#D64535"/>
+<rect x="937.2" y="392" width="15.3" height="10" rx="1.5" fill="#B86F0C"/>
+<text x="960.0" y="401.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">0/5</text>
+<rect x="28.0" y="412.0" width="954.0" height="30.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
+<text x="32.0" y="431.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-11</text>
+<text x="80.0" y="431.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">loss of sensing not acted upon</text>
+<rect x="380.0" y="416.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="456.0" y="416.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="532.0" y="416.0" width="70.0" height="22.0" rx="4" fill="#8FD3CC" stroke="#8FD3CC" stroke-width="1"/>
+<circle cx="567.0" cy="427.0" r="5" fill="#122026"/>
+<rect x="608.0" y="416.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="684.0" y="416.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="800.0" y="431.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="870.0" y="422" width="40.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="912.0" y="422" width="40.5" height="10" rx="1.5" fill="#B86F0C"/>
+<text x="960.0" y="431.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">0/2</text>
+<text x="32.0" y="461.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-12</text>
+<text x="80.0" y="461.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">unauthorised command</text>
+<rect x="380.0" y="446.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="456.0" y="446.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="532.0" y="446.0" width="70.0" height="22.0" rx="4" fill="#8FD3CC" stroke="#8FD3CC" stroke-width="1"/>
+<circle cx="567.0" cy="457.0" r="5" fill="#122026"/>
+<rect x="608.0" y="446.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="684.0" y="446.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="800.0" y="461.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="870.0" y="452" width="26.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="898.0" y="452" width="26.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="926.0" y="452" width="26.5" height="10" rx="1.5" fill="#B86F0C"/>
+<text x="960.0" y="461.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">0/3</text>
+<rect x="28.0" y="472.0" width="954.0" height="30.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
+<text x="32.0" y="491.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-13</text>
+<text x="80.0" y="491.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">impact, clamping by an arm</text>
+<rect x="380.0" y="476.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="456.0" y="476.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="532.0" y="476.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="608.0" y="476.0" width="70.0" height="22.0" rx="4" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
+<circle cx="636.5" cy="487.0" r="5" fill="#FFFFFF"/>
+<circle cx="649.5" cy="487.0" r="5" fill="#FFFFFF"/>
+<rect x="684.0" y="476.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="800.0" y="491.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#D64535" text-anchor="middle">2</text>
+<rect x="870.0" y="482" width="10.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="882.0" y="482" width="10.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="894.0" y="482" width="10.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="906.0" y="482" width="10.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="918.0" y="482" width="10.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="930.0" y="482" width="10.5" height="10" rx="1.5" fill="#D64535"/>
+<rect x="942.0" y="482" width="10.5" height="10" rx="1.5" fill="#D64535"/>
+<text x="960.0" y="491.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">0/7</text>
+<text x="32.0" y="521.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-14</text>
+<text x="80.0" y="521.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">falling or thrown load</text>
+<rect x="380.0" y="506.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="456.0" y="506.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="532.0" y="506.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="608.0" y="506.0" width="70.0" height="22.0" rx="4" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
+<circle cx="643.0" cy="517.0" r="5" fill="#FFFFFF"/>
+<rect x="684.0" y="506.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="800.0" y="521.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#D64535" text-anchor="middle">1</text>
+<rect x="870.0" y="512" width="15.3" height="10" rx="1.5" fill="#D64535"/>
+<rect x="886.8" y="512" width="15.3" height="10" rx="1.5" fill="#D64535"/>
+<rect x="903.6" y="512" width="15.3" height="10" rx="1.5" fill="#D64535"/>
+<rect x="920.4" y="512" width="15.3" height="10" rx="1.5" fill="#D64535"/>
+<rect x="937.2" y="512" width="15.3" height="10" rx="1.5" fill="#D64535"/>
+<text x="960.0" y="521.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">0/5</text>
+<rect x="28.0" y="532.0" width="954.0" height="30.0" rx="0" fill="#F7FAFB" stroke="none" stroke-width="0"/>
+<text x="32.0" y="551.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#122026" text-anchor="start">H-15</text>
+<text x="80.0" y="551.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">crushing, shearing at the lift; tipping with an arm…</text>
+<rect x="380.0" y="536.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="456.0" y="536.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="532.0" y="536.0" width="70.0" height="22.0" rx="4" fill="#8FD3CC" stroke="#8FD3CC" stroke-width="1"/>
+<circle cx="560.5" cy="547.0" r="5" fill="#122026"/>
+<circle cx="573.5" cy="547.0" r="5" fill="#122026"/>
+<rect x="608.0" y="536.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<rect x="684.0" y="536.0" width="70.0" height="22.0" rx="4" fill="#FFFFFF" stroke="#D3DDE2" stroke-width="1"/>
+<text x="800.0" y="551.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#7E949B" text-anchor="middle">—</text>
+<rect x="870.0" y="542" width="7.8" height="10" rx="1.5" fill="#D64535"/>
+<rect x="879.3" y="542" width="7.8" height="10" rx="1.5" fill="#D64535"/>
+<rect x="888.7" y="542" width="7.8" height="10" rx="1.5" fill="#D64535"/>
+<rect x="898.0" y="542" width="7.8" height="10" rx="1.5" fill="#D64535"/>
+<rect x="907.3" y="542" width="7.8" height="10" rx="1.5" fill="#D64535"/>
+<rect x="916.7" y="542" width="7.8" height="10" rx="1.5" fill="#D64535"/>
+<rect x="926.0" y="542" width="7.8" height="10" rx="1.5" fill="#D64535"/>
+<rect x="935.3" y="542" width="7.8" height="10" rx="1.5" fill="#B86F0C"/>
+<rect x="944.7" y="542" width="7.8" height="10" rx="1.5" fill="#B86F0C"/>
+<text x="960.0" y="551.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="start">0/9</text>
+<text x="32.0" y="592.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Bar: one segment per distinct measure of WP-C-05 §5 across the hazard's rows; red none, amber partial, green in place (WP-C-03 §6 State). n/m: in place of all.</text>
+<text x="978.0" y="614.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#7E949B" text-anchor="end">Generated by figures/fig_c03.py from WP-C-03 §4, §5 and §6 and WP-C-05 §5</text>
+</svg>

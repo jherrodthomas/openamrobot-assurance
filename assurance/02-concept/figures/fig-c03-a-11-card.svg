@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="525" viewBox="0 0 940 525" role="img" aria-labelledby="hc11-t hc11-d">
+<title id="hc11-t">Figure A-11: hazard sheet H-13 · arm contact at a station</title>
+<desc id="hc11-d">The hazard sheet of H-13 · arm contact at a station: the hazardous event, the S, F and P ratings in words with the required Performance Level d, the measures of the three ISO 12100 steps coloured by whether each exists today, the residual-risk class and its text, and the gap and scenario references.</desc>
+<defs>
+  <pattern id="hc11-hatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="8" stroke="#7E949B" stroke-width="1"/></pattern>
+</defs>
+<rect x="0" y="0" width="940" height="525" fill="#FFFFFF"/>
+<rect x="0.0" y="0.0" width="940.0" height="6.0" rx="0" fill="#2FA69C" stroke="none" stroke-width="0"/>
+<text x="32.0" y="36.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#4E6A73" text-anchor="start">Figure A-11</text>
+<text x="32.0" y="60.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#122026" text-anchor="start">H-13 · arm contact at a station</text>
+<text x="32.0" y="78.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Mechanical: impact, clamping by an arm (CFG-002)  ·  zone Z2  ·  CFG-002</text>
+<rect x="828.0" y="22.0" width="80.0" height="46.0" rx="4" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
+<text x="868.0" y="53.6" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle">d</text>
+<text x="868.0" y="82.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="middle">required PL</text>
+<text x="32.0" y="100.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#122026" text-anchor="start">An arm moving at a station strikes a person or clamps a hand, forearm or head against a shelf, the item, the column or the</text>
+<text x="32.0" y="115.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#122026" text-anchor="start">other arm; or the base moves with an arm outside the stowed or carry pose and the sweep reaches beyond the base's protective</text>
+<text x="32.0" y="130.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#122026" text-anchor="start">field</text>
+<line x1="32" y1="143" x2="908" y2="143" stroke="#D3DDE2"/>
+<text x="32.0" y="163.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#4E6A73" text-anchor="start">WHY THIS RATING</text>
+<rect x="32.0" y="175.0" width="48.0" height="36.0" rx="4" fill="#FDEDEB" stroke="none" stroke-width="0"/>
+<text x="56.0" y="198.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="14" font-weight="700" fill="#122026" text-anchor="middle">S2</text>
+<text x="90.0" y="197.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#122026" text-anchor="start">serious, normally irreversible</text>
+<rect x="32.0" y="219.0" width="48.0" height="36.0" rx="4" fill="#FDEDEB" stroke="none" stroke-width="0"/>
+<text x="56.0" y="242.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="14" font-weight="700" fill="#122026" text-anchor="middle">F2</text>
+<text x="90.0" y="241.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#122026" text-anchor="start">frequent or long exposure</text>
+<rect x="32.0" y="263.0" width="48.0" height="36.0" rx="4" fill="#EDF2F4" stroke="none" stroke-width="0"/>
+<text x="56.0" y="286.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="14" font-weight="700" fill="#122026" text-anchor="middle">P1</text>
+<text x="90.0" y="285.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#122026" text-anchor="start">possible to avoid</text>
+<text x="32.0" y="323.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#122026" text-anchor="start">→ risk graph d  ·  adopted d</text>
+<text x="32.0" y="345.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Staff work at the station through the task; a 6 kg</text>
+<text x="32.0" y="360.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">payload arm that can pull 150 N can fracture a hand</text>
+<text x="32.0" y="375.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">against a shelf; a briefed person sees the arm and</text>
+<text x="32.0" y="390.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">keeps clear, and hand-over invites them not to;</text>
+<text x="32.0" y="405.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">with the monitored stop of DQ-021 A contact is</text>
+<text x="32.0" y="420.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">possible only when the stop fails</text>
+<text x="370.0" y="163.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#4E6A73" text-anchor="start">WHAT REDUCES IT, AND WHAT EXISTS TODAY</text>
+<text x="370.0" y="189.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#122026" text-anchor="start">Step 1  inherently safe design</text>
+<text x="370.0" y="209.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#7E949B" text-anchor="start">—</text>
+<text x="370.0" y="241.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#122026" text-anchor="start">Step 2  safeguarding</text>
+<rect x="370.0" y="247.0" width="38.6" height="18.0" rx="3" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<rect x="370.5" y="247.5" width="3.5" height="17" rx="1.5" fill="#00938B"/>
+<text x="390.8" y="260.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="middle">SF-11</text>
+<rect x="412.6" y="247.0" width="38.6" height="18.0" rx="3" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<rect x="413.1" y="247.5" width="3.5" height="17" rx="1.5" fill="#00938B"/>
+<text x="433.4" y="260.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="middle">SF-01</text>
+<rect x="455.2" y="247.0" width="38.6" height="18.0" rx="3" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<rect x="455.7" y="247.5" width="3.5" height="17" rx="1.5" fill="#00938B"/>
+<text x="476.0" y="260.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="middle">SF-08</text>
+<text x="370.0" y="293.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#122026" text-anchor="start">Step 3  information for use</text>
+<rect x="370.0" y="299.0" width="43.9" height="18.0" rx="3" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<rect x="370.5" y="299.5" width="3.5" height="17" rx="1.5" fill="#8A6FB0"/>
+<text x="393.5" y="312.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="middle">IFU-04</text>
+<rect x="417.9" y="299.0" width="43.9" height="18.0" rx="3" fill="#FFFFFF" stroke="#7E949B" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="439.9" y="312.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#4E6A73" text-anchor="middle">AOU-10</text>
+<text x="370.0" y="345.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#D64535" text-anchor="start">Today: 0 of 4 measures in place, 0 partial, 4 with nothing on any build.</text>
+<text x="370.0" y="363.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#4E6A73" text-anchor="start">AFTER THE MEASURES (WP-C-05): O OPEN: NO ADEQUATE MEASURE YET</text>
+<text x="370.0" y="381.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">No arm safety function exists in any repository; the monitored stop is the design intent</text>
+<text x="370.0" y="397.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">(DQ-021 A) with no contact claimed (SR-11.05); until the station device exists, nobody</text>
+<text x="370.0" y="413.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">is within reach of a moving arm (AOU-10), which is procedural and therefore not a</text>
+<text x="370.0" y="429.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">control for an S2 row</text>
+<text x="370.0" y="449.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Verification: WP-V-03, WP-V-05 on CFG-002; upstream OpenArm pose and safe-torque-off outputs</text>
+<text x="370.0" y="463.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">(WP-S-02 OI-8)</text>
+<line x1="32" y1="475" x2="908" y2="475" stroke="#D3DDE2"/>
+<text x="32.0" y="489.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="start">Gaps gap assessment §8 (no arm safety function) · scenarios IS-13, IS-15, MU-15, MU-16</text>
+<text x="908.0" y="517.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#7E949B" text-anchor="end">Generated by figures/fig_c03.py from WP-C-03 §4, §5, §6, §9 and WP-C-05 §5</text>
+</svg>

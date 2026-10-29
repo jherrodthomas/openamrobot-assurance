@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="496" viewBox="0 0 940 496" role="img" aria-labelledby="hc4-t hc4-d">
+<title id="hc4-t">Figure A-4: hazard sheet H-01 · dock lane, docking and reverse</title>
+<desc id="hc4-d">The hazard sheet of H-01 · dock lane, docking and reverse: the hazardous event, the S, F and P ratings in words with the required Performance Level d, the measures of the three ISO 12100 steps coloured by whether each exists today, the residual-risk class and its text, and the gap and scenario references.</desc>
+<defs>
+  <pattern id="hc4-hatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="8" stroke="#7E949B" stroke-width="1"/></pattern>
+</defs>
+<rect x="0" y="0" width="940" height="496" fill="#FFFFFF"/>
+<rect x="0.0" y="0.0" width="940.0" height="6.0" rx="0" fill="#2FA69C" stroke="none" stroke-width="0"/>
+<text x="32.0" y="36.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#4E6A73" text-anchor="start">Figure A-4</text>
+<text x="32.0" y="60.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#122026" text-anchor="start">H-01 · dock lane, docking and reverse</text>
+<text x="32.0" y="78.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">Mechanical: impact, crushing (moving robot vs person)  ·  zone Z3</text>
+<rect x="828.0" y="22.0" width="80.0" height="46.0" rx="4" fill="#2FA69C" stroke="#2FA69C" stroke-width="1"/>
+<text x="868.0" y="53.6" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle">d</text>
+<text x="868.0" y="82.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#4E6A73" text-anchor="middle">required PL</text>
+<text x="32.0" y="100.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#122026" text-anchor="start">The robot drives into a person or pins a person against a fixed structure because the person is not detected, is below the</text>
+<text x="32.0" y="115.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#122026" text-anchor="start">scan plane, is behind the robot, steps out of a blind corner, or the command path keeps driving</text>
+<line x1="32" y1="128" x2="908" y2="128" stroke="#D3DDE2"/>
+<text x="32.0" y="148.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#4E6A73" text-anchor="start">WHY THIS RATING</text>
+<rect x="32.0" y="160.0" width="48.0" height="36.0" rx="4" fill="#FDEDEB" stroke="none" stroke-width="0"/>
+<text x="56.0" y="183.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="14" font-weight="700" fill="#122026" text-anchor="middle">S2</text>
+<text x="90.0" y="182.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#122026" text-anchor="start">serious, normally irreversible</text>
+<rect x="32.0" y="204.0" width="48.0" height="36.0" rx="4" fill="#EDF2F4" stroke="none" stroke-width="0"/>
+<text x="56.0" y="227.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="14" font-weight="700" fill="#122026" text-anchor="middle">F1</text>
+<text x="90.0" y="226.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#122026" text-anchor="start">seldom or short exposure</text>
+<rect x="32.0" y="248.0" width="48.0" height="36.0" rx="4" fill="#FDEDEB" stroke="none" stroke-width="0"/>
+<text x="56.0" y="271.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="14" font-weight="700" fill="#122026" text-anchor="middle">P2</text>
+<text x="90.0" y="270.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#122026" text-anchor="start">scarcely possible to avoid</text>
+<text x="32.0" y="308.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#122026" text-anchor="start">→ risk graph d  ·  adopted d</text>
+<text x="32.0" y="330.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">The lane is meant to be empty, so exposure is</text>
+<text x="32.0" y="345.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">occasional; the final approach and the reverse are</text>
+<text x="32.0" y="360.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#4E6A73" text-anchor="start">blind, so a person who is there cannot be avoided</text>
+<text x="370.0" y="148.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#4E6A73" text-anchor="start">WHAT REDUCES IT, AND WHAT EXISTS TODAY</text>
+<text x="370.0" y="174.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#122026" text-anchor="start">Step 1  inherently safe design</text>
+<rect x="370.0" y="180.0" width="38.6" height="18.0" rx="3" fill="#FFF6E8" stroke="#B86F0C" stroke-width="1"/>
+<rect x="370.5" y="180.5" width="3.5" height="17" rx="1.5" fill="#5B6B9A"/>
+<text x="390.8" y="193.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#B86F0C" text-anchor="middle">DM-08</text>
+<rect x="412.6" y="180.0" width="38.6" height="18.0" rx="3" fill="#FFF6E8" stroke="#B86F0C" stroke-width="1"/>
+<rect x="413.1" y="180.5" width="3.5" height="17" rx="1.5" fill="#6E7F86"/>
+<text x="433.4" y="193.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#B86F0C" text-anchor="middle">OL-02</text>
+<text x="370.0" y="226.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#122026" text-anchor="start">Step 2  safeguarding</text>
+<rect x="370.0" y="232.0" width="38.6" height="18.0" rx="3" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<rect x="370.5" y="232.5" width="3.5" height="17" rx="1.5" fill="#00938B"/>
+<text x="390.8" y="245.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="middle">SF-02</text>
+<rect x="412.6" y="232.0" width="38.6" height="18.0" rx="3" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<rect x="413.1" y="232.5" width="3.5" height="17" rx="1.5" fill="#00938B"/>
+<text x="433.4" y="245.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="middle">SF-03</text>
+<text x="370.0" y="278.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#122026" text-anchor="start">Step 3  information for use</text>
+<rect x="370.0" y="284.0" width="43.9" height="18.0" rx="3" fill="#FDEDEB" stroke="#D64535" stroke-width="1"/>
+<rect x="370.5" y="284.5" width="3.5" height="17" rx="1.5" fill="#8A6FB0"/>
+<text x="393.5" y="297.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="middle">IFU-02</text>
+<text x="370.0" y="330.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#D64535" text-anchor="start">Today: 0 of 5 measures in place, 2 partial, 3 with nothing on any build.</text>
+<text x="370.0" y="348.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#4E6A73" text-anchor="start">AFTER THE MEASURES (WP-C-05): S SAFEGUARDED AT THE PLR</text>
+<text x="370.0" y="366.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">The lane field set and the rear bumper at crawl; the final approach inside the switched</text>
+<text x="370.0" y="382.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">field is blind beyond the bumper's travel, so a person who enters the lane in the last</text>
+<text x="370.0" y="398.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">0.3 m meets the robot at 0.05 m/s; the lane marking and the dock indication keep people</text>
+<text x="370.0" y="414.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#122026" text-anchor="start">out of it (MU-04)</text>
+<text x="370.0" y="434.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">Verification: Sn-11; GAP-15 and GAP-35 closure (WP-S-03 OI)</text>
+<line x1="32" y1="446" x2="908" y2="446" stroke="#D3DDE2"/>
+<text x="32.0" y="460.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="9.5" font-weight="400" fill="#4E6A73" text-anchor="start">Gaps GAP-01, GAP-02, GAP-13, GAP-14, GAP-15, GAP-16, GAP-22, GAP-35 · scenarios IS-01…IS-06, IS-09, IS-12, MU-02, MU-03, MU-04, MU-07</text>
+<text x="908.0" y="488.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#7E949B" text-anchor="end">Generated by figures/fig_c03.py from WP-C-03 §4, §5, §6, §9 and WP-C-05 §5</text>
+</svg>
