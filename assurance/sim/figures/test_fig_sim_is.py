@@ -102,6 +102,39 @@ class TestFigSimIs(unittest.TestCase):
         self.assertEqual(len(m.group(1).split(";")), len(m.group(2).split(";")), m.group(0)[:80])
 
 
+  def test_tour_closes_and_switches_field_sets(self):
+    tr = f.build_tour(self.src)
+    first, last = tr["robot"][0], tr["robot"][-1]
+    self.assertAlmostEqual(first[1], last[1], places=6)
+    self.assertAlmostEqual(first[2], last[2], places=6)
+    self.assertAlmostEqual(first[3] % 360, last[3] % 360, places=6)
+    used = {fid for _, (fid, m) in tr["states"]["set"]}
+    self.assertEqual(used, {None, "FS-1c", "FS-2c", "FS-4"}, "reverse, aisle, dock lane and carry")
+    for (t, fid_m) in tr["states"]["set"]:
+      fid, muted = fid_m
+      if fid:
+        self.assertEqual(self.src["fields"][fid]["config"], "CFG-002", fid)
+    # the speed never exceeds the zone limit, and the field set's speed covers the speed driven
+    zone_at = dict(tr["states"]["zone"])
+    for t, v in tr["states"]["speed"]:
+      x, y = f.at(tr["robot"], t)[:2]
+      self.assertLessEqual(v, tr["zone_v"][f.tour_zone(x, y)] + 1e-9, t)
+    ev = tr["events"]
+    for k in ("spawn", "demand", "standstill", "clear", "reset", "go"):
+      self.assertIn(k, ev)
+    self.assertLessEqual(ev["standstill"] - ev["demand"], tr["t_r"] + 0.20 / tr["a_brake"] + 2 * f.TOUR_DT)
+    self.assertGreaterEqual(ev["go"] - ev["reset"], 2.0 - 1e-9, "the warning of HR-07 lasts 2 s")
+    for sid, t in tr["reach"].items():
+      self.assertIsNotNone(t, sid)
+    self.assertEqual(sorted(tr["reach"].values()), [tr["reach"][s] for s, _ in f.TOUR_CHIPS], "the chips light in route order")
+
+  def test_tour_svg(self):
+    out = f.fig_tour(self.src)
+    ET.fromstring(out)
+    self.assertIn(f.BAND, out)
+    self.assertIn('id="sim-tour-sp-cfg002-carry"', out)
+    self.assertLess(len(out), 400_000)
+
   def test_sprites_pinned_and_embedded(self):
     sp = self.src["sprites"]
     self.assertEqual(set(sp), set(f.SPRITES), "every pinned sprite file is present")

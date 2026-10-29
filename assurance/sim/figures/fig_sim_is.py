@@ -11,6 +11,9 @@
                               ring outline changing at the demand and at power removal; events, time strip and the
                               person-to-robot distance with a cursor. A still viewer shows the first frame
   fig-sim-is-NN-still.svg     the three scenarios with no motion (IS-07, IS-08, IS-11) as stills of the same crop
+  fig-sim-tour-anim.svg       the tour (SMIL): CFG-002 on a closed route through the whole plan, the field set switching
+                              at each zone boundary, the crossing of IS-01 and the resume of IS-10 played on the way,
+                              the other situations of the route lit as they are reached; a readout panel and a timeline
 
 The sources of record are the tables: WP-C-06 §2 (scenarios) and §3 (K, Z); WP-S-04 §2 (the stage times of the
 scanner path), §3.1 (the planning decelerations) and §4.1 (the field sets, recomputed here from
@@ -1180,7 +1183,455 @@ def _w(s: str, size: float) -> float:
   return len(s) * size * 0.56
 
 
-OUTPUTS = {"fig-sim-plan.svg": fig_plan}
+# ------------------------------------------------------------------------------------------------------ the tour
+# One loop of the whole plan (ideas-2d-views.md §4): CFG-002 leaves the dock, crawls out of the dock lane, takes the
+# cross-aisle and aisle 2 to the station, picks a tote, carries it round to a drop shelf on rack 1 and docks again.
+# The speed limit of each step comes from the zone the robot is in (WP-C-02 §2), the field set from the speed and
+# the pose (WP-S-04 §4.1, the CFG-002 braked rows and FS-4 in the carry pose), so the set switches where the zone
+# boundaries are. One situation is played on the way, the crossing of IS-01 with the stop, the wait and the resume
+# after the warning of IS-10; the others along the route light up as the robot reaches them. Transit runs faster
+# than real time (the factor is printed), the played situation and the station work run at or near real time.
+TOUR_DT = 0.05
+A_PLAN = 0.5                     # m/s², the configured acceleration and the planned deceleration (WP-S-04 §5)
+TOUR_DOCKED = (22.9 - 0.045 - ROBOT_L / 2 - 0.02, 13.2)   # nose in, the front bumper 20 mm off the dock face
+TOUR_ROUTE = [
+  ("hold", 1.0, "docked, charging contacts made"),
+  ("reverse", 0.7, "undock: reverse 0.7 m on odometry"),
+  ("turn", 180.0), ("drive", (17.2, 13.2)), ("turn", 270.0), ("drive", (17.2, 8.1)), ("turn", 180.0),
+  ("drive", (12.6, 8.1)), ("turn", 90.0),
+  ("work", 4.0, "carry", "station: the arm picks a tote"),
+  ("turn", 180.0), ("drive", (6.2, 8.1)), ("turn", 90.0), ("drive", (6.2, 11.15)), ("turn", 0.0), ("drive", (15.4, 11.15)), ("turn", 90.0),
+  ("work", 2.5, "stowed", "drop shelf: the arm places the tote"),
+  ("turn", 0.0), ("drive", (17.2, 11.15)), ("turn", 90.0), ("drive", (17.2, 13.2)), ("turn", 0.0), ("drive", TOUR_DOCKED),
+]
+TOUR_CROSSER = dict(x=14.4, y0=9.33, y1=7.38, trigger=15.0)   # IS-01: picks at the rack 2 face, steps across aisle 2 to rack 3 when the robot's front passes x = 15.0
+TOUR_BYSTANDER = (10.5, 11.83)                                 # IS-15: stands at the rack 1 face beside the carry route
+TOUR_SPEEDUP = {"hold": 2.0, "reverse": 8.0, "turn": 4.0, "Z3": 16.0, "Z2": 10.0, "event": 1.0, "work": 1.5, "muted": 8.0}
+TOUR_CHIPS = [("IS-04", "undock: reverse under the bumper only"), ("IS-02", "the turn at the rack end: a blind corner"), ("IS-01", "a person crosses ahead: protective stop"),
+              ("IS-10", "the wait, the reset and the 2 s warning"), ("IS-13", "the arm works inside the station ring"), ("IS-15", "carrying past a bystander"),
+              ("IS-05", "the last metre to the dock: field muted")]
+
+
+def tour_zone(x: float, y: float) -> str:
+  dx, dy, dw, dh = SITE["dock_lane"]
+  if dx <= x <= dx + dw and dy <= y <= dy + dh:
+    return "Z3"
+  cx, cy, cw, ch = SITE["charge_bay"]
+  if cx <= x <= cx + cw and cy <= y <= cy + ch:
+    return "Z4"
+  return "Z2"
+
+
+def tour_sets(src: dict) -> dict:
+  """The field set for each (zone speed, pose): the CFG-002 braked rows of §4.1 by speed, FS-4 for the carry pose."""
+  rows = {fid: f for fid, f in src["fields"].items() if fid.startswith("FS-") and f["config"] == "CFG-002"}
+  by_speed = {f["v"]: fid for fid, f in rows.items() if f["case"] == "braked" and fid != "FS-4"}
+  return {"rows": rows, "by_speed": by_speed, "carry": "FS-4"}
+
+
+def build_tour(src: dict) -> dict:
+  """Integrate the route at TOUR_DT. Returns samples (t, x, y, yaw), the state changes, the crosser's samples and the warp."""
+  K, Z = src["K"], src["Z"]
+  zone_v = {z: float(re.search(r"(\d+\.\d+) m/s", src["zones"][z]["speed"]).group(1)) for z in ("Z2", "Z3")}
+  sets = tour_sets(src)
+  sp = scanner_path(src)
+  t_r = sp["t_r"] / 1000.0
+  a_brake = sets["rows"][sets["by_speed"][zone_v["Z2"]]]["a"]
+  dock_face = SITE["dock"][0]
+  x, y = TOUR_DOCKED
+  yaw, v, pose = 0.0, 0.0, "stowed"
+  t = 0.0
+  robot = [(0.0, x, y, yaw)]
+  st = {"set": [], "mode": [], "pose": [(0.0, "stowed")], "arm": [(0.0, None)], "speed": [], "zone": [], "factor": [], "colour": []}
+  warp = [(0.0, 0.0)]
+  a_t = 0.0
+  person = None
+  ev = {}
+
+  def push(key, val):
+    if not st[key] or st[key][-1][1] != val:
+      st[key].append((t, val))
+
+  def field_now(reverse=False):
+    if reverse:
+      return None, False
+    fid = sets["carry"] if pose == "carry" else sets["by_speed"][zone_v[tour_zone(x, y)]]
+    muted = tour_zone(x, y) == "Z3" and abs(((yaw + 180) % 360) - 180) < 1 and x + ROBOT_L / 2 >= dock_face - 1.0
+    return fid, muted
+
+  def step(vx, wz, factor, mode, reverse=False):
+    nonlocal x, y, yaw, t, a_t
+    yaw += wz * TOUR_DT
+    s = -1.0 if reverse else 1.0
+    x += s * vx * math.cos(math.radians(yaw)) * TOUR_DT
+    y += s * vx * math.sin(math.radians(yaw)) * TOUR_DT
+    t += TOUR_DT
+    a_t += TOUR_DT / factor
+    warp.append((t, a_t))
+    robot.append((t, x, y, yaw))
+    fid, muted = field_now(reverse)
+    push("set", (fid, muted))
+    push("mode", mode)
+    push("speed", round(vx, 3))
+    push("zone", tour_zone(x, y))
+    push("factor", factor)
+    if person is not None:
+      person["samples"].append((t, person["x"], person["y"]))
+
+  for act in TOUR_ROUTE:
+    kind = act[0]
+    if kind == "hold":
+      n = int(round(act[1] / TOUR_DT))
+      for _ in range(n):
+        step(0.0, 0.0, TOUR_SPEEDUP["hold"], act[2])
+    elif kind == "reverse":
+      vr = min(zone_v["Z3"], 0.05)
+      n = int(round(act[1] / vr / TOUR_DT))
+      for _ in range(n):
+        step(vr, 0.0, TOUR_SPEEDUP["reverse"], act[2], reverse=True)
+    elif kind == "turn":
+      target = act[1]
+      d = ((target - yaw + 180) % 360) - 180
+      w = math.degrees(TURN_RATE) * (1 if d > 0 else -1)
+      n = int(round(abs(d) / abs(w) / TOUR_DT))
+      for i in range(n):
+        step(0.0, d / n / TOUR_DT, TOUR_SPEEDUP["turn"], "turn in place, 0.5 rad/s" + (", the load sweeps (IS-15)" if pose == "carry" else ""))
+      yaw = target % 360 if target % 360 <= 180 else target % 360 - 360
+      robot[-1] = (t, x, y, yaw)
+    elif kind == "work":
+      n = int(round(act[1] / TOUR_DT))
+      for i in range(n):
+        arm = 45.0 * math.sin(2 * math.pi * (i + 1) / n)
+        push("arm", round(arm, 2))
+        step(0.0, 0.0, TOUR_SPEEDUP["work"], act[3])
+      push("arm", None)
+      pose = act[2]
+      push("pose", pose)
+    elif kind == "drive":
+      tx, ty = act[1]
+      c, s_ = math.cos(math.radians(yaw)), math.sin(math.radians(yaw))
+      stopped_for = None
+      while True:
+        rem = (tx - x) * c + (ty - y) * s_
+        if rem <= 1e-4:
+          break
+        # the event: IS-01 is spawned on aisle 2, westbound, when the front passes the trigger
+        if "spawn" not in ev and abs(yaw - 180) < 1 and abs(y - TOUR_CROSSER["y0"] + 1.23) < 0.3 and x - ROBOT_L / 2 <= TOUR_CROSSER["trigger"]:
+          ev["spawn"] = t
+          person = {"x": TOUR_CROSSER["x"], "y": TOUR_CROSSER["y0"], "samples": [(t, TOUR_CROSSER["x"], TOUR_CROSSER["y0"])]}
+        if person is not None and person["y"] > TOUR_CROSSER["y1"]:
+          person["y"] = max(person["y"] - K * TOUR_DT, TOUR_CROSSER["y1"])
+        fid, muted = field_now()
+        L = sets["rows"][fid]["L"]
+        # the demand, the stop, the clear, the reset and the warning
+        if person is not None and "demand" not in ev and not muted and in_field((x, y, yaw), person["x"], person["y"], L, ROBOT_W / 2 + Z):
+          ev["demand"] = t
+        if "demand" in ev and "go" not in ev:
+          if t < ev["demand"] + t_r:
+            vnew, mode = v, "field violated"
+          elif v > 0:
+            vnew, mode = max(v - a_brake * TOUR_DT, 0.0), "power removed: braking"
+            if vnew == 0.0:
+              ev["standstill"] = t + TOUR_DT
+          else:
+            vnew = 0.0
+            clear = not in_field((x, y, yaw), person["x"], person["y"], L, ROBOT_W / 2 + Z)
+            if clear and "clear" not in ev:
+              ev["clear"] = t
+            if "clear" in ev and t >= ev["clear"] + 0.5 and "reset" not in ev:
+              ev["reset"] = t
+            mode = "protective stop, latched" if "reset" not in ev else "SF-05 reset, 2 s warning (HR-07)"
+            if "reset" in ev and t >= ev["reset"] + 2.0:
+              ev["go"] = t
+          push("colour", "red" if t < ev["demand"] + t_r else "grey")
+          step(vnew, 0.0, TOUR_SPEEDUP["event"], mode)
+          v = vnew
+          continue
+        # planned motion: the zone limit ahead, the end of the segment
+        vmax = min(zone_v[tour_zone(x, y)], 0.30 if pose == "carry" else 9.9)
+        d = 0.0
+        while d <= min(rem, 0.4):
+          px_, py_ = x + c * d, y + s_ * d
+          vmax = min(vmax, math.sqrt(zone_v[tour_zone(px_, py_)] ** 2 + 2 * A_PLAN * d))
+          d += 0.02
+        vmax = min(vmax, math.sqrt(2 * A_PLAN * rem))
+        vnew = min(vmax, v + A_PLAN * TOUR_DT) if v < vmax else max(vmax, v - A_PLAN * TOUR_DT)
+        vnew = min(vnew, rem / TOUR_DT)
+        vnew = min(vnew, zone_v[tour_zone(x + c * vnew * TOUR_DT, y + s_ * vnew * TOUR_DT)])   # never enter a slower zone above its limit
+        in_event = "spawn" in ev and ("go" not in ev or t < ev["go"] + 1.5)
+        zone = tour_zone(x, y)
+        factor = TOUR_SPEEDUP["event"] if in_event else (TOUR_SPEEDUP["muted"] if muted else TOUR_SPEEDUP[zone])
+        mode = ("driving, the carry pose" if pose == "carry" else "driving") if not muted else "docking: field muted in the last metre (GAP-15)"
+        if "go" in ev and t < ev["go"] + 1.5:
+          mode = "motion resumes"
+        push("colour", "dim" if muted else "teal")
+        step(vnew, 0.0, factor, mode)
+        v = vnew
+      x, y = tx, ty
+      robot[-1] = (t, x, y, yaw)
+      v = 0.0
+  push("colour", "teal")
+  T = t
+  # the chips: when each situation along the route is reached
+  def first(pred):
+    return next((tt for (tt, xx, yy, ww) in robot if pred(tt, xx, yy, ww)), None)
+  reach = {
+    "IS-04": 0.9,
+    "IS-02": first(lambda tt, xx, yy, ww: abs(xx - 17.2) < 0.01 and abs(yy - 8.1) < 0.01),
+    "IS-01": ev["demand"],
+    "IS-10": ev["reset"],
+    "IS-13": first(lambda tt, xx, yy, ww: abs(xx - 12.6) < 0.01 and abs(yy - 8.1) < 0.01 and abs(ww - 90) < 0.5),
+    "IS-15": first(lambda tt, xx, yy, ww: abs(yy - 11.15) < 0.01 and abs(ww) < 1 and xx >= TOUR_BYSTANDER[0] - 1.2),
+    "IS-05": first(lambda tt, xx, yy, ww: yy > 13.0 and xx + ROBOT_L / 2 >= dock_face - 1.0 and abs(ww) < 1 and tt > 30),
+  }
+  return {"robot": robot, "states": st, "warp": warp, "T": T, "A": a_t, "events": ev, "person": person["samples"] if person else [], "reach": reach,
+          "sets": sets, "zone_v": zone_v, "t_r": t_r, "a_brake": a_brake}
+
+
+def _simplify(pts, tol):
+  """Greedy simplification of (a, v1, v2, ...) samples: keep a point when linear interpolation in a from the last kept
+  point would miss any skipped sample by more than tol (one tolerance per value)."""
+  if len(pts) <= 2:
+    return list(pts)
+  out = [pts[0]]
+  i = 0
+  j = 2
+  n = len(pts)
+  while j < n:
+    a0, a1 = pts[i], pts[j]
+    ok = True
+    for k in range(i + 1, j):
+      f = (pts[k][0] - a0[0]) / (a1[0] - a0[0]) if a1[0] > a0[0] else 0.0
+      for d in range(1, len(a0)):
+        if abs(a0[d] + (a1[d] - a0[d]) * f - pts[k][d]) > tol[d - 1]:
+          ok = False
+          break
+      if not ok:
+        break
+    if not ok:
+      out.append(pts[j - 1])
+      i = j - 1
+    j += 1
+  out.append(pts[-1])
+  return out
+
+
+def fig_tour(src: dict) -> str:
+  tr = build_tour(src)
+  warp = tr["warp"]
+  wt = [w[0] for w in warp]
+  DUR = tr["A"]
+
+  def anim(tsc):
+    """Animation seconds at scene time tsc (the warp is sampled at TOUR_DT)."""
+    if tsc <= 0:
+      return 0.0
+    if tsc >= tr["T"]:
+      return DUR
+    i = min(int(tsc / TOUR_DT), len(warp) - 2)
+    (t0, a0), (t1, a1) = warp[i], warp[i + 1]
+    return a0 + (a1 - a0) * (tsc - t0) / (t1 - t0)
+
+  kt = lambda tsc: anim(tsc) / DUR  # noqa: E731
+  W, H = 1440, 1120
+  M = 46.0
+  uid = "sim-tour"
+  px, py = 32, 96
+  sw_, sh_ = SITE["size"]
+  pl = Plan(px, py, M, uid, sprites=src["sprites"])
+  sets = tr["sets"]
+  rows = sets["rows"]
+  body = [text(32, 36, "The tour: CFG-002 drives a closed route through the warehouse plan; the field set switches at each zone boundary", 19, C["ink"], 700),
+          text(32, 60, f"Dock lane Z3 at the crawl limit with {sets['by_speed'][tr['zone_v']['Z3']]}, aisles Z2 at the navigation limit with {sets['by_speed'][tr['zone_v']['Z2']]}, the carry leg with FS-4; the crossing of IS-01 and the resume of IS-10 played on the way.", 12, C["muted"]),
+          text(32, 78, f"Scene time {tr['T']:.0f} s shown in {DUR:.0f} s: transit runs faster than real time (the factor is printed), the situation at 1×. A viewer that shows the SVG as a still shows the robot docked.", 12, C["muted"]),
+          rect(px, py, sw_ * M, sh_ * M, C["floor"], C["wall"], 0, 4)]
+  body += pl.floor(src)
+  # the route, dashed under everything that moves
+  pts = [TOUR_DOCKED] + [a[1] for a in TOUR_ROUTE if a[0] == "drive"]
+  body.append('<polyline points="' + " ".join("%.1f,%.1f" % pl.P(*p) for p in pts) + f'" fill="none" stroke="{C["blue"]}" stroke-width="2" stroke-dasharray="2,5" opacity="0.7"/>')
+  bx, by = TOUR_BYSTANDER
+  body += pl.worker(bx, by, None, "IS-15 bystander")
+  # the robot: translate + rotate from the simplified samples, the field rect, the sprites by pose, the arm
+  rs = [(anim(t), x, y, yaw) for (t, x, y, yaw) in tr["robot"]]
+  rs = _simplify(rs, (0.25 / M, 0.25 / M, 0.3))
+  x0, y0 = TOUR_DOCKED
+  X0, Y0 = pl.P(x0, y0)
+  def keys(seq):
+    ks = [f"{a / DUR:.5f}" for a in seq]
+    if ks[-1] != "1.00000":
+      ks.append("1")
+      return ks, True
+    ks[-1] = "1"
+    return ks, False
+  ks, extra = keys([p[0] for p in rs])
+  tv = ["%.2f,%.2f" % tuple(q - r for q, r in zip(pl.P(p[1], p[2]), (X0, Y0))) for p in rs] + (["%.2f,%.2f" % tuple(q - r for q, r in zip(pl.P(rs[-1][1], rs[-1][2]), (X0, Y0)))] if extra else [])
+  rv = [f"{-p[3]:.2f}" for p in rs] + ([f"{-rs[-1][3]:.2f}"] if extra else [])
+  body.append(f'<g><animateTransform attributeName="transform" type="translate" values="{";".join(tv)}" keyTimes="{";".join(ks)}" dur="{DUR:.2f}s" repeatCount="indefinite" calcMode="linear"/>'
+              f'<g transform="translate({X0:.1f},{Y0:.1f})"><g><animateTransform attributeName="transform" type="rotate" values="{";".join(rv)}" keyTimes="{";".join(ks)}" dur="{DUR:.2f}s" repeatCount="indefinite" calcMode="linear"/>')
+  # the field: width by set, colour by state, hidden while reversing
+  hw = (ROBOT_W / 2 + src["Z"]) * M
+  set_states = tr["states"]["set"]
+  wvals = [(t, f"{(rows[fid]['L'] if fid else 0.0) * M:.1f}") for t, (fid, muted) in set_states]
+  colmap = {"teal": C["teal"], "red": C["red"], "grey": C["line"], "dim": C["dim"]}
+  cvals = [(t, colmap[c]) for t, c in tr["states"]["colour"]]
+  fvals = [(t, C["teal"] if c == "teal" else (C["red"] if c == "red" else ("#C9D2D6" if c in ("grey", "dim") else C["teal"]))) for t, c in tr["states"]["colour"]]
+  body.append(f'<rect x="{ROBOT_L / 2 * M:.1f}" y="{-hw:.1f}" width="{wvals[0][1]}" height="{2 * hw:.1f}" fill="{C["teal"]}" fill-opacity="0.22" stroke="{C["teal"]}" stroke-width="1.6" stroke-dasharray="5,3">'
+              + _disc("width", wvals, kt, DUR) + _disc("stroke", cvals, kt, DUR) + _disc("fill", fvals, kt, DUR) + '</rect>')
+  for kind in ("cfg002", "cfg002-carry"):
+    pose = "stowed" if kind == "cfg002" else "carry"
+    vis = [(t, "1" if p == pose else "0") for t, p in tr["states"]["pose"]]
+    body.append(f'<g opacity="{vis[0][1]}">{_disc("opacity", vis, kt, DUR)}' + "".join(pl.sprite(0, 0, 1, 1.0, kind, at_origin=True)) + '</g>')
+  # the arm while working: a rotating line from the mount, hidden otherwise
+  arm = tr["states"]["arm"]
+  arm_on = [(t, "0" if a is None else "1") for t, a in arm]
+  arm_on = [p for i, p in enumerate(arm_on) if i == 0 or p[1] != arm_on[i - 1][1]]
+  arm_pts = _simplify([(anim(t), a) for t, a in arm if a is not None], (0.5,))
+  if arm_pts:
+    aks = [f"{p[0] / DUR:.5f}" for p in arm_pts]
+    avs = [f"{-p[1]:.2f}" for p in arm_pts]
+    aks = ["0"] + aks + ["1"]; avs = [avs[0]] + avs + [avs[-1]]
+    body.append(f'<g transform="translate({0.24 * M:.1f},0)" opacity="0">{_disc("opacity", arm_on, kt, DUR)}<g><animateTransform attributeName="transform" type="rotate" values="{";".join(avs)}" keyTimes="{";".join(aks)}" dur="{DUR:.2f}s" repeatCount="indefinite" calcMode="linear"/>'
+                f'<line x1="0" y1="0" x2="{REACH * M:.1f}" y2="0" stroke="{C["ink"]}" stroke-width="4" stroke-linecap="round"/><circle cx="{REACH * M:.1f}" cy="0" r="3.5" fill="{C["teal"]}"/></g></g>')
+  # the warning beacon of IS-10
+  ev = tr["events"]
+  body.append(f'<circle cx="0" cy="0" r="6" fill="{C["amber"]}" opacity="0">' + _blink(ev["reset"], ev["go"], kt, DUR) + '</circle>')
+  body.append("</g></g></g>")
+  # the crosser of IS-01, shown from 2 s before the step to 3 s after the resume
+  ps = _simplify([(anim(t), x, y) for t, x, y in tr["person"]], (0.25 / M, 0.25 / M))
+  if ps:
+    PX0, PY0 = pl.P(ps[0][1], ps[0][2])
+    pks = ["0"] + [f"{p[0] / DUR:.5f}" for p in ps] + ["1"]
+    pvs = ["0,0"] + ["%.2f,%.2f" % (pl.P(p[1], p[2])[0] - PX0, pl.P(p[1], p[2])[1] - PY0) for p in ps]
+    pvs.append(pvs[-1])
+    show = [(0.0, "0"), (max(ev["spawn"] - 2.0, 0.0), "1"), (ev["go"] + 3.0, "0")]
+    body.append(f'<g opacity="0">{_disc("opacity", show, kt, DUR)}<g><animateTransform attributeName="transform" type="translate" values="{";".join(pvs)}" keyTimes="{";".join(pks)}" dur="{DUR:.2f}s" repeatCount="indefinite" calcMode="linear"/>'
+                + "".join(pl.worker(ps[0][1], ps[0][2], None, "IS-01")) + '</g></g>')
+  # ---- the readout panel
+  qx = px + sw_ * M + 16
+  qw = W - qx - 16
+  body.append(rect(qx, py, qw, sh_ * M, C["panel"], C["stroke"], 6))
+  body.append(text(qx + 12, py + 22, "NOW", 11, C["ink"], 800, extra='letter-spacing="1"'))
+  rows_y = py + 44
+  readouts = [
+    ("zone", [(t, f"{z} · {src['zones'][z]['name'].split(' (')[0].lower()}") for t, z in tr["states"]["zone"]], C["ink"]),
+    ("speed", [(t, f"{v:.2f} m/s") for t, v in tr["states"]["speed"]], C["ink"]),
+    ("field set", [(t, ("rear: no field, the bumper only" if fid is None else (f"{fid} {rows[fid]['L']:.2f} m" + (", muted (GAP-15)" if m else f", {rows[fid]['case']} {rows[fid]['a']:g} m/s²")))) for t, (fid, m) in set_states], C["teal"]),
+    ("pose", [(t, "CFG-002, arms stowed" if p == "stowed" else "CFG-002, carry pose, tote") for t, p in tr["states"]["pose"]], C["ink"]),
+    ("state", tr["states"]["mode"], C["amber"]),
+    ("shown at", [(t, f"{f:g}× real time" if f != 1 else "1× real time") for t, f in tr["states"]["factor"]], C["muted"]),
+  ]
+  for i, (label, states, col) in enumerate(readouts):
+    yy = rows_y + i * 44
+    body.append(text(qx + 12, yy, label.upper(), 9, C["dim"], 700, extra='letter-spacing="0.8"'))
+    body += _readout(qx + 12, yy + 18, states, kt, DUR, col, qw - 24)
+  cy0 = rows_y + len(readouts) * 44 + 8
+  body.append(text(qx + 12, cy0, "SITUATIONS ON THE ROUTE", 9, C["dim"], 700, extra='letter-spacing="0.8"'))
+  for i, (sid, what) in enumerate(TOUR_CHIPS):
+    r = rating_for(src, sid)
+    t_on = tr["reach"][sid]
+    yy = cy0 + 14 + i * 40
+    lit = f'<animate attributeName="opacity" values="0.35;0.35;1;1;0.6;0.6" keyTimes="0;{kt(t_on):.5f};{kt(t_on) + 0.0002:.5f};{min(kt(t_on) + 6.0 / DUR, 0.9998):.5f};{min(kt(t_on) + 6.0 / DUR, 0.9998) + 0.0001:.5f};1" dur="{DUR:.2f}s" repeatCount="indefinite"/>'
+    body.append(f'<g opacity="0.35">{lit}' + rect(qx + 12, yy, qw - 24, 32, C["bg"], C["teal"], 6, 1.2)
+                + text(qx + 20, yy + 14, f"{r['hazard']} {sid}  PLr {r['plr']}", 10, C["teal"], 700, family=MONO) + text(qx + 20, yy + 27, _fit(what, qw - 40, 9.5), 9.5, C["muted"]) + '</g>')
+  # ---- the timeline: zones, the field length, the factor, the chips, a cursor
+  ty = py + sh_ * M + 34
+  x0t, x1t = 110, W - 32
+  X = lambda tsc: x0t + (x1t - x0t) * kt(tsc)  # noqa: E731
+  body.append(text(32, ty - 10, "The tour on one axis (animation time; the ticks are scene seconds)", 11.5, C["ink"], 700))
+  zcol = {"Z2": C["teal_bg"], "Z3": "#DCE8F5", "Z4": "#FFF1D6"}
+  zs = tr["states"]["zone"] + [(tr["T"], None)]
+  body.append(text(32, ty + 13, "zone", 9.5, C["muted"], 600))
+  for (t0, z), (t1, _) in zip(zs, zs[1:]):
+    body.append(rect(X(t0), ty, max(X(t1) - X(t0), 0.5), 18, zcol.get(z, C["grey_bg"]), C["stroke"], 0, 0.5))
+    if X(t1) - X(t0) > 24:
+      body.append(text((X(t0) + X(t1)) / 2, ty + 13, z, 9.5, C["ink"], 700, "middle"))
+  # the field length, a step plot 0..1 m
+  gy0, gy1 = ty + 30, ty + 110
+  body += [text(32, gy0 + 10, "field set", 9.5, C["muted"], 600), text(32, gy0 + 22, "length, m", 9.5, C["muted"], 600),
+           line(x0t, gy1, x1t, gy1, C["line"], 1)]
+  for L_ in (0.5, 1.0):
+    yy = gy1 - L_ / 1.0 * (gy1 - gy0)
+    body += [line(x0t, yy, x1t, yy, C["stroke"], 0.8, "3,3"), text(x0t - 6, yy + 3, f"{L_:g}", 9, C["muted"], 600, "end", MONO)]
+  ss = set_states + [(tr["T"], set_states[-1][1])]
+  path = []
+  for (t0, (fid, m)), (t1, _) in zip(ss, ss[1:]):
+    L_ = rows[fid]["L"] if fid else 0.0
+    yy = gy1 - L_ / 1.0 * (gy1 - gy0)
+    path.append(f"{X(t0):.1f},{yy:.1f} {X(t1):.1f},{yy:.1f}")
+  body.append(f'<polyline points="{" ".join(path)}" fill="none" stroke="{C["teal"]}" stroke-width="2"/>')
+  labelled = set()
+  for (t0, (fid, m)), (t1, _) in zip(ss, ss[1:]):
+    if fid and (fid, m) not in labelled and X(t1) - X(t0) > 40:
+      L_ = rows[fid]["L"]
+      body.append(text((X(t0) + X(t1)) / 2, gy1 - L_ * (gy1 - gy0) - 5, f"{fid}{' muted' if m else ''}", 9, C["teal"], 700, "middle"))
+      labelled.add((fid, m))
+  # the speed-up factor
+  fy = gy1 + 12
+  body.append(text(32, fy + 12, "shown at", 9.5, C["muted"], 600))
+  fs = tr["states"]["factor"] + [(tr["T"], None)]
+  for (t0, f), (t1, _) in zip(fs, fs[1:]):
+    body.append(rect(X(t0), fy, max(X(t1) - X(t0), 0.5), 16, C["red_bg"] if f == 1 else C["grey_bg"], C["stroke"], 0, 0.5))
+    if X(t1) - X(t0) > 22:
+      body.append(text((X(t0) + X(t1)) / 2, fy + 12, f"{f:g}×", 9, C["red"] if f == 1 else C["muted"], 700, "middle"))
+  # chips on the axis and scene-time ticks
+  cyy = fy + 32
+  for i, (sid, _) in enumerate(TOUR_CHIPS):
+    t_on = tr["reach"][sid]
+    body += [line(X(t_on), gy0 - 4, X(t_on), cyy + 2, C["amber"], 1, "2,2"), text(X(t_on), cyy + 12 + 11 * (i % 2), sid, 9, C["amber"], 700, "middle", MONO)]
+  for tick in range(0, int(tr["T"]) + 1, 30):
+    body += [line(X(tick), gy1, X(tick), gy1 + 4, C["ink"], 1), text(X(tick), cyy + 40, f"{tick} s", 9, C["muted"], 600, "middle", MONO)]
+  cursor = f'<animateTransform attributeName="transform" type="translate" values="0,0;{x1t - x0t:.1f},0" keyTimes="0;1" dur="{DUR:.2f}s" repeatCount="indefinite" calcMode="linear"/>'
+  body.append(f'<line x1="{x0t}" y1="{ty - 4}" x2="{x0t}" y2="{fy + 18}" stroke="{C["red"]}" stroke-width="2.5">{cursor}</line>')
+  body.append(text(W - 32, H - 52, "Generated by assurance/sim/figures/fig_sim_is.py", 9.5, C["dim"], anchor="end"))
+  body += band(W, H, f"Kinematic motion from WP-S-04 v0.2 planning values (CFG-002 braked at {tr['a_brake']:g} m/s², unmeasured; t_r {tr['t_r']:g} s; K = {src['K']:g} m/s; planned acceleration {A_PLAN:g} m/s²). A tour shows where the field sets apply; it does not show that a measure works.")
+  return svg(W, H, uid, "The tour: CFG-002 on a closed route through the warehouse plan, looping",
+             f"Looping view of the whole warehouse plan. The 2.0 mobile manipulator reverses out of its dock, crawls out of the dock lane with field set {sets['by_speed'][tr['zone_v']['Z3']]}, "
+             f"takes the cross-aisle and aisle 2 at the navigation limit with {sets['by_speed'][tr['zone_v']['Z2']]}, stops for a person who crosses ahead, waits, warns for 2 s and resumes, "
+             "picks a tote at the station with the arm, carries it round aisle 1 with field set FS-4 past a bystander, places it on a drop shelf and docks again with the field muted in the last metre. "
+             "A panel beside the plan names the zone, speed, field set, pose, state and the speed-up factor at each moment and lights the situation chips as they are reached; "
+             "a timeline below shows the zones, the field length as a step plot, the speed-up factor and a cursor.", body, sprites=list(pl.used.items()))
+
+
+def _disc(attr, states, kt, dur):
+  """A discrete animation of an attribute from (scene time, value) changes; the first value holds from 0."""
+  vals, ks = [], []
+  for i, (t, v) in enumerate(states):
+    k = 0.0 if i == 0 else kt(t)
+    if ks and k <= float(ks[-1]):
+      vals[-1] = str(v)
+      continue
+    vals.append(str(v)); ks.append(f"{k:.5f}")
+  ks[0] = "0"
+  vals.append(vals[-1]); ks.append("1")
+  return f'<animate attributeName="{attr}" values="{";".join(vals)}" keyTimes="{";".join(ks)}" dur="{dur:.2f}s" calcMode="discrete" repeatCount="indefinite"/>'
+
+
+def _readout(x, y, states, kt, dur, col, width):
+  """One <text> per distinct value, each shown while it is current."""
+  out = []
+  values = []
+  for _, v in states:
+    if v not in values:
+      values.append(v)
+  for v in values:
+    vis = []
+    for i, (t, w) in enumerate(states):
+      on = "1" if w == v else "0"
+      if not vis or vis[-1][1] != on:
+        vis.append((t, on))
+    out.append(f'<text x="{x:.1f}" y="{y:.1f}" font-family="{FONT}" font-size="12" font-weight="700" fill="{col}" opacity="{vis[0][1]}">{escape(_fit(str(v), width, 12))}{_disc("opacity", vis, kt, dur)}</text>')
+  return out
+
+
+def _blink(t_on, t_off, kt, dur):
+  ts = [t_on + 0.25 * i for i in range(int((t_off - t_on) / 0.25) + 1)]
+  vals = ["0"] + ["1" if i % 2 == 0 else "0" for i in range(len(ts))] + ["0"]
+  ks = ["0"] + [f"{kt(t):.5f}" for t in ts] + ["1"]
+  return f'<animate attributeName="opacity" values="{";".join(vals)}" keyTimes="{";".join(ks)}" dur="{dur:.2f}s" calcMode="discrete" repeatCount="indefinite"/>'
+
+
+
+OUTPUTS = {"fig-sim-plan.svg": fig_plan, "fig-sim-tour-anim.svg": fig_tour}
 for _sid in SCENES:
   OUTPUTS[f"fig-sim-{_sid.lower()}-{'still' if SCENES[_sid].get('still') else 'anim'}.svg"] = (lambda s, sid=_sid: fig_loop(s, sid))
 
