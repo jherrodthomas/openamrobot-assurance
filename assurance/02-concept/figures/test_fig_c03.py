@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 """Self-tests for fig_c03.py: the source tables are read, every rated row agrees with the risk graph, every
-measure reduces a listed hazard, the hazards rated d have a safety function, the SVGs are well-formed."""
+measure reduces a listed hazard, the hazards rated d have a safety function, the SVGs are well-formed; the risk
+sheets: every measure has a state, every high-risk row has a sheet, the spreadsheet is a valid workbook and is
+byte-for-byte reproducible."""
 from __future__ import annotations
 
+import io
 import unittest
 import xml.etree.ElementTree as ET
+import zipfile
 
 import fig_c03
+import fig_c03_sheets as sheets
 
 
 class TestFigC03(unittest.TestCase):
@@ -58,6 +63,56 @@ class TestFigC03(unittest.TestCase):
       self.assertIn("title", tags, name)
       self.assertIn("desc", tags, name)
       self.assertEqual(fn(self.src), fn(self.src), name)
+
+
+class TestSheets(unittest.TestCase):
+  def setUp(self):
+    self.text = fig_c03.SOURCE.read_text(encoding="utf-8")
+    self.d = sheets.load(self.text, fig_c03._table, fig_c03._clean)
+    self.out = fig_c03.all_outputs(fig_c03.load_source())
+
+  def test_sources_agree(self):
+    self.assertEqual(sheets.check(self.d), [])
+
+  def test_every_measure_has_a_state(self):
+    self.assertEqual(len(self.d["measures"]), 28)
+    for m in self.d["measures"].values():
+      self.assertIn(m["state"], sheets.STATES, m["id"])
+
+  def test_high_risk_rows(self):
+    high = sheets.high_rows(self.d)
+    self.assertEqual(len(high), 12)
+    self.assertTrue(all(r["pl"] in ("d", "e") or r["graph"] == "d" for r in high))
+    self.assertTrue(any(r["pl"] == "e" for r in high), "the excluded public-floor row has a sheet")
+    cards = [p for p in self.out if p.name.endswith("-card.svg")]
+    self.assertEqual(len(cards), len(high))
+    annex = self.out[sheets.ANNEX]
+    for p in cards:
+      self.assertIn(f"figures/{p.name}", annex)
+
+  def test_every_rated_row_is_on_the_worksheet(self):
+    ws = self.out[fig_c03.HERE / "fig-c03-5-2-worksheet.svg"]
+    for r in self.d["rows"]:
+      self.assertIn(r["hazard"], ws)
+
+  def test_new_svgs_well_formed(self):
+    for p, out in self.out.items():
+      if p.suffix == ".svg":
+        root = ET.fromstring(out)
+        self.assertIn("title", [c.tag.split("}")[-1] for c in root], p.name)
+
+  def test_workbook(self):
+    data = self.out[sheets.XLSX]
+    self.assertEqual(data, fig_c03.all_outputs(fig_c03.load_source())[sheets.XLSX], "reproducible")
+    z = zipfile.ZipFile(io.BytesIO(data))
+    self.assertIn("xl/workbook.xml", z.namelist())
+    for name in z.namelist():
+      if name.endswith(".xml") or name.endswith(".rels"):
+        ET.fromstring(z.read(name))
+    reg = z.read("xl/worksheets/sheet1.xml").decode()
+    self.assertEqual(reg.count("<row "), 2 + len(self.d["rows"]))
+    self.assertIn('state="frozen"', reg)
+    self.assertIn("<autoFilter", reg)
 
 
 if __name__ == "__main__":
