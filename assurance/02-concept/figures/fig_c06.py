@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """Draw the WP-C-06 human-robot-interaction figures.
 
-  fig-c06-2-1-interaction-scenes.svg   Figure 2-1  scene cards IS-01…IS-15 (top-down pictograms, 1 m grid)
   fig-c06-3-1-detection-distance.svg   Figure 3-1  minimum detection distance L against the coasting time to standstill
   fig-c06-5-1-misuse-matrix.svg        Figure 5-1  misuse matrix, likelihood × consequence, MU IDs in the cells
 
 The source of record is ../WP-C-06-human-robot-interaction-and-misuse.md: scenario IDs, zone, closest distance and
 measure from the §2 table; K, v, t_r, Z from the §3 parameter table; misuse IDs, likelihood and consequence from
-the §5 table. The pictogram of each scene is listed here and checked against the IDs. `--check` fails when a
-source row is gone, a parameter is missing, or an SVG is stale.
+the §5 table. The scene cards of the former Figure 2-1 are retired: the looping views of assurance/sim/figures/
+fig_sim_is.py (WP-C-06 Figures 2-1 to 2-15) replaced them. `--check` fails when a source row is gone, a parameter
+is missing, or an SVG is stale.
 
     python3 fig_c06.py            # regenerate
     python3 fig_c06.py --check    # fail if the source changed or an SVG is stale
@@ -58,26 +58,6 @@ def load_source() -> dict:
   return {"scenes": scenes, "params": params, "misuse": misuse}
 
 
-# Pictogram per scene: robot at (x, y) metres on a 5 x 4 m card, heading (dx, dy); persons as (x, y, dx, dy, low);
-# props: racks as (x, y, w, h); dock as (x, y); screen flag; field drawn unless field=False.
-SCENES = {
-  "IS-01": dict(robot=(1.0, 2.0, 1, 0), persons=[(3.4, 0.6, 0, 1, False)], caption="crosses ahead at walking pace"),
-  "IS-02": dict(robot=(1.0, 2.0, 1, 0), persons=[(3.0, 1.45, 0, 1, False)], racks=[(2.6, 0.2, 1.2, 0.9)], caption="steps out from behind a rack, 0.5 m ahead"),
-  "IS-03": dict(robot=(1.5, 2.2, 1, 0), persons=[(1.6, 1.4, 1, 0, False)], racks=[(0.2, 0.1, 4.6, 0.6)], caption="walks alongside; a turn pins against the rack"),
-  "IS-04": dict(robot=(3.0, 2.0, -1, 0), persons=[(4.6, 2.0, -1, 0, False)], dock=(1.0, 2.0), field=False, caption="behind the robot while it reverses from the dock"),
-  "IS-05": dict(robot=(3.0, 2.0, -1, 0), persons=[(1.6, 1.1, 0, 1, False)], dock=(1.0, 2.0), caption="steps into the dock lane during the blind approach"),
-  "IS-06": dict(robot=(1.2, 2.2, 1, 0), persons=[(3.6, 2.2, 0, 0, False), (4.3, 0.7, 0, 0, False)], screen=True, caption="operator watches the screen; bystander in the path"),
-  "IS-07": dict(robot=(2.0, 2.0, 1, 0), persons=[(0.9, 2.0, 0, 0, False)], charger=True, field=False, caption="technician connects the charger; a command arrives"),
-  "IS-08": dict(robot=(2.0, 2.0, 0, 0), persons=[(2.4, 2.0, 0, 0, False)], field=False, caption="sits on or pushes the robot"),
-  "IS-09": dict(robot=(1.0, 2.0, 1, 0), persons=[(3.2, 2.1, -1, 0, True)], caption="child or crouching person below the scan plane"),
-  "IS-10": dict(robot=(1.0, 2.0, 1, 0), persons=[(2.8, 2.0, 0, 0, False)], caption="stands in the path; robot waits, then resumes silently"),
-  "IS-11": dict(robot=(1.2, 2.0, 1, 0), persons=[(4.0, 0.8, 0, 0, False)], screen=True, field=False, caption="presses the on-screen E-STOP; nothing stops"),
-  "IS-12": dict(robot=(1.0, 2.0, 1, 0), persons=[(3.0, 2.0, -1, 0, False)], caption="tries to stop the robot with a hand"),
-  "IS-13": dict(robot=(1.6, 2.0, 0, 0), persons=[(3.3, 1.5, -1, 0, False)], racks=[(3.8, 0.4, 0.9, 3.2)], arm=(1, 0), lift=True, field=False, caption="reaches into the arm's workspace at a station (CFG-002)"),
-  "IS-14": dict(robot=(1.6, 2.0, 0, 0), persons=[(2.5, 2.6, 0, -1, True)], arm=(1, 0), lift=True, field=False, caption="hand or foot under the lowering lift carriage (CFG-002)"),
-  "IS-15": dict(robot=(1.2, 2.0, 1, 0), persons=[(2.6, 1.0, 0, 0, False)], arm=(1, -1), lift=True, caption="carrying at 0.3 m/s; the arm sweeps at head height (CFG-002)"),
-}
-
 MISUSE_CELLS = {("L", "S1"), ("M", "S1"), ("H", "S1"), ("L", "S2"), ("M", "S2"), ("H", "S2")}
 
 
@@ -126,102 +106,6 @@ def svg(w, h, uid, title, desc, body):
 # ---------------------------------------------------------------- Figure 2-1 scene cards
 
 M = 36.0  # px per metre on a card
-
-
-def _person(cx, cy, low=False, color=C["ink"]):
-  r = 0.17 * M if not low else 0.12 * M
-  out = [f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r:.1f}" fill="{C["white"]}" stroke="{color}" stroke-width="1.6"/>']
-  if not low:
-    out.append(f'<ellipse cx="{cx:.1f}" cy="{cy:.1f}" rx="{0.26 * M:.1f}" ry="{0.1 * M:.1f}" fill="none" stroke="{color}" stroke-width="1.2"/>')
-  else:
-    out.append(f'<ellipse cx="{cx:.1f}" cy="{cy:.1f}" rx="{0.3 * M:.1f}" ry="{0.16 * M:.1f}" fill="none" stroke="{color}" stroke-width="1.2" stroke-dasharray="2,2"/>')
-  return out
-
-
-def _card(x0, y0, cw, chh, sid, sc, spec, uid):
-  out = [rect(x0, y0, cw, chh, C["white"], C["stroke"], 8)]
-  px, py, pw, ph = x0 + 10, y0 + 30, 5 * M, 4 * M
-  out.append(rect(px, py, pw, ph, f"url(#{uid}-grid)", C["stroke"], 3))
-  out.append(text(x0 + 10, y0 + 20, sid, 11, C["ink"], 700, family=MONO))
-  closest = sc['closest'].replace('**', '').split('(')[0].split(' if')[0].split(',')[0].strip()
-  out.append(text(x0 + 60, y0 + 20, f"{sc['zone']} · closest {closest}", 10, C["muted"]))
-
-  def P(xm, ym):
-    return px + xm * M, py + ym * M
-
-  for (rx, ry, rw, rh) in spec.get("racks", []):
-    x, y = P(rx, ry)
-    out.append(rect(x, y, rw * M, rh * M, C["grey_bg"], C["line"], 2))
-  if "dock" in spec:
-    x, y = P(*spec["dock"])
-    out.append(rect(x - 0.15 * M, y - 0.5 * M, 0.3 * M, 1.0 * M, C["teal_bg"], C["teal"], 2))
-    out.append(text(x, y + 0.9 * M, "dock", 9, C["teal"], anchor="middle"))
-  rx, ry, dx, dy = spec["robot"]
-  cx, cy = P(rx, ry)
-  rl, rw = 0.805 * M, 0.58 * M
-  if spec.get("field", True) and (dx or dy):
-    fx = cx + (rl / 2 if dx > 0 else -rl / 2)
-    fl = 1.0 * M * (1 if dx > 0 else -1)
-    pts = [(fx, cy - rw / 2 - 0.1 * M), (fx + fl, cy - rw / 2 - 0.25 * M), (fx + fl, cy + rw / 2 + 0.25 * M), (fx, cy + rw / 2 + 0.1 * M)]
-    out.append('<path d="M' + " L".join(f"{a:.1f},{b:.1f}" for a, b in pts) + f' z" fill="{C["teal"]}" fill-opacity="0.15" stroke="{C["teal"]}" stroke-width="1" stroke-dasharray="3,2"/>')
-  out.append(rect(cx - rl / 2, cy - rw / 2, rl, rw, C["white"], C["ink"], 3, 1.4))
-  bx = cx - rl / 2 - 0.06 * M if dx >= 0 else cx + rl / 2
-  out.append(rect(bx, cy - rw / 2 + 2, 0.06 * M, rw - 4, C["red"], C["red"], 1))
-  if dx or dy:
-    ax = cx + dx * (rl / 2 + 0.05 * M)
-    out.append(f'<line x1="{ax:.1f}" y1="{cy:.1f}" x2="{ax + dx * 0.35 * M:.1f}" y2="{cy:.1f}" stroke="{C["ink"]}" stroke-width="1.4" marker-end="url(#{uid}-arrow)"/>')
-  for (hx, hy, hdx, hdy, low) in spec["persons"]:
-    x, y = P(hx, hy)
-    out += _person(x, y, low)
-    if hdx or hdy:
-      out.append(f'<line x1="{x + hdx * 0.3 * M:.1f}" y1="{y + hdy * 0.3 * M:.1f}" x2="{x + hdx * 0.75 * M:.1f}" y2="{y + hdy * 0.75 * M:.1f}" stroke="{C["ink"]}" stroke-width="1.4" marker-end="url(#{uid}-arrow)"/>')
-  if spec.get("lift"):
-    # the lift column, 330 mm behind the chassis front edge, drawn as a square on the deck
-    lx_, ly_ = cx + rl / 2 - 0.33 * M, cy
-    out.append(rect(lx_ - 0.12 * M, ly_ - 0.12 * M, 0.24 * M, 0.24 * M, C["amber_bg"], C["amber"], 2))
-  if spec.get("arm"):
-    adx, ady = spec["arm"]
-    # the arm mount 180 mm ahead of the column axis; a 0.7 m reach placeholder (WP-C-01 OI-6)
-    ax0, ay0 = cx + rl / 2 - 0.15 * M, cy - 0.31 * M
-    ax1, ay1 = ax0 + adx * 0.7 * M, ay0 + ady * 0.7 * M
-    out.append(f'<line x1="{ax0:.1f}" y1="{ay0:.1f}" x2="{ax1:.1f}" y2="{ay1:.1f}" stroke="{C["amber"]}" stroke-width="3" stroke-linecap="round"/>')
-    out.append(f'<circle cx="{ax1:.1f}" cy="{ay1:.1f}" r="{0.08 * M:.1f}" fill="{C["white"]}" stroke="{C["amber"]}" stroke-width="2"/>')
-    out.append(f'<circle cx="{ax0:.1f}" cy="{ay0:.1f}" r="{0.7 * M:.1f}" fill="{C["amber"]}" fill-opacity="0.08" stroke="{C["amber"]}" stroke-width="1" stroke-dasharray="3,3"/>')
-  if spec.get("screen"):
-    x, y = P(4.2, 0.4)
-    out.append(rect(x, y, 0.6 * M, 0.4 * M, C["amber_bg"], C["amber"], 2))
-    out.append(text(x + 0.3 * M, y + 0.27 * M, "UI", 8, C["amber"], 700, "middle"))
-  if spec.get("charger"):
-    x, y = P(0.3, 2.0)
-    out.append(rect(x - 0.15 * M, y - 0.3 * M, 0.3 * M, 0.6 * M, C["amber_bg"], C["amber"], 2))
-    out.append(text(x, y + 0.75 * M, "charger", 9, C["amber"], anchor="middle"))
-  cy0 = py + ph + 14
-  for i, ln in enumerate(wrap(spec["caption"], cw - 20, 10)[:2]):
-    out.append(text(x0 + 10, cy0 + i * 12, ln, 10, C["ink"], 600))
-  meas = sc["measure"].replace("**", "").split(";")[0]
-  for i, ln in enumerate(wrap("needs: " + meas, cw - 20, 9.5)[:2]):
-    out.append(text(x0 + 10, cy0 + 26 + i * 12, ln, 9.5, C["muted"]))
-  return out
-
-
-def fig_scenes(src: dict) -> str:
-  cw, chh, gap = 236, 258, 14
-  cols = 4
-  W = 32 * 2 + cols * cw + (cols - 1) * gap
-  rows = -(-len(SCENES) // cols)
-  H = 94 + rows * chh + (rows - 1) * gap + 50
-  body = [text(32, 34, f"Figure 2-1  Interaction scenarios IS-01…IS-{len(SCENES):02d} as scene cards (top-down, 1 m grid)", 15, C["ink"], 700),
-          text(32, 52, "Robot with its direction of travel, its 1.0 m starting field (teal) and the rear bumper (red); people as head-and-shoulders, dashed when below the scan plane.", 11, C["muted"]),
-          text(32, 66, "Caption: what happens; below it, the measure the §2 table names.", 11, C["muted"])]
-  for i, (sid, spec) in enumerate(SCENES.items()):
-    r, c = divmod(i, cols)
-    body += _card(32 + c * (cw + gap), 84 + r * (chh + gap), cw, chh, sid, src["scenes"][sid], spec, "scn")
-  body.append(text(W - 32, H - 16, "Generated by figures/fig_c06.py from WP-C-06 §2", 9.5, C["dim"], anchor="end"))
-  return svg(W, H, "scn", "Figure 2-1: interaction scenarios as scene cards",
-             "Twelve cards in a grid, one per interaction scenario: a top-down pictogram on a one-metre grid with the robot, its direction of travel, its one-metre protective field and rear bumper, the person or persons and their movement, racks, a dock, a screen or a charger where the scenario needs them, a caption and the measure needed.", body)
-
-
-# ---------------------------------------------------------------- Figure 3-1 detection distance chart
 
 
 def fig_distance(src: dict) -> str:
@@ -338,17 +222,13 @@ def fig_misuse(src: dict) -> str:
              "A two-by-three grid with likelihood low, medium and high across and consequence serious or slight down; the high-likelihood serious cell is outlined red and lists the five misuses that fall in it; the medium-likelihood serious and high-likelihood slight cells are amber; the rest grey.", body)
 
 
-OUTPUTS = {"fig-c06-2-1-interaction-scenes.svg": fig_scenes, "fig-c06-3-1-detection-distance.svg": fig_distance, "fig-c06-5-1-misuse-matrix.svg": fig_misuse}
+OUTPUTS = {"fig-c06-3-1-detection-distance.svg": fig_distance, "fig-c06-5-1-misuse-matrix.svg": fig_misuse}
 
 
 def check_source(src: dict) -> list[str]:
   errs = []
-  for sid in SCENES:
-    if sid not in src["scenes"]:
-      errs.append(f"WP-C-06 §2 has no row for {sid}")
-  for sid in src["scenes"]:
-    if sid not in SCENES:
-      errs.append(f"scenario {sid} in WP-C-06 §2 has no scene in fig_c06.py")
+  if len(src["scenes"]) != 15:
+    errs.append(f"WP-C-06 §2 has {len(src['scenes'])} scenario rows, not 15 (the loops of fig_sim_is.py draw one each)")
   for k in ("K", "t_r", "Z"):
     if k not in src["params"] or _num(src["params"][k]) is None:
       errs.append(f"WP-C-06 §3 parameter {k} missing or without a number")

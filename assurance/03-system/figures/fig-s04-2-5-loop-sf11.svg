@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="720" viewBox="0 0 1120 720" role="img" aria-labelledby="s04-2-5-t s04-2-5-d">
+<title id="s04-2-5-t">Figure 2-5: SF-11 at the station: a person crosses the workspace ring and the arm stops; the ring as reach plus walk</title>
+<desc id="s04-2-5-d">Six boxes from the ring crossing through the station device, the logic, the safe-torque-off path, the arm's assumed stop and the standstill; a time axis to 0.6 s; a distance bar adding the 0.6 m reach and the 0.48 m walk to the 1.08 m boundary; a top view of the station with the base, the reach circle, the ring, the shelf and the person at the ring and at the reach radius.</desc>
+<rect x="0" y="0" width="1120" height="720" fill="#FFFFFF"/>
+<defs><pattern id="s04-2-5-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#B86F0C" stroke-width="1.2" opacity="0.7"/></pattern><pattern id="s04-2-5-hatchred" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#D64535" stroke-width="1.2" opacity="0.5"/></pattern><marker id="s04-2-5-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#122026"/></marker></defs>
+<text x="28.0" y="34.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#122026" text-anchor="start">Figure 2-5  SF-11 at the station: a person crosses the workspace ring and the arm stops; the ring as reach plus walk</text>
+<text x="28.0" y="54.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#4E6A73" text-anchor="start">§2 row SF-11: 100 + 50 + 20 = 170 ms against the 200 ms target, CFG-002; the arm's stopping time is unknown (WP-C-01 OI-6): drawn at 0.13 s so that t_r + t_b = 0.3 s, the middle case of §4.5; K = 1.6 m/s.</text>
+<rect x="28.0" y="92.0" width="150.0" height="58.0" rx="6" fill="#FDEDEB" stroke="#D64535" stroke-width="1.4"/>
+<text x="103.0" y="114.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#122026" text-anchor="middle">Demand</text>
+<text x="103.0" y="130.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">a person crosses the ring</text>
+<text x="103.0" y="144.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">t = 0</text>
+<line x1="178.0" y1="121.0" x2="214.0" y2="121.0" stroke="#122026" stroke-width="1.4"/>
+<polygon points="214,117 222,121 214,125" fill="#122026"/>
+<rect x="218.0" y="92.0" width="150.0" height="58.0" rx="6" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="293.0" y="114.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#122026" text-anchor="middle">Station device</text>
+<text x="293.0" y="130.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">scanner field or mat</text>
+<text x="293.0" y="144.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">100 ms</text>
+<line x1="368.0" y1="121.0" x2="404.0" y2="121.0" stroke="#122026" stroke-width="1.4"/>
+<polygon points="404,117 412,121 404,125" fill="#122026"/>
+<rect x="408.0" y="92.0" width="150.0" height="58.0" rx="6" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="483.0" y="114.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#122026" text-anchor="middle">safety controller</text>
+<text x="483.0" y="130.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">logic</text>
+<text x="483.0" y="144.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">50 ms</text>
+<line x1="558.0" y1="121.0" x2="594.0" y2="121.0" stroke="#122026" stroke-width="1.4"/>
+<polygon points="594,117 602,121 594,125" fill="#122026"/>
+<rect x="598.0" y="92.0" width="150.0" height="58.0" rx="6" fill="#E9F7F5" stroke="#00938B" stroke-width="1.4"/>
+<text x="673.0" y="114.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#122026" text-anchor="middle">arm safe torque off</text>
+<text x="673.0" y="130.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">STO path (TBC)</text>
+<text x="673.0" y="144.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">20 ms · t_r = 170 ms</text>
+<line x1="748.0" y1="121.0" x2="784.0" y2="121.0" stroke="#122026" stroke-width="1.4"/>
+<polygon points="784,117 792,121 784,125" fill="#122026"/>
+<rect x="788.0" y="92.0" width="150.0" height="58.0" rx="6" fill="#EDF2F4" stroke="#7E949B" stroke-width="1.4" stroke-dasharray="5,3"/>
+<text x="863.0" y="114.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#122026" text-anchor="middle">Arm stop</text>
+<text x="863.0" y="130.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">joint brakes (TBC)</text>
+<text x="863.0" y="144.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">t_b = 0.13 s assumed</text>
+<line x1="938.0" y1="121.0" x2="974.0" y2="121.0" stroke="#122026" stroke-width="1.4"/>
+<polygon points="974,117 982,121 974,125" fill="#122026"/>
+<rect x="978.0" y="92.0" width="114.0" height="58.0" rx="6" fill="#E8F6EC" stroke="#2C9A58" stroke-width="1.4"/>
+<text x="1035.0" y="114.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#122026" text-anchor="middle">Standstill</text>
+<text x="1035.0" y="130.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">t = 0.3 s</text>
+<text x="1035.0" y="144.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">arm at rest, SF-11</text>
+<text x="28.0" y="214.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#122026" text-anchor="start">Time</text>
+<line x1="120.0" y1="222.0" x2="1092.0" y2="222.0" stroke="#7E949B" stroke-width="1"/>
+<line x1="120.0" y1="218.0" x2="120.0" y2="226.0" stroke="#7E949B" stroke-width="1"/>
+<text x="120.0" y="240.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">0</text>
+<line x1="282.0" y1="218.0" x2="282.0" y2="226.0" stroke="#7E949B" stroke-width="1"/>
+<text x="282.0" y="240.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">0.1 s</text>
+<line x1="444.0" y1="218.0" x2="444.0" y2="226.0" stroke="#7E949B" stroke-width="1"/>
+<text x="444.0" y="240.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">0.2 s</text>
+<line x1="606.0" y1="218.0" x2="606.0" y2="226.0" stroke="#7E949B" stroke-width="1"/>
+<text x="606.0" y="240.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">0.3 s</text>
+<line x1="768.0" y1="218.0" x2="768.0" y2="226.0" stroke="#7E949B" stroke-width="1"/>
+<text x="768.0" y="240.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">0.4 s</text>
+<line x1="930.0" y1="218.0" x2="930.0" y2="226.0" stroke="#7E949B" stroke-width="1"/>
+<text x="930.0" y="240.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">0.5 s</text>
+<line x1="1092.0" y1="218.0" x2="1092.0" y2="226.0" stroke="#7E949B" stroke-width="1"/>
+<text x="1092.0" y="240.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="middle">0.6 s</text>
+<rect x="120.0" y="194.0" width="162.0" height="14.0" rx="0" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="201.0" y="205.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="600" fill="#00938B" text-anchor="middle">device 100</text>
+<rect x="282.0" y="194.0" width="81.0" height="14.0" rx="0" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="322.5" y="205.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="600" fill="#00938B" text-anchor="middle">logic 50</text>
+<rect x="363.0" y="194.0" width="32.4" height="14.0" rx="0" fill="#E9F7F5" stroke="#00938B" stroke-width="1"/>
+<text x="379.2" y="190.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#00938B" text-anchor="middle">STO 20</text>
+<rect x="395.4" y="194.0" width="210.6" height="14.0" rx="0" fill="#EDF2F4" stroke="#7E949B" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="500.7" y="205.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="600" fill="#7E949B" text-anchor="middle">arm stop 0.13 s, TBC</text>
+<line x1="395.4" y1="174.0" x2="395.4" y2="226.0" stroke="#D64535" stroke-width="1.2"/>
+<text x="399.4" y="170.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#D64535" text-anchor="start">torque off, 0.17 s</text>
+<line x1="606.0" y1="162.0" x2="606.0" y2="226.0" stroke="#2C9A58" stroke-width="1.2"/>
+<text x="610.0" y="158.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#2C9A58" text-anchor="start">standstill 0.3 s (assumed)</text>
+<text x="28.0" y="272.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#122026" text-anchor="start">Distance ledger: what makes the workspace boundary of SR-11.02</text>
+<text x="28.0" y="288.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#4E6A73" text-anchor="start">drawn to scale, 1 m = 400 px, from the shoulder axis outward; the person walks in at K for the whole stopping time</text>
+<rect x="120.0" y="318.0" width="240.0" height="30.0" rx="0" fill="#00938B" stroke="none" stroke-width="1"/>
+<rect x="360.0" y="318.0" width="192.0" height="30.0" rx="0" fill="#2FA69C" stroke="none" stroke-width="1" opacity="0.55"/>
+<line x1="120.0" y1="308.0" x2="552.0" y2="308.0" stroke="#122026" stroke-width="1"/>
+<line x1="120.0" y1="304.0" x2="120.0" y2="312.0" stroke="#122026" stroke-width="1"/>
+<line x1="552.0" y1="304.0" x2="552.0" y2="312.0" stroke="#122026" stroke-width="1"/>
+<text x="336.0" y="304.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#122026" text-anchor="middle">boundary 1.08 m from the shoulder</text>
+<text x="240.0" y="337.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">reach 0.6 m (planning value)</text>
+<text x="456.0" y="337.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">walk K·(t_r + t_b) = 0.48 m</text>
+<text x="120.0" y="380.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">Reach 0.6 m: shoulder to fingertip, read from the OpenArm 2.0 description package's joint offsets (assurance/sim/blender), not measured. Walk 0.48 m = 1.6 × (0.17 + 0.13).</text>
+<text x="120.0" y="396.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#122026" text-anchor="start">Other stopping times: 0.32 m at 0.2 s, 0.80 m at 0.5 s. The boundary is provisional (AOU-10) until upstream publishes the arm's reach and stopping time (WP-S-02 OI-8); a 0.5 s stop moves it to 1.40 m.</text>
+<text x="28.0" y="414.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#122026" text-anchor="start">The same numbers on the floor (1 m = 200 px): the station seen from above, a slice through the ring</text>
+<clipPath id="s04-2-5-strip"><rect x="90" y="436" width="1002" height="180"/></clipPath>
+<line x1="120.0" y1="616.0" x2="1092.0" y2="616.0" stroke="#D3DDE2" stroke-width="1"/>
+<line x1="320.0" y1="436.0" x2="320.0" y2="616.0" stroke="#EDF2F4" stroke-width="1"/>
+<text x="320.0" y="628.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#7E949B" text-anchor="middle">1 m</text>
+<line x1="520.0" y1="436.0" x2="520.0" y2="616.0" stroke="#EDF2F4" stroke-width="1"/>
+<text x="520.0" y="628.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#7E949B" text-anchor="middle">2 m</text>
+<line x1="720.0" y1="436.0" x2="720.0" y2="616.0" stroke="#EDF2F4" stroke-width="1"/>
+<text x="720.0" y="628.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#7E949B" text-anchor="middle">3 m</text>
+<line x1="920.0" y1="436.0" x2="920.0" y2="616.0" stroke="#EDF2F4" stroke-width="1"/>
+<text x="920.0" y="628.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="400" fill="#7E949B" text-anchor="middle">4 m</text>
+<g clip-path="url(#s04-2-5-strip)">
+<circle cx="460.0" cy="526.0" r="216.0" fill="#FFF6E8" stroke="#B86F0C" stroke-width="1.2" stroke-dasharray="4,3"/>
+<g opacity="1.0" transform="translate(412.0,526.0) scale(1,1)">
+<rect x="-78.0" y="-58.0" width="156.0" height="116.0" rx="14.000000000000002" fill="#F4F6F7" stroke="#1B1F22" stroke-width="1.6"/>
+<rect x="-78.0" y="-58.0" width="10.0" height="116.0" rx="6.0" fill="#1B1F22" stroke="none" stroke-width="1"/>
+<rect x="68.0" y="-58.0" width="10.0" height="116.0" rx="6.0" fill="#1B1F22" stroke="none" stroke-width="1"/>
+<rect x="-40.0" y="-64.0" width="40.0" height="12.0" rx="2" fill="#15181A" stroke="#2F3A44" stroke-width="1"/>
+<rect x="-40.0" y="52.0" width="40.0" height="12.0" rx="2" fill="#15181A" stroke="#2F3A44" stroke-width="1"/>
+<circle cx="-50.0" cy="0.0" r="10.0" fill="#9AA3AB" stroke="#2F6DB5" stroke-width="1"/>
+<circle cx="54.0" cy="-38.0" r="10.0" fill="#9AA3AB" stroke="#2F6DB5" stroke-width="1"/>
+<circle cx="54.0" cy="38.0" r="10.0" fill="#9AA3AB" stroke="#2F6DB5" stroke-width="1"/>
+<circle cx="58.0" cy="0.0" r="7.0" fill="#00938B" stroke="none" stroke-width="1"/>
+<rect x="-87.0" y="-54.0" width="8.0" height="108.0" rx="2" fill="#D64535" stroke="none" stroke-width="1"/>
+</g>
+<circle cx="460.0" cy="526.0" r="120.0" fill="none" stroke="#00938B" stroke-width="1.2" stroke-dasharray="4,3"/>
+<circle cx="460.0" cy="526.0" r="4.0" fill="#00938B" stroke="none" stroke-width="1"/>
+<text x="250.0" y="452.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#B86F0C" text-anchor="start">ring 1.08 m: reach + walk</text>
+<text x="470.0" y="420.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#00938B" text-anchor="start">reach 0.6 m</text>
+<rect x="580.0" y="346.0" width="100.0" height="360.0" rx="2" fill="#C9CDD1" stroke="#7A8187" stroke-width="1"/>
+<text x="630.0" y="452.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9" font-weight="600" fill="#4E6A73" text-anchor="middle">shelf</text>
+<circle cx="216.0" cy="526.0" r="28.0" fill="#B86F0C" stroke="#B86F0C" stroke-width="1.6"/>
+<text x="216.0" y="490.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#B86F0C" text-anchor="middle">person at t = 0</text>
+<circle cx="312.0" cy="526.0" r="28.0" fill="none" stroke="#B86F0C" stroke-width="1.6" stroke-dasharray="3,2"/>
+<line x1="244.0" y1="526.0" x2="284.0" y2="526.0" stroke="#B86F0C" stroke-width="1.4" stroke-dasharray="6,4"/>
+<text x="264.0" y="568.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#B86F0C" text-anchor="middle">walks 0.48 m</text>
+</g>
+<text x="1092.0" y="644.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#00938B" text-anchor="end">planning case: the arm reaches standstill as the person reaches the fingertip radius; no margin is added beyond Z</text>
+<text x="1088.0" y="668.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#7E949B" text-anchor="end">Generated by assurance/03-system/figures/fig_s04.py from the WP-S-04 §1, §2 tables and §4.5</text>
+<rect x="0.0" y="676.0" width="1120.0" height="44.0" rx="0" fill="#FFF6E8" stroke="none" stroke-width="1"/>
+<text x="16.0" y="694.0" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="11" font-weight="700" fill="#B86F0C" text-anchor="start">SYNTHETIC: pictures only, no evidence credit</text>
+<text x="16.0" y="709.0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#B86F0C" text-anchor="start">Drawn to WP-S-04 v0.2 planning values (t_r 0.17 s, arm stop 0.13 s assumed, reach 0.6 m read from a description file). A loop diagram shows the arithmetic of a stop; it does not show that a measure works.</text>
+</svg>
